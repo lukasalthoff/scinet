@@ -43,6 +43,8 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 
 ## Methodology
 
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
+
 1. **Hierarchy:** OpenAlex domains, fields, subfields, and topics define the taxonomy.
 2. **Task generation:** Large language models produce O\*NET-style task statements at field, subfield, and topic levels using a top-down hierarchical approach.
 
