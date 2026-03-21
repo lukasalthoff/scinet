@@ -178,11 +178,11 @@ With correct field routing, step coverage exceeds 85% for most protocols. Uncove
 
 ### 5.2 Research Papers
 
-Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/) (~474 million works), [arXiv](https://arxiv.org/) (~3 million preprints), and [bioRxiv](https://www.biorxiv.org/) (~0.5 million preprints), and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
+Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/) (~474 million works), [arXiv](https://arxiv.org/) & [bioRxiv](https://www.biorxiv.org/) (~3.5 million preprints), and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
 
 ### 5.3 Patents
 
-Patent filings describe research and development processes in precise, structured language. We collect patent data and apply the same LLM-based pipeline to route patents to SciNet topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
+Patent filings describe research and development processes in precise, structured language. We draw on USPTO (~9 million US patents) and PATSTAT (~150 million patent documents worldwide), and apply the same LLM-based pipeline to route patents to SciNet topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
 
 ### 5.4 Human Researchers: Surveys and Expert Evaluations
 
