@@ -125,21 +125,15 @@ A significant challenge was controlling the level of specificity. In early itera
 
 - The [O\*NET](https://www.onetonline.org/) analyst instructions were included in the prompt nearly verbatim.
 - Explicit constraints were added: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task."
-- Coverage thresholds were built into the prompt (see [Section 4.5](#45-coverage-thresholds)), pushing the model toward tasks that a *majority* of researchers in the area perform regularly.
+- Coverage thresholds were built into the prompt (see [Section 4.5](#45-coverage-thresholds) below), pushing the model toward tasks that a *majority* of researchers in the area perform regularly.
 
 ---
 
 ## 4. Task Generation
 
-### 4.1 Design evolution
+SciNET uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
 
-The task generation approach evolved through two stages:
-
-**Initial approach (top-down, additive).** We started at the top of the hierarchy and worked downward. At each level, we asked the model to generate tasks that are common across all researchers in that scope, while explicitly omitting tasks that belong to more granular levels below. For example, at the field level, we asked: "What tasks do all Life Sciences researchers share?" and instructed the model to leave out subfield-specific work. Then at the subfield level, we asked for *additional* tasks distinctive to that subfield that were not already covered by the field-level list. This is the approach used in the **three-level pipeline** that produced the released data (see [Section 4.6](#46-three-level-pipeline-released-data)).
-
-**Refined approach (hierarchical refinement).** We then developed a more structured architecture with four levels and explicit parent linkage. Instead of asking for "additional" tasks, we ask each lower level to *refine* specific tasks from the level above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent. This ensures the full hierarchy is traceable — any topic-level task can be followed up through its subfield parent, domain parent, and ultimately to a universal task. Tasks that cannot be assigned to a parent are not generated; the model is not instructed to create new parents.
-
-### 4.2 Level structure (four-level architecture)
+### 4.2 Level structure
 
 | Level | Scope | Source | Coverage threshold |
 |-------|-------|--------|--------------------|
@@ -192,19 +186,9 @@ Each generated task includes an explicit parent ID linking it to the domain task
 
 The coverage thresholds (70% at the subfield level, 80% at the topic level) serve a dual purpose. They push the model toward tasks that represent common, substantial research activities — analogous to [O\*NET](https://www.onetonline.org/)'s concept of "relevance" — and they push against overly specific tasks (e.g., a particular niche dataset or one-off technique) that would inflate the task count without adding representational value. The tighter threshold at the topic level reflects that topic tasks should be highly characteristic of the specific research area.
 
-### 4.6 Three-level pipeline (released data)
-
-The CSV files in this repository were produced by an earlier **three-level pipeline** (field → subfield → topic) using the additive approach described in [Section 4.1](#41-design-evolution). All three levels are fully LLM-generated (unsupervised):
-
-- **Field level** (10–30 tasks): tasks common to all researchers across the field; subject to a "50%+ of researchers" heuristic; must not be subfield-specific
-- **Subfield level** (10–30 tasks): tasks *additional* to field-level tasks that are distinctive of the subfield; prompt explicitly passes the field tasks and instructs the model not to paraphrase them
-- **Topic level** (10–30 tasks): tasks *additional* to both field- and subfield-level tasks that are distinctive of the specific topic; prompt passes both parent levels
-
-In this pipeline, child tasks are not required to map to a specific parent; they are simply "additional" tasks that the parent levels did not cover. The `level` column in `generated_tasks.csv` records which level each task was generated at.
-
 **Execution:** Subfield tasks are generated in parallel using a thread pool. Topic tasks are generated via the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which processes hundreds of topics concurrently.
 
-### 4.7 Deduplication and quality control
+### 4.6 Deduplication and quality control
 
 - **Prompt-level:** The model is instructed to ensure mutual exclusivity across tasks and to avoid vague catch-all statements ("analyze data," "collect data"). Parent tasks are provided in the prompt explicitly so the model can avoid paraphrasing them.
 - **Code-level:** After parsing model responses, a normalization function deduplicates tasks by exact string match after whitespace normalization.
@@ -295,8 +279,7 @@ Each subfield receives a percentile rank on the composite index and on each comp
 
 | Component | Model | Notes |
 |-----------|-------|-------|
-| Task generation (3-level) | Claude Sonnet 4.5 | Field, subfield, and topic tasks |
-| Task generation (4-level) | Claude Opus 4.5 | Subfield and topic tasks |
+| Task generation (subfield + topic) | Claude Opus 4.5 | Unsupervised hierarchical refinement |
 | Universal/domain task development | Claude Opus 4.5 | Iterative, researcher-supervised |
 | Protocols.io validation | Claude Sonnet 4.5 | Multi-phase routing and coverage |
 | Rating calibration | Claude Opus 4.5 | [O\*NET](https://www.onetonline.org/) gold-standard comparison |
