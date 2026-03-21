@@ -50,6 +50,8 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 
 For a complete description of every pipeline step — including prompt design, coverage thresholds, O\*NET calibration results, and protocols.io validation — see **[METHODOLOGY.md](METHODOLOGY.md)**.
 
+For visual summaries of the data — task distributions, verifiability rankings, AI adoption — see **[DATA_OVERVIEW.md](DATA_OVERVIEW.md)**.
+
 For the research paper when available and project updates, see the [Stanford project page](https://www.lukasalthoff.com).
 
 ## Citation
