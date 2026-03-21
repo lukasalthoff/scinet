@@ -54,7 +54,7 @@ SciNet computes a verifiability index for each subfield based on three component
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/ai_mention_subfields.png" alt="AI mention rate by subfield" width="680"/></p>
 
-**AI adoption by country** — top 20 countries by field-adjusted AI share: the gap between a country's observed AI-paper rate and what would be expected given its field composition. Positive values indicate above-average AI adoption controlling for field mix.
+**AI adoption by country** — left: the 20 countries contributing the most AI-related papers in absolute terms (2023–2025). Right: the 20 countries with the highest field-adjusted AI adoption rate — the gap between a country's observed AI-paper share and what would be expected given its field composition. Positive values indicate above-average adoption after controlling for field mix.
 
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/ai_adoption_country.png" alt="AI adoption by country" width="680"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/ai_adoption_country.png" alt="AI adoption by country" width="900"/></p>
 

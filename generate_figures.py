@@ -338,23 +338,42 @@ def fig_ai_mention_subfields():
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 8. AI adoption by country (top 20 by adjusted share)
+# 8. AI adoption by country — two panels
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_ai_adoption_country():
     df = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
-    df = df[df["paper_count"] >= 5000]
-    top20 = df.nlargest(20, "adjusted_ai_share").sort_values("adjusted_ai_share")
-    top20["adjusted_ai_share_pct"] = top20["adjusted_ai_share"] * 100
+    df = df[df["paper_count"] >= 5000].copy()
+    df["adjusted_ai_share_pct"] = df["adjusted_ai_share"] * 100
 
-    fig, ax = plt.subplots(figsize=(8, 7))
-    colors = [LABLUE if v >= 0 else LALIGHTBLUE for v in top20["adjusted_ai_share_pct"]]
-    ax.barh(top20["country_name"], top20["adjusted_ai_share_pct"],
-            color=colors, height=0.65)
-    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--")
-    ax.set_xlabel("Field-adjusted AI share (pp above/below expected)", color=GRAY1)
-    ax.set_title("Top 20 Countries by Field-Adjusted AI Adoption\n(2023–2025)",
-                 color=LABLUE, fontweight="bold", pad=10)
-    ax.tick_params(colors=GRAY1, labelsize=9)
+    top20_vol = df.nlargest(20, "ai_paper_count").sort_values("ai_paper_count")
+    top20_adj = df.nlargest(20, "adjusted_ai_share").sort_values("adjusted_ai_share")
+
+    fig, axes = plt.subplots(1, 2, figsize=(15, 7))
+
+    # Left: total AI papers
+    axes[0].barh(top20_vol["country_name"], top20_vol["ai_paper_count"] / 1000,
+                 color=LABLUE, height=0.65)
+    for bar, v in zip(axes[0].patches, top20_vol["ai_paper_count"]):
+        axes[0].text(bar.get_width() + top20_vol["ai_paper_count"].max() / 1000 * 0.01,
+                     bar.get_y() + bar.get_height() / 2,
+                     f"{v/1000:.0f}k", va="center", color=GRAY1, fontsize=8)
+    axes[0].set_xlabel("AI-related papers (thousands, 2023–2025)", color=GRAY1)
+    axes[0].set_title("Total AI Papers", color=LABLUE, fontweight="bold")
+    axes[0].tick_params(colors=GRAY1, labelsize=9)
+    axes[0].set_xlim(0, top20_vol["ai_paper_count"].max() / 1000 * 1.18)
+
+    # Right: field-adjusted adoption rate
+    colors = [LABLUE if v >= 0 else LALIGHTBLUE for v in top20_adj["adjusted_ai_share_pct"]]
+    axes[1].barh(top20_adj["country_name"], top20_adj["adjusted_ai_share_pct"],
+                 color=colors, height=0.65)
+    axes[1].axvline(0, color=GRAY2, linewidth=0.8, linestyle="--")
+    axes[1].set_xlabel("Field-adjusted AI share (pp above/below expected)", color=GRAY1)
+    axes[1].set_title("Field-Adjusted AI Adoption Rate", color=LABLUE, fontweight="bold")
+    axes[1].tick_params(colors=GRAY1, labelsize=9)
+
+    fig.suptitle("Country-Level AI Adoption in Research (2023–2025)",
+                 color=LABLUE, fontweight="bold", fontsize=13, y=1.01)
+    fig.tight_layout()
     save(fig, "ai_adoption_country.png")
 
 
