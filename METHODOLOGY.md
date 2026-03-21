@@ -1,6 +1,6 @@
 # SciNET Methodology
 
-SciNET is an O\*NET for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes every step of the pipeline, from taxonomy construction through task generation, quality filtering, and external validation.
+SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes every step of the pipeline, from taxonomy construction through task generation, quality filtering, and external validation.
 
 ---
 
@@ -19,9 +19,9 @@ SciNET is an O\*NET for science: a comprehensive, hierarchically organized datab
 
 ## 1. Background and Motivation
 
-**O\*NET** (the Occupational Information Network) is the U.S. government's primary database of occupational characteristics. For hundreds of occupations, O\*NET records detailed task statements collected through surveys of incumbent workers and rates each task on three scales: how important it is, what fraction of workers perform it, and how frequently it is performed.
+**[O\*NET](https://www.onetonline.org/)** (the Occupational Information Network) is the U.S. government's primary database of occupational characteristics. For hundreds of occupations, [O\*NET](https://www.onetonline.org/) records detailed task statements collected through surveys of incumbent workers and rates each task on three scales: how important it is, what fraction of workers perform it, and how frequently it is performed.
 
-Scientific research is largely absent from O\*NET at useful resolution. O\*NET has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics — Gene Editing, Monetary Policy, Quantum Computing — where work actually differs. SciNET fills this gap by applying the O\*NET methodology at the level of OpenAlex research topics.
+Scientific research is largely absent from [O\*NET](https://www.onetonline.org/) at useful resolution. [O\*NET](https://www.onetonline.org/) has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics — Gene Editing, Monetary Policy, Quantum Computing — where work actually differs. SciNET fills this gap by applying the [O\*NET](https://www.onetonline.org/) methodology at the level of [OpenAlex](https://openalex.org/) research topics.
 
 The primary output is **~100,000+ task statements** organized across ~4,500 topics, ~250 subfields, and 26 fields.
 
@@ -31,7 +31,7 @@ The primary output is **~100,000+ task statements** organized across ~4,500 topi
 
 ### 2.1 Source: OpenAlex topics
 
-The taxonomy follows [OpenAlex](https://openalex.org/), a free and open catalog of scholarly publications. OpenAlex classifies scholarly works into a four-level hierarchy:
+The taxonomy follows [OpenAlex](https://openalex.org/), a free and open catalog of scholarly publications. [OpenAlex](https://openalex.org/) classifies scholarly works into a four-level hierarchy:
 
 | Level | Count | Example |
 |-------|-------|---------|
@@ -40,11 +40,11 @@ The taxonomy follows [OpenAlex](https://openalex.org/), a free and open catalog 
 | Subfield | ~250 | Condensed Matter Physics |
 | Topic | ~4,500 | Superconductivity and Magnetic Properties |
 
-Each OpenAlex topic is accompanied by a short summary, a set of keywords, and (where available) a link to the corresponding Wikipedia article. These are included in [`data/openalex_topics.csv`](data/openalex_topics.csv) and serve as context in the task-generation prompts.
+Each [OpenAlex](https://openalex.org/) topic is accompanied by a short summary, a set of keywords, and (where available) a link to the corresponding Wikipedia article. These are included in [`data/openalex_topics.csv`](data/openalex_topics.csv) and serve as context in the task-generation prompts.
 
 ### 2.2 Display field mapping
 
-OpenAlex's 26 fields do not always match natural research communities. For example, OpenAlex groups Economics, Sociology, and Psychology together as "Social Sciences." SciNET remaps these to approximately 30 **display fields** that more closely track disciplinary boundaries.
+[OpenAlex](https://openalex.org/)'s 26 fields do not always match natural research communities. For example, [OpenAlex](https://openalex.org/) groups Economics, Sociology, and Psychology together as "Social Sciences." SciNET remaps these to approximately 30 **display fields** that more closely track disciplinary boundaries.
 
 The mapping uses a two-pass approach:
 
@@ -78,7 +78,7 @@ All tasks follow the O\*NET canonical structure:
 - Plain language; avoid jargon unless necessary for precision
 - Parallel structure across statements; mutual exclusivity encouraged
 
-**Reference examples from O\*NET:**
+**Reference examples from [O\*NET](https://www.onetonline.org/):**
 
 > "Analyze data from research conducted to detect and measure physical phenomena."
 
@@ -191,11 +191,11 @@ The key design principle — that each child level generates *new* tasks rather 
 
 ## 5. Task Rating and Filtering
 
-To determine which tasks are "core" to a research area (performed by most researchers) versus "supplemental" (performed by a minority), SciNET replicates O\*NET's worker survey methodology using language models as simulated respondents.
+To determine which tasks are "core" to a research area (performed by most researchers) versus "supplemental" (performed by a minority), SciNET replicates [O\*NET](https://www.onetonline.org/)'s worker survey methodology using language models as simulated respondents.
 
-### 5.1 O\*NET survey scales
+### 5.1 [O\*NET](https://www.onetonline.org/) survey scales
 
-O\*NET collects three ratings for each task from incumbent workers:
+[O\*NET](https://www.onetonline.org/) collects three ratings for each task from incumbent workers:
 
 | Scale | Abbreviation | Range | Question |
 |-------|-------------|-------|---------|
@@ -205,7 +205,7 @@ O\*NET collects three ratings for each task from incumbent workers:
 
 ### 5.2 SciNET adaptation
 
-SciNET replicates the O\*NET survey by prompting a language model to play the role of a researcher with 10+ years of experience in the target occupation and to rate all tasks for that occupation simultaneously. The batched design — rating all tasks in a single API call — provides consistency within a rating session and is approximately 6× more efficient than rating tasks individually.
+SciNET replicates the [O\*NET](https://www.onetonline.org/) survey by prompting a language model to play the role of a researcher with 10+ years of experience in the target occupation and to rate all tasks for that occupation simultaneously. The batched design — rating all tasks in a single API call — provides consistency within a rating session and is approximately 6× more efficient than rating tasks individually.
 
 The prompt includes calibrated distribution guidance to prevent scale compression, for example:
 
@@ -218,25 +218,25 @@ The prompt includes calibrated distribution guidance to prevent scale compressio
 | **Core** | RT ≥ 50% AND IM ≥ 3.0 ("Important") |
 | **Supplemental** | Does not meet both Core thresholds |
 
-The RT threshold of 50% is set below O\*NET's conventional 67% to account for a systematic downward bias in LLM relevance estimates (see [Section 6.1](#61-onet-calibration)). The IM threshold of 3.0 matches O\*NET practice. Frequency (FT) is recorded but not used for filtering.
+The RT threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for a systematic downward bias in LLM relevance estimates (see [Section 6.1](#61-onet-calibration)). The IM threshold of 3.0 matches [O\*NET](https://www.onetonline.org/) practice. Frequency (FT) is recorded but not used for filtering.
 
 ---
 
 ## 6. Validation
 
-### 6.1 O\*NET calibration
+### 6.1 [O\*NET](https://www.onetonline.org/) calibration
 
-To assess how well LLM task ratings match human incumbent survey responses, we conducted a calibration exercise against O\*NET ground truth.
+To assess how well LLM task ratings match human incumbent survey responses, we conducted a calibration exercise against [O\*NET](https://www.onetonline.org/) ground truth.
 
 **Sample construction:**
 
-1. All occupations in the O\*NET Task Ratings database with keywords indicating scientific research (e.g., "scientist," "researcher," "biologist," "economist") were selected — yielding 40 scientific occupations.
-2. Each O\*NET task for these occupations was classified by a language model on a 1–5 researcher-relevance scale. Tasks scoring ≥ 4 were retained, yielding 425 researcher-relevant tasks with known O\*NET IM, RT, and FT ground truth.
+1. All occupations in the [O\*NET](https://www.onetonline.org/) Task Ratings database with keywords indicating scientific research (e.g., "scientist," "researcher," "biologist," "economist") were selected — yielding 40 scientific occupations.
+2. Each [O\*NET](https://www.onetonline.org/) task for these occupations was classified by a language model on a 1–5 researcher-relevance scale. Tasks scoring ≥ 4 were retained, yielding 425 researcher-relevant tasks with known [O\*NET](https://www.onetonline.org/) IM, RT, and FT ground truth.
 3. The SciNET batched rating prompt was applied to the same tasks and occupations.
 
 **Results (Claude Opus 4.5, n = 425 tasks, 40 occupations):**
 
-| Scale | Pearson r | 95% CI | LLM mean | O\*NET mean | Bias |
+| Scale | Pearson r | 95% CI | LLM mean | [O\*NET](https://www.onetonline.org/) mean | Bias |
 |-------|-----------|--------|----------|-------------|------|
 | Importance (IM) | 0.60 | [0.535, 0.657] | 3.68 | 3.83 | −0.15 |
 | % Workers (RT) | 0.63 | [0.566, 0.682] | 80.0 | 86.0 | −5.93 |
@@ -252,25 +252,25 @@ Protocols.io is a platform where researchers publish detailed laboratory and res
 
 A corpus of approximately 20,600 protocols was assembled from three sources:
 - Public protocols available via the protocols.io search API
-- Unlisted protocols with DOIs indexed in OpenAlex
+- Unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/)
 - Additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504)
 
-For each protocol, procedure steps, title, abstract, authors, and metadata were collected. Protocols were linked to OpenAlex publications where DOIs overlapped, enabling topic-level assignment.
+For each protocol, procedure steps, title, abstract, authors, and metadata were collected. Protocols were linked to [OpenAlex](https://openalex.org/) publications where DOIs overlapped, enabling topic-level assignment.
 
 **Assignment pipeline:**
 
 Each protocol is routed to the SciNET topic it best represents through a four-phase LLM-assisted pipeline:
 
-1. **Field validation (Phase 1.5).** A language model checks whether the OpenAlex-assigned field is correct given the protocol title, abstract, and first three steps. If not, it suggests the correct field.
+1. **Field validation (Phase 1.5).** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps. If not, it suggests the correct field.
 2. **Subfield validation (Phase 2).** The same approach validates subfield assignment within the confirmed field.
 3. **Topic assignment (Phase 3).** The model selects the best-matching SciNET topic from a list of candidates within the subfield, and provides a confidence score from 1–5. Only protocols with confidence ≥ 4 are used in downstream analysis.
 4. **Step coverage (Phase 4).** For each procedure step, the model determines whether it is covered by any existing SciNET task at the field, subfield, or topic level. Steps are classified as: *placeholder* (instructions to follow a prior protocol, excluded from coverage calculations), *prep* (routine preparatory actions such as centrifugation or sample labeling), or *substantive* (steps that correspond to meaningful research tasks). Coverage is measured as the fraction of non-placeholder steps matched to a SciNET task.
 
-**Results:** With correct field routing, LLM-assessed step coverage exceeds 95% for most protocols, indicating that SciNET's task database captures the vast majority of substantive research activities described in real protocols. Field misclassification — a common source of OpenAlex metadata error, affecting roughly 70% of protocols in pilot validation — is the primary driver of apparent coverage gaps.
+**Results:** With correct field routing, LLM-assessed step coverage exceeds 95% for most protocols, indicating that SciNET's task database captures the vast majority of substantive research activities described in real protocols. Field misclassification — a common source of [OpenAlex](https://openalex.org/) metadata error, affecting roughly 70% of protocols in pilot validation — is the primary driver of apparent coverage gaps.
 
 **Missing task augmentation:**
 
-Uncovered steps are not discarded. Instead, they are grouped by (field, subfield, topic), and a language model proposes new O\*NET-style task statements to cover them. Proposed tasks are then deduplicated against existing SciNET tasks using sequence similarity matching (threshold: 90% character overlap) before any additions are made.
+Uncovered steps are not discarded. Instead, they are grouped by (field, subfield, topic), and a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them. Proposed tasks are then deduplicated against existing SciNET tasks using sequence similarity matching (threshold: 90% character overlap) before any additions are made.
 
 ### 6.3 Bio-protocol scraping
 
@@ -284,7 +284,7 @@ A second external validation source is [Bio-Protocol](https://bio-protocol.org/)
 |-----------|-------|-------|
 | Task generation (3-level) | Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | Field, subfield, and topic tasks |
 | Task generation (4-level) | Claude Opus 4.5 (`claude-opus-4-5-20251101`) | L3/L4 tasks; higher model for quality |
-| O\*NET calibration | Claude Opus 4.5 (`claude-opus-4-5-20251101`) | Gold-standard comparison |
+| [O\*NET](https://www.onetonline.org/) calibration | Claude Opus 4.5 (`claude-opus-4-5-20251101`) | Gold-standard comparison |
 | Protocols.io validation | Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | Multi-phase routing and coverage |
 | Field/subfield classification | Claude Sonnet 4.5 (`claude-sonnet-4-20250514`) | Taxonomy mapping |
 
@@ -294,13 +294,13 @@ All models are accessed via the Anthropic API. Topic-level task generation uses 
 
 ## 8. Limitations
 
-**LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with O\*NET human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from O\*NET, but these are broader than SciNET's specific topics.
+**LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNET's specific topics.
 
-**Coverage threshold reliability.** The RT scale exhibits the largest calibration gap (r = 0.63, bias −5.9 pp). The 50% Core threshold was chosen to approximately match O\*NET's effective pass rate, but this adjustment is approximate. Tasks near the threshold boundary should be interpreted with caution.
+**Coverage threshold reliability.** The RT scale exhibits the largest calibration gap (r = 0.63, bias −5.9 pp). The 50% Core threshold was chosen to approximately match [O\*NET](https://www.onetonline.org/)'s effective pass rate, but this adjustment is approximate. Tasks near the threshold boundary should be interpreted with caution.
 
-**English-language bias.** Task statements are generated in English using English-language topic labels and keywords. Research practices may differ across linguistic or cultural contexts not well-represented in either O\*NET or the underlying LLMs' training data.
+**English-language bias.** Task statements are generated in English using English-language topic labels and keywords. Research practices may differ across linguistic or cultural contexts not well-represented in either [O\*NET](https://www.onetonline.org/) or the underlying LLMs' training data.
 
-**OpenAlex taxonomy drift.** OpenAlex periodically revises its topic labels and assignments. The `old_topic_label` and `new_topic_label` columns in `openalex_topics.csv` reflect a specific label revision; downstream uses should verify topic IDs rather than relying solely on label strings.
+**[OpenAlex](https://openalex.org/) taxonomy drift.** [OpenAlex](https://openalex.org/) periodically revises its topic labels and assignments. The `old_topic_label` and `new_topic_label` columns in `openalex_topics.csv` reflect a specific label revision; downstream uses should verify topic IDs rather than relying solely on label strings.
 
 **Protocol coverage bias.** The protocols.io and Bio-Protocol validation corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited.
 
@@ -310,5 +310,5 @@ All models are accessed via the Anthropic API. Topic-level task generation uses 
 
 - Arts, S., Cassiman, B., & Gomez, J. C. (2025). *Beyond Citations: Measuring Novel Scientific Ideas.*
 - Liang, W., et al. (2024). Mapping the Increasing Use of LLMs in Scientific Papers. *arXiv:2404.01268.*
-- Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., & Fleishman, E. A. (2001). Understanding Work Using the Occupational Information Network (O\*NET). *Personnel Psychology*, 54(2), 451–492.
+- Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., & Fleishman, E. A. (2001). Understanding Work Using the Occupational Information Network ([O\*NET](https://www.onetonline.org/)). *Personnel Psychology*, 54(2), 451–492.
 - Waltman, L., & van Eck, N. J. (2012). A new methodology for constructing a publication-output indicator. *Journal of the American Society for Information Science and Technology*, 63(12), 2378–2392.
