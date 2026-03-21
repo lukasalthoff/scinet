@@ -1,12 +1,12 @@
-# SciNET
+# SciNet
 
-Public replication data for **SciNET**: an O\*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
+Public replication data for **SciNet**: an O\*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
 
 **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
 ## Overview
 
-SciNET organizes research work into a hierarchy aligned with [OpenAlex](https://openalex.org/) (domains, fields, subfields, and topics). For each level, we use large language models to generate O\*NET-style task statements describing what researchers in that area regularly do.
+SciNet organizes research work into a hierarchy aligned with [OpenAlex](https://openalex.org/) (domains, fields, subfields, and topics). For each level, we use large language models to generate O\*NET-style task statements describing what researchers in that area regularly do.
 
 The files in [`data/`](data/) are released for replication and downstream research.
 
@@ -17,7 +17,7 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 | File | Description |
 |------|-------------|
 | [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, and subfield levels) with category labels |
-| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNET display field and subfield |
+| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNet display field and subfield |
 
 ### Data dictionary
 
@@ -38,8 +38,8 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 |--------|-------------|
 | `topic_id` | OpenAlex topic identifier |
 | `topic_name` | Topic display name |
-| `field` | SciNET display field |
-| `subfield` | SciNET display subfield |
+| `field` | SciNet display field |
+| `subfield` | SciNet display subfield |
 
 ## Methodology
 
@@ -52,11 +52,11 @@ For the research paper when available and project updates, see the [Stanford pro
 
 ## Citation
 
-If you use this dataset, please cite the SciNET project and this repository, for example:
+If you use this dataset, please cite the SciNet project and this repository, for example:
 
 ```bibtex
 @misc{scinet_data,
-  title        = {SciNET: Task Database for Scientific Research (Replication Data)},
+  title        = {SciNet: Task Database for Scientific Research (Replication Data)},
   author       = {Althoff, Lukas and collaborators},
   year         = {2026},
   howpublished = {\url{https://github.com/lukasalthoff/scinet}},
@@ -76,5 +76,5 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 
 - Replaced `generated_tasks.csv`, `openalex_topics.csv`, and `catalog.json` with two simpler files:
   - `tasks.csv`: flat task file with category, level, domain, field, and subfield columns.
-  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNET display fields and subfields.
+  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNet display fields and subfields.
 - Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.
