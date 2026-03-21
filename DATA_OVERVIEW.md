@@ -62,6 +62,8 @@ SciNet computes a verifiability index for each subfield based on three component
 
 ## Claude Usage and Research Output
 
-**Claude usage vs. research output per capita** — scatter plot comparing country-level Claude usage intensity (Anthropic Economic Index, August 2025) against total scientific papers produced per 1,000 working-age residents ([OpenAlex](https://openalex.org/)). Each bubble represents one country, sized by total publication volume. Countries above the trend line produce more research per capita than their Claude usage would predict — and vice versa.
+**Claude usage vs. research output per capita** — scatter plot comparing country-level Claude usage intensity against total scientific papers produced per 1,000 working-age residents ([OpenAlex](https://openalex.org/)). Each bubble represents one country, sized by total publication volume. Countries above the trend line produce more research per capita than their Claude usage would predict — and vice versa.
+
+Claude usage data: [Anthropic Economic Index](https://www.anthropic.com/research/anthropic-economic-index-september-2025-report), August 2025 ([dataset on Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex)).
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_scatter.png" alt="Claude usage vs research output per capita" width="800"/></p>
