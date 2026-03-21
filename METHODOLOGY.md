@@ -2,37 +2,9 @@
 
 SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes how the database was built — from taxonomy construction through task generation, external validation, and quality filtering.
 
-```mermaid
-flowchart TD
-    subgraph inputs [Inputs]
-        OA["OpenAlex\n4,500 topics\n250 subfields\n26 fields"]
-        ONET["O*NET\nanalyst guidelines\n& survey scales"]
-    end
+![SciNET data creation pipeline](pipeline.svg)
 
-    subgraph generation [Task Generation]
-        L12["Universal + Domain\n(LLM-generated,\nresearcher-supervised)"]
-        L34["Subfield + Topic\n(LLM-generated,\nunsupervised)"]
-        L12 --> L34
-    end
-
-    subgraph validation [Ground Truth Data]
-        PIO["Protocols, Papers\nPatents, Surveys"]
-        COV["Coverage\nCheck"]
-        NEW["Missing Tasks\nProposed by LLM"]
-    end
-
-    subgraph output [Output]
-        DB["SciNET\n~100,000+ tasks"]
-    end
-
-    OA --> L12
-    ONET --> L12
-    L34 --> DB
-    DB --> COV
-    PIO --> COV
-    COV -->|"uncovered steps"| NEW
-    NEW -->|"added to database"| DB
-```
+*[View full-size interactive diagram](http://lukasalthoff.com/scinet/pipeline.html)*
 
 ---
 
