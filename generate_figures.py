@@ -457,8 +457,6 @@ def fig_claude_vs_science_scatter():
             fontsize=8.5 if is_us else 7.5,
             fontweight="bold" if is_us else "normal",
             color=GRAY1,
-            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec=LALIGHTBLUE,
-                      lw=1.5, alpha=0.9) if is_us else None,
         )
         texts.append(t)
 
