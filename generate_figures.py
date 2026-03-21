@@ -421,11 +421,18 @@ def fig_claude_vs_science_scatter():
     label_countries = df[label_mask]
 
     from adjustText import adjust_text
-    import matplotlib.patheffects as pe
 
     fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)  # no grid lines on scatter
     ax.scatter(df["claude_index"], df["papers_per_capita"],
                s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
+
+    # Ensure US is always in the label set
+    us_in_labels = label_countries["country_code"].eq("US").any()
+    if not us_in_labels:
+        us_row = df[df["country_code"] == "US"]
+        if not us_row.empty:
+            label_countries = pd.concat([label_countries, us_row])
 
     texts = []
     for _, row in label_countries.iterrows():
@@ -435,20 +442,10 @@ def fig_claude_vs_science_scatter():
             row["country_name"],
             fontsize=8.5 if is_us else 7.5,
             fontweight="bold" if is_us else "normal",
-            color=LALIGHTBLUE if is_us else GRAY1,
+            color=GRAY1,
+            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec=LALIGHTBLUE,
+                      lw=1.5, alpha=0.9) if is_us else None,
         )
-        if is_us:
-            t.set_path_effects([pe.withStroke(linewidth=2.5, foreground="white")])
-        texts.append(t)
-
-    # Always label the US even if it didn't meet the general threshold
-    us_row = df[df["country_code"] == "US"]
-    if not us_row.empty and not any(r["country_code"] == "US" for _, r in label_countries.iterrows()):
-        r = us_row.iloc[0]
-        t = ax.text(r["claude_index"], r["papers_per_capita"],
-                    "United States of America",
-                    fontsize=8.5, fontweight="bold", color=LALIGHTBLUE)
-        t.set_path_effects([pe.withStroke(linewidth=2.5, foreground="white")])
         texts.append(t)
 
     adjust_text(texts, ax=ax,
@@ -456,7 +453,7 @@ def fig_claude_vs_science_scatter():
                 expand=(1.3, 1.5), force_text=(0.4, 0.6),
                 only_move={"text": "xy", "points": "y"})
 
-    # Trend line
+    # Trend line (drawn after labels so it appears on top of grid but under points)
     mask = df["claude_index"].between(0.01, 20)
     if mask.sum() > 10:
         x, y = df.loc[mask, "claude_index"], df.loc[mask, "papers_per_capita"]
@@ -465,7 +462,7 @@ def fig_claude_vs_science_scatter():
         ax.plot(x_fit, np.polyval(coef, x_fit),
                 color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
 
-    ax.set_xlabel("Claude usage per-capita index\n(1 = proportional to population; >1 = above average)",
+    ax.set_xlabel("Claude usage per-capita index",
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("Research papers per 1,000 working-age population\n(OpenAlex, all years)",
                   color=GRAY1, fontsize=10)
