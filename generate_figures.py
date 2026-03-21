@@ -414,11 +414,8 @@ def fig_claude_vs_science_scatter():
     sizes = (np.log10(df["paper_count"]) - 2) ** 2 * 30
     sizes = sizes.clip(lower=10)
 
-    # Label prominent countries
-    label_mask = (df["paper_count"] >= 50000) | \
-                 (df["claude_index"] >= 5) | \
-                 (df["papers_per_capita"] >= 5)
-    label_countries = df[label_mask]
+    # Label only the 20 largest paper producers
+    label_countries = df.nlargest(20, "paper_count")
 
     fig, ax = plt.subplots(figsize=(9, 6.5))
     ax.scatter(df["claude_index"], df["papers_per_capita"],
