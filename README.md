@@ -1,6 +1,6 @@
 # SciNet
 
-Public replication data for **SciNet**: an O\*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 30 fields, 300+ subfields, and 4,516 topics.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
