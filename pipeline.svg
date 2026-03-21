@@ -31,23 +31,23 @@
 
 <line x1="340" y1="170" x2="340" y2="205" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
-<!-- ── Domain (gray, darkest) ── -->
-<rect x="80" y="208" width="520" height="240" rx="16" fill="#DDDDD8" stroke="#888880" stroke-width="1"/>
+<!-- ── Domain (lightest, same as other input bubbles) ── -->
+<rect x="80" y="208" width="520" height="240" rx="16" fill="#F5F5F2" stroke="#BBBBBB" stroke-width="1"/>
 <text x="96" y="230" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Domain</text>
 <text x="96" y="246" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">5 domains · researcher-supervised generation</text>
 
-<!-- ── Field (gray, lighter) ── -->
-<rect x="100" y="258" width="480" height="175" rx="12" fill="#E4E4E0" stroke="#999994" stroke-width="1"/>
+<!-- ── Field ── -->
+<rect x="100" y="258" width="480" height="175" rx="12" fill="#EDEDEA" stroke="#AAAAAA" stroke-width="1"/>
 <text x="116" y="280" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Field</text>
 <text x="116" y="296" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~30 fields · researcher-supervised generation</text>
 
-<!-- ── Subfield (gray, lighter still) ── -->
-<rect x="120" y="308" width="440" height="110" rx="10" fill="#EDEDEA" stroke="#AAAAAA" stroke-width="1"/>
+<!-- ── Subfield ── -->
+<rect x="120" y="308" width="440" height="110" rx="10" fill="#E4E4E0" stroke="#999994" stroke-width="1"/>
 <text x="136" y="330" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Subfield</text>
 <text x="136" y="346" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~300 subfields · unsupervised generation</text>
 
-<!-- ── Topic (gray, lightest) ── -->
-<rect x="140" y="358" width="400" height="48" rx="8" fill="#F5F5F2" stroke="#BBBBBB" stroke-width="1"/>
+<!-- ── Topic (darkest) ── -->
+<rect x="140" y="358" width="400" height="48" rx="8" fill="#DDDDD8" stroke="#888880" stroke-width="1"/>
 <text x="156" y="374" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Topic</text>
 <text x="156" y="392" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~4,500 topics · unsupervised generation</text>
 
