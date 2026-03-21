@@ -23,66 +23,66 @@
 <line x1="340" y1="86" x2="340" y2="122" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 <line x1="550" y1="86" x2="410" y2="122" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
-<!-- ── LLM task generation (orange) ── -->
-<rect x="200" y="122" width="280" height="48" rx="8" fill="#FFF0CC" stroke="#FFA500" stroke-width="1.5"/>
-<text x="340" y="146" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#7A3800">LLM task generation</text>
+<!-- ── LLM task generation (Anthropic orange) ── -->
+<rect x="200" y="122" width="280" height="48" rx="8" fill="#F5E0D5" stroke="#D97757" stroke-width="1.5"/>
+<text x="340" y="146" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#8B3E1F">LLM task generation</text>
 
 <line x1="340" y1="170" x2="340" y2="208" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
 <!-- ── Domain (darkest blue) ── -->
 <rect x="80" y="208" width="520" height="240" rx="16" fill="#C7D6EE" stroke="#113563" stroke-width="1.5"/>
 <text x="96" y="230" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#113563">Domain</text>
-<text x="96" y="246" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#113563">5 domains · researcher-supervised</text>
+<text x="96" y="246" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#113563">5 domains · researcher-supervised LLM generation</text>
 
 <!-- ── Field (mid-dark blue) ── -->
 <rect x="100" y="258" width="480" height="175" rx="12" fill="#D4E4F5" stroke="#2A65AB" stroke-width="1.5"/>
 <text x="116" y="280" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2A65AB">Field</text>
-<text x="116" y="296" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">~30 fields · researcher-supervised</text>
+<text x="116" y="296" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">~30 fields · researcher-supervised LLM generation</text>
 
 <!-- ── Subfield (mid-light blue) ── -->
 <rect x="120" y="308" width="440" height="110" rx="10" fill="#DEEEFA" stroke="#4595F3" stroke-width="1.5"/>
 <text x="136" y="330" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2A65AB">Subfield</text>
-<text x="136" y="346" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#4595F3">~300 subfields · unsupervised, 70% coverage</text>
+<text x="136" y="346" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#4595F3">~300 subfields · unsupervised LLM generation</text>
 
 <!-- ── Topic (lightest blue) ── -->
 <rect x="140" y="358" width="400" height="48" rx="8" fill="#EBF5FE" stroke="#87BFFA" stroke-width="1.5"/>
 <text x="156" y="374" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2A65AB">Topic</text>
-<text x="156" y="392" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#4595F3">~4,500 topics · unsupervised, 80% coverage</text>
+<text x="156" y="392" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#4595F3">~4,500 topics · unsupervised LLM generation</text>
 
-<!-- ── Arrow to validation ── -->
+<!-- ── Arrow down to SciNET ── -->
 <line x1="340" y1="448" x2="340" y2="486" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
+<!-- ── SciNET (same shade as Domain) ── -->
+<rect x="150" y="486" width="380" height="80" rx="10" fill="#C7D6EE" stroke="#113563" stroke-width="1.5"/>
+<text x="340" y="508" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#113563">SciNET</text>
+<text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">5 domains · 30 fields · 300 subfields</text>
+<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 100,000+ tasks</text>
+
+<!-- ── Arrow from validation up to SciNET ── -->
+<line x1="340" y1="610" x2="340" y2="568" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+
 <!-- ── Validation (red) ── -->
-<rect x="50" y="486" width="580" height="104" rx="12" fill="none" stroke="#D4484C" stroke-width="1" stroke-dasharray="5 3"/>
-<text x="340" y="506" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#D4484C">Validation</text>
+<rect x="50" y="610" width="580" height="104" rx="12" fill="none" stroke="#D4484C" stroke-width="1" stroke-dasharray="5 3"/>
+<text x="340" y="630" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#D4484C">Validation</text>
 
-<rect x="60" y="516" width="186" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="153" y="534" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Research protocols</text>
-<text x="153" y="552" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">protocols.io (20,600)</text>
-<text x="153" y="568" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">Bio-protocol (85,000)</text>
+<rect x="60" y="640" width="186" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="153" y="658" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Research protocols</text>
+<text x="153" y="676" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">protocols.io (20,600)</text>
+<text x="153" y="692" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">Bio-protocol (85,000)</text>
 
-<rect x="256" y="516" width="186" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="349" y="534" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Scientific papers</text>
-<text x="349" y="552" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">OpenAlex, arXiv, etc.</text>
+<rect x="256" y="640" width="186" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="349" y="658" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Scientific papers</text>
+<text x="349" y="676" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">OpenAlex, arXiv, etc.</text>
 
-<rect x="452" y="516" width="168" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="536" y="548" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Patent filings</text>
+<rect x="452" y="640" width="168" height="64" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="536" y="672" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Patent filings</text>
 
-<!-- ── Arrow to output ── -->
-<line x1="340" y1="590" x2="340" y2="638" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- ── Enrichment (gray dashed, beside SciNET) ── -->
+<rect x="40" y="486" width="100" height="80" rx="8" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="90" y="504" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#444441">Enrichment</text>
+<text x="90" y="520" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">Task ratings</text>
+<text x="90" y="536" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">AI exposure</text>
+<text x="90" y="552" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">Expert surveys</text>
 
-<!-- ── SciNET output (lablue) ── -->
-<rect x="150" y="638" width="380" height="80" rx="10" fill="#113563" stroke="#113563" stroke-width="1"/>
-<text x="340" y="660" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">SciNET</text>
-<text x="340" y="680" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#C7D6EE">5 domains · 30 fields · 300 subfields</text>
-<text x="340" y="696" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#C7D6EE">4,516 topics · 100,000+ tasks</text>
-
-<!-- ── Enrichment (gray dashed) ── -->
-<rect x="40" y="638" width="100" height="80" rx="8" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="4 3"/>
-<text x="90" y="656" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#444441">Enrichment</text>
-<text x="90" y="672" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">Task ratings</text>
-<text x="90" y="688" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">AI exposure</text>
-<text x="90" y="704" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#666663">Expert surveys</text>
-
-<line x1="140" y1="678" x2="148" y2="678" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="140" y1="526" x2="148" y2="526" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 </svg>
