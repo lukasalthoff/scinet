@@ -428,8 +428,22 @@ def fig_claude_vs_science_scatter():
 
     texts = []
     for _, row in label_countries.iterrows():
-        texts.append(ax.text(row["claude_index"], row["papers_per_capita"],
-                             row["country_name"], fontsize=7.5, color=GRAY1))
+        is_us = row["country_code"] == "US"
+        texts.append(ax.text(
+            row["claude_index"], row["papers_per_capita"],
+            row["country_name"],
+            fontsize=8.5 if is_us else 7.5,
+            fontweight="bold" if is_us else "normal",
+            color=LABLUE if is_us else GRAY1,
+        ))
+
+    # Always label the US even if it didn't meet the general threshold
+    us_row = df[df["country_code"] == "US"]
+    if not us_row.empty and not any(r["country_code"] == "US" for _, r in label_countries.iterrows()):
+        r = us_row.iloc[0]
+        texts.append(ax.text(r["claude_index"], r["papers_per_capita"],
+                             "United States of America",
+                             fontsize=8.5, fontweight="bold", color=LABLUE))
 
     adjust_text(texts, ax=ax,
                 arrowprops=dict(arrowstyle="-", color=GRAY2, lw=0.6),
