@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="680" height="820" viewBox="0 0 680 820">
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="760" viewBox="0 0 680 760">
 <defs>
   <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="#666663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,34 +64,31 @@
 <line x1="210" y1="618" x2="248" y2="568" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 <line x1="510" y1="618" x2="472" y2="568" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
-<!-- ── Data validation (red, left) ── -->
-<rect x="46" y="618" width="328" height="160" rx="12" fill="none" stroke="#D4484C" stroke-width="1" stroke-dasharray="5 3"/>
+<!-- ── Data validation (red, left) — 3 equal columns ── -->
+<rect x="46" y="618" width="328" height="120" rx="12" fill="none" stroke="#D4484C" stroke-width="1" stroke-dasharray="5 3"/>
 <text x="210" y="638" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#D4484C">Data Validation</text>
 
-<rect x="56" y="652" width="148" height="74" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="130" y="668" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#7A1A1D">Research protocols</text>
-<text x="130" y="684" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">protocols.io (~20k)</text>
-<text x="130" y="698" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">Bio-protocol (~85k)</text>
+<rect x="56" y="650" width="96" height="76" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="104" y="670" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#7A1A1D">Research protocols</text>
+<text x="104" y="687" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#D4484C">protocols.io (~20k)</text>
+<text x="104" y="701" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#D4484C">Bio-protocol (~85k)</text>
 
-<rect x="214" y="652" width="148" height="74" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="288" y="668" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#7A1A1D">Scientific papers</text>
-<text x="288" y="684" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">OpenAlex (~474M)</text>
-<text x="288" y="698" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">arXiv / bioRxiv (~3.5M)</text>
+<rect x="160" y="650" width="96" height="76" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="208" y="670" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#7A1A1D">Scientific papers</text>
+<text x="208" y="687" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#D4484C">OpenAlex (~474M)</text>
+<text x="208" y="701" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#D4484C">arXiv/bioRxiv (~3.5M)</text>
 
-<rect x="56" y="736" width="306" height="32" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="209" y="752" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#7A1A1D">Patent filings (source TBD)</text>
+<rect x="264" y="650" width="96" height="76" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
+<text x="312" y="670" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="#7A1A1D">Patent filings</text>
+<text x="312" y="690" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#D4484C">source TBD</text>
 
-<!-- ── Human validation (teal, right) ── -->
-<rect x="386" y="618" width="248" height="160" rx="12" fill="none" stroke="#0F6E56" stroke-width="1" stroke-dasharray="5 3"/>
-<text x="510" y="638" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#0F6E56">Human Validation</text>
-
-<rect x="396" y="652" width="228" height="60" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-<text x="510" y="670" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#085041">Researcher surveys</text>
-<text x="510" y="686" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0F6E56">Importance, frequency, coverage ratings</text>
-
-<rect x="396" y="722" width="228" height="46" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-<text x="510" y="740" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#085041">Expert evaluations</text>
-<text x="510" y="756" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0F6E56">Task review by domain experts</text>
+<!-- ── Human validation (teal, right) — text only ── -->
+<rect x="386" y="618" width="248" height="120" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1" stroke-dasharray="5 3"/>
+<text x="510" y="643" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#0F6E56">Human Validation</text>
+<text x="510" y="666" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#085041">Researcher surveys</text>
+<text x="510" y="684" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0F6E56">Importance, frequency &amp; time allocation</text>
+<text x="510" y="704" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#085041">Expert evaluations</text>
+<text x="510" y="722" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#0F6E56">Task review by domain experts</text>
 
 <!-- ── Enrichment (gray dashed, beside SciNet) ── -->
 <rect x="40" y="486" width="100" height="80" rx="8" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="4 3"/>
