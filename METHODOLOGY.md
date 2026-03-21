@@ -152,34 +152,15 @@ The task generation approach evolved through two stages:
 
 The universal and domain levels anchor the entire hierarchy and needed to be correct. Rather than writing these tasks from scratch, we developed them through an iterative process with Claude Opus: the model drafted candidate tasks, a researcher reviewed them, flagged issues, and the model revised — repeating until the tasks reflected the right level of granularity and mutual exclusivity. The result is LLM-generated content that has been carefully vetted.
 
-**Universal tasks (25 tasks)**
+**Universal tasks**
 
-These tasks apply to virtually all researchers regardless of field. They are organized into seven categories:
-
-| Category | Tasks (count) | Examples |
-|----------|---------------|---------|
-| Ideation & Hypothesis Generation | 5 | "Identify gaps in existing literature to formulate novel research questions." |
-| Data Gathering | 4 | "Design data collection protocols and instruments to ensure validity and reproducibility." |
-| Data Analysis | 4 | "Apply statistical methods to test hypotheses and estimate effect sizes." |
-| Writing & Communication | 4 | "Draft manuscripts describing research questions, methods, results, and interpretations." |
-| Peer Review & Service | 2 | "Evaluate manuscripts submitted to journals for scientific rigor and contribution." |
-| Mentorship & Teaching | 3 | "Supervise graduate students and postdoctoral researchers on research projects." |
-| Administration & Collaboration | 3 | "Manage research budgets, personnel, and project timelines." |
+These tasks apply to virtually all researchers regardless of field, organized into seven categories: Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration. Examples include "Identify gaps in existing literature to formulate novel research questions," "Draft manuscripts describing research questions, methods, results, and interpretations," and "Manage research budgets, personnel, and project timelines."
 
 The universal level ensures that tasks like grant writing, peer review, and mentoring — which are never mentioned in papers or protocols — are still represented in every researcher's task profile.
 
-**Domain tasks (11–12 tasks per domain)**
+**Domain tasks**
 
-Domain tasks are domain-specific refinements of universal tasks. Each domain task carries an explicit `l1_task_id` link to the universal task it refines. Four research domains are covered:
-
-| Domain | Tasks (count) | Example |
-|--------|---------------|---------|
-| Social Sciences | 12 | "Design surveys or questionnaires to measure attitudes, behaviors, or experiences." |
-| Life Sciences | 12 | "Follow biosafety protocols when handling biological materials." |
-| Physical Sciences | 12 | "Quantify measurement uncertainty and propagate errors through calculations." |
-| Health Sciences | 11 | "Ensure compliance with patient privacy regulations (e.g., HIPAA)." |
-
-These were also developed in the supervised iterative process described above.
+Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. Four research domains are covered: Social Sciences, Life Sciences, Physical Sciences, and Health Sciences. Domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences. These were developed in the same supervised iterative process described above.
 
 ### 4.4 Unsupervised levels (Subfield and Topic)
 
@@ -251,19 +232,6 @@ Crucially, protocols.io protocols carry DOIs, which allows the vast majority to 
 **Assignment and coverage pipeline:**
 
 For a pilot of 1,000 randomly selected protocols, each protocol was routed to the SciNET topic it best represents and then checked for step-by-step coverage:
-
-```mermaid
-flowchart LR
-    P["Protocol\n(title, abstract, steps)"] --> F["Field\nValidation"]
-    F --> SF["Subfield\nAssignment"]
-    SF --> T["Topic\nAssignment\n(confidence 1-5)"]
-    T --> SC["Step-by-Step\nCoverage Check"]
-    SC --> covered["Covered Steps\n(matched to SciNET task)"]
-    SC --> missing["Uncovered Steps"]
-    missing --> propose["LLM Proposes\nNew Tasks"]
-    propose --> dedup["Deduplicate\nvs. Existing"]
-    dedup --> DB["Added to\nSciNET"]
-```
 
 1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps. If not, it suggests the correct field. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
 2. **Subfield assignment.** Given the corrected field, the model selects the best subfield.
