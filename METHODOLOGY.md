@@ -191,7 +191,7 @@ With correct field routing, step coverage exceeds 85% for most protocols. Uncove
 
 ### 5.2 Research Papers
 
-Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/), arXiv, and other open repositories, and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
+Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/) (~474 million works), [arXiv](https://arxiv.org/) (~3 million preprints), and [bioRxiv](https://www.biorxiv.org/) (~0.5 million preprints), and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
 
 ### 5.3 Patents
 

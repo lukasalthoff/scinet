@@ -78,13 +78,14 @@
 <text x="153" y="694" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">Bio-protocol (~85k)</text>
 
 <rect x="256" y="644" width="186" height="74" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
-<text x="349" y="660" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Scientific papers</text>
-<text x="349" y="678" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">OpenAlex (~250M)</text>
-<text x="349" y="694" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">arXiv (~2.5M)</text>
+<text x="349" y="655" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Scientific papers</text>
+<text x="349" y="671" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">OpenAlex (~474M)</text>
+<text x="349" y="685" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">arXiv (~3M)</text>
+<text x="349" y="699" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">bioRxiv (~0.5M)</text>
 
 <rect x="452" y="644" width="168" height="74" rx="6" fill="#FBDCDC" stroke="#D4484C" stroke-width="1"/>
 <text x="536" y="665" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#7A1A1D">Patent filings</text>
-<text x="536" y="685" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">Google Patents (~150M)</text>
+<text x="536" y="685" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#D4484C">source TBD</text>
 
 <!-- ── Enrichment (gray dashed, beside SciNet) ── -->
 <rect x="40" y="486" width="100" height="80" rx="8" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="4 3"/>
