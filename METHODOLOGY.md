@@ -10,8 +10,8 @@ flowchart TD
     end
 
     subgraph generation [Task Generation]
-        L12["L1 Universal + L2 Domain\n(LLM-generated,\nresearcher-supervised)"]
-        L34["L3 Subfield + L4 Topic\n(LLM-generated,\nunsupervised)"]
+        L12["Universal + Domain\n(LLM-generated,\nresearcher-supervised)"]
+        L34["Subfield + Topic\n(LLM-generated,\nunsupervised)"]
         L12 --> L34
     end
 
@@ -137,22 +137,22 @@ The task generation approach evolved through two stages:
 
 **Initial approach (top-down, additive).** We started at the top of the hierarchy and worked downward. At each level, we asked the model to generate tasks that are common across all researchers in that scope, while explicitly omitting tasks that belong to more granular levels below. For example, at the field level, we asked: "What tasks do all Life Sciences researchers share?" and instructed the model to leave out subfield-specific work. Then at the subfield level, we asked for *additional* tasks distinctive to that subfield that were not already covered by the field-level list. This is the approach used in the **three-level pipeline** that produced the released data (see [Section 4.6](#46-three-level-pipeline-released-data)).
 
-**Refined approach (hierarchical refinement).** We then developed a more structured architecture with four levels and explicit parent linkage. Instead of asking for "additional" tasks, we ask each lower level to *refine* specific tasks from the level above. Every L3 task must map to a specific L2 parent, and every L4 task must map to a specific L3 parent. This ensures the full hierarchy is traceable — any topic-level task can be followed up through its subfield parent, domain parent, and ultimately to a universal task. Tasks that cannot be assigned to a parent are not generated; the model is not instructed to create new parents.
+**Refined approach (hierarchical refinement).** We then developed a more structured architecture with four levels and explicit parent linkage. Instead of asking for "additional" tasks, we ask each lower level to *refine* specific tasks from the level above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent. This ensures the full hierarchy is traceable — any topic-level task can be followed up through its subfield parent, domain parent, and ultimately to a universal task. Tasks that cannot be assigned to a parent are not generated; the model is not instructed to create new parents.
 
 ### 4.2 Level structure (four-level architecture)
 
 | Level | Scope | Source | Coverage threshold |
 |-------|-------|--------|--------------------|
-| L1 — Universal | All researchers | LLM-generated, researcher-supervised | — |
-| L2 — Domain | e.g., Life Sciences | LLM-generated, researcher-supervised | — |
-| L3 — Subfield | e.g., Economics | LLM-generated (unsupervised) | ≥ 70% of subfield researchers |
-| L4 — Topic | e.g., Labor Market and Education | LLM-generated (unsupervised) | ≥ 80% of topic researchers |
+| Universal | All researchers | LLM-generated, researcher-supervised | — |
+| Domain | e.g., Life Sciences | LLM-generated, researcher-supervised | — |
+| Subfield | e.g., Economics | LLM-generated (unsupervised) | ≥ 70% of subfield researchers |
+| Topic | e.g., Labor Market and Education | LLM-generated (unsupervised) | ≥ 80% of topic researchers |
 
-### 4.3 Supervised levels (L1 and L2)
+### 4.3 Supervised levels (Universal and Domain)
 
 The universal and domain levels anchor the entire hierarchy and needed to be correct. Rather than writing these tasks from scratch, we developed them through an iterative process with Claude Opus: the model drafted candidate tasks, a researcher reviewed them, flagged issues, and the model revised — repeating until the tasks reflected the right level of granularity and mutual exclusivity. The result is LLM-generated content that has been carefully vetted.
 
-**L1 — Universal tasks (25 tasks)**
+**Universal tasks (25 tasks)**
 
 These tasks apply to virtually all researchers regardless of field. They are organized into seven categories:
 
@@ -168,9 +168,9 @@ These tasks apply to virtually all researchers regardless of field. They are org
 
 The universal level ensures that tasks like grant writing, peer review, and mentoring — which are never mentioned in papers or protocols — are still represented in every researcher's task profile.
 
-**L2 — Domain tasks (11–12 tasks per domain)**
+**Domain tasks (11–12 tasks per domain)**
 
-L2 tasks are domain-specific refinements of L1 tasks. Each L2 task carries an explicit `l1_task_id` link to the L1 task it refines. Four research domains are covered:
+Domain tasks are domain-specific refinements of universal tasks. Each domain task carries an explicit `l1_task_id` link to the universal task it refines. Four research domains are covered:
 
 | Domain | Tasks (count) | Example |
 |--------|---------------|---------|
@@ -181,35 +181,35 @@ L2 tasks are domain-specific refinements of L1 tasks. Each L2 task carries an ex
 
 These were also developed in the supervised iterative process described above.
 
-### 4.4 Unsupervised levels (L3 and L4)
+### 4.4 Unsupervised levels (Subfield and Topic)
 
 From the subfield level downward, task generation is fully automated. The language model receives the parent-level tasks as numbered input and must produce refinements that each map to a specific parent:
 
-**L3 subfield prompt (excerpt):**
+**Subfield prompt (excerpt):**
 
 > You are generating task statements for researchers in {subfield\_name} (a subfield of {domain\_name}).
 >
-> INPUT: L2 DOMAIN TASKS ({domain\_name})
+> INPUT: DOMAIN TASKS ({domain\_name})
 > These are the domain-level tasks. Your job is to generate subfield-specific refinements of these.
 >
-> OBJECTIVE: Generate subfield-specific refinements of the L2 tasks above. Each L3 task you generate should:
-> - Refine ONE specific L2 task (specify which L2 task number it refines)
+> OBJECTIVE: Generate subfield-specific refinements of the domain tasks above. Each subfield task you generate should:
+> - Refine ONE specific domain task (specify which domain task number it refines)
 > - Be specific to {subfield\_name} (would NOT apply to other subfields)
 > - Be common enough that **70%+ of {subfield\_name} researchers** do it regularly
 
-**L4 topic prompt (excerpt):**
+**Topic prompt (excerpt):**
 
-> Each L4 task you generate should:
-> - Refine ONE specific L3 task (specify which L3 task number it refines)
-> - You DO NOT need to have one L4 task for each L3 task. You may skip some L3 tasks, and some L3 tasks may have multiple L4 tasks.
+> Each topic task you generate should:
+> - Refine ONE specific subfield task (specify which subfield task number it refines)
+> - You DO NOT need to have one topic task for each subfield task. You may skip some subfield tasks, and some subfield tasks may have multiple topic tasks.
 > - Be specific to {topic\_name} (would NOT apply to other topics in {subfield\_name})
 > - Be common enough that **80%+ of {topic\_name} researchers** do it regularly
 
-Each generated task includes an explicit `l2_task_id` (for L3) or `l3_task_id` (for L4), enabling full parent-chain tracing from any L4 task up to the relevant L1 universal task.
+Each generated task includes an explicit parent ID linking it to the domain task (for subfield tasks) or subfield task (for topic tasks) it refines, enabling full parent-chain tracing from any topic-level task up to the relevant universal task.
 
 ### 4.5 Coverage thresholds
 
-The coverage thresholds (70% at L3, 80% at L4) serve a dual purpose. They push the model toward tasks that represent common, substantial research activities — analogous to [O\*NET](https://www.onetonline.org/)'s concept of "relevance" — and they push against overly specific tasks (e.g., a particular niche dataset or one-off technique) that would inflate the task count without adding representational value. The tighter threshold at L4 reflects that topic-level tasks should be highly characteristic of the specific research area.
+The coverage thresholds (70% at the subfield level, 80% at the topic level) serve a dual purpose. They push the model toward tasks that represent common, substantial research activities — analogous to [O\*NET](https://www.onetonline.org/)'s concept of "relevance" — and they push against overly specific tasks (e.g., a particular niche dataset or one-off technique) that would inflate the task count without adding representational value. The tighter threshold at the topic level reflects that topic tasks should be highly characteristic of the specific research area.
 
 ### 4.6 Three-level pipeline (released data)
 
@@ -329,8 +329,8 @@ The RT threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s con
 | Component | Model | Notes |
 |-----------|-------|-------|
 | Task generation (3-level) | Claude Sonnet 4.5 | Field, subfield, and topic tasks |
-| Task generation (4-level) | Claude Opus 4.5 | L3/L4 tasks |
-| L1/L2 task development | Claude Opus 4.5 | Iterative, researcher-supervised |
+| Task generation (4-level) | Claude Opus 4.5 | Subfield and topic tasks |
+| Universal/domain task development | Claude Opus 4.5 | Iterative, researcher-supervised |
 | Protocols.io validation | Claude Sonnet 4.5 | Multi-phase routing and coverage |
 | Rating calibration | Claude Opus 4.5 | [O\*NET](https://www.onetonline.org/) gold-standard comparison |
 | Field/subfield classification | Claude Sonnet 4.5 | Taxonomy mapping |
