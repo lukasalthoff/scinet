@@ -384,51 +384,56 @@ def fig_claude_vs_science_scatter():
     ANTHROPIC_FILE = PRIV / ".." / "data" / "anthropic" / \
         "aei_enriched_claude_ai_2025-08-04_to_2025-08-11.csv"
 
-    # Load Anthropic country-level Claude usage per-capita index
     aei = pd.read_csv(ANTHROPIC_FILE)
-    claude = (aei[(aei["geography"] == "country") &
-                  (aei["facet"] == "country") &
-                  (aei["variable"] == "usage_per_capita_index")]
-              [["geo_id", "geo_name", "value"]]
-              .copy())
-    claude.columns = ["iso3", "claude_name", "claude_index"]
+
+    def get_var(var):
+        return (aei[(aei["geography"] == "country") &
+                    (aei["facet"] == "country") &
+                    (aei["variable"] == var)]
+                [["geo_id", "geo_name", "value"]]
+                .rename(columns={"value": var}))
+
+    claude_idx = get_var("usage_per_capita_index")
+    pop        = get_var("working_age_pop")
+
+    claude = claude_idx.merge(pop[["geo_id", "working_age_pop"]], on="geo_id", how="left")
+    claude.columns = ["iso3", "claude_name", "claude_index", "working_age_pop"]
     claude["name_key"] = claude["claude_name"].str.strip().str.lower()
 
-    # Load OpenAlex AI-in-science country data
+    # Load OpenAlex country data (paper_count for papers-per-capita)
     oa = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
     oa["name_key"] = oa["country_name"].str.strip().str.lower()
 
-    # Merge on country name
     df = claude.merge(oa, on="name_key", how="inner")
-    df["ai_share_pct"] = df["ai_share"]   # already in % from the source
-    df = df[(df["paper_count"] >= 1000) & (df["claude_index"] > 0)].copy()
+    df["papers_per_capita"] = df["paper_count"] / df["working_age_pop"] * 1000  # per 1k working-age
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["working_age_pop"] > 0)].copy()
 
-    # Bubble size = paper count (log scale for legibility)
+    # Bubble size = total paper count (log scale)
     sizes = (np.log10(df["paper_count"]) - 2) ** 2 * 30
     sizes = sizes.clip(lower=10)
 
-    # Label only the most prominent countries
-    label_mask = (df["paper_count"] >= 50000) | (df["claude_index"] >= 5) | \
-                 (df["ai_share_pct"] >= 15)
+    # Label prominent countries
+    label_mask = (df["paper_count"] >= 50000) | \
+                 (df["claude_index"] >= 5) | \
+                 (df["papers_per_capita"] >= 5)
     label_countries = df[label_mask]
 
     fig, ax = plt.subplots(figsize=(9, 6.5))
-    sc = ax.scatter(df["claude_index"], df["ai_share_pct"],
-                    s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4,
-                    edgecolors=LABLUE)
+    ax.scatter(df["claude_index"], df["papers_per_capita"],
+               s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
 
-    # Label selected countries
     for _, row in label_countries.iterrows():
         ax.annotate(row["country_name"],
-                    xy=(row["claude_index"], row["ai_share_pct"]),
+                    xy=(row["claude_index"], row["papers_per_capita"]),
                     xytext=(4, 2), textcoords="offset points",
                     fontsize=7.5, color=GRAY1, va="bottom")
 
     # Trend line
-    from numpy.polynomial import polynomial as P
     mask = df["claude_index"].between(0.01, 20)
     if mask.sum() > 10:
-        x, y = df.loc[mask, "claude_index"], df.loc[mask, "ai_share_pct"]
+        x, y = df.loc[mask, "claude_index"], df.loc[mask, "papers_per_capita"]
         coef = np.polyfit(x, y, 1)
         x_fit = np.linspace(x.min(), x.max(), 200)
         ax.plot(x_fit, np.polyval(coef, x_fit),
@@ -436,14 +441,13 @@ def fig_claude_vs_science_scatter():
 
     ax.set_xlabel("Claude usage per-capita index\n(1 = proportional to population; >1 = above average)",
                   color=GRAY1, fontsize=10)
-    ax.set_ylabel("AI-paper share in scientific publications (%)\n(OpenAlex, 2023–2025)",
+    ax.set_ylabel("Research papers per 1,000 working-age population\n(OpenAlex, all years)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage vs. AI Adoption in Science by Country\n"
-                 "Bubble size = publication volume",
+    ax.set_title("Claude Usage vs. Research Output per Capita by Country\n"
+                 "Bubble size = total publication volume",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
-    # Bubble size legend
     for papers, label in [(5000, "5k papers"), (50000, "50k"), (500000, "500k")]:
         s = (np.log10(papers) - 2) ** 2 * 30
         ax.scatter([], [], s=max(s, 10), c=LABLUE, alpha=0.55,
