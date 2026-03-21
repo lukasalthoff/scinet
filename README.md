@@ -1,25 +1,23 @@
 # SciNET
 
-Public replication data for **SciNET**: an O*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
+Public replication data for **SciNET**: an O\*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
 
 **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
 ## Overview
 
-SciNET organizes research work into a hierarchy aligned with [OpenAlex](https://openalex.org/) (domains, fields, subfields, and topics). For each level, we generate O*NET-style task statements and assess **AI augmentation** (estimated time savings from generative AI) and **automation exposure** (T0–T4 tiers).
+SciNET organizes research work into a hierarchy aligned with [OpenAlex](https://openalex.org/) (domains, fields, subfields, and topics). For each level, we use large language models to generate O\*NET-style task statements describing what researchers in that area regularly do.
 
 The files in [`data/`](data/) are released for replication and downstream research.
 
 ## Data files
 
-All files are UTF-8. CSVs use comma separators; fields may contain quoted newlines (especially in `task_automation.csv`).
+All files are UTF-8. CSVs use comma separators.
 
 | File | Description |
 |------|-------------|
 | [`data/openalex_topics.csv`](data/openalex_topics.csv) | Topic metadata and hierarchy (topic → subfield → field → domain), keywords, summaries, Wikipedia links |
 | [`data/generated_tasks.csv`](data/generated_tasks.csv) | Generated task statements with stable `task_id` and hierarchy labels |
-| [`data/task_augmentation.csv`](data/task_augmentation.csv) | Per-task **augmentation_score** (0–100), interpreted as estimated percentage time savings from GenAI assistance |
-| [`data/task_automation.csv`](data/task_automation.csv) | Per-task **automation_score** (T0–T4) and explanatory text |
 | [`data/catalog.json`](data/catalog.json) | Aggregated catalog: version, counts, field/subfield/topic structure, and summary statistics used in the SciNET explorer |
 
 ### Data dictionary
@@ -47,29 +45,6 @@ All files are UTF-8. CSVs use comma separators; fields may contain quoted newlin
 | `task` | Task statement text |
 | `source_path` | Provenance path in the generation pipeline |
 
-**`task_augmentation.csv`**
-
-| Column | Description |
-|--------|-------------|
-| `task_id`, `field`, `subfield`, `topic`, `task` | Keys and text |
-| `augmentation_score` | Float in **0–100** (percentage time savings) |
-| `error` | Empty if successful; otherwise error detail |
-
-**`task_automation.csv`**
-
-| Column | Description |
-|--------|-------------|
-| `task_id`, `task` | Keys and text |
-| `automation_score` | **T0**–**T4** exposure tier |
-| `explanation` | Model-generated rationale (may span lines inside quotes) |
-| `error` | Empty if successful |
-
-**Automation tiers (summary)**
-
-| Tier | Meaning (summary) |
-|------|-------------------|
-| T0–T4 | Increasing automation exposure; see explanations in-file for precise definitions used in this release |
-
 **`catalog.json`**
 
 JSON document with keys such as `version`, aggregate counts (fields, subfields, topics, tasks), and nested structures for browsing (aligned with the public SciNET explorer). Schema may evolve across releases; inspect the file for the current shape.
@@ -77,9 +52,7 @@ JSON document with keys such as `version`, aggregate counts (fields, subfields, 
 ## Methodology
 
 1. **Hierarchy:** OpenAlex domains, fields, subfields, and topics define the taxonomy.
-2. **Task generation:** Large language models produce O*NET-style task statements at field, subfield, and topic levels using a top-down hierarchical approach.
-3. **Augmentation:** Each task receives an **augmentation_score** from 0–100 (estimated percentage time savings with GenAI).
-4. **Automation:** Each task receives a **T0–T4** classification with a written rationale.
+2. **Task generation:** Large language models produce O\*NET-style task statements at field, subfield, and topic levels using a top-down hierarchical approach.
 
 For a complete description of every pipeline step — including prompt design, coverage thresholds, O\*NET calibration results, and protocols.io validation — see **[METHODOLOGY.md](METHODOLOGY.md)**.
 
@@ -109,5 +82,6 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 
 ### 2026-03-20
 
+- Removed `task_augmentation.csv` and `task_automation.csv` — AI exposure scores are not yet published.
 - Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.
-- Initial public release: topic table, generated tasks, augmentation and automation scores, and `catalog.json`.
+- Initial public release: topic table, generated tasks, and `catalog.json`.
