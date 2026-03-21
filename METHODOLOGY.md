@@ -19,7 +19,6 @@ This document describes how SciNet was built.
 5. [Data Enrichment](#5-data-enrichment)
 6. [Models and Infrastructure](#6-models-and-infrastructure)
 7. [Ongoing and Future Work](#7-ongoing-and-future-work)
-8. [Limitations](#8-limitations)
 
 ---
 
@@ -256,18 +255,6 @@ The ground truth collection described in [Section 4](#4-ground-truth-data) is on
 - **Broader paper coverage.** Full-text processing is being extended to a larger sample of [OpenAlex](https://openalex.org/) and arXiv papers, with particular attention to computational, theoretical, and social science fields.
 - **Patent pipeline.** The routing and coverage pipeline is being adapted for patent filings, which follow a different document structure.
 - **Survey deployment.** The researcher survey instrument is being piloted with early respondents and will be expanded to a broader panel of scientists.
-
----
-
-## 8. Limitations
-
-**LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNet's specific topics.
-
-**English-language bias.** Task statements are generated in English using English-language topic labels and keywords. Research practices may differ across linguistic or cultural contexts not well-represented in either [O\*NET](https://www.onetonline.org/) or the underlying LLMs' training data.
-
-**[OpenAlex](https://openalex.org/) taxonomy drift.** [OpenAlex](https://openalex.org/) periodically revises its topic labels and assignments. The `old_topic_label` and `new_topic_label` columns in `openalex_topics.csv` reflect a specific label revision; downstream uses should verify topic IDs rather than relying solely on label strings.
-
-**Protocol coverage bias.** The protocols.io and Bio-Protocol corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited — which is part of the motivation for extending to full-text papers, patents, and researcher surveys (see [Section 4](#4-ground-truth-data)).
 
 ---
 
