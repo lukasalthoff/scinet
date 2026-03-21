@@ -465,7 +465,7 @@ def fig_claude_vs_science_scatter():
                 expand=(1.3, 1.5), force_text=(0.4, 0.6),
                 only_move={"text": "xy", "points": "y"})
 
-    # Trend line (drawn after labels so it appears on top of grid but under points)
+    # Trend line + correlation
     mask = df["claude_index"].between(0.01, 20)
     if mask.sum() > 10:
         x, y = df.loc[mask, "claude_index"], df.loc[mask, "papers_per_capita"]
@@ -473,6 +473,10 @@ def fig_claude_vs_science_scatter():
         x_fit = np.linspace(x.min(), x.max(), 200)
         ax.plot(x_fit, np.polyval(coef, x_fit),
                 color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+        corr = np.corrcoef(x, y)[0, 1]
+        ax.text(0.99, 0.02, f"Correlation: {corr:.2f}",
+                transform=ax.transAxes, ha="right", va="bottom",
+                fontsize=8, color=GRAY2)
 
     ax.set_xlabel("Claude usage per-capita index",
                   color=GRAY1, fontsize=10)
