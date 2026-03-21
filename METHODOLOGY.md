@@ -12,31 +12,18 @@ This document describes how SciNet was built.
 
 ## Table of Contents
 
-1. [Background and Motivation](#1-background-and-motivation)
-2. [Taxonomy](#2-taxonomy)
-3. [Task Statement Design](#3-task-statement-design)
-4. [Task Generation](#4-task-generation)
-5. [Ground Truth Data](#5-ground-truth-data)
-6. [Data Enrichment](#6-data-enrichment)
-7. [Models and Infrastructure](#7-models-and-infrastructure)
-8. [Ongoing and Future Work](#8-ongoing-and-future-work)
-9. [Limitations](#9-limitations)
+1. [Taxonomy](#1-taxonomy)
+2. [Task Statement Design](#2-task-statement-design)
+3. [Task Generation](#3-task-generation)
+4. [Ground Truth Data](#4-ground-truth-data)
+5. [Data Enrichment](#5-data-enrichment)
+6. [Models and Infrastructure](#6-models-and-infrastructure)
+7. [Ongoing and Future Work](#7-ongoing-and-future-work)
+8. [Limitations](#8-limitations)
 
 ---
 
-## 1. Background and Motivation
-
-AI is transforming scientific research at a pace that outstrips our ability to measure it. To understand which researchers and fields will benefit most — and where new bottlenecks and inequalities may emerge — we need to go beyond asking whether AI affects science and ask *how* it affects specific tasks within specific domains.
-
-A cardiologist and a cosmologist may both be "scientists," but they spend their days on fundamentally different activities. AI tools that dramatically accelerate data analysis in genomics may have no analog in theoretical mathematics. Policy interventions, training programs, and research investments that treat science as a monolith will miss this heterogeneity entirely.
-
-SciNet enables rigorous, task-level analysis of scientific work. By mapping the granular activity structure of science, it allows researchers, funders, and policymakers to identify which tasks are being augmented or automated, where productivity gains are concentrating, and what the implications are for research careers, scientific specialization, and the distribution of discovery.
-
-The [O\*NET](https://www.onetonline.org/) database (Occupational Information Network) provides a well-established template for this kind of task-level occupational analysis, but scientific research is largely absent from it at useful resolution — [O\*NET](https://www.onetonline.org/) has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics where work actually differs. SciNet fills this gap by applying the [O\*NET](https://www.onetonline.org/) methodology to science.
-
----
-
-## 2. Taxonomy
+## 1. Taxonomy
 
 ### 2.1 Starting point
 
@@ -66,7 +53,7 @@ We then asked the language model to define the major subfields within each displ
 
 ---
 
-## 3. Task Statement Design
+## 2. Task Statement Design
 
 All SciNet tasks follow the [O\*NET](https://www.onetonline.org/) canonical task statement structure. The prompts used for task generation closely follow the instructions that [O\*NET](https://www.onetonline.org/) gives to human analysts:
 
@@ -97,11 +84,11 @@ Tasks are written at the level of a *research team*, not a single individual. St
 
 ### 3.1 Prompt design
 
-Controlling specificity is the central design challenge. The prompt includes the [O\*NET](https://www.onetonline.org/) analyst instructions nearly verbatim, together with explicit constraints against over-specificity: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task." Coverage thresholds (see [Section 4.4](#44-coverage-thresholds) below) push the model toward tasks that a *majority* of researchers in the area perform regularly, reinforcing the same principle.
+Controlling specificity is the central design challenge. The prompt includes the [O\*NET](https://www.onetonline.org/) analyst instructions nearly verbatim, together with explicit constraints against over-specificity: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task." Coverage thresholds (see [Section 3.4](#34-coverage-thresholds) below) push the model toward tasks that a *majority* of researchers in the area perform regularly, reinforcing the same principle.
 
 ---
 
-## 4. Task Generation
+## 3. Task Generation
 
 SciNet uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
 
@@ -168,7 +155,7 @@ The coverage thresholds (70% at the subfield level, 80% at the topic level) serv
 
 ---
 
-## 5. Ground Truth Data
+## 4. Ground Truth Data
 
 A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We collect several types of external ground-truth data — research protocols, papers, patents, and direct input from researchers — that document real research activity independently of any LLM. Each source serves both to validate existing tasks and to surface activities that may be missing.
 
@@ -207,7 +194,7 @@ Ultimately, the most direct ground truth comes from researchers themselves. We c
 
 ---
 
-## 6. Data Enrichment
+## 5. Data Enrichment
 
 Beyond the task statements themselves, SciNet enriches each field and subfield with additional data that characterize research communities and the scientific landscape more broadly. This enrichment falls into three categories: task-level ratings following [O\*NET](https://www.onetonline.org/) methodology, bibliometric characteristics drawn from [OpenAlex](https://openalex.org/), and measures of AI adoption across fields.
 
@@ -247,7 +234,7 @@ Each subfield receives a percentile rank on the composite index and on each comp
 
 ---
 
-## 7. Models and Infrastructure
+## 6. Models and Infrastructure
 
 | Component | Model | Notes |
 |-----------|-------|-------|
@@ -261,9 +248,9 @@ All models are accessed via the Anthropic API. Topic-level task generation uses 
 
 ---
 
-## 8. Ongoing and Future Work
+## 7. Ongoing and Future Work
 
-The ground truth collection described in [Section 5](#5-ground-truth-data) is ongoing. Several components are in active development:
+The ground truth collection described in [Section 4](#4-ground-truth-data) is ongoing. Several components are in active development:
 
 - **Expanded protocols.io coverage.** The pilot used 1,000 protocols; the remaining ~19,600 in the corpus are being processed to identify further gaps and generate additional tasks.
 - **Broader paper coverage.** Full-text processing is being extended to a larger sample of [OpenAlex](https://openalex.org/) and arXiv papers, with particular attention to computational, theoretical, and social science fields.
@@ -272,7 +259,7 @@ The ground truth collection described in [Section 5](#5-ground-truth-data) is on
 
 ---
 
-## 9. Limitations
+## 8. Limitations
 
 **LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNet's specific topics.
 
@@ -280,7 +267,7 @@ The ground truth collection described in [Section 5](#5-ground-truth-data) is on
 
 **[OpenAlex](https://openalex.org/) taxonomy drift.** [OpenAlex](https://openalex.org/) periodically revises its topic labels and assignments. The `old_topic_label` and `new_topic_label` columns in `openalex_topics.csv` reflect a specific label revision; downstream uses should verify topic IDs rather than relying solely on label strings.
 
-**Protocol coverage bias.** The protocols.io and Bio-Protocol corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited — which is part of the motivation for extending to full-text papers, patents, and researcher surveys (see [Section 5](#5-ground-truth-data)).
+**Protocol coverage bias.** The protocols.io and Bio-Protocol corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited — which is part of the motivation for extending to full-text papers, patents, and researcher surveys (see [Section 4](#4-ground-truth-data)).
 
 ---
 
