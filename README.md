@@ -56,15 +56,12 @@ If you use this dataset, please cite the SciNet project and this repository, for
 
 ```bibtex
 @misc{scinet_data,
-  title        = {SciNet: Task Database for Scientific Research (Replication Data)},
-  author       = {Althoff, Lukas and collaborators},
+  title        = {SciNet: The Anatomy of Science},
+  author       = {Althoff, Lukas},
   year         = {2026},
   howpublished = {\url{https://github.com/lukasalthoff/scinet}},
-  note         = {Version matching release commit; see repository for file manifest}
 }
 ```
-
-Adjust author list and year when the official paper DOI is available.
 
 ## License
 
