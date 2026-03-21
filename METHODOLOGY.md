@@ -1,6 +1,6 @@
 # SciNET Methodology
 
-SciNET is an O\*NET for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/), with assessments of AI augmentation and automation exposure for each task. This document describes every step of the pipeline, from taxonomy construction through task generation, quality filtering, AI exposure scoring, and external validation.
+SciNET is an O\*NET for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes every step of the pipeline, from taxonomy construction through task generation, quality filtering, and external validation.
 
 ---
 
@@ -11,10 +11,9 @@ SciNET is an O\*NET for science: a comprehensive, hierarchically organized datab
 3. [O\*NET-Style Task Statements](#3-onet-style-task-statements)
 4. [Task Hierarchy and Generation](#4-task-hierarchy-and-generation)
 5. [Task Rating and Filtering](#5-task-rating-and-filtering)
-6. [AI Exposure Scoring](#6-ai-exposure-scoring)
-7. [Validation](#7-validation)
-8. [Models and Infrastructure](#8-models-and-infrastructure)
-9. [Limitations](#9-limitations)
+6. [Validation](#6-validation)
+7. [Models and Infrastructure](#7-models-and-infrastructure)
+8. [Limitations](#8-limitations)
 
 ---
 
@@ -24,12 +23,7 @@ SciNET is an O\*NET for science: a comprehensive, hierarchically organized datab
 
 Scientific research is largely absent from O\*NET at useful resolution. O\*NET has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics — Gene Editing, Monetary Policy, Quantum Computing — where work actually differs. SciNET fills this gap by applying the O\*NET methodology at the level of OpenAlex research topics.
 
-The primary outputs are:
-
-- **~100,000+ task statements** organized across ~4,500 topics, ~250 subfields, and 26 fields
-- **Augmentation scores** (0–100%): estimated time savings from generative AI assistance
-- **Automation tiers** (T0–T4): classification of AI automation exposure
-- **Skill requirements** on 35 O\*NET-standard skill dimensions
+The primary output is **~100,000+ task statements** organized across ~4,500 topics, ~250 subfields, and 26 fields.
 
 ---
 
@@ -111,7 +105,7 @@ SciNET uses a **top-down hierarchical generation** approach: tasks at each level
 | L3 — Subfield | e.g., Economics | LLM-generated | ≥ 70% of subfield researchers |
 | L4 — Topic | e.g., Labor Market and Education | LLM-generated | ≥ 80% of topic researchers |
 
-The data files in this repository (`generated_tasks.csv`, `task_augmentation.csv`, `task_automation.csv`) were produced by a **three-level variant** of this pipeline (field → subfield → topic) described in [Section 4.4](#44-three-level-pipeline-released-data). The four-level architecture is described here first because it provides the clearest conceptual picture.
+The data files in this repository (`generated_tasks.csv`) were produced by a **three-level variant** of this pipeline (field → subfield → topic) described in [Section 4.5](#45-three-level-pipeline-released-data). The four-level architecture is described here first because it provides the clearest conceptual picture.
 
 ### 4.2 Manually curated levels (L1 and L2)
 
@@ -224,51 +218,13 @@ The prompt includes calibrated distribution guidance to prevent scale compressio
 | **Core** | RT ≥ 50% AND IM ≥ 3.0 ("Important") |
 | **Supplemental** | Does not meet both Core thresholds |
 
-The RT threshold of 50% is set below O\*NET's conventional 67% to account for a systematic downward bias in LLM relevance estimates (see [Section 7.1](#71-onet-calibration)). The IM threshold of 3.0 matches O\*NET practice. Frequency (FT) is recorded but not used for filtering.
+The RT threshold of 50% is set below O\*NET's conventional 67% to account for a systematic downward bias in LLM relevance estimates (see [Section 6.1](#61-onet-calibration)). The IM threshold of 3.0 matches O\*NET practice. Frequency (FT) is recorded but not used for filtering.
 
 ---
 
-## 6. AI Exposure Scoring
+## 6. Validation
 
-Each task in `generated_tasks.csv` is independently scored on two AI exposure dimensions.
-
-### 6.1 Augmentation score (0–100%)
-
-The augmentation score estimates the share of time a researcher can save on a task by using generative AI as an assistant — that is, with a human still in the loop directing the work.
-
-**Prompt approach:** The model receives a description of the field and the task statement and is asked:
-
-> "Estimate the percentage of time that the researcher can save by using the described Generative AI to assist with the task."
-
-The model is instructed to return a single number between 0 and 100. No explanatory text is requested, which reduces verbosity and eases parsing.
-
-**Scale interpretation:** A score of 35 means the model estimates that 35% of the time typically spent on this task could be saved with AI assistance. A score of 0 means no time savings; 100 means the task could be completed in near-zero time.
-
-This measure is adapted from the augmentation framework developed in Althoff & Reichardt (2026).
-
-### 6.2 Automation tier (T0–T4)
-
-The automation tier classifies whether, and to what degree, generative AI could perform the *entire* task autonomously — without ongoing human direction. The rubric follows Eloundou et al. (2023) extended to the scientific domain:
-
-| Tier | Definition |
-|------|-----------|
-| **T0** | No automation exposure. GenAI cannot perform any aspect of the task in any meaningful manner (e.g., physical laboratory manipulations). |
-| **T1** | Low exposure. GenAI can perform 0–50% of task components at high quality. |
-| **T2** | Moderate exposure. GenAI can perform 50–90% of task components at high quality. |
-| **T3** | High exposure. GenAI can perform 90–100% of components, but human oversight is required before the output is used. |
-| **T4** | Full exposure. GenAI can complete the task with high quality; no oversight is normally needed. |
-
-**Prompt approach:** The model first checks whether the task meets the T0 criterion (physical/non-digital actions that GenAI cannot assist with at all). If not, it classifies among T1–T4. Six worked annotation examples spanning different fields and tiers are included in the prompt to anchor the rubric. The model provides both the tier label and a written rationale; both are included in `task_automation.csv`.
-
-### 6.3 Skill requirements (1–7)
-
-For each task, a language model rates the required level on each of 35 O\*NET standard skills (e.g., Reading Comprehension, Critical Thinking, Programming, Science). Skill anchors at levels 2, 4, and 6 are drawn directly from O\*NET documentation to ensure scale alignment. Each (task, skill) pair is rated independently; the model returns a single integer on the 1–7 scale.
-
----
-
-## 7. Validation
-
-### 7.1 O\*NET calibration
+### 6.1 O\*NET calibration
 
 To assess how well LLM task ratings match human incumbent survey responses, we conducted a calibration exercise against O\*NET ground truth.
 
@@ -288,7 +244,7 @@ To assess how well LLM task ratings match human incumbent survey responses, we c
 
 The correlations are modest-to-strong, with the weakest performance on Importance and the strongest on Frequency. The small downward bias on % Workers (−5.9 percentage points) motivated the use of a 50% rather than 67% RT threshold for Core task classification. The prompt calibration includes distribution guidance (e.g., expected fractions of tasks at each RT level) derived from this exercise.
 
-### 7.2 Protocols.io step coverage
+### 6.2 Protocols.io step coverage
 
 Protocols.io is a platform where researchers publish detailed laboratory and research protocols, including step-by-step procedure lists. These protocols provide a ground-truth record of what researchers actually do in practice — independent of any LLM. We use protocol steps to evaluate whether SciNET's task database covers real-world research activities.
 
@@ -316,30 +272,27 @@ Each protocol is routed to the SciNET topic it best represents through a four-ph
 
 Uncovered steps are not discarded. Instead, they are grouped by (field, subfield, topic), and a language model proposes new O\*NET-style task statements to cover them. Proposed tasks are then deduplicated against existing SciNET tasks using sequence similarity matching (threshold: 90% character overlap) before any additions are made.
 
-### 7.3 Bio-protocol scraping
+### 6.3 Bio-protocol scraping
 
 A second external validation source is [Bio-Protocol](https://bio-protocol.org/), a peer-reviewed journal that publishes detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was scraped (with a 3-second crawl delay per robots.txt). Each protocol includes title, abstract, procedure steps with durations, materials list, and author affiliations. This corpus provides complementary coverage in domains — particularly molecular biology — that are well-represented in Bio-Protocol but less so in protocols.io.
 
 ---
 
-## 8. Models and Infrastructure
+## 7. Models and Infrastructure
 
 | Component | Model | Notes |
 |-----------|-------|-------|
 | Task generation (3-level) | Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | Field, subfield, and topic tasks |
 | Task generation (4-level) | Claude Opus 4.5 (`claude-opus-4-5-20251101`) | L3/L4 tasks; higher model for quality |
-| Augmentation scoring | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) | Single-number output; high throughput |
-| Automation scoring | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) | T0–T4 classification with rationale |
-| Skill requirements | Claude Haiku 4.5 (`claude-haiku-4-5-20251001`) | 35 skills × ~100k tasks |
 | O\*NET calibration | Claude Opus 4.5 (`claude-opus-4-5-20251101`) | Gold-standard comparison |
 | Protocols.io validation | Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | Multi-phase routing and coverage |
 | Field/subfield classification | Claude Sonnet 4.5 (`claude-sonnet-4-20250514`) | Taxonomy mapping |
 
-All models are accessed via the Anthropic API. Topic-level task generation and AI exposure scoring use the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which provides a 50% cost reduction and higher throughput. Prompt caching (ephemeral) is used for system prompts and shared context blocks. All long-running pipeline steps checkpoint results incrementally so that interrupted runs can resume without reprocessing completed items.
+All models are accessed via the Anthropic API. Topic-level task generation uses the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which provides a 50% cost reduction and higher throughput. Prompt caching (ephemeral) is used for system prompts and shared context blocks. All long-running pipeline steps checkpoint results incrementally so that interrupted runs can resume without reprocessing completed items.
 
 ---
 
-## 9. Limitations
+## 8. Limitations
 
 **LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with O\*NET human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from O\*NET, but these are broader than SciNET's specific topics.
 
@@ -355,9 +308,7 @@ All models are accessed via the Anthropic API. Topic-level task generation and A
 
 ## References
 
-- Althoff, L., & Reichardt, H. (2026). *Task-Specific Technical Change and Comparative Advantage.* Working paper, March 15, 2026.
 - Arts, S., Cassiman, B., & Gomez, J. C. (2025). *Beyond Citations: Measuring Novel Scientific Ideas.*
-- Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2023). GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models. *Science*, 384(6702), 1306–1312.
 - Liang, W., et al. (2024). Mapping the Increasing Use of LLMs in Scientific Papers. *arXiv:2404.01268.*
 - Peterson, N. G., Mumford, M. D., Borman, W. C., Jeanneret, P. R., & Fleishman, E. A. (2001). Understanding Work Using the Occupational Information Network (O\*NET). *Personnel Psychology*, 54(2), 451–492.
 - Waltman, L., & van Eck, N. J. (2012). A new methodology for constructing a publication-output indicator. *Journal of the American Society for Information Science and Technology*, 63(12), 2378–2392.
