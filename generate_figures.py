@@ -404,6 +404,20 @@ def fig_claude_vs_science_scatter():
     oa = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
     oa["name_key"] = oa["country_name"].str.strip().str.lower()
 
+    # Normalize known name discrepancies between the two datasets
+    NAME_OVERRIDES = {
+        "united states of america": "united states",
+        "republic of korea":        "south korea",
+        "democratic people's republic of korea": "north korea",
+        "russian federation":       "russia",
+        "viet nam":                 "vietnam",
+        "iran (islamic republic of)": "iran",
+        "syrian arab republic":     "syria",
+        "taiwan, province of china": "taiwan",
+        "czech republic":           "czechia",
+    }
+    oa["name_key"] = oa["name_key"].replace(NAME_OVERRIDES)
+
     df = claude.merge(oa, on="name_key", how="inner")
     df["papers_per_capita"] = df["paper_count"] / df["working_age_pop"] * 1000  # per 1k working-age
     df = df[(df["paper_count"] >= 1000) &
