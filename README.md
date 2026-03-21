@@ -74,14 +74,16 @@ All files are UTF-8. CSVs use comma separators; fields may contain quoted newlin
 
 JSON document with keys such as `version`, aggregate counts (fields, subfields, topics, tasks), and nested structures for browsing (aligned with the public SciNET explorer). Schema may evolve across releases; inspect the file for the current shape.
 
-## Methodology (brief)
+## Methodology
 
 1. **Hierarchy:** OpenAlex domains, fields, subfields, and topics define the taxonomy.
-2. **Task generation:** Large language models produce O*NET-style task statements at field, subfield, and topic levels.
-3. **Augmentation:** Each task receives an **augmentation_score** from 0–100.
+2. **Task generation:** Large language models produce O*NET-style task statements at field, subfield, and topic levels using a top-down hierarchical approach.
+3. **Augmentation:** Each task receives an **augmentation_score** from 0–100 (estimated percentage time savings with GenAI).
 4. **Automation:** Each task receives a **T0–T4** classification with a written rationale.
 
-For full methodological detail and citations, see the research paper when available and the [Stanford project page](https://www.lukasalthoff.com) (updates linked from the authors).
+For a complete description of every pipeline step — including prompt design, coverage thresholds, O\*NET calibration results, and protocols.io validation — see **[METHODOLOGY.md](METHODOLOGY.md)**.
+
+For the research paper when available and project updates, see the [Stanford project page](https://www.lukasalthoff.com).
 
 ## Citation
 
@@ -107,4 +109,5 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 
 ### 2026-03-20
 
+- Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.
 - Initial public release: topic table, generated tasks, augmentation and automation scores, and `catalog.json`.
