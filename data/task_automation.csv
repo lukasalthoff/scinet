@@ -1,0 +1,82 @@
+task_id,task,automation_score,explanation,error
+task_000005,Review scientific literature to identify knowledge gaps and inform research directions.,T0,"GenAI can autonomously search, retrieve, and synthesize scientific literature across databases, identify thematic clusters, detect contradictions and inconsistencies between studies, summarize key findings, and generate structured summaries of knowledge gaps organized by research area, methodology, or outcome type. These are all high-quality digital outputs that require minimal human intervention to produce. However, this task requires human oversight because: (1) the consequences of misidentifying or mischaracterizing knowledge gaps are significant—they directly shape research priorities and resource allocation; (2) human scientific judgment is necessary to contextualize gaps within the field's current priorities, funding landscapes, and feasibility considerations; and (3) GenAI may miss emerging or niche areas, conflate disparate literatures inappropriately, or fail to recognize subtle theoretical distinctions that matter for research direction. A researcher would need to review, validate, and critically interpret GenAI's gap identification against their domain expertise and institutional context before committing to research directions. GenAI can complete 90-100% of the *components* (literature retrieval, synthesis, gap extraction, organization), but human judgment is essential for the final *decision* about which gaps are most salient and actionable."
+task_000001,Write manuscripts for peer-reviewed journals to disseminate research findings to the scientific community.,T0,"GenAI can autonomously generate 90-100% of the digital components of manuscript writing: drafting methods sections from lab notes, synthesizing results into coherent narratives, generating figure captions and tables, writing background literature reviews, structuring arguments logically, formatting references, and producing clear abstract and conclusion drafts. All of these are digital information processing tasks at which GenAI now performs at high quality.
+
+However, this task requires human oversight because: (1) scientific integrity and accuracy have high consequences—misrepresentation of findings, methodological errors, or unsupported claims can damage careers and mislead the field; (2) human judgment is essential to ensure novelty, significance, and proper framing of contributions; (3) the researcher must verify that GenAI-generated content faithfully represents their actual findings, design choices, and limitations; and (4) peer review expectations and journal-specific norms require author accountability and authenticity that cannot be delegated to automation alone.
+
+The core intellectual work—deciding what findings matter, interpreting their significance, and taking responsibility for claims—remains human. But the substantial execution (drafting, organizing, synthesizing, formatting digital text) can be completed by GenAI at high quality with mandatory human review for accuracy, appropriateness, and journal"
+task_000004,Develop protocols for experiments to ensure reproducibility and methodological rigor.,T3,"GenAI can autonomously generate 90–100% of the digital components of experimental protocol development:
+
+- **Protocol structure & templates**: GenAI produces standard sections (hypothesis, methods, materials, controls, statistical design, randomization schemes) at high quality
+- **Literature synthesis**: GenAI retrieves and synthesizes relevant methods from published work, best practices, and standards (e.g., ARRIVE guidelines, ISO standards)
+- **Methodological specifications**: GenAI drafts detailed procedural steps, parameter ranges, equipment settings, and timing
+- **Reproducibility documentation**: GenAI generates detailed materials lists, supplier information, reagent specifications, version control, and data management plans
+- **Statistical planning**: GenAI designs analysis plans, power calculations, and sample size justifications
+- **Compliance checks**: GenAI can flag regulatory or ethical requirements (IACUC, biosafety, IRB considerations)
+
+**However, T3 applies because**:
+
+- **High stakes & consequences**: Experimental flaws compromise data integrity, waste resources, and may harm animal or human subjects. Errors are not cosmetic—they undermine the foundation of scientific validity
+- **Human judgment required**: A researcher must evaluate whether proposed protocols are scientifically sound for *their specific research question*, validate assumptions behind GenAI suggestions, assess feas"
+task_000003,Design experimental studies to test hypotheses and address research questions.,T0,"GenAI can autonomously generate substantial portions of experimental design including literature review synthesis, hypothesis formulation, study methodology frameworks (sample size calculations, control/treatment structures, statistical power analysis), experimental protocols, data collection templates, and anticipated analysis plans. These are all digital information processing tasks at which GenAI excels. However, this task requires human oversight because: (1) the consequences of flawed experimental design are significant—poor studies waste resources and produce unreliable findings; (2) human scientific judgment is necessary to validate that the proposed design actually addresses the research question within disciplinary and institutional norms; (3) domain expertise is required to evaluate feasibility, ethical considerations, and alignment with current literature; and (4) regulatory/institutional approval (IRB, IACUC, departmental review) requires human accountability. GenAI can complete 90-100% of the digital components of experimental design work, but the output requires expert human review and refinement before implementation. The core blocking factors are scientific judgment and institutional/ethical accountability, not embodied action."
+task_000002,"Prepare grant proposals to secure funding from governmental, institutional, or private sources.",T0,"GenAI can autonomously generate 90-100% of grant proposal components: literature reviews and background sections from research databases, hypothesis statements, methodology descriptions, budget justifications, timeline tables, preliminary data visualizations, impact statements, and compliance/regulatory sections. Given structured inputs (research objectives, preliminary findings, funder guidelines), GenAI produces high-quality, publication-ready text that integrates citations, maintains coherence across sections, and adheres to common proposal formats.
+
+However, T3 is appropriate rather than T4 because human oversight is normally required: (1) the consequences of errors or misalignment with funder priorities are significant (funding rejection, career/institutional impact), (2) human judgment is necessary to ensure scientific accuracy, novelty claims, and strategic positioning relative to the specific funder's mission, and (3) the researcher must validate that GenAI-drafted content faithfully represents their actual research vision, preliminary data interpretation, and realistic feasibility claims. The core intellectual work—deciding what to propose, which data to emphasize, and how to position the science—remains a human responsibility. GenAI handles the digital composition and formatting efficiently, but the output requires substantive human review and revision before submission."
+task_000008,Collaborate with colleagues across institutions to leverage complementary expertise and resources.,T0,"The core task is human-to-human collaboration and relationship management across institutions—inherently interactive and non-automatable. GenAI can assist with supporting digital components (~30–40% of effort): drafting emails to colleagues, summarizing research findings, generating meeting agendas, synthesizing literature to identify complementary expertise, or creating collaboration frameworks and grant proposal templates. However, the majority of the task—initiating trust-based relationships, negotiating resource-sharing agreements, real-time discussion and consensus-building during meetings, navigating institutional politics, and making joint decisions about research direction—requires direct human judgment, negotiation, and authentic interpersonal communication. GenAI cannot perform the actual collaboration; it can only draft materials or prepare information summaries. Since human judgment and human-to-human interaction dominate this task and GenAI can automate considerably less than 50% of the substantive work, this falls into T1 (Low Automation Exposure)."
+task_000006,Mentor graduate students and postdoctoral researchers to develop their research skills and career trajectories.,T0,"** 
+
+Mentoring research students is fundamentally relational and human-centered work that cannot be meaningfully automated. While GenAI can assist with *components* of the broader mentor role—drafting feedback on manuscripts, generating research literature summaries, suggesting experimental design refinements, or outlining career development plans—these are preparatory supports, not the core task itself.
+
+The actual task of ""mentoring to develop skills and career trajectories"" requires:
+
+- **Real-time, adaptive human judgment** about a specific student's progress, strengths, and developmental gaps
+- **Human-to-human interaction** (meetings, one-on-ones, difficult conversations) that creates trust and psychological safety—essential for mentorship
+- **Embodied presence and accountability** in a hierarchical relationship with high-stakes consequences for the mentee's career and training
+- **Modeling and demonstration** of research practices through example and lived experience
+- **Emotionally intelligent navigation** of setbacks, failures, and career pivots that cannot be replicated at high quality without human judgment
+
+GenAI might draft 20-40% of supporting materials (feedback templates, CV advice, literature summaries), but the majority of the work—the relational, evaluative, an"
+task_000009,"Maintain laboratory notebooks and digital records to document procedures, observations, and results.",T0,"** 
+
+GenAI can autonomously perform 90-100% of the digital components of record-keeping: formatting entries, structuring observations into standardized templates, converting handwritten or verbal notes into organized digital formats, generating summary tables, cross-referencing data fields, and ensuring consistency with lab protocols and regulatory standards (e.g., 21 CFR Part 11 compliance, GLP formatting). These are all purely digital tasks.
+
+However, human oversight is normally required because: (1) the consequences of inaccuracy are significant—laboratory records are legal, audit, and regulatory documents that support data integrity and reproducibility; (2) human judgment is necessary to validate that GenAI-formatted entries accurately capture the substance and context of the original observations (e.g., did the model correctly interpret handwritten notes or unusual experimental parameters?); and (3) the researcher must confirm that procedural details, anomalies, and raw data are faithfully represented before committing them to the record.
+
+The task does not meet T4 because the high-stakes nature of scientific documentation and regulatory compliance requires human review rather than autonomous execution. It exceeds T2 because the majority of the mechanical work—organization, formatting, digitization, and standardization—is entirely digital and can be performed at high"
+task_000007,"Present research findings at conferences, seminars, and symposiums to engage with peers.",T0,"** 
+
+GenAI can automate substantial digital components of this task—approximately 50-75% of the work:
+- Draft presentation slides with text, data visualizations, and structured talking points
+- Generate coherent narrative summaries of research findings
+- Create speaker notes and anticipated Q&A responses
+- Format citations and references
+- Polish language for clarity and academic tone
+
+However, significant portions require human action beyond oversight:
+
+1. **Live delivery and real-time interaction** (~20-25% of task): Presenting ""to engage with peers"" involves embodied performance, vocal delivery, reading audience reactions, and adapting in real time—GenAI cannot perform the actual presentation or dynamic peer engagement.
+
+2. **Contextual judgment and authenticity** (~15-20%): Selecting which findings to emphasize, tailoring content to specific conference audiences, and fielding nuanced questions about methodology or implications require the researcher's expert judgment and credibility. Peers recognize and value direct interaction with the actual researcher.
+
+3. **High-stakes professional consequences**: Misrepresenting data or failing to address gaps in reasoning during live presentation damages reputation and scientific integrity—human judgment and accountability are essential.
+
+The task relies heavily on digital preparation (which"
+task_000010,Teach undergraduate and graduate courses to train the next generation of scientists.,T0,"**
+
+GenAI can automate a significant portion of course preparation and delivery components (50–90%):
+- Generate lecture slides, notes, and explanations of complex concepts
+- Draft problem sets, exam questions, and answer keys
+- Create visualizations, diagrams, and multimedia content
+- Provide supplementary reading lists and curated resources
+- Generate rubrics and grading frameworks
+- Draft office hours Q&A responses and common misconceptions guides
+
+However, core aspects of teaching cannot be automated to high quality:
+
+1. **Real-time interaction and responsiveness** – Detecting student confusion, adjusting pacing, reading the room, and adapting explanations on the fly require human presence and judgment during live or synchronous sessions.
+
+2. **Mentoring and relationship-building** – Graduate mentorship involves career guidance, research direction, letters of recommendation, and trust-building that demands authentic human judgment and accountability.
+
+3. **Assessment and accountability** – While GenAI can draft materials, humans must make final decisions on grading, accommodations, and evaluation fairness, especially in high-stakes contexts (graduate advising, performance evaluation).
+
+4. **Research supervision** – Guiding novel research, troubleshooting experimental design, and providing domain expertise"
