@@ -15,9 +15,9 @@ flowchart TD
         L12 --> L34
     end
 
-    subgraph validation [Validation]
-        PIO["protocols.io\n20,600 protocols"]
-        COV["Step Coverage\nCheck"]
+    subgraph validation [Ground Truth Data]
+        PIO["Protocols, Papers\nPatents, Surveys"]
+        COV["Coverage\nCheck"]
         NEW["Missing Tasks\nProposed by LLM"]
     end
 
@@ -42,8 +42,8 @@ flowchart TD
 2. [Taxonomy: Building on OpenAlex](#2-taxonomy-building-on-openalex)
 3. [Task Statement Design](#3-task-statement-design)
 4. [Task Generation](#4-task-generation)
-5. [Validation Against Real-World Protocols](#5-validation-against-real-world-protocols)
-6. [Task Rating and Filtering](#6-task-rating-and-filtering)
+5. [Ground Truth Data](#5-ground-truth-data)
+6. [Data Enrichment](#6-data-enrichment)
 7. [Models and Infrastructure](#7-models-and-infrastructure)
 8. [Ongoing and Future Work](#8-ongoing-and-future-work)
 9. [Limitations](#9-limitations)
@@ -212,83 +212,82 @@ In this pipeline, child tasks are not required to map to a specific parent; they
 
 ---
 
-## 5. Validation Against Real-World Protocols
+## 5. Ground Truth Data
 
-A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We validate task coverage against external protocol databases that document real research procedures step by step.
+A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We collect several types of external ground-truth data — research protocols, papers, patents, and direct input from researchers — that document real research activity independently of any LLM. Each source serves both to validate existing tasks and to surface activities that may be missing.
 
-### 5.1 Protocols.io step coverage
+### 5.1 Research Protocols
 
-[Protocols.io](https://www.protocols.io/) is a platform where researchers publish detailed laboratory and research protocols with step-by-step procedure lists. These provide a ground-truth record of what researchers actually do — independent of any LLM.
+Detailed step-by-step research protocols are our most granular ground-truth source: they describe exactly what a researcher does, in what order, at the level of individual actions. We draw on two complementary protocol corpora.
 
-**Data collection:**
+**[Protocols.io](https://www.protocols.io/)** is a platform where researchers publish laboratory and research protocols, covering a wide range of disciplines. We assembled a corpus of approximately 20,600 protocols from three sources: public protocols via the protocols.io API, unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/), and additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504). Because protocols.io protocols carry DOIs, the vast majority can be merged with [OpenAlex](https://openalex.org/), giving us the field and — in principle — the topic each protocol belongs to. We found, however, that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often inaccurate, so we built an LLM-based assignment pipeline to route each protocol to the correct SciNET field, subfield, and topic.
 
-A corpus of approximately 20,600 protocols was assembled from three sources:
-- Public protocols available via the protocols.io search API
-- Unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/)
-- Additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504)
+For a pilot of 1,000 randomly selected protocols, each protocol was routed and then checked step by step for coverage against existing SciNET tasks:
 
-Crucially, protocols.io protocols carry DOIs, which allows the vast majority to be merged with [OpenAlex](https://openalex.org/). This gives us the field each protocol belongs to and — in principle — its topic. However, we found that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often poor, so we built an LLM-based assignment pipeline.
-
-**Assignment and coverage pipeline:**
-
-For a pilot of 1,000 randomly selected protocols, each protocol was routed to the SciNET topic it best represents and then checked for step-by-step coverage:
-
-1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps. If not, it suggests the correct field. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
+1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps, and corrects it if not. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
 2. **Subfield assignment.** Given the corrected field, the model selects the best subfield.
-3. **Topic assignment.** The model selects the best-matching SciNET topic from a list of candidates within the subfield, and provides a confidence score (1–5). Only protocols with confidence ≥ 4 are used in downstream analysis.
-4. **Step coverage.** For each procedure step in the protocol, the model determines whether it is covered by any existing SciNET task at the topic, subfield, or field level. Steps are classified as *placeholder* (instructions to follow a prior protocol, excluded from coverage calculations), *prep* (routine preparatory actions), or *substantive* (steps corresponding to meaningful research tasks). Coverage is the fraction of non-placeholder steps matched to a SciNET task.
+3. **Topic assignment.** The model selects the best-matching SciNET topic from candidates within the subfield, providing a confidence score (1–5). Only protocols with confidence ≥ 4 are used in downstream analysis.
+4. **Step coverage.** For each procedure step, the model determines whether it is covered by any existing SciNET task at the topic, subfield, or field level. Steps are classified as *placeholder* (instructions to follow a prior protocol, excluded), *prep* (routine preparatory actions), or *substantive* (steps corresponding to meaningful research tasks). Coverage is the fraction of non-placeholder steps matched to a SciNET task.
 
-**Results:** With correct field routing, step coverage exceeds 85% for most protocols, indicating that SciNET's task database captures the large majority of substantive research activities described in real protocols.
+With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNET tasks (sequence similarity threshold: 90%) before being added. The pilot used 1,000 protocols; the full corpus of 20,600 provides room for continued expansion.
 
-**Adding missing tasks:**
+**[Bio-Protocol](https://bio-protocol.org/)** is a peer-reviewed journal publishing detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was collected, each including procedure steps with durations, materials lists, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io. We also collect video protocol transcripts, where researchers narrate their procedures in spoken walkthroughs, and process them through the same coverage pipeline.
 
-Uncovered steps are not discarded. They are grouped by (field, subfield, topic), and a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them. Proposed tasks are then deduplicated against existing SciNET tasks using sequence similarity matching (threshold: 90% character overlap) before being added to the database. The pilot used 1,000 protocols; the full corpus of 20,600 provides room for continued expansion.
+### 5.2 Research Papers
 
-### 5.2 Bio-protocol
+Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/), arXiv, and other open repositories, and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNET's task coverage.
 
-A second external validation source is [Bio-Protocol](https://bio-protocol.org/), a peer-reviewed journal that publishes detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was scraped. Each protocol includes title, abstract, procedure steps with durations, materials list, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io.
+### 5.3 Patents
+
+Patent filings describe research and development processes in precise, structured language. We collect patent data and apply the same LLM-based pipeline to route patents to SciNET topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
+
+### 5.4 Human Researchers: Surveys and Expert Evaluations
+
+Ultimately, the most direct ground truth comes from researchers themselves. We collect two types of human input:
+
+**Researcher surveys.** We are developing a survey instrument that asks researchers to evaluate SciNET tasks for their own field and topic — rating coverage (are important tasks missing?), importance, and time allocation. Responses provide direct human validation complementing the LLM-based ratings and a signal for which parts of the task database need the most attention.
+
+**Expert evaluations.** In addition to broad surveys, we conduct structured evaluations with domain experts who review the task lists for specific subfields or topics, flagging errors, omissions, and tasks that are phrased at the wrong level of granularity. These evaluations inform iterative prompt improvements and targeted task additions.
 
 ---
 
-## 6. Task Rating and Filtering
+## 6. Data Enrichment
 
-In addition to generating tasks, SciNET rates each task following [O\*NET](https://www.onetonline.org/) methodology to distinguish "core" tasks (performed by most researchers in an area) from "supplemental" ones.
+Beyond the task statements themselves, SciNET enriches each field and subfield with additional data that characterize research communities and the scientific landscape more broadly. This enrichment falls into three categories: task-level ratings following [O\*NET](https://www.onetonline.org/) methodology, bibliometric characteristics drawn from [OpenAlex](https://openalex.org/), and measures of AI adoption across fields.
 
-### 6.1 Rating scales
+### 6.1 Task ratings (Importance, Relevance, Frequency)
 
-[O\*NET](https://www.onetonline.org/) collects three ratings for each task from incumbent workers:
+Following [O\*NET](https://www.onetonline.org/) methodology, each task is rated on three scales to indicate how central it is to a research area:
 
-| Scale | Abbreviation | Range | Question |
-|-------|-------------|-------|---------|
-| Importance | IM | 1–5 | "How important is this task to your job?" |
-| Relevance (% workers) | RT | 0–100% | "What percentage of workers in this occupation perform this task?" |
-| Frequency | FT | 1–7 | "How often is this task performed?" (1=yearly or less, 7=hourly or more) |
+- **Importance (IM, 1–5):** How important is this task to researchers in this area?
+- **Relevance (RT, 0–100%):** What share of researchers in this area perform this task?
+- **Frequency (FT, 1–7):** How often is this task performed? (1 = yearly or less, 7 = hourly or more)
 
-SciNET replicates this survey by prompting a language model to play the role of a researcher with 10+ years of experience in the target occupation and to rate all tasks for that occupation simultaneously. The batched design — rating all tasks in a single API call — provides consistency within a rating session.
+We replicate the [O\*NET](https://www.onetonline.org/) incumbent worker survey by prompting a language model to adopt the perspective of a researcher with 10+ years of experience in the target area and to rate all tasks simultaneously in a single API call. This batched approach provides consistency within a rating session.
 
-### 6.2 Calibrating the rating prompt
+Out of the box, the model's distributions did not match [O\*NET](https://www.onetonline.org/) — it was too optimistic about Importance and too conservative on Relevance. We calibrated the prompt iteratively by comparing unguided LLM distributions to [O\*NET](https://www.onetonline.org/) ground truth for scientific occupations, then adding explicit distribution anchors (e.g., for Relevance: "100 should be your most common answer — use it for ~30% of tasks"; for Importance: "Most tasks should be rated 3–4; only a small minority receive 5"). The calibrated prompt was validated against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations, yielding Pearson correlations of r = 0.60 (Importance), r = 0.63 (Relevance), and r = 0.76 (Frequency).
 
-Out of the box, the model's rating distributions did not match [O\*NET](https://www.onetonline.org/) — it was too optimistic about Importance (rating most tasks 4–5) and too conservative on Relevance. We calibrated the prompt iteratively:
+Based on these ratings, tasks are classified as **Core** (Relevance ≥ 50% and Importance ≥ 3.0) or **Supplemental**. The Relevance threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for the systematic downward bias identified during calibration.
 
-1. **Baseline.** We obtained the actual distributions of IM, RT, and FT ratings from [O\*NET](https://www.onetonline.org/) for scientific occupations.
-2. **Unguided LLM ratings.** We ran the prompt with no distribution guidance and compared the resulting distributions to [O\*NET](https://www.onetonline.org/).
-3. **Adding distribution anchors.** We added explicit distribution targets to bring the LLM closer to the [O\*NET](https://www.onetonline.org/) baseline (e.g., for RT: "100 should be your most common answer — use it for ~30% of tasks"; for IM: "Most tasks should be rated 3–4; only a small minority receive 5").
-4. **Validation.** We tested the calibrated prompt against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations:
+### 6.2 Bibliometric characteristics from OpenAlex
 
-| Scale | Pearson r | 95% CI | LLM mean | [O\*NET](https://www.onetonline.org/) mean | Bias |
-|-------|-----------|--------|----------|-------------|------|
-| Importance (IM) | 0.60 | [0.535, 0.657] | 3.68 | 3.83 | −0.15 |
-| % Workers (RT) | 0.63 | [0.566, 0.682] | 80.0 | 86.0 | −5.93 |
-| Frequency (FT) | 0.76 | [0.719, 0.799] | 3.23 | 3.29 | −0.06 |
+For each SciNET field and subfield, we compute a set of bibliometric indicators from [OpenAlex](https://openalex.org/) that describe the research community's publication activity and output quality:
 
-### 6.3 Core vs. Supplemental classification
+- **Publication volume.** Total paper count and citation count per field and subfield, aggregated from topic-level data.
+- **AI-mention trends.** Yearly counts of papers that mention AI-related terms (e.g., "artificial intelligence," "machine learning," "large language model") as a fraction of all papers in the field, tracking how rapidly AI is entering different research communities.
+- **Publication delay.** Average number of days from journal submission to publication, where available, as a proxy for research pace and review intensity.
 
-| Category | Criteria |
-|----------|---------|
-| **Core** | RT ≥ 50% AND IM ≥ 3.0 ("Important") |
-| **Supplemental** | Does not meet both Core thresholds |
+These indicators are computed at the subfield level by aggregating topic-level [OpenAlex](https://openalex.org/) data and are used to contextualize task profiles — for instance, a subfield with rapidly rising AI-mention rates may have a different distribution of AI-augmentable tasks than one where AI adoption is slow.
 
-The RT threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for the systematic downward bias in LLM relevance estimates identified during calibration. The IM threshold of 3.0 matches [O\*NET](https://www.onetonline.org/) practice. Frequency (FT) is recorded but not used for filtering.
+### 6.3 Verifiability and research quality indicators
+
+We construct a verifiability index for each subfield, capturing the degree to which research outputs are presented in ways that facilitate independent replication and scrutiny. The index aggregates three component measures at the topic level, weighted by paper count:
+
+- **Retraction rate.** The fraction of papers in the topic that have been retracted, as a signal of systematic quality failures.
+- **Hedging language.** Frequency of hedging words per 100 words in abstracts (e.g., "may," "suggest," "appear"), reflecting epistemic caution in how findings are communicated.
+- **Booster language.** Frequency of booster words per 100 words (e.g., "clearly," "demonstrate," "establish"), reflecting overstatement tendencies.
+
+Each subfield receives a percentile rank on the composite index and on each component, enabling cross-field comparisons of research norms and output characteristics.
 
 ---
 
@@ -309,13 +308,12 @@ All models are accessed via the Anthropic API. Topic-level task generation uses 
 
 ## 8. Ongoing and Future Work
 
-The current release covers task generation and initial validation. Several additional data sources and validation strategies are in progress:
+The ground truth collection described in [Section 5](#5-ground-truth-data) is ongoing. Several components are in active development:
 
-- **Expanded protocols.io validation.** The pilot used 1,000 protocols; the remaining ~19,600 in the corpus are being processed to identify further coverage gaps and generate additional tasks.
-- **Video protocols.** Researchers also document their work in video format. We are collecting video protocol transcripts, which can be fed through the same coverage pipeline to test whether SciNET captures the research process as described in spoken walkthroughs.
-- **Full-text papers.** [OpenAlex](https://openalex.org/), arXiv, and other repositories provide full-text access to research papers. The methods sections of papers offer a rich description of what researchers actually did, and can be used to validate or extend SciNET's task coverage — particularly for computational, theoretical, and social science topics that are underrepresented in laboratory protocol databases.
-- **Expert surveys.** We are developing a survey instrument to collect researcher opinions on task coverage, importance, and time allocation. This will provide direct human validation complementing the LLM-based ratings.
-- **Patents.** Patent filings describe research and development processes in detail. We have access to patent data and are exploring its use as an additional validation source, particularly for applied research and engineering topics.
+- **Expanded protocols.io coverage.** The pilot used 1,000 protocols; the remaining ~19,600 in the corpus are being processed to identify further gaps and generate additional tasks.
+- **Broader paper coverage.** Full-text processing is being extended to a larger sample of [OpenAlex](https://openalex.org/) and arXiv papers, with particular attention to computational, theoretical, and social science fields.
+- **Patent pipeline.** The routing and coverage pipeline is being adapted for patent filings, which follow a different document structure.
+- **Survey deployment.** The researcher survey instrument is being piloted with early respondents and will be expanded to a broader panel of scientists.
 
 ---
 
@@ -327,7 +325,7 @@ The current release covers task generation and initial validation. Several addit
 
 **[OpenAlex](https://openalex.org/) taxonomy drift.** [OpenAlex](https://openalex.org/) periodically revises its topic labels and assignments. The `old_topic_label` and `new_topic_label` columns in `openalex_topics.csv` reflect a specific label revision; downstream uses should verify topic IDs rather than relying solely on label strings.
 
-**Protocol coverage bias.** The protocols.io and Bio-Protocol validation corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited — which is part of the motivation for the full-text paper and expert survey extensions described in [Section 8](#8-ongoing-and-future-work).
+**Protocol coverage bias.** The protocols.io and Bio-Protocol corpora skew toward experimental life sciences and biomedicine. Coverage validation for computational, social science, and humanities research topics is more limited — which is part of the motivation for extending to full-text papers, patents, and researcher surveys (see [Section 5](#5-ground-truth-data)).
 
 ---
 
