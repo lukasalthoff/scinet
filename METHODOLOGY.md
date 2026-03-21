@@ -1,6 +1,38 @@
 # SciNET Methodology
 
-SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes how the database was built — from taxonomy construction through task generation, prompt engineering, quality filtering, and external validation.
+SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes how the database was built — from taxonomy construction through task generation, external validation, and quality filtering.
+
+```mermaid
+flowchart TD
+    subgraph inputs [Inputs]
+        OA["OpenAlex\n4,500 topics\n250 subfields\n26 fields"]
+        ONET["O*NET\nanalyst guidelines\n& survey scales"]
+    end
+
+    subgraph generation [Task Generation]
+        L12["L1 Universal + L2 Domain\n(LLM-generated,\nresearcher-supervised)"]
+        L34["L3 Subfield + L4 Topic\n(LLM-generated,\nunsupervised)"]
+        L12 --> L34
+    end
+
+    subgraph validation [Validation]
+        PIO["protocols.io\n20,600 protocols"]
+        COV["Step Coverage\nCheck"]
+        NEW["Missing Tasks\nProposed by LLM"]
+    end
+
+    subgraph output [Output]
+        DB["SciNET\n~100,000+ tasks"]
+    end
+
+    OA --> L12
+    ONET --> L12
+    L34 --> DB
+    DB --> COV
+    PIO --> COV
+    COV -->|"uncovered steps"| NEW
+    NEW -->|"added to database"| DB
+```
 
 ---
 
@@ -10,8 +42,8 @@ SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive,
 2. [Taxonomy: Building on OpenAlex](#2-taxonomy-building-on-openalex)
 3. [Task Statement Design](#3-task-statement-design)
 4. [Task Generation](#4-task-generation)
-5. [Task Rating and Filtering](#5-task-rating-and-filtering)
-6. [Validation](#6-validation)
+5. [Validation Against Real-World Protocols](#5-validation-against-real-world-protocols)
+6. [Task Rating and Filtering](#6-task-rating-and-filtering)
 7. [Models and Infrastructure](#7-models-and-infrastructure)
 8. [Ongoing and Future Work](#8-ongoing-and-future-work)
 9. [Limitations](#9-limitations)
@@ -93,7 +125,7 @@ A significant challenge was controlling the level of specificity. In early itera
 
 - The [O\*NET](https://www.onetonline.org/) analyst instructions were included in the prompt nearly verbatim.
 - Explicit constraints were added: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task."
-- Coverage thresholds were built into the prompt (see [Section 4.3](#43-coverage-thresholds)), pushing the model toward tasks that a *majority* of researchers in the area perform regularly.
+- Coverage thresholds were built into the prompt (see [Section 4.5](#45-coverage-thresholds)), pushing the model toward tasks that a *majority* of researchers in the area perform regularly.
 
 ---
 
@@ -103,7 +135,7 @@ A significant challenge was controlling the level of specificity. In early itera
 
 The task generation approach evolved through two stages:
 
-**Initial approach (top-down, additive).** We started at the top of the hierarchy and worked downward. At each level, we asked the model to generate tasks that are common across all researchers in that scope, while explicitly omitting tasks that belong to more granular levels below. For example, at the field level, we asked: "What tasks do all Life Sciences researchers share?" and instructed the model to leave out subfield-specific work. Then at the subfield level, we asked for *additional* tasks distinctive to that subfield that were not already covered by the field-level list. This is the approach used in the **three-level pipeline** that produced the released data (see [Section 4.5](#45-three-level-pipeline-released-data)).
+**Initial approach (top-down, additive).** We started at the top of the hierarchy and worked downward. At each level, we asked the model to generate tasks that are common across all researchers in that scope, while explicitly omitting tasks that belong to more granular levels below. For example, at the field level, we asked: "What tasks do all Life Sciences researchers share?" and instructed the model to leave out subfield-specific work. Then at the subfield level, we asked for *additional* tasks distinctive to that subfield that were not already covered by the field-level list. This is the approach used in the **three-level pipeline** that produced the released data (see [Section 4.6](#46-three-level-pipeline-released-data)).
 
 **Refined approach (hierarchical refinement).** We then developed a more structured architecture with four levels and explicit parent linkage. Instead of asking for "additional" tasks, we ask each lower level to *refine* specific tasks from the level above. Every L3 task must map to a specific L2 parent, and every L4 task must map to a specific L3 parent. This ensures the full hierarchy is traceable — any topic-level task can be followed up through its subfield parent, domain parent, and ultimately to a universal task. Tasks that cannot be assigned to a parent are not generated; the model is not instructed to create new parents.
 
@@ -199,74 +231,13 @@ In this pipeline, child tasks are not required to map to a specific parent; they
 
 ---
 
-## 5. Task Rating and Filtering
+## 5. Validation Against Real-World Protocols
 
-Following [O\*NET](https://www.onetonline.org/) methodology, each task is rated on three scales to determine which are "core" to a research area and which are "supplemental."
+A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We validate task coverage against external protocol databases that document real research procedures step by step.
 
-### 5.1 [O\*NET](https://www.onetonline.org/) survey scales
+### 5.1 Protocols.io step coverage
 
-[O\*NET](https://www.onetonline.org/) collects three ratings for each task from incumbent workers:
-
-| Scale | Abbreviation | Range | Question |
-|-------|-------------|-------|---------|
-| Importance | IM | 1–5 | "How important is this task to your job?" |
-| Relevance (% workers) | RT | 0–100% | "What percentage of workers in this occupation perform this task?" |
-| Frequency | FT | 1–7 | "How often is this task performed?" (1=yearly or less, 7=hourly or more) |
-
-### 5.2 SciNET adaptation
-
-SciNET replicates this survey by prompting a language model to play the role of a researcher with 10+ years of experience in the target occupation and to rate all tasks for that occupation simultaneously. The batched design — rating all tasks in a single API call — provides consistency within a rating session and is approximately 6× more efficient than rating tasks individually.
-
-### 5.3 Calibrating the rating prompt
-
-A key challenge was that, out of the box, the language model's rating distributions did not match [O\*NET](https://www.onetonline.org/) distributions. In early runs, the model was too optimistic about Importance (rating most tasks 4–5) and too conservative on Relevance (underestimating the share of workers who perform a task).
-
-We calibrated the prompt iteratively:
-
-1. **Baseline.** We obtained the actual distributions of IM, RT, and FT ratings from [O\*NET](https://www.onetonline.org/) for scientific occupations.
-2. **Unguided LLM ratings.** We ran the prompt with no distribution guidance and compared the resulting distributions to [O\*NET](https://www.onetonline.org/).
-3. **Adding distribution anchors.** We added explicit distribution targets to the prompt to bring the LLM's output closer to the [O\*NET](https://www.onetonline.org/) baseline. For example:
-   - For RT: "CRITICAL: 100 should be your most common answer — use it for ~30% of tasks. Expected distribution: ~30% = 100, ~55% = 90–99, ~15% = below 90."
-   - For FT: "Expected distribution across all tasks: ~20% at 1–2 (yearly/monthly), ~45% at 3 (monthly–weekly), ~25% at 4 (weekly–daily), ~10% at 5–7 (daily+). Avoid overrating frequency."
-   - For IM: "Most tasks should be rated 3–4; only a small minority receive 5."
-4. **Validation.** We tested the calibrated prompt against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations and confirmed improved alignment (see [Section 6.1](#61-onet-calibration)).
-
-### 5.4 Core vs. Supplemental classification
-
-| Category | Criteria |
-|----------|---------|
-| **Core** | RT ≥ 50% AND IM ≥ 3.0 ("Important") |
-| **Supplemental** | Does not meet both Core thresholds |
-
-The RT threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for the systematic downward bias in LLM relevance estimates identified during calibration. The IM threshold of 3.0 matches [O\*NET](https://www.onetonline.org/) practice. Frequency (FT) is recorded but not used for filtering.
-
----
-
-## 6. Validation
-
-### 6.1 [O\*NET](https://www.onetonline.org/) calibration
-
-To assess how well LLM task ratings match human incumbent survey responses, we conducted a calibration exercise against [O\*NET](https://www.onetonline.org/) ground truth.
-
-**Sample construction:**
-
-1. All occupations in the [O\*NET](https://www.onetonline.org/) Task Ratings database with keywords indicating scientific research (e.g., "scientist," "researcher," "biologist," "economist") were selected — yielding 40 scientific occupations.
-2. Each [O\*NET](https://www.onetonline.org/) task for these occupations was classified by a language model on a 1–5 researcher-relevance scale. Tasks scoring ≥ 4 were retained, yielding 425 researcher-relevant tasks with known [O\*NET](https://www.onetonline.org/) IM, RT, and FT ground truth.
-3. The SciNET calibrated batched rating prompt was applied to the same tasks and occupations.
-
-**Results (Claude Opus 4.5, n = 425 tasks, 40 occupations):**
-
-| Scale | Pearson r | 95% CI | LLM mean | [O\*NET](https://www.onetonline.org/) mean | Bias |
-|-------|-----------|--------|----------|-------------|------|
-| Importance (IM) | 0.60 | [0.535, 0.657] | 3.68 | 3.83 | −0.15 |
-| % Workers (RT) | 0.63 | [0.566, 0.682] | 80.0 | 86.0 | −5.93 |
-| Frequency (FT) | 0.76 | [0.719, 0.799] | 3.23 | 3.29 | −0.06 |
-
-The correlations are modest-to-strong, with the weakest performance on Importance and the strongest on Frequency. The small downward bias on % Workers (−5.9 percentage points) motivated the use of a 50% rather than 67% RT threshold for Core task classification.
-
-### 6.2 Protocols.io step coverage
-
-Protocols.io is a platform where researchers publish detailed laboratory and research protocols with step-by-step procedure lists. These provide a ground-truth record of what researchers actually do in practice — independent of any LLM. We use protocol steps to evaluate whether SciNET's task database covers real-world research activities.
+[Protocols.io](https://www.protocols.io/) is a platform where researchers publish detailed laboratory and research protocols with step-by-step procedure lists. These provide a ground-truth record of what researchers actually do — independent of any LLM.
 
 **Data collection:**
 
@@ -277,9 +248,22 @@ A corpus of approximately 20,600 protocols was assembled from three sources:
 
 Crucially, protocols.io protocols carry DOIs, which allows the vast majority to be merged with [OpenAlex](https://openalex.org/). This gives us the field each protocol belongs to and — in principle — its topic. However, we found that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often poor, so we built an LLM-based assignment pipeline.
 
-**Assignment pipeline:**
+**Assignment and coverage pipeline:**
 
-For a pilot of 1,000 randomly selected protocols, each protocol was routed to the SciNET topic it best represents through a multi-phase LLM-assisted pipeline:
+For a pilot of 1,000 randomly selected protocols, each protocol was routed to the SciNET topic it best represents and then checked for step-by-step coverage:
+
+```mermaid
+flowchart LR
+    P["Protocol\n(title, abstract, steps)"] --> F["Field\nValidation"]
+    F --> SF["Subfield\nAssignment"]
+    SF --> T["Topic\nAssignment\n(confidence 1-5)"]
+    T --> SC["Step-by-Step\nCoverage Check"]
+    SC --> covered["Covered Steps\n(matched to SciNET task)"]
+    SC --> missing["Uncovered Steps"]
+    missing --> propose["LLM Proposes\nNew Tasks"]
+    propose --> dedup["Deduplicate\nvs. Existing"]
+    dedup --> DB["Added to\nSciNET"]
+```
 
 1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps. If not, it suggests the correct field. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
 2. **Subfield assignment.** Given the corrected field, the model selects the best subfield.
@@ -292,9 +276,51 @@ For a pilot of 1,000 randomly selected protocols, each protocol was routed to th
 
 Uncovered steps are not discarded. They are grouped by (field, subfield, topic), and a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them. Proposed tasks are then deduplicated against existing SciNET tasks using sequence similarity matching (threshold: 90% character overlap) before being added to the database. The pilot used 1,000 protocols; the full corpus of 20,600 provides room for continued expansion.
 
-### 6.3 Bio-protocol scraping
+### 5.2 Bio-protocol
 
 A second external validation source is [Bio-Protocol](https://bio-protocol.org/), a peer-reviewed journal that publishes detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was scraped. Each protocol includes title, abstract, procedure steps with durations, materials list, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io.
+
+---
+
+## 6. Task Rating and Filtering
+
+In addition to generating tasks, SciNET rates each task following [O\*NET](https://www.onetonline.org/) methodology to distinguish "core" tasks (performed by most researchers in an area) from "supplemental" ones.
+
+### 6.1 Rating scales
+
+[O\*NET](https://www.onetonline.org/) collects three ratings for each task from incumbent workers:
+
+| Scale | Abbreviation | Range | Question |
+|-------|-------------|-------|---------|
+| Importance | IM | 1–5 | "How important is this task to your job?" |
+| Relevance (% workers) | RT | 0–100% | "What percentage of workers in this occupation perform this task?" |
+| Frequency | FT | 1–7 | "How often is this task performed?" (1=yearly or less, 7=hourly or more) |
+
+SciNET replicates this survey by prompting a language model to play the role of a researcher with 10+ years of experience in the target occupation and to rate all tasks for that occupation simultaneously. The batched design — rating all tasks in a single API call — provides consistency within a rating session.
+
+### 6.2 Calibrating the rating prompt
+
+Out of the box, the model's rating distributions did not match [O\*NET](https://www.onetonline.org/) — it was too optimistic about Importance (rating most tasks 4–5) and too conservative on Relevance. We calibrated the prompt iteratively:
+
+1. **Baseline.** We obtained the actual distributions of IM, RT, and FT ratings from [O\*NET](https://www.onetonline.org/) for scientific occupations.
+2. **Unguided LLM ratings.** We ran the prompt with no distribution guidance and compared the resulting distributions to [O\*NET](https://www.onetonline.org/).
+3. **Adding distribution anchors.** We added explicit distribution targets to bring the LLM closer to the [O\*NET](https://www.onetonline.org/) baseline (e.g., for RT: "100 should be your most common answer — use it for ~30% of tasks"; for IM: "Most tasks should be rated 3–4; only a small minority receive 5").
+4. **Validation.** We tested the calibrated prompt against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations:
+
+| Scale | Pearson r | 95% CI | LLM mean | [O\*NET](https://www.onetonline.org/) mean | Bias |
+|-------|-----------|--------|----------|-------------|------|
+| Importance (IM) | 0.60 | [0.535, 0.657] | 3.68 | 3.83 | −0.15 |
+| % Workers (RT) | 0.63 | [0.566, 0.682] | 80.0 | 86.0 | −5.93 |
+| Frequency (FT) | 0.76 | [0.719, 0.799] | 3.23 | 3.29 | −0.06 |
+
+### 6.3 Core vs. Supplemental classification
+
+| Category | Criteria |
+|----------|---------|
+| **Core** | RT ≥ 50% AND IM ≥ 3.0 ("Important") |
+| **Supplemental** | Does not meet both Core thresholds |
+
+The RT threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for the systematic downward bias in LLM relevance estimates identified during calibration. The IM threshold of 3.0 matches [O\*NET](https://www.onetonline.org/) practice. Frequency (FT) is recorded but not used for filtering.
 
 ---
 
@@ -305,8 +331,8 @@ A second external validation source is [Bio-Protocol](https://bio-protocol.org/)
 | Task generation (3-level) | Claude Sonnet 4.5 | Field, subfield, and topic tasks |
 | Task generation (4-level) | Claude Opus 4.5 | L3/L4 tasks |
 | L1/L2 task development | Claude Opus 4.5 | Iterative, researcher-supervised |
-| [O\*NET](https://www.onetonline.org/) calibration | Claude Opus 4.5 | Gold-standard comparison |
 | Protocols.io validation | Claude Sonnet 4.5 | Multi-phase routing and coverage |
+| Rating calibration | Claude Opus 4.5 | [O\*NET](https://www.onetonline.org/) gold-standard comparison |
 | Field/subfield classification | Claude Sonnet 4.5 | Taxonomy mapping |
 
 All models are accessed via the Anthropic API. Topic-level task generation uses the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which provides a 50% cost reduction and higher throughput. Prompt caching (ephemeral) is used for system prompts and shared context blocks. All long-running pipeline steps checkpoint results incrementally so that interrupted runs can resume without reprocessing completed items.
@@ -328,8 +354,6 @@ The current release covers task generation and initial validation. Several addit
 ## 9. Limitations
 
 **LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNET's specific topics.
-
-**Coverage threshold reliability.** The RT scale exhibits the largest calibration gap (r = 0.63, bias −5.9 pp). The 50% Core threshold was chosen to approximately match [O\*NET](https://www.onetonline.org/)'s effective pass rate, but this adjustment is approximate. Tasks near the threshold boundary should be interpreted with caution.
 
 **English-language bias.** Task statements are generated in English using English-language topic labels and keywords. Research practices may differ across linguistic or cultural contexts not well-represented in either [O\*NET](https://www.onetonline.org/) or the underlying LLMs' training data.
 
