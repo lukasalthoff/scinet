@@ -102,16 +102,16 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 
 ### Measuring Simplification: A Toolkit
 
-**Approach 1 — Career Stage Threshold**
+**Career Stage Threshold**
 
 19. Using the tools researchers currently have access to (including AI), what is the minimum career stage to perform each task to a publishable standard? (Grid across 7 task types × 7 career stages)
 20. If AI and LLM tools were not available, what would be the minimum career stage to perform each task to the same publishable standard?
 
-**Approach 2 — Years of Training**
+**Years of Training**
 
 21. Estimate years of specialized training required for each of 5 tasks: current (with AI) vs. if AI unavailable. (Paired sliders, 0–15 years)
 
-**Approach 3 — Task Delegation & Substitution**
+**Task Delegation & Substitution**
 
 22. Could you now delegate a literature review to a less experienced researcher who has AI tools, and expect similar quality output?
 23. Could you now delegate a statistical analysis to a less experienced researcher with AI?
@@ -120,25 +120,25 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 26. Without AI tools, what is the least experienced person who could produce a publishable-quality literature review in your subfield?
 27. With AI tools, what is the least experienced person who could produce a publishable-quality literature review?
 
-**Approach 4 — Skill Decomposition**
+**Skill Decomposition**
 
 28. For each of 7 skill dimensions (domain knowledge, technical skill, judgment & taste, writing & communication, creativity, persistence & effort, social & collaborative skill), how much did AI tools reduce the effort you personally needed to invest on your most recent paper?
 
-**Approach 5 — Probability of Matching**
+**Probability of Matching**
 
 29. If a 2nd-year PhD (with AI) and a senior professor (without AI) each wrote a literature review, what is the probability a blind evaluator could not tell which was which?
 30. Same question for a statistical/empirical analysis.
 31. Same question for writing a first draft of a paper.
 32. Same question for designing a study/experiment.
 
-**Approach 6 — Revealed Preference**
+**Revealed Preference**
 
 33. In the past 12 months, which tasks have you assigned to a less experienced researcher than you would have chosen before AI tools were available?
 34. Compared to 3 years ago, how have the technical skill requirements for a research assistant position in your lab changed?
 35. Compared to 3 years ago, has the minimum education level you look for when hiring research assistants changed?
 36. Have the types of skills you look for in a research assistant changed (e.g., prompt engineering, AI output verification)?
 
-**Approach 7 — Anchored Vignettes**
+**Anchored Vignettes**
 
 *Vignette: analyze a 500,000-observation panel dataset, run fixed-effects regressions with clustered standard errors, conduct a battery of robustness checks, and produce publication-ready tables and figures.*
 
@@ -146,44 +146,44 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 38. In 2025 (with current AI tools), what is the minimum career stage?
 39. Think of the most complex analysis you have done in the past year. If you had had current AI tools earlier, could you have done equivalent work at an earlier career stage?
 
-**Approach 8 — The Decomposition Matrix**
+**The Decomposition Matrix**
 
 40. For a systematic literature review, estimate hours to complete for: senior researcher without AI / senior with AI / junior researcher (2nd-yr PhD) without AI / junior with AI.
 41. For the same literature review, rate expected quality of output (1–10 scale) for the same four conditions.
 
 ### Measuring Augmentation: A Toolkit
 
-**Approach 1 — Absolute Time Estimates**
+**Absolute Time Estimates**
 
 42. Literature review (survey 5 years, identify 30 papers, write 3-page summary): hours without AI / hours with AI
 43. Empirical analysis (clean 50K-observation dataset, run main specifications, produce tables/figures): hours without AI / hours with AI
 44. Writing research code (~500 lines, simulation or data pipeline from scratch): hours without AI / hours with AI
 45. First draft of a paper (~8,000 words, full paper): hours without AI / hours with AI
 
-**Approach 2 — Percentage Time Savings**
+**Percentage Time Savings**
 
 46. What percentage of time does AI currently save you for each research activity? (Across all 7 categories)
 
-**Approach 3 — Speed Decomposition**
+**Speed Decomposition**
 
 47. For writing a research paper, what % of time does AI save in each phase? (Outlining, Literature search, First draft, Revision, Formatting, Figures)
 48. For a data analysis project, what % of time does AI save in each phase? (Cleaning, Exploration, Main estimation, Robustness checks, Output production, Debugging)
 
-**Approach 4 — Output Volume Changes**
+**Output Volume Changes**
 
 49. How many papers/manuscripts did you produce per year before using AI tools (e.g., in 2022)?
 50. How many papers/manuscripts are you producing per year now (2025–2026)?
 51. Of any increase in your output, what percentage would you attribute specifically to AI tools (vs. career progression, collaborators, etc.)?
 52. How many more peer reviews can you complete per year thanks to AI assistance?
 
-**Approach 5 — Quality vs. Speed Tradeoff**
+**Quality vs. Speed Tradeoff**
 
 53. When AI saves you time on a research task, how do you typically use the savings? (More work / Better work / Mix / Non-research / No savings yet)
 54. Since you began using AI tools, how has the quality of your research output changed? (7-point scale)
 55. Has AI enabled you to attempt more ambitious research projects than you otherwise would have?
 56. Has AI changed the number of iterations/drafts you go through before finalizing work?
 
-**Approach 6 — Routine vs. Novel Tasks**
+**Routine vs. Novel Tasks**
 
 57. For a routine literature review (familiar topic), what % of time does AI save?
 58. For a novel literature review (unfamiliar topic, scattered across fields), what % of time does AI save?
@@ -191,7 +191,7 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 60. For novel coding (new algorithm, unusual data structure), what % of time does AI save?
 61. In general, does AI save you more time on routine or novel tasks?
 
-**Approach 8 — The Decomposition Matrix**
+**The Decomposition Matrix**
 
 62. For a moderately complex empirical analysis (clean dataset, run specs, produce tables/figures), estimate total hours for: senior researcher without AI / senior with AI / junior researcher (2nd-yr PhD) without AI / junior with AI.
 63. In general, does AI save a larger percentage of time for junior or senior researchers in your field?
