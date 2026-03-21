@@ -119,13 +119,9 @@ All SciNET tasks follow the [O\*NET](https://www.onetonline.org/) canonical task
 
 Tasks are written at the level of a *research team*, not a single individual. Statements describe what a typical researcher in the field *does*, not what they might occasionally do.
 
-### 3.1 Prompt engineering iterations
+### 3.1 Prompt design
 
-A significant challenge was controlling the level of specificity. In early iterations, the language model produced tasks that were far too detailed — naming specific datasets, niche methodologies, or narrow techniques that only a small fraction of researchers would use. We addressed this through several rounds of prompt refinement:
-
-- The [O\*NET](https://www.onetonline.org/) analyst instructions were included in the prompt nearly verbatim.
-- Explicit constraints were added: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task."
-- Coverage thresholds were built into the prompt (see [Section 4.5](#45-coverage-thresholds) below), pushing the model toward tasks that a *majority* of researchers in the area perform regularly.
+Controlling specificity is the central design challenge. The prompt includes the [O\*NET](https://www.onetonline.org/) analyst instructions nearly verbatim, together with explicit constraints against over-specificity: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task." Coverage thresholds (see [Section 4.4](#44-coverage-thresholds) below) push the model toward tasks that a *majority* of researchers in the area perform regularly, reinforcing the same principle.
 
 ---
 
@@ -133,7 +129,7 @@ A significant challenge was controlling the level of specificity. In early itera
 
 SciNET uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
 
-### 4.2 Level structure
+### 4.1 Level structure
 
 | Level | Scope | Source | Coverage threshold |
 |-------|-------|--------|--------------------|
@@ -142,7 +138,7 @@ SciNET uses a **top-down hierarchical generation** approach. Starting at the mos
 | Subfield | e.g., Economics | LLM-generated (unsupervised) | ≥ 70% of subfield researchers |
 | Topic | e.g., Labor Market and Education | LLM-generated (unsupervised) | ≥ 80% of topic researchers |
 
-### 4.3 Supervised levels (Universal and Domain)
+### 4.2 Supervised levels (Universal and Domain)
 
 The universal and domain levels anchor the entire hierarchy and needed to be correct. Rather than writing these tasks from scratch, we developed them through an iterative process with Claude Opus: the model drafted candidate tasks, a researcher reviewed them, flagged issues, and the model revised — repeating until the tasks reflected the right level of granularity and mutual exclusivity. The result is LLM-generated content that has been carefully vetted.
 
@@ -156,7 +152,7 @@ The universal level ensures that tasks like grant writing, peer review, and ment
 
 Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. Four research domains are covered: Social Sciences, Life Sciences, Physical Sciences, and Health Sciences. Domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences. These were developed in the same supervised iterative process described above.
 
-### 4.4 Unsupervised levels (Subfield and Topic)
+### 4.3 Unsupervised levels (Subfield and Topic)
 
 From the subfield level downward, task generation is fully automated. The language model receives the parent-level tasks as numbered input and must produce refinements that each map to a specific parent:
 
@@ -182,13 +178,13 @@ From the subfield level downward, task generation is fully automated. The langua
 
 Each generated task includes an explicit parent ID linking it to the domain task (for subfield tasks) or subfield task (for topic tasks) it refines, enabling full parent-chain tracing from any topic-level task up to the relevant universal task.
 
-### 4.5 Coverage thresholds
+### 4.4 Coverage thresholds
 
 The coverage thresholds (70% at the subfield level, 80% at the topic level) serve a dual purpose. They push the model toward tasks that represent common, substantial research activities — analogous to [O\*NET](https://www.onetonline.org/)'s concept of "relevance" — and they push against overly specific tasks (e.g., a particular niche dataset or one-off technique) that would inflate the task count without adding representational value. The tighter threshold at the topic level reflects that topic tasks should be highly characteristic of the specific research area.
 
 **Execution:** Subfield tasks are generated in parallel using a thread pool. Topic tasks are generated via the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which processes hundreds of topics concurrently.
 
-### 4.6 Deduplication and quality control
+### 4.5 Deduplication and quality control
 
 - **Prompt-level:** The model is instructed to ensure mutual exclusivity across tasks and to avoid vague catch-all statements ("analyze data," "collect data"). Parent tasks are provided in the prompt explicitly so the model can avoid paraphrasing them.
 - **Code-level:** After parsing model responses, a normalization function deduplicates tasks by exact string match after whitespace normalization.
@@ -206,14 +202,14 @@ Detailed step-by-step research protocols are our most granular ground-truth sour
 
 **[Protocols.io](https://www.protocols.io/)** is a platform where researchers publish laboratory and research protocols, covering a wide range of disciplines. We assembled a corpus of approximately 20,600 protocols from three sources: public protocols via the protocols.io API, unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/), and additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504). Because protocols.io protocols carry DOIs, the vast majority can be merged with [OpenAlex](https://openalex.org/), giving us the field and — in principle — the topic each protocol belongs to. We found, however, that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often inaccurate, so we built an LLM-based assignment pipeline to route each protocol to the correct SciNET field, subfield, and topic.
 
-For a pilot of 1,000 randomly selected protocols, each protocol was routed and then checked step by step for coverage against existing SciNET tasks:
+Each protocol is routed to the SciNET topic it best represents and then checked step by step for coverage against existing tasks:
 
 1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps, and corrects it if not. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
 2. **Subfield assignment.** Given the corrected field, the model selects the best subfield.
 3. **Topic assignment.** The model selects the best-matching SciNET topic from candidates within the subfield, providing a confidence score (1–5). Only protocols with confidence ≥ 4 are used in downstream analysis.
 4. **Step coverage.** For each procedure step, the model determines whether it is covered by any existing SciNET task at the topic, subfield, or field level. Steps are classified as *placeholder* (instructions to follow a prior protocol, excluded), *prep* (routine preparatory actions), or *substantive* (steps corresponding to meaningful research tasks). Coverage is the fraction of non-placeholder steps matched to a SciNET task.
 
-With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNET tasks (sequence similarity threshold: 90%) before being added. The pilot used 1,000 protocols; the full corpus of 20,600 provides room for continued expansion.
+With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNET tasks (sequence similarity threshold: 90%) before being added to the database.
 
 **[Bio-Protocol](https://bio-protocol.org/)** is a peer-reviewed journal publishing detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was collected, each including procedure steps with durations, materials lists, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io. We also collect video protocol transcripts, where researchers narrate their procedures in spoken walkthroughs, and process them through the same coverage pipeline.
 
@@ -249,7 +245,7 @@ Following [O\*NET](https://www.onetonline.org/) methodology, each task is rated 
 
 We replicate the [O\*NET](https://www.onetonline.org/) incumbent worker survey by prompting a language model to adopt the perspective of a researcher with 10+ years of experience in the target area and to rate all tasks simultaneously in a single API call. This batched approach provides consistency within a rating session.
 
-Out of the box, the model's distributions did not match [O\*NET](https://www.onetonline.org/) — it was too optimistic about Importance and too conservative on Relevance. We calibrated the prompt iteratively by comparing unguided LLM distributions to [O\*NET](https://www.onetonline.org/) ground truth for scientific occupations, then adding explicit distribution anchors (e.g., for Relevance: "100 should be your most common answer — use it for ~30% of tasks"; for Importance: "Most tasks should be rated 3–4; only a small minority receive 5"). The calibrated prompt was validated against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations, yielding Pearson correlations of r = 0.60 (Importance), r = 0.63 (Relevance), and r = 0.76 (Frequency).
+The prompt includes explicit distribution anchors calibrated against [O\*NET](https://www.onetonline.org/) ground truth for scientific occupations — for example, for Relevance: "100 should be your most common answer — use it for ~30% of tasks"; for Importance: "Most tasks should be rated 3–4; only a small minority receive 5." These anchors correct for a systematic tendency in LLMs to underestimate the share of researchers who perform common tasks and to overrate task importance. The calibrated prompt was validated against 425 researcher-relevant [O\*NET](https://www.onetonline.org/) tasks across 40 scientific occupations, yielding Pearson correlations of r = 0.60 (Importance), r = 0.63 (Relevance), and r = 0.76 (Frequency).
 
 Based on these ratings, tasks are classified as **Core** (Relevance ≥ 50% and Importance ≥ 3.0) or **Supplemental**. The Relevance threshold of 50% is set below [O\*NET](https://www.onetonline.org/)'s conventional 67% to account for the systematic downward bias identified during calibration.
 
