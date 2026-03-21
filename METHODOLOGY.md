@@ -2,7 +2,7 @@
 
 SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes how the database was built — from taxonomy construction through task generation, external validation, and quality filtering.
 
-![SciNET data creation pipeline](https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg)
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNET data creation pipeline" width="680"/></p>
 
 ---
 
