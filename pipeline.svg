@@ -20,15 +20,10 @@
 <text x="575" y="50" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Prompt engineering</text>
 <text x="575" y="68" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">Coverage thresholds</text>
 
-<!-- ── Arrow: OpenAlex straight down to task generation ── -->
-<line x1="130" y1="86" x2="130" y2="146" stroke="#666663" stroke-width="1.5"/>
-<line x1="130" y1="146" x2="198" y2="146" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
-
-<!-- ── Arrows: O*NET and Prompt Engineering merge into one ── -->
-<line x1="375" y1="86" x2="375" y2="106" stroke="#666663" stroke-width="1.5"/>
-<line x1="575" y1="86" x2="575" y2="106" stroke="#666663" stroke-width="1.5"/>
-<line x1="375" y1="106" x2="575" y2="106" stroke="#666663" stroke-width="1.5"/>
-<line x1="475" y1="106" x2="475" y2="122" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- ── Arrows: three separate arrows into task generation ── -->
+<line x1="130" y1="86" x2="270" y2="130" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="375" y1="86" x2="345" y2="122" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="575" y1="86" x2="415" y2="130" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
 <!-- ── LLM task generation (light gray) ── -->
 <rect x="200" y="122" width="280" height="48" rx="8" fill="#F5F5F2" stroke="#BBBBBB" stroke-width="1"/>
