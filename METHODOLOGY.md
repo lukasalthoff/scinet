@@ -244,7 +244,7 @@ The model is instructed to return a single number between 0 and 100. No explanat
 
 **Scale interpretation:** A score of 35 means the model estimates that 35% of the time typically spent on this task could be saved with AI assistance. A score of 0 means no time savings; 100 means the task could be completed in near-zero time.
 
-This measure is adapted from the augmentation framework developed in Althoff & Reichardt (2025).
+This measure is adapted from the augmentation framework developed in Althoff & Reichardt (2026).
 
 ### 6.2 Automation tier (T0–T4)
 
@@ -355,7 +355,7 @@ All models are accessed via the Anthropic API. Topic-level task generation and A
 
 ## References
 
-- Althoff, L., & Reichardt, C. (2025). *Generative AI and Labor Market Impacts.*
+- Althoff, L., & Reichardt, H. (2026). *Task-Specific Technical Change and Comparative Advantage.* Working paper, March 15, 2026.
 - Arts, S., Cassiman, B., & Gomez, J. C. (2025). *Beyond Citations: Measuring Novel Scientific Ideas.*
 - Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2023). GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models. *Science*, 384(6702), 1306–1312.
 - Liang, W., et al. (2024). Mapping the Increasing Use of LLMs in Scientific Papers. *arXiv:2404.01268.*
