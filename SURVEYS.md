@@ -1,16 +1,14 @@
 # Survey Questions
 
-A complete list of questions asked across all SciNet Survey Lab modules, organized by type.
+A complete list of questions asked across all SciNet survey modules, organized by type.
 
 ---
 
-## Forecasting / Prediction Questions
-
-### AI Impact on Your Research
-1. Which activities do you expect AI could fully automate BY 2030?
-
-### Verifiable Predictions
+## Forecasting Questions
 *(All targets are 2030 unless noted otherwise)*
+
+**AI Impact on Your Research**
+1. Which activities do you expect AI could fully automate BY 2030?
 
 **Simplification: Entry Barriers**
 
@@ -52,7 +50,7 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 19. How much smaller (in percentage points) will the performance gap between junior and senior researchers be on that same benchmark task bank when both can use AI, compared to when neither can?
 20. What share of benchmark tasks in your field will be rated journal-standard (passable) when completed by a junior researcher using AI?
 
-### Predict the Median
+**Predict the Median**
 *(Each question asks for your own answer AND your prediction of the median response among all respondents in your field)*
 
 21. YOUR ANSWER: What percentage of your total research time does AI currently save you?
@@ -64,19 +62,19 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 27. YOUR ANSWER: By 2030, how many years of post-PhD training will be needed before a researcher can independently publish in your subfield?
 28. PREDICT THE MEDIAN: What will the median response be?
 
-### Measuring Simplification: A Toolkit
+**Measuring Simplification: A Toolkit**
 29. By 2030 (your prediction), what will be the minimum career stage required to independently complete a complex empirical analysis (fixed-effects regressions, robustness checks, publication-ready tables and figures)?
 
-### Measuring Augmentation: A Toolkit
+**Measuring Augmentation: A Toolkit**
 30. By end of 2027, what percentage of total research time in your field will AI save for a typical researcher?
 31. By end of 2030, what percentage of total research time in your field will AI save for a typical researcher?
 32. What is the maximum percentage of research time that AI could ever save in your field, even with arbitrarily advanced AI?
 
 ---
 
-## Non-Forecasting / Non-Prediction Questions
+## Non-Forecasting Questions
 
-### Your Research Profile
+**Your Research Profile**
 1. What is your primary research field?
 2. What is your subfield or specialization?
 3. What is your career stage?
@@ -84,14 +82,14 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 5. What percentage of your research time do you spend on each activity? (Ideation, Data Gathering, Analysis, Writing, Peer Review, Mentorship, Administration — must sum to 100%)
 6. Which activity, if halved in time, would most accelerate your research output?
 
-### AI Impact on Your Research
+**AI Impact on Your Research**
 7. For an experienced researcher in your subfield (10+ years), what percentage of time savings does AI currently provide for each activity?
 8. For a junior researcher (less than 3 years post-PhD), what percentage of time savings does AI currently provide for each activity?
 9. Has AI reduced the skill level required to produce publishable-quality work in each activity? (Grid: Not at all → Dramatically)
 10. Which activities could current AI perform entirely without human oversight, at acceptable quality in your subfield?
 11. Overall, how would you characterize the current impact of AI on research productivity in your subfield? (7-point scale: No impact → Transformative)
 
-### AI Tools & Adoption
+**AI Tools & Adoption**
 12. Which AI tools do you regularly use for research?
 13. How often do you use AI tools in your research?
 14. How much do you spend per month on AI tools for research?
@@ -99,8 +97,6 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 16. Has AI changed your primary research methodology?
 17. Has AI affected your demand for research assistants?
 18. What is the biggest barrier to your adoption of AI tools for research?
-
-### Measuring Simplification: A Toolkit
 
 **Career Stage Threshold**
 
@@ -150,8 +146,6 @@ A complete list of questions asked across all SciNet Survey Lab modules, organiz
 
 40. For a systematic literature review, estimate hours to complete for: senior researcher without AI / senior with AI / junior researcher (2nd-yr PhD) without AI / junior with AI.
 41. For the same literature review, rate expected quality of output (1–10 scale) for the same four conditions.
-
-### Measuring Augmentation: A Toolkit
 
 **Absolute Time Estimates**
 
