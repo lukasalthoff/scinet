@@ -2,7 +2,7 @@
 
 Public replication data for **SciNet**: an O\*NET-style task database for scientific research across OpenAlex topics, fields, and subfields.
 
-**Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
+**Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
 ## Overview
 
