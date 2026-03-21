@@ -134,7 +134,7 @@ SciNET uses a **top-down hierarchical generation** approach. Starting at the mos
 | Level | Scope | Source | Coverage threshold |
 |-------|-------|--------|--------------------|
 | Universal | All researchers | LLM-generated, researcher-supervised | — |
-| Domain | e.g., Life Sciences | LLM-generated, researcher-supervised | — |
+| Domain | e.g., Social Sciences | LLM-generated, researcher-supervised | — |
 | Subfield | e.g., Economics | LLM-generated (unsupervised) | ≥ 70% of subfield researchers |
 | Topic | e.g., Labor Market and Education | LLM-generated (unsupervised) | ≥ 80% of topic researchers |
 
