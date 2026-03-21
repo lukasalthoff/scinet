@@ -72,13 +72,60 @@ def save(fig, name):
     print(f"  saved: figures/{name}")
 
 
+# Mapping from SciNet display field → research domain
+FIELD_TO_DOMAIN = {
+    "Agricultural Sciences":      "Life Sciences",
+    "Biology":                    "Life Sciences",
+    "Biomedical Sciences":        "Life Sciences",
+    "Environmental Science":      "Life Sciences",
+    "Anthropology":               "Social Sciences",
+    "Arts":                       "Social Sciences",
+    "Business & Management":      "Social Sciences",
+    "Communication & Media Studies": "Social Sciences",
+    "Economics":                  "Social Sciences",
+    "Education":                  "Social Sciences",
+    "Geography":                  "Social Sciences",
+    "History":                    "Social Sciences",
+    "Languages & Linguistics":    "Social Sciences",
+    "Law":                        "Social Sciences",
+    "Literature":                 "Social Sciences",
+    "Philosophy":                 "Social Sciences",
+    "Political Science":          "Social Sciences",
+    "Psychology":                 "Social Sciences",
+    "Religion":                   "Social Sciences",
+    "Sociology":                  "Social Sciences",
+    "Chemistry":                  "Physical Sciences",
+    "Computer Science":           "Physical Sciences",
+    "Earth & Planetary Sciences": "Physical Sciences",
+    "Engineering":                "Physical Sciences",
+    "Materials Science":          "Physical Sciences",
+    "Mathematics":                "Physical Sciences",
+    "Physics & Astronomy":        "Physical Sciences",
+    "Statistics":                 "Physical Sciences",
+    "Medicine & Clinical Sciences": "Health Sciences",
+    "Neuroscience":               "Health Sciences",
+}
+
 # ══════════════════════════════════════════════════════════════════════════════
 # 1. Tasks by domain
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_tasks_by_domain():
     df = pd.read_csv(PUB / "tasks.csv")
-    counts = (df[df["domain"].notna() & (df["domain"] != "")]
-                .groupby("domain")
+
+    # Derive domain for every task:
+    #   - domain-level tasks already have `domain` filled
+    #   - subfield-level tasks have `field` filled; derive domain via lookup
+    #   - universal tasks are excluded (they belong to all domains)
+    def get_domain(row):
+        if pd.notna(row["domain"]) and row["domain"] != "":
+            return row["domain"]
+        if pd.notna(row["field"]) and row["field"] != "":
+            return FIELD_TO_DOMAIN.get(row["field"])
+        return None
+
+    df["domain_resolved"] = df.apply(get_domain, axis=1)
+    counts = (df[df["domain_resolved"].notna()]
+                .groupby("domain_resolved")
                 .size()
                 .sort_values())
 
