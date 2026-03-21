@@ -12,42 +12,34 @@ The files in [`data/`](data/) are released for replication and downstream resear
 
 ## Data files
 
-All files are UTF-8. CSVs use comma separators.
+All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/README.md) for a standalone description.
 
 | File | Description |
 |------|-------------|
-| [`data/openalex_topics.csv`](data/openalex_topics.csv) | Topic metadata and hierarchy (topic → subfield → field → domain), keywords, summaries, Wikipedia links |
-| [`data/generated_tasks.csv`](data/generated_tasks.csv) | Generated task statements with stable `task_id` and hierarchy labels |
-| [`data/catalog.json`](data/catalog.json) | Aggregated catalog: version, counts, field/subfield/topic structure, and summary statistics used in the SciNET explorer |
+| [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, and subfield levels) with category labels |
+| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNET display field and subfield |
 
 ### Data dictionary
 
-**`openalex_topics.csv`**
+**`tasks.csv`**
+
+| Column | Description |
+|--------|-------------|
+| `task` | Task statement text |
+| `category` | Task category (e.g. "Ideation & Hypothesis Generation", "Data Gathering") |
+| `level` | One of `universal`, `domain`, or `subfield` |
+| `domain` | Domain name, e.g. "Social Sciences" (empty for universal tasks) |
+| `field` | Display field name, e.g. "Economics" (empty for universal/domain tasks) |
+| `subfield` | Display subfield name, e.g. "Labor Economics" (empty for universal/domain tasks) |
+
+**`openalex_topic_subfield_mapping.csv`**
 
 | Column | Description |
 |--------|-------------|
 | `topic_id` | OpenAlex topic identifier |
-| `old_topic_label`, `new_topic_label` | Topic labels (label refresh may differ) |
-| `subfield_id`, `subfield_name` | OpenAlex subfield |
-| `field_id`, `field_name` | OpenAlex field |
-| `domain_id`, `domain_name` | OpenAlex domain |
-| `keywords` | Semicolon-separated keywords |
-| `summary` | Short topical summary |
-| `wikipedia_url` | Related Wikipedia article when available |
-
-**`generated_tasks.csv`**
-
-| Column | Description |
-|--------|-------------|
-| `task_id` | Stable identifier (`task_######`) |
-| `level` | One of `field`, `subfield`, `topic` |
-| `field`, `subfield`, `topic` | Hierarchy labels (blank where not applicable) |
-| `task` | Task statement text |
-| `source_path` | Provenance path in the generation pipeline |
-
-**`catalog.json`**
-
-JSON document with keys such as `version`, aggregate counts (fields, subfields, topics, tasks), and nested structures for browsing (aligned with the public SciNET explorer). Schema may evolve across releases; inspect the file for the current shape.
+| `topic_name` | Topic display name |
+| `field` | SciNET display field |
+| `subfield` | SciNET display subfield |
 
 ## Methodology
 
@@ -82,6 +74,7 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 
 ### 2026-03-20
 
-- Removed `task_augmentation.csv` and `task_automation.csv` — AI exposure scores are not yet published.
+- Replaced `generated_tasks.csv`, `openalex_topics.csv`, and `catalog.json` with two simpler files:
+  - `tasks.csv`: flat task file with category, level, domain, field, and subfield columns.
+  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNET display fields and subfields.
 - Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.
-- Initial public release: topic table, generated tasks, and `catalog.json`.

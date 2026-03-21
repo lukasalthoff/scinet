@@ -4,8 +4,6 @@ SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive,
 
 ![SciNET data creation pipeline](pipeline.svg)
 
-*[View full-size interactive diagram](http://lukasalthoff.com/scinet/pipeline.html)*
-
 ---
 
 ## Table of Contents
