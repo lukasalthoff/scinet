@@ -414,18 +414,27 @@ def fig_claude_vs_science_scatter():
     sizes = (np.log10(df["paper_count"]) - 2) ** 2 * 30
     sizes = sizes.clip(lower=10)
 
-    # Label only the 20 largest paper producers
-    label_countries = df.nlargest(20, "paper_count")
+    # Label prominent countries
+    label_mask = (df["paper_count"] >= 50000) | \
+                 (df["claude_index"] >= 5) | \
+                 (df["papers_per_capita"] >= 5)
+    label_countries = df[label_mask]
+
+    from adjustText import adjust_text
 
     fig, ax = plt.subplots(figsize=(9, 6.5))
     ax.scatter(df["claude_index"], df["papers_per_capita"],
                s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
 
+    texts = []
     for _, row in label_countries.iterrows():
-        ax.annotate(row["country_name"],
-                    xy=(row["claude_index"], row["papers_per_capita"]),
-                    xytext=(4, 2), textcoords="offset points",
-                    fontsize=7.5, color=GRAY1, va="bottom")
+        texts.append(ax.text(row["claude_index"], row["papers_per_capita"],
+                             row["country_name"], fontsize=7.5, color=GRAY1))
+
+    adjust_text(texts, ax=ax,
+                arrowprops=dict(arrowstyle="-", color=GRAY2, lw=0.6),
+                expand=(1.3, 1.5), force_text=(0.4, 0.6),
+                only_move={"text": "xy", "points": "y"})
 
     # Trend line
     mask = df["claude_index"].between(0.01, 20)
