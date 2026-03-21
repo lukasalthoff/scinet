@@ -58,17 +58,3 @@ SciNet computes a verifiability index for each subfield based on three component
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/ai_adoption_country.png" alt="AI adoption by country" width="680"/></p>
 
----
-
-## Updating the figures
-
-All figures are generated from source data using [`generate_figures.py`](generate_figures.py). To regenerate after a data update:
-
-```bash
-cd public
-python3 generate_figures.py
-```
-
-The script reads from:
-- `data/` — public data files in this repository
-- `../data/` — private data files (verifiability, OpenAlex statistics) not included in this release
