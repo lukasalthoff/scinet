@@ -1,15 +1,19 @@
-# SciNET Methodology
+# SciNet Methodology
 
-SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive, hierarchically organized database of research task statements covering approximately 4,500 research topics from [OpenAlex](https://openalex.org/). This document describes how the database was built — from taxonomy construction through task generation, external validation, and quality filtering.
+SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The database covers over 100,000 research tasks spanning 30 fields, 300+ subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
 
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNET data creation pipeline" width="680"/></p>
+SciNet uses AI and information from thousands of laboratory protocols, published paper texts, and scientific expert input to map the anatomy of scientific work. These sources together capture both the tacit, hands-on dimensions of research and its more codified methodological conventions.
+
+This document describes how SciNet was built.
+
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
 
 ---
 
 ## Table of Contents
 
 1. [Background and Motivation](#1-background-and-motivation)
-2. [Taxonomy: Building on OpenAlex](#2-taxonomy-building-on-openalex)
+2. [Taxonomy](#2-taxonomy)
 3. [Task Statement Design](#3-task-statement-design)
 4. [Task Generation](#4-task-generation)
 5. [Ground Truth Data](#5-ground-truth-data)
@@ -22,19 +26,21 @@ SciNET is an [O\*NET](https://www.onetonline.org/) for science: a comprehensive,
 
 ## 1. Background and Motivation
 
-**[O\*NET](https://www.onetonline.org/)** (the Occupational Information Network) is the U.S. government's primary database of occupational characteristics. For hundreds of occupations, [O\*NET](https://www.onetonline.org/) records detailed task statements — collected through surveys of incumbent workers — and rates each task on three scales: how important it is, what fraction of workers perform it, and how frequently it is performed.
+AI is transforming scientific research at a pace that outstrips our ability to measure it. To understand which researchers and fields will benefit most — and where new bottlenecks and inequalities may emerge — we need to go beyond asking whether AI affects science and ask *how* it affects specific tasks within specific domains.
 
-Scientific research is largely absent from [O\*NET](https://www.onetonline.org/) at useful resolution. [O\*NET](https://www.onetonline.org/) has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics — Gene Editing, Monetary Policy, Quantum Computing — where research work actually differs. SciNET fills this gap by applying the [O\*NET](https://www.onetonline.org/) methodology at the level of [OpenAlex](https://openalex.org/) research topics.
+A cardiologist and a cosmologist may both be "scientists," but they spend their days on fundamentally different activities. AI tools that dramatically accelerate data analysis in genomics may have no analog in theoretical mathematics. Policy interventions, training programs, and research investments that treat science as a monolith will miss this heterogeneity entirely.
 
-The primary output is **~100,000+ task statements** organized across ~4,500 topics, ~250 subfields, and 26 fields.
+SciNet enables rigorous, task-level analysis of scientific work. By mapping the granular activity structure of science, it allows researchers, funders, and policymakers to identify which tasks are being augmented or automated, where productivity gains are concentrating, and what the implications are for research careers, scientific specialization, and the distribution of discovery.
+
+The [O\*NET](https://www.onetonline.org/) database (Occupational Information Network) provides a well-established template for this kind of task-level occupational analysis, but scientific research is largely absent from it at useful resolution — [O\*NET](https://www.onetonline.org/) has entries for broad categories like "Biological Scientists" or "Economists," but not for the granular topics where work actually differs. SciNet fills this gap by applying the [O\*NET](https://www.onetonline.org/) methodology to science.
 
 ---
 
-## 2. Taxonomy: Building on OpenAlex
+## 2. Taxonomy
 
-### 2.1 Starting point: the OpenAlex hierarchy
+### 2.1 Starting point
 
-We began with the [OpenAlex](https://openalex.org/) topic classification, which organizes scholarly works into four levels:
+SciNet's taxonomy builds on [OpenAlex](https://openalex.org/), a free and open catalog of hundreds of millions of scholarly works. [OpenAlex](https://openalex.org/) classifies publications into a four-level hierarchy:
 
 | Level | Count | Example |
 |-------|-------|---------|
@@ -62,7 +68,7 @@ We then asked the language model to define the major subfields within each displ
 
 ## 3. Task Statement Design
 
-All SciNET tasks follow the [O\*NET](https://www.onetonline.org/) canonical task statement structure. The prompts used for task generation closely follow the instructions that [O\*NET](https://www.onetonline.org/) gives to human analysts:
+All SciNet tasks follow the [O\*NET](https://www.onetonline.org/) canonical task statement structure. The prompts used for task generation closely follow the instructions that [O\*NET](https://www.onetonline.org/) gives to human analysts:
 
 ```
 [Action Verb] + [Object] + [Modifiers] + [Purpose]
@@ -97,7 +103,7 @@ Controlling specificity is the central design challenge. The prompt includes the
 
 ## 4. Task Generation
 
-SciNET uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
+SciNet uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
 
 ### 4.1 Level structure
 
@@ -170,32 +176,32 @@ A central question is whether the LLM-generated tasks actually reflect what rese
 
 Detailed step-by-step research protocols are our most granular ground-truth source: they describe exactly what a researcher does, in what order, at the level of individual actions. We draw on two complementary protocol corpora.
 
-**[Protocols.io](https://www.protocols.io/)** is a platform where researchers publish laboratory and research protocols, covering a wide range of disciplines. We assembled a corpus of approximately 20,600 protocols from three sources: public protocols via the protocols.io API, unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/), and additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504). Because protocols.io protocols carry DOIs, the vast majority can be merged with [OpenAlex](https://openalex.org/), giving us the field and — in principle — the topic each protocol belongs to. We found, however, that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often inaccurate, so we built an LLM-based assignment pipeline to route each protocol to the correct SciNET field, subfield, and topic.
+**[Protocols.io](https://www.protocols.io/)** is a platform where researchers publish laboratory and research protocols, covering a wide range of disciplines. We assembled a corpus of approximately 20,600 protocols from three sources: public protocols via the protocols.io API, unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/), and additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504). Because protocols.io protocols carry DOIs, the vast majority can be merged with [OpenAlex](https://openalex.org/), giving us the field and — in principle — the topic each protocol belongs to. We found, however, that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often inaccurate, so we built an LLM-based assignment pipeline to route each protocol to the correct SciNet field, subfield, and topic.
 
-Each protocol is routed to the SciNET topic it best represents and then checked step by step for coverage against existing tasks:
+Each protocol is routed to the SciNet topic it best represents and then checked step by step for coverage against existing tasks:
 
 1. **Field validation.** A language model checks whether the [OpenAlex](https://openalex.org/)-assigned field is correct given the protocol title, abstract, and first three steps, and corrects it if not. (In pilot runs, roughly 70% of protocols had incorrect [OpenAlex](https://openalex.org/) field assignments.)
 2. **Subfield assignment.** Given the corrected field, the model selects the best subfield.
-3. **Topic assignment.** The model selects the best-matching SciNET topic from candidates within the subfield, providing a confidence score (1–5). Only protocols with confidence ≥ 4 are used in downstream analysis.
-4. **Step coverage.** For each procedure step, the model determines whether it is covered by any existing SciNET task at the topic, subfield, or field level. Steps are classified as *placeholder* (instructions to follow a prior protocol, excluded), *prep* (routine preparatory actions), or *substantive* (steps corresponding to meaningful research tasks). Coverage is the fraction of non-placeholder steps matched to a SciNET task.
+3. **Topic assignment.** The model selects the best-matching SciNet topic from candidates within the subfield, providing a confidence score (1–5). Only protocols with confidence ≥ 4 are used in downstream analysis.
+4. **Step coverage.** For each procedure step, the model determines whether it is covered by any existing SciNet task at the topic, subfield, or field level. Steps are classified as *placeholder* (instructions to follow a prior protocol, excluded), *prep* (routine preparatory actions), or *substantive* (steps corresponding to meaningful research tasks). Coverage is the fraction of non-placeholder steps matched to a SciNet task.
 
-With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNET tasks (sequence similarity threshold: 90%) before being added to the database.
+With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNet tasks (sequence similarity threshold: 90%) before being added to the database.
 
 **[Bio-Protocol](https://bio-protocol.org/)** is a peer-reviewed journal publishing detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was collected, each including procedure steps with durations, materials lists, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io. We also collect video protocol transcripts, where researchers narrate their procedures in spoken walkthroughs, and process them through the same coverage pipeline.
 
 ### 5.2 Research Papers
 
-Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/), arXiv, and other open repositories, and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNET's task coverage.
+Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/), arXiv, and other open repositories, and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
 
 ### 5.3 Patents
 
-Patent filings describe research and development processes in precise, structured language. We collect patent data and apply the same LLM-based pipeline to route patents to SciNET topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
+Patent filings describe research and development processes in precise, structured language. We collect patent data and apply the same LLM-based pipeline to route patents to SciNet topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
 
 ### 5.4 Human Researchers: Surveys and Expert Evaluations
 
 Ultimately, the most direct ground truth comes from researchers themselves. We collect two types of human input:
 
-**Researcher surveys.** We are developing a survey instrument that asks researchers to evaluate SciNET tasks for their own field and topic — rating coverage (are important tasks missing?), importance, and time allocation. Responses provide direct human validation complementing the LLM-based ratings and a signal for which parts of the task database need the most attention.
+**Researcher surveys.** We are developing a survey instrument that asks researchers to evaluate SciNet tasks for their own field and topic — rating coverage (are important tasks missing?), importance, and time allocation. Responses provide direct human validation complementing the LLM-based ratings and a signal for which parts of the task database need the most attention.
 
 **Expert evaluations.** In addition to broad surveys, we conduct structured evaluations with domain experts who review the task lists for specific subfields or topics, flagging errors, omissions, and tasks that are phrased at the wrong level of granularity. These evaluations inform iterative prompt improvements and targeted task additions.
 
@@ -203,7 +209,7 @@ Ultimately, the most direct ground truth comes from researchers themselves. We c
 
 ## 6. Data Enrichment
 
-Beyond the task statements themselves, SciNET enriches each field and subfield with additional data that characterize research communities and the scientific landscape more broadly. This enrichment falls into three categories: task-level ratings following [O\*NET](https://www.onetonline.org/) methodology, bibliometric characteristics drawn from [OpenAlex](https://openalex.org/), and measures of AI adoption across fields.
+Beyond the task statements themselves, SciNet enriches each field and subfield with additional data that characterize research communities and the scientific landscape more broadly. This enrichment falls into three categories: task-level ratings following [O\*NET](https://www.onetonline.org/) methodology, bibliometric characteristics drawn from [OpenAlex](https://openalex.org/), and measures of AI adoption across fields.
 
 ### 6.1 Task ratings (Importance, Relevance, Frequency)
 
@@ -221,7 +227,7 @@ Based on these ratings, tasks are classified as **Core** (Relevance ≥ 50% and 
 
 ### 6.2 Bibliometric characteristics from OpenAlex
 
-For each SciNET field and subfield, we compute a set of bibliometric indicators from [OpenAlex](https://openalex.org/) that describe the research community's publication activity and output quality:
+For each SciNet field and subfield, we compute a set of bibliometric indicators from [OpenAlex](https://openalex.org/) that describe the research community's publication activity and output quality:
 
 - **Publication volume.** Total paper count and citation count per field and subfield, aggregated from topic-level data.
 - **AI-mention trends.** Yearly counts of papers that mention AI-related terms (e.g., "artificial intelligence," "machine learning," "large language model") as a fraction of all papers in the field, tracking how rapidly AI is entering different research communities.
@@ -268,7 +274,7 @@ The ground truth collection described in [Section 5](#5-ground-truth-data) is on
 
 ## 9. Limitations
 
-**LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNET's specific topics.
+**LLM as simulated respondent.** The coverage thresholds (70%, 80%) and the Core/Supplemental classification rely on LLM judgments, not surveys of actual researchers. While correlations with [O\*NET](https://www.onetonline.org/) human surveys are meaningful (r = 0.60–0.76), the LLM is not a perfect proxy for incumbent workers. The calibration exercise used scientific occupations from [O\*NET](https://www.onetonline.org/), but these are broader than SciNet's specific topics.
 
 **English-language bias.** Task statements are generated in English using English-language topic labels and keywords. Research practices may differ across linguistic or cultural contexts not well-represented in either [O\*NET](https://www.onetonline.org/) or the underlying LLMs' training data.
 
