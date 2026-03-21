@@ -61,8 +61,8 @@
 <text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 100,000+ tasks</text>
 
 <!-- ── Arrows from both validation boxes up to SciNet (symmetric, 90px from each outer edge) ── -->
-<line x1="260" y1="618" x2="240" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
-<line x1="540" y1="618" x2="440" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="260" y1="618" x2="300" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="540" y1="618" x2="380" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
 <!-- ── Data validation (gray dashed, left) — 3 equal columns, wider ── -->
 <rect x="46" y="618" width="428" height="120" rx="12" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="5 3"/>
