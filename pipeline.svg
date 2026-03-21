@@ -52,11 +52,11 @@
 <!-- ── Arrow down to SciNET ── -->
 <line x1="340" y1="448" x2="340" y2="486" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
 
-<!-- ── SciNET (same shade as Domain) ── -->
+<!-- ── SciNET (same shade as Domain, logo-style text) ── -->
 <rect x="150" y="486" width="380" height="80" rx="10" fill="#C7D6EE" stroke="#113563" stroke-width="1.5"/>
-<text x="340" y="508" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#113563">SciNET</text>
-<text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">5 domains · 30 fields · 300 subfields</text>
-<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 100,000+ tasks</text>
+<text x="340" y="504" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#1a3a68" letter-spacing="-0.4">SciNet</text>
+<text x="340" y="524" text-anchor="middle" dominant-baseline="central" font-family="Caveat,cursive,serif" font-size="16" fill="#3c8bf2">the anatomy of science</text>
+<text x="340" y="548" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#2A65AB">5 domains · 30 fields · 300 subfields · 4,516 topics · 100,000+ tasks</text>
 
 <!-- ── Arrow from validation up to SciNET ── -->
 <line x1="340" y1="610" x2="340" y2="568" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
