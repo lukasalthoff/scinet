@@ -60,23 +60,9 @@ SciNet computes a verifiability index for each subfield based on three component
 
 ---
 
-## Claude Usage and Research Output
+## Claude Usage and AI Research Output
 
-**Claude usage vs. research output per capita** — scatter plot comparing country-level Claude usage intensity against total scientific papers produced per 1,000 working-age residents ([OpenAlex](https://openalex.org/)). Each bubble represents one country, sized by total publication volume. Countries above the trend line produce more research per capita than their Claude usage would predict — and vice versa.
-
-Claude usage data: [Anthropic Economic Index](https://www.anthropic.com/research/anthropic-economic-index-september-2025-report), August 2025 ([dataset on Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex)).
-
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science.png" alt="Claude usage vs research output per capita" width="800"/></p>
-
-**Claude usage vs. research output residuals (log-log residualized)** — the same country-level relationship after residualizing `log(Claude usage)` and `log(research output per capita)` on `log(GDP per working-age capita)`. Axes are shown as percent above or below the GDP-predicted level.
-
-GDP and Claude usage data come from the same enriched [Anthropic Economic Index](https://huggingface.co/datasets/Anthropic/EconomicIndex) country file used in the scatter above.
-
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_loglog_residual.png" alt="Claude usage vs research output residuals" width="800"/></p>
-
-**Claude usage vs. research output residuals (levels residualized)** — a levels-based version that residualizes Claude usage per capita and research output per capita directly on GDP per working-age capita, without log transforms.
-
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_residual.png" alt="Claude usage vs research output residuals in levels" width="800"/></p>
+Claude usage data: [Anthropic Economic Index](https://www.anthropic.com/research/anthropic-economic-index-september-2025-report), August 2025 ([dataset on Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex)). Research output is restricted to the project's AI-related paper definition in [OpenAlex](https://openalex.org/) (2023–2025).
 
 **Claude usage vs. AI-related research output per capita (log scale)** — an AI-only country-level scatter that restricts OpenAlex output to the project's AI-related paper definition (2023–2025) and shows both axes on log scales. Bubble size reflects AI-related publication volume.
 
