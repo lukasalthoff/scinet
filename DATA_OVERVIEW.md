@@ -66,4 +66,22 @@ SciNet computes a verifiability index for each subfield based on three component
 
 Claude usage data: [Anthropic Economic Index](https://www.anthropic.com/research/anthropic-economic-index-september-2025-report), August 2025 ([dataset on Hugging Face](https://huggingface.co/datasets/Anthropic/EconomicIndex)).
 
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_scatter.png" alt="Claude usage vs research output per capita" width="800"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science.png" alt="Claude usage vs research output per capita" width="800"/></p>
+
+**Claude usage vs. research output residuals (log-log residualized)** — the same country-level relationship after residualizing `log(Claude usage)` and `log(research output per capita)` on `log(GDP per working-age capita)`. Axes are shown as percent above or below the GDP-predicted level.
+
+GDP and Claude usage data come from the same enriched [Anthropic Economic Index](https://huggingface.co/datasets/Anthropic/EconomicIndex) country file used in the scatter above.
+
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_loglog_residual.png" alt="Claude usage vs research output residuals" width="800"/></p>
+
+**Claude usage vs. research output residuals (levels residualized)** — a levels-based version that residualizes Claude usage per capita and research output per capita directly on GDP per working-age capita, without log transforms.
+
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_science_residual.png" alt="Claude usage vs research output residuals in levels" width="800"/></p>
+
+**Claude usage vs. AI-related research output per capita (log scale)** — an AI-only country-level scatter that restricts OpenAlex output to the project's AI-related paper definition (2023–2025) and shows both axes on log scales. Bubble size reflects AI-related publication volume.
+
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_ai_science_loglog.png" alt="Claude usage vs AI-related research output per capita on log scales" width="800"/></p>
+
+**Claude usage vs. AI-related research output residuals (log-log residualized)** — the AI-only residual version after residualizing `log(Claude usage)` and `log(AI research output per capita)` on `log(GDP per working-age capita)`.
+
+<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/figures/claude_vs_ai_science_loglog_residual.png" alt="Claude usage vs AI-related research output residuals" width="800"/></p>

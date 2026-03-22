@@ -4,12 +4,14 @@ SciNet Data Overview — Figure Generator
 Run from the public/ directory:
     python generate_figures.py
 
-Outputs 9 PNG figures to figures/
+Outputs 19 PNG figures to figures/
 Reads public data from data/ and private data from ../data/
 """
 
 import json
 import os
+import re
+import unicodedata
 import warnings
 from pathlib import Path
 
@@ -70,6 +72,214 @@ def save(fig, name):
     fig.savefig(OUT / name, bbox_inches="tight", dpi=150)
     plt.close(fig)
     print(f"  saved: figures/{name}")
+
+
+def save_loose(fig, name):
+    fig.savefig(OUT / name, dpi=150)
+    plt.close(fig)
+    print(f"  saved: figures/{name}")
+
+
+COUNTRY_NAME_OVERRIDES = {
+    "united states of america": "united states",
+    "republic of korea": "south korea",
+    "korea republic of": "south korea",
+    "democratic peoples republic of korea": "north korea",
+    "democratic people s republic of korea": "north korea",
+    "korea democratic peoples republic of": "north korea",
+    "korea democratic people s republic of": "north korea",
+    "russian federation": "russia",
+    "viet nam": "vietnam",
+    "iran islamic republic of": "iran",
+    "syrian arab republic": "syria",
+    "taiwan province of china": "taiwan",
+    "czech republic": "czechia",
+    "united kingdom of great britain and northern ireland": "united kingdom",
+    "netherlands": "the netherlands",
+    "congo": "republic of the congo",
+    "bolivia plurinational state of": "bolivia",
+    "brunei darussalam": "brunei",
+    "cote d ivoire": "ivory coast",
+    "lao peoples democratic republic": "laos",
+    "lao people s democratic republic": "laos",
+    "micronesia federated states of": "micronesia",
+    "moldova republic of": "moldova",
+    "palestine state of": "palestinian territory",
+    "tanzania united republic of": "tanzania",
+    "timor leste": "timor leste",
+    "virgin islands british": "british virgin islands",
+    "virgin islands u s": "u s virgin islands",
+    "sint maarten dutch part": "sint maarten",
+}
+
+OPENALEX_COUNTRY_CODE_OVERRIDES = {
+    "Namibia": "NA",
+}
+
+COUNTRY_DISPLAY_OVERRIDES = {
+    "United States of America": "United States",
+    "Korea, Republic of": "Korea",
+    "Taiwan, Province of China": "Taiwan",
+    "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
+    "Palestine, State of": "Palestine",
+    "Moldova, Republic of": "Moldova",
+    "Tanzania, United Republic of": "Tanzania",
+    "Viet Nam": "Vietnam",
+    "Russian Federation": "Russia",
+}
+
+LOGLOG_LABEL_CODES = ["US", "GB", "DE", "FR", "IL", "CA", "JP", "KR", "TW", "CH", "AU"]
+
+LOGLOG_LABEL_OFFSETS = {
+    "US": (1.05, 0.96),
+    "GB": (0.92, 1.06),
+    "DE": (0.88, 0.95),
+    "FR": (0.90, 1.10),
+    "IL": (1.06, 1.10),
+    "CA": (1.05, 1.02),
+    "JP": (0.90, 0.92),
+    "KR": (1.04, 0.94),
+    "TW": (1.04, 1.10),
+    "CH": (0.98, 1.08),
+    "AU": (0.90, 1.02),
+}
+
+# OpenAlex currently lacks separate rows for these small territories in
+# ai_rankings_country.csv. Keep the exceptions explicit so new crosswalk gaps do
+# not slip through silently.
+KNOWN_OPENALEX_COUNTRY_GAPS = {
+    "comoros",
+    "marshall islands",
+    "nauru",
+    "saint martin",
+}
+
+
+def normalize_country_name(name):
+    if pd.isna(name):
+        return None
+
+    text = unicodedata.normalize("NFKD", str(name))
+    text = text.encode("ascii", "ignore").decode("ascii").lower().strip()
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return COUNTRY_NAME_OVERRIDES.get(text, text)
+
+
+def load_claude_science_country_data():
+    anthropic_file = PRIV / "anthropic" / "aei_enriched_claude_ai_2025-08-04_to_2025-08-11.csv"
+    aei = pd.read_csv(anthropic_file)
+    country = aei[(aei["geography"] == "country") & (aei["facet"] == "country")].copy()
+
+    def get_var(var):
+        return (country[country["variable"] == var][["geo_id", "geo_name", "value"]]
+                .rename(columns={"value": var}))
+
+    claude_idx = get_var("usage_per_capita_index")
+    pop = get_var("working_age_pop")[["geo_id", "working_age_pop"]]
+    gdp = get_var("gdp_per_working_age_capita")[["geo_id", "gdp_per_working_age_capita"]]
+
+    claude = claude_idx.merge(pop, on="geo_id", how="left")
+    claude = claude.merge(gdp, on="geo_id", how="left")
+    claude.columns = [
+        "iso3",
+        "claude_name",
+        "claude_index",
+        "working_age_pop",
+        "gdp_per_working_age_capita",
+    ]
+    claude["name_key"] = claude["claude_name"].map(normalize_country_name)
+
+    oa = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
+    oa["country_code"] = oa["country_code"].fillna(
+        oa["country_name"].map(OPENALEX_COUNTRY_CODE_OVERRIDES)
+    )
+    oa["name_key"] = oa["country_name"].map(normalize_country_name)
+
+    df = claude.merge(oa, on="name_key", how="left")
+
+    unmatched = sorted(set(df.loc[df["paper_count"].isna(), "name_key"].dropna()))
+    unexpected = sorted(set(unmatched) - KNOWN_OPENALEX_COUNTRY_GAPS)
+    if unexpected:
+        raise ValueError(
+            "Unexpected Anthropic/OpenAlex country mismatches: "
+            + ", ".join(unexpected)
+        )
+
+    df = df[df["paper_count"].notna()].copy()
+    df["papers_per_capita"] = df["paper_count"] / df["working_age_pop"] * 1000
+    df["ai_papers_per_capita"] = df["ai_paper_count"] / df["working_age_pop"] * 1000
+    return df
+
+
+def country_bubble_sizes(paper_count):
+    sizes = (np.log10(paper_count) - 2) ** 2 * 30
+    return sizes.clip(lower=10)
+
+
+def add_country_bubble_legend(ax, examples=None, title="Paper count", color=LABLUE):
+    if examples is None:
+        examples = [(5000, "5k papers"), (50000, "50k"), (500000, "500k")]
+
+    for papers, label in examples:
+        s = (np.log10(papers) - 2) ** 2 * 30
+        ax.scatter([], [], s=max(s, 10), c=color, alpha=0.55,
+                   edgecolors=color, label=label)
+    ax.legend(title=title, title_fontsize=8, fontsize=8,
+              loc="upper left", framealpha=0.8)
+
+
+def add_country_labels(ax, df, x_col, y_col):
+    from adjustText import adjust_text
+
+    texts = []
+    for _, row in df.iterrows():
+        is_us = row["country_code"] == "US"
+        label = COUNTRY_DISPLAY_OVERRIDES.get(row["country_name"], row["country_name"])
+        t = ax.text(
+            row[x_col],
+            row[y_col],
+            label,
+            fontsize=8.5 if is_us else 7.5,
+            fontweight="bold" if is_us else "normal",
+            color=GRAY1,
+        )
+        texts.append(t)
+
+    adjust_text(texts, ax=ax,
+                arrowprops=dict(arrowstyle="-", color=GRAY2, lw=0.6),
+                expand=(1.3, 1.5), force_text=(0.4, 0.6),
+                only_move={"text": "xy", "points": "y"})
+
+
+def add_country_labels_simple(ax, df, x_col, y_col):
+    for _, row in df.iterrows():
+        is_us = row["country_code"] == "US"
+        label = COUNTRY_DISPLAY_OVERRIDES.get(row["country_name"], row["country_name"])
+        ax.text(
+            row[x_col] * 1.03,
+            row[y_col] * 1.03,
+            label,
+            fontsize=8.5 if is_us else 7.5,
+            fontweight="bold" if is_us else "normal",
+            color=GRAY1,
+        )
+
+
+def add_country_labels_loglog(ax, df, x_col, y_col):
+    labels = df[df["country_code"].isin(LOGLOG_LABEL_CODES)].copy()
+    for _, row in labels.iterrows():
+        is_us = row["country_code"] == "US"
+        label = COUNTRY_DISPLAY_OVERRIDES.get(row["country_name"], row["country_name"])
+        dx, dy = LOGLOG_LABEL_OFFSETS.get(row["country_code"], (1.03, 1.03))
+        ax.text(
+            row[x_col] * dx,
+            row[y_col] * dy,
+            label,
+            fontsize=8.5 if is_us else 7.5,
+            fontweight="bold" if is_us else "normal",
+            color=GRAY1,
+        )
 
 
 # Mapping from SciNet display field → research domain
@@ -381,60 +591,18 @@ def fig_ai_adoption_country():
 # 9b. Claude usage vs. AI in science scatter (country-level)
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_claude_vs_science_scatter():
-    ANTHROPIC_FILE = PRIV / ".." / "data" / "anthropic" / \
-        "aei_enriched_claude_ai_2025-08-04_to_2025-08-11.csv"
-
-    aei = pd.read_csv(ANTHROPIC_FILE)
-
-    def get_var(var):
-        return (aei[(aei["geography"] == "country") &
-                    (aei["facet"] == "country") &
-                    (aei["variable"] == var)]
-                [["geo_id", "geo_name", "value"]]
-                .rename(columns={"value": var}))
-
-    claude_idx = get_var("usage_per_capita_index")
-    pop        = get_var("working_age_pop")
-
-    claude = claude_idx.merge(pop[["geo_id", "working_age_pop"]], on="geo_id", how="left")
-    claude.columns = ["iso3", "claude_name", "claude_index", "working_age_pop"]
-    claude["name_key"] = claude["claude_name"].str.strip().str.lower()
-
-    # Load OpenAlex country data (paper_count for papers-per-capita)
-    oa = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
-    oa["name_key"] = oa["country_name"].str.strip().str.lower()
-
-    # Normalize known name discrepancies between the two datasets
-    NAME_OVERRIDES = {
-        "united states of america": "united states",
-        "republic of korea":        "south korea",
-        "democratic people's republic of korea": "north korea",
-        "russian federation":       "russia",
-        "viet nam":                 "vietnam",
-        "iran (islamic republic of)": "iran",
-        "syrian arab republic":     "syria",
-        "taiwan, province of china": "taiwan",
-        "czech republic":           "czechia",
-    }
-    oa["name_key"] = oa["name_key"].replace(NAME_OVERRIDES)
-
-    df = claude.merge(oa, on="name_key", how="inner")
-    df["papers_per_capita"] = df["paper_count"] / df["working_age_pop"] * 1000  # per 1k working-age
+    df = load_claude_science_country_data()
     df = df[(df["paper_count"] >= 1000) &
             (df["claude_index"] > 0) &
             (df["working_age_pop"] > 0)].copy()
 
-    # Bubble size = total paper count (log scale)
-    sizes = (np.log10(df["paper_count"]) - 2) ** 2 * 30
-    sizes = sizes.clip(lower=10)
+    sizes = country_bubble_sizes(df["paper_count"])
 
-    # Label prominent countries
-    label_mask = (df["paper_count"] >= 50000) | \
-                 (df["claude_index"] >= 5) | \
-                 (df["papers_per_capita"] >= 5)
-    label_countries = df[label_mask]
-
-    from adjustText import adjust_text
+    label_countries = pd.concat([
+        df.nlargest(4, "claude_index"),
+        df.nlargest(4, "papers_per_capita"),
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
 
     fig, ax = plt.subplots(figsize=(9, 6.5))
     ax.grid(False)  # no grid lines on scatter
@@ -442,28 +610,7 @@ def fig_claude_vs_science_scatter():
                s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
 
     # Ensure US is always in the label set
-    us_in_labels = label_countries["country_code"].eq("US").any()
-    if not us_in_labels:
-        us_row = df[df["country_code"] == "US"]
-        if not us_row.empty:
-            label_countries = pd.concat([label_countries, us_row])
-
-    texts = []
-    for _, row in label_countries.iterrows():
-        is_us = row["country_code"] == "US"
-        t = ax.text(
-            row["claude_index"], row["papers_per_capita"],
-            row["country_name"],
-            fontsize=8.5 if is_us else 7.5,
-            fontweight="bold" if is_us else "normal",
-            color=GRAY1,
-        )
-        texts.append(t)
-
-    adjust_text(texts, ax=ax,
-                arrowprops=dict(arrowstyle="-", color=GRAY2, lw=0.6),
-                expand=(1.3, 1.5), force_text=(0.4, 0.6),
-                only_move={"text": "xy", "points": "y"})
+    add_country_labels_simple(ax, label_countries, "claude_index", "papers_per_capita")
 
     # Trend line + correlation
     mask = df["claude_index"].between(0.01, 20)
@@ -480,21 +627,427 @@ def fig_claude_vs_science_scatter():
 
     ax.set_xlabel("Claude usage per-capita index",
                   color=GRAY1, fontsize=10)
-    ax.set_ylabel("Research papers per 1,000 working-age population\n(OpenAlex, all years)",
+    ax.set_ylabel("Research Papers per 1,000 Capita\n(OpenAlex)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage vs. Research Output per Capita by Country\n"
-                 "Bubble size = total publication volume",
+    ax.set_title("Claude Usage and Research Output Per Capita",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
-    for papers, label in [(5000, "5k papers"), (50000, "50k"), (500000, "500k")]:
-        s = (np.log10(papers) - 2) ** 2 * 30
-        ax.scatter([], [], s=max(s, 10), c=LABLUE, alpha=0.55,
-                   edgecolors=LABLUE, label=label)
-    ax.legend(title="Paper count", title_fontsize=8, fontsize=8,
-              loc="upper left", framealpha=0.8)
+    add_country_bubble_legend(ax)
 
-    save(fig, "claude_vs_science_scatter.png")
+    save(fig, "claude_vs_science.png")
+
+
+def fig_claude_vs_science_scatter_loglog():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["papers_per_capita"] > 0)].copy()
+
+    sizes = country_bubble_sizes(df["paper_count"])
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.scatter(df["claude_index"], df["papers_per_capita"],
+               s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
+
+    log_x = np.log10(df["claude_index"])
+    log_y = np.log10(df["papers_per_capita"])
+    coef = np.polyfit(log_x, log_y, 1)
+    x_fit = np.geomspace(df["claude_index"].min(), df["claude_index"].max(), 200)
+    y_fit = 10 ** np.polyval(coef, np.log10(x_fit))
+    ax.plot(x_fit, y_fit,
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(log_x, log_y)[0, 1]
+    ax.text(0.99, 0.02, f"Log correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    style_log_decimal_axes(ax)
+    add_country_labels_loglog(ax, df, "claude_index", "papers_per_capita")
+    ax.set_xlabel("Claude usage per-capita index\n(log scale)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("Research Papers per 1,000 Capita\n(OpenAlex, log scale)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and Research Output Per Capita (Log Scale)",
+                 color=LABLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(ax)
+
+    save_loose(fig, "claude_vs_science_loglog.png")
+
+
+def residual_pct_formatter(value, _):
+    pct = (10 ** value - 1) * 100
+    if abs(pct) < 0.5:
+        return "0%"
+    return f"{pct:+.0f}%"
+
+
+def log_decimal_formatter(value, _):
+    if value <= 0:
+        return ""
+    return f"{value:g}"
+
+
+def style_log_decimal_axes(ax):
+    major_locator = mticker.LogLocator(base=10, subs=(1.0,))
+    ax.xaxis.set_major_locator(major_locator)
+    ax.yaxis.set_major_locator(major_locator)
+    ax.xaxis.set_minor_locator(mticker.NullLocator())
+    ax.yaxis.set_minor_locator(mticker.NullLocator())
+    ax.xaxis.set_major_formatter(mticker.FuncFormatter(log_decimal_formatter))
+    ax.yaxis.set_major_formatter(mticker.FuncFormatter(log_decimal_formatter))
+    ax.xaxis.set_minor_formatter(mticker.NullFormatter())
+    ax.yaxis.set_minor_formatter(mticker.NullFormatter())
+    ax.tick_params(which="minor", bottom=False, left=False)
+
+
+def fig_claude_vs_science_residual_scatter():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["papers_per_capita"] > 0) &
+            (df["gdp_per_working_age_capita"] > 0)].copy()
+
+    log_gdp = np.log10(df["gdp_per_working_age_capita"])
+    log_claude = np.log10(df["claude_index"])
+    log_papers = np.log10(df["papers_per_capita"])
+
+    claude_coef = np.polyfit(log_gdp, log_claude, 1)
+    papers_coef = np.polyfit(log_gdp, log_papers, 1)
+    df["claude_gdp_resid"] = log_claude - np.polyval(claude_coef, log_gdp)
+    df["papers_gdp_resid"] = log_papers - np.polyval(papers_coef, log_gdp)
+
+    sizes = country_bubble_sizes(df["paper_count"])
+    df["resid_score"] = (
+        df["claude_gdp_resid"].abs() + df["papers_gdp_resid"].abs()
+    )
+    label_countries = pd.concat([
+        df.nlargest(16, "resid_score"),
+        df[df["paper_count"] >= 150000],
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.axhline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.scatter(df["claude_gdp_resid"], df["papers_gdp_resid"],
+               s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
+
+    add_country_labels(ax, label_countries, "claude_gdp_resid", "papers_gdp_resid")
+
+    coef = np.polyfit(df["claude_gdp_resid"], df["papers_gdp_resid"], 1)
+    x_fit = np.linspace(df["claude_gdp_resid"].min(), df["claude_gdp_resid"].max(), 200)
+    ax.plot(x_fit, np.polyval(coef, x_fit),
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(df["claude_gdp_resid"], df["papers_gdp_resid"])[0, 1]
+    ax.text(0.99, 0.02, f"Residual correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    formatter = mticker.FuncFormatter(residual_pct_formatter)
+    ax.xaxis.set_major_formatter(formatter)
+    ax.yaxis.set_major_formatter(formatter)
+
+    ax.set_xlabel("Claude Usage\n(% above/below GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("Research Output per 1,000 Capita\n(% above/below GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and Research Output Per Capita (Log-Log Residualized)",
+                 color=LABLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(ax)
+
+    save(fig, "claude_vs_science_loglog_residual.png")
+
+
+def fig_claude_vs_science_residual_scatter_levels():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["papers_per_capita"] > 0) &
+            (df["gdp_per_working_age_capita"] > 0)].copy()
+
+    gdp = df["gdp_per_working_age_capita"]
+    claude_coef = np.polyfit(gdp, df["claude_index"], 1)
+    papers_coef = np.polyfit(gdp, df["papers_per_capita"], 1)
+    df["claude_gdp_resid"] = df["claude_index"] - np.polyval(claude_coef, gdp)
+    df["papers_gdp_resid"] = df["papers_per_capita"] - np.polyval(papers_coef, gdp)
+
+    sizes = country_bubble_sizes(df["paper_count"])
+    df["resid_score"] = (
+        df["claude_gdp_resid"].abs() / df["claude_gdp_resid"].std()
+        + df["papers_gdp_resid"].abs() / df["papers_gdp_resid"].std()
+    )
+    label_countries = pd.concat([
+        df.nlargest(16, "resid_score"),
+        df[df["paper_count"] >= 150000],
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.axhline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.scatter(df["claude_gdp_resid"], df["papers_gdp_resid"],
+               s=sizes, c=LABLUE, alpha=0.55, linewidths=0.4, edgecolors=LABLUE)
+
+    add_country_labels(ax, label_countries, "claude_gdp_resid", "papers_gdp_resid")
+
+    coef = np.polyfit(df["claude_gdp_resid"], df["papers_gdp_resid"], 1)
+    x_fit = np.linspace(df["claude_gdp_resid"].min(), df["claude_gdp_resid"].max(), 200)
+    ax.plot(x_fit, np.polyval(coef, x_fit),
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(df["claude_gdp_resid"], df["papers_gdp_resid"])[0, 1]
+    ax.text(0.99, 0.02, f"Residual correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    ax.set_xlabel("Claude Usage residual\n(index points vs GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("Research Output per 1,000 Capita residual\n(vs GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and Research Output Per Capita (Levels Residualized)",
+                 color=LABLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(ax)
+
+    save(fig, "claude_vs_science_residual.png")
+
+
+def fig_claude_vs_ai_science_scatter():
+    df = load_claude_science_country_data()
+    # Keep the same country sample definition used elsewhere in the project:
+    # countries need population data and at least 1,000 total papers.
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["working_age_pop"] > 0) &
+            (df["ai_papers_per_capita"] > 0)].copy()
+
+    sizes = country_bubble_sizes(df["ai_paper_count"])
+
+    label_countries = pd.concat([
+        df.nlargest(4, "claude_index"),
+        df.nlargest(4, "ai_papers_per_capita"),
+        df.nlargest(4, "ai_paper_count"),
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.scatter(df["claude_index"], df["ai_papers_per_capita"],
+               s=sizes, c=NEWBLUE, alpha=0.55, linewidths=0.4, edgecolors=NEWBLUE)
+
+    add_country_labels_simple(ax, label_countries, "claude_index", "ai_papers_per_capita")
+
+    mask = df["claude_index"].between(0.01, 20)
+    if mask.sum() > 10:
+        x, y = df.loc[mask, "claude_index"], df.loc[mask, "ai_papers_per_capita"]
+        coef = np.polyfit(x, y, 1)
+        x_fit = np.linspace(x.min(), x.max(), 200)
+        ax.plot(x_fit, np.polyval(coef, x_fit),
+                color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+        corr = np.corrcoef(x, y)[0, 1]
+        ax.text(0.99, 0.02, f"Correlation: {corr:.2f}",
+                transform=ax.transAxes, ha="right", va="bottom",
+                fontsize=8, color=GRAY2)
+
+    ax.set_xlabel("Claude usage per-capita index",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("AI Research Papers per 1,000 Capita\n(OpenAlex)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and AI Research Output Per Capita",
+                 color=NEWBLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(
+        ax,
+        examples=[(100, "100 AI papers"), (1000, "1k"), (10000, "10k")],
+        title="AI paper count",
+        color=NEWBLUE,
+    )
+
+    save(fig, "claude_vs_ai_science.png")
+
+
+def fig_claude_vs_ai_science_scatter_loglog():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["ai_papers_per_capita"] > 0)].copy()
+
+    sizes = country_bubble_sizes(df["ai_paper_count"])
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.scatter(df["claude_index"], df["ai_papers_per_capita"],
+               s=sizes, c=NEWBLUE, alpha=0.55, linewidths=0.4, edgecolors=NEWBLUE)
+
+    log_x = np.log10(df["claude_index"])
+    log_y = np.log10(df["ai_papers_per_capita"])
+    coef = np.polyfit(log_x, log_y, 1)
+    x_fit = np.geomspace(df["claude_index"].min(), df["claude_index"].max(), 200)
+    y_fit = 10 ** np.polyval(coef, np.log10(x_fit))
+    ax.plot(x_fit, y_fit,
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(log_x, log_y)[0, 1]
+    ax.text(0.99, 0.02, f"Log correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    style_log_decimal_axes(ax)
+    add_country_labels_loglog(ax, df, "claude_index", "ai_papers_per_capita")
+    ax.set_xlabel("Claude usage per-capita index\n(log scale)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("AI Research Papers per 1,000 Capita\n(OpenAlex, log scale)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and AI Research Output Per Capita (Log Scale)",
+                 color=NEWBLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(
+        ax,
+        examples=[(100, "100 AI papers"), (1000, "1k"), (10000, "10k")],
+        title="AI paper count",
+        color=NEWBLUE,
+    )
+
+    save_loose(fig, "claude_vs_ai_science_loglog.png")
+
+
+def fig_claude_vs_ai_science_residual_scatter():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["ai_papers_per_capita"] > 0) &
+            (df["gdp_per_working_age_capita"] > 0)].copy()
+
+    log_gdp = np.log10(df["gdp_per_working_age_capita"])
+    log_claude = np.log10(df["claude_index"])
+    log_ai_papers = np.log10(df["ai_papers_per_capita"])
+
+    claude_coef = np.polyfit(log_gdp, log_claude, 1)
+    ai_papers_coef = np.polyfit(log_gdp, log_ai_papers, 1)
+    df["claude_gdp_resid"] = log_claude - np.polyval(claude_coef, log_gdp)
+    df["ai_papers_gdp_resid"] = log_ai_papers - np.polyval(ai_papers_coef, log_gdp)
+
+    sizes = country_bubble_sizes(df["ai_paper_count"])
+    df["resid_score"] = (
+        df["claude_gdp_resid"].abs() + df["ai_papers_gdp_resid"].abs()
+    )
+    label_countries = pd.concat([
+        df.nlargest(16, "resid_score"),
+        df[df["ai_paper_count"] >= 25000],
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.axhline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.scatter(df["claude_gdp_resid"], df["ai_papers_gdp_resid"],
+               s=sizes, c=NEWBLUE, alpha=0.55, linewidths=0.4, edgecolors=NEWBLUE)
+
+    add_country_labels(ax, label_countries, "claude_gdp_resid", "ai_papers_gdp_resid")
+
+    coef = np.polyfit(df["claude_gdp_resid"], df["ai_papers_gdp_resid"], 1)
+    x_fit = np.linspace(df["claude_gdp_resid"].min(), df["claude_gdp_resid"].max(), 200)
+    ax.plot(x_fit, np.polyval(coef, x_fit),
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(df["claude_gdp_resid"], df["ai_papers_gdp_resid"])[0, 1]
+    ax.text(0.99, 0.02, f"Residual correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    formatter = mticker.FuncFormatter(residual_pct_formatter)
+    ax.xaxis.set_major_formatter(formatter)
+    ax.yaxis.set_major_formatter(formatter)
+
+    ax.set_xlabel("Claude Usage\n(% above/below GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("AI Research Output per 1,000 Capita\n(% above/below GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and AI Research Output Per Capita (Log-Log Residualized)",
+                 color=NEWBLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(
+        ax,
+        examples=[(100, "100 AI papers"), (1000, "1k"), (10000, "10k")],
+        title="AI paper count",
+        color=NEWBLUE,
+    )
+
+    save(fig, "claude_vs_ai_science_loglog_residual.png")
+
+
+def fig_claude_vs_ai_science_residual_scatter_levels():
+    df = load_claude_science_country_data()
+    df = df[(df["paper_count"] >= 1000) &
+            (df["claude_index"] > 0) &
+            (df["ai_papers_per_capita"] > 0) &
+            (df["gdp_per_working_age_capita"] > 0)].copy()
+
+    gdp = df["gdp_per_working_age_capita"]
+    claude_coef = np.polyfit(gdp, df["claude_index"], 1)
+    ai_papers_coef = np.polyfit(gdp, df["ai_papers_per_capita"], 1)
+    df["claude_gdp_resid"] = df["claude_index"] - np.polyval(claude_coef, gdp)
+    df["ai_papers_gdp_resid"] = df["ai_papers_per_capita"] - np.polyval(ai_papers_coef, gdp)
+
+    sizes = country_bubble_sizes(df["ai_paper_count"])
+    df["resid_score"] = (
+        df["claude_gdp_resid"].abs() / df["claude_gdp_resid"].std()
+        + df["ai_papers_gdp_resid"].abs() / df["ai_papers_gdp_resid"].std()
+    )
+    label_countries = pd.concat([
+        df.nlargest(16, "resid_score"),
+        df[df["ai_paper_count"] >= 25000],
+        df[df["country_code"] == "US"],
+    ]).drop_duplicates(subset="country_name")
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.grid(False)
+    ax.axhline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--", alpha=0.7)
+    ax.scatter(df["claude_gdp_resid"], df["ai_papers_gdp_resid"],
+               s=sizes, c=NEWBLUE, alpha=0.55, linewidths=0.4, edgecolors=NEWBLUE)
+
+    add_country_labels(ax, label_countries, "claude_gdp_resid", "ai_papers_gdp_resid")
+
+    coef = np.polyfit(df["claude_gdp_resid"], df["ai_papers_gdp_resid"], 1)
+    x_fit = np.linspace(df["claude_gdp_resid"].min(), df["claude_gdp_resid"].max(), 200)
+    ax.plot(x_fit, np.polyval(coef, x_fit),
+            color=LALIGHTBLUE, linewidth=1.5, linestyle="--", alpha=0.8)
+    corr = np.corrcoef(df["claude_gdp_resid"], df["ai_papers_gdp_resid"])[0, 1]
+    ax.text(0.99, 0.02, f"Residual correlation: {corr:.2f}",
+            transform=ax.transAxes, ha="right", va="bottom",
+            fontsize=8, color=GRAY2)
+
+    ax.set_xlabel("Claude Usage residual\n(index points vs GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_ylabel("AI Research Output per 1,000 Capita residual\n(vs GDP-predicted level)",
+                  color=GRAY1, fontsize=10)
+    ax.set_title("Claude Usage and AI Research Output Per Capita (Levels Residualized)",
+                 color=NEWBLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1)
+
+    add_country_bubble_legend(
+        ax,
+        examples=[(100, "100 AI papers"), (1000, "1k"), (10000, "10k")],
+        title="AI paper count",
+        color=NEWBLUE,
+    )
+
+    save(fig, "claude_vs_ai_science_residual.png")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -525,6 +1078,13 @@ def fig_papers_by_domain():
 if __name__ == "__main__":
     print("Generating SciNet data overview figures...")
     fig_claude_vs_science_scatter()
+    fig_claude_vs_science_scatter_loglog()
+    fig_claude_vs_science_residual_scatter()
+    fig_claude_vs_science_residual_scatter_levels()
+    fig_claude_vs_ai_science_scatter()
+    fig_claude_vs_ai_science_scatter_loglog()
+    fig_claude_vs_ai_science_residual_scatter()
+    fig_claude_vs_ai_science_residual_scatter_levels()
     fig_tasks_by_domain()
     fig_tasks_by_category()
     fig_tasks_by_level()
