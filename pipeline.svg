@@ -39,17 +39,17 @@
 <!-- ── Field ── -->
 <rect x="100" y="258" width="480" height="175" rx="12" fill="#EDEDEA" stroke="#AAAAAA" stroke-width="1"/>
 <text x="116" y="280" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Field</text>
-<text x="116" y="296" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~30 fields · researcher-supervised generation</text>
+<text x="116" y="296" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">30 fields · researcher-supervised generation</text>
 
 <!-- ── Subfield ── -->
 <rect x="120" y="308" width="440" height="110" rx="10" fill="#E4E4E0" stroke="#999994" stroke-width="1"/>
 <text x="136" y="330" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Subfield</text>
-<text x="136" y="346" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~300 subfields · unsupervised generation</text>
+<text x="136" y="346" text-anchor="start" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">302 subfields · unsupervised generation</text>
 
 <!-- ── Topic (darkest) ── -->
 <rect x="140" y="358" width="400" height="48" rx="8" fill="#DDDDD8" stroke="#888880" stroke-width="1"/>
 <text x="156" y="374" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#444441">Topic</text>
-<text x="156" y="392" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">~4,500 topics · unsupervised generation</text>
+<text x="156" y="392" text-anchor="start" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#666663">4,516 topics · unsupervised generation</text>
 
 <!-- ── Arrow down to SciNet ── -->
 <line x1="340" y1="448" x2="340" y2="483" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>
@@ -57,8 +57,8 @@
 <!-- ── SciNet (blue) ── -->
 <rect x="150" y="486" width="380" height="80" rx="10" fill="#C7D6EE" stroke="#113563" stroke-width="1.5"/>
 <text x="340" y="508" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#113563">SciNet</text>
-<text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">5 domains · 30 fields · 300 subfields</text>
-<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 100,000+ tasks</text>
+<text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">5 domains · 30 fields · 302 subfields</text>
+<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 26,369 tasks</text>
 
 <!-- ── Arrows from both validation boxes up to SciNet (symmetric, 90px from each outer edge) ── -->
 <line x1="260" y1="618" x2="300" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>

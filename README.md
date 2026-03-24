@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 30 fields, 300+ subfields, and 4,516 topics.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 30 fields, 302 subfields, and 4,516 topics, with 26,369 released task statements.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -17,7 +17,7 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 | File | Description |
 |------|-------------|
 | [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, and subfield levels) with category labels |
-| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNet display field and subfield |
+| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNet display domain, field, and subfield |
 
 ### Data dictionary
 
@@ -38,6 +38,7 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 |--------|-------------|
 | `topic_id` | OpenAlex topic identifier |
 | `topic_name` | Topic display name |
+| `domain` | SciNet display domain |
 | `field` | SciNet display field |
 | `subfield` | SciNet display subfield |
 
@@ -77,5 +78,5 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 
 - Replaced `generated_tasks.csv`, `openalex_topics.csv`, and `catalog.json` with two simpler files:
   - `tasks.csv`: flat task file with category, level, domain, field, and subfield columns.
-  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNet display fields and subfields.
+  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNet display domains, fields, and subfields.
 - Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.

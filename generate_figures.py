@@ -42,6 +42,7 @@ DOMAIN_COLORS = {
     "Life Sciences":     NEWBLUE,
     "Physical Sciences": LABLUE,
     "Health Sciences":   "#5B8FD4",
+    "Arts & Humanities": "#9A6B57",
 }
 
 CATEGORY_SHORT = {
@@ -284,37 +285,71 @@ def add_country_labels_loglog(ax, df, x_col, y_col):
 
 # Mapping from SciNet display field → research domain
 FIELD_TO_DOMAIN = {
-    "Agricultural Sciences":      "Life Sciences",
-    "Biology":                    "Life Sciences",
-    "Biomedical Sciences":        "Life Sciences",
-    "Environmental Science":      "Life Sciences",
     "Anthropology":               "Social Sciences",
-    "Arts":                       "Social Sciences",
     "Business & Management":      "Social Sciences",
     "Communication & Media Studies": "Social Sciences",
     "Economics":                  "Social Sciences",
     "Education":                  "Social Sciences",
     "Geography":                  "Social Sciences",
-    "History":                    "Social Sciences",
-    "Languages & Linguistics":    "Social Sciences",
     "Law":                        "Social Sciences",
-    "Literature":                 "Social Sciences",
-    "Philosophy":                 "Social Sciences",
     "Political Science":          "Social Sciences",
     "Psychology":                 "Social Sciences",
-    "Religion":                   "Social Sciences",
     "Sociology":                  "Social Sciences",
+    "Statistics":                 "Social Sciences",
+    "Agricultural Sciences":      "Life Sciences",
+    "Biology":                    "Life Sciences",
+    "Biomedical Sciences":        "Life Sciences",
+    "Neuroscience":               "Life Sciences",
     "Chemistry":                  "Physical Sciences",
     "Computer Science":           "Physical Sciences",
     "Earth & Planetary Sciences": "Physical Sciences",
     "Engineering":                "Physical Sciences",
+    "Environmental Science":      "Physical Sciences",
     "Materials Science":          "Physical Sciences",
     "Mathematics":                "Physical Sciences",
     "Physics & Astronomy":        "Physical Sciences",
-    "Statistics":                 "Physical Sciences",
     "Medicine & Clinical Sciences": "Health Sciences",
-    "Neuroscience":               "Health Sciences",
+    "Arts":                       "Arts & Humanities",
+    "History":                    "Arts & Humanities",
+    "Languages & Linguistics":    "Arts & Humanities",
+    "Literature":                 "Arts & Humanities",
+    "Philosophy":                 "Arts & Humanities",
+    "Religion":                   "Arts & Humanities",
 }
+
+DISPLAY_DOMAIN_ORDER = [
+    "Social Sciences",
+    "Life Sciences",
+    "Physical Sciences",
+    "Health Sciences",
+    "Arts & Humanities",
+]
+
+
+def load_topic_mapping():
+    mapping = pd.read_csv(PUB / "openalex_topic_subfield_mapping.csv")
+    mapping["topic_id"] = mapping["topic_id"].astype(str)
+    if "domain" not in mapping.columns:
+        mapping["domain"] = mapping["field"].map(FIELD_TO_DOMAIN)
+    return mapping
+
+
+def load_subfield_domain_map():
+    mapping = load_topic_mapping()
+    return (
+        mapping[["subfield", "field", "domain"]]
+        .dropna(subset=["subfield", "field", "domain"])
+        .drop_duplicates()
+        .sort_values(["subfield", "field"])
+        .drop_duplicates(subset=["subfield"], keep="first")
+        .rename(
+            columns={
+                "subfield": "subfield_name",
+                "field": "field_name",
+                "domain": "domain_name",
+            }
+        )
+    )
 
 # ══════════════════════════════════════════════════════════════════════════════
 # 1. Tasks by domain
@@ -403,8 +438,7 @@ def fig_tasks_by_level():
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_verifiability_by_domain():
     verif = pd.read_csv(PRIV / "verifiability" / "verifiability_index_by_subfield_3var.csv")
-    sf_stats = pd.read_csv(PRIV / "openalex" / "field_stats" / "subfield_stats.csv")
-    domain_map = sf_stats[["subfield_name", "domain_name"]].drop_duplicates()
+    domain_map = load_subfield_domain_map()
 
     merged = verif.merge(domain_map, on="subfield_name", how="left")
     merged = merged.dropna(subset=["domain_name"])
@@ -472,8 +506,7 @@ def fig_verifiability_top_bottom():
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_verifiability_components():
     verif = pd.read_csv(PRIV / "verifiability" / "verifiability_index_by_subfield_3var.csv")
-    sf_stats = pd.read_csv(PRIV / "openalex" / "field_stats" / "subfield_stats.csv")
-    domain_map = sf_stats[["subfield_name", "domain_name"]].drop_duplicates()
+    domain_map = load_subfield_domain_map()
 
     merged = verif.merge(domain_map, on="subfield_name", how="left").dropna(subset=["domain_name"])
 
@@ -488,6 +521,12 @@ def fig_verifiability_components():
                      "Booster words per 100w":    weighted_mean(g, "booster_per_100w"),
                  }))
                  .reset_index())
+    agg["domain_name"] = pd.Categorical(
+        agg["domain_name"],
+        categories=DISPLAY_DOMAIN_ORDER,
+        ordered=True,
+    )
+    agg = agg.sort_values("domain_name")
 
     components = ["Retraction rate (%)", "Hedging words per 100w", "Booster words per 100w"]
     colors_comp = [LALIGHTBLUE, NEWBLUE, LABLUE]
@@ -522,8 +561,7 @@ def fig_ai_mention_subfields():
     tyc = tyc[tyc["year"].between(2023, 2025)]
     tyc_agg = tyc.groupby("topic_id")[["paper_count", "ai_paper_count"]].sum().reset_index()
 
-    mapping = pd.read_csv(PUB / "openalex_topic_subfield_mapping.csv")
-    mapping["topic_id"] = mapping["topic_id"].astype(str)
+    mapping = load_topic_mapping()
     tyc_agg["topic_id"]  = tyc_agg["topic_id"].astype(str)
 
     merged = tyc_agg.merge(mapping, on="topic_id", how="left").dropna(subset=["subfield"])
@@ -1054,8 +1092,17 @@ def fig_claude_vs_ai_science_residual_scatter_levels():
 # 9. Publication volume by domain
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_papers_by_domain():
-    df = pd.read_csv(PRIV / "openalex" / "field_stats" / "domain_stats.csv")
-    df = df.sort_values("paper_count")
+    mapping = load_topic_mapping()[["topic_id", "domain"]]
+    topic_stats = pd.read_csv(PRIV / "openalex" / "field_stats" / "topic_stats.csv")
+    topic_stats["topic_id"] = topic_stats["topic_id"].astype(str)
+    df = (
+        topic_stats.merge(mapping, on="topic_id", how="left")
+        .dropna(subset=["domain"])
+        .groupby("domain", as_index=False)["paper_count"]
+        .sum()
+        .rename(columns={"domain": "domain_name"})
+        .sort_values("paper_count")
+    )
     df["paper_count_M"] = df["paper_count"] / 1e6
     colors = [DOMAIN_COLORS.get(d, LABLUE) for d in df["domain_name"]]
 

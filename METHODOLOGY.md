@@ -1,6 +1,6 @@
 # SciNet Methodology
 
-SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The database covers over 100,000 research tasks spanning 30 fields, 300+ subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
+SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The public release covers 26,369 research tasks spanning 30 fields, 302 subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
 
 SciNet uses AI and information from thousands of laboratory protocols, published paper texts, and scientific expert input to map the anatomy of scientific work. These sources together capture both the tacit, hands-on dimensions of research and its more codified methodological conventions.
 
@@ -113,7 +113,7 @@ The universal level ensures that tasks like grant writing, peer review, and ment
 
 **Domain tasks**
 
-Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. Four research domains are covered: Social Sciences, Life Sciences, Physical Sciences, and Health Sciences. Domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences. These were developed in the same supervised iterative process described above.
+Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. The public taxonomy is organized into five display domains: Social Sciences, Life Sciences, Physical Sciences, Health Sciences, and Arts & Humanities. The manually curated domain-task layer currently covers the four core methodological families used during task generation: Social Sciences, Life Sciences, Physical Sciences, and Health Sciences. These domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences.
 
 ### 4.3 Unsupervised levels (Subfield and Topic)
 
@@ -256,4 +256,3 @@ The ground truth collection described in [Section 4](#4-ground-truth-data) is on
 - **Broader paper coverage.** Full-text processing is being extended to a larger sample of [OpenAlex](https://openalex.org/) and arXiv papers, with particular attention to computational, theoretical, and social science fields.
 - **Patent pipeline.** The routing and coverage pipeline is being adapted for patent filings, which follow a different document structure.
 - **Survey deployment.** The researcher survey instrument is being piloted with early respondents and will be expanded to a broader panel of scientists.
-
