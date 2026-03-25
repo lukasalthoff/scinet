@@ -26,19 +26,17 @@ It lists the current answerable questions in each module and excludes explanator
 
 Note: the activity-category questions now use 8 categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
 
-## AI in Your Research (11)
+## AI in Your Research (9)
 
-1. How did you first learn about the AI tools you use?
-2. For which research tasks is AI least useful or counterproductive?
+1. How do you tend to learn about new AI tools and how to use them?
+2. For which research tasks is AI **less** useful or counterproductive?
 3. Which skills do you expect to become more valuable for you in the AI era?
 4. Which skills do you expect to become less important or obsolete?
-5. What specific changes in research practices do you most anticipate?
-6. Optional: If you selected "Other," describe any additional change in research practice you anticipate.
-7. In your experience as a peer reviewer, how has the volume of submissions changed over the past two years?
-8. In your experience as a peer reviewer, how has the average quality of submissions changed over the past two years?
-9. Optional: Anything else you have noticed as a reviewer?
-10. What are your main concerns about AI in research?
-11. Optional: If you selected "Other," describe any additional concern.
+5. What specific changes in research practices do you anticipate? Select all that apply. If you select "Other," describe any additional change in research practice you anticipate.
+6. In your experience as a peer reviewer, how has the volume of submissions changed over the past two years?
+7. In your experience as a peer reviewer, how has the average quality of submissions changed over the past two years?
+8. Anything else you have noticed as a reviewer?
+9. What are your main concerns about AI in research? Select all that apply. If you selected "Other," describe any additional concern.
 
 ## AI Impact on Your Research (4)
 
@@ -69,7 +67,7 @@ Note: the activity-category questions now use 8 categories: Reading & Knowledge 
 1. Has AI changed your primary research methodology?
 2. Has AI affected your demand for research assistants?
 3. What is the biggest barrier to your adoption of AI tools for research?
-4. Optional: If you selected "Other," tell us more.
+4. If you selected "Other," tell us more.
 
 ## Predict the Median (4)
 
