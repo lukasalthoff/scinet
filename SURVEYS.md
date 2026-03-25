@@ -14,7 +14,7 @@ It lists the current answerable questions in each module and excludes explanator
 5. How much do you spend on AI tools per month (subscriptions, API access, etc.)?
 6. For which research tasks do you find AI most useful?
 7. YOUR ANSWER: What percentage of your total research time does AI currently save you?
-8. PREDICT THE MEDIAN: What do you think the median response will be across all researchers in your field?
+8. PREDICT THE MEDIAN: What do you think the median response will be across your peers?
 9. How well-informed do you feel about AI capabilities relevant to your research?
 10. How confident are you in your ability to detect AI-generated errors in your own work?
 11. How easy is it for you to verify or replicate research findings in your peers' work?
