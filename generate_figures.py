@@ -46,6 +46,7 @@ DOMAIN_COLORS = {
 }
 
 CATEGORY_SHORT = {
+    "Reading & Knowledge Acquisition":      "Reading & Knowledge",
     "Ideation & Hypothesis Generation": "Ideation & Hypotheses",
     "Data Gathering":                   "Data Gathering",
     "Data Analysis":                    "Data Analysis",

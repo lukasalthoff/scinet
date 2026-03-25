@@ -58,7 +58,7 @@
 <rect x="150" y="486" width="380" height="80" rx="10" fill="#C7D6EE" stroke="#113563" stroke-width="1.5"/>
 <text x="340" y="508" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#113563">SciNet</text>
 <text x="340" y="528" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">5 domains · 30 fields · 302 subfields</text>
-<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 26,369 tasks</text>
+<text x="340" y="544" text-anchor="middle" dominant-baseline="central" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#2A65AB">4,516 topics · 26,371 tasks</text>
 
 <!-- ── Arrows from both validation boxes up to SciNet (symmetric, 90px from each outer edge) ── -->
 <line x1="260" y1="618" x2="300" y2="569" stroke="#666663" stroke-width="1.5" marker-end="url(#arr)"/>

@@ -1,6 +1,6 @@
 # SciNet Methodology
 
-SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The public release covers 26,369 research tasks spanning 30 fields, 302 subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
+SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The public release covers 26,371 research tasks spanning 30 fields, 302 subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
 
 SciNet uses AI and information from thousands of laboratory protocols, published paper texts, and scientific expert input to map the anatomy of scientific work. These sources together capture both the tacit, hands-on dimensions of research and its more codified methodological conventions.
 
@@ -107,7 +107,7 @@ The universal and domain levels anchor the entire hierarchy and needed to be cor
 
 **Universal tasks**
 
-These tasks apply to virtually all researchers regardless of field, organized into seven categories: Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration. Examples include "Identify gaps in existing literature to formulate novel research questions," "Draft manuscripts describing research questions, methods, results, and interpretations," and "Manage research budgets, personnel, and project timelines."
+These tasks apply to virtually all researchers regardless of field, organized into eight categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration. Examples include "Review and synthesize the relevant literature to situate a research question within existing knowledge," "Identify gaps in existing literature to formulate novel research questions," and "Manage research budgets, personnel, and project timelines."
 
 The universal level ensures that tasks like grant writing, peer review, and mentoring — which are never mentioned in papers or protocols — are still represented in every researcher's task profile.
 
