@@ -5,25 +5,24 @@ It lists the current answerable questions in each module and excludes explanator
 
 ---
 
-## Your Research (17)
+## Your Research (16)
 
 1. About how many hours per week do you personally spend on each activity category?
-2. Which activity, if it took half the time, would most accelerate your overall research output?
-3. Which AI tools do you currently use for research?
-4. How frequently do you use AI tools in your research?
-5. About how many hours per week do you actively interact with a large language model or another form of AI as part of your research?
-6. How much do you spend on AI tools per month (subscriptions, API access, etc.)?
-7. For which research tasks do you find AI most useful?
-8. YOUR ANSWER: What percentage of your total research time does AI currently save you?
-9. PREDICT THE MEDIAN: What do you think the median response will be across all researchers in your field?
-10. How well-informed do you feel about AI capabilities relevant to your research?
-11. How confident are you in your ability to detect AI-generated errors in your own work?
-12. How easy is it for you to verify or replicate research findings in your peers' work?
-13. How significantly do you expect AI to change your research over the next 5 years?
-14. Overall, do you expect AI’s impact on your research to be positive or negative?
-15. How has AI changed the type of research questions you pursue?
-16. For each activity category, roughly what percentage of time has AI saved you?
-17. How has AI changed the skill level needed to perform tasks in each category?
+2. Which AI tools do you currently use for research?
+3. How frequently do you use AI tools in your research?
+4. About how many hours per week do you actively interact with a large language model or another form of AI as part of your research?
+5. How much do you spend on AI tools per month (subscriptions, API access, etc.)?
+6. For which research tasks do you find AI most useful?
+7. YOUR ANSWER: What percentage of your total research time does AI currently save you?
+8. PREDICT THE MEDIAN: What do you think the median response will be across all researchers in your field?
+9. How well-informed do you feel about AI capabilities relevant to your research?
+10. How confident are you in your ability to detect AI-generated errors in your own work?
+11. How easy is it for you to verify or replicate research findings in your peers' work?
+12. How significantly do you expect AI to change your research over the next 5 years?
+13. Overall, do you expect AI’s impact on your research to be positive or negative?
+14. How has AI changed the type of research questions you pursue?
+15. For each activity category, roughly what percentage of time has AI saved you?
+16. How has AI changed the skill level needed to perform tasks in each category?
 
 Note: the activity-category questions now use 8 categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration.
 
