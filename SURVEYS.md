@@ -24,7 +24,7 @@ It lists the current answerable questions in each module and excludes explanator
 15. For each activity category, roughly what percentage of time has AI saved you?
 16. How has AI changed the skill level needed to perform tasks in each category?
 
-Note: the activity-category questions now use 8 categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration.
+Note: the activity-category questions now use 8 categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
 
 ## AI in Your Research (11)
 

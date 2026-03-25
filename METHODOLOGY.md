@@ -107,7 +107,7 @@ The universal and domain levels anchor the entire hierarchy and needed to be cor
 
 **Universal tasks**
 
-These tasks apply to virtually all researchers regardless of field, organized into eight categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration & Collaboration. Examples include "Review and synthesize the relevant literature to situate a research question within existing knowledge," "Identify gaps in existing literature to formulate novel research questions," and "Manage research budgets, personnel, and project timelines."
+These tasks apply to virtually all researchers regardless of field, organized into eight categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration. Examples include "Review and synthesize the relevant literature to situate a research question within existing knowledge," "Identify gaps in existing literature to formulate novel research questions," and "Manage research budgets, personnel, and project timelines."
 
 The universal level ensures that tasks like grant writing, peer review, and mentoring — which are never mentioned in papers or protocols — are still represented in every researcher's task profile.
 

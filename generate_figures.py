@@ -53,7 +53,7 @@ CATEGORY_SHORT = {
     "Writing & Communication":          "Writing & Communication",
     "Peer Review & Service":            "Peer Review",
     "Mentorship & Teaching":            "Mentorship & Teaching",
-    "Administration & Collaboration":   "Administration",
+    "Administration":                 "Administration",
 }
 
 # ── Shared style ───────────────────────────────────────────────────────────────
