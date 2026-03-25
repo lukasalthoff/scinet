@@ -10,7 +10,7 @@ It lists the current answerable questions in each module and excludes explanator
 1. About how many hours per week do you personally spend on each activity category?
 2. Which AI tools do you currently use for research?
 3. How frequently do you use AI tools in your research?
-4. About how many hours per week do you actively interact with a large language model or another form of AI as part of your research?
+4. About how many hours per week do you actively interact with AI as part of your research?
 5. How much do you spend on AI tools per month (subscriptions, API access, etc.)?
 6. For which research tasks do you find AI most useful?
 7. YOUR ANSWER: What percentage of your total research time does AI currently save you?
