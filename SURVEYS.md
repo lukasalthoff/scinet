@@ -13,10 +13,10 @@ It lists the current answerable questions in each module and excludes explanator
 4. About how many hours per week do you actively interact with AI as part of your research?
 5. How much do you spend on AI tools per month (subscriptions, API access, etc.)?
 6. For which research tasks do you find AI most useful?
-7. YOUR ANSWER: What percentage of your total research time does AI currently save you?
-8. PREDICT THE MEDIAN: What do you think the median response will be across your peers?
-9. YOUR ANSWER: Where do you currently see your own research practice on the AI usage in science spectrum?
-10. PREDICT THE MEDIAN: Where do you think the median researcher in your field currently sits on the AI usage in science spectrum?
+7. For **your own research**, what percentage of your total research time does AI currently save you?
+8. For the **median researcher in your field**, what percentage of total research time do you think AI currently saves?
+9. For **your own research**, where do you currently see yourself on the AI usage in science spectrum?
+10. For the **median researcher in your field**, where do you think they currently sit on the AI usage in science spectrum?
 11. How well-informed do you feel about AI capabilities relevant to your research?
 12. How confident are you in your ability to detect AI-generated errors in your own work?
 13. How easy is it for you to verify or replicate research findings in your peers' work?
@@ -73,10 +73,10 @@ Note: the activity-category questions now use 8 categories: Reading & Knowledge 
 
 ## Predict the Median (4)
 
-1. PREDICT THE MEDIAN: Across researchers in your field, how much has AI reduced the skill level needed to do publishable-quality empirical research?
-2. PREDICT THE MEDIAN: By 2030, what percentage of research tasks in your field will be substantially augmented by AI?
-3. YOUR ANSWER: By 2030, how many years of post-PhD training will be needed before a researcher can independently publish in your subfield?
-4. PREDICT THE MEDIAN: What will the median response be?
+1. For the **median researcher in your field**, how much has AI reduced the skill level needed to do publishable-quality empirical research?
+2. For the **median researcher in your field**, by 2030, what percentage of research tasks will be substantially augmented by AI?
+3. For **your own answer**, by 2030, how many years of post-PhD training will be needed before a researcher can independently publish in your subfield?
+4. For the **median researcher in your field**, by 2030, how many years of post-PhD training do you think will be needed before a researcher can independently publish in your subfield?
 
 ## Measuring Simplification: A Toolkit (21)
 
