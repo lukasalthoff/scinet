@@ -92,8 +92,8 @@ A complete list of questions asked across all SciNet survey modules, organized b
 **AI Tools & Adoption**
 12. Which AI tools do you regularly use for research?
 13. How often do you use AI tools in your research?
-14. How much do you spend per month on AI tools for research?
-15. Has AI changed the type of research questions you pursue?
+14. How much do you spend per month on AI tools for research? (Numeric USD amount)
+15. How has AI changed the type of research questions you pursue? (Free text)
 16. Has AI changed your primary research methodology?
 17. Has AI affected your demand for research assistants?
 18. What is the biggest barrier to your adoption of AI tools for research?
