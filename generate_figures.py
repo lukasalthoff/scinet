@@ -57,9 +57,7 @@ CATEGORY_SHORT = {
 }
 
 # ── Shared style ───────────────────────────────────────────────────────────────
-plt.rcParams.update({
-    "font.family":      "sans-serif",
-    "font.size":        11,
+STYLE_BASE = {
     "axes.spines.top":  False,
     "axes.spines.right":False,
     "axes.grid":        True,
@@ -67,19 +65,61 @@ plt.rcParams.update({
     "grid.color":       GRAY3,
     "grid.linewidth":   0.8,
     "figure.dpi":       150,
-})
+}
+
+STYLE_WEB = {
+    **STYLE_BASE,
+    "font.family":      "sans-serif",
+    "font.size":        11,
+}
+
+# Palatino-style serif font for LaTeX paper figures.
+# macOS ships "Palatino"; Windows has "Palatino Linotype"; Linux may have
+# "TeX Gyre Pagella" (the free Palatino clone).  The first available match
+# in the list wins.
+STYLE_PAPER = {
+    **STYLE_BASE,
+    "font.family":      "serif",
+    "font.serif":       ["Palatino", "Palatino Linotype",
+                         "TeX Gyre Pagella", "DejaVu Serif"],
+    "font.size":        11,
+    "mathtext.fontset":  "cm",
+}
+
+# Start with the web style as default
+plt.rcParams.update(STYLE_WEB)
+
+# Output subdirectory for paper-style figures
+OUT_PAPER = OUT / "paper"
+OUT_PAPER.mkdir(exist_ok=True)
+
+# ── Active output directory (toggled by style context) ────────────────────────
+_active_out = OUT
+_show_titles = True  # False for paper figures (captions live in LaTeX)
+
+
+def _set_title(ax, *args, **kwargs):
+    """Set axis title only for web figures; paper figures get their title from LaTeX."""
+    if _show_titles:
+        ax.set_title(*args, **kwargs)
+
+
+def _suptitle(fig, *args, **kwargs):
+    """Set figure suptitle only for web figures."""
+    if _show_titles:
+        fig.suptitle(*args, **kwargs)
 
 
 def save(fig, name):
-    fig.savefig(OUT / name, bbox_inches="tight", dpi=150)
+    fig.savefig(_active_out / name, bbox_inches="tight", dpi=150)
     plt.close(fig)
-    print(f"  saved: figures/{name}")
+    print(f"  saved: {_active_out.relative_to(HERE)}/{name}")
 
 
 def save_loose(fig, name):
-    fig.savefig(OUT / name, dpi=150)
+    fig.savefig(_active_out / name, dpi=150)
     plt.close(fig)
-    print(f"  saved: figures/{name}")
+    print(f"  saved: {_active_out.relative_to(HERE)}/{name}")
 
 
 COUNTRY_NAME_OVERRIDES = {
@@ -120,7 +160,8 @@ OPENALEX_COUNTRY_CODE_OVERRIDES = {
 
 COUNTRY_DISPLAY_OVERRIDES = {
     "United States of America": "United States",
-    "Korea, Republic of": "Korea",
+    "Korea, Republic of": "South Korea",
+    "Korea, Democratic People's Republic of": "North Korea",
     "Taiwan, Province of China": "Taiwan",
     "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
     "Palestine, State of": "Palestine",
@@ -128,7 +169,22 @@ COUNTRY_DISPLAY_OVERRIDES = {
     "Tanzania, United Republic of": "Tanzania",
     "Viet Nam": "Vietnam",
     "Russian Federation": "Russia",
+    "Iran, Islamic Republic of": "Iran",
+    "Iran (Islamic Republic of)": "Iran",
+    "Syrian Arab Republic": "Syria",
+    "Czech Republic": "Czechia",
+    "Bolivia, Plurinational State of": "Bolivia",
+    "Venezuela, Bolivarian Republic of": "Venezuela",
+    "Brunei Darussalam": "Brunei",
+    "Lao People's Democratic Republic": "Laos",
+    "Micronesia, Federated States of": "Micronesia",
+    "Congo, Democratic Republic of the": "DR Congo",
 }
+
+
+def display_country_name(name):
+    """Map a raw country name to its preferred short display form."""
+    return COUNTRY_DISPLAY_OVERRIDES.get(name, name)
 
 LOGLOG_LABEL_CODES = ["US", "GB", "DE", "FR", "IL", "CA", "JP", "KR", "TW", "CH", "AU"]
 
@@ -209,6 +265,7 @@ def load_claude_science_country_data():
         )
 
     df = df[df["paper_count"].notna()].copy()
+    df["country_name"] = df["country_name"].map(display_country_name)
     df["papers_per_capita"] = df["paper_count"] / df["working_age_pop"] * 1000
     df["ai_papers_per_capita"] = df["ai_paper_count"] / df["working_age_pop"] * 1000
     return df
@@ -382,7 +439,7 @@ def fig_tasks_by_domain():
         ax.text(v + counts.values.max() * 0.01, bar.get_y() + bar.get_height() / 2,
                 f"{v:,}", va="center", color=GRAY1, fontsize=10)
     ax.set_xlabel("Number of tasks", color=GRAY1)
-    ax.set_title("Tasks by Research Domain", color=LABLUE, fontweight="bold", pad=10)
+    _set_title(ax,"Tasks by Research Domain", color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}"))
     ax.set_xlim(0, counts.values.max() * 1.15)
@@ -402,7 +459,7 @@ def fig_tasks_by_category():
         ax.text(v + counts.values.max() * 0.01, bar.get_y() + bar.get_height() / 2,
                 f"{v:,}", va="center", color=GRAY1, fontsize=10)
     ax.set_xlabel("Number of tasks", color=GRAY1)
-    ax.set_title("Tasks by Activity Category", color=LABLUE, fontweight="bold", pad=10)
+    _set_title(ax,"Tasks by Activity Category", color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}"))
     ax.set_xlim(0, counts.values.max() * 1.15)
@@ -425,7 +482,7 @@ def fig_tasks_by_level():
         ax.text(bar.get_x() + bar.get_width() / 2, v + counts.values.max() * 0.02,
                 f"{v:,}", ha="center", color=GRAY1, fontsize=10)
     ax.set_ylabel("Number of tasks", color=GRAY1)
-    ax.set_title("Tasks by Hierarchy Level", color=LABLUE, fontweight="bold", pad=10)
+    _set_title(ax,"Tasks by Hierarchy Level", color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}"))
     ax.set_ylim(0, counts.values.max() * 1.15)
@@ -462,7 +519,7 @@ def fig_verifiability_by_domain():
     ax.set_xticks(list(positions))
     ax.set_xticklabels(domain_order, color=GRAY1)
     ax.set_ylabel("Verifiability index", color=GRAY1)
-    ax.set_title("Verifiability Index by Research Domain", color=LABLUE, fontweight="bold", pad=10)
+    _set_title(ax,"Verifiability Index by Research Domain", color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
     ax.grid(axis="y")
     ax.grid(axis="x", visible=False)
@@ -485,21 +542,48 @@ def fig_verifiability_top_bottom():
     # Bottom (low verifiability)
     axes[0].barh(bottom10["subfield_name"], bottom10["verifiability_index"],
                  color=LALIGHTBLUE, height=0.6)
-    axes[0].set_title("Lowest Verifiability", color=LABLUE, fontweight="bold")
+    _set_title(axes[0],"Lowest Verifiability", color=LABLUE, fontweight="bold")
     axes[0].set_xlabel("Verifiability index", color=GRAY1)
     axes[0].tick_params(colors=GRAY1, labelsize=9)
 
     # Top (high verifiability)
     axes[1].barh(top10["subfield_name"], top10["verifiability_index"],
                  color=LABLUE, height=0.6)
-    axes[1].set_title("Highest Verifiability", color=LABLUE, fontweight="bold")
+    _set_title(axes[1],"Highest Verifiability", color=LABLUE, fontweight="bold")
     axes[1].set_xlabel("Verifiability index", color=GRAY1)
     axes[1].tick_params(colors=GRAY1, labelsize=9)
 
-    fig.suptitle("Top and Bottom Subfields by Verifiability Index",
+    _suptitle(fig,"Top and Bottom Subfields by Verifiability Index",
                  color=LABLUE, fontweight="bold", fontsize=13, y=1.01)
     fig.tight_layout()
     save(fig, "verifiability_top_bottom.png")
+
+
+def fig_verifiability_top_bottom_panels():
+    """Save each panel of the verifiability top/bottom figure separately."""
+    verif = pd.read_csv(PRIV / "verifiability" / "verifiability_index_by_subfield_3var.csv")
+    verif = verif[verif["paper_count"] >= 100].copy()
+
+    top10    = verif.nlargest(10, "verifiability_index").iloc[::-1]
+    bottom10 = verif.nsmallest(10, "verifiability_index")
+
+    # Panel A: lowest verifiability
+    fig, ax = plt.subplots(figsize=(6.5, 5))
+    ax.barh(bottom10["subfield_name"], bottom10["verifiability_index"],
+            color=LALIGHTBLUE, height=0.6)
+    _set_title(ax, "Lowest Verifiability", color=LABLUE, fontweight="bold")
+    ax.set_xlabel("Verifiability index", color=GRAY1)
+    ax.tick_params(colors=GRAY1, labelsize=9)
+    save(fig, "verifiability_lowest.png")
+
+    # Panel B: highest verifiability
+    fig, ax = plt.subplots(figsize=(6.5, 5))
+    ax.barh(top10["subfield_name"], top10["verifiability_index"],
+            color=LABLUE, height=0.6)
+    _set_title(ax, "Highest Verifiability", color=LABLUE, fontweight="bold")
+    ax.set_xlabel("Verifiability index", color=GRAY1)
+    ax.tick_params(colors=GRAY1, labelsize=9)
+    save(fig, "verifiability_highest.png")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -542,15 +626,56 @@ def fig_verifiability_components():
         axes[i].set_xticks(x)
         axes[i].set_xticklabels(domain_order, rotation=15, ha="right",
                                 color=GRAY1, fontsize=9)
-        axes[i].set_title(comp, color=LABLUE, fontweight="bold", fontsize=10)
+        _set_title(axes[i], comp, color=LABLUE, fontweight="bold", fontsize=10)
         axes[i].tick_params(colors=GRAY1)
         axes[i].grid(axis="y")
         axes[i].grid(axis="x", visible=False)
 
-    fig.suptitle("Verifiability Components by Domain (paper-weighted means)",
+    _suptitle(fig,"Verifiability Components by Domain (paper-weighted means)",
                  color=LABLUE, fontweight="bold", fontsize=12, y=1.02)
     fig.tight_layout()
     save(fig, "verifiability_components.png")
+
+
+def fig_verifiability_components_panels():
+    """Save each verifiability component as a separate figure."""
+    verif = pd.read_csv(PRIV / "verifiability" / "verifiability_index_by_subfield_3var.csv")
+    domain_map = load_subfield_domain_map()
+    merged = verif.merge(domain_map, on="subfield_name", how="left").dropna(subset=["domain_name"])
+
+    def weighted_mean(grp, col):
+        return np.average(grp[col], weights=grp["paper_count"])
+
+    agg = (merged.groupby("domain_name")
+                 .apply(lambda g: pd.Series({
+                     "Retraction rate (%)":    weighted_mean(g, "retraction_rate"),
+                     "Hedging words per 100w": weighted_mean(g, "hedge_per_100w"),
+                     "Booster words per 100w": weighted_mean(g, "booster_per_100w"),
+                 }))
+                 .reset_index())
+    agg["domain_name"] = pd.Categorical(
+        agg["domain_name"], categories=DISPLAY_DOMAIN_ORDER, ordered=True)
+    agg = agg.sort_values("domain_name")
+
+    components = ["Retraction rate (%)", "Hedging words per 100w", "Booster words per 100w"]
+    colors_comp = [LALIGHTBLUE, NEWBLUE, LABLUE]
+    filenames = ["verifiability_retraction.png", "verifiability_hedging.png",
+                 "verifiability_booster.png"]
+    domain_order = agg["domain_name"].tolist()
+    x = np.arange(len(domain_order))
+
+    for comp, col, fname in zip(components, colors_comp, filenames):
+        fig, ax = plt.subplots(figsize=(5, 4))
+        ax.bar(x, agg[comp], color=col, width=0.55)
+        ax.set_xticks(x)
+        ax.set_xticklabels(domain_order, rotation=15, ha="right",
+                           color=GRAY1, fontsize=9)
+        _set_title(ax, comp, color=LABLUE, fontweight="bold", fontsize=10)
+        ax.tick_params(colors=GRAY1)
+        ax.grid(axis="y")
+        ax.grid(axis="x", visible=False)
+        fig.tight_layout()
+        save(fig, fname)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -579,7 +704,7 @@ def fig_ai_mention_subfields():
         ax.text(row["ai_share"] + 0.3, i,
                 f"{row['ai_share']:.1f}%", va="center", color=GRAY1, fontsize=9)
     ax.set_xlabel("Share of papers mentioning AI (%)", color=GRAY1)
-    ax.set_title("Top 20 Subfields by AI-Mention Rate\n(2023–2025)",
+    _set_title(ax,"Top 20 Subfields by AI-Mention Rate\n(2023–2025)",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1, labelsize=9)
     ax.set_xlim(0, top20["ai_share"].max() * 1.18)
@@ -592,6 +717,7 @@ def fig_ai_mention_subfields():
 def fig_ai_adoption_country():
     df = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
     df = df[df["paper_count"] >= 5000].copy()
+    df["country_name"] = df["country_name"].map(display_country_name)
     df["adjusted_ai_share_pct"] = df["adjusted_ai_share"] * 100
 
     top20_vol = df.nlargest(20, "ai_paper_count").sort_values("ai_paper_count")
@@ -607,7 +733,7 @@ def fig_ai_adoption_country():
                      bar.get_y() + bar.get_height() / 2,
                      f"{v/1000:.0f}k", va="center", color=GRAY1, fontsize=8)
     axes[0].set_xlabel("AI-related papers (thousands, 2023–2025)", color=GRAY1)
-    axes[0].set_title("Total AI Papers", color=LABLUE, fontweight="bold")
+    _set_title(axes[0],"Total AI Papers", color=LABLUE, fontweight="bold")
     axes[0].tick_params(colors=GRAY1, labelsize=9)
     axes[0].set_xlim(0, top20_vol["ai_paper_count"].max() / 1000 * 1.18)
 
@@ -617,13 +743,49 @@ def fig_ai_adoption_country():
                  color=colors, height=0.65)
     axes[1].axvline(0, color=GRAY2, linewidth=0.8, linestyle="--")
     axes[1].set_xlabel("Field-adjusted AI share (pp above/below expected)", color=GRAY1)
-    axes[1].set_title("Field-Adjusted AI Adoption Rate", color=LABLUE, fontweight="bold")
+    _set_title(axes[1],"Field-Adjusted AI Adoption Rate", color=LABLUE, fontweight="bold")
     axes[1].tick_params(colors=GRAY1, labelsize=9)
 
-    fig.suptitle("Country-Level AI Adoption in Research (2023–2025)",
+    _suptitle(fig,"Country-Level AI Adoption in Research (2023–2025)",
                  color=LABLUE, fontweight="bold", fontsize=13, y=1.01)
     fig.tight_layout()
     save(fig, "ai_adoption_country.png")
+
+
+def fig_ai_adoption_country_panels():
+    """Save each panel of the AI adoption country figure separately."""
+    df = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
+    df = df[df["paper_count"] >= 5000].copy()
+    df["country_name"] = df["country_name"].map(display_country_name)
+    df["adjusted_ai_share_pct"] = df["adjusted_ai_share"] * 100
+
+    top20_vol = df.nlargest(20, "ai_paper_count").sort_values("ai_paper_count")
+    top20_adj = df.nlargest(20, "adjusted_ai_share").sort_values("adjusted_ai_share")
+
+    # Panel A: total AI papers
+    fig, ax = plt.subplots(figsize=(7, 7))
+    ax.barh(top20_vol["country_name"], top20_vol["ai_paper_count"] / 1000,
+            color=LABLUE, height=0.65)
+    for bar, v in zip(ax.patches, top20_vol["ai_paper_count"]):
+        ax.text(bar.get_width() + top20_vol["ai_paper_count"].max() / 1000 * 0.01,
+                bar.get_y() + bar.get_height() / 2,
+                f"{v/1000:.0f}k", va="center", color=GRAY1, fontsize=8)
+    ax.set_xlabel("AI-related papers (thousands, 2023–2025)", color=GRAY1)
+    _set_title(ax, "Total AI Papers", color=LABLUE, fontweight="bold")
+    ax.tick_params(colors=GRAY1, labelsize=9)
+    ax.set_xlim(0, top20_vol["ai_paper_count"].max() / 1000 * 1.18)
+    save(fig, "ai_adoption_total.png")
+
+    # Panel B: field-adjusted adoption rate
+    fig, ax = plt.subplots(figsize=(7, 7))
+    colors = [LABLUE if v >= 0 else LALIGHTBLUE for v in top20_adj["adjusted_ai_share_pct"]]
+    ax.barh(top20_adj["country_name"], top20_adj["adjusted_ai_share_pct"],
+            color=colors, height=0.65)
+    ax.axvline(0, color=GRAY2, linewidth=0.8, linestyle="--")
+    ax.set_xlabel("Field-adjusted AI share (pp above/below expected)", color=GRAY1)
+    _set_title(ax, "Field-Adjusted AI Adoption Rate", color=LABLUE, fontweight="bold")
+    ax.tick_params(colors=GRAY1, labelsize=9)
+    save(fig, "ai_adoption_adjusted.png")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -668,7 +830,7 @@ def fig_claude_vs_science_scatter():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("Research Papers per 1,000 Capita\n(OpenAlex)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and Research Output Per Capita",
+    _set_title(ax,"Claude Usage and Research Output Per Capita",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -710,7 +872,7 @@ def fig_claude_vs_science_scatter_loglog():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("Research Papers per 1,000 Capita\n(OpenAlex, log scale)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and Research Output Per Capita (Log Scale)",
+    _set_title(ax,"Claude Usage and Research Output Per Capita (Log Scale)",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -797,7 +959,7 @@ def fig_claude_vs_science_residual_scatter():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("Research Output per 1,000 Capita\n(% above/below GDP-predicted level)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and Research Output Per Capita (Log-Log Residualized)",
+    _set_title(ax,"Claude Usage and Research Output Per Capita (Log-Log Residualized)",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -852,7 +1014,7 @@ def fig_claude_vs_science_residual_scatter_levels():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("Research Output per 1,000 Capita residual\n(vs GDP-predicted level)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and Research Output Per Capita (Levels Residualized)",
+    _set_title(ax,"Claude Usage and Research Output Per Capita (Levels Residualized)",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -902,7 +1064,7 @@ def fig_claude_vs_ai_science_scatter():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("AI Research Papers per 1,000 Capita\n(OpenAlex)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and AI Research Output Per Capita",
+    _set_title(ax,"Claude Usage and AI Research Output Per Capita",
                  color=NEWBLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -949,7 +1111,7 @@ def fig_claude_vs_ai_science_scatter_loglog():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("AI Research Papers per 1,000 Capita\n(OpenAlex, log scale)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and AI Research Output Per Capita (Log Scale)",
+    _set_title(ax,"Claude Usage and AI Research Output Per Capita (Log Scale)",
                  color=NEWBLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -1015,7 +1177,7 @@ def fig_claude_vs_ai_science_residual_scatter():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("AI Research Output per 1,000 Capita\n(% above/below GDP-predicted level)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and AI Research Output Per Capita (Log-Log Residualized)",
+    _set_title(ax,"Claude Usage and AI Research Output Per Capita (Log-Log Residualized)",
                  color=NEWBLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -1075,7 +1237,7 @@ def fig_claude_vs_ai_science_residual_scatter_levels():
                   color=GRAY1, fontsize=10)
     ax.set_ylabel("AI Research Output per 1,000 Capita residual\n(vs GDP-predicted level)",
                   color=GRAY1, fontsize=10)
-    ax.set_title("Claude Usage and AI Research Output Per Capita (Levels Residualized)",
+    _set_title(ax,"Claude Usage and AI Research Output Per Capita (Levels Residualized)",
                  color=NEWBLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
 
@@ -1113,7 +1275,7 @@ def fig_papers_by_domain():
         ax.text(v + df["paper_count_M"].max() * 0.01, bar.get_y() + bar.get_height() / 2,
                 f"{v:.0f}M", va="center", color=GRAY1, fontsize=10)
     ax.set_xlabel("Publications (millions)", color=GRAY1)
-    ax.set_title("Publication Volume by Research Domain\n(OpenAlex, all years)",
+    _set_title(ax,"Publication Volume by Research Domain\n(OpenAlex, all years)",
                  color=LABLUE, fontweight="bold", pad=10)
     ax.tick_params(colors=GRAY1)
     ax.set_xlim(0, df["paper_count_M"].max() * 1.15)
@@ -1123,23 +1285,50 @@ def fig_papers_by_domain():
 # ══════════════════════════════════════════════════════════════════════════════
 # Run all
 # ══════════════════════════════════════════════════════════════════════════════
+ALL_FIGS = [
+    fig_claude_vs_science_scatter,
+    fig_claude_vs_science_scatter_loglog,
+    fig_claude_vs_science_residual_scatter,
+    fig_claude_vs_science_residual_scatter_levels,
+    fig_claude_vs_ai_science_scatter,
+    fig_claude_vs_ai_science_scatter_loglog,
+    fig_claude_vs_ai_science_residual_scatter,
+    fig_claude_vs_ai_science_residual_scatter_levels,
+    fig_tasks_by_domain,
+    fig_tasks_by_category,
+    fig_tasks_by_level,
+    fig_verifiability_by_domain,
+    fig_verifiability_top_bottom,
+    fig_verifiability_components,
+    fig_ai_mention_subfields,
+    fig_ai_adoption_country,
+    fig_papers_by_domain,
+]
+
+# Split-panel versions of multi-panel figures (paper style only)
+PANEL_FIGS = [
+    fig_verifiability_top_bottom_panels,
+    fig_verifiability_components_panels,
+    fig_ai_adoption_country_panels,
+]
+
+def _run_all(style, outdir, label, show_titles=True, include_panels=False):
+    """Generate every figure under the given style dict, saving to outdir."""
+    global _active_out, _show_titles
+    _active_out = outdir
+    _show_titles = show_titles
+    plt.rcParams.update(style)
+    print(f"\n── {label} ──")
+    for fn in ALL_FIGS:
+        fn()
+    if include_panels:
+        print("  ── split panels ──")
+        for fn in PANEL_FIGS:
+            fn()
+
+
 if __name__ == "__main__":
     print("Generating SciNet data overview figures...")
-    fig_claude_vs_science_scatter()
-    fig_claude_vs_science_scatter_loglog()
-    fig_claude_vs_science_residual_scatter()
-    fig_claude_vs_science_residual_scatter_levels()
-    fig_claude_vs_ai_science_scatter()
-    fig_claude_vs_ai_science_scatter_loglog()
-    fig_claude_vs_ai_science_residual_scatter()
-    fig_claude_vs_ai_science_residual_scatter_levels()
-    fig_tasks_by_domain()
-    fig_tasks_by_category()
-    fig_tasks_by_level()
-    fig_verifiability_by_domain()
-    fig_verifiability_top_bottom()
-    fig_verifiability_components()
-    fig_ai_mention_subfields()
-    fig_ai_adoption_country()
-    fig_papers_by_domain()
-    print(f"\nDone. All figures saved to {OUT}/")
+    _run_all(STYLE_WEB,   OUT,       "Web style (sans-serif)",  show_titles=True)
+    _run_all(STYLE_PAPER, OUT_PAPER, "Paper style (Palatino)",  show_titles=False, include_panels=True)
+    print(f"\nDone. Web figures in {OUT}/  ·  Paper figures in {OUT_PAPER}/")
