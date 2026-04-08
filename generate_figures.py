@@ -679,7 +679,52 @@ def fig_verifiability_components_panels():
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 7. AI-mention rate by subfield (top 20)
+# 7. AI-mention rate by field
+# ══════════════════════════════════════════════════════════════════════════════
+def fig_ai_mention_fields():
+    tyc = pd.read_csv(PRIV / "openalex" / "field_stats" / "topic_yearly_counts.csv")
+    tyc = tyc[tyc["year"].between(2023, 2025)]
+    tyc_agg = tyc.groupby("topic_id")[["paper_count", "ai_paper_count"]].sum().reset_index()
+
+    mapping = load_topic_mapping()
+    tyc_agg["topic_id"] = tyc_agg["topic_id"].astype(str)
+
+    merged = tyc_agg.merge(mapping, on="topic_id", how="left").dropna(subset=["field", "domain"])
+    field_agg = (
+        merged.groupby(["field", "domain"])[["paper_count", "ai_paper_count"]]
+        .sum()
+        .reset_index()
+    )
+    field_agg["ai_share"] = field_agg["ai_paper_count"] / field_agg["paper_count"] * 100
+    field_agg = field_agg.sort_values("ai_share")
+
+    fig, ax = plt.subplots(figsize=(10, 7.5))
+    colors = field_agg["domain"].map(DOMAIN_COLORS).fillna(LABLUE)
+    ax.barh(field_agg["field"], field_agg["ai_share"], color=colors, height=0.68)
+    for i, (_, row) in enumerate(field_agg.iterrows()):
+        ax.text(
+            row["ai_share"] + 0.08,
+            i,
+            f"{row['ai_share']:.1f}%",
+            va="center",
+            color=GRAY1,
+            fontsize=8,
+        )
+    ax.set_xlabel("Share of papers mentioning AI (%)", color=GRAY1)
+    _set_title(
+        ax,
+        "AI-Mention Rate by Field\n(2023–2025)",
+        color=LABLUE,
+        fontweight="bold",
+        pad=10,
+    )
+    ax.tick_params(colors=GRAY1, labelsize=8)
+    ax.set_xlim(0, field_agg["ai_share"].max() * 1.16)
+    save(fig, "ai_mention_fields.png")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 8. AI-mention rate by subfield (top 20)
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_ai_mention_subfields():
     # Aggregate topic_yearly_counts (2023-2025) to subfield level
@@ -1300,6 +1345,7 @@ ALL_FIGS = [
     fig_verifiability_by_domain,
     fig_verifiability_top_bottom,
     fig_verifiability_components,
+    fig_ai_mention_fields,
     fig_ai_mention_subfields,
     fig_ai_adoption_country,
     fig_papers_by_domain,
