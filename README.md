@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 30 fields, 302 subfields, and 4,516 topics, with 26,371 released task statements.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 34 fields, 318 subfields, and 4,516 topics, with 26,371 released task statements.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -73,6 +73,17 @@ If you use this dataset, please cite the SciNet project and this repository, for
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
 
 ## Changelog
+
+### 2026-07-01
+
+- Added four display fields for disciplines that have their own departments, degrees, and journals but were previously scattered across broad OpenAlex groupings:
+  - **Public Health & Epidemiology** (Health Sciences) — 7 subfields, split from Medicine & Clinical Sciences.
+  - **Nutrition & Dietetics** (Health Sciences) — 4 subfields, split from Medicine & Clinical Sciences.
+  - **Veterinary Medicine** (Life Sciences) — 3 subfields, split from Agricultural Sciences and Biology.
+  - **Library & Information Science** (Social Sciences) — 2 subfields, consolidated from Computer Science, Communication & Media Studies, and Education.
+- Re-parented 97 OpenAlex topics in `openalex_topic_subfield_mapping.csv` into these 16 new subfields (topic set unchanged at 4,516; taxonomy now 34 fields / 318 subfields).
+- Generated O\*NET-style subfield task statements for the 16 new subfields and appended them to `tasks.csv`.
+- Note: figures in `DATA_OVERVIEW.md` are regenerated from private data via `generate_figures.py` and do not yet reflect the four new fields.
 
 ### 2026-03-20
 
