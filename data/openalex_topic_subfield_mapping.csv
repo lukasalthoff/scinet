@@ -8,7 +8,7 @@ topic_id,topic_name,domain,field,subfield
 10007,Monetary Policy and Economic Impact,Social Sciences,Economics,Macroeconomics
 10008,Teacher Education and Leadership Studies,Social Sciences,Education,Educational Policy & Leadership
 10009,Dementia and Cognitive Impairment Research,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
-10010,"Obesity, Physical Activity, Diet",Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+10010,"Obesity, Physical Activity, Diet",Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 10011,"Literature: history, themes, analysis",Arts & Humanities,Literature,Postcolonial Literature
 10012,Genetic diversity and population structure,Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
 10013,Asymmetric Synthesis and Catalysis,Physical Sciences,Chemistry,Catalysis
@@ -36,7 +36,7 @@ topic_id,topic_name,domain,field,subfield
 10035,Phytochemicals and Antioxidant Activities,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 10036,Advanced Neural Network Applications,Physical Sciences,Computer Science,Computer Vision
 10037,Physics of Superconductivity and Magnetism,Physical Sciences,Physics & Astronomy,Condensed Matter Physics
-10038,Tuberculosis Research and Epidemiology,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+10038,Tuberculosis Research and Epidemiology,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 10039,"Stellar, planetary, and galactic studies",Physical Sciences,Physics & Astronomy,Astrophysics & Cosmology
 10040,Adaptive Control of Nonlinear Systems,Physical Sciences,Engineering,Control Systems & Automation
 10041,COVID-19 Clinical Research Studies,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
@@ -100,7 +100,7 @@ topic_id,topic_name,domain,field,subfield
 10099,GaN-based semiconductor devices and materials,Physical Sciences,Physics & Astronomy,Condensed Matter Physics
 10100,Metaheuristic Optimization Algorithms Research,Physical Sciences,Computer Science,Algorithms & Theory of Computation
 10101,Cloud Computing and Resource Management,Physical Sciences,Computer Science,Distributed & Parallel Computing
-10102,scientometrics and bibliometrics research,Social Sciences,Statistics,Survey Methodology
+10102,scientometrics and bibliometrics research,Social Sciences,Library & Information Science,"Bibliometrics, Scientometrics & Scholarly Communication"
 10103,Reading and Literacy Development,Social Sciences,Psychology,Educational Psychology
 10104,Nanofluid Flow and Heat Transfer,Physical Sciences,Engineering,Mechanical Engineering
 10105,Osteoarthritis Treatment and Mechanisms,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
@@ -207,7 +207,7 @@ topic_id,topic_name,domain,field,subfield
 10206,Meta-analysis and systematic reviews,Social Sciences,Statistics,Biostatistics
 10207,Advanced biosensing and bioanalysis techniques,Life Sciences,Biomedical Sciences,Biomedical Engineering & Imaging
 10208,Labor market dynamics and wage inequality,Social Sciences,Economics,Labor Economics
-10209,Global Maternal and Child Health,Health Sciences,Medicine & Clinical Sciences,Obstetrics & Gynecology
+10209,Global Maternal and Child Health,Health Sciences,Public Health & Epidemiology,"Maternal, Child & Reproductive Health Epidemiology"
 10210,Advanced oxidation water treatment,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 10211,Computational Drug Discovery Methods,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 10212,Electrochemical sensors and biosensors,Physical Sciences,Engineering,Biomedical Engineering
@@ -233,7 +233,7 @@ topic_id,topic_name,domain,field,subfield
 10232,Optical Network Technologies,Physical Sciences,Engineering,Telecommunications Engineering
 10233,Geotechnical Engineering and Soil Mechanics,Physical Sciences,Engineering,Civil & Structural Engineering
 10234,Obstructive Sleep Apnea Research,Health Sciences,Medicine & Clinical Sciences,Pulmonary & Critical Care
-10235,Health disparities and outcomes,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+10235,Health disparities and outcomes,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 10236,Aquatic Ecosystems and Phytoplankton Dynamics,Physical Sciences,Environmental Science,Water Resources & Hydrology
 10237,Cryptography and Data Security,Physical Sciences,Computer Science,Cybersecurity & Cryptography
 10238,Spine and Intervertebral Disc Pathology,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
@@ -275,7 +275,7 @@ topic_id,topic_name,domain,field,subfield
 10274,Synthesis and biological activity,Physical Sciences,Chemistry,Medicinal Chemistry
 10275,2D Materials and Applications,Physical Sciences,Materials Science,Electronic Materials
 10276,Helicobacter pylori-related gastroenterology studies,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
-10277,Vitamin D Research Studies,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+10277,Vitamin D Research Studies,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 10278,Electric Motor Design and Analysis,Physical Sciences,Engineering,Electrical & Electronics Engineering
 10279,Urinary Bladder and Prostate Research,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 10280,Shoulder Injury and Treatment,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
@@ -284,7 +284,7 @@ topic_id,topic_name,domain,field,subfield
 10283,Hearing Loss and Rehabilitation,Life Sciences,Neuroscience,Cognitive Neuroscience
 10284,Anaerobic Digestion and Biogas Production,Physical Sciences,Engineering,Environmental Engineering
 10285,Venous Thromboembolism Diagnosis and Management,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
-10286,Information Retrieval and Search Behavior,Physical Sciences,Computer Science,Databases & Information Retrieval
+10286,Information Retrieval and Search Behavior,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 10287,Algebraic structures and combinatorial models,Physical Sciences,Mathematics,Algebra
 10288,Fractional Differential Equations Solutions,Physical Sciences,Mathematics,Applied Mathematics
 10289,European Union Policy and Governance,Social Sciences,Political Science,International Relations
@@ -395,7 +395,7 @@ topic_id,topic_name,domain,field,subfield
 10394,Lipoproteins and Cardiovascular Health,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
 10395,Construction Project Management and Performance,Social Sciences,Business & Management,Operations & Supply Chain Management
 10396,Fatigue and fracture mechanics,Physical Sciences,Engineering,Materials Science & Engineering
-10397,Nutrition and Health in Aging,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+10397,Nutrition and Health in Aging,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 10398,Groundwater and Isotope Geochemistry,Physical Sciences,Earth & Planetary Sciences,Geology & Geochemistry
 10399,Hydrocarbon exploration and reservoir analysis,Physical Sciences,Engineering,Chemical & Process Engineering
 10400,Network Security and Intrusion Detection,Physical Sciences,Computer Science,Cybersecurity & Cryptography
@@ -408,7 +408,7 @@ topic_id,topic_name,domain,field,subfield
 10407,Lipid Membrane Structure and Behavior,Life Sciences,Biomedical Sciences,Biochemistry
 10408,Chronic Kidney Disease and Diabetes,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 10409,Fuel Cells and Related Materials,Physical Sciences,Engineering,Energy Systems & Power Engineering
-10410,COVID-19 epidemiological studies,Physical Sciences,Mathematics,Applied Mathematics
+10410,COVID-19 epidemiological studies,Health Sciences,Public Health & Epidemiology,Epidemiologic Methods & Study Design
 10411,Proteins in Food Systems,Life Sciences,Agricultural Sciences,Food Science & Technology
 10412,Microfluidic and Capillary Electrophoresis Applications,Physical Sciences,Engineering,Biomedical Engineering
 10413,High-pressure geophysics and materials,Physical Sciences,Earth & Planetary Sciences,Geophysics & Seismology
@@ -451,7 +451,7 @@ topic_id,topic_name,domain,field,subfield
 10450,Aquaculture Nutrition and Growth,Life Sciences,Biology,Marine Biology
 10451,Mycorrhizal Fungi and Plant Interactions,Life Sciences,Agricultural Sciences,Soil Science
 10452,Iron Metabolism and Disorders,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
-10453,Maternal and Perinatal Health Interventions,Health Sciences,Medicine & Clinical Sciences,Obstetrics & Gynecology
+10453,Maternal and Perinatal Health Interventions,Health Sciences,Public Health & Epidemiology,"Maternal, Child & Reproductive Health Epidemiology"
 10454,Optimal Power Flow Distribution,Physical Sciences,Engineering,Energy Systems & Power Engineering
 10455,Foot and Ankle Surgery,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 10456,Multi-Agent Systems and Negotiation,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
@@ -480,14 +480,14 @@ topic_id,topic_name,domain,field,subfield
 10479,Structural Behavior of Reinforced Concrete,Physical Sciences,Engineering,Civil & Structural Engineering
 10480,Ionic liquids properties and applications,Physical Sciences,Engineering,Chemical & Process Engineering
 10481,Computer Graphics and Visualization Techniques,Physical Sciences,Computer Science,Computer Graphics & Visualization
-10482,Mathematical and Theoretical Epidemiology and Ecology Models,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+10482,Mathematical and Theoretical Epidemiology and Ecology Models,Health Sciences,Public Health & Epidemiology,Epidemiologic Methods & Study Design
 10483,Nerve injury and regeneration,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 10484,Wood Treatment and Properties,Physical Sciences,Engineering,Materials Science & Engineering
 10485,"Bullying, Victimization, and Aggression",Social Sciences,Psychology,Developmental Psychology
 10486,Salmonella and Campylobacter epidemiology,Life Sciences,Agricultural Sciences,Food Science & Technology
 10487,Plant and animal studies,Life Sciences,Biology,Ecology
 10488,Nanocomposite Films for Food Packaging,Physical Sciences,Materials Science,Biomaterials
-10489,Regulation of Appetite and Obesity,Life Sciences,Neuroscience,Systems Neuroscience
+10489,Regulation of Appetite and Obesity,Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 10490,Orbital Angular Momentum in Optics,Physical Sciences,Physics & Astronomy,Optics & Photonics
 10491,Enhanced Oil Recovery Techniques,Physical Sciences,Engineering,Chemical & Process Engineering
 10492,Microtubule and mitosis dynamics,Life Sciences,Biomedical Sciences,Biochemistry
@@ -497,7 +497,7 @@ topic_id,topic_name,domain,field,subfield
 10496,Pharmaceutical Practices and Patient Outcomes,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 10497,Fungal and yeast genetics research,Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
 10498,Migraine and Headache Studies,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
-10499,Folate and B Vitamins Research,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+10499,Folate and B Vitamins Research,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 10500,Sparse and Compressive Sensing Techniques,Physical Sciences,Engineering,Computer & Software Engineering
 10501,Polymer Nanocomposites and Properties,Physical Sciences,Materials Science,Composite Materials
 10502,Advanced Memory and Neural Computing,Physical Sciences,Engineering,Electrical & Electronics Engineering
@@ -594,7 +594,7 @@ topic_id,topic_name,domain,field,subfield
 10593,Bacterial biofilms and quorum sensing,Life Sciences,Biomedical Sciences,Virology & Medical Microbiology
 10594,Genetic and phenotypic traits in livestock,Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
 10595,Medieval Literature and History,Arts & Humanities,History,Medieval History
-10596,Child Nutrition and Water Access,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+10596,Child Nutrition and Water Access,Health Sciences,Nutrition & Dietetics,Maternal & Child Nutrition
 10597,Nuclear reactor physics and engineering,Physical Sciences,Engineering,Energy Systems & Power Engineering
 10598,Cardiac pacing and defibrillation studies,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
 10599,Reconstructive Surgery and Microvascular Techniques,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
@@ -627,7 +627,7 @@ topic_id,topic_name,domain,field,subfield
 10626,High-Temperature Coating Behaviors,Physical Sciences,Engineering,Materials Science & Engineering
 10627,Advanced Image and Video Retrieval Techniques,Physical Sciences,Computer Science,Databases & Information Retrieval
 10628,China's Socioeconomic Reforms and Governance,Social Sciences,Political Science,Political Economy
-10629,Health Policy Implementation Science,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+10629,Health Policy Implementation Science,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 10630,Orthopedic Surgery and Rehabilitation,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 10631,"Cancer, Hypoxia, and Metabolism",Life Sciences,Biomedical Sciences,Cancer Biology
 10632,Housing Market and Economics,Social Sciences,Economics,Urban & Real Estate Economics
@@ -710,7 +710,7 @@ topic_id,topic_name,domain,field,subfield
 10709,Social Robot Interaction and HRI,Social Sciences,Psychology,Cognitive Psychology
 10710,Arsenic contamination and mitigation,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 10711,Target Tracking and Data Fusion in Sensor Networks,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
-10712,Library Science and Information Literacy,Social Sciences,Education,Higher Education
+10712,Library Science and Information Literacy,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 10713,Structural Load-Bearing Analysis,Physical Sciences,Engineering,Civil & Structural Engineering
 10714,Software-Defined Networks and 5G,Physical Sciences,Computer Science,Systems & Networking
 10715,Distributed and Parallel Computing Systems,Physical Sciences,Computer Science,Distributed & Parallel Computing
@@ -807,7 +807,7 @@ topic_id,topic_name,domain,field,subfield
 10806,Energetic Materials and Combustion,Physical Sciences,Engineering,Aerospace Engineering
 10807,Synthesis and characterization of novel inorganic/organometallic compounds,Physical Sciences,Chemistry,Inorganic Chemistry
 10808,Electric and Hybrid Vehicle Technologies,Physical Sciences,Engineering,Transportation Engineering
-10809,Occupational Health and Safety Research,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+10809,Occupational Health and Safety Research,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 10810,Polymer composites and self-healing,Physical Sciences,Materials Science,Polymers & Soft Materials
 10811,Hydrogen Storage and Materials,Physical Sciences,Materials Science,Energy Materials
 10812,Human Pose and Action Recognition,Physical Sciences,Computer Science,Computer Vision
@@ -831,7 +831,7 @@ topic_id,topic_name,domain,field,subfield
 10830,Airway Management and Intubation Techniques,Health Sciences,Medicine & Clinical Sciences,Anesthesiology & Pain Medicine
 10831,Cell Adhesion Molecules Research,Health Sciences,Medicine & Clinical Sciences,Oncology
 10832,Pituitary Gland Disorders and Treatments,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
-10833,Vaccine Coverage and Hesitancy,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+10833,Vaccine Coverage and Hesitancy,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 10834,Welding Techniques and Residual Stresses,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 10835,Carbohydrate Chemistry and Synthesis,Physical Sciences,Chemistry,Organic Chemistry
 10836,Metabolomics and Mass Spectrometry Studies,Life Sciences,Biomedical Sciences,Biochemistry
@@ -856,7 +856,7 @@ topic_id,topic_name,domain,field,subfield
 10855,Amyotrophic Lateral Sclerosis Research,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
 10856,Intellectual Property and Patents,Social Sciences,Business & Management,Entrepreneurship & Innovation
 10857,Advanced Electron Microscopy Techniques and Applications,Life Sciences,Biomedical Sciences,Biomedical Engineering & Imaging
-10858,Clinical Nutrition and Gastroenterology,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
+10858,Clinical Nutrition and Gastroenterology,Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 10859,Polymer Surface Interaction Studies,Physical Sciences,Materials Science,Thin Films & Coatings
 10860,Speech and Audio Processing,Physical Sciences,Computer Science,Natural Language Processing
 10861,Ear Surgery and Otitis Media,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
@@ -864,13 +864,13 @@ topic_id,topic_name,domain,field,subfield
 10863,Voice and Speech Disorders,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
 10864,Fluid Dynamics and Mixing,Physical Sciences,Engineering,Chemical & Process Engineering
 10865,Shape Memory Alloy Transformations,Physical Sciences,Materials Science,Metallurgy & Alloy Design
-10866,Nutritional Studies and Diet,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
+10866,Nutritional Studies and Diet,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 10867,Intensive Care Unit Cognitive Disorders,Health Sciences,Medicine & Clinical Sciences,Pulmonary & Critical Care
 10868,Soft Robotics and Applications,Physical Sciences,Engineering,Biomedical Engineering
 10869,Polysaccharides and Plant Cell Walls,Life Sciences,Agricultural Sciences,Crop Science & Agronomy
 10870,Interstitial Lung Diseases and Idiopathic Pulmonary Fibrosis,Health Sciences,Medicine & Clinical Sciences,Pulmonary & Critical Care
 10871,Catalytic Alkyne Reactions,Physical Sciences,Chemistry,Catalysis
-10872,Veterinary Equine Medical Research,Life Sciences,Agricultural Sciences,Animal Science
+10872,Veterinary Equine Medical Research,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
 10873,Bacterial Infections and Vaccines,Life Sciences,Biomedical Sciences,Virology & Medical Microbiology
 10874,Electromagnetic Fields and Biological Effects,Life Sciences,Biomedical Sciences,Physiology
 10875,Pesticide Exposure and Toxicity,Life Sciences,Agricultural Sciences,Pest Management & Entomology
@@ -922,7 +922,7 @@ topic_id,topic_name,domain,field,subfield
 10921,Neutrino Physics Research,Physical Sciences,Physics & Astronomy,Nuclear Physics
 10922,Magnetic Properties and Synthesis of Ferrites,Physical Sciences,Materials Science,Magnetic Materials
 10923,Force Microscopy Techniques and Applications,Physical Sciences,Physics & Astronomy,Applied Physics & Instrumentation
-10924,Cardiovascular Health and Disease Prevention,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
+10924,Cardiovascular Health and Disease Prevention,Health Sciences,Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology"
 10925,Spinal Cord Injury Research,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 10926,Peripheral Artery Disease Management,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
 10927,Access Control and Trust,Physical Sciences,Computer Science,Cybersecurity & Cryptography
@@ -974,10 +974,10 @@ topic_id,topic_name,domain,field,subfield
 10973,Radioactive element chemistry and processing,Physical Sciences,Chemistry,Inorganic Chemistry
 10974,Advanced Queuing Theory Analysis,Social Sciences,Business & Management,Operations & Supply Chain Management
 10975,Bone Tumor Diagnosis and Treatments,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
-10976,Viral gastroenteritis research and epidemiology,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+10976,Viral gastroenteritis research and epidemiology,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 10977,Optical Imaging and Spectroscopy Techniques,Health Sciences,Medicine & Clinical Sciences,Radiology & Medical Imaging
 10978,Prenatal Screening and Diagnostics,Health Sciences,Medicine & Clinical Sciences,Obstetrics & Gynecology
-10979,Breastfeeding Practices and Influences,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+10979,Breastfeeding Practices and Influences,Health Sciences,Nutrition & Dietetics,Maternal & Child Nutrition
 10980,Vascular Malformations and Hemangiomas,Health Sciences,Medicine & Clinical Sciences,Pediatrics
 10981,Cytomegalovirus and herpesvirus research,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
 10982,Motor Control and Adaptation,Life Sciences,Neuroscience,Behavioral Neuroscience
@@ -1147,7 +1147,7 @@ topic_id,topic_name,domain,field,subfield
 11146,Hormonal and reproductive studies,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
 11147,Misinformation and Its Impacts,Social Sciences,Communication & Media Studies,Digital & Social Media
 11148,"Language, Metaphor, and Cognition",Social Sciences,Psychology,Cognitive Psychology
-11149,Veterinary Oncology Research,Health Sciences,Medicine & Clinical Sciences,Oncology
+11149,Veterinary Oncology Research,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
 11150,Endoplasmic Reticulum Stress and Disease,Life Sciences,Biomedical Sciences,Biochemistry
 11151,Advanced Topology and Set Theory,Physical Sciences,Mathematics,Mathematical Logic & Foundations
 11152,Stochastic processes and statistical mechanics,Physical Sciences,Mathematics,Probability Theory
@@ -1292,7 +1292,7 @@ topic_id,topic_name,domain,field,subfield
 11291,Intraocular Surgery and Lenses,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
 11292,Pediatric Pain Management Techniques,Health Sciences,Medicine & Clinical Sciences,Pediatrics
 11293,Orthopedic Infections and Treatments,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
-11294,Infant Nutrition and Health,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+11294,Infant Nutrition and Health,Health Sciences,Nutrition & Dietetics,Maternal & Child Nutrition
 11295,Counseling Practices and Supervision,Social Sciences,Psychology,Clinical Psychology
 11296,COVID-19 and healthcare impacts,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
 11297,Ferroptosis and cancer prognosis,Health Sciences,Medicine & Clinical Sciences,Oncology
@@ -1397,7 +1397,7 @@ topic_id,topic_name,domain,field,subfield
 11396,Machine Learning in Healthcare,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 11397,"Populism, Right-Wing Movements",Social Sciences,Political Science,Comparative Politics
 11398,Hand Gesture Recognition Systems,Physical Sciences,Computer Science,Computer Vision
-11399,Muscle metabolism and nutrition,Life Sciences,Biomedical Sciences,Biochemistry
+11399,Muscle metabolism and nutrition,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 11400,Motivation and Self-Concept in Sports,Social Sciences,Psychology,Health Psychology
 11401,Minerals Flotation and Separation Techniques,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 11402,Vascular Malformations Diagnosis and Treatment,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
@@ -1558,7 +1558,7 @@ topic_id,topic_name,domain,field,subfield
 11557,Lubricants and Their Additives,Physical Sciences,Engineering,Materials Science & Engineering
 11558,Composite Material Mechanics,Physical Sciences,Engineering,Materials Science & Engineering
 11559,Retinoids in leukemia and cellular processes,Life Sciences,Biomedical Sciences,Cancer Biology
-11560,Animal Disease Management and Epidemiology,Life Sciences,Agricultural Sciences,Animal Science
+11560,Animal Disease Management and Epidemiology,Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 11561,Protein Hydrolysis and Bioactive Peptides,Life Sciences,Biomedical Sciences,Biochemistry
 11562,Facial Trauma and Fracture Management,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
 11563,Indian and Buddhist Studies,Arts & Humanities,Religion,Buddhist & Eastern Religions
@@ -1578,8 +1578,8 @@ topic_id,topic_name,domain,field,subfield
 11577,Cognitive Abilities and Testing,Social Sciences,Psychology,Cognitive Psychology
 11578,Plant Pathogenic Bacteria Studies,Life Sciences,Agricultural Sciences,Plant Pathology
 11579,Cardiovascular and Diving-Related Complications,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
-11580,Veterinary Medicine and Surgery,Life Sciences,Agricultural Sciences,Animal Science
-11581,Viral Infections and Outbreaks Research,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+11580,Veterinary Medicine and Surgery,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
+11581,Viral Infections and Outbreaks Research,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 11582,Nanopore and Nanochannel Transport Studies,Physical Sciences,Engineering,Nanotechnology & Microsystems
 11583,Advanced Measurement and Metrology Techniques,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 11584,Biochemical Analysis and Sensing Techniques,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
@@ -1655,7 +1655,7 @@ topic_id,topic_name,domain,field,subfield
 11654,Advanced Mathematical Physics Problems,Physical Sciences,Mathematics,Analysis & PDEs
 11655,HIV-related health complications and treatments,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
 11656,Turtle Biology and Conservation,Physical Sciences,Environmental Science,Conservation & Biodiversity
-11657,Digital and Traditional Archives Management,Social Sciences,Communication & Media Studies,Information Science & Library Science
+11657,Digital and Traditional Archives Management,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 11658,Esophageal and GI Pathology,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
 11659,Advanced Image Fusion Techniques,Physical Sciences,Engineering,Computer & Software Engineering
 11660,Blood groups and transfusion,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
@@ -1729,7 +1729,7 @@ topic_id,topic_name,domain,field,subfield
 11728,Thyroid and Parathyroid Surgery,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
 11729,Product Development and Customization,Social Sciences,Business & Management,Operations & Supply Chain Management
 11730,Autoimmune Bullous Skin Diseases,Health Sciences,Medicine & Clinical Sciences,Dermatology
-11731,Global Health and Surgery,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
+11731,Global Health and Surgery,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 11732,Assisted Reproductive Technology and Twin Pregnancy,Health Sciences,Medicine & Clinical Sciences,Obstetrics & Gynecology
 11733,X-ray Spectroscopy and Fluorescence Analysis,Physical Sciences,Physics & Astronomy,Applied Physics & Instrumentation
 11734,Decision Support System Applications,Social Sciences,Business & Management,Information Systems & Digital Business
@@ -1811,18 +1811,18 @@ topic_id,topic_name,domain,field,subfield
 11810,Complex Systems and Decision Making,Social Sciences,Business & Management,Strategic Management
 11811,Cutaneous lymphoproliferative disorders research,Health Sciences,Medicine & Clinical Sciences,Dermatology
 11812,Nasal Surgery and Airway Studies,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
-11813,Library Collection Development and Digital Resources,Physical Sciences,Computer Science,Software Engineering
+11813,Library Collection Development and Digital Resources,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 11814,Advanced Manufacturing and Logistics Optimization,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 11815,Urological Disorders and Treatments,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 11816,Nursing Roles and Practices,Health Sciences,Medicine & Clinical Sciences,Nursing & Allied Health
 11817,"Housing, Finance, and Neoliberalism",Social Sciences,Economics,Urban & Real Estate Economics
 11818,Nicotinic Acetylcholine Receptors Study,Life Sciences,Biomedical Sciences,Physiology
-11819,Data-Driven Disease Surveillance,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+11819,Data-Driven Disease Surveillance,Health Sciences,Public Health & Epidemiology,Epidemiologic Methods & Study Design
 11820,Learning Styles and Cognitive Differences,Social Sciences,Psychology,Educational Psychology
 11821,Odor and Emission Control Technologies,Physical Sciences,Engineering,Environmental Engineering
 11822,Analytic and geometric function theory,Physical Sciences,Mathematics,Analysis & PDEs
 11823,Natural Resources and Economic Development,Social Sciences,Economics,Development Economics
-11824,Injury Epidemiology and Prevention,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+11824,Injury Epidemiology and Prevention,Health Sciences,Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology"
 11825,Catalysis and Oxidation Reactions,Physical Sciences,Engineering,Chemical & Process Engineering
 11826,Ocular Infections and Treatments,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
 11827,Polyomavirus and related diseases,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
@@ -1897,13 +1897,13 @@ topic_id,topic_name,domain,field,subfield
 11896,Opportunistic and Delay-Tolerant Networks,Physical Sciences,Computer Science,Systems & Networking
 11897,Digital Holography and Microscopy,Physical Sciences,Physics & Astronomy,Optics & Photonics
 11898,Economics of Agriculture and Food Markets,Social Sciences,Economics,Industrial Organization
-11899,"Brucella: diagnosis, epidemiology, treatment",Life Sciences,Agricultural Sciences,Animal Science
+11899,"Brucella: diagnosis, epidemiology, treatment",Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 11900,Fungal Plant Pathogen Control,Life Sciences,Biology,Microbiology
 11901,Bayesian Methods and Mixture Models,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 11902,Intelligent Tutoring Systems and Adaptive Learning,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 11903,Private Equity and Venture Capital,Social Sciences,Business & Management,Entrepreneurship & Innovation
 11904,Spatial Cognition and Navigation,Physical Sciences,Engineering,Computer & Software Engineering
-11905,Veterinary Pharmacology and Anesthesia,Life Sciences,Agricultural Sciences,Animal Science
+11905,Veterinary Pharmacology and Anesthesia,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
 11906,"Gender, Sexuality, and Education",Social Sciences,Sociology,Gender & Sexuality Studies
 11907,Copper-based nanomaterials and applications,Physical Sciences,Materials Science,Nanomaterials & Nanotechnology
 11908,Protein Interaction Studies and Fluorescence Analysis,Life Sciences,Biomedical Sciences,Biochemistry
@@ -1988,7 +1988,7 @@ topic_id,topic_name,domain,field,subfield
 11987,COVID-19 Impact on Reproduction,Health Sciences,Medicine & Clinical Sciences,Obstetrics & Gynecology
 11988,Sustainable Building Design and Assessment,Physical Sciences,Engineering,Civil & Structural Engineering
 11989,Oxidative Organic Chemistry Reactions,Physical Sciences,Chemistry,Organic Chemistry
-11990,Global Health Workforce Issues,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+11990,Global Health Workforce Issues,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 11991,Soft tissue tumor case studies,Health Sciences,Medicine & Clinical Sciences,Oncology
 11992,CCD and CMOS Imaging Sensors,Physical Sciences,Engineering,Electrical & Electronics Engineering
 11993,Atomic and Subatomic Physics Research,Physical Sciences,Physics & Astronomy,"Atomic, Molecular & Optical Physics"
@@ -2023,7 +2023,7 @@ topic_id,topic_name,domain,field,subfield
 12022,Hydraulic flow and structures,Physical Sciences,Engineering,Civil & Structural Engineering
 12023,Cholinesterase and Neurodegenerative Diseases,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
 12024,Ultra-Wideband Communications Technology,Physical Sciences,Engineering,Telecommunications Engineering
-12025,Hepatitis Viruses Studies and Epidemiology,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+12025,Hepatitis Viruses Studies and Epidemiology,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 12026,Explainable Artificial Intelligence (XAI),Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 12027,Social Media in Health Education,Social Sciences,Communication & Media Studies,Health Communication
 12028,Knowledge Management and Sharing,Social Sciences,Communication & Media Studies,Information Science & Library Science
@@ -2039,7 +2039,7 @@ topic_id,topic_name,domain,field,subfield
 12038,Covalent Organic Framework Applications,Physical Sciences,Materials Science,Nanomaterials & Nanotechnology
 12039,Electron and X-Ray Spectroscopy Techniques,Physical Sciences,Materials Science,Materials Characterization & Analysis
 12040,International Arbitration and Investment Law,Social Sciences,Business & Management,International Business
-12041,Public Health Policies and Education,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12041,Public Health Policies and Education,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 12042,Satellite Communication Systems,Physical Sciences,Engineering,Telecommunications Engineering
 12043,Insect behavior and control techniques,Life Sciences,Agricultural Sciences,Pest Management & Entomology
 12044,Advanced Physical and Chemical Molecular Interactions,Physical Sciences,Chemistry,Physical & Theoretical Chemistry
@@ -2064,7 +2064,7 @@ topic_id,topic_name,domain,field,subfield
 12063,Heat and Mass Transfer in Porous Media,Physical Sciences,Engineering,Chemical & Process Engineering
 12064,Intraperitoneal and Appendiceal Malignancies,Health Sciences,Medicine & Clinical Sciences,Oncology
 12065,Hippo pathway signaling and YAP/TAZ,Life Sciences,Biomedical Sciences,Biochemistry
-12066,Obesity and Health Practices,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12066,Obesity and Health Practices,Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 12067,Renal and Vascular Pathologies,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 12068,Neonatal Health and Biochemistry,Health Sciences,Medicine & Clinical Sciences,Pediatrics
 12069,Commutative Algebra and Its Applications,Physical Sciences,Mathematics,Algebra
@@ -2136,7 +2136,7 @@ topic_id,topic_name,domain,field,subfield
 12135,Fuzzy Systems and Optimization,Physical Sciences,Mathematics,Applied Mathematics
 12136,Vanadium and Halogenation Chemistry,Physical Sciences,Chemistry,Inorganic Chemistry
 12137,Economic theories and models,Social Sciences,Economics,Microeconomic Theory
-12138,Occupational Health and Performance,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12138,Occupational Health and Performance,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 12139,Advanced Thermodynamic Systems and Engines,Physical Sciences,Engineering,Mechanical Engineering
 12140,Renal and related cancers,Life Sciences,Biomedical Sciences,Stem Cell & Regenerative Medicine
 12141,Fluid Dynamics and Thin Films,Physical Sciences,Engineering,Mechanical Engineering
@@ -2247,7 +2247,7 @@ topic_id,topic_name,domain,field,subfield
 12246,Chronic Disease Management Strategies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 12247,Microbial Applications in Construction Materials,Physical Sciences,Environmental Science,Soil & Land Use Science
 12248,Water Governance and Infrastructure,Social Sciences,Political Science,Public Administration & Policy
-12249,Veterinary Orthopedics and Neurology,Life Sciences,Agricultural Sciences,Animal Science
+12249,Veterinary Orthopedics and Neurology,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
 12250,Experimental and Theoretical Physics Studies,Physical Sciences,Physics & Astronomy,Applied Physics & Instrumentation
 12251,Synthesis and Catalytic Reactions,Physical Sciences,Chemistry,Catalysis
 12252,Mechanical stress and fatigue analysis,Physical Sciences,Engineering,Mechanical Engineering
@@ -2257,7 +2257,7 @@ topic_id,topic_name,domain,field,subfield
 12256,Facilities and Workplace Management,Social Sciences,Psychology,Organizational & Industrial Psychology
 12257,Bioactive natural compounds,Life Sciences,Biomedical Sciences,Pharmacology & Toxicology
 12258,"Perfectionism, Procrastination, Anxiety Studies",Social Sciences,Psychology,Personality Psychology
-12259,Environmental Justice and Health Disparities,Physical Sciences,Environmental Science,Sustainability Science
+12259,Environmental Justice and Health Disparities,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 12260,Educational Technology and Pedagogy,Physical Sciences,Computer Science,Human-Computer Interaction
 12261,Statistical Mechanics and Entropy,Physical Sciences,Physics & Astronomy,Statistical Mechanics & Thermodynamics
 12262,Hate Speech and Cyberbullying Detection,Physical Sciences,Computer Science,Natural Language Processing
@@ -2265,7 +2265,7 @@ topic_id,topic_name,domain,field,subfield
 12264,Tissue Engineering and Regenerative Medicine,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
 12265,Gun Ownership and Violence Research,Life Sciences,Biomedical Sciences,Physiology
 12266,Byzantine Studies and History,Arts & Humanities,History,Medieval History
-12267,Diet and metabolism studies,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+12267,Diet and metabolism studies,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 12268,Deception detection and forensic psychology,Social Sciences,Psychology,Forensic Psychology
 12269,Effects of Vibration on Health,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 12270,Microwave-Assisted Synthesis and Applications,Physical Sciences,Chemistry,Organic Chemistry
@@ -2287,7 +2287,7 @@ topic_id,topic_name,domain,field,subfield
 12286,Erythrocyte Function and Pathophysiology,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
 12287,Fibroblast Growth Factor Research,Life Sciences,Biomedical Sciences,Physiology
 12288,Optimization and Search Problems,Physical Sciences,Computer Science,Algorithms & Theory of Computation
-12289,Library Science and Administration,Social Sciences,Education,Higher Education
+12289,Library Science and Administration,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 12290,Human Motion and Animation,Physical Sciences,Engineering,Computer & Software Engineering
 12291,Pericarditis and Cardiac Tamponade,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
 12292,Graph Theory and Algorithms,Physical Sciences,Computer Science,Algorithms & Theory of Computation
@@ -2320,7 +2320,7 @@ topic_id,topic_name,domain,field,subfield
 12319,Fish Biology and Ecology Studies,Life Sciences,Biology,Marine Biology
 12320,Feminist Epistemology and Gender Studies,Arts & Humanities,Religion,Religion & Society
 12321,Insect Pheromone Research and Control,Life Sciences,Agricultural Sciences,Pest Management & Entomology
-12322,Animal health and immunology,Life Sciences,Agricultural Sciences,Animal Science
+12322,Animal health and immunology,Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 12323,Asian American and Pacific Histories,Social Sciences,Sociology,Race & Ethnicity
 12324,History of Medicine Studies,Arts & Humanities,History,History of Science & Technology
 12325,Urban Design and Spatial Analysis,Physical Sciences,Engineering,Civil & Structural Engineering
@@ -2363,7 +2363,7 @@ topic_id,topic_name,domain,field,subfield
 12362,Tribology and Wear Analysis,Physical Sciences,Engineering,Materials Science & Engineering
 12363,Academic Research in Diverse Fields,Social Sciences,Education,Educational Technology
 12364,Archaeological Research and Protection,Physical Sciences,Earth & Planetary Sciences,Geology & Geochemistry
-12365,Effects of Environmental Stressors on Livestock,Life Sciences,Biology,Zoology & Animal Biology
+12365,Effects of Environmental Stressors on Livestock,Life Sciences,Veterinary Medicine,Veterinary Preventive Medicine & Animal Health
 12366,"Philosophy, Ethics, and Existentialism",Arts & Humanities,Philosophy,Continental Philosophy
 12367,Dental Trauma and Treatments,Health Sciences,Medicine & Clinical Sciences,Dentistry & Oral Health
 12368,Grey System Theory Applications,Social Sciences,Business & Management,Operations & Supply Chain Management
@@ -2490,7 +2490,7 @@ topic_id,topic_name,domain,field,subfield
 12489,Microbial Metabolites in Food Biotechnology,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
 12490,Software Engineering and Design Patterns,Social Sciences,Business & Management,Operations & Supply Chain Management
 12491,Superconductivity in MgB2 and Alloys,Physical Sciences,Physics & Astronomy,Condensed Matter Physics
-12492,Zoonotic diseases and public health,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+12492,Zoonotic diseases and public health,Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 12493,"Memory, violence, and history",Social Sciences,Psychology,Developmental Psychology
 12494,Alcoholism and Thiamine Deficiency,Health Sciences,Medicine & Clinical Sciences,Psychiatry & Mental Health
 12495,Electrostatic Discharge in Electronics,Physical Sciences,Engineering,Electrical & Electronics Engineering
@@ -2537,7 +2537,7 @@ topic_id,topic_name,domain,field,subfield
 12536,Topological and Geometric Data Analysis,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 12537,Flow Measurement and Analysis,Physical Sciences,Engineering,Mechanical Engineering
 12538,Gastrointestinal Disorders and Treatments,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
-12539,Pharmacology and Obesity Treatment,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+12539,Pharmacology and Obesity Treatment,Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 12540,Cyclone Separators and Fluid Dynamics,Physical Sciences,Engineering,Chemical & Process Engineering
 12541,Graph Theory and Combinatorics,Physical Sciences,Computer Science,Algorithms & Theory of Computation
 12542,Second Language Learning and Teaching,Arts & Humanities,Literature,Literary Theory & Criticism
@@ -2552,7 +2552,7 @@ topic_id,topic_name,domain,field,subfield
 12551,Forgiveness and Related Behaviors,Social Sciences,Psychology,Personality Psychology
 12552,Fetal and Pediatric Neurological Disorders,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
 12553,Psychedelics and Drug Studies,Social Sciences,Psychology,Neuropsychology
-12554,Vitamin C and Antioxidants Research,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12554,Vitamin C and Antioxidants Research,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 12555,Ancient Egypt and Archaeology,Arts & Humanities,History,Ancient History
 12556,Educational Methods and Analysis,Social Sciences,Education,Assessment & Evaluation
 12557,Inorganic Chemistry and Materials,Physical Sciences,Chemistry,Inorganic Chemistry
@@ -2679,7 +2679,7 @@ topic_id,topic_name,domain,field,subfield
 12678,Themes in Literature Analysis,Arts & Humanities,Literature,Literary Theory & Criticism
 12679,Focus Groups and Qualitative Methods,Social Sciences,Statistics,Survey Methodology
 12680,Cultural and Mythological Studies,Social Sciences,Anthropology,Cultural & Social Anthropology
-12681,Global Healthcare and Medical Tourism,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12681,Global Healthcare and Medical Tourism,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 12682,Smart Materials for Construction,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 12683,Studies on Chitinases and Chitosanases,Life Sciences,Biomedical Sciences,Immunology
 12684,Stuttering Research and Treatment,Social Sciences,Psychology,Clinical Psychology
@@ -2730,7 +2730,7 @@ topic_id,topic_name,domain,field,subfield
 12730,"Weber, Simmel, Sociological Theory",Social Sciences,Sociology,Cultural Sociology
 12731,Hidradenitis Suppurativa and Treatments,Health Sciences,Medicine & Clinical Sciences,Dermatology
 12732,Agriculture and Farm Safety,Life Sciences,Agricultural Sciences,Agricultural Economics & Policy
-12733,Vector-Borne Animal Diseases,Life Sciences,Biology,Microbiology
+12733,Vector-Borne Animal Diseases,Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 12734,Information Systems and Technology Applications,Social Sciences,Business & Management,Information Systems & Digital Business
 12735,Blood donation and transfusion practices,Social Sciences,Business & Management,Operations & Supply Chain Management
 12736,Criminal Justice and Penology,Social Sciences,Law,Criminal Law & Criminology
@@ -2742,7 +2742,7 @@ topic_id,topic_name,domain,field,subfield
 12742,Sunflower and Safflower Cultivation,Life Sciences,Agricultural Sciences,Crop Science & Agronomy
 12743,Spanish Culture and Identity,Arts & Humanities,Philosophy,History of Philosophy
 12744,Medical Device Sterilization and Disinfection,Life Sciences,Biomedical Sciences,Virology & Medical Microbiology
-12745,Dietary Effects on Health,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+12745,Dietary Effects on Health,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 12746,Sustainable Industrial Ecology,Physical Sciences,Engineering,Environmental Engineering
 12747,Moyamoya disease diagnosis and treatment,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
 12748,Molecular spectroscopy and chirality,Physical Sciences,Chemistry,Physical & Theoretical Chemistry
@@ -2778,7 +2778,7 @@ topic_id,topic_name,domain,field,subfield
 12778,History of Medicine and Tropical Health,Arts & Humanities,History,History of Science & Technology
 12779,Public Procurement and Policy,Social Sciences,Business & Management,Operations & Supply Chain Management
 12780,Heavy Metal Pollution Remediation,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
-12781,Global Health Care Issues,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12781,Global Health Care Issues,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 12782,Assembly Line Balancing Optimization,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 12783,"Migration, Aging, and Tourism Studies",Social Sciences,Sociology,Migration & Immigration
 12784,Modular Robots and Swarm Intelligence,Physical Sciences,Engineering,Computer & Software Engineering
@@ -2813,7 +2813,7 @@ topic_id,topic_name,domain,field,subfield
 12813,Plant and Biological Electrophysiology Studies,Life Sciences,Agricultural Sciences,Crop Science & Agronomy
 12814,Gaussian Processes and Bayesian Inference,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 12815,Management and Organizational Practices,Social Sciences,Business & Management,Strategic Management
-12816,Global Public Health Policies and Epidemiology,Social Sciences,Business & Management,International Business
+12816,Global Public Health Policies and Epidemiology,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 12817,Pharmacological Effects of Natural Compounds,Life Sciences,Biomedical Sciences,Pharmacology & Toxicology
 12818,"Pneumothorax, Barotrauma, Emphysema",Health Sciences,Medicine & Clinical Sciences,Pulmonary & Critical Care
 12819,Environmental Philosophy and Ethics,Physical Sciences,Environmental Science,Conservation & Biodiversity
@@ -2844,7 +2844,7 @@ topic_id,topic_name,domain,field,subfield
 12844,Psychology and Mental Health,Social Sciences,Psychology,Clinical Psychology
 12845,Methemoglobinemia and Tumor Lysis Syndrome,Health Sciences,Medicine & Clinical Sciences,Oncology
 12846,Ginkgo biloba and Cashew Applications,Health Sciences,Medicine & Clinical Sciences,Neurology & Neurosurgery
-12847,Healthcare Systems and Challenges,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+12847,Healthcare Systems and Challenges,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 12848,Psychological Testing and Assessment,Social Sciences,Psychology,Clinical Psychology
 12849,Parvovirus B19 Infection Studies,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
 12850,Field-Flow Fractionation Techniques,Physical Sciences,Engineering,Chemical & Process Engineering
@@ -2860,17 +2860,17 @@ topic_id,topic_name,domain,field,subfield
 12860,Family and Patient Care in Intensive Care Units,Health Sciences,Medicine & Clinical Sciences,Pulmonary & Critical Care
 12861,"Migration, Education, Indigenous Social Dynamics",Social Sciences,Sociology,Race & Ethnicity
 12862,Catholicism and Religious Studies,Arts & Humanities,History,Religious History
-12863,Web and Library Services,Physical Sciences,Computer Science,Databases & Information Retrieval
+12863,Web and Library Services,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 12864,Psychoanalysis and Social Critique,Social Sciences,Sociology,Cultural Sociology
 12865,Tailings Management and Properties,Physical Sciences,Engineering,Environmental Engineering
 12866,Urologic and reproductive health conditions,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 12867,Advanced Biosensing Techniques and Applications,Life Sciences,Biomedical Sciences,Biomedical Engineering & Imaging
 12868,Photography and Visual Culture,Arts & Humanities,History,Social & Cultural History
-12869,Occupational Health and Burnout,Health Sciences,Medicine & Clinical Sciences,Nursing & Allied Health
+12869,Occupational Health and Burnout,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 12870,Seedling growth and survival studies,Physical Sciences,Environmental Science,Conservation & Biodiversity
 12871,Healthcare Quality and Management,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 12872,Philippine History and Culture,Social Sciences,Anthropology,Cultural & Social Anthropology
-12873,"Nutrition, Health and Food Behavior",Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+12873,"Nutrition, Health and Food Behavior",Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 12874,Digital Imaging for Blood Diseases,Physical Sciences,Computer Science,Computer Vision
 12875,Thermal Expansion and Ionic Conductivity,Physical Sciences,Materials Science,Electronic Materials
 12876,Potassium and Related Disorders,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
@@ -2932,7 +2932,7 @@ topic_id,topic_name,domain,field,subfield
 12932,Powder Metallurgy Techniques and Materials,Physical Sciences,Engineering,Materials Science & Engineering
 12933,Franchising Strategies and Performance,Social Sciences,Business & Management,Entrepreneurship & Innovation
 12934,Plant and fungal interactions,Life Sciences,Biology,Botany & Plant Biology
-12935,Healthcare Systems and Public Health,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
+12935,Healthcare Systems and Public Health,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 12936,"Conflict, Peace, and Violence in Colombia",Social Sciences,Political Science,Security & Conflict Studies
 12937,Chemotherapy-related skin toxicity,Health Sciences,Medicine & Clinical Sciences,Dermatology
 12938,Material Selection and Properties,Physical Sciences,Materials Science,Materials Characterization & Analysis
@@ -2941,7 +2941,7 @@ topic_id,topic_name,domain,field,subfield
 12941,Embedded Systems and FPGA Design,Physical Sciences,Engineering,Electrical & Electronics Engineering
 12942,Cultural Studies and Postmodernism,Social Sciences,Communication & Media Studies,Media Studies & Cultural Criticism
 12943,COVID-19 Digital Contact Tracing,Physical Sciences,Computer Science,Cybersecurity & Cryptography
-12944,Animal Nutrition and Health,Life Sciences,Agricultural Sciences,Animal Science
+12944,Animal Nutrition and Health,Life Sciences,Veterinary Medicine,Veterinary Preventive Medicine & Animal Health
 12945,Quality Function Deployment in Product Design,Social Sciences,Business & Management,Operations & Supply Chain Management
 12946,Fractal and DNA sequence analysis,Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
 12947,"Health, psychology, and well-being",Health Sciences,Medicine & Clinical Sciences,Psychiatry & Mental Health
@@ -2961,7 +2961,7 @@ topic_id,topic_name,domain,field,subfield
 12961,Regional Development and Policy,Social Sciences,Political Science,Public Administration & Policy
 12962,Nephrotoxicity and Medicinal Plants,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
 12963,Anesthesia and Neurotoxicity Research,Life Sciences,Neuroscience,Developmental Neuroscience
-12964,"Diet, Metabolism, and Disease",Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+12964,"Diet, Metabolism, and Disease",Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 12965,Wildlife Conservation and Criminology Analyses,Physical Sciences,Environmental Science,Conservation & Biodiversity
 12966,Russian Literature and Bakhtin Studies,Social Sciences,Education,Language & Literacy Education
 12967,Molecular Spectroscopy and Structure,Physical Sciences,Chemistry,Physical & Theoretical Chemistry
@@ -3001,7 +3001,7 @@ topic_id,topic_name,domain,field,subfield
 13001,Medical Case Reports and Studies,Health Sciences,Medicine & Clinical Sciences,Emergency Medicine
 13002,Southeast Asian Sociopolitical Studies,Social Sciences,Political Science,Comparative Politics
 13003,Regional Development and Environment,Physical Sciences,Environmental Science,Sustainability Science
-13004,Vitamin K Research Studies,Health Sciences,Medicine & Clinical Sciences,Endocrinology & Metabolism
+13004,Vitamin K Research Studies,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 13005,Religious Studies and Spiritual Practices,Arts & Humanities,Philosophy,Metaphysics & Epistemology
 13006,Spanish History and Politics,Arts & Humanities,History,Modern & Contemporary History
 13007,Economic Sanctions and International Relations,Social Sciences,Economics,International Trade
@@ -3029,11 +3029,11 @@ topic_id,topic_name,domain,field,subfield
 13029,South Asian Studies and Conflicts,Social Sciences,Political Science,Security & Conflict Studies
 13030,Survey Sampling and Estimation Techniques,Physical Sciences,Mathematics,Probability Theory
 13031,Civil and Structural Engineering Research,Physical Sciences,Engineering,Civil & Structural Engineering
-13032,COVID-19 Prevention and Impact,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+13032,COVID-19 Prevention and Impact,Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 13033,Social Sciences and Governance,Social Sciences,Geography,Human Geography
 13034,Information Systems Education and Curriculum Development,Physical Sciences,Computer Science,Software Engineering
 13035,Human Rights and Development,Social Sciences,Political Science,International Relations
-13036,Veterinary Practice and Education Studies,Health Sciences,Medicine & Clinical Sciences,Nursing & Allied Health
+13036,Veterinary Practice and Education Studies,Life Sciences,Veterinary Medicine,Veterinary Clinical Sciences & Surgery
 13037,Piperaceae Chemical and Biological Studies,Life Sciences,Biomedical Sciences,Pharmacology & Toxicology
 13038,Internet of Things and AI,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 13039,Magnesium Oxide Properties and Applications,Physical Sciences,Materials Science,Ceramics & Glass Science
@@ -3052,7 +3052,7 @@ topic_id,topic_name,domain,field,subfield
 13052,Molecular Communication and Nanonetworks,Physical Sciences,Engineering,Nanotechnology & Microsystems
 13053,SMEs Development and Digital Marketing,Social Sciences,Sociology,Economic Sociology
 13054,Agricultural and Financial Auditing,Life Sciences,Biology,Ecology
-13055,Global Security and Public Health,Social Sciences,Political Science,International Relations
+13055,Global Security and Public Health,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 13056,Various Academic Research Studies,Social Sciences,Education,Assessment & Evaluation
 13057,Asian Industrial and Economic Development,Social Sciences,Political Science,Political Economy
 13058,Soil and Land Suitability Analysis,Physical Sciences,Environmental Science,Soil & Land Use Science
@@ -3109,7 +3109,7 @@ topic_id,topic_name,domain,field,subfield
 13109,Theological Perspectives and Practices,Arts & Humanities,Religion,Theology & Ethics
 13110,Colorectal and Anal Carcinomas,Health Sciences,Medicine & Clinical Sciences,Oncology
 13111,Nursing care and research,Health Sciences,Medicine & Clinical Sciences,Nursing & Allied Health
-13112,Nutrition and Health Studies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13112,Nutrition and Health Studies,Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 13113,Engineering Technology and Methodologies,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 13114,Image Processing Techniques and Applications,Physical Sciences,Engineering,Computer & Software Engineering
 13115,Axial and Atropisomeric Chirality Synthesis,Physical Sciences,Chemistry,Organic Chemistry
@@ -3163,7 +3163,7 @@ topic_id,topic_name,domain,field,subfield
 13163,Organizational Learning and Leadership,Social Sciences,Business & Management,Organizational Behavior & Human Resources
 13164,Quality and Management Systems,Social Sciences,Business & Management,Operations & Supply Chain Management
 13165,Agricultural safety and regulations,Life Sciences,Agricultural Sciences,Food Science & Technology
-13166,Information Science and Libraries,Physical Sciences,Computer Science,Databases & Information Retrieval
+13166,Information Science and Libraries,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 13167,"Historical, Literary, and Cultural Studies",Arts & Humanities,History,Art & Intellectual History
 13168,Plant Ecology and Taxonomy Studies,Life Sciences,Biology,Taxonomy & Systematics
 13169,Consumer Behavior and Branding,Social Sciences,Business & Management,Marketing
@@ -3230,7 +3230,7 @@ topic_id,topic_name,domain,field,subfield
 13230,Synthesis and Reactivity of Heterocycles,Physical Sciences,Chemistry,Organic Chemistry
 13231,"History, Culture, and Diplomacy",Arts & Humanities,History,Art & Intellectual History
 13232,Laser-Ablation Synthesis of Nanoparticles,Physical Sciences,Engineering,Nanotechnology & Microsystems
-13233,Occupational Health and Safety,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13233,Occupational Health and Safety,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 13234,advanced mathematical theories,Physical Sciences,Mathematics,Analysis & PDEs
 13235,Management Theory and Practice,Social Sciences,Business & Management,Strategic Management
 13236,Geotechnical and construction materials studies,Physical Sciences,Engineering,Civil & Structural Engineering
@@ -3239,7 +3239,7 @@ topic_id,topic_name,domain,field,subfield
 13239,Phosphorus compounds and reactions,Physical Sciences,Chemistry,Organic Chemistry
 13240,Bioeconomy and Sustainability Development,Life Sciences,Biology,Ecology
 13242,Male Reproductive Health Studies,Health Sciences,Medicine & Clinical Sciences,Nephrology & Urology
-13243,Innovation in Digital Healthcare Systems,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13243,Innovation in Digital Healthcare Systems,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 13244,Analysis of environmental and stochastic processes,Physical Sciences,Environmental Science,Water Resources & Hydrology
 13245,Samuel Beckett and Modernism,Arts & Humanities,Literature,European Literature
 13246,"Agriculture, Plant Science, Crop Management",Life Sciences,Agricultural Sciences,Crop Science & Agronomy
@@ -3280,7 +3280,7 @@ topic_id,topic_name,domain,field,subfield
 13281,Andrographolide Research and Applications,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 13282,Automated Road and Building Extraction,Physical Sciences,Engineering,Computer & Software Engineering
 13283,Mental Health Research Topics,Social Sciences,Psychology,Clinical Psychology
-13284,Psychology Research and Bibliometrics,Social Sciences,Psychology,Educational Psychology
+13284,Psychology Research and Bibliometrics,Social Sciences,Library & Information Science,"Bibliometrics, Scientometrics & Scholarly Communication"
 13285,Local Governance and Development,Social Sciences,Geography,Urban Studies & Planning
 13286,Modeling and Simulation Systems,Physical Sciences,Computer Science,Systems & Networking
 13287,Robotic Process Automation Applications,Physical Sciences,Engineering,Control Systems & Automation
@@ -3311,7 +3311,7 @@ topic_id,topic_name,domain,field,subfield
 13312,Mechanical and Thermal Properties Analysis,Physical Sciences,Engineering,Mechanical Engineering
 13313,Dupuytren's Contracture and Treatments,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 13314,Lymphadenopathy Diagnosis and Analysis,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
-13315,Occupational Health and Safety,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13315,Occupational Health and Safety,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 13316,"Crafts, Textile, and Design",Arts & Humanities,Arts,Architecture & Design
 13317,"Media, Communication, and Education",Social Sciences,Communication & Media Studies,Media Studies & Cultural Criticism
 13318,Diverse Scientific Research in Ukraine,Physical Sciences,Environmental Science,Climate Science & Climate Change
@@ -3389,7 +3389,7 @@ topic_id,topic_name,domain,field,subfield
 13390,Cultural and Social Dynamics,Life Sciences,Agricultural Sciences,Forestry & Agroforestry
 13391,Innovations in Aquaponics and Hydroponics Systems,Life Sciences,Biology,Ecology
 13392,History of Education in Spain,Arts & Humanities,History,Social & Cultural History
-13393,Child Nutrition and Feeding Issues,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+13393,Child Nutrition and Feeding Issues,Health Sciences,Nutrition & Dietetics,Maternal & Child Nutrition
 13394,"Ecology, Conservation, and Geographical Studies",Physical Sciences,Environmental Science,Conservation & Biodiversity
 13395,"Education, Leadership, and Health Research",Social Sciences,Education,Higher Education
 13396,Agriculture and Rural Development Research,Life Sciences,Biology,Ecology
@@ -3475,7 +3475,7 @@ topic_id,topic_name,domain,field,subfield
 13476,Indonesian Election Politics and Participation,Social Sciences,Political Science,Electoral Politics & Public Opinion
 13477,Sustainable Design and Development,Physical Sciences,Engineering,Environmental Engineering
 13478,Agricultural Development and Management,Life Sciences,Biology,Ecology
-13479,Food Science and Nutritional Studies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13479,Food Science and Nutritional Studies,Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 13480,Innovations and Analysis in Business and Education,Social Sciences,Business & Management,Strategic Management
 13481,Neurological diseases and metabolism,Life Sciences,Neuroscience,Clinical Neuroscience
 13482,Engineering Education and Technology,Physical Sciences,Computer Science,Human-Computer Interaction
@@ -3582,7 +3582,7 @@ topic_id,topic_name,domain,field,subfield
 13583,Jury Decision Making Processes,Social Sciences,Law,Criminal Law & Criminology
 13584,Coal Combustion and Slurry Processing,Physical Sciences,Engineering,Chemical & Process Engineering
 13585,Technostress in Professional Settings,Social Sciences,Psychology,Organizational & Industrial Psychology
-13586,"HIV, TB, and STIs Epidemiology",Health Sciences,Medicine & Clinical Sciences,Infectious Disease
+13586,"HIV, TB, and STIs Epidemiology",Health Sciences,Public Health & Epidemiology,Infectious Disease Epidemiology
 13587,Q Methodology Applications,Social Sciences,Business & Management,Organizational Behavior & Human Resources
 13588,Regional resilience and development,Social Sciences,Economics,Urban & Real Estate Economics
 13589,Literary and Cultural Studies,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
@@ -3629,7 +3629,7 @@ topic_id,topic_name,domain,field,subfield
 13630,Agriculture Market Analysis Ukraine,Life Sciences,Biology,Ecology
 13631,"Global History, Politics, and Ideology",Social Sciences,Political Science,International Relations
 13632,Marriage and Sexual Relationships,Social Sciences,Psychology,Social Psychology
-13633,Public Health and Social Inequalities,Life Sciences,Biomedical Sciences,Physiology
+13633,Public Health and Social Inequalities,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 13634,Middle East and Rwanda Conflicts,Social Sciences,Communication & Media Studies,Political Communication
 13635,Philosophy and Education Pedagogy,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
 13636,Pentecostalism and Christianity Studies,Arts & Humanities,Religion,Christian Theology
@@ -3669,7 +3669,7 @@ topic_id,topic_name,domain,field,subfield
 13670,Ziziphus Jujuba Studies and Applications,Life Sciences,Agricultural Sciences,Horticulture
 13671,Philosophy and Phenomenology Studies,Arts & Humanities,Philosophy,Philosophy of Mind
 13672,Thomas Hardy Literature Studies,Arts & Humanities,Literature,European Literature
-13673,Library Science and Information,Physical Sciences,Computer Science,Software Engineering
+13673,Library Science and Information,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 13674,Computer Science and Engineering,Physical Sciences,Computer Science,Computer Vision
 13675,Diffusion Coefficients in Liquids,Physical Sciences,Chemistry,Physical & Theoretical Chemistry
 13676,Educational and Technological Research,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
@@ -3785,7 +3785,7 @@ topic_id,topic_name,domain,field,subfield
 13788,Cultural Identity and Representation,Arts & Humanities,Philosophy,Political Philosophy
 13789,Global Education Systems and Policies,Social Sciences,Education,Higher Education
 13790,Waste Management and Environmental Impact,Physical Sciences,Engineering,Environmental Engineering
-13791,Veterinary medicine and infectious diseases,Life Sciences,Agricultural Sciences,Animal Science
+13791,Veterinary medicine and infectious diseases,Life Sciences,Veterinary Medicine,"Veterinary Infectious Disease, Zoonoses & One Health"
 13792,Morinda citrifolia extract uses,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 13793,Environmental and Analytical Chemistry Studies,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 13794,Financial Reporting and XBRL,Social Sciences,Business & Management,Finance & Accounting
@@ -3860,7 +3860,7 @@ topic_id,topic_name,domain,field,subfield
 13863,Historical and Cultural Studies,Arts & Humanities,History,Social & Cultural History
 13864,Indigenous Cultures and History,Social Sciences,Anthropology,Cultural & Social Anthropology
 13865,Nationalism and Cultural Identity,Social Sciences,Geography,Cultural Geography
-13866,Occupational health in dentistry,Health Sciences,Medicine & Clinical Sciences,Dentistry & Oral Health
+13866,Occupational health in dentistry,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 13867,Economic Growth and Development,Physical Sciences,Computer Science,Software Engineering
 13868,Afro-Latin American Studies,Social Sciences,Sociology,Race & Ethnicity
 13869,Ocular and Laser Science Research,Health Sciences,Medicine & Clinical Sciences,Ophthalmology & Otolaryngology
@@ -3890,7 +3890,7 @@ topic_id,topic_name,domain,field,subfield
 13893,Sustainable Development and Policies,Physical Sciences,Environmental Science,Sustainability Science
 13894,Indian Economic and Social Development,Social Sciences,Economics,Development Economics
 13895,Educational Leadership and Innovation,Social Sciences,Education,Educational Policy & Leadership
-13896,Health Services Management and Policy,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13896,Health Services Management and Policy,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 13897,Historical Economic and Legal Thought,Social Sciences,Political Science,Political Theory
 13898,Diverse Interdisciplinary Research Studies,Physical Sciences,Computer Science,Artificial Intelligence & Machine Learning
 13899,Agricultural Systems and Practices,Life Sciences,Biology,Ecology
@@ -3909,7 +3909,7 @@ topic_id,topic_name,domain,field,subfield
 13912,"Language, Linguistics, Cultural Analysis",Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 13913,Information Technology Systems Development,Physical Sciences,Computer Science,Software Engineering
 13914,European Cultural and National Identity,Social Sciences,Sociology,Cultural Sociology
-13915,Public Health in Brazil,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13915,Public Health in Brazil,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 13916,Environmental Policies and Emissions,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 13917,Engineering and Material Science Research,Physical Sciences,Materials Science,Materials Characterization & Analysis
 13918,Advanced Data and IoT Technologies,Physical Sciences,Engineering,Computer & Software Engineering
@@ -3954,7 +3954,7 @@ topic_id,topic_name,domain,field,subfield
 13957,Corporate Governance and Financial Management,Social Sciences,Business & Management,Finance & Accounting
 13958,"Education, Innovation and Language Studies",Social Sciences,Education,Language & Literacy Education
 13959,"Swearing, Euphemism, Multilingualism",Social Sciences,Communication & Media Studies,Rhetoric & Public Discourse
-13960,"Dietetics, Nutrition, and Education",Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+13960,"Dietetics, Nutrition, and Education",Health Sciences,Nutrition & Dietetics,"Clinical Nutrition, Dietetics & Obesity"
 13961,Diverse Academic Research Studies,Social Sciences,Economics,Environmental & Energy Economics
 13962,Omental and Epiploic Conditions,Health Sciences,Medicine & Clinical Sciences,Radiology & Medical Imaging
 13963,Organizational Management and Performance,Social Sciences,Business & Management,Strategic Management
@@ -3978,7 +3978,7 @@ topic_id,topic_name,domain,field,subfield
 13981,"Violence, Education, and Gender Studies",Social Sciences,Education,Curriculum & Instruction
 13982,Social Movements and Cultural Identity,Social Sciences,Psychology,Social Psychology
 13983,Cybersecurity and Information Systems,Physical Sciences,Computer Science,Cybersecurity & Cryptography
-13984,"Nutrition, Genetics, and Disease",Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
+13984,"Nutrition, Genetics, and Disease",Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 13985,Enterprise Management and Information Systems,Social Sciences,Business & Management,Information Systems & Digital Business
 13986,Medical Practices and Rehabilitation,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 13987,Child Development and Education,Social Sciences,Education,Early Childhood Education
@@ -4037,7 +4037,7 @@ topic_id,topic_name,domain,field,subfield
 14040,Problem Solving Skills Development,Health Sciences,Medicine & Clinical Sciences,Psychiatry & Mental Health
 14041,Central European Literary Studies,Social Sciences,Anthropology,Cultural & Social Anthropology
 14042,Technology and Security Systems,Physical Sciences,Computer Science,Systems & Networking
-14043,Historical and modern epidemiology studies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+14043,Historical and modern epidemiology studies,Health Sciences,Public Health & Epidemiology,Epidemiologic Methods & Study Design
 14044,Medical and Agricultural Research Studies,Life Sciences,Agricultural Sciences,Agricultural Economics & Policy
 14045,"Health, Education, and Physical Culture",Social Sciences,Psychology,Educational Psychology
 14046,Bach Studies and Logistics Development,Arts & Humanities,Literature,Literary Theory & Criticism
@@ -4087,7 +4087,7 @@ topic_id,topic_name,domain,field,subfield
 14090,Health and Conflict Studies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 14091,Industrial and Mining Safety,Physical Sciences,Engineering,Environmental Engineering
 14092,"Ethics, Aesthetics, and Art",Arts & Humanities,Philosophy,Aesthetics
-14093,Global Health and Epidemiology,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+14093,Global Health and Epidemiology,Health Sciences,Public Health & Epidemiology,Global Health & Health Equity
 14094,Italy: Economic History and Contemporary Issues,Social Sciences,Economics,Economic History
 14095,"Literature, Musicology, and Cultural Analysis",Social Sciences,Education,Curriculum & Instruction
 14096,Advancements in Materials Engineering,Physical Sciences,Engineering,Materials Science & Engineering
@@ -4118,7 +4118,7 @@ topic_id,topic_name,domain,field,subfield
 14121,Logistics and Transportation Systems,Social Sciences,Business & Management,Operations & Supply Chain Management
 14122,Impact of Education Environments,Social Sciences,Education,Educational Technology
 14123,Decolonial Thought and Epistemologies,Social Sciences,Anthropology,Cultural & Social Anthropology
-14124,"Food, Nutrition, and Cultural Practices",Life Sciences,Agricultural Sciences,Food Science & Technology
+14124,"Food, Nutrition, and Cultural Practices",Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 14125,"Education, Sociology, Communication Studies",Social Sciences,Sociology,Cultural Sociology
 14126,Intramuscular injections and effects,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 14127,Food and Agricultural Sciences,Life Sciences,Agricultural Sciences,Food Science & Technology
@@ -4162,8 +4162,8 @@ topic_id,topic_name,domain,field,subfield
 14165,Inflammation biomarkers and pathways,Life Sciences,Biomedical Sciences,Immunology
 14166,European Monetary and Fiscal Policies,Social Sciences,Economics,Macroeconomics
 14167,Consumer behavior in food and health,Social Sciences,Business & Management,Marketing
-14168,Occupational Health and Safety,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
-14169,Public Health and Environmental Issues,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
+14168,Occupational Health and Safety,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
+14169,Public Health and Environmental Issues,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 14170,Classical Studies and Philology,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 14171,"Education, Law, and Society",Social Sciences,Political Science,Public Administration & Policy
 14172,Cultural and Social Studies in Latin America,Arts & Humanities,Literature,Postcolonial Literature
@@ -4180,7 +4180,7 @@ topic_id,topic_name,domain,field,subfield
 14183,Banking Sector Performance and Management,Social Sciences,Business & Management,Finance & Accounting
 14184,Metallurgy and Material Science,Physical Sciences,Materials Science,Metallurgy & Alloy Design
 14185,"Research, Science, and Academia",Social Sciences,Business & Management,Entrepreneurship & Innovation
-14186,Healthcare Systems and Practices,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
+14186,Healthcare Systems and Practices,Health Sciences,Public Health & Epidemiology,"Health Systems, Services & Policy"
 14187,Varied Academic Research Topics,Social Sciences,Business & Management,Information Systems & Digital Business
 14188,Latin American Legal and Economic Studies,Social Sciences,Political Science,Public Administration & Policy
 14189,Intravenous Infusion Technology and Safety,Physical Sciences,Engineering,Biomedical Engineering
@@ -4203,10 +4203,10 @@ topic_id,topic_name,domain,field,subfield
 14206,Animal Law and Welfare,Social Sciences,Law,Legal Theory & Jurisprudence
 14207,Higher Education Practises and Engagement,Social Sciences,Education,Higher Education
 14208,"Death, Funerary Practices, and Mourning",Social Sciences,Anthropology,Cultural & Social Anthropology
-14209,Public health and occupational medicine,Social Sciences,Political Science,International Relations
+14209,Public health and occupational medicine,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
 14210,Historical and Linguistic Studies,Arts & Humanities,Languages & Linguistics,Translation Studies
 14211,Diverse academic research themes,Social Sciences,Business & Management,Entrepreneurship & Innovation
-14212,Health Promotion and Cardiovascular Prevention,Health Sciences,Medicine & Clinical Sciences,Cardiology & Cardiovascular Medicine
+14212,Health Promotion and Cardiovascular Prevention,Health Sciences,Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology"
 14213,Global Politics and Economy,Social Sciences,Economics,International Trade
 14214,Space Exploration and Technology,Physical Sciences,Engineering,Aerospace Engineering
 14215,Chemical and Environmental Engineering Research,Physical Sciences,Computer Science,Systems & Networking
@@ -4236,7 +4236,7 @@ topic_id,topic_name,domain,field,subfield
 14239,"Business, Education, Mathematics Research",Social Sciences,Business & Management,Finance & Accounting
 14240,E-Learning and COVID-19,Social Sciences,Education,Educational Technology
 14241,Evasion and Academic Success Factors,Social Sciences,Sociology,Social Stratification & Inequality
-14242,"Nutrition, Health, and Society Studies",Life Sciences,Agricultural Sciences,Food Science & Technology
+14242,"Nutrition, Health, and Society Studies",Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 14243,Creative Drama in Education,Arts & Humanities,Arts,Theater & Performance Studies
 14244,Consumer Behavior and Marketing Influence,Social Sciences,Business & Management,Marketing
 14245,Biomarkers in Disease Mechanisms,Life Sciences,Biomedical Sciences,Immunology
@@ -4324,7 +4324,7 @@ topic_id,topic_name,domain,field,subfield
 14327,Advanced Energy Technologies and Civil Engineering Innovations,Physical Sciences,Engineering,Energy Systems & Power Engineering
 14328,Diverse scientific research topics,Social Sciences,Business & Management,Information Systems & Digital Business
 14329,Science and Climate Studies,Physical Sciences,Environmental Science,Climate Science & Climate Change
-14330,Library Science and Information Systems,Physical Sciences,Computer Science,Databases & Information Retrieval
+14330,Library Science and Information Systems,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 14331,Medicinal Plant Pharmacodynamics Research,Life Sciences,Biomedical Sciences,Pharmacology & Toxicology
 14332,European Linguistics and Anthropology,Social Sciences,Anthropology,Linguistic Anthropology
 14333,Dermatoglyphics and Human Traits,Life Sciences,Biomedical Sciences,Genetics & Genomic Medicine
@@ -4368,12 +4368,12 @@ topic_id,topic_name,domain,field,subfield
 14371,Hume's philosophy and hair distribution,Physical Sciences,Physics & Astronomy,Biophysics
 14372,Environmental and Biological Research in Conflict Zones,Physical Sciences,Environmental Science,Ecology & Ecosystem Science
 14373,Securities Regulation and Market Practices,Social Sciences,Business & Management,Marketing
-14374,Statistical Methods in Epidemiology,Physical Sciences,Mathematics,Probability Theory
+14374,Statistical Methods in Epidemiology,Health Sciences,Public Health & Epidemiology,Epidemiologic Methods & Study Design
 14375,"Cultural, Linguistic, Economic Studies",Social Sciences,Anthropology,Cultural & Social Anthropology
 14376,Science and Education Research,Social Sciences,Education,STEM Education
 14378,Entomological Studies and Ecology,Life Sciences,Biology,Zoology & Animal Biology
 14379,Diverse Cultural and Historical Studies,Social Sciences,Sociology,Cultural Sociology
-14380,Libraries and Information Services,Arts & Humanities,Arts,Visual Arts & Art History
+14380,Libraries and Information Services,Social Sciences,Library & Information Science,"Libraries, Archives & Information Services"
 14381,"Psychiatry, Mental Health, Neuroscience",Physical Sciences,Computer Science,Robotics
 14382,Electrophoretic Deposition in Materials Science,Physical Sciences,Engineering,Materials Science & Engineering
 14383,Global Development and Urbanization,Social Sciences,Sociology,Urban Sociology
@@ -4488,7 +4488,7 @@ topic_id,topic_name,domain,field,subfield
 14492,"War, Law, and Justice",Social Sciences,Political Science,Security & Conflict Studies
 14493,Criminal Law and Evidence,Social Sciences,Law,Criminal Law & Criminology
 14494,American Literature and Culture,Arts & Humanities,History,Social & Cultural History
-14495,Public Health and Nutrition,Health Sciences,Medicine & Clinical Sciences,Pediatrics
+14495,Public Health and Nutrition,Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 14496,Educational Technology and E-Learning,Physical Sciences,Computer Science,Human-Computer Interaction
 14497,Social Issues and Policies in Latin America,Social Sciences,Law,Human Rights Law
 14498,Educational Technology in Learning,Physical Sciences,Computer Science,Human-Computer Interaction
