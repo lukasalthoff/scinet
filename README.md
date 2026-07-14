@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 30 fields, 302 subfields, and 4,516 topics, with 26,371 released task statements.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 4 domains, 34 fields, 320 subfields, and 4,516 topics, with 5,044 released task statements (27 universal, 45 domain, and 4,972 subfield-level).
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -73,6 +73,25 @@ If you use this dataset, please cite the SciNet project and this repository, for
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
 
 ## Changelog
+
+### 2026-07-13
+
+- Refreshed `tasks.csv` to match the live site: **5,044 task statements** across
+  **34 fields** and **320 subfields** (previously 4,981 / 30 / 315).
+- Adds four fields that were introduced after the March release: **Public Health &
+  Epidemiology**, **Nutrition & Dietetics**, **Veterinary Medicine**, and
+  **Library & Information Science**.
+- Corrected the headline counts in `README.md` and `DATA_OVERVIEW.md`, which still
+  described the March hierarchy (and quoted a task count that included
+  topic-level statements not present in `tasks.csv`).
+
+**Known gaps (not yet released):**
+
+- **Substeps.** Each subfield-level task decomposes into substeps; these are not yet
+  part of the public release. TODO: publish once the decomposition is regenerated.
+- **Substeps for the four new fields.** The substep decomposition predates them, so
+  Public Health & Epidemiology, Nutrition & Dietetics, Veterinary Medicine and
+  Library & Information Science currently have no substeps. TODO: generate.
 
 ### 2026-03-20
 
