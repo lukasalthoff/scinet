@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 4 domains, 34 fields, 320 subfields, and 4,516 topics, with 5,044 released task statements (27 universal, 45 domain, and 4,972 subfield-level).
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 34 fields, 320 subfields, and 4,516 topics, with 5,044 released task statements (27 universal, 45 domain, and 4,972 subfield-level).
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -84,8 +84,17 @@ Data and documentation in this repository are licensed under **CC BY 4.0** — s
 - Corrected the headline counts in `README.md` and `DATA_OVERVIEW.md`, which still
   described the March hierarchy (and quoted a task count that included
   topic-level statements not present in `tasks.csv`).
+- **Realigned the `domain` column with the site's five display domains.** Previously
+  the released file used an older four-domain grouping in which Arts, History,
+  Languages & Linguistics, Literature, Philosophy and Religion were labelled
+  *Social Sciences*, and Neuroscience was labelled *Health Sciences* — neither
+  matching what the website shows. All 34 fields now carry the same domain as
+  [anatomyofscience.com](https://www.anatomyofscience.com/).
 
 **Known gaps (not yet released):**
+
+- **Arts & Humanities has no domain-level tasks.** The 45 domain tasks cover only
+  four domains; the humanities fields currently inherit none. TODO: author them.
 
 - **Substeps.** Each subfield-level task decomposes into substeps; these are not yet
   part of the public release. TODO: publish once the decomposition is regenerated.
