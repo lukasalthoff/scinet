@@ -1,0 +1,113 @@
+field,subfield_slug,topic_id,topic_name,confidence,reason,n_papers
+Anthropology,linguistic_anthropology,14159,Linguistics and Literary Studies,high,Linguistics and literary studies overlap directly,6109
+Anthropology,linguistic_anthropology,12090,Language and cultural evolution,high,Language and cultural evolution is core,4093
+Anthropology,linguistic_anthropology,11148,"Language, Metaphor, and Cognition",medium,"Language, metaphor, cognition; discourse analysis overlap",14320
+Anthropology,medical_anthropology,10149,Anthropological Studies and Insights,high,General anthropology; includes medical anthropology work,7075
+Arts,digital_and_new_media_arts,12377,Digital Humanities and Scholarship,high,"Digital humanities, computational creative scholarship",3637
+Arts,digital_and_new_media_arts,13308,Cybernetics and Technology in Society,high,"Cybernetics, technology and culture overlap",644
+Arts,digital_and_new_media_arts,12632,Visual Culture and Art Theory,medium,Visual culture theory includes new media,3721
+Arts,digital_and_new_media_arts,13310,Subtitles and Audiovisual Media,medium,Audiovisual/screen media practice,2389
+Arts,film_studies,13310,Subtitles and Audiovisual Media,high,"Audiovisual media, subtitling, screen texts",2389
+Arts,film_studies,14192,"Literature, Film, and Journalism Analysis",high,Explicitly includes film analysis,1247
+Arts,film_studies,12868,Photography and Visual Culture,medium,"Visual culture, photographic/moving image studies",3159
+Arts,film_studies,12390,Comics and Graphic Narratives,medium,"Graphic narratives, adaptation, media studies overlap",2798
+Arts,theater_and_performance_studies,12912,"Shakespeare, Adaptation, and Literary Criticism",high,"Shakespeare drama, staging, adaptation studies",4747
+Biology,bioinformatics_and_computational_biology,10887,Bioinformatics and Genomic Networks,high,Core bioinformatics and genomic network analysis,14490
+Chemistry,environmental_chemistry,10139,Heavy metals in environment,high,"Heavy metals in environment, core environmental chemistry",33941
+Communication & Media Studies,health_communication,12593,Communication in Education and Healthcare,high,Communication in healthcare settings directly relevant,5530
+Communication & Media Studies,health_communication,11488,Climate Change Communication and Perception,medium,Risk communication and public perception research,8724
+Communication & Media Studies,intercultural_communication,11454,Cultural Differences and Values,high,Cross-cultural values research; core intercultural communica,10516
+Communication & Media Studies,rhetoric_and_public_discourse,11148,"Language, Metaphor, and Cognition",high,Metaphor and persuasive language central to rhetoric,14320
+Earth & Planetary Sciences,mineralogy_and_petrology,10001,Geological and Geochemical Analysis,high,Geochemistry and petrological analysis core overlap,77500
+Education,language_and_literacy_education,10103,Reading and Literacy Development,high,Reading and literacy development core fit,22314
+Education,medical_and_health_professions_education,10843,Diversity and Career in Medicine,high,"Medical career diversity, training pipeline research",8896
+Education,physical_education_and_kinesiology,11400,Motivation and Self-Concept in Sports,high,"Sport motivation, core kinesiology topic",9790
+Education,physical_education_and_kinesiology,10813,Sport Psychology and Performance,high,Sport psychology and athletic performance,6999
+Geography,human_geography,11420,Geographies of human-animal interactions,high,Cultural geography; human-animal spatial relations,8725
+Geography,physical_geography,10757,Geographic Information Systems Studies,high,GIS methods central to physical geography,10216
+Geography,physical_geography,11980,Human Mobility and Location-Based Analysis,medium,"spatial analysis, geospatial mobility data",9869
+Geography,tourism_and_leisure_geography,10055,Diverse Aspects of Tourism Research,high,Core tourism research topic,22407
+History,art_and_intellectual_history,13922,Historical Art and Culture Studies,high,Historical art and culture scholarship,3350
+History,art_and_intellectual_history,14191,Historical Art and Architecture Studies,high,Historical art and architecture studies,639
+History,early_modern_history,12409,Reformation and Early Modern Christianity,high,Reformation is core early modern history,7442
+History,early_modern_history,12517,Seventeenth-Century Political and Philosophical Thought,high,Seventeenth-century thought squarely early modern,2384
+History,political_and_military_history,13938,Historical and Contemporary Political Dynamics,high,"Political dynamics history, direct fit",5239
+History,political_and_military_history,12337,Italian Fascism and Post-war Society,high,"Fascism, war, and postwar politics",6608
+Languages & Linguistics,computational_linguistics,10034,"Syntax, Semantics, Linguistic Variation",high,Syntax/semantics core to computational modeling,12860
+Languages & Linguistics,historical_and_comparative_linguistics,14210,Historical and Linguistic Studies,high,Directly historical-linguistic研究; core field overlap,4422
+Languages & Linguistics,psycholinguistics,10034,"Syntax, Semantics, Linguistic Variation",high,Syntax/semantics processing overlaps psycholinguistic resear,12860
+Law,comparative_law,13710,European and International Law Studies,high,European and international law comparative studies,9113
+Law,comparative_law,10749,International Law and Human Rights,high,International law and human rights comparison,10244
+Law,corporate_and_commercial_law,14102,Corporate Governance and Law,high,Directly corporate governance and law,4020
+Law,corporate_and_commercial_law,12040,International Arbitration and Investment Law,high,Commercial arbitration and investment law,7278
+Law,environmental_law,10471,Climate Change Policy and Economics,high,"Climate policy, regulation, treaty compliance",17509
+Law,family_law,11380,Child Welfare and Adoption,high,"Child welfare, adoption, custody law",8605
+Law,family_law,10380,Intimate Partner and Family Violence,high,Domestic violence law and protective orders,18217
+Law,health_law_and_bioethics,11678,Healthcare Decision-Making and Restraints,high,"Healthcare decision-making, restraints, consent, capacity",7244
+Law,health_law_and_bioethics,11531,Healthcare Systems and Reforms,medium,Health system reform law and policy,8110
+Law,immigration_law,10216,"Migration, Refugees, and Integration",high,"Refugee integration, asylum policy, migration law",10330
+Law,immigration_law,12693,"Migration, Ethnicity, and Economy",medium,"Migration, ethnicity, immigrant economic incorporation",10524
+Law,intellectual_property_law,10856,Intellectual Property and Patents,high,Patents and IP directly core,8449
+Law,intellectual_property_law,12722,Innovation Policy and R&D,medium,Innovation policy and R&D incentives,5747
+Literature,american_literature,14494,American Literature and Culture,high,Directly American literature and culture,1216
+Literature,american_literature,14518,American Sports and Literature,medium,American sports writing and literature,1521
+Literature,comparative_literature,12678,Themes in Literature Analysis,high,Cross-cultural thematic literary analysis,5300
+Literature,comparative_literature,12586,"Folklore, Mythology, and Literature Studies",high,"World literature, myth across traditions",4447
+Literature,comparative_literature,10011,"Literature: history, themes, analysis",high,General literary history and criticism,3198
+Literature,english_literature,12912,"Shakespeare, Adaptation, and Literary Criticism",high,Shakespeare and English literary criticism,4747
+Literature,english_literature,13174,American and British Literature Analysis,high,British and American literature analysis,3155
+Literature,english_literature,12974,Modernist Literature and Criticism,high,Anglophone modernist literature criticism,1352
+Literature,english_literature,13245,Samuel Beckett and Modernism,high,"Beckett, Anglo-Irish modernist studies",1315
+Literature,english_literature,13329,Joseph Conrad and Literature,high,"Conrad, English novel scholarship",845
+Literature,english_literature,14494,American Literature and Culture,high,American literature and culture,1216
+Literature,european_literature,11794,Early Modern Spanish Literature,high,Early modern Spanish literature is European literature,1138
+Literature,european_literature,14021,Medieval European Literature and History,high,Medieval European literature directly relevant,759
+Literature,european_literature,14469,Renaissance Literature and Culture,high,Renaissance literature and culture in Europe,1170
+Literature,european_literature,12974,Modernist Literature and Criticism,high,Modernist literature largely European,1352
+Literature,medieval_and_early_modern_literature,10595,Medieval Literature and History,high,Medieval literature core to subfield,8808
+Literature,narrative_studies,13497,Hermeneutics and Narrative Identity,high,Narrative identity and hermeneutics core,1420
+Literature,narrative_studies,13590,"Oral History, Memory, Narrative Analysis",high,Oral history and narrative analysis,1188
+Literature,narrative_studies,13474,Autobiographical and Biographical Writing,high,Life writing is narrative studies,727
+Literature,narrative_studies,12586,"Folklore, Mythology, and Literature Studies",high,Folklore and myth narratives,4447
+Literature,narrative_studies,12390,Comics and Graphic Narratives,high,Graphic narrative form analysis,2798
+Literature,poetry_and_poetics,12678,Themes in Literature Analysis,high,General literary theme analysis includes poetry,5300
+Literature,poetry_and_poetics,12974,Modernist Literature and Criticism,high,Modernist criticism centers on poets,1352
+Literature,poetry_and_poetics,13301,Literature Analysis and Criticism,high,"Literary criticism, close reading of verse",1155
+Literature,postcolonial_literature,12470,Caribbean and African Literature and Culture,high,Caribbean/African literature is core postcolonial,1218
+Literature,postcolonial_literature,12585,North African History and Literature,high,"North African literature, colonial legacies",902
+Literature,world_literature,11717,Postcolonial and Cultural Literary Studies,high,Postcolonial literary studies are core world literature,4408
+Literature,world_literature,13466,Comparative Literary Analysis and Criticism,high,Comparative literary criticism directly relevant,450
+Literature,world_literature,13179,"Literature, Culture, and Criticism",medium,"Transnational literature, culture, criticism",478
+Literature,world_literature,12470,Caribbean and African Literature and Culture,medium,Caribbean and African literatures fit,1218
+Mathematics,optimization_and_operations_research,10100,Metaheuristic Optimization Algorithms Research,high,Metaheuristics are core optimization research,21095
+Philosophy,aesthetics,12632,Visual Culture and Art Theory,high,Visual culture and art theory core,3721
+Philosophy,aesthetics,12444,"Art, Politics, and Modernism",high,Modernism and art theory debates,4060
+Philosophy,aesthetics,13216,Artistic and Creative Research,medium,"Artistic research, practice-based aesthetics",1710
+Philosophy,ethics_and_moral_philosophy,14092,"Ethics, Aesthetics, and Art",high,Directly ethics-focused philosophical work,774
+Philosophy,logic_and_philosophy_of_language,13538,Linguistics and Language Analysis,high,Semantics/pragmatics analysis core to philosophy of language,2717
+Philosophy,logic_and_philosophy_of_language,12558,Wittgensteinian philosophy and applications,high,Wittgenstein: paradigmatic philosophy of language,1740
+Philosophy,philosophy_of_mind,11477,"Epistemology, Ethics, and Metaphysics",high,Core analytic metaphysics/epistemology includes consciousnes,9001
+Philosophy,philosophy_of_science,10778,Philosophy and History of Science,high,Directly philosophy and history of science,9842
+Philosophy,political_philosophy,12517,Seventeenth-Century Political and Philosophical Thought,high,Early modern political thought core,2384
+Philosophy,political_philosophy,12397,Critical Theory and Philosophy,high,Critical theory is political philosophy,3724
+Philosophy,political_philosophy,12295,"Foucault, Power, and Ethics",high,"Power, biopolitics, governmentality",3384
+Philosophy,political_philosophy,12957,"War, Ethics, and Justification",high,Just war theory,2585
+Physics & Astronomy,biophysics,11162,Enzyme Structure and Function,high,"Protein/enzyme structure-function, core biophysics",16056
+Religion,buddhist_and_eastern_religions,10893,Chinese history and philosophy,high,"Chinese philosophy includes Confucianism, Daoism, Buddhism",13656
+Religion,christian_theology,12409,Reformation and Early Modern Christianity,high,Reformation Christianity is core theology,7442
+Religion,comparative_religion,13005,Religious Studies and Spiritual Practices,high,Religious studies and spiritual practices broadly,4395
+Religion,comparative_religion,11563,Indian and Buddhist Studies,high,"Eastern religions, comparative traditions",3015
+Religion,comparative_religion,13150,Study and Philosophy of Religion,high,Study and philosophy of religion,489
+Religion,comparative_religion,13059,"Religion, Ecology, and Ethics",medium,"Cross-traditional religion, ecology, ethics",3308
+Religion,islamic_studies,11203,Jewish and Middle Eastern Studies,high,Middle Eastern studies overlaps Islamic scholarship heavily,14630
+Religion,theology_and_ethics,13347,Christian Theology and Mission,high,Core Christian theology and mission work,4187
+Religion,theology_and_ethics,13144,Theology and Philosophy of Evil,high,Theodicy: theology plus moral philosophy,4363
+Sociology,social_movements_and_collective_action,11421,Labor Movements and Unions,high,Labor movements are core collective action,14350
+Sociology,urban_sociology,11645,"Urban, Neighborhood, and Segregation Studies",high,Neighborhood segregation is core urban sociology,9215
+Statistics,biostatistics,10804,"Health Systems, Economic Evaluations, Quality of Life",high,"Health outcomes, QoL measurement, evaluation methods",26791
+Statistics,causal_inference,11911,Spatial and Panel Data Analysis,high,"Panel/spatial econometrics, DiD-style causal estimation",5575
+Statistics,causal_inference,10206,Meta-analysis and systematic reviews,medium,"Evidence synthesis, treatment effect estimation",8472
+Statistics,multivariate_analysis,10467,Psychometric Methodologies and Testing,high,"Factor analysis, SEM, psychometric multivariate methods",4960
+Statistics,nonparametric_methods,10206,Meta-analysis and systematic reviews,medium,Meta-analysis uses rank/distribution-free statistical method,8472
+Statistics,nonparametric_methods,10467,Psychometric Methodologies and Testing,medium,"Psychometrics adjoins reliability/agreement, nonparametric I",4960
+Veterinary Medicine,veterinary_preventive_medicine_and_animal_health,11560,Animal Disease Management and Epidemiology,high,"Animal disease epidemiology, herd health surveillance",12381
