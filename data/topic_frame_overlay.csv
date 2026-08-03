@@ -13,7 +13,16 @@ Arts,film_studies,12868,Photography and Visual Culture,medium,"Visual culture, p
 Arts,film_studies,12390,Comics and Graphic Narratives,medium,"Graphic narratives, adaptation, media studies overlap",2798
 Arts,theater_and_performance_studies,12912,"Shakespeare, Adaptation, and Literary Criticism",high,"Shakespeare drama, staging, adaptation studies",4747
 Biology,bioinformatics_and_computational_biology,10887,Bioinformatics and Genomic Networks,high,Core bioinformatics and genomic network analysis,14490
-Chemistry,environmental_chemistry,10139,Heavy metals in environment,high,"Heavy metals in environment, core environmental chemistry",33941
+Chemistry,environmental_chemistry,10139,Heavy metals in environment,high,Heavy metals in environment: core environmental chemistry,33941
+Chemistry,environmental_chemistry,10016,Adsorption and biosorption for pollutant removal,high,Adsorption for pollutant removal,37667
+Chemistry,environmental_chemistry,10122,Toxic Organic Pollutants Impact,high,Toxic organic pollutants,31066
+Chemistry,environmental_chemistry,10419,Pharmaceutical and Antibiotic Environmental Impacts,high,Pharmaceutical environmental contaminants,21935
+Chemistry,environmental_chemistry,10819,Mercury impact and mitigation studies,high,Mercury contamination chemistry,19280
+Chemistry,environmental_chemistry,10710,Arsenic contamination and mitigation,high,Arsenic contamination chemistry,18073
+Chemistry,environmental_chemistry,10447,Environmental Toxicology and Ecotoxicology,high,Environmental toxicology and ecotoxicology,22376
+Chemistry,environmental_chemistry,10210,Advanced oxidation water treatment,medium,Advanced oxidation water treatment chemistry,18207
+Chemistry,environmental_chemistry,10686,Effects and risks of endocrine disrupting chemicals,medium,Endocrine disrupting chemicals,16102
+Chemistry,environmental_chemistry,10075,Atmospheric chemistry and aerosols,medium,Atmospheric chemistry and aerosols,39385
 Communication & Media Studies,health_communication,12593,Communication in Education and Healthcare,high,Communication in healthcare settings directly relevant,5530
 Communication & Media Studies,health_communication,11488,Climate Change Communication and Perception,medium,Risk communication and public perception research,8724
 Communication & Media Studies,intercultural_communication,11454,Cultural Differences and Values,high,Cross-cultural values research; core intercultural communica,10516
@@ -93,6 +102,14 @@ Philosophy,political_philosophy,12397,Critical Theory and Philosophy,high,Critic
 Philosophy,political_philosophy,12295,"Foucault, Power, and Ethics",high,"Power, biopolitics, governmentality",3384
 Philosophy,political_philosophy,12957,"War, Ethics, and Justification",high,Just war theory,2585
 Physics & Astronomy,biophysics,11162,Enzyme Structure and Function,high,"Protein/enzyme structure-function, core biophysics",16056
+Psychology,neuropsychology,10042,Neural and Behavioral Psychology Studies,high,Neural and behavioral psychology core overlap,23861
+Psychology,neuropsychology,10009,Dementia and Cognitive Impairment Research,high,Cognitive impairment assessment is neuropsychology,29557
+Psychology,neuropsychology,10429,EEG and Brain-Computer Interfaces,medium,EEG measures of cognition,33999
+Psychology,neuropsychology,10241,Functional Brain Connectivity Studies,medium,Brain connectivity linked to cognition,25679
+Psychology,neuropsychology,10086,Alzheimer's disease research and treatments,medium,Alzheimer's cognitive testing overlap,34274
+Psychology,neuropsychology,10537,Attention Deficit Hyperactivity Disorder,medium,ADHD executive function assessment,22238
+Psychology,neuropsychology,10106,Autism Spectrum Disorder Research,medium,Autism cognitive profiles,28189
+Psychology,neuropsychology,10427,Visual perception and processing mechanisms,medium,Perception and cognitive processing,29588
 Religion,buddhist_and_eastern_religions,10893,Chinese history and philosophy,high,"Chinese philosophy includes Confucianism, Daoism, Buddhism",13656
 Religion,christian_theology,12409,Reformation and Early Modern Christianity,high,Reformation Christianity is core theology,7442
 Religion,comparative_religion,13005,Religious Studies and Spiritual Practices,high,Religious studies and spiritual practices broadly,4395
