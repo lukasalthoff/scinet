@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 30 fields, 302 subfields, and 4,516 topics, with 26,371 released task statements.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, subfield, and topic. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 34 fields, 318 subfields, and 4,469 topics, with 7,257 released task statements (27 universal, 134 domain, 321 field, and 6,775 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -16,7 +16,9 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 
 | File | Description |
 |------|-------------|
-| [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, and subfield levels) with category labels |
+| [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, field, and subfield levels) with category labels |
+| [`data/substeps.csv.gz`](data/substeps.csv.gz) | How each task decomposes into the steps a researcher performs |
+| [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately for every subfield it appears in |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps each OpenAlex topic to its SciNet display domain, field, and subfield |
 
 ### Data dictionary
@@ -27,7 +29,7 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 |--------|-------------|
 | `task` | Task statement text |
 | `category` | Task category (e.g. "Ideation & Hypothesis Generation", "Data Gathering") |
-| `level` | One of `universal`, `domain`, or `subfield` |
+| `level` | One of `universal`, `domain`, `field`, or `subfield` |
 | `domain` | Domain name, e.g. "Social Sciences" (empty for universal tasks) |
 | `field` | Display field name, e.g. "Economics" (empty for universal/domain tasks) |
 | `subfield` | Display subfield name, e.g. "Labor Economics" (empty for universal/domain tasks) |
@@ -41,6 +43,30 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 | `domain` | SciNet display domain |
 | `field` | SciNet display field |
 | `subfield` | SciNet display subfield |
+
+**`substeps.csv.gz`** — gzipped (32 MB plain, 7 MB compressed); `pandas.read_csv` opens it directly.
+
+| Column | Description |
+|--------|-------------|
+| `level` | Tier the task is filed at |
+| `domain`, `field`, `subfield` | Scope the decomposition was written for. A subfield task is decomposed in its own subfield; a field or domain task once for that field or domain; a universal task once per field |
+| `task` | Task statement text |
+| `substep_id` | `S1`, `S2`, ... in workflow order |
+| `substep` | What the researcher does at this step |
+
+**`task_time.csv`** — one row per task *per subfield it appears in*, because the same task is a different job in different subfields. Across the tasks that reach five or more subfields, the median task varies 2.4x between its cheapest and dearest subfield.
+
+| Column | Description |
+|--------|-------------|
+| `task` | Task statement text |
+| `level` | Tier the task is filed at |
+| `domain`, `field`, `subfield` | Where this estimate applies |
+| `n_substeps` | Substeps in the decomposition |
+| `researcher_hours` | Attended human effort for one instance of the task: for each substep, repetitions x minutes, summed |
+| `elapsed_hours` | Calendar time for one instance, including unattended waiting (incubations, cluster jobs, review boards). Never less than `researcher_hours` |
+| `confidence` | Modal per-substep confidence: `high`, `medium`, or `low` |
+
+Both are model estimates, not measurements. Times assume a competent researcher with the standard tools of the subfield but no generative-AI assistant, so they describe the work as it was done before LLM assistance.
 
 ## Methodology
 
@@ -73,6 +99,54 @@ If you use this dataset, please cite the SciNet project and this repository, for
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
 
 ## Changelog
+
+### 2026-08-04 — v1.3
+
+- **Task categories in `tasks.csv` were wrong and are now fixed.** The previous
+  release labelled 4,435 of 4,972 subfield tasks (89%) *Ideation & Hypothesis
+  Generation*, including tasks that are plainly analysis — e.g. "Address
+  endogeneity in macroeconomic regressions using instrumental variables" was
+  filed under Ideation. The categories now come from the website's own grouping:
+  Data Gathering 2,721, Data Analysis 2,228, Ideation 1,512, Administration 301.
+  **If you built anything on the `category` column, rebuild it.**
+- **1,803 new subfield tasks and a new `field` level (321 tasks)**, from a
+  validation run that read 31,576 papers and kept only tasks appearing in at
+  least 5% of a subfield's papers. Subfield tasks 4,972 -> 6,775.
+- **Domain tasks 45 -> 134, now covering all six domains.** The previous release
+  noted Arts & Humanities and Formal Sciences had none; both are covered.
+- **New: `substeps.csv.gz` and `task_time.csv`** — the substep decompositions and
+  per-subfield time estimates, closing the "Substeps: TODO" gap below. Time is
+  reported as attended effort and elapsed time separately, rather than one
+  number that conflates them.
+- **318 subfields, down from 320.** Chemistry / Environmental Chemistry and
+  Statistics / Causal Inference were retired: neither could be populated with
+  papers that were actually about it.
+
+### 2026-07-13
+
+- Refreshed `tasks.csv` to match the live site: **5,044 task statements** across
+  **34 fields** and **320 subfields** (previously 4,981 / 30 / 315).
+- Adds four fields that were introduced after the March release: **Public Health &
+  Epidemiology**, **Nutrition & Dietetics**, **Veterinary Medicine**, and
+  **Library & Information Science**.
+- Corrected the headline counts in `README.md` and `DATA_OVERVIEW.md`, which still
+  described the March hierarchy (and quoted a task count that included
+  topic-level statements not present in `tasks.csv`).
+- **Realigned the `domain` column with the site's five display domains.** Previously
+  the released file used an older four-domain grouping in which Arts, History,
+  Languages & Linguistics, Literature, Philosophy and Religion were labelled
+  *Social Sciences*, and Neuroscience was labelled *Health Sciences* — neither
+  matching what the website shows. All 34 fields now carry the same domain as
+  [anatomyofscience.com](https://www.anatomyofscience.com/).
+
+**Known gaps (not yet released):**
+
+- **Task ratings.** Importance, relevance, and frequency are collected from
+  researchers through the site's contributor flow; they are not yet part of this
+  release and are not yet survey-validated at scale.
+- **Substeps for the four new fields.** The substep decomposition predates them, so
+  Public Health & Epidemiology, Nutrition & Dietetics, Veterinary Medicine and
+  Library & Information Science currently have no substeps. TODO: generate.
 
 ### 2026-03-20
 
