@@ -42,7 +42,7 @@ DOMAIN_COLORS = {
     "Life Sciences":     NEWBLUE,
     "Physical Sciences": LABLUE,
     "Health Sciences":   "#5B8FD4",
-    "Arts & Humanities": "#9A6B57",
+    "Arts & Humanities": "#7F8FA6",
 }
 
 CATEGORY_SHORT = {
@@ -60,7 +60,7 @@ CATEGORY_SHORT = {
 STYLE_BASE = {
     "axes.spines.top":  False,
     "axes.spines.right":False,
-    "axes.grid":        True,
+    "axes.grid":        False,
     "axes.grid.axis":   "x",
     "grid.color":       GRAY3,
     "grid.linewidth":   0.8,
@@ -111,12 +111,16 @@ def _suptitle(fig, *args, **kwargs):
 
 
 def save(fig, name):
+    for ax in fig.axes:
+        ax.grid(False)
     fig.savefig(_active_out / name, bbox_inches="tight", dpi=150)
     plt.close(fig)
     print(f"  saved: {_active_out.relative_to(HERE)}/{name}")
 
 
 def save_loose(fig, name):
+    for ax in fig.axes:
+        ax.grid(False)
     fig.savefig(_active_out / name, dpi=150)
     plt.close(fig)
     print(f"  saved: {_active_out.relative_to(HERE)}/{name}")
@@ -471,12 +475,16 @@ def fig_tasks_by_category():
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_tasks_by_level():
     df = pd.read_csv(PUB / "tasks.csv")
-    level_order = ["universal", "domain", "subfield"]
-    level_labels = {"universal": "Universal", "domain": "Domain", "subfield": "Subfield"}
-    counts = df.groupby("level").size().reindex(level_order).rename(index=level_labels)
+    # "field" arrived with the v1.3 validation run; it was absent from the
+    # hard-coded order, so the figure silently dropped 321 tasks
+    level_order = ["universal", "domain", "field", "subfield"]
+    level_labels = {"universal": "Universal", "domain": "Domain",
+                    "field": "Field", "subfield": "Subfield"}
+    counts = (df.groupby("level").size().reindex(level_order).dropna()
+                .astype(int).rename(index=level_labels))
 
     fig, ax = plt.subplots(figsize=(5, 3))
-    colors = [LALIGHTBLUE, NEWBLUE, LABLUE]
+    colors = [LALIGHTBLUE, NEWBLUE, LABLUE, LABLUE][: len(counts)]
     bars = ax.bar(counts.index, counts.values, color=colors, width=0.5)
     for bar, v in zip(bars, counts.values):
         ax.text(bar.get_x() + bar.get_width() / 2, v + counts.values.max() * 0.02,
@@ -757,7 +765,38 @@ def fig_ai_mention_subfields():
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 8. AI adoption by country — two panels
+# 8b. AI-mention rate by Economics subfield
+# ══════════════════════════════════════════════════════════════════════════════
+def fig_ai_mention_econ_subfields():
+    tyc = pd.read_csv(PRIV / "openalex" / "field_stats" / "topic_yearly_counts.csv")
+    tyc = tyc[tyc["year"].between(2023, 2025)]
+    tyc_agg = tyc.groupby("topic_id")[["paper_count", "ai_paper_count"]].sum().reset_index()
+
+    mapping = load_topic_mapping()
+    tyc_agg["topic_id"] = tyc_agg["topic_id"].astype(str)
+
+    merged = tyc_agg.merge(mapping, on="topic_id", how="left").dropna(subset=["subfield", "field"])
+    econ = merged[merged["field"] == "Economics"]
+    sf_agg = (econ.groupby("subfield")[["paper_count", "ai_paper_count"]]
+                  .sum().reset_index())
+    sf_agg["ai_share"] = sf_agg["ai_paper_count"] / sf_agg["paper_count"] * 100
+    sf_agg = sf_agg.sort_values("ai_share")
+
+    fig, ax = plt.subplots(figsize=(8, 5.5))
+    ax.barh(sf_agg["subfield"], sf_agg["ai_share"], color=LALIGHTBLUE, height=0.65)
+    for i, (_, row) in enumerate(sf_agg.iterrows()):
+        ax.text(row["ai_share"] + 0.15, i,
+                f"{row['ai_share']:.1f}%", va="center", color=GRAY1, fontsize=9)
+    ax.set_xlabel("Share of papers mentioning AI (%)", color=GRAY1)
+    _set_title(ax, "AI-Mention Rate by Economics Subfield\n(2023–2025)",
+               color=LABLUE, fontweight="bold", pad=10)
+    ax.tick_params(colors=GRAY1, labelsize=9)
+    ax.set_xlim(0, sf_agg["ai_share"].max() * 1.18)
+    save(fig, "ai_mention_econ_subfields.png")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 9. AI adoption by country — two panels
 # ══════════════════════════════════════════════════════════════════════════════
 def fig_ai_adoption_country():
     df = pd.read_csv(PRIV / "openalex" / "field_stats" / "ai_rankings_country.csv")
@@ -1347,6 +1386,7 @@ ALL_FIGS = [
     fig_verifiability_components,
     fig_ai_mention_fields,
     fig_ai_mention_subfields,
+    fig_ai_mention_econ_subfields,
     fig_ai_adoption_country,
     fig_papers_by_domain,
 ]
