@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 6 domains, 34 fields, and 318 subfields, with 7,257 released task statements (27 universal, 134 domain, 321 field, and 6,775 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 5 domains, 34 fields, and 318 subfields, with 7,257 released task statements (27 universal, 134 domain, 321 field, and 6,775 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -32,7 +32,7 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 | `task` | Task statement text |
 | `category` | Task category (e.g. "Ideation & Hypothesis Generation", "Data Gathering") |
 | `level` | One of `universal`, `domain`, `field`, or `subfield` |
-| `domain` | Domain name, e.g. "Social Sciences" (empty for universal tasks) |
+| `domain` | Domain name, e.g. "Social Sciences" (empty for universal tasks). Note: this column uses the six-domain grouping the task pipeline runs on, which splits out a **Formal Sciences** domain (Mathematics, Statistics, Computer Science). The website still groups those three fields under Physical and Social Sciences and shows five domains. |
 | `field` | Display field name, e.g. "Economics" (empty for universal/domain tasks) |
 | `subfield` | Display subfield name, e.g. "Labor Economics" (empty for universal/domain tasks) |
 
