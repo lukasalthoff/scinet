@@ -472,10 +472,10 @@ Apply an established qualitative methodology such as grounded theory or phenomen
 "Code visual elements, iconographic motifs, or stylistic features across bodies of artwork for comparative analysis.",subfield,Arts & Humanities,Arts,Visual Arts & Art History,11,115.58,249.58,medium
 "Analyze textual sources such as artist statements, exhibition reviews, or critical writings to identify recurring themes.",subfield,Arts & Humanities,Arts,Visual Arts & Art History,9,80.25,189.58,medium
 Account for gaps in provenance records or archival documentation when drawing conclusions about artworks or collections.,subfield,Arts & Humanities,Arts,Visual Arts & Art History,11,45.17,331.17,medium
-Triangulate findings across multiple qualitative data sources to corroborate interpretive conclusions.,subfield,Arts & Humanities,Arts,Visual Arts & Art History,12,25.15,25.15,medium
-Examine the materials and construction of art or craft objects hands-on to characterize production techniques and material condition.,subfield,Arts & Humanities,Arts,Visual Arts & Art History,10,23.17,360.47,medium
 "Negotiate access to private collections, artist estates, or restricted archival materials for research purposes.",subfield,Arts & Humanities,Arts,Visual Arts & Art History,9,21.17,895.75,medium
 "Coordinate with museums, galleries, or cultural institutions to examine artworks or access collection records.",subfield,Arts & Humanities,Arts,Visual Arts & Art History,11,53.77,2055.13,medium
+Triangulate findings across multiple qualitative data sources to corroborate interpretive conclusions.,subfield,Arts & Humanities,Arts,Visual Arts & Art History,12,25.15,25.15,medium
+Examine the materials and construction of art or craft objects hands-on to characterize production techniques and material condition.,subfield,Arts & Humanities,Arts,Visual Arts & Art History,10,23.17,360.47,medium
 Apply architectural theory and design principles when framing research questions about built environments and spatial practices.,subfield,Arts & Humanities,Arts,Architecture & Design,9,47.38,73.38,medium
 Engage with theories of material culture and craft traditions when investigating design objects and practices.,subfield,Arts & Humanities,Arts,Architecture & Design,10,130.33,503.33,medium
 Assess whether findings about architectural styles or design practices transfer across different cultural and geographic contexts.,subfield,Arts & Humanities,Arts,Architecture & Design,12,530.25,1165.5,medium
@@ -1848,14 +1848,14 @@ Analyze persuasive strategies in communicative artifacts to interpret how meanin
 Reconstruct arguments in public discourse into premise-conclusion structures and evaluate their soundness.,subfield,Social Sciences,Communication & Media Studies,Rhetoric & Public Discourse,11,15.12,15.72,medium
 "Negotiate access to restricted archives, organizational communications, or community spaces to gather authentic examples of public discourse.",subfield,Social Sciences,Communication & Media Studies,Rhetoric & Public Discourse,11,70.83,2910.33,medium
 Derive security bounds and attack complexity estimates from cryptographic assumptions and mathematical hardness problems.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,31.43,37.52,medium
+"Formulate threat models specifying adversary capabilities, attack surfaces, and security objectives.",subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,10,18.38,86.88,medium
 Prove security properties of cryptographic protocols using formal reduction techniques.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,13,118.08,152.08,low
+Design controlled experimental environments with isolated networks and sandboxed systems for security testing.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,39.33,48.83,medium
+"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Cybersecurity & Cryptography,9,26.33,31.0,medium
 Hand-craft explicit domain-specific procedures or arguments that produce the target result from raw input.,field,Formal Sciences,Computer Science,Cybersecurity & Cryptography,8,31.27,31.27,medium
 "Measure statistical properties of cryptographic outputs, such as entropy and bit-difference sensitivity, to assess randomness and cryptanalytic resistance.",subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,29.75,59.33,medium
 Craft explicit constructions that combine or exploit properties of a target to achieve a specified outcome.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,10,81.58,104.58,medium
-"Formulate threat models specifying adversary capabilities, attack surfaces, and security objectives.",subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,10,18.38,86.88,medium
-Design controlled experimental environments with isolated networks and sandboxed systems for security testing.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,39.33,48.83,medium
 "Capture side-channel measurements including timing, power consumption, and electromagnetic emissions from cryptographic implementations.",subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,12,14.17,19.0,medium
-"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Cybersecurity & Cryptography,9,26.33,31.0,medium
 Quantify false positive and false negative rates for intrusion detection and malware classification systems.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,87.65,208.15,medium
 Fit statistical models to distinguish between benign and malicious network behavior patterns.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,24.63,46.18,medium
 Correlate experimental attack results with theoretical security bounds to validate cryptographic assumptions.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,10,18.68,20.6,medium
@@ -1868,11 +1868,11 @@ Construct reusable models or mechanisms that satisfy stated requirements of a ta
 Maintain testbed networks and honeypot systems for ongoing security research experiments.,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography,11,8.27,11.17,medium
 Derive baseline performance expectations from linguistic theory and statistical language properties.,subfield,Formal Sciences,Computer Science,Natural Language Processing,9,7.7,7.93,medium
 Formulate hypotheses about model behavior based on architectural design and training objectives.,subfield,Formal Sciences,Computer Science,Natural Language Processing,8,21.93,21.93,medium
+Design annotation guidelines and protocols to ensure consistent labeling of linguistic phenomena.,subfield,Formal Sciences,Computer Science,Natural Language Processing,10,52.92,173.08,medium
+Construct controlled evaluation datasets to isolate specific linguistic capabilities or model behaviors.,subfield,Formal Sciences,Computer Science,Natural Language Processing,11,38.5,106.67,medium
 Design neural network architectures and their internal modules to address a target task.,field,Formal Sciences,Computer Science,Natural Language Processing,9,53.25,82.0,medium
 Map abstract data or internal model representations into inspectable form to interpret their structure and behavior.,field,Formal Sciences,Computer Science,Natural Language Processing,7,18.42,25.42,medium
 Define explicit rules and constraints that shape model outputs into valid structured decisions.,subfield,Formal Sciences,Computer Science,Natural Language Processing,8,11.15,12.82,medium
-Design annotation guidelines and protocols to ensure consistent labeling of linguistic phenomena.,subfield,Formal Sciences,Computer Science,Natural Language Processing,10,52.92,173.08,medium
-Construct controlled evaluation datasets to isolate specific linguistic capabilities or model behaviors.,subfield,Formal Sciences,Computer Science,Natural Language Processing,11,38.5,106.67,medium
 Validate annotation quality through inter-annotator agreement metrics and adjudication procedures.,subfield,Formal Sciences,Computer Science,Natural Language Processing,11,19.5,158.17,medium
 Collect and curate text corpora from diverse sources for training and evaluation purposes.,subfield,Formal Sciences,Computer Science,Natural Language Processing,13,61.17,114.33,medium
 Gather human judgments and annotations for supervised learning and evaluation benchmarks.,subfield,Formal Sciences,Computer Science,Natural Language Processing,10,63.67,433.33,medium
@@ -1885,14 +1885,14 @@ Adapt and tune implementations to a target hardware platform to meet runtime and
 Analyze collected observations to characterize the properties and outcomes of a studied artifact or intervention.,subfield,Formal Sciences,Computer Science,Natural Language Processing,10,21.45,44.32,medium
 "Derive mathematical formulations for image transformations, projections, and geometric relationships in visual data.",subfield,Formal Sciences,Computer Science,Computer Vision,12,9.98,10.32,medium
 Formulate loss functions and optimization objectives for training visual recognition models.,subfield,Formal Sciences,Computer Science,Computer Vision,12,12.85,31.98,medium
-Define explicit rules and constraints that shape model outputs into valid structured decisions.,subfield,Formal Sciences,Computer Science,Computer Vision,12,17.73,31.98,medium
 Design controlled experiments with standardized image datasets to evaluate algorithm performance across varying conditions.,subfield,Formal Sciences,Computer Science,Computer Vision,10,39.17,60.0,medium
+Perform exploratory analysis of a dataset to characterize its distributions and latent structure for downstream design.,field,Formal Sciences,Computer Science,Computer Vision,9,7.92,10.05,medium
+Define explicit rules and constraints that shape model outputs into valid structured decisions.,subfield,Formal Sciences,Computer Science,Computer Vision,12,17.73,31.98,medium
 "Calibrate camera systems to correct for lens distortion, focal length, and sensor characteristics.",subfield,Formal Sciences,Computer Science,Computer Vision,10,4.02,4.43,medium
 "Capture image and video datasets using cameras, depth sensors, or multi-spectral imaging devices.",subfield,Formal Sciences,Computer Science,Computer Vision,12,34.38,120.63,medium
 Acquire ground truth annotations through manual labeling or structured data collection protocols.,subfield,Formal Sciences,Computer Science,Computer Vision,11,38.88,298.42,medium
 "Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Computer Vision,8,20.42,57.92,medium
 Derive labels automatically from proxy signals or existing structured resources in place of manual annotation.,subfield,Formal Sciences,Computer Science,Computer Vision,10,56.75,159.17,medium
-Perform exploratory analysis of a dataset to characterize its distributions and latent structure for downstream design.,field,Formal Sciences,Computer Science,Computer Vision,9,7.92,10.05,medium
 Hand-craft explicit domain-specific procedures or arguments that produce the target result from raw input.,field,Formal Sciences,Computer Science,Computer Vision,8,38.75,41.25,medium
 "Preprocess video sequences to handle frame alignment, stabilization, and temporal consistency.",subfield,Formal Sciences,Computer Science,Computer Vision,12,10.02,12.95,medium
 Quantify uncertainty in model predictions through calibration analysis and error characterization.,subfield,Formal Sciences,Computer Science,Computer Vision,11,15.33,21.22,high
@@ -1906,14 +1906,13 @@ Fit classical non-neural statistical models to visual features to obtain compact
 Construct reusable models or mechanisms that satisfy stated requirements of a target system.,subfield,Formal Sciences,Computer Science,Computer Vision,9,35.58,58.08,medium
 Derive theoretical performance bounds for parallel algorithms based on computational complexity and communication costs.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,17.1,18.43,medium
 Model expected speedup and scalability of distributed systems using analytical frameworks such as Amdahl's or Gustafson's laws.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,19.42,36.17,medium
-Design programming or query interfaces that let users express operations while hiding underlying execution details.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,11,350.92,805.25,medium
 "Design controlled benchmark experiments to isolate the effects of network latency, bandwidth, and node count on system performance.",subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,29.58,41.67,medium
+"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Distributed & Parallel Computing,9,47.58,98.58,medium
+Design programming or query interfaces that let users express operations while hiding underlying execution details.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,11,350.92,805.25,medium
 Characterize measurement overhead introduced by profiling and monitoring tools in parallel systems.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,13,89.25,408.83,medium
 Collect trace data from production distributed systems and cloud platforms for workload characterization studies.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,12,143.5,1684.0,medium
 Execute parallel workloads on high-performance computing clusters to measure scalability and efficiency.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,16.68,68.83,medium
-"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Distributed & Parallel Computing,9,43.58,55.58,medium
 Adapt and tune implementations to a target hardware platform to meet runtime and resource constraints.,field,Formal Sciences,Computer Science,Distributed & Parallel Computing,14,60.92,89.25,medium
-"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Distributed & Parallel Computing,9,47.58,98.58,medium
 Filter noise and remove outliers from performance measurements caused by system interference or transient failures.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,9,12.97,12.97,medium
 Apply statistical corrections to account for warm-up effects and measurement variability in benchmark results.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,10.17,10.42,medium
 Quantify uncertainty in performance measurements and propagate errors through scalability projections.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,15.25,52.98,medium
@@ -1921,16 +1920,16 @@ Fit performance models to empirical scaling data to predict system behavior at l
 Validate analytical cost models against measured execution times and communication overheads.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,13,47.53,96.28,medium
 Run large-scale simulations of distributed algorithms to evaluate correctness and performance under varying conditions.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,13,116.83,218.67,medium
 Simulate network failures and node crashes to evaluate fault tolerance mechanisms in distributed systems.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,12,81.25,190.08,medium
+"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Distributed & Parallel Computing,9,43.58,55.58,medium
 Design schemes that partition and move data across distributed computing or network resources to use them efficiently.,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,10,153.58,248.17,medium
 "Design predictive models of workload, cost, or reliability that drive online resource allocation and job placement decisions.",subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing,13,139.0,340.0,medium
 "Derive analytical models for network throughput, latency, and packet loss based on queuing theory and protocol specifications.",subfield,Formal Sciences,Computer Science,Systems & Networking,11,62.83,62.83,medium
 "Calculate theoretical bounds on network capacity, energy consumption, or spectral efficiency for proposed system designs.",subfield,Formal Sciences,Computer Science,Systems & Networking,10,40.25,45.33,medium
-Estimate the future resource and cost requirements of a proposed deployment to assess its feasibility.,subfield,Formal Sciences,Computer Science,Systems & Networking,10,38.75,104.25,medium
 "Design controlled network testbed experiments with specified topologies, traffic patterns, and workload configurations.",subfield,Formal Sciences,Computer Science,Systems & Networking,12,36.67,43.33,medium
-"Calibrate network measurement tools and characterize timing accuracy, packet capture loss, and instrumentation overhead.",subfield,Formal Sciences,Computer Science,Systems & Networking,10,42.28,61.87,medium
-"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Systems & Networking,9,61.33,92.0,medium
-Adapt and tune implementations to a target hardware platform to meet runtime and resource constraints.,field,Formal Sciences,Computer Science,Systems & Networking,14,52.33,68.17,medium
+Estimate the future resource and cost requirements of a proposed deployment to assess its feasibility.,subfield,Formal Sciences,Computer Science,Systems & Networking,10,38.75,104.25,medium
 Design and implement domain-specific languages or code generators that translate system descriptions into executable low-level artifacts.,subfield,Formal Sciences,Computer Science,Systems & Networking,13,366.67,684.17,low
+"Calibrate network measurement tools and characterize timing accuracy, packet capture loss, and instrumentation overhead.",subfield,Formal Sciences,Computer Science,Systems & Networking,10,42.28,61.87,medium
+Adapt and tune implementations to a target hardware platform to meet runtime and resource constraints.,field,Formal Sciences,Computer Science,Systems & Networking,14,52.33,68.17,medium
 Filter and preprocess network trace data to remove measurement artifacts and synchronize timestamps across distributed collection points.,subfield,Formal Sciences,Computer Science,Systems & Networking,11,21.22,26.27,medium
 "Normalize collected performance data to account for background traffic, environmental interference, and hardware variations.",subfield,Formal Sciences,Computer Science,Systems & Networking,12,16.5,18.62,medium
 Quantify confidence intervals for network performance measurements and propagate uncertainty through derived metrics.,subfield,Formal Sciences,Computer Science,Systems & Networking,13,18.45,19.12,medium
@@ -1939,6 +1938,7 @@ Compare measured system performance against analytical predictions to validate t
 Run discrete-event network simulations to evaluate protocol behavior under varied traffic loads and network topologies.,subfield,Formal Sciences,Computer Science,Systems & Networking,12,72.88,126.55,medium
 Execute emulation-based experiments that combine real protocol implementations with simulated network conditions.,subfield,Formal Sciences,Computer Science,Systems & Networking,12,53.7,114.33,medium
 Simulate wireless channel propagation and interference effects to evaluate communication system performance.,subfield,Formal Sciences,Computer Science,Systems & Networking,12,23.58,45.33,medium
+"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Systems & Networking,9,61.33,92.0,medium
 Construct taxonomies or design spaces that classify existing systems and techniques along multiple dimensions to structure a research area.,field,Formal Sciences,Computer Science,Systems & Networking,9,117.0,176.0,medium
 "Design distributed network protocols and control-plane mechanisms, such as resource allocation or congestion control, to achieve target performance objectives.",subfield,Formal Sciences,Computer Science,Systems & Networking,12,295.0,507.0,medium
 Implement and integrate prototype systems that instantiate a proposed design across heterogeneous hardware and software platforms.,subfield,Formal Sciences,Computer Science,Systems & Networking,13,580.33,663.33,medium
@@ -1947,32 +1947,32 @@ Derive computational complexity bounds for algorithms using asymptotic analysis 
 "Prove correctness of algorithms through mathematical induction, loop invariants, or formal verification techniques.",subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,11,12.05,13.05,medium
 Establish theoretical guarantees for approximation algorithms by deriving performance ratios relative to optimal solutions.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,9,46.0,53.67,medium
 Analyze convergence properties of iterative algorithms using mathematical proof techniques.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,10,37.42,43.42,medium
-"Characterize quantum-mechanical properties of the physical system underlying an algorithm, such as entanglement or phase transitions, to explain its computational resource requirements.",subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,10,101.33,166.67,medium
 Design controlled computational experiments with systematic parameter variations to evaluate algorithm performance.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,12,28.38,101.22,medium
 Construct benchmark problem instances with known optimal solutions to validate algorithmic correctness.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,9,28.57,30.23,medium
 Select and configure baseline algorithms for fair comparative evaluation of proposed methods.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,8,42.17,75.67,medium
 Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,domain,Formal Sciences,Computer Science,Algorithms & Theory of Computation,10,28.48,34.33,medium
+"Characterize quantum-mechanical properties of the physical system underlying an algorithm, such as entanglement or phase transitions, to explain its computational resource requirements.",subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,10,101.33,166.67,medium
 Fit complexity models to empirical runtime data to validate theoretical predictions.,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation,10,9.7,18.53,medium
 "Derive expected software behavior from formal specifications, type systems, or logical constraints.",subfield,Formal Sciences,Computer Science,Software Engineering,11,41.27,46.35,medium
 "Formulate hypotheses about software quality, performance, or developer productivity based on theoretical frameworks.",subfield,Formal Sciences,Computer Science,Software Engineering,11,36.82,50.15,medium
 "Design controlled experiments comparing software tools, techniques, or methodologies with appropriate treatment and control conditions.",subfield,Formal Sciences,Computer Science,Software Engineering,14,66.0,133.83,medium
+"Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",field,Formal Sciences,Computer Science,Software Engineering,10,133.38,277.82,medium
+Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,domain,Formal Sciences,Computer Science,Software Engineering,10,51.92,66.67,medium
+Differentially test implementations or transformed artifacts against reference versions to expose behavioral discrepancies.,subfield,Formal Sciences,Computer Science,Software Engineering,11,41.42,59.58,medium
 Construct benchmark suites with representative workloads to evaluate software system performance.,subfield,Formal Sciences,Computer Science,Software Engineering,12,133.5,231.0,medium
 "Validate measurement tools for code metrics, test coverage, or static analysis accuracy against ground truth.",subfield,Formal Sciences,Computer Science,Software Engineering,12,101.0,107.5,medium
 Characterize sources of measurement noise in software repository mining and developer activity tracking.,subfield,Formal Sciences,Computer Science,Software Engineering,11,53.33,65.17,medium
 Record developer interactions and behaviors during programming tasks using instrumented development environments.,subfield,Formal Sciences,Computer Science,Software Engineering,10,135.0,206.33,medium
-"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Software Engineering,9,47.5,56.5,medium
-"Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",field,Formal Sciences,Computer Science,Software Engineering,10,133.38,277.82,medium
-Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,domain,Formal Sciences,Computer Science,Software Engineering,10,51.92,66.67,medium
 "Collect targeted records from a system, its context, or a study corpus to isolate the elements relevant to the analysis.",subfield,Formal Sciences,Computer Science,Software Engineering,10,14.7,19.37,medium
 Assess the reliability and validity of rating instruments used to capture subjective judgments.,subfield,Formal Sciences,Computer Science,Software Engineering,13,70.5,916.08,medium
 Establish empirical measures of an artifact's properties to drive its improvement.,subfield,Formal Sciences,Computer Science,Software Engineering,10,69.42,87.58,medium
 Compute metrics over source-code corpora with automated analysis to quantify the prevalence of code properties.,subfield,Formal Sciences,Computer Science,Software Engineering,10,77.0,184.0,medium
-Differentially test implementations or transformed artifacts against reference versions to expose behavioral discrepancies.,subfield,Formal Sciences,Computer Science,Software Engineering,11,41.42,59.58,medium
 Clean and normalize software repository data by resolving entity aliases and filtering bot-generated artifacts.,subfield,Formal Sciences,Computer Science,Software Engineering,10,26.4,38.57,medium
 "Quantify uncertainty in software metrics due to incomplete data, sampling bias, or measurement limitations.",subfield,Formal Sciences,Computer Science,Software Engineering,12,91.17,117.17,medium
 "Fit statistical models to software defect data, development effort, or system reliability measurements.",subfield,Formal Sciences,Computer Science,Software Engineering,12,30.95,35.97,medium
 Evaluate machine learning models for software engineering tasks using cross-validation and held-out test sets.,subfield,Formal Sciences,Computer Science,Software Engineering,13,76.67,168.25,medium
 "Simulate software system behavior under varying loads, configurations, or failure scenarios.",subfield,Formal Sciences,Computer Science,Software Engineering,12,78.58,102.67,medium
+"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Software Engineering,9,47.5,56.5,medium
 Construct taxonomies or design spaces that classify existing systems and techniques along multiple dimensions to structure a research area.,field,Formal Sciences,Computer Science,Software Engineering,9,113.98,178.32,medium
 Appraise the methodology and reported results of published studies to enable comparison across them.,subfield,Formal Sciences,Computer Science,Software Engineering,14,74.75,99.42,medium
 Specify rules that transform artifacts or data from one representation or notation into another.,subfield,Formal Sciences,Computer Science,Software Engineering,12,38.82,39.08,medium
@@ -1983,11 +1983,11 @@ Execute systematic literature searches across bibliographic databases and snowba
 "Curate and version datasets, codebases, and experimental artifacts for replication and extension by other researchers.",subfield,Formal Sciences,Computer Science,Software Engineering,13,21.3,31.13,medium
 Derive relevance rankings from probabilistic retrieval models or learning-to-rank frameworks.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,10,15.03,21.45,medium
 Formulate query optimization strategies based on cost models and database statistics.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,10,156.67,217.33,low
+Design user studies with controlled search tasks to evaluate retrieval system effectiveness.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,11,153.67,486.67,medium
+Construct benchmark datasets with controlled relevance judgments for system comparison.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,10,222.0,548.17,medium
 Design programming or query interfaces that let users express operations while hiding underlying execution details.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,11,300.33,365.33,medium
 Craft explicit constructions that combine or exploit properties of a target to achieve a specified outcome.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,9,78.08,123.42,medium
 Design database schemas and logical data models that represent domain entities and their relationships for storage and querying.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,13,32.97,133.88,medium
-Design user studies with controlled search tasks to evaluate retrieval system effectiveness.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,11,153.67,486.67,medium
-Construct benchmark datasets with controlled relevance judgments for system comparison.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,10,222.0,548.17,medium
 Collect query logs and clickthrough data from search engines or information systems.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,9,93.17,1248.67,medium
 Gather user interaction data through instrumented retrieval interfaces.,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,10,81.75,579.75,medium
 "Crawl and harvest web documents, metadata, or structured data from online sources.",subfield,Formal Sciences,Computer Science,Databases & Information Retrieval,11,30.37,69.28,medium
@@ -2007,13 +2007,13 @@ Quantify how faithfully a transformed or reduced data representation preserves s
 "Derive theoretical bounds on model generalization, convergence rates, or computational complexity.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,11,88.33,93.0,low
 Formulate mathematical objectives and loss functions that encode desired model behavior.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,8,12.33,13.33,medium
 "Analyze algorithmic properties using probability theory, linear algebra, or optimization theory.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,11,48.42,49.75,medium
-Design neural network architectures and their internal modules to address a target task.,field,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,9,46.58,72.0,medium
-Monitor internal quantities of an iterative algorithm across iterations to diagnose its empirical behavior.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,8,6.02,30.02,medium
 "Design controlled experiments with training, validation, and test splits to evaluate model performance.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,12,7.73,7.73,medium
 Structure ablation studies to isolate the contribution of individual model components.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,9,20.83,61.13,medium
+Design neural network architectures and their internal modules to address a target task.,field,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,9,46.58,72.0,medium
+Monitor internal quantities of an iterative algorithm across iterations to diagnose its empirical behavior.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,8,6.02,30.02,medium
+Quantify the relative importance of individual input features to a trained model's predictions.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,10,8.2,11.67,medium
 "Collect and curate labeled datasets from public repositories, APIs, or web sources.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,12,31.2,38.37,medium
 Generate synthetic training data through simulation or augmentation techniques.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,10,51.5,156.5,medium
-Quantify the relative importance of individual input features to a trained model's predictions.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,10,8.2,11.67,medium
 "Preprocess raw data through normalization, tokenization, or feature extraction pipelines.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,10,4.73,6.62,medium
 "Clean datasets by handling missing values, outliers, and label noise.",subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,12,12.05,13.67,medium
 Apply data augmentation techniques to expand training set diversity.,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning,9,7.92,15.68,medium
@@ -2028,17 +2028,17 @@ Design aggregation rules that combine outputs of multiple trained models into a 
 Derive kinematic and dynamic equations for robotic manipulators and mobile platforms to predict system behavior.,subfield,Formal Sciences,Computer Science,Robotics,13,39.53,42.12,medium
 "Formulate motion planning constraints based on robot geometry, joint limits, and workspace boundaries.",subfield,Formal Sciences,Computer Science,Robotics,9,18.67,19.83,medium
 Model sensor noise characteristics and environmental uncertainties for state estimation algorithms.,subfield,Formal Sciences,Computer Science,Robotics,9,50.42,58.92,medium
+Design controlled test environments with standardized obstacles and terrain for evaluating robot navigation performance.,subfield,Formal Sciences,Computer Science,Robotics,13,117.25,121.25,medium
+Configure repeatable manipulation tasks with known object properties to benchmark grasping algorithms.,subfield,Formal Sciences,Computer Science,Robotics,14,78.75,96.08,medium
 Design spatial and path representations that make robot planning problems computationally tractable.,subfield,Formal Sciences,Computer Science,Robotics,11,48.17,69.83,medium
+Determine how a robot behaves under real operating conditions to validate its performance.,subfield,Formal Sciences,Computer Science,Robotics,12,59.33,64.08,medium
 "Refine candidate robot paths into smooth, dynamically feasible trajectories through optimization or post-processing.",subfield,Formal Sciences,Computer Science,Robotics,10,20.08,21.58,medium
 "Design and build robot hardware platforms by integrating actuators, sensors, and onboard computing components.",subfield,Formal Sciences,Computer Science,Robotics,13,167.67,391.67,medium
 Formulate objectives quantifying expected information gain or search cost to guide robot exploration under uncertainty.,subfield,Formal Sciences,Computer Science,Robotics,9,38.75,47.75,medium
 Formulate a robot's spatial and resource constraints mathematically to configure its operation.,subfield,Formal Sciences,Computer Science,Robotics,8,12.5,13.17,medium
 Design rule-based or switching decision logic that selects among discrete robot behaviors or controller modes.,subfield,Formal Sciences,Computer Science,Robotics,11,28.58,33.58,medium
-Design controlled test environments with standardized obstacles and terrain for evaluating robot navigation performance.,subfield,Formal Sciences,Computer Science,Robotics,13,117.25,121.25,medium
-Configure repeatable manipulation tasks with known object properties to benchmark grasping algorithms.,subfield,Formal Sciences,Computer Science,Robotics,14,78.75,96.08,medium
 "Characterize sensor measurement errors for LIDAR, IMU, and depth cameras used in robot perception.",subfield,Formal Sciences,Computer Science,Robotics,10,50.58,69.83,medium
 Hand-craft explicit domain-specific procedures or arguments that produce the target result from raw input.,field,Formal Sciences,Computer Science,Robotics,8,40.38,42.38,medium
-Determine how a robot behaves under real operating conditions to validate its performance.,subfield,Formal Sciences,Computer Science,Robotics,12,59.33,64.08,medium
 Calibrate the spatial transformation between mounted or external sensors and the robot's coordinate frame.,subfield,Formal Sciences,Computer Science,Robotics,10,6.43,7.15,medium
 Apply sensor fusion techniques to combine data from multiple robot sensors into coherent state estimates.,subfield,Formal Sciences,Computer Science,Robotics,14,74.33,86.92,medium
 Filter noisy sensor readings using Kalman filters or particle filters for robot localization.,subfield,Formal Sciences,Computer Science,Robotics,12,56.92,69.75,medium
@@ -2057,27 +2057,23 @@ Define parameterized motion or action primitives that serve as reusable units of
 "Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",subfield,Formal Sciences,Computer Science,Robotics,12,73.97,100.47,medium
 "Derive usability predictions from cognitive models of human perception, attention, and motor control.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,26.58,28.58,medium
 Apply interaction design heuristics and principles to predict user behavior with novel interfaces.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,29.52,29.52,medium
-Derive concrete design recommendations and guidelines from empirical study findings.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,28.22,28.22,medium
-Design interaction techniques and command vocabularies that map user input modalities to system actions.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,159.08,212.17,medium
-"Build theoretical models linking system attributes, user perceptions, and adoption or experience outcomes.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,14,240.25,752.25,medium
 Design controlled user studies with counterbalanced conditions to evaluate interface alternatives.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,79.08,582.08,medium
 Develop within-subjects or between-subjects experimental protocols for comparing interaction techniques.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,27.17,497.0,medium
+"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Human-Computer Interaction,9,35.58,48.08,medium
+Derive concrete design recommendations and guidelines from empirical study findings.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,28.22,28.22,medium
+"Conduct informal, uncontrolled trials of prototypes with users to identify promising design directions.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,15.55,46.05,medium
+Design interaction techniques and command vocabularies that map user input modalities to system actions.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,159.08,212.17,medium
+"Build theoretical models linking system attributes, user perceptions, and adoption or experience outcomes.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,14,240.25,752.25,medium
 Characterize latency and tracking accuracy of motion capture and gesture recognition systems.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,88.33,144.33,medium
 Gather contextual data from mobile sensors during field studies of technology use.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,234.5,1333.5,medium
-Develop functional interface prototypes using software tools for experimental evaluation.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,70.92,74.33,medium
-Fabricate physical prototypes of tangible interfaces or wearable devices for user testing.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,62.5,197.33,medium
 "Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",field,Formal Sciences,Computer Science,Human-Computer Interaction,10,103.33,165.38,medium
 Cross-check derived outputs or measures against independent external sources to assess their validity.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,9,34.85,99.25,medium
 "Collect targeted records from a system, its context, or a study corpus to isolate the elements relevant to the analysis.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,20.33,24.42,medium
-"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",field,Formal Sciences,Computer Science,Human-Computer Interaction,9,35.58,48.08,medium
-Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,204.2,1411.7,medium
 Administer validated self-report questionnaires to measure users' subjective states after interaction.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,20.47,21.57,medium
-Create concrete representations of interaction concepts that convey how users engage with a proposed system.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,21.68,25.05,medium
-"Conduct informal, uncontrolled trials of prototypes with users to identify promising design directions.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,15.55,46.05,medium
 Gather evidence about a phenomenon in its broader real-world context to explain observed outcomes.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,288.67,1274.67,low
-Design instructional content and training activities delivered through an interactive technology.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,142.5,246.5,medium
 "Administer standardized clinical or psychophysical assessments to characterize participants' perceptual, motor, or cognitive function.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,60.92,481.67,medium
-"Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,152.25,1138.58,medium
+Develop functional interface prototypes using software tools for experimental evaluation.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,70.92,74.33,medium
+Fabricate physical prototypes of tangible interfaces or wearable devices for user testing.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,62.5,197.33,medium
 "Synchronize and align multimodal data streams from eye trackers, input devices, and physiological sensors.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,23.15,23.15,medium
 Filter noise and artifacts from gaze tracking and motion capture recordings.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,18.25,18.25,medium
 "Calculate task completion times, error rates, and efficiency metrics with appropriate statistical uncertainty.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,13.45,13.45,medium
@@ -2087,28 +2083,32 @@ Apply statistical models to analyze effects of interface design variables on use
 Run computational simulations of user behavior to evaluate interface designs before user testing.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,10,36.9,38.75,medium
 Construct taxonomies or design spaces that classify existing systems and techniques along multiple dimensions to structure a research area.,field,Formal Sciences,Computer Science,Human-Computer Interaction,9,112.08,173.92,medium
 Assess the reliability and validity of rating instruments used to capture subjective judgments.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,13,91.17,251.5,medium
+Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,204.2,1411.7,medium
 "Recruit, screen, and compensate study participants to obtain a target sample.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,34.22,1798.22,medium
+Create concrete representations of interaction concepts that convey how users engage with a proposed system.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,21.68,25.05,medium
 Analyze collected observations to characterize the properties and outcomes of a studied artifact or intervention.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,9,47.58,47.58,medium
 "Devise new measures to operationalize subjective perceptual, affective, or metacognitive constructs.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,14,157.17,1332.67,medium
+Design instructional content and training activities delivered through an interactive technology.,subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,142.5,246.5,medium
 "Assess organizational feasibility, costs, and barriers to deploying an interactive technology in practice.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,12,140.58,1621.75,medium
+"Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",subfield,Formal Sciences,Computer Science,Human-Computer Interaction,11,152.25,1138.58,medium
 Derive rendering equations and shading models from physical principles of light transport and material interaction.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,12,21.25,21.25,medium
 Formulate geometric transformations and projection matrices for 3D scene representation.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,7.4,7.4,medium
-Construct spatial data structures such as triangulations or voxel hierarchies from point and mesh data.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,19.13,21.57,medium
-Generate spatial layouts of abstract graph or relational data by optimizing embedding objectives.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,34.08,64.13,medium
-Design compact encoding and transmission schemes for streaming geometry or rendered content to remote clients.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,12,338.5,398.5,medium
 Design user studies with controlled viewing conditions to evaluate visualization effectiveness and perceptual accuracy.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,11,95.25,660.75,medium
 Structure comparative experiments to benchmark rendering algorithms under standardized scene configurations.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,11,59.0,168.33,medium
-"Capture 3D geometry and appearance data using scanning devices, motion capture systems, or photogrammetry setups.",subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,12,23.53,35.4,medium
-Record user interaction data and eye-tracking measurements during visualization tasks.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,91.53,174.9,medium
-"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,21.25,26.75,medium
 "Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",field,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,84.33,499.83,medium
 Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,domain,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,33.5,51.17,medium
 Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,11,191.75,869.0,low
+Construct spatial data structures such as triangulations or voxel hierarchies from point and mesh data.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,19.13,21.57,medium
+Generate spatial layouts of abstract graph or relational data by optimizing embedding objectives.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,34.08,64.13,medium
+Design compact encoding and transmission schemes for streaming geometry or rendered content to remote clients.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,12,338.5,398.5,medium
+"Capture 3D geometry and appearance data using scanning devices, motion capture systems, or photogrammetry setups.",subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,12,23.53,35.4,medium
+Record user interaction data and eye-tracking measurements during visualization tasks.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,91.53,174.9,medium
 Quantify numerical precision errors in floating-point rendering computations and geometric algorithms.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,136.58,155.83,medium
 Fit parametric appearance models to measured material reflectance and texture data.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,35.45,69.18,medium
 Optimize transfer function parameters to match visualization outputs with ground truth data distributions.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,11,35.58,47.75,medium
 "Run physically-based simulations of light transport, fluid dynamics, or deformable objects for visual synthesis.",subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,11,64.5,132.83,medium
 Execute large-scale rendering computations to generate synthetic datasets or benchmark image sequences.,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization,10,37.17,109.92,medium
+"Design system architectures, specifying their components, interfaces, and data flows, to realize a working system.",field,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,21.25,26.75,medium
 Design neural network architectures and their internal modules to address a target task.,field,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,55.17,348.83,medium
 Construct taxonomies or design spaces that classify existing systems and techniques along multiple dimensions to structure a research area.,field,Formal Sciences,Computer Science,Computer Graphics & Visualization,9,140.75,223.08,medium
 Map abstract data or internal model representations into inspectable form to interpret their structure and behavior.,field,Formal Sciences,Computer Science,Computer Graphics & Visualization,7,23.68,27.6,medium
@@ -4193,6 +4193,8 @@ Evaluate the representativeness of surviving documentary or material evidence fo
 "Code thematic content in hagiographies, chronicles, or literary texts to identify patterns and motifs.",subfield,Arts & Humanities,History,Medieval History,12,215.33,402.5,medium
 Account for survival bias when analyzing patterns in medieval archival collections and material remains.,subfield,Arts & Humanities,History,Medieval History,10,125.67,125.67,medium
 Evaluate the reliability and potential biases of medieval chroniclers and document authors.,subfield,Arts & Humanities,History,Medieval History,11,86.25,103.92,medium
+Negotiate access to restricted manuscript collections and private archives holding medieval materials.,subfield,Arts & Humanities,History,Medieval History,9,49.83,2047.0,medium
+"Collaborate with archaeologists, art historians, and philologists on interdisciplinary medieval research projects.",subfield,Arts & Humanities,History,Medieval History,12,311.33,2178.0,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Medieval History,10,76.5,76.5,medium
 "Compare related texts or successive versions of a text to establish their dependencies, borrowings, and alterations.",field,Arts & Humanities,History,Medieval History,8,215.67,285.75,medium
 "Establish the date, composition, and authenticity of documents and objects from their internal and material features.",subfield,Arts & Humanities,History,Medieval History,9,68.25,401.25,medium
@@ -4200,8 +4202,6 @@ Evaluate the reliability and potential biases of medieval chroniclers and docume
 Test claims made in medieval narrative sources against independent material or technical evidence.,subfield,Arts & Humanities,History,Medieval History,13,64.0,318.17,medium
 Record the codicological and layout features of a manuscript to characterize its production context.,subfield,Arts & Humanities,History,Medieval History,12,34.03,332.45,medium
 "Classify medieval buildings, artefacts, or texts by comparison with corpora of known exemplars to build typologies and relative chronologies.",subfield,Arts & Humanities,History,Medieval History,14,78.75,167.75,medium
-Negotiate access to restricted manuscript collections and private archives holding medieval materials.,subfield,Arts & Humanities,History,Medieval History,9,49.83,2047.0,medium
-"Collaborate with archaeologists, art historians, and philologists on interdisciplinary medieval research projects.",subfield,Arts & Humanities,History,Medieval History,12,311.33,2178.0,medium
 Apply historiographical frameworks such as social constructivism or internalism to interpret the development of scientific ideas and practices.,subfield,Arts & Humanities,History,History of Science & Technology,9,257.33,1287.33,medium
 "Situate scientific or technological developments within broader intellectual, cultural, and institutional contexts when formulating research questions.",subfield,Arts & Humanities,History,History of Science & Technology,10,221.83,366.33,medium
 "Assess whether patterns observed in one scientific discipline, national context, or historical period apply to others.",subfield,Arts & Humanities,History,History of Science & Technology,11,402.58,1365.58,low
@@ -4221,13 +4221,13 @@ Code archival documents and historical texts to identify recurring themes in sci
 "Analyze visual and material sources such as scientific instruments, diagrams, and photographs as historical evidence.",subfield,Arts & Humanities,History,History of Science & Technology,10,185.23,598.9,medium
 Triangulate evidence from multiple archival sources to address gaps and biases in the historical record.,subfield,Arts & Humanities,History,History of Science & Technology,10,83.0,239.0,medium
 Evaluate the reliability and provenance of historical sources to account for potential distortions in scientific narratives.,subfield,Arts & Humanities,History,History of Science & Technology,9,102.33,517.33,medium
+"Negotiate access to restricted archival collections held by scientific societies, universities, or government agencies.",subfield,Arts & Humanities,History,History of Science & Technology,11,32.83,1311.1,medium
 "Check claims, interpretations, or data against independent sources to establish accuracy and correct errors",domain,Arts & Humanities,History,History of Science & Technology,9,31.68,31.68,medium
 "Map the spatial distribution and movement of sites, artifacts, or practices to reconstruct historical geographies and patterns.",field,Arts & Humanities,History,History of Science & Technology,10,144.5,144.5,medium
 Survey a specialized body of documentary material to describe its contents and trace how it changed over time,domain,Arts & Humanities,History,History of Science & Technology,10,224.5,224.5,medium
 Interpret historical technical texts and artifacts in light of modern scientific knowledge to determine their referents and workings.,subfield,Arts & Humanities,History,History of Science & Technology,12,499.67,1118.67,medium
 "Analyze vernacular practices and popular expressions, such as rituals and proverbs, as evidence of lay engagement with science and technology.",subfield,Arts & Humanities,History,History of Science & Technology,12,308.5,724.42,low
 "Apply scientific and technical analysis of an object's materials and construction to determine its composition, provenance, manufacture, or function.",subfield,Arts & Humanities,History,History of Science & Technology,10,48.58,81.17,medium
-"Negotiate access to restricted archival collections held by scientific societies, universities, or government agencies.",subfield,Arts & Humanities,History,History of Science & Technology,11,32.83,1311.1,medium
 "Situate research questions within postcolonial, transnational, or area-specific theoretical frameworks to account for regional power dynamics.",subfield,Arts & Humanities,History,Regional & Area Studies,11,79.6,267.18,low
 Engage with historiographical debates specific to the region when framing research problems and interpretive approaches.,subfield,Arts & Humanities,History,Regional & Area Studies,10,116.75,445.58,medium
 "Assess the transferability of findings across different cultural, linguistic, or national contexts within the region of study.",subfield,Arts & Humanities,History,Regional & Area Studies,9,169.08,323.75,low
@@ -4254,13 +4254,13 @@ Transcribe and translate primary source materials from regional languages or his
 Code oral history transcripts and ethnographic field notes to identify recurring themes and regional patterns.,subfield,Arts & Humanities,History,Regional & Area Studies,11,131.78,199.78,medium
 "Triangulate findings across archival sources, oral accounts, and secondary literature to address gaps and biases in regional documentation.",subfield,Arts & Humanities,History,Regional & Area Studies,8,195.5,314.25,medium
 "Account for silences, omissions, and power dynamics embedded in colonial or state-produced archival records.",subfield,Arts & Humanities,History,Regional & Area Studies,8,165.83,373.67,medium
+"Establish relationships with local cultural institutions, universities, or community organizations to facilitate research access and collaboration.",subfield,Arts & Humanities,History,Regional & Area Studies,8,74.42,2424.75,medium
+Coordinate with diaspora communities or heritage organizations to recruit participants and access dispersed populations.,subfield,Arts & Humanities,History,Regional & Area Studies,9,134.83,1420.78,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Regional & Area Studies,10,51.17,51.17,low
 "Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Regional & Area Studies,8,294.33,328.33,medium
 "Map the spatial distribution and movement of sites, artifacts, or practices to reconstruct historical geographies and patterns.",field,Arts & Humanities,History,Regional & Area Studies,10,160.75,160.75,medium
 Interpret historical maps and charts as evidence of the region's spatial and administrative history.,subfield,Arts & Humanities,History,Regional & Area Studies,10,114.38,124.27,medium
 "Search corpora of regional-language texts for specific terms or passages, treating their presence or absence as evidence of transmission.",subfield,Arts & Humanities,History,Regional & Area Studies,12,121.5,455.33,medium
-"Establish relationships with local cultural institutions, universities, or community organizations to facilitate research access and collaboration.",subfield,Arts & Humanities,History,Regional & Area Studies,8,74.42,2424.75,medium
-Coordinate with diaspora communities or heritage organizations to recruit participants and access dispersed populations.,subfield,Arts & Humanities,History,Regional & Area Studies,9,134.83,1420.78,medium
 "Apply theoretical frameworks from ancient political, economic, or religious institutions to interpret material and textual evidence.",subfield,Arts & Humanities,History,Ancient History,10,208.5,286.0,medium
 "Frame research questions using models of state formation, trade networks, or social organization in ancient societies.",subfield,Arts & Humanities,History,Ancient History,10,58.75,220.75,medium
 "Assess whether patterns observed in one ancient site, region, or period can be extended to broader ancient contexts.",subfield,Arts & Humanities,History,Ancient History,10,105.17,105.17,medium
@@ -4297,6 +4297,7 @@ Transcribe and normalize early modern handwriting and orthographic variations to
 "Code thematic content from early modern correspondence, diaries, and legal testimony to identify patterns in beliefs or practices.",subfield,Arts & Humanities,History,Early Modern History,13,436.17,555.83,medium
 Categorize early modern visual and material sources according to iconographic or typological schemes.,subfield,Arts & Humanities,History,Early Modern History,10,257.33,553.33,medium
 Account for survival bias and archival gaps when drawing conclusions from fragmentary early modern source bases.,subfield,Arts & Humanities,History,Early Modern History,9,131.0,151.0,medium
+Negotiate access to restricted early modern manuscript collections and rare book holdings with archival institutions.,subfield,Arts & Humanities,History,Early Modern History,11,71.6,1460.1,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Early Modern History,10,130.92,130.92,medium
 "Trace the circulation, reception, and transformation of works or forms across later periods and contexts",domain,Arts & Humanities,History,Early Modern History,8,269.58,385.58,medium
 "Compare related texts or successive versions of a text to establish their dependencies, borrowings, and alterations.",field,Arts & Humanities,History,Early Modern History,8,98.08,515.58,medium
@@ -4304,7 +4305,6 @@ Establish the chronology of events and sources by collating and converting datin
 "Check claims, interpretations, or data against independent sources to establish accuracy and correct errors",domain,Arts & Humanities,History,Early Modern History,9,37.92,37.92,medium
 "Map the spatial distribution and movement of sites, artifacts, or practices to reconstruct historical geographies and patterns.",field,Arts & Humanities,History,Early Modern History,10,115.1,115.1,medium
 "Specify and critically assess the operational definitions, criteria, or measures used to determine what in the source record counts as an instance of the phenomenon under study.",subfield,Arts & Humanities,History,Early Modern History,11,47.92,47.92,medium
-Negotiate access to restricted early modern manuscript collections and rare book holdings with archival institutions.,subfield,Arts & Humanities,History,Early Modern History,11,71.6,1460.1,medium
 "Apply historiographical frameworks such as social history, cultural history, or transnational history when formulating research questions about modern events.",subfield,Arts & Humanities,History,Modern & Contemporary History,11,86.92,638.33,medium
 "Situate research questions within debates about causation, contingency, and structural change in twentieth and twenty-first century history.",subfield,Arts & Humanities,History,Modern & Contemporary History,9,77.75,324.25,medium
 "Assess whether interpretations of historical events or processes apply across different national, regional, or cultural contexts.",subfield,Arts & Humanities,History,Modern & Contemporary History,12,187.75,306.58,low
@@ -4342,8 +4342,8 @@ Draw on present-day media or survey evidence to document contemporary afterlives
 "Code oral history transcripts and personal narratives for recurring themes, cultural meanings, and historical patterns.",subfield,Arts & Humanities,History,Social & Cultural History,12,339.0,395.0,medium
 Analyze visual sources such as photographs and illustrations for cultural symbolism and social representation.,subfield,Arts & Humanities,History,Social & Cultural History,12,118.97,220.1,medium
 Triangulate findings across multiple source types to address gaps and biases in the historical record.,subfield,Arts & Humanities,History,Social & Cultural History,10,106.98,116.32,medium
-"Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Social & Cultural History,8,250.33,297.83,low
 Negotiate access to restricted archival collections or private family papers held by individuals or institutions.,subfield,Arts & Humanities,History,Social & Cultural History,11,55.83,9766.0,medium
+"Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Social & Cultural History,8,250.33,297.83,low
 "Apply theories of religious change, conversion, or secularization when framing research questions about historical religious movements.",subfield,Arts & Humanities,History,Religious History,10,84.33,147.83,medium
 Engage with historiographical debates about the relationship between religious institutions and political or social structures.,subfield,Arts & Humanities,History,Religious History,10,131.33,629.0,low
 "Assess whether interpretations of religious practices or beliefs apply across different confessional, regional, or temporal contexts.",subfield,Arts & Humanities,History,Religious History,12,263.42,371.42,medium
@@ -4360,11 +4360,11 @@ Evaluate the representativeness of surviving religious sources for broader popul
 "Categorize religious imagery, ritual descriptions, or material culture references in historical documents.",subfield,Arts & Humanities,History,Religious History,8,117.33,161.33,medium
 "Account for biases in sources produced by religious authorities, polemicists, or persecuting institutions.",subfield,Arts & Humanities,History,Religious History,10,131.0,177.0,medium
 "Triangulate evidence across ecclesiastical, secular, and personal sources to reconstruct religious experiences.",subfield,Arts & Humanities,History,Religious History,12,308.75,803.92,medium
+Negotiate access to restricted ecclesiastical archives or private religious collections through institutional contacts.,subfield,Arts & Humanities,History,Religious History,10,38.83,1617.25,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Religious History,10,71.58,71.58,medium
 "Compare related texts or successive versions of a text to establish their dependencies, borrowings, and alterations.",field,Arts & Humanities,History,Religious History,8,123.83,175.58,medium
 Establish the chronology of events and sources by collating and converting dating evidence from documents.,field,Arts & Humanities,History,Religious History,8,54.83,54.83,medium
 "Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Religious History,8,263.17,263.17,medium
-Negotiate access to restricted ecclesiastical archives or private religious collections through institutional contacts.,subfield,Arts & Humanities,History,Religious History,10,38.83,1617.25,medium
 "Apply theories of state formation, power politics, or military organization when framing historical research questions.",subfield,Arts & Humanities,History,Political & Military History,8,82.83,282.83,medium
 Assess whether patterns of political or military behavior observed in one historical period or region apply to other contexts.,subfield,Arts & Humanities,History,Political & Military History,12,404.5,764.5,medium
 "Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,History,Political & Military History,8,169.0,573.0,medium
@@ -4374,16 +4374,16 @@ Construct biographical case studies of individual officials to illuminate broade
 "Conduct oral history interviews with participants in political events, military operations, or policy decisions.",subfield,Arts & Humanities,History,Political & Military History,14,397.0,7408.0,medium
 "Locate and acquire primary documents from national archives, military records repositories, and diplomatic collections.",subfield,Arts & Humanities,History,Political & Military History,10,152.0,1056.5,medium
 "Gather naval logs, admiralty records, and maritime intelligence reports from governmental and institutional archives.",subfield,Arts & Humanities,History,Political & Military History,9,112.0,1279.0,medium
+"Obtain permissions and negotiate access agreements for restricted government, military, or diplomatic archives.",subfield,Arts & Humanities,History,Political & Military History,10,51.25,1729.67,medium
 "Code diplomatic correspondence and political documents to identify patterns in rhetoric, decision-making, or alliance formation.",subfield,Arts & Humanities,History,Political & Military History,11,279.83,400.83,low
 Triangulate accounts from multiple archival sources to address bias in official records and personal memoirs.,subfield,Arts & Humanities,History,Political & Military History,8,76.52,154.52,medium
 "Evaluate the reliability and provenance of historical documents to account for propaganda, censorship, or selective preservation.",subfield,Arts & Humanities,History,Political & Military History,8,114.92,125.33,medium
+"Coordinate with foreign archives, military museums, and government agencies to access classified or restricted historical materials.",subfield,Arts & Humanities,History,Political & Military History,8,59.42,7290.88,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Political & Military History,10,106.25,122.92,low
 Estimate historical quantities from incomplete or conflicting figures to establish comparable baselines.,field,Arts & Humanities,History,Political & Military History,9,63.33,63.33,medium
 "Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Political & Military History,8,326.83,326.83,low
 "Map the spatial distribution and movement of sites, artifacts, or practices to reconstruct historical geographies and patterns.",field,Arts & Humanities,History,Political & Military History,10,161.0,161.0,medium
 Survey a specialized body of documentary material to describe its contents and trace how it changed over time,domain,Arts & Humanities,History,Political & Military History,10,237.0,282.0,medium
-"Obtain permissions and negotiate access agreements for restricted government, military, or diplomatic archives.",subfield,Arts & Humanities,History,Political & Military History,10,51.25,1729.67,medium
-"Coordinate with foreign archives, military museums, and government agencies to access classified or restricted historical materials.",subfield,Arts & Humanities,History,Political & Military History,8,59.42,7290.88,medium
 "Apply postcolonial theoretical frameworks to analyze power dynamics, resistance, and cultural exchange in colonial encounters.",subfield,Arts & Humanities,History,Colonial & Postcolonial History,11,382.67,1238.67,medium
 "Engage with theories of empire, settler colonialism, and decolonization when framing historical research questions.",subfield,Arts & Humanities,History,Colonial & Postcolonial History,11,101.0,561.17,medium
 "Assess the applicability of findings across different colonial contexts, empires, or geographic regions.",subfield,Arts & Humanities,History,Colonial & Postcolonial History,12,123.75,193.25,medium
@@ -4397,13 +4397,13 @@ Transcribe and translate handwritten colonial documents from European and non-Eu
 Code oral histories and personal narratives to identify themes of colonial experience and memory.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,14,255.3,280.97,medium
 Account for biases inherent in colonial administrative records and European-authored sources.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,9,77.58,77.58,medium
 Critically assess silences and absences in archival records concerning colonized peoples' perspectives.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,10,181.67,394.67,medium
+"Coordinate with archives, museums, and cultural institutions in former colonies to access restricted or dispersed collections.",subfield,Arts & Humanities,History,Colonial & Postcolonial History,12,125.5,4874.0,medium
+Collaborate with descendant communities and local scholars to gain access to oral traditions and community archives.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,10,162.83,4090.75,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,History,Colonial & Postcolonial History,10,49.58,49.58,medium
 "Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",field,Arts & Humanities,History,Colonial & Postcolonial History,8,182.83,182.83,medium
 Survey a specialized body of documentary material to describe its contents and trace how it changed over time,domain,Arts & Humanities,History,Colonial & Postcolonial History,10,335.0,335.0,medium
 Reconstruct the organization and reception of state propaganda or information campaigns from administrative and testimonial evidence.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,13,512.33,1856.83,medium
 Trace how a claim or narrative was transmitted across successive publications to identify its origin and subsequent distortion.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,12,44.87,553.37,medium
-"Coordinate with archives, museums, and cultural institutions in former colonies to access restricted or dispersed collections.",subfield,Arts & Humanities,History,Colonial & Postcolonial History,12,125.5,4874.0,medium
-Collaborate with descendant communities and local scholars to gain access to oral traditions and community archives.,subfield,Arts & Humanities,History,Colonial & Postcolonial History,10,162.83,4090.75,medium
 "Frame research questions within historiographical debates about periodization, influence, and cultural transmission.",subfield,Arts & Humanities,History,Art & Intellectual History,10,98.92,447.25,medium
 "Situate analyses of visual or textual sources within relevant theoretical frameworks from aesthetics, hermeneutics, or cultural theory.",subfield,Arts & Humanities,History,Art & Intellectual History,9,46.25,46.25,medium
 Assess whether interpretive claims about artistic movements or intellectual traditions apply across different national or regional contexts.,subfield,Arts & Humanities,History,Art & Intellectual History,12,335.17,495.5,medium
@@ -4437,10 +4437,10 @@ Design and deliver instructional materials or programmes for a target audience o
 "Code classroom interaction data for discourse moves, feedback types, or turn-taking patterns using established coding schemes.",subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,10,163.75,179.75,medium
 "Analyze learner language samples for grammatical accuracy, lexical complexity, or developmental features using error analysis or interlanguage frameworks.",subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,9,105.75,175.25,medium
 "Control for learner proficiency level, first language background, and prior instruction when analyzing effects of pedagogical interventions.",subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,11,25.17,96.33,medium
+"Coordinate with language programs, schools, or testing organizations to recruit learner participants or access instructional materials.",subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,11,47.62,1464.7,low
 Assess coding reliability by having independent raters code the same data and computing their agreement,field,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,7,19.45,56.53,medium
 Group learners by achievement level or instructional track to compare their language learning behaviors and outcomes.,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,10,59.92,92.92,medium
 Design experimental or quasi-experimental intervention studies with treatment and comparison groups to test effects of instruction on language learning outcomes.,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,14,91.58,769.25,medium
-"Coordinate with language programs, schools, or testing organizations to recruit learner participants or access instructional materials.",subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching,11,47.62,1464.7,low
 Apply syntactic theories such as generative grammar or construction grammar to formulate hypotheses about sentence structure.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,8,46.62,46.62,medium
 Integrate semantic frameworks with syntactic analysis to investigate form-meaning correspondences.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,12,81.5,81.5,medium
 Evaluate whether syntactic patterns observed in one language or dialect generalize to typologically diverse languages.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,13,366.67,654.67,medium
@@ -4463,10 +4463,10 @@ Parse and annotate sentence structures according to syntactic categories and phr
 "Code linguistic data for grammatical features such as word order, agreement, and argument structure.",subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,9,62.92,496.08,low
 Control for lexical and semantic confounds when analyzing syntactic processing data.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,11,43.25,258.58,medium
 Account for individual differences in language background when interpreting grammaticality judgment results.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,9,23.07,33.83,medium
+Collaborate with language communities to recruit speakers of understudied languages or dialects.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,10,91.0,2657.25,medium
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,9,31.75,35.58,medium
 "Establish the underlying system of units, categories, and boundaries in a domain through systematic analysis of its patterns",field,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,8,131.75,230.25,medium
 "Interpret phonetic and prosodic evidence, such as pitch contours or formant measurements, to diagnose phonological or grammatical categories.",subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,12,66.08,89.33,medium
-Collaborate with language communities to recruit speakers of understudied languages or dialects.,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar,10,91.0,2657.25,medium
 Apply theories of language ideology and linguistic identity when framing research questions about language attitudes and practices.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,10,59.03,344.7,medium
 Draw on variationist sociolinguistic frameworks to investigate relationships between linguistic features and social variables.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,11,304.33,403.0,medium
 "Assess whether observed language patterns will generalize across speech communities, registers, or interactional contexts.",subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,11,96.67,173.67,medium
@@ -4492,10 +4492,10 @@ Transcribe audio recordings using conventions appropriate for capturing phonetic
 Categorize discourse and interactional features in conversational data for qualitative or quantitative analysis.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,10,69.75,137.75,medium
 Account for speaker-level clustering and stylistic variation when analyzing sociolinguistic interview data.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,12,32.15,32.48,medium
 "Control for social factors such as age, gender, ethnicity, and social class in analyses of linguistic variation.",subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,10,17.13,17.42,medium
+Establish relationships with speech communities to facilitate ethical recruitment and data collection.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,9,143.5,1096.58,medium
 "Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",field,Arts & Humanities,Languages & Linguistics,Sociolinguistics,8,68.33,68.33,medium
 Devise or scrutinize measures targeting specific linguistic categories to ensure they capture the intended construct,field,Arts & Humanities,Languages & Linguistics,Sociolinguistics,10,30.83,30.83,medium
 "Reconstruct the historical development and circumstances of a figure, community, or movement from documentary sources to explain its later character",domain,Arts & Humanities,Languages & Linguistics,Sociolinguistics,8,185.0,307.5,medium
-Establish relationships with speech communities to facilitate ethical recruitment and data collection.,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics,9,143.5,1096.58,medium
 "Apply theories of speech acts, implicature, or presupposition when framing research questions about meaning in context.",subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,8,44.3,93.8,medium
 Ground research questions in formal semantic frameworks such as truth-conditional semantics or dynamic semantics.,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,8,34.75,60.75,medium
 "Evaluate whether semantic or pragmatic findings generalize across languages, dialects, or discourse communities.",subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,10,206.5,1511.17,medium
@@ -4514,8 +4514,8 @@ Assess the validity of elicitation techniques used to obtain pragmatic data by c
 "Annotate discourse data for speech acts, discourse markers, or pragmatic functions.",subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,10,92.5,111.08,medium
 "Code textual data for semantic relations, reference chains, or coherence structures.",subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,9,226.5,306.0,low
 Control for contextual and prosodic confounds when analyzing pragmatic interpretation data.,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,9,68.72,298.05,medium
-"Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",field,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,8,40.67,40.67,medium
 Coordinate with language communities or speaker groups to recruit participants for linguistic elicitation studies.,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,11,58.88,2375.67,medium
+"Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",field,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics,8,40.67,40.67,medium
 "Apply translation theories such as equivalence, skopos, or polysystem theory to frame research questions about translation processes or products.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,9,41.23,41.23,medium
 Draw on sociological or cognitive models of translator behavior to conceptualize research problems.,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,9,84.75,84.75,medium
 "Assess whether findings about translation practices or norms will transfer across language pairs, text types, or cultural contexts.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,13,99.45,136.62,medium
@@ -4535,10 +4535,10 @@ Design controlled materials or data-collection protocols that systematically var
 "Annotate translated texts for translation shifts, strategies, or linguistic features.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,94.67,263.0,low
 "Code translator interview data for themes related to decision-making, norms, or professional identity.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,189.75,257.75,medium
 Account for text selection bias when analyzing patterns in translated corpora.,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,37.88,62.42,medium
+"Negotiate access to translation agencies, publishing houses, or professional associations for participant recruitment.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,33.12,4216.0,medium
 Compare source- and target-language expressions to assess the correspondence between them,field,Arts & Humanities,Languages & Linguistics,Translation Studies,8,62.33,96.0,medium
 Corroborate findings by triangulating independent analysts or complementary data sources,field,Arts & Humanities,Languages & Linguistics,Translation Studies,7,21.08,90.58,medium
 "Analyze medium-specific and multimodal constraints, such as image-text relations or synchrony, that shape translation choices.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,130.18,130.18,medium
-"Negotiate access to translation agencies, publishing houses, or professional associations for participant recruitment.",subfield,Arts & Humanities,Languages & Linguistics,Translation Studies,11,33.12,4216.0,medium
 "Ground research questions in linguistic theories of syntax, semantics, or pragmatics to guide computational model design.",subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics,9,61.25,129.25,medium
 "Evaluate whether language models and NLP systems generalize across languages, dialects, and text genres.",subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics,13,144.58,198.25,medium
 Assess the transferability of computational linguistic findings across different corpora and annotation schemes.,subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics,12,74.67,112.92,medium
@@ -4573,13 +4573,13 @@ Transcribe and normalize historical or dialectal texts to enable systematic ling
 "Annotate linguistic data with phonetic, morphological, or syntactic tags for comparative analysis.",subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,9,95.25,95.25,medium
 Code semantic shifts and grammatical changes in diachronic text corpora to track patterns of language evolution.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,12,147.83,294.83,medium
 Control for borrowing and areal diffusion when establishing genetic relationships between languages.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,10,138.83,151.83,medium
+"Coordinate with archives, libraries, or indigenous communities to access rare manuscripts or endangered language speakers.",subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,10,67.22,2827.3,medium
 "Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,168.0,992.0,medium
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,9,45.42,45.42,medium
 "Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",field,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,51.42,51.42,medium
 Develop computational search routines to extract instances of target constructions or recurrent word sequences from corpora.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,12,35.25,36.92,medium
 "Reconstruct the historical development and circumstances of a figure, community, or movement from documentary sources to explain its later character",domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,376.33,2031.33,medium
 Reconstruct the sound system of a historical language by interpreting the graphemic conventions of the scripts that record it.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,12,451.0,549.0,medium
-"Coordinate with archives, libraries, or indigenous communities to access rare manuscripts or endangered language speakers.",subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,10,67.22,2827.3,medium
 "Apply models of language processing, such as lexical access or sentence parsing theories, when formulating research hypotheses.",subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,9,49.67,177.42,medium
 Ground research questions in theories of bilingual or second language acquisition to explain observed processing differences.,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,9,43.53,113.37,medium
 Evaluate whether language processing findings generalize across speakers of different languages or language families.,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,11,371.0,2167.0,medium
@@ -4600,11 +4600,11 @@ Administer targeted knowledge tests at delayed intervals to measure gains or los
 Segment and annotate speech recordings to extract acoustic-phonetic measurements for analysis.,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,9,64.67,69.08,medium
 "Control for lexical variables such as word frequency, length, and imageability when analyzing processing effects.",subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,9,15.88,143.8,medium
 Apply mixed-effects regression models to account for variability across participants and linguistic items simultaneously.,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,11,9.17,10.48,medium
+"Recruit participants with specific language profiles, such as monolinguals, bilinguals, or individuals with language disorders, through university or community networks.",subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,10,66.65,375.23,medium
 Assess coding reliability by having independent raters code the same data and computing their agreement,field,Arts & Humanities,Languages & Linguistics,Psycholinguistics,7,17.38,147.47,medium
 Design controlled materials or data-collection protocols that systematically vary targeted properties to obtain evidence about them,field,Arts & Humanities,Languages & Linguistics,Psycholinguistics,11,70.42,243.25,medium
 Corroborate findings by triangulating independent analysts or complementary data sources,field,Arts & Humanities,Languages & Linguistics,Psycholinguistics,7,42.83,168.5,medium
 Compute quantitative measures of temporal or lexical coordination between conversational partners.,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,10,182.42,285.58,medium
-"Recruit participants with specific language profiles, such as monolinguals, bilinguals, or individuals with language disorders, through university or community networks.",subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics,10,66.65,375.23,medium
 "Apply criminological theories such as strain, social learning, or routine activities when developing research hypotheses about criminal behavior.",subfield,Social Sciences,Law,Criminal Law & Criminology,10,49.67,124.42,medium
 Incorporate deterrence and punishment theories when examining the effects of criminal justice policies and interventions.,subfield,Social Sciences,Law,Criminal Law & Criminology,13,107.83,209.83,medium
 Assess whether findings from specific correctional settings or jurisdictions generalize to broader criminal justice populations.,subfield,Social Sciences,Law,Criminal Law & Criminology,11,38.17,38.17,medium
@@ -4962,8 +4962,8 @@ Conduct interviews with living postcolonial authors or cultural practitioners to
 "Trace the circulation, reception, and transformation of works or forms across later periods and contexts",domain,Arts & Humanities,Literature,Postcolonial Literature,8,153.42,176.33,medium
 Reassess claims about readers or prior findings by reasoning from existing textual evidence rather than new empirical data.,subfield,Arts & Humanities,Literature,Postcolonial Literature,9,30.25,37.17,medium
 "Analyze narrative structures, linguistic choices, and rhetorical strategies in postcolonial texts to identify patterns of subversion or complicity.",subfield,Arts & Humanities,Literature,Postcolonial Literature,9,148.92,148.92,medium
-Compare written literary texts against oral narrative traditions to determine how oral genres and materials were transmitted into written form.,subfield,Arts & Humanities,Literature,Postcolonial Literature,10,180.17,1058.83,medium
 Negotiate access to restricted archival collections or private literary estates relevant to postcolonial authors and texts.,subfield,Arts & Humanities,Literature,Postcolonial Literature,8,37.75,1715.5,medium
+Compare written literary texts against oral narrative traditions to determine how oral genres and materials were transmitted into written form.,subfield,Arts & Humanities,Literature,Postcolonial Literature,10,180.17,1058.83,medium
 "Apply literary theoretical frameworks such as postcolonialism, feminism, or deconstruction to frame interpretive research questions about texts.",subfield,Arts & Humanities,Literature,Literary Theory & Criticism,9,53.47,53.47,medium
 "Situate close reading practices within broader theoretical debates about meaning, authorship, or textuality.",subfield,Arts & Humanities,Literature,Literary Theory & Criticism,9,58.5,82.33,medium
 "Assess whether interpretive claims about literary texts extend across different genres, historical periods, or cultural traditions.",subfield,Arts & Humanities,Literature,Literary Theory & Criticism,10,86.58,136.08,medium
@@ -4989,9 +4989,9 @@ Trace the afterlives of medieval or early modern literary and performance forms 
 Access rare book collections and special archives to examine material features of primary sources.,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature,10,50.62,192.12,medium
 "Transcribe and normalize spelling, punctuation, and abbreviations from early modern or medieval source texts.",subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature,12,75.68,127.52,low
 "Code thematic, rhetorical, or generic patterns across literary texts to support comparative analysis.",subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature,10,167.12,211.95,medium
+"Coordinate with libraries, archives, and special collections to obtain access to rare manuscripts and early printed editions.",subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature,9,20.68,1928.33,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Literature,Medieval & Early Modern Literature,10,75.58,75.58,medium
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Literature,Medieval & Early Modern Literature,9,48.82,48.82,medium
-"Coordinate with libraries, archives, and special collections to obtain access to rare manuscripts and early printed editions.",subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature,9,20.68,1928.33,medium
 "Apply literary theoretical frameworks such as narratology, postcolonialism, or feminist criticism to frame interpretive research questions.",subfield,Arts & Humanities,Literature,European Literature,8,31.92,31.92,medium
 "Situate textual analysis within relevant historical, cultural, or intellectual movements of European literary traditions.",subfield,Arts & Humanities,Literature,European Literature,10,59.75,86.83,medium
 "Assess whether interpretive claims about literary texts extend across national literatures, historical periods, or linguistic traditions.",subfield,Arts & Humanities,Literature,European Literature,12,165.17,432.58,medium
@@ -5008,8 +5008,8 @@ Relate documented life events and personal records of an author to features of t
 Transcribe and collate variant manuscript or print editions of literary texts for scholarly analysis.,subfield,Arts & Humanities,Literature,European Literature,10,264.0,992.33,low
 "Annotate literary texts for thematic, stylistic, or rhetorical features relevant to the research question.",subfield,Arts & Humanities,Literature,European Literature,9,77.47,145.13,low
 Code textual passages according to theoretical categories or interpretive frameworks for systematic analysis.,subfield,Arts & Humanities,Literature,European Literature,11,83.92,723.25,medium
-"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Literature,European Literature,8,181.33,1123.33,medium
 Negotiate access to restricted archival materials and rare book collections held by European institutions.,subfield,Arts & Humanities,Literature,European Literature,10,114.97,1842.63,medium
+"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Literature,European Literature,8,181.33,1123.33,medium
 "Apply literary theoretical frameworks such as New Historicism, postcolonialism, or feminist criticism to frame interpretive research questions about American texts.",subfield,Arts & Humanities,Literature,American Literature,8,40.93,120.02,medium
 "Assess whether interpretive claims about American literary texts apply across different historical periods, regional traditions, or demographic readerships.",subfield,Arts & Humanities,Literature,American Literature,10,130.67,191.83,low
 Apply concepts or theories drawn from outside the domain under study as interpretive frameworks for its phenomena,domain,Arts & Humanities,Literature,American Literature,9,112.92,152.92,medium
@@ -5048,10 +5048,10 @@ Document researcher positionality and apply reflexive procedures to manage its i
 "Code narrative texts for structural elements such as plot events, character functions, or narrative sequences.",subfield,Arts & Humanities,Literature,Narrative Studies,12,110.23,144.57,medium
 "Identify and categorize narrative techniques including point of view, unreliable narration, or embedded storytelling.",subfield,Arts & Humanities,Literature,Narrative Studies,8,82.42,82.42,medium
 Analyze thematic patterns and motifs across narrative texts to identify recurring cultural or ideological concerns.,subfield,Arts & Humanities,Literature,Narrative Studies,11,261.67,261.67,medium
+"Negotiate access to restricted literary archives, manuscript collections, or unpublished narrative materials.",subfield,Arts & Humanities,Literature,Narrative Studies,10,16.55,951.18,medium
 "Trace the circulation, reception, and transformation of works or forms across later periods and contexts",domain,Arts & Humanities,Literature,Narrative Studies,8,141.17,150.17,medium
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Literature,Narrative Studies,9,25.37,26.87,medium
 Examine authorial revision and editorial intervention to determine how published texts were shaped.,subfield,Arts & Humanities,Literature,Narrative Studies,8,291.83,394.25,low
-"Negotiate access to restricted literary archives, manuscript collections, or unpublished narrative materials.",subfield,Arts & Humanities,Literature,Narrative Studies,10,16.55,951.18,medium
 "Apply postcolonial, transnational, or comparative literary frameworks when formulating research questions about texts across national traditions.",subfield,Arts & Humanities,Literature,World Literature,9,52.92,52.92,medium
 Engage with theories of cultural translation and literary circulation to frame analyses of texts moving between linguistic and cultural contexts.,subfield,Arts & Humanities,Literature,World Literature,9,125.92,848.25,medium
 "Assess whether interpretive claims about literary movements or genres hold across different national literatures, historical periods, or cultural contexts.",subfield,Arts & Humanities,Literature,World Literature,11,303.0,839.0,medium
@@ -5063,8 +5063,8 @@ Compare a work with its counterpart in another medium to identify shifts in form
 "Design interview protocols to collect oral histories or testimonies from authors, translators, or literary community members for qualitative research.",subfield,Arts & Humanities,Literature,World Literature,12,37.67,413.58,medium
 "Code thematic, stylistic, or narrative patterns in literary texts using systematic qualitative analysis methods.",subfield,Arts & Humanities,Literature,World Literature,11,124.68,188.93,medium
 "Annotate literary texts for rhetorical devices, intertextual references, or cultural motifs to support comparative analysis.",subfield,Arts & Humanities,Literature,World Literature,9,73.33,118.17,medium
-"Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Literature,World Literature,10,95.17,95.17,medium
 "Coordinate with international libraries, archives, or literary estates to access rare manuscripts, correspondence, or unpublished materials.",subfield,Arts & Humanities,Literature,World Literature,11,73.75,1555.83,medium
+"Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Literature,World Literature,10,95.17,95.17,medium
 "Apply literary theories such as postcolonialism, narratology, or reception theory to frame comparative analyses across national literatures.",subfield,Arts & Humanities,Literature,Comparative Literature,11,161.33,161.33,medium
 "Assess whether interpretive claims about literary texts or movements apply across different linguistic, cultural, or historical contexts.",subfield,Arts & Humanities,Literature,Comparative Literature,11,259.33,336.0,medium
 Apply concepts or theories drawn from outside the domain under study as interpretive frameworks for its phenomena,domain,Arts & Humanities,Literature,Comparative Literature,9,153.5,183.5,medium
@@ -5471,6 +5471,7 @@ Derive probability distributions and their properties from foundational axioms a
 Establish convergence rates and asymptotic behavior of estimators using limit theorems.,subfield,Formal Sciences,Mathematics,Probability Theory,11,38.0,40.5,medium
 Formulate stochastic models to characterize random phenomena in applied contexts.,subfield,Formal Sciences,Mathematics,Probability Theory,10,46.25,167.5,medium
 "Derive closed-form expressions for moments, generating functions, and characteristic functions of distributions.",subfield,Formal Sciences,Mathematics,Probability Theory,10,5.45,5.57,medium
+Design sampling schemes that ensure valid statistical inference for target populations.,subfield,Formal Sciences,Mathematics,Probability Theory,11,39.0,67.17,medium
 Extend established results to a broader or modified setting by adapting their proofs to the new hypotheses.,field,Formal Sciences,Mathematics,Probability Theory,8,107.08,107.08,medium
 Recast a problem as an equivalent structure in another framework to make it tractable or to transfer known results.,field,Formal Sciences,Mathematics,Probability Theory,7,52.5,192.0,medium
 Establish quantitative control on the behavior of a complex system by locating the regimes or reductions that govern it.,subfield,Formal Sciences,Mathematics,Probability Theory,13,412.17,433.17,low
@@ -5483,7 +5484,6 @@ Enumerate and classify combinatorial terms in moment or trace expansions to dete
 Apply correlation and association inequalities to control dependence between events in interacting random systems.,subfield,Formal Sciences,Mathematics,Probability Theory,9,19.4,19.4,low
 Derive non-asymptotic concentration and tail bounds for functionals of random variables and stochastic processes.,subfield,Formal Sciences,Mathematics,Probability Theory,12,45.17,46.17,medium
 Derive minimax lower bounds and detection boundaries establishing fundamental limits of inference.,subfield,Formal Sciences,Mathematics,Probability Theory,10,83.33,83.33,medium
-Design sampling schemes that ensure valid statistical inference for target populations.,subfield,Formal Sciences,Mathematics,Probability Theory,11,39.0,67.17,medium
 "Quantify statistical uncertainty through confidence intervals, credible intervals, and standard errors.",subfield,Formal Sciences,Mathematics,Probability Theory,14,14.0,20.97,medium
 Propagate uncertainty through probabilistic models using variance decomposition and sensitivity analysis.,subfield,Formal Sciences,Mathematics,Probability Theory,10,23.43,34.82,medium
 "Estimate model parameters using maximum likelihood, method of moments, or Bayesian inference.",subfield,Formal Sciences,Mathematics,Probability Theory,13,11.63,13.13,medium
@@ -5590,10 +5590,10 @@ Derive optimality conditions and bounds from mathematical programming formulatio
 Formulate real-world decision problems as mathematical optimization models with objective functions and constraints.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,10,26.5,376.12,medium
 Analyze convergence properties and complexity bounds for proposed optimization algorithms.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,10,26.92,27.83,medium
 Conduct sensitivity analysis to assess how parameter variations affect optimal solutions and objective values.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,9,11.72,15.8,medium
+Design computational experiments with systematic parameter variations to evaluate algorithm robustness.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,13,48.08,146.08,medium
 Recast a problem as an equivalent structure in another framework to make it tractable or to transfer known results.,field,Formal Sciences,Mathematics,Optimization & Operations Research,7,54.0,150.0,medium
 "Characterize structural properties of optimization problem instances, such as separability or matrix definiteness, to classify their difficulty and solvability.",subfield,Formal Sciences,Mathematics,Optimization & Operations Research,13,10.45,10.45,medium
 "Construct geometric structures on solution spaces, such as metrics or retractions, to support optimization over them.",subfield,Formal Sciences,Mathematics,Optimization & Operations Research,11,25.33,26.08,medium
-Design computational experiments with systematic parameter variations to evaluate algorithm robustness.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,13,48.08,146.08,medium
 Calibrate algorithm hyperparameters through systematic tuning experiments on representative problem instances.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,11,24.17,131.92,medium
 Fit surrogate models or response surfaces to approximate complex objective functions in optimization problems.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,9,16.62,152.93,medium
 Simulate stochastic processes and scenarios to evaluate optimization solutions under uncertainty.,subfield,Formal Sciences,Mathematics,Optimization & Operations Research,10,29.42,39.08,medium
@@ -6351,23 +6351,23 @@ Select behavioral measures and neural outcome variables that align with cognitiv
 Develop informed consent procedures that explain neuroimaging risks and incidental findings protocols to participants.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,14.5,518.83,medium
 Implement data security protocols for neuroimaging datasets containing identifiable brain scans.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,13,23.03,126.7,medium
 "Screen and recruit participants based on cognitive ability, neurological status, or demographic criteria.",subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,12,84.93,389.77,medium
+Standardize cognitive task parameters and scoring procedures across multiple data collection sites.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,13,143.5,551.75,medium
+Harmonize neuroimaging data acquired on different scanner platforms or with varying acquisition parameters.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,36.58,193.67,medium
 Estimate source-level neural activity from sensor-level EEG or MEG recordings to localize neural generators,field,Life Sciences,Neuroscience,Cognitive Neuroscience,11,36.75,55.7,medium
 Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Cognitive Neuroscience,11,112.5,6085.0,medium
 Develop custom instrumentation or computational tools tailored to specific research measurement needs,domain,Life Sciences,Neuroscience,Cognitive Neuroscience,9,123.33,354.0,medium
 "Administer acute interventions, such as brain stimulation or pharmacological challenge, to human participants during experimental sessions",field,Life Sciences,Neuroscience,Cognitive Neuroscience,10,2.62,2.62,medium
+Derive threshold or reference values from population data to classify individuals or samples,domain,Life Sciences,Neuroscience,Cognitive Neuroscience,10,29.5,91.17,medium
+Calibrate stimulus or task parameters to each participant's individual threshold or performance level.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,15.0,15.0,medium
 Pilot-test candidate stimuli or experimental manipulations with independent samples to validate their intended properties before the main study.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,11,43.5,398.58,medium
 Implement real-time signal-processing systems that convert ongoing neural or physiological signals into contingent feedback or stimulus control during data collection.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,12,76.0,241.67,medium
 "Construct computational representations of experimental stimuli, such as semantic embeddings or extracted stimulus events, for use in neural analyses.",subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,22.33,24.42,medium
 Elicit and code participants' open-ended verbal reports of task strategies or subjective experience.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,11,59.03,104.28,medium
-Standardize cognitive task parameters and scoring procedures across multiple data collection sites.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,13,143.5,551.75,medium
-Harmonize neuroimaging data acquired on different scanner platforms or with varying acquisition parameters.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,36.58,193.67,medium
 Analyze longitudinal changes in cognitive performance or brain structure over repeated assessments.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,13,87.92,122.95,medium
 Estimate effects of experimental manipulations on neural activity while controlling for individual differences in baseline cognition.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,47.72,96.97,medium
 Apply statistical methods to isolate neural correlates of specific cognitive processes from confounding sensory or motor components.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,11,30.93,50.52,medium
 Compute frequency-domain measures from continuous physiological recordings to quantify oscillatory activity,field,Life Sciences,Neuroscience,Cognitive Neuroscience,11,37.32,55.17,medium
 Model individual-difference measures as predictors of behavioral performance to identify brain-behavior relationships,field,Life Sciences,Neuroscience,Cognitive Neuroscience,11,24.08,29.43,medium
-Derive threshold or reference values from population data to classify individuals or samples,domain,Life Sciences,Neuroscience,Cognitive Neuroscience,10,29.5,91.17,medium
-Calibrate stimulus or task parameters to each participant's individual threshold or performance level.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,10,15.0,15.0,medium
 Coordinate with clinical neuroimaging facilities to access scanner time and patient populations for research studies.,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience,12,41.67,3936.0,medium
 Formulate hypotheses linking specific neurotransmitter systems to behavioral phenotypes or cognitive functions.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,10,35.58,35.58,medium
 Develop testable predictions about neural circuit mechanisms underlying stress-induced behavioral changes.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,61.3,61.3,medium
@@ -6378,6 +6378,8 @@ Plan within-subject or between-subject experimental designs to assess treatment 
 Obtain IACUC approval for animal research protocols involving behavioral testing and neural manipulations.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,15,23.52,839.73,medium
 Prepare IRB protocols detailing risks and benefits of neuroimaging or pharmacological challenge studies in human participants.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,38.17,802.08,medium
 Screen and recruit participants based on neurological health status and medication use criteria.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,94.45,1447.85,medium
+Harmonize behavioral scoring criteria and operational definitions across multiple experimental sites or raters.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,77.83,1215.25,medium
+Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,10,67.25,280.25,medium
 Perform in vivo procedures on laboratory animals to establish defined experimental states or disease models,domain,Life Sciences,Neuroscience,Behavioral Neuroscience,8,74.3,741.72,medium
 Train animals through staged shaping and habituation to reach stable task performance before experimental testing,field,Life Sciences,Neuroscience,Behavioral Neuroscience,10,48.23,65.57,medium
 "Verify the anatomical location or identity of implants, injection sites, lesions, and recorded neurons",field,Life Sciences,Neuroscience,Behavioral Neuroscience,10,93.47,602.53,medium
@@ -6385,9 +6387,9 @@ Train animals through staged shaping and habituation to reach stable task perfor
 Develop custom instrumentation or computational tools tailored to specific research measurement needs,domain,Life Sciences,Neuroscience,Behavioral Neuroscience,9,134.67,1032.0,medium
 "Administer acute interventions, such as brain stimulation or pharmacological challenge, to human participants during experimental sessions",field,Life Sciences,Neuroscience,Behavioral Neuroscience,10,2.95,3.62,medium
 Segment continuous behavioral or physiological recordings into discrete states using defined classification criteria,field,Life Sciences,Neuroscience,Behavioral Neuroscience,9,16.3,20.68,medium
+Manually score and annotate recorded behavioral or physiological data using defined coding schemes to extract quantitative behavioral measures.,field,Life Sciences,Neuroscience,Behavioral Neuroscience,8,39.78,43.78,medium
 Select and group subjects by naturally occurring phenotypic or trait differences to study individual variation in behavior.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,52.65,210.32,medium
-Harmonize behavioral scoring criteria and operational definitions across multiple experimental sites or raters.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,77.83,1215.25,medium
-Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,10,67.25,280.25,medium
+Prepare and calibrate experimental stimuli and their delivery parameters using measurement instrumentation.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,15.25,15.25,medium
 Control for circadian timing and sleep history when analyzing behavioral or neural outcome measures.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,36.85,635.33,medium
 Account for baseline individual differences in neural activity when estimating intervention effects on behavior.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,37.63,52.85,medium
 Compute frequency-domain measures from continuous physiological recordings to quantify oscillatory activity,field,Life Sciences,Neuroscience,Behavioral Neuroscience,11,25.98,31.43,medium
@@ -6397,8 +6399,6 @@ Analyze trial-level behavioral responses to derive indices of perceptual sensiti
 "Select pharmacological agents and doses for in vivo studies based on prior selectivity, potency, and exposure data.",subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,22.5,356.33,medium
 Quantify kinematic parameters from movement recordings to characterize motor performance.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,32.83,50.67,medium
 "Design environmental cycle manipulations, such as light or temperature schedules, to test entrainment or lasting programming effects.",subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,46.83,1209.83,medium
-Manually score and annotate recorded behavioral or physiological data using defined coding schemes to extract quantitative behavioral measures.,field,Life Sciences,Neuroscience,Behavioral Neuroscience,8,39.78,43.78,medium
-Prepare and calibrate experimental stimuli and their delivery parameters using measurement instrumentation.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,11,15.25,15.25,medium
 Coordinate with clinical neurology or psychiatry departments for patient recruitment and phenotyping.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,10,181.67,11478.25,medium
 Formulate hypotheses about molecular signaling pathways underlying neuronal dysfunction or degeneration.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,10,37.38,132.22,medium
 Develop hypotheses linking ion channel or receptor dysfunction to neurological disease phenotypes.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,10,63.0,97.0,medium
@@ -6413,6 +6413,7 @@ Prepare and maintain primary neuronal or glial cell cultures for experimental ma
 Generate and validate transgenic or knockout animal models for studying gene function in the nervous system.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,15,226.0,8766.5,medium
 Acquire confocal or fluorescence microscopy images of neural tissue to visualize cellular structures and protein localization.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,10,4.05,6.6,medium
 Collect electrophysiological recordings from neurons or brain slices to measure electrical activity patterns.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,12,7.77,9.38,medium
+"Integrate gene expression, protein, and electrophysiological data from multiple experimental platforms.",subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,12,65.43,83.27,medium
 Perform in vivo procedures on laboratory animals to establish defined experimental states or disease models,domain,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,8,53.38,317.32,medium
 Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,11,18.58,29.75,medium
 Develop custom instrumentation or computational tools tailored to specific research measurement needs,domain,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,9,190.0,1018.33,medium
@@ -6422,7 +6423,6 @@ Engineer genetic constructs and vectors for targeted expression or silencing of 
 Perform in vitro assays with sample extracts or purified proteins to characterize their functional and biochemical properties,domain,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,8,35.0,59.22,medium
 Isolate defined cell populations or subcellular fractions from neural samples for downstream molecular analysis.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,9,27.12,40.08,medium
 "Generate cell lines heterologously expressing receptors, channels, or other proteins for functional characterization.",subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,11,73.68,1201.75,medium
-"Integrate gene expression, protein, and electrophysiological data from multiple experimental platforms.",subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,12,65.43,83.27,medium
 "Analyze time-course data of neuronal survival, axon regeneration, or disease progression in experimental models.",subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,9,17.37,17.37,medium
 "Quantify treatment effects on neuronal viability, synaptic function, or molecular markers while controlling for experimental variables.",subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,12,90.43,158.23,medium
 Perform dose-response analyses for pharmacological agents targeting neural receptors or signaling pathways.,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience,10,32.6,82.6,medium
@@ -6442,22 +6442,22 @@ Develop age-appropriate informed consent and assent protocols for children and a
 Recruit pediatric participants and their families for studies examining brain development or neurodevelopmental disorders.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,10,114.83,1980.83,medium
 Acquire pediatric neuroimaging data using child-friendly protocols that minimize motion artifacts and participant distress.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,10,3.63,171.67,medium
 Obtain structural and functional brain imaging data to assess developmental changes in neural connectivity and morphology.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,12,240.5,1108.62,medium
+Harmonize developmental assessment scores across different versions of standardized instruments or age-normed scales.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,9,82.5,96.25,medium
 Perform in vivo procedures on laboratory animals to establish defined experimental states or disease models,domain,Life Sciences,Neuroscience,Developmental Neuroscience,8,47.75,714.6,medium
 Perform in situ hybridization on tissue sections to localize gene transcript expression,domain,Life Sciences,Neuroscience,Developmental Neuroscience,10,29.5,227.08,medium
 Administer cell-birth-dating labels to animals in vivo to track the generation and fate of newly formed cells,field,Life Sciences,Neuroscience,Developmental Neuroscience,6,19.75,523.05,medium
+Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Developmental Neuroscience,11,24.5,57.25,low
 Engineer genetic constructs and vectors for targeted expression or silencing of genes in cells,domain,Life Sciences,Neuroscience,Developmental Neuroscience,11,14.7,163.52,medium
 "Generate and characterize custom reagents, such as antibodies or peptide ligands, for specific detection of molecular targets",field,Life Sciences,Neuroscience,Developmental Neuroscience,9,133.83,2497.83,medium
+Quantify morphological or labeling features of cells and tissue from microscopy images to assess structural and cellular states,field,Life Sciences,Neuroscience,Developmental Neuroscience,9,43.17,47.83,medium
 Develop and calibrate analysis methods for extracting quantitative measurements from optical imaging data,field,Life Sciences,Neuroscience,Developmental Neuroscience,11,62.17,80.67,medium
+Perform in vitro assays with sample extracts or purified proteins to characterize their functional and biochemical properties,domain,Life Sciences,Neuroscience,Developmental Neuroscience,8,35.5,94.42,medium
 Breed and stage animal cohorts to obtain subjects at developmental time points corresponding to the human window of interest.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,10,22.52,292.52,medium
 Establish where and how a gene acts in neural development using mutant-background and cell-type-restricted rescue experiments.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,11,254.67,2575.75,medium
 Assay the self-renewal and differentiation potential of neural stem or progenitor cells using clonal or in vivo potency assays.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,12,94.83,8020.17,medium
 Conduct parallel analyses in a second species to test whether developmental findings generalize across species.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,12,372.5,2772.0,medium
-Harmonize developmental assessment scores across different versions of standardized instruments or age-normed scales.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,9,82.5,96.25,medium
 Analyze developmental trajectories of brain structure or function across multiple time points using growth curve modeling.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,14,44.75,44.75,medium
 Estimate effects of early-life exposures on neurodevelopmental outcomes while controlling for socioeconomic and environmental confounders.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,12,97.83,190.33,medium
-Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Developmental Neuroscience,11,24.5,57.25,low
-Quantify morphological or labeling features of cells and tissue from microscopy images to assess structural and cellular states,field,Life Sciences,Neuroscience,Developmental Neuroscience,9,43.17,47.83,medium
-Perform in vitro assays with sample extracts or purified proteins to characterize their functional and biochemical properties,domain,Life Sciences,Neuroscience,Developmental Neuroscience,8,35.5,94.42,medium
 Characterize marker expression across neural cell populations and regions to define cell-type or tissue-selective identities.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,12,282.0,2199.67,medium
 Coordinate with pediatric clinics and developmental centers for participant recruitment and clinical data access.,subfield,Life Sciences,Neuroscience,Developmental Neuroscience,10,346.67,4236.83,medium
 Formulate hypotheses about neural circuit dysfunction underlying neurological or psychiatric disorders based on imaging biomarkers.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,59.75,292.17,medium
@@ -6467,12 +6467,14 @@ Determine optimal sample sizes for neuroimaging studies using power analyses spe
 Develop and optimize MRI acquisition protocols including sequence parameters for structural and functional imaging.,subfield,Life Sciences,Neuroscience,Neuroimaging,12,26.13,285.72,medium
 Acquire functional MRI data during task performance or resting-state conditions to measure brain activity.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,1.92,2.15,medium
 Collect diffusion-weighted imaging data to assess white matter microstructure and connectivity.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,48.03,61.03,medium
-Administer standardized clinical and neuropsychological assessments to participants to characterize their phenotypes,field,Life Sciences,Neuroscience,Neuroimaging,11,383.0,793.33,medium
-Develop and release open-source software implementing neuroimaging analysis methods for community use.,subfield,Life Sciences,Neuroscience,Neuroimaging,13,310.17,623.83,medium
-Select and administer radiotracers with specified dose and timing to acquire PET data of molecular targets.,subfield,Life Sciences,Neuroscience,Neuroimaging,12,72.17,124.83,medium
 Harmonize neuroimaging data acquired across different scanner platforms or acquisition protocols.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,39.92,206.92,medium
 "Preprocess neuroimaging data through standardized pipelines including motion correction, spatial normalization, and smoothing.",subfield,Life Sciences,Neuroscience,Neuroimaging,12,9.77,42.52,medium
 Segment brain images into tissue types or anatomical regions for volumetric analysis.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,21.83,115.5,medium
+Administer standardized clinical and neuropsychological assessments to participants to characterize their phenotypes,field,Life Sciences,Neuroscience,Neuroimaging,11,383.0,793.33,medium
+Develop and release open-source software implementing neuroimaging analysis methods for community use.,subfield,Life Sciences,Neuroscience,Neuroimaging,13,310.17,623.83,medium
+Select and administer radiotracers with specified dose and timing to acquire PET data of molecular targets.,subfield,Life Sciences,Neuroscience,Neuroimaging,12,72.17,124.83,medium
+"Produce and quality-control standardized resources, such as reference atlases or radiolabeled tracers, for brain imaging",subfield,Life Sciences,Neuroscience,Neuroimaging,10,66.33,314.35,medium
+Compute hemispheric laterality or asymmetry indices from paired regional brain measures.,subfield,Life Sciences,Neuroscience,Neuroimaging,8,6.37,6.95,medium
 Analyze longitudinal neuroimaging data to track disease progression or treatment response over time.,subfield,Life Sciences,Neuroscience,Neuroimaging,11,55.75,228.77,medium
 Model functional connectivity patterns between brain regions while controlling for physiological noise and head motion.,subfield,Life Sciences,Neuroscience,Neuroimaging,9,24.4,38.43,medium
 Perform statistical analyses on neuroimaging data while correcting for multiple comparisons across brain voxels or regions.,subfield,Life Sciences,Neuroscience,Neuroimaging,13,15.08,26.48,medium
@@ -6486,8 +6488,6 @@ Develop and benchmark quantitative analysis methods for extracting measures from
 Extract regional BOLD signal measures from defined brain regions to quantify activity amplitude or dynamics.,subfield,Life Sciences,Neuroscience,Neuroimaging,9,7.62,10.32,medium
 Re-run analyses under alternative parameter or pipeline choices to test the robustness of neuroimaging findings.,subfield,Life Sciences,Neuroscience,Neuroimaging,9,42.18,69.27,medium
 Apply kinetic modeling to dynamic PET data to quantify receptor binding or metabolic rate.,subfield,Life Sciences,Neuroscience,Neuroimaging,14,7.42,12.48,medium
-"Produce and quality-control standardized resources, such as reference atlases or radiolabeled tracers, for brain imaging",subfield,Life Sciences,Neuroscience,Neuroimaging,10,66.33,314.35,medium
-Compute hemispheric laterality or asymmetry indices from paired regional brain measures.,subfield,Life Sciences,Neuroscience,Neuroimaging,8,6.37,6.95,medium
 "Formulate hypotheses about neural circuit mechanisms underlying sensory processing, motor control, or homeostatic regulation.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,9,140.58,274.75,medium
 Develop theoretical models linking neural activity patterns to behavioral or physiological outcomes.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,13,258.0,596.0,medium
 "Design experiments with appropriate sensory stimuli, behavioral paradigms, and neural recording protocols to test circuit-level hypotheses.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,58.42,1042.83,medium
@@ -6499,6 +6499,8 @@ Implement data security protocols for neuroimaging datasets containing identifia
 "Administer standardized assessments of sensory perception, vestibular function, or autonomic regulation.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,11,4.77,5.4,medium
 "Acquire functional or structural brain imaging data using MRI, fMRI, PET, or CT protocols optimized for neural systems of interest.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,9,63.93,68.73,medium
 "Record electrophysiological signals from human participants using EEG, MEG, or intracranial electrodes.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,15,4.07,4.57,medium
+"Harmonize neural signal data across different recording systems, electrode configurations, or imaging protocols.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,45.38,68.17,medium
+Standardize sensory stimulus parameters and behavioral task variables across experimental sessions or sites.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,10,168.83,293.5,medium
 Perform in vivo procedures on laboratory animals to establish defined experimental states or disease models,domain,Life Sciences,Neuroscience,Systems Neuroscience,8,47.33,892.9,medium
 Train animals through staged shaping and habituation to reach stable task performance before experimental testing,field,Life Sciences,Neuroscience,Systems Neuroscience,10,34.25,1052.85,medium
 "Verify the anatomical location or identity of implants, injection sites, lesions, and recorded neurons",field,Life Sciences,Neuroscience,Systems Neuroscience,10,89.67,531.15,medium
@@ -6507,19 +6509,17 @@ Develop custom instrumentation or computational tools tailored to specific resea
 Prepare freshly obtained tissue preparations or first-hand participant reports for immediate experimental measurement,field,Life Sciences,Neuroscience,Systems Neuroscience,6,2.03,3.2,medium
 Engineer genetic constructs and vectors for targeted expression or silencing of genes in cells,domain,Life Sciences,Neuroscience,Systems Neuroscience,11,14.8,133.0,medium
 Develop and calibrate analysis methods for extracting quantitative measurements from optical imaging data,field,Life Sciences,Neuroscience,Systems Neuroscience,11,64.0,144.5,medium
+Map the spatial distribution of labeled projections or molecular markers across anatomically defined brain regions.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,92.0,707.0,medium
 Obtain in vivo physiological measurements from animals to characterize neural or vascular function,subfield,Life Sciences,Neuroscience,Systems Neuroscience,14,10.47,345.07,medium
+Detect discrete transient events in continuous neural signals using empirically defined criteria.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,11,5.97,6.22,medium
 Acquire continuous behavioral tracking data such as video kinematics or locomotor activity during experiments.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,43.68,645.75,medium
 Sort extracellular voltage recordings into single- and multi-unit spike trains.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,10,49.6,67.47,medium
 Record peripheral physiological signals synchronized with neural or imaging measurements.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,10,41.52,52.52,medium
 "Map anatomical connectivity between neural populations using anterograde, retrograde, or transneuronal tracing.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,140.9,1664.57,medium
-"Harmonize neural signal data across different recording systems, electrode configurations, or imaging protocols.",subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,45.38,68.17,medium
-Standardize sensory stimulus parameters and behavioral task variables across experimental sessions or sites.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,10,168.83,293.5,medium
 Analyze longitudinal changes in neural function or sensory performance following intervention or disease progression.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,14,124.08,210.25,medium
 Apply statistical methods to isolate treatment effects on neural activity from baseline physiological variability.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,9,16.92,23.77,medium
 Apply cross-validated predictive models to neural or biomarker features to quantify classification and decoding accuracy,field,Life Sciences,Neuroscience,Systems Neuroscience,9,15.92,24.58,medium
 Characterize recorded units or delivered stimuli by their measured properties to define experimental categories,subfield,Life Sciences,Neuroscience,Systems Neuroscience,11,24.72,25.43,medium
-Map the spatial distribution of labeled projections or molecular markers across anatomically defined brain regions.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,92.0,707.0,medium
-Detect discrete transient events in continuous neural signals using empirically defined criteria.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,11,5.97,6.22,medium
 Analyze temporal relationships between simultaneously recorded neural signals to infer functional coupling.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,12,58.5,80.05,medium
 Coordinate with neurology or otolaryngology clinics for patient recruitment and access to clinical neurophysiology data.,subfield,Life Sciences,Neuroscience,Systems Neuroscience,11,70.0,10440.0,medium
 Formulate hypotheses about neural coding mechanisms underlying sensory processing or motor control.,subfield,Life Sciences,Neuroscience,Computational Neuroscience,10,133.25,193.58,medium
@@ -6545,25 +6545,25 @@ Design clinical trials evaluating pharmacological or neuromodulation interventio
 Select validated neurological outcome measures and rating scales appropriate for the target condition and patient population.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,12,39.92,185.37,medium
 "Establish inclusion and exclusion criteria based on neurological diagnosis, disease stage, and comorbidities.",subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,20.33,260.33,medium
 Develop consent procedures accommodating patients with cognitive impairment or communication deficits.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,12,88.67,1186.0,medium
+Harmonize neurological rating scale scores and diagnostic classifications across multi-site studies.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,79.17,132.5,medium
 Perform in vivo procedures on laboratory animals to establish defined experimental states or disease models,domain,Life Sciences,Neuroscience,Clinical Neuroscience,8,78.93,814.9,medium
+Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Clinical Neuroscience,11,40.17,62.58,medium
 Quantify morphological or labeling features of cells and tissue from microscopy images to assess structural and cellular states,field,Life Sciences,Neuroscience,Clinical Neuroscience,9,30.67,34.0,medium
 Administer standardized clinical and neuropsychological assessments to participants to characterize their phenotypes,field,Life Sciences,Neuroscience,Clinical Neuroscience,11,246.17,378.33,medium
 Characterize patients and their disease course through observational clinical assessment without intervention,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,12,689.33,706.67,medium
 "Process tissue specimens through fixation, embedding, sectioning, and staining to prepare sections for microscopic examination.",subfield,Life Sciences,Neuroscience,Clinical Neuroscience,10,11.4,549.17,medium
 Perform gross pathological examination of postmortem brain and other organs to identify macroscopic lesions.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,4.7,412.47,medium
+Grade and map the severity and distribution of disease-related pathology across tissue regions to establish diagnostic staging.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,9,16.47,74.12,medium
 Derive threshold or reference values from population data to classify individuals or samples,domain,Life Sciences,Neuroscience,Clinical Neuroscience,10,53.17,358.33,medium
 Perform and interpret clinical neurophysiological studies to detect and localize neurological abnormalities.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,12,2.72,2.8,medium
 Develop or adapt clinical rating instruments and scoring metrics for conditions lacking suitable validated measures.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,14,624.5,4441.0,medium
 Quantify metabolite profiles in biological samples using mass spectrometry-based assays.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,13,76.37,232.97,medium
 "Acquire clinical imaging of extracranial structures, such as the retina or cervical arteries, to assess neurological disease markers.",subfield,Life Sciences,Neuroscience,Clinical Neuroscience,7,52.67,67.33,medium
 Perform clinical neurological examinations and diagnostic laboratory workups to characterize individual patients' deficits.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,12,52.27,1434.33,medium
-Harmonize neurological rating scale scores and diagnostic classifications across multi-site studies.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,79.17,132.5,medium
 Analyze time-to-event outcomes for neurological disease milestones such as disability progression or relapse.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,39.17,101.58,medium
 Estimate treatment effects on neurological outcomes while adjusting for baseline disease severity and comorbidities.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,15,50.42,148.92,medium
 Compute frequency-domain measures from continuous physiological recordings to quantify oscillatory activity,field,Life Sciences,Neuroscience,Clinical Neuroscience,11,28.92,36.13,medium
-Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,domain,Life Sciences,Neuroscience,Clinical Neuroscience,11,40.17,62.58,medium
 Quantify chemical constituents of biological or environmental samples using standard laboratory assays to characterize their composition,domain,Life Sciences,Neuroscience,Clinical Neuroscience,8,4.65,5.18,medium
-Grade and map the severity and distribution of disease-related pathology across tissue regions to establish diagnostic staging.,subfield,Life Sciences,Neuroscience,Clinical Neuroscience,9,16.47,74.12,medium
 "Quantify evoked potential component features, such as latency and amplitude, from neurophysiological recordings.",subfield,Life Sciences,Neuroscience,Clinical Neuroscience,11,2.37,2.37,medium
 Formulate hypotheses about how specific micronutrients regulate metabolic pathways and chronic disease risk.,subfield,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism,10,42.42,114.42,medium
 "Develop research questions on vitamin D status and its relationships to musculoskeletal, immune, and metabolic health.",subfield,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism,10,79.75,232.25,medium
@@ -7968,12 +7968,12 @@ Recode open-ended responses about religious identity and spiritual experiences i
 "Analyze textual data from sermons, religious texts, or faith-based media for content and discourse patterns.",subfield,Arts & Humanities,Religion,Religion & Society,13,283.25,312.92,medium
 Address self-selection into religious communities when analyzing observational data on religion and social outcomes.,subfield,Arts & Humanities,Religion,Religion & Society,12,82.83,151.33,medium
 Control for confounding between religious participation and sociodemographic characteristics in statistical analyses.,subfield,Arts & Humanities,Religion,Religion & Society,14,35.23,36.15,medium
+"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",subfield,Arts & Humanities,Religion,Religion & Society,12,202.5,2028.62,low
+Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,subfield,Arts & Humanities,Religion,Religion & Society,11,73.33,3770.5,medium
 "Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Religion,Religion & Society,8,172.0,1100.0,medium
 "Analyze legal, policy, or institutional documents as external evidence bearing on the claims under examination",domain,Arts & Humanities,Religion,Religion & Society,8,33.33,33.33,medium
 "Apply qualitative trustworthiness procedures, such as member checking and triangulation, to validate interpretive findings on religious life.",subfield,Arts & Humanities,Religion,Religion & Society,14,95.12,1196.45,medium
 "Interpret non-textual religious forms, such as ritual prohibitions or material culture, for their symbolic and social meanings.",subfield,Arts & Humanities,Religion,Religion & Society,10,329.5,1100.0,medium
-"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",subfield,Arts & Humanities,Religion,Religion & Society,12,202.5,2028.62,low
-Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,subfield,Arts & Humanities,Religion,Religion & Society,11,73.33,3770.5,medium
 Apply doctrinal frameworks from Buddhist philosophical traditions to frame research questions about religious practice and belief.,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,122.5,122.5,medium
 Situate research questions within historical lineages and sectarian developments of Eastern religious traditions.,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,58.17,58.17,medium
 Assess whether findings from studies of specific Buddhist communities or texts apply across different regional traditions and historical periods.,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,71.08,84.08,medium
@@ -7992,9 +7992,9 @@ Adapt doctrinal concepts into frameworks addressing contemporary secular issues 
 "Reconstruct the content and structure of lost or fragmentary texts from citations, paraphrases, and surviving translations preserved in other works.",subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,12,375.08,1144.08,low
 Transcribe and prepare textual data from primary sources in classical Asian languages for analysis.,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,12,247.25,485.67,low
 "Code ethnographic field notes and interview transcripts for themes related to religious identity, ritual practice, and doctrinal interpretation.",subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,12,142.42,176.17,medium
+"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,134.83,4849.0,medium
 "Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,64.92,64.92,medium
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Religion,Buddhist & Eastern Religions,9,51.43,51.43,medium
-"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions,10,134.83,4849.0,medium
 "Engage with theological doctrines, ethical frameworks, or religious traditions when framing research questions about moral reasoning or religious practice.",subfield,Arts & Humanities,Religion,Theology & Ethics,10,62.42,62.42,medium
 "Assess whether theological or ethical claims apply across different religious traditions, denominations, or cultural contexts.",subfield,Arts & Humanities,Religion,Theology & Ethics,12,102.83,282.83,medium
 Apply concepts or theories drawn from outside the domain under study as interpretive frameworks for its phenomena,domain,Arts & Humanities,Religion,Theology & Ethics,9,164.0,760.0,medium
@@ -8012,8 +8012,8 @@ Develop and justify an interpretive method by comparing alternative approaches a
 Critically examine the epistemological assumptions and disciplinary structures underlying theological scholarship.,subfield,Arts & Humanities,Religion,Theology & Ethics,12,393.0,2936.33,medium
 "Code qualitative data for theological themes, ethical concepts, or patterns of religious meaning-making.",subfield,Arts & Humanities,Religion,Theology & Ethics,12,115.27,183.27,medium
 Account for denominational or theological diversity when analyzing patterns in religious attitudes or ethical positions.,subfield,Arts & Humanities,Religion,Theology & Ethics,9,62.67,66.42,medium
-Draw on the researcher's own experience and background as primary evidence for analysis,domain,Arts & Humanities,Religion,Theology & Ethics,8,43.5,88.75,medium
 "Coordinate with religious institutions, congregations, or faith-based organizations to recruit participants or access community settings.",subfield,Arts & Humanities,Religion,Theology & Ethics,10,45.0,1284.33,medium
+Draw on the researcher's own experience and background as primary evidence for analysis,domain,Arts & Humanities,Religion,Theology & Ethics,8,43.5,88.75,medium
 "Engage with systematic theology, biblical hermeneutics, or ecclesiological frameworks when formulating research questions about Christian belief and practice.",subfield,Arts & Humanities,Religion,Christian Theology,9,74.0,75.33,medium
 Assess whether theological findings from specific denominational or cultural contexts apply to broader Christian traditions or global Christianity.,subfield,Arts & Humanities,Religion,Christian Theology,10,38.83,45.33,medium
 Apply concepts or theories drawn from outside the domain under study as interpretive frameworks for its phenomena,domain,Arts & Humanities,Religion,Christian Theology,9,142.17,433.17,medium
@@ -8027,8 +8027,8 @@ Derive practical recommendations for professional practice or policy from resear
 "Access denominational archives, church records, or historical theological documents for secondary data analysis.",subfield,Arts & Humanities,Religion,Christian Theology,9,104.08,587.83,low
 "Code qualitative data from interviews or testimonies for theological themes, doctrinal positions, or spiritual experiences.",subfield,Arts & Humanities,Religion,Christian Theology,12,251.42,427.58,medium
 "Account for denominational, regional, or socioeconomic confounders when analyzing patterns in Christian belief or practice.",subfield,Arts & Humanities,Religion,Christian Theology,14,45.25,45.75,medium
-"Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Religion,Christian Theology,10,65.92,65.92,medium
 "Coordinate with churches, denominational bodies, or parachurch organizations to access participants or archival materials for research.",subfield,Arts & Humanities,Religion,Christian Theology,8,24.28,1162.08,medium
+"Trace key terms and names across sources, languages, and periods to establish their meanings and development",domain,Arts & Humanities,Religion,Christian Theology,10,65.92,65.92,medium
 Apply classical and contemporary Islamic legal theories when framing research questions about Muslim communities and practices.,subfield,Arts & Humanities,Religion,Islamic Studies,10,46.0,46.0,medium
 Engage with theories of religious authority and transmission to contextualize institutional dynamics in Muslim societies.,subfield,Arts & Humanities,Religion,Islamic Studies,9,112.08,112.08,medium
 Assess whether findings about Muslim communities in one region or sect will generalize to other Islamic contexts and traditions.,subfield,Arts & Humanities,Religion,Islamic Studies,11,68.17,279.42,medium
@@ -8054,9 +8054,9 @@ Code qualitative data using thematic frameworks derived from Islamic theological
 "Analyze interview transcripts for themes related to religious identity, practice, and community belonging.",subfield,Arts & Humanities,Religion,Islamic Studies,11,235.0,270.67,medium
 Account for selection bias when studying Muslim populations who may be underrepresented or difficult to access.,subfield,Arts & Humanities,Religion,Islamic Studies,14,106.67,1034.67,medium
 "Address confounding variables related to ethnicity, nationality, and sectarian affiliation in observational studies of Muslims.",subfield,Arts & Humanities,Religion,Islamic Studies,12,48.17,350.42,medium
-"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Religion,Islamic Studies,8,157.0,1022.0,medium
 "Coordinate with mosques, Islamic centers, and Muslim organizations to recruit study participants.",subfield,Arts & Humanities,Religion,Islamic Studies,10,174.83,1288.42,medium
 Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,subfield,Arts & Humanities,Religion,Islamic Studies,10,81.33,505.17,medium
+"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,Arts & Humanities,Religion,Islamic Studies,8,157.0,1022.0,medium
 Apply theories of religious syncretism and hybridity when framing research questions about cross-cultural religious phenomena.,subfield,Arts & Humanities,Religion,Comparative Religion,11,48.0,283.83,medium
 "Engage with phenomenological and hermeneutical frameworks to interpret religious beliefs, practices, and experiences across traditions.",subfield,Arts & Humanities,Religion,Comparative Religion,11,192.0,192.0,low
 Assess whether interpretations of religious concepts and practices translate meaningfully across different cultural and linguistic contexts.,subfield,Arts & Humanities,Religion,Comparative Religion,11,228.5,448.5,medium
@@ -8079,8 +8079,8 @@ Design focus group protocols to explore how communities interpret and negotiate 
 "Code qualitative data for recurring religious themes, symbols, and theological concepts across traditions.",subfield,Arts & Humanities,Religion,Comparative Religion,12,131.85,195.85,medium
 Develop coding schemes that capture emic religious categories while enabling cross-traditional comparison.,subfield,Arts & Humanities,Religion,Comparative Religion,11,102.18,354.35,low
 Account for researcher positionality and confessional bias when analyzing data on religious communities.,subfield,Arts & Humanities,Religion,Comparative Religion,10,39.35,624.68,medium
-Draw on the researcher's own experience and background as primary evidence for analysis,domain,Arts & Humanities,Religion,Comparative Religion,8,38.0,99.83,medium
 "Coordinate with religious institutions, leaders, and communities to gain access for fieldwork and participant recruitment.",subfield,Arts & Humanities,Religion,Comparative Religion,11,248.67,9108.5,medium
+Draw on the researcher's own experience and background as primary evidence for analysis,domain,Arts & Humanities,Religion,Comparative Religion,8,38.0,99.83,medium
 "Apply theories of social reproduction, cumulative advantage, or intersectionality when framing research questions about inequality.",subfield,Social Sciences,Sociology,Social Stratification & Inequality,8,23.42,188.92,medium
 Situate research questions within debates about structural versus individual explanations for stratification outcomes.,subfield,Social Sciences,Sociology,Social Stratification & Inequality,8,29.98,120.98,medium
 Assess whether stratification patterns observed in one national context generalize to societies with different welfare regimes or labor market structures.,subfield,Social Sciences,Sociology,Social Stratification & Inequality,10,202.0,532.0,medium
@@ -8464,7 +8464,6 @@ Develop informed consent procedures appropriate for different survey modes and r
 Implement probability-based sampling designs to achieve representative coverage of target populations.,subfield,Formal Sciences,Statistics,Survey Methodology,15,42.5,135.0,medium
 Administer surveys across multiple modes while monitoring data quality indicators during fieldwork.,subfield,Formal Sciences,Statistics,Survey Methodology,13,155.5,504.83,medium
 Deploy contact and follow-up strategies to maximize response rates and minimize nonresponse bias.,subfield,Formal Sciences,Statistics,Survey Methodology,12,58.75,643.83,medium
-Access and harmonize survey data from cross-national or longitudinal survey programs for secondary analysis.,subfield,Formal Sciences,Statistics,Survey Methodology,13,91.33,210.5,medium
 Design randomized experiments embedded within ongoing studies to test the effects of procedural or design features on study outcomes.,field,Formal Sciences,Statistics,Survey Methodology,9,34.58,543.25,medium
 Recruit and stratify participants from non-probability sources on key characteristics to approximate the composition of a target group.,field,Formal Sciences,Statistics,Survey Methodology,10,24.83,190.67,medium
 "Estimate and compare the monetary and staff-time costs of alternative survey design, mode, or recruitment strategies to inform design decisions.",subfield,Formal Sciences,Statistics,Survey Methodology,12,59.82,482.57,medium
@@ -8473,14 +8472,15 @@ Conduct small-scale pilot fieldings to estimate operational parameters such as c
 Develop interviewer training and standardization protocols to control interviewer-related measurement error.,subfield,Formal Sciences,Statistics,Survey Methodology,10,74.0,146.0,medium
 Solicit expert and stakeholder review of draft questionnaires to assess content validity before fielding with respondents.,subfield,Formal Sciences,Statistics,Survey Methodology,11,31.33,719.27,medium
 "Test the technical rendering, transmission, and functionality of electronic survey instruments across devices, browsers, and systems.",subfield,Formal Sciences,Statistics,Survey Methodology,12,21.37,24.9,medium
+Access and harmonize survey data from cross-national or longitudinal survey programs for secondary analysis.,subfield,Formal Sciences,Statistics,Survey Methodology,13,91.33,210.5,medium
 Process paradata and response timing data to identify problematic response patterns and satisficing behavior.,subfield,Formal Sciences,Statistics,Survey Methodology,12,42.75,52.08,medium
 Apply weighting adjustments to correct for unequal selection probabilities and differential nonresponse.,subfield,Formal Sciences,Statistics,Survey Methodology,11,26.28,33.35,medium
 Estimate and adjust for nonresponse bias using auxiliary data and propensity score methods.,subfield,Formal Sciences,Statistics,Survey Methodology,12,54.42,95.58,medium
 Calculate design-based variance estimates that account for complex sampling features including stratification and clustering.,subfield,Formal Sciences,Statistics,Survey Methodology,13,8.78,8.78,medium
 Impute missing survey data using appropriate methods to reduce bias from item nonresponse.,subfield,Formal Sciences,Statistics,Survey Methodology,10,32.13,37.13,medium
+"Negotiate access to sampling frames with organizations, government agencies, or commercial vendors.",subfield,Formal Sciences,Statistics,Survey Methodology,11,36.75,827.67,medium
 Code information from documents or open-ended responses into structured variables using standardized coding instruments to create analyzable data.,field,Formal Sciences,Statistics,Survey Methodology,9,53.67,60.08,medium
 "Calculate standardized response rate metrics, adjusting denominators for estimated ineligible or unreachable sampling units.",subfield,Formal Sciences,Statistics,Survey Methodology,11,12.58,12.58,medium
-"Negotiate access to sampling frames with organizations, government agencies, or commercial vendors.",subfield,Formal Sciences,Statistics,Survey Methodology,11,36.75,827.67,medium
 Frame research questions around causal inference frameworks to estimate treatment effects in health outcomes.,subfield,Formal Sciences,Statistics,Biostatistics,9,23.3,145.13,medium
 Assess generalizability of statistical findings across diverse patient populations and clinical settings.,subfield,Formal Sciences,Statistics,Biostatistics,10,75.67,249.17,medium
 Evaluate transportability of effect estimates from study samples to external target populations.,subfield,Formal Sciences,Statistics,Biostatistics,12,80.0,254.17,medium
@@ -8489,13 +8489,12 @@ Assess whether chosen outcome measures or performance metrics capture clinically
 Design case report forms to standardize collection of clinical and demographic variables across study sites.,subfield,Formal Sciences,Statistics,Biostatistics,12,64.25,224.17,medium
 "Prepare statistical analysis plans specifying primary endpoints, sample size justification, and analysis methods for IRB submission.",subfield,Formal Sciences,Statistics,Biostatistics,13,22.92,350.75,medium
 Develop data safety monitoring plans to guide interim analyses and stopping rules for clinical trials.,subfield,Formal Sciences,Statistics,Biostatistics,12,41.25,520.08,medium
-Extract and harmonize data from electronic health records for epidemiological analysis.,subfield,Formal Sciences,Statistics,Biostatistics,11,141.0,934.0,medium
-Acquire and integrate publicly available genomic or clinical datasets for secondary analysis.,subfield,Formal Sciences,Statistics,Biostatistics,13,77.3,578.02,medium
-Search bibliographic databases against predefined eligibility criteria to assemble a systematic sample of published studies for analysis.,field,Formal Sciences,Statistics,Biostatistics,11,77.47,224.47,medium
 Code information from documents or open-ended responses into structured variables using standardized coding instruments to create analyzable data.,field,Formal Sciences,Statistics,Biostatistics,9,44.17,52.0,medium
 Develop reporting guidelines or frameworks that specify standards for communicating and appraising studies in a research field.,field,Formal Sciences,Statistics,Biostatistics,9,660.83,4935.0,medium
 Conduct multi-round expert rating processes with structured feedback and agreement criteria to reach consensus judgments.,field,Formal Sciences,Statistics,Biostatistics,11,71.67,1333.67,medium
 "Construct and calibrate sequential monitoring procedures, such as control charts, to detect shifts in a process across successive samples.",field,Formal Sciences,Statistics,Biostatistics,10,20.42,24.92,medium
+Extract and harmonize data from electronic health records for epidemiological analysis.,subfield,Formal Sciences,Statistics,Biostatistics,11,141.0,934.0,medium
+Acquire and integrate publicly available genomic or clinical datasets for secondary analysis.,subfield,Formal Sciences,Statistics,Biostatistics,13,77.3,578.02,medium
 Implement propensity score methods to adjust for confounding in observational health studies.,subfield,Formal Sciences,Statistics,Biostatistics,12,60.17,259.08,medium
 Apply survival analysis techniques to model time-to-event outcomes with censored data.,subfield,Formal Sciences,Statistics,Biostatistics,11,20.13,60.05,medium
 Conduct meta-analyses using random-effects models to synthesize treatment effects across heterogeneous studies.,subfield,Formal Sciences,Statistics,Biostatistics,8,13.85,13.85,medium
@@ -8503,6 +8502,7 @@ Assess and quantify heterogeneity and publication bias in systematic reviews.,su
 Develop and validate risk prediction models using regression and machine learning approaches.,subfield,Formal Sciences,Statistics,Biostatistics,15,116.83,450.17,medium
 Fit mixed-effects models to account for clustering in multi-site or longitudinal health data.,subfield,Formal Sciences,Statistics,Biostatistics,13,20.53,70.38,medium
 Handle missing data through multiple imputation or other principled statistical methods.,subfield,Formal Sciences,Statistics,Biostatistics,10,15.38,54.7,medium
+Search bibliographic databases against predefined eligibility criteria to assemble a systematic sample of published studies for analysis.,field,Formal Sciences,Statistics,Biostatistics,11,77.47,224.47,medium
 Rate published studies against methodological or reporting standards to characterize the quality of statistical practice.,field,Formal Sciences,Statistics,Biostatistics,8,107.42,128.58,medium
 "Convert effect or cost-effectiveness estimates into alternative, more interpretable metrics to support end-user decision-making.",field,Formal Sciences,Statistics,Biostatistics,8,9.58,10.33,medium
 Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,domain,Formal Sciences,Statistics,Biostatistics,10,47.83,81.17,medium

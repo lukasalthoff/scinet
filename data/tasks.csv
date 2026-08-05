@@ -126,7 +126,7 @@ Interpret measured spectra to determine composition and structural characteristi
 "Select and justify cases, sites, or jurisdictions on explicit criteria to structure comparison",Ideation & Hypothesis Generation,domain,Social Sciences,,
 "Reconstruct the historical development of institutions, practices, or ideas from documentary and archival sources to explain their present form",Data Gathering,domain,Social Sciences,,
 Design and deliver instructional or behavioral intervention protocols to serve as the treatment under study,Data Gathering,domain,Social Sciences,,
-Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,Data Gathering,domain,Formal Sciences,,
+Apply a proposed method or technique to real-world data or cases to demonstrate its practical applicability and the interpretation of its results.,Ideation & Hypothesis Generation,domain,Formal Sciences,,
 "Prepare solid samples by crushing, sectioning, or mounting to produce standardized material for laboratory analysis or experiments",Data Gathering,domain,Physical Sciences,,
 "Compare results against independent datasets, models, or reference cases to quantify agreement and validate them",Data Analysis,domain,Physical Sciences,,
 "Vary model inputs, parameters, or forcings systematically to quantify their influence on predicted outcomes",Data Analysis,domain,Physical Sciences,,
@@ -157,7 +157,7 @@ Code qualitative interview and focus-group data thematically to identify recurri
 "Calculate population-level disease frequency and burden measures from registry, mortality, or survey data using population denominators",Data Analysis,domain,Health Sciences,,
 Estimate costs and resource use of health conditions and alternative interventions to inform resource-allocation decisions,Data Analysis,domain,Health Sciences,,
 Assess the reliability and precision of measurements through replicate testing and comparison with reference procedures,Data Gathering,domain,Life Sciences,,
-Derive threshold or reference values from population data to classify individuals or samples,Data Analysis,domain,Life Sciences,,
+Derive threshold or reference values from population data to classify individuals or samples,Data Gathering,domain,Life Sciences,,
 Derive composite indices and scores from multiple observed indicators to characterize participants for analysis,Data Analysis,domain,Health Sciences,,
 "Analyze legal, policy, or institutional documents as external evidence bearing on the claims under examination",Data Gathering,domain,Arts & Humanities,,
 "Formulate hypotheses about soil nutrient cycling, carbon sequestration, or microbial community dynamics.",Ideation & Hypothesis Generation,subfield,Life Sciences,Agricultural Sciences,Soil Science
@@ -528,8 +528,8 @@ Transcribe and annotate audio or video recordings of musical performances for sy
 "Code interview transcripts to identify themes related to musical identity, learning experiences, or cultural significance.",Data Analysis,subfield,Arts & Humanities,Arts,Music & Musicology
 Analyze song lyrics or written accounts of musical experiences using qualitative coding methods.,Data Analysis,subfield,Arts & Humanities,Arts,Music & Musicology
 Account for selection effects when comparing musical training outcomes across self-selected participant groups.,Data Analysis,subfield,Arts & Humanities,Arts,Music & Musicology
-"Coordinate with music schools, conservatories, or community ensembles to recruit performers or students as research participants.",Administration,subfield,Arts & Humanities,Arts,Music & Musicology
-"Negotiate access to private archives, estates, or institutional collections holding musical manuscripts or recordings.",Administration,subfield,Arts & Humanities,Arts,Music & Musicology
+"Coordinate with music schools, conservatories, or community ensembles to recruit performers or students as research participants.",Data Analysis,subfield,Arts & Humanities,Arts,Music & Musicology
+"Negotiate access to private archives, estates, or institutional collections holding musical manuscripts or recordings.",Data Analysis,subfield,Arts & Humanities,Arts,Music & Musicology
 "Apply performance theory frameworks such as phenomenology, semiotics, or embodiment studies when analyzing theatrical events and practices.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Theater & Performance Studies
 "Situate research questions within historiographical debates about theater movements, genres, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Theater & Performance Studies
 "Assess whether interpretations of performance practices apply across different theatrical traditions, historical periods, or cultural settings.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Theater & Performance Studies
@@ -545,8 +545,8 @@ Examine and disclose the researcher's own positionality to account for its influ
 Conduct participatory consultations with community members to gather local concerns and personal stories as source material for devised performance.,Data Gathering,subfield,Arts & Humanities,Arts,Theater & Performance Studies
 "Code observational data from rehearsals and performances to identify recurring patterns in staging, movement, or directorial choices.",Data Analysis,subfield,Arts & Humanities,Arts,Theater & Performance Studies
 Analyze interview transcripts with theater practitioners to identify themes related to artistic process and creative decision-making.,Data Analysis,subfield,Arts & Humanities,Arts,Theater & Performance Studies
-"Negotiate access to theater companies, festivals, or educational drama programs for fieldwork and participant recruitment.",Administration,subfield,Arts & Humanities,Arts,Theater & Performance Studies
-Engage practitioners or community participants in interpreting and verifying the study's findings,Administration,field,Arts & Humanities,Arts,
+"Negotiate access to theater companies, festivals, or educational drama programs for fieldwork and participant recruitment.",Data Analysis,subfield,Arts & Humanities,Arts,Theater & Performance Studies
+Engage practitioners or community participants in interpreting and verifying the study's findings,Data Analysis,field,Arts & Humanities,Arts,
 "Apply iconographic, semiotic, or formal analysis frameworks when developing research questions about visual materials.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 "Situate artworks or visual objects within their historical, social, and cultural contexts to frame interpretive arguments.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 Assess whether interpretations of visual styles or artistic movements apply across different geographic regions or cultural traditions.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Visual Arts & Art History
@@ -564,10 +564,10 @@ Apply an established qualitative methodology such as grounded theory or phenomen
 "Code visual elements, iconographic motifs, or stylistic features across bodies of artwork for comparative analysis.",Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 "Analyze textual sources such as artist statements, exhibition reviews, or critical writings to identify recurring themes.",Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 Account for gaps in provenance records or archival documentation when drawing conclusions about artworks or collections.,Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
+"Negotiate access to private collections, artist estates, or restricted archival materials for research purposes.",Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
+"Coordinate with museums, galleries, or cultural institutions to examine artworks or access collection records.",Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 Triangulate findings across multiple qualitative data sources to corroborate interpretive conclusions.,Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 Examine the materials and construction of art or craft objects hands-on to characterize production techniques and material condition.,Data Analysis,subfield,Arts & Humanities,Arts,Visual Arts & Art History
-"Negotiate access to private collections, artist estates, or restricted archival materials for research purposes.",Administration,subfield,Arts & Humanities,Arts,Visual Arts & Art History
-"Coordinate with museums, galleries, or cultural institutions to examine artworks or access collection records.",Administration,subfield,Arts & Humanities,Arts,Visual Arts & Art History
 Apply architectural theory and design principles when framing research questions about built environments and spatial practices.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Architecture & Design
 Engage with theories of material culture and craft traditions when investigating design objects and practices.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Architecture & Design
 Assess whether findings about architectural styles or design practices transfer across different cultural and geographic contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Architecture & Design
@@ -588,7 +588,7 @@ Design interview protocols to document occupants' and residents' lived experienc
 "Code visual and material evidence from buildings, objects, and archival sources for thematic analysis.",Data Analysis,subfield,Arts & Humanities,Arts,Architecture & Design
 Analyze oral histories and designer interviews to identify patterns in design decision-making and professional practice.,Data Analysis,subfield,Arts & Humanities,Arts,Architecture & Design
 Account for survivorship bias when studying historical buildings and design objects that remain extant.,Data Analysis,subfield,Arts & Humanities,Arts,Architecture & Design
-"Coordinate with heritage organizations, design firms, and property owners to access buildings and archival materials.",Administration,subfield,Arts & Humanities,Arts,Architecture & Design
+"Coordinate with heritage organizations, design firms, and property owners to access buildings and archival materials.",Data Analysis,subfield,Arts & Humanities,Arts,Architecture & Design
 "Apply film theory frameworks such as auteur theory, genre theory, or apparatus theory to structure research questions about cinematic texts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Film Studies
 "Situate film analysis within broader cultural, industrial, or political contexts to frame interpretive arguments.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Film Studies
 "Assess whether analytical claims about film style, narrative, or reception apply across different national cinemas, historical periods, or exhibition contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Film Studies
@@ -603,7 +603,7 @@ Catalog and annotate visual and sonic elements from films using systematic codin
 "Code formal elements of films including cinematography, editing patterns, sound design, and mise-en-scène for comparative analysis.",Data Analysis,subfield,Arts & Humanities,Arts,Film Studies
 "Analyze narrative structures, character representations, and thematic patterns across film corpora.",Data Analysis,subfield,Arts & Humanities,Arts,Film Studies
 Account for gaps in archival records and uneven film preservation when drawing historical conclusions.,Data Analysis,subfield,Arts & Humanities,Arts,Film Studies
-Negotiate access to restricted film collections or proprietary industry data through institutional partnerships.,Administration,subfield,Arts & Humanities,Arts,Film Studies
+Negotiate access to restricted film collections or proprietary industry data through institutional partnerships.,Data Analysis,subfield,Arts & Humanities,Arts,Film Studies
 "Engage with theories of media ecology, digital aesthetics, or human-computer interaction when framing research questions about creative technologies.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Digital & New Media Arts
 "Apply critical frameworks from new media theory to examine relationships between artistic practice, technology, and cultural production.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Digital & New Media Arts
 "Assess whether findings about audience engagement or creative processes transfer across different digital platforms, tools, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Arts,Digital & New Media Arts
@@ -617,8 +617,8 @@ Collect observational data on how audiences physically and cognitively engage wi
 Test built prototypes in real use settings to evaluate their functional and experiential performance.,Data Gathering,subfield,Arts & Humanities,Arts,Digital & New Media Arts
 "Capture and organize interaction logs, sensor data, or user behavior traces from digital art installations for analysis.",Data Analysis,subfield,Arts & Humanities,Arts,Digital & New Media Arts
 Code qualitative data from artist interviews or audience feedback to identify themes in creative practice and reception.,Data Analysis,subfield,Arts & Humanities,Arts,Digital & New Media Arts
-"Coordinate with museums, galleries, or media arts organizations to access exhibition spaces or recruit artist and audience participants.",Administration,subfield,Arts & Humanities,Arts,Digital & New Media Arts
-Prepare and install completed digital works for public access in target venues or viewing platforms.,Administration,subfield,Arts & Humanities,Arts,Digital & New Media Arts
+"Coordinate with museums, galleries, or media arts organizations to access exhibition spaces or recruit artist and audience participants.",Data Analysis,subfield,Arts & Humanities,Arts,Digital & New Media Arts
+Prepare and install completed digital works for public access in target venues or viewing platforms.,Data Analysis,subfield,Arts & Humanities,Arts,Digital & New Media Arts
 Formulate hypotheses about animal behavioral adaptations to environmental conditions.,Ideation & Hypothesis Generation,subfield,Life Sciences,Biology,Zoology & Animal Biology
 Develop hypotheses regarding physiological responses of animals to dietary or nutritional interventions.,Ideation & Hypothesis Generation,subfield,Life Sciences,Biology,Zoology & Animal Biology
 Propose evolutionary hypotheses explaining morphological or functional traits across animal taxa.,Ideation & Hypothesis Generation,subfield,Life Sciences,Biology,Zoology & Animal Biology
@@ -1711,14 +1711,14 @@ Analyze persuasive strategies in communicative artifacts to interpret how meanin
 Reconstruct arguments in public discourse into premise-conclusion structures and evaluate their soundness.,Data Analysis,subfield,Social Sciences,Communication & Media Studies,Rhetoric & Public Discourse
 "Negotiate access to restricted archives, organizational communications, or community spaces to gather authentic examples of public discourse.",Administration,subfield,Social Sciences,Communication & Media Studies,Rhetoric & Public Discourse
 Derive security bounds and attack complexity estimates from cryptographic assumptions and mathematical hardness problems.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
+"Formulate threat models specifying adversary capabilities, attack surfaces, and security objectives.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 Prove security properties of cryptographic protocols using formal reduction techniques.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
+Design controlled experimental environments with isolated networks and sandboxed systems for security testing.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
+"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",Ideation & Hypothesis Generation,field,Formal Sciences,Computer Science,
 Hand-craft explicit domain-specific procedures or arguments that produce the target result from raw input.,Ideation & Hypothesis Generation,field,Formal Sciences,Computer Science,
 "Measure statistical properties of cryptographic outputs, such as entropy and bit-difference sensitivity, to assess randomness and cryptanalytic resistance.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 Craft explicit constructions that combine or exploit properties of a target to achieve a specified outcome.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
-"Formulate threat models specifying adversary capabilities, attack surfaces, and security objectives.",Data Gathering,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
-Design controlled experimental environments with isolated networks and sandboxed systems for security testing.,Data Gathering,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 "Capture side-channel measurements including timing, power consumption, and electromagnetic emissions from cryptographic implementations.",Data Gathering,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
-"Compare candidate systems, technologies, or configurations against their trade-offs to guide design and selection decisions.",Data Gathering,field,Formal Sciences,Computer Science,
 Quantify false positive and false negative rates for intrusion detection and malware classification systems.,Data Analysis,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 Fit statistical models to distinguish between benign and malicious network behavior patterns.,Data Analysis,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 Correlate experimental attack results with theoretical security bounds to validate cryptographic assumptions.,Data Analysis,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
@@ -1731,11 +1731,11 @@ Construct reusable models or mechanisms that satisfy stated requirements of a ta
 Maintain testbed networks and honeypot systems for ongoing security research experiments.,Administration,subfield,Formal Sciences,Computer Science,Cybersecurity & Cryptography
 Derive baseline performance expectations from linguistic theory and statistical language properties.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Natural Language Processing
 Formulate hypotheses about model behavior based on architectural design and training objectives.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Natural Language Processing
+Design annotation guidelines and protocols to ensure consistent labeling of linguistic phenomena.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Natural Language Processing
+Construct controlled evaluation datasets to isolate specific linguistic capabilities or model behaviors.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Natural Language Processing
 Design neural network architectures and their internal modules to address a target task.,Ideation & Hypothesis Generation,field,Formal Sciences,Computer Science,
 Map abstract data or internal model representations into inspectable form to interpret their structure and behavior.,Ideation & Hypothesis Generation,field,Formal Sciences,Computer Science,
 Define explicit rules and constraints that shape model outputs into valid structured decisions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Natural Language Processing
-Design annotation guidelines and protocols to ensure consistent labeling of linguistic phenomena.,Data Gathering,subfield,Formal Sciences,Computer Science,Natural Language Processing
-Construct controlled evaluation datasets to isolate specific linguistic capabilities or model behaviors.,Data Gathering,subfield,Formal Sciences,Computer Science,Natural Language Processing
 Validate annotation quality through inter-annotator agreement metrics and adjudication procedures.,Data Gathering,subfield,Formal Sciences,Computer Science,Natural Language Processing
 Collect and curate text corpora from diverse sources for training and evaluation purposes.,Data Gathering,subfield,Formal Sciences,Computer Science,Natural Language Processing
 Gather human judgments and annotations for supervised learning and evaluation benchmarks.,Data Gathering,subfield,Formal Sciences,Computer Science,Natural Language Processing
@@ -1748,8 +1748,8 @@ Adapt and tune implementations to a target hardware platform to meet runtime and
 Analyze collected observations to characterize the properties and outcomes of a studied artifact or intervention.,Data Analysis,subfield,Formal Sciences,Computer Science,Natural Language Processing
 "Derive mathematical formulations for image transformations, projections, and geometric relationships in visual data.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Vision
 Formulate loss functions and optimization objectives for training visual recognition models.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Vision
+Design controlled experiments with standardized image datasets to evaluate algorithm performance across varying conditions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Vision
 Define explicit rules and constraints that shape model outputs into valid structured decisions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Vision
-Design controlled experiments with standardized image datasets to evaluate algorithm performance across varying conditions.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Vision
 "Calibrate camera systems to correct for lens distortion, focal length, and sensor characteristics.",Data Gathering,subfield,Formal Sciences,Computer Science,Computer Vision
 "Capture image and video datasets using cameras, depth sensors, or multi-spectral imaging devices.",Data Gathering,subfield,Formal Sciences,Computer Science,Computer Vision
 Acquire ground truth annotations through manual labeling or structured data collection protocols.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Vision
@@ -1765,8 +1765,8 @@ Fit classical non-neural statistical models to visual features to obtain compact
 Construct reusable models or mechanisms that satisfy stated requirements of a target system.,Data Analysis,subfield,Formal Sciences,Computer Science,Computer Vision
 Derive theoretical performance bounds for parallel algorithms based on computational complexity and communication costs.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 Model expected speedup and scalability of distributed systems using analytical frameworks such as Amdahl's or Gustafson's laws.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
+"Design controlled benchmark experiments to isolate the effects of network latency, bandwidth, and node count on system performance.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 Design programming or query interfaces that let users express operations while hiding underlying execution details.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
-"Design controlled benchmark experiments to isolate the effects of network latency, bandwidth, and node count on system performance.",Data Gathering,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 Characterize measurement overhead introduced by profiling and monitoring tools in parallel systems.,Data Gathering,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 Collect trace data from production distributed systems and cloud platforms for workload characterization studies.,Data Gathering,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 Execute parallel workloads on high-performance computing clusters to measure scalability and efficiency.,Data Gathering,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
@@ -1781,10 +1781,10 @@ Design schemes that partition and move data across distributed computing or netw
 "Design predictive models of workload, cost, or reliability that drive online resource allocation and job placement decisions.",Data Analysis,subfield,Formal Sciences,Computer Science,Distributed & Parallel Computing
 "Derive analytical models for network throughput, latency, and packet loss based on queuing theory and protocol specifications.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Systems & Networking
 "Calculate theoretical bounds on network capacity, energy consumption, or spectral efficiency for proposed system designs.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Systems & Networking
+"Design controlled network testbed experiments with specified topologies, traffic patterns, and workload configurations.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Systems & Networking
 Estimate the future resource and cost requirements of a proposed deployment to assess its feasibility.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Systems & Networking
-"Design controlled network testbed experiments with specified topologies, traffic patterns, and workload configurations.",Data Gathering,subfield,Formal Sciences,Computer Science,Systems & Networking
+Design and implement domain-specific languages or code generators that translate system descriptions into executable low-level artifacts.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Systems & Networking
 "Calibrate network measurement tools and characterize timing accuracy, packet capture loss, and instrumentation overhead.",Data Gathering,subfield,Formal Sciences,Computer Science,Systems & Networking
-Design and implement domain-specific languages or code generators that translate system descriptions into executable low-level artifacts.,Data Gathering,subfield,Formal Sciences,Computer Science,Systems & Networking
 Filter and preprocess network trace data to remove measurement artifacts and synchronize timestamps across distributed collection points.,Data Analysis,subfield,Formal Sciences,Computer Science,Systems & Networking
 "Normalize collected performance data to account for background traffic, environmental interference, and hardware variations.",Data Analysis,subfield,Formal Sciences,Computer Science,Systems & Networking
 Quantify confidence intervals for network performance measurements and propagate uncertainty through derived metrics.,Data Analysis,subfield,Formal Sciences,Computer Science,Systems & Networking
@@ -1801,24 +1801,24 @@ Derive computational complexity bounds for algorithms using asymptotic analysis 
 "Prove correctness of algorithms through mathematical induction, loop invariants, or formal verification techniques.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
 Establish theoretical guarantees for approximation algorithms by deriving performance ratios relative to optimal solutions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
 Analyze convergence properties of iterative algorithms using mathematical proof techniques.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
+Design controlled computational experiments with systematic parameter variations to evaluate algorithm performance.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
+Construct benchmark problem instances with known optimal solutions to validate algorithmic correctness.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
+Select and configure baseline algorithms for fair comparative evaluation of proposed methods.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
 "Characterize quantum-mechanical properties of the physical system underlying an algorithm, such as entanglement or phase transitions, to explain its computational resource requirements.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
-Design controlled computational experiments with systematic parameter variations to evaluate algorithm performance.,Data Gathering,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
-Construct benchmark problem instances with known optimal solutions to validate algorithmic correctness.,Data Gathering,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
-Select and configure baseline algorithms for fair comparative evaluation of proposed methods.,Data Gathering,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
 Fit complexity models to empirical runtime data to validate theoretical predictions.,Data Analysis,subfield,Formal Sciences,Computer Science,Algorithms & Theory of Computation
 "Derive expected software behavior from formal specifications, type systems, or logical constraints.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Software Engineering
 "Formulate hypotheses about software quality, performance, or developer productivity based on theoretical frameworks.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Software Engineering
-"Design controlled experiments comparing software tools, techniques, or methodologies with appropriate treatment and control conditions.",Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
+"Design controlled experiments comparing software tools, techniques, or methodologies with appropriate treatment and control conditions.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Software Engineering
+"Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",Ideation & Hypothesis Generation,field,Formal Sciences,Computer Science,
+Differentially test implementations or transformed artifacts against reference versions to expose behavioral discrepancies.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Software Engineering
 Construct benchmark suites with representative workloads to evaluate software system performance.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 "Validate measurement tools for code metrics, test coverage, or static analysis accuracy against ground truth.",Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Characterize sources of measurement noise in software repository mining and developer activity tracking.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Record developer interactions and behaviors during programming tasks using instrumented development environments.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
-"Elicit needs, practices, and requirements from users, domain experts, and stakeholders to inform system design.",Data Gathering,field,Formal Sciences,Computer Science,
 "Collect targeted records from a system, its context, or a study corpus to isolate the elements relevant to the analysis.",Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Assess the reliability and validity of rating instruments used to capture subjective judgments.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Establish empirical measures of an artifact's properties to drive its improvement.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Compute metrics over source-code corpora with automated analysis to quantify the prevalence of code properties.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
-Differentially test implementations or transformed artifacts against reference versions to expose behavioral discrepancies.,Data Gathering,subfield,Formal Sciences,Computer Science,Software Engineering
 Clean and normalize software repository data by resolving entity aliases and filtering bot-generated artifacts.,Data Analysis,subfield,Formal Sciences,Computer Science,Software Engineering
 "Quantify uncertainty in software metrics due to incomplete data, sampling bias, or measurement limitations.",Data Analysis,subfield,Formal Sciences,Computer Science,Software Engineering
 "Fit statistical models to software defect data, development effort, or system reliability measurements.",Data Analysis,subfield,Formal Sciences,Computer Science,Software Engineering
@@ -1833,11 +1833,11 @@ Execute systematic literature searches across bibliographic databases and snowba
 "Curate and version datasets, codebases, and experimental artifacts for replication and extension by other researchers.",Administration,subfield,Formal Sciences,Computer Science,Software Engineering
 Derive relevance rankings from probabilistic retrieval models or learning-to-rank frameworks.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Formulate query optimization strategies based on cost models and database statistics.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
+Design user studies with controlled search tasks to evaluate retrieval system effectiveness.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
+Construct benchmark datasets with controlled relevance judgments for system comparison.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Design programming or query interfaces that let users express operations while hiding underlying execution details.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Craft explicit constructions that combine or exploit properties of a target to achieve a specified outcome.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Design database schemas and logical data models that represent domain entities and their relationships for storage and querying.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
-Design user studies with controlled search tasks to evaluate retrieval system effectiveness.,Data Gathering,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
-Construct benchmark datasets with controlled relevance judgments for system comparison.,Data Gathering,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Collect query logs and clickthrough data from search engines or information systems.,Data Gathering,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 Gather user interaction data through instrumented retrieval interfaces.,Data Gathering,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
 "Crawl and harvest web documents, metadata, or structured data from online sources.",Data Gathering,subfield,Formal Sciences,Computer Science,Databases & Information Retrieval
@@ -1856,12 +1856,12 @@ Quantify how faithfully a transformed or reduced data representation preserves s
 "Derive theoretical bounds on model generalization, convergence rates, or computational complexity.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 Formulate mathematical objectives and loss functions that encode desired model behavior.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 "Analyze algorithmic properties using probability theory, linear algebra, or optimization theory.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
+"Design controlled experiments with training, validation, and test splits to evaluate model performance.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
+Structure ablation studies to isolate the contribution of individual model components.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 Monitor internal quantities of an iterative algorithm across iterations to diagnose its empirical behavior.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
-"Design controlled experiments with training, validation, and test splits to evaluate model performance.",Data Gathering,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
-Structure ablation studies to isolate the contribution of individual model components.,Data Gathering,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
+Quantify the relative importance of individual input features to a trained model's predictions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 "Collect and curate labeled datasets from public repositories, APIs, or web sources.",Data Gathering,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
-Generate synthetic training data through simulation or augmentation techniques.,Data Gathering,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
-Quantify the relative importance of individual input features to a trained model's predictions.,Data Gathering,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
+Generate synthetic training data through simulation or augmentation techniques.,Data Analysis,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 "Preprocess raw data through normalization, tokenization, or feature extraction pipelines.",Data Analysis,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 "Clean datasets by handling missing values, outliers, and label noise.",Data Analysis,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 Apply data augmentation techniques to expand training set diversity.,Data Analysis,subfield,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
@@ -1875,16 +1875,16 @@ Design aggregation rules that combine outputs of multiple trained models into a 
 Derive kinematic and dynamic equations for robotic manipulators and mobile platforms to predict system behavior.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 "Formulate motion planning constraints based on robot geometry, joint limits, and workspace boundaries.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 Model sensor noise characteristics and environmental uncertainties for state estimation algorithms.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
+Design controlled test environments with standardized obstacles and terrain for evaluating robot navigation performance.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
+Configure repeatable manipulation tasks with known object properties to benchmark grasping algorithms.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 Design spatial and path representations that make robot planning problems computationally tractable.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
+Determine how a robot behaves under real operating conditions to validate its performance.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 "Refine candidate robot paths into smooth, dynamically feasible trajectories through optimization or post-processing.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 "Design and build robot hardware platforms by integrating actuators, sensors, and onboard computing components.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 Formulate objectives quantifying expected information gain or search cost to guide robot exploration under uncertainty.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 Formulate a robot's spatial and resource constraints mathematically to configure its operation.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
 Design rule-based or switching decision logic that selects among discrete robot behaviors or controller modes.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Robotics
-Design controlled test environments with standardized obstacles and terrain for evaluating robot navigation performance.,Data Gathering,subfield,Formal Sciences,Computer Science,Robotics
-Configure repeatable manipulation tasks with known object properties to benchmark grasping algorithms.,Data Gathering,subfield,Formal Sciences,Computer Science,Robotics
 "Characterize sensor measurement errors for LIDAR, IMU, and depth cameras used in robot perception.",Data Gathering,subfield,Formal Sciences,Computer Science,Robotics
-Determine how a robot behaves under real operating conditions to validate its performance.,Data Gathering,subfield,Formal Sciences,Computer Science,Robotics
 Calibrate the spatial transformation between mounted or external sensors and the robot's coordinate frame.,Data Gathering,subfield,Formal Sciences,Computer Science,Robotics
 Apply sensor fusion techniques to combine data from multiple robot sensors into coherent state estimates.,Data Analysis,subfield,Formal Sciences,Computer Science,Robotics
 Filter noisy sensor readings using Kalman filters or particle filters for robot localization.,Data Analysis,subfield,Formal Sciences,Computer Science,Robotics
@@ -1901,25 +1901,21 @@ Define parameterized motion or action primitives that serve as reusable units of
 "Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",Data Analysis,subfield,Formal Sciences,Computer Science,Robotics
 "Derive usability predictions from cognitive models of human perception, attention, and motor control.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Apply interaction design heuristics and principles to predict user behavior with novel interfaces.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Design controlled user studies with counterbalanced conditions to evaluate interface alternatives.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Develop within-subjects or between-subjects experimental protocols for comparing interaction techniques.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Derive concrete design recommendations and guidelines from empirical study findings.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+"Conduct informal, uncontrolled trials of prototypes with users to identify promising design directions.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Design interaction techniques and command vocabularies that map user input modalities to system actions.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Build theoretical models linking system attributes, user perceptions, and adoption or experience outcomes.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Design controlled user studies with counterbalanced conditions to evaluate interface alternatives.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Develop within-subjects or between-subjects experimental protocols for comparing interaction techniques.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Characterize latency and tracking accuracy of motion capture and gesture recognition systems.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Gather contextual data from mobile sensors during field studies of technology use.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Develop functional interface prototypes using software tools for experimental evaluation.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Fabricate physical prototypes of tangible interfaces or wearable devices for user testing.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Cross-check derived outputs or measures against independent external sources to assess their validity.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Collect targeted records from a system, its context, or a study corpus to isolate the elements relevant to the analysis.",Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Administer validated self-report questionnaires to measure users' subjective states after interaction.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Create concrete representations of interaction concepts that convey how users engage with a proposed system.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-"Conduct informal, uncontrolled trials of prototypes with users to identify promising design directions.",Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Gather evidence about a phenomenon in its broader real-world context to explain observed outcomes.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-Design instructional content and training activities delivered through an interactive technology.,Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Administer standardized clinical or psychophysical assessments to characterize participants' perceptual, motor, or cognitive function.",Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
-"Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",Data Gathering,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Develop functional interface prototypes using software tools for experimental evaluation.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Fabricate physical prototypes of tangible interfaces or wearable devices for user testing.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Synchronize and align multimodal data streams from eye trackers, input devices, and physiological sensors.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Filter noise and artifacts from gaze tracking and motion capture recordings.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Calculate task completion times, error rates, and efficiency metrics with appropriate statistical uncertainty.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
@@ -1928,20 +1924,24 @@ Fit predictive models of user performance such as Fitts' Law to empirical intera
 Apply statistical models to analyze effects of interface design variables on user experience measures.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Run computational simulations of user behavior to evaluate interface designs before user testing.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Assess the reliability and validity of rating instruments used to capture subjective judgments.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Recruit, screen, and compensate study participants to obtain a target sample.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Create concrete representations of interaction concepts that convey how users engage with a proposed system.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Analyze collected observations to characterize the properties and outcomes of a studied artifact or intervention.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Devise new measures to operationalize subjective perceptual, affective, or metacognitive constructs.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+Design instructional content and training activities delivered through an interactive technology.,Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 "Assess organizational feasibility, costs, and barriers to deploying an interactive technology in practice.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
+"Iteratively improve a working system or policy through repeated real-world trials, observing outcomes of each deployment and feeding them back into successive revisions.",Data Analysis,subfield,Formal Sciences,Computer Science,Human-Computer Interaction
 Derive rendering equations and shading models from physical principles of light transport and material interaction.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Formulate geometric transformations and projection matrices for 3D scene representation.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
+Design user studies with controlled viewing conditions to evaluate visualization effectiveness and perceptual accuracy.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
+Structure comparative experiments to benchmark rendering algorithms under standardized scene configurations.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
+Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Construct spatial data structures such as triangulations or voxel hierarchies from point and mesh data.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Generate spatial layouts of abstract graph or relational data by optimizing embedding objectives.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Design compact encoding and transmission schemes for streaming geometry or rendered content to remote clients.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
-Design user studies with controlled viewing conditions to evaluate visualization effectiveness and perceptual accuracy.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
-Structure comparative experiments to benchmark rendering algorithms under standardized scene configurations.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 "Capture 3D geometry and appearance data using scanning devices, motion capture systems, or photogrammetry setups.",Data Gathering,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Record user interaction data and eye-tracking measurements during visualization tasks.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
-Analyze design projects and artifacts retrospectively to derive generalizable design knowledge.,Data Gathering,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Quantify numerical precision errors in floating-point rendering computations and geometric algorithms.,Data Analysis,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Fit parametric appearance models to measured material reflectance and texture data.,Data Analysis,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
 Optimize transfer function parameters to match visualization outputs with ground truth data distributions.,Data Analysis,subfield,Formal Sciences,Computer Science,Computer Graphics & Visualization
@@ -3651,14 +3651,14 @@ Evaluate the representativeness of surviving documentary or material evidence fo
 "Code thematic content in hagiographies, chronicles, or literary texts to identify patterns and motifs.",Data Analysis,subfield,Arts & Humanities,History,Medieval History
 Account for survival bias when analyzing patterns in medieval archival collections and material remains.,Data Analysis,subfield,Arts & Humanities,History,Medieval History
 Evaluate the reliability and potential biases of medieval chroniclers and document authors.,Data Analysis,subfield,Arts & Humanities,History,Medieval History
+Negotiate access to restricted manuscript collections and private archives holding medieval materials.,Data Analysis,subfield,Arts & Humanities,History,Medieval History
+"Collaborate with archaeologists, art historians, and philologists on interdisciplinary medieval research projects.",Data Analysis,subfield,Arts & Humanities,History,Medieval History
 "Compare related texts or successive versions of a text to establish their dependencies, borrowings, and alterations.",Data Analysis,field,Arts & Humanities,History,
 "Establish the date, composition, and authenticity of documents and objects from their internal and material features.",Data Analysis,subfield,Arts & Humanities,History,Medieval History
 "Link named individuals across dispersed records to reconstruct their careers, identities, and social networks.",Data Analysis,field,Arts & Humanities,History,
 Test claims made in medieval narrative sources against independent material or technical evidence.,Data Analysis,subfield,Arts & Humanities,History,Medieval History
 Record the codicological and layout features of a manuscript to characterize its production context.,Data Analysis,subfield,Arts & Humanities,History,Medieval History
 "Classify medieval buildings, artefacts, or texts by comparison with corpora of known exemplars to build typologies and relative chronologies.",Data Analysis,subfield,Arts & Humanities,History,Medieval History
-Negotiate access to restricted manuscript collections and private archives holding medieval materials.,Administration,subfield,Arts & Humanities,History,Medieval History
-"Collaborate with archaeologists, art historians, and philologists on interdisciplinary medieval research projects.",Administration,subfield,Arts & Humanities,History,Medieval History
 Apply historiographical frameworks such as social constructivism or internalism to interpret the development of scientific ideas and practices.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,History of Science & Technology
 "Situate scientific or technological developments within broader intellectual, cultural, and institutional contexts when formulating research questions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,History of Science & Technology
 "Assess whether patterns observed in one scientific discipline, national context, or historical period apply to others.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,History of Science & Technology
@@ -3673,10 +3673,10 @@ Code archival documents and historical texts to identify recurring themes in sci
 "Analyze visual and material sources such as scientific instruments, diagrams, and photographs as historical evidence.",Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
 Triangulate evidence from multiple archival sources to address gaps and biases in the historical record.,Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
 Evaluate the reliability and provenance of historical sources to account for potential distortions in scientific narratives.,Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
+"Negotiate access to restricted archival collections held by scientific societies, universities, or government agencies.",Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
 Interpret historical technical texts and artifacts in light of modern scientific knowledge to determine their referents and workings.,Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
 "Analyze vernacular practices and popular expressions, such as rituals and proverbs, as evidence of lay engagement with science and technology.",Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
 "Apply scientific and technical analysis of an object's materials and construction to determine its composition, provenance, manufacture, or function.",Data Analysis,subfield,Arts & Humanities,History,History of Science & Technology
-"Negotiate access to restricted archival collections held by scientific societies, universities, or government agencies.",Administration,subfield,Arts & Humanities,History,History of Science & Technology
 "Situate research questions within postcolonial, transnational, or area-specific theoretical frameworks to account for regional power dynamics.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Regional & Area Studies
 Engage with historiographical debates specific to the region when framing research problems and interpretive approaches.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Regional & Area Studies
 "Assess the transferability of findings across different cultural, linguistic, or national contexts within the region of study.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Regional & Area Studies
@@ -3699,10 +3699,10 @@ Transcribe and translate primary source materials from regional languages or his
 Code oral history transcripts and ethnographic field notes to identify recurring themes and regional patterns.,Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
 "Triangulate findings across archival sources, oral accounts, and secondary literature to address gaps and biases in regional documentation.",Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
 "Account for silences, omissions, and power dynamics embedded in colonial or state-produced archival records.",Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
+"Establish relationships with local cultural institutions, universities, or community organizations to facilitate research access and collaboration.",Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
+Coordinate with diaspora communities or heritage organizations to recruit participants and access dispersed populations.,Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
 Interpret historical maps and charts as evidence of the region's spatial and administrative history.,Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
 "Search corpora of regional-language texts for specific terms or passages, treating their presence or absence as evidence of transmission.",Data Analysis,subfield,Arts & Humanities,History,Regional & Area Studies
-"Establish relationships with local cultural institutions, universities, or community organizations to facilitate research access and collaboration.",Administration,subfield,Arts & Humanities,History,Regional & Area Studies
-Coordinate with diaspora communities or heritage organizations to recruit participants and access dispersed populations.,Administration,subfield,Arts & Humanities,History,Regional & Area Studies
 "Apply theoretical frameworks from ancient political, economic, or religious institutions to interpret material and textual evidence.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Ancient History
 "Frame research questions using models of state formation, trade networks, or social organization in ancient societies.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Ancient History
 "Assess whether patterns observed in one ancient site, region, or period can be extended to broader ancient contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Ancient History
@@ -3729,8 +3729,8 @@ Transcribe and normalize early modern handwriting and orthographic variations to
 "Code thematic content from early modern correspondence, diaries, and legal testimony to identify patterns in beliefs or practices.",Data Analysis,subfield,Arts & Humanities,History,Early Modern History
 Categorize early modern visual and material sources according to iconographic or typological schemes.,Data Analysis,subfield,Arts & Humanities,History,Early Modern History
 Account for survival bias and archival gaps when drawing conclusions from fragmentary early modern source bases.,Data Analysis,subfield,Arts & Humanities,History,Early Modern History
+Negotiate access to restricted early modern manuscript collections and rare book holdings with archival institutions.,Data Analysis,subfield,Arts & Humanities,History,Early Modern History
 "Specify and critically assess the operational definitions, criteria, or measures used to determine what in the source record counts as an instance of the phenomenon under study.",Data Analysis,subfield,Arts & Humanities,History,Early Modern History
-Negotiate access to restricted early modern manuscript collections and rare book holdings with archival institutions.,Administration,subfield,Arts & Humanities,History,Early Modern History
 "Apply historiographical frameworks such as social history, cultural history, or transnational history when formulating research questions about modern events.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Modern & Contemporary History
 "Situate research questions within debates about causation, contingency, and structural change in twentieth and twenty-first century history.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Modern & Contemporary History
 "Assess whether interpretations of historical events or processes apply across different national, regional, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Modern & Contemporary History
@@ -3745,7 +3745,7 @@ Conduct oral history interviews with individuals who experienced or witnessed si
 "Analyze textual sources using methods of close reading to interpret meaning, rhetoric, and ideological content.",Data Analysis,subfield,Arts & Humanities,History,Modern & Contemporary History
 "Triangulate evidence across multiple archival sources to address gaps, biases, and contradictions in the historical record.",Data Analysis,subfield,Arts & Humanities,History,Modern & Contemporary History
 "Evaluate the provenance, authenticity, and reliability of primary sources produced by states, organizations, or individuals.",Data Analysis,subfield,Arts & Humanities,History,Modern & Contemporary History
-"Negotiate access agreements with national archives, libraries, and private collections holding modern historical materials.",Administration,subfield,Arts & Humanities,History,Modern & Contemporary History
+"Negotiate access agreements with national archives, libraries, and private collections holding modern historical materials.",Data Analysis,subfield,Arts & Humanities,History,Modern & Contemporary History
 Apply theories of collective memory and cultural transmission when framing research questions about historical change.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Social & Cultural History
 "Situate research questions within historiographical debates about agency, structure, and cultural meaning.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Social & Cultural History
 "Assess whether interpretations of cultural practices or social experiences apply across different regional, class, or ethnic contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Social & Cultural History
@@ -3761,7 +3761,7 @@ Draw on present-day media or survey evidence to document contemporary afterlives
 "Code oral history transcripts and personal narratives for recurring themes, cultural meanings, and historical patterns.",Data Analysis,subfield,Arts & Humanities,History,Social & Cultural History
 Analyze visual sources such as photographs and illustrations for cultural symbolism and social representation.,Data Analysis,subfield,Arts & Humanities,History,Social & Cultural History
 Triangulate findings across multiple source types to address gaps and biases in the historical record.,Data Analysis,subfield,Arts & Humanities,History,Social & Cultural History
-Negotiate access to restricted archival collections or private family papers held by individuals or institutions.,Administration,subfield,Arts & Humanities,History,Social & Cultural History
+Negotiate access to restricted archival collections or private family papers held by individuals or institutions.,Data Analysis,subfield,Arts & Humanities,History,Social & Cultural History
 "Apply theories of religious change, conversion, or secularization when framing research questions about historical religious movements.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Religious History
 Engage with historiographical debates about the relationship between religious institutions and political or social structures.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Religious History
 "Assess whether interpretations of religious practices or beliefs apply across different confessional, regional, or temporal contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Religious History
@@ -3777,7 +3777,7 @@ Evaluate the representativeness of surviving religious sources for broader popul
 "Categorize religious imagery, ritual descriptions, or material culture references in historical documents.",Data Analysis,subfield,Arts & Humanities,History,Religious History
 "Account for biases in sources produced by religious authorities, polemicists, or persecuting institutions.",Data Analysis,subfield,Arts & Humanities,History,Religious History
 "Triangulate evidence across ecclesiastical, secular, and personal sources to reconstruct religious experiences.",Data Analysis,subfield,Arts & Humanities,History,Religious History
-Negotiate access to restricted ecclesiastical archives or private religious collections through institutional contacts.,Administration,subfield,Arts & Humanities,History,Religious History
+Negotiate access to restricted ecclesiastical archives or private religious collections through institutional contacts.,Data Analysis,subfield,Arts & Humanities,History,Religious History
 "Apply theories of state formation, power politics, or military organization when framing historical research questions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Political & Military History
 Assess whether patterns of political or military behavior observed in one historical period or region apply to other contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Political & Military History
 Compare documented strategic objectives against realized outcomes to assess the success of military or political undertakings.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Political & Military History
@@ -3786,11 +3786,11 @@ Construct biographical case studies of individual officials to illuminate broade
 "Conduct oral history interviews with participants in political events, military operations, or policy decisions.",Data Gathering,subfield,Arts & Humanities,History,Political & Military History
 "Locate and acquire primary documents from national archives, military records repositories, and diplomatic collections.",Data Gathering,subfield,Arts & Humanities,History,Political & Military History
 "Gather naval logs, admiralty records, and maritime intelligence reports from governmental and institutional archives.",Data Gathering,subfield,Arts & Humanities,History,Political & Military History
+"Obtain permissions and negotiate access agreements for restricted government, military, or diplomatic archives.",Data Analysis,subfield,Arts & Humanities,History,Political & Military History
 "Code diplomatic correspondence and political documents to identify patterns in rhetoric, decision-making, or alliance formation.",Data Analysis,subfield,Arts & Humanities,History,Political & Military History
 Triangulate accounts from multiple archival sources to address bias in official records and personal memoirs.,Data Analysis,subfield,Arts & Humanities,History,Political & Military History
 "Evaluate the reliability and provenance of historical documents to account for propaganda, censorship, or selective preservation.",Data Analysis,subfield,Arts & Humanities,History,Political & Military History
-"Obtain permissions and negotiate access agreements for restricted government, military, or diplomatic archives.",Administration,subfield,Arts & Humanities,History,Political & Military History
-"Coordinate with foreign archives, military museums, and government agencies to access classified or restricted historical materials.",Administration,subfield,Arts & Humanities,History,Political & Military History
+"Coordinate with foreign archives, military museums, and government agencies to access classified or restricted historical materials.",Data Analysis,subfield,Arts & Humanities,History,Political & Military History
 "Apply postcolonial theoretical frameworks to analyze power dynamics, resistance, and cultural exchange in colonial encounters.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 "Engage with theories of empire, settler colonialism, and decolonization when framing historical research questions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 "Assess the applicability of findings across different colonial contexts, empires, or geographic regions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Colonial & Postcolonial History
@@ -3803,10 +3803,10 @@ Transcribe and translate handwritten colonial documents from European and non-Eu
 Code oral histories and personal narratives to identify themes of colonial experience and memory.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 Account for biases inherent in colonial administrative records and European-authored sources.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 Critically assess silences and absences in archival records concerning colonized peoples' perspectives.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
+"Coordinate with archives, museums, and cultural institutions in former colonies to access restricted or dispersed collections.",Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
+Collaborate with descendant communities and local scholars to gain access to oral traditions and community archives.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 Reconstruct the organization and reception of state propaganda or information campaigns from administrative and testimonial evidence.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 Trace how a claim or narrative was transmitted across successive publications to identify its origin and subsequent distortion.,Data Analysis,subfield,Arts & Humanities,History,Colonial & Postcolonial History
-"Coordinate with archives, museums, and cultural institutions in former colonies to access restricted or dispersed collections.",Administration,subfield,Arts & Humanities,History,Colonial & Postcolonial History
-Collaborate with descendant communities and local scholars to gain access to oral traditions and community archives.,Administration,subfield,Arts & Humanities,History,Colonial & Postcolonial History
 "Frame research questions within historiographical debates about periodization, influence, and cultural transmission.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Art & Intellectual History
 "Situate analyses of visual or textual sources within relevant theoretical frameworks from aesthetics, hermeneutics, or cultural theory.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Art & Intellectual History
 Assess whether interpretive claims about artistic movements or intellectual traditions apply across different national or regional contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,History,Art & Intellectual History
@@ -3833,10 +3833,10 @@ Devise or scrutinize measures targeting specific linguistic categories to ensure
 "Code classroom interaction data for discourse moves, feedback types, or turn-taking patterns using established coding schemes.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 "Analyze learner language samples for grammatical accuracy, lexical complexity, or developmental features using error analysis or interlanguage frameworks.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 "Control for learner proficiency level, first language background, and prior instruction when analyzing effects of pedagogical interventions.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
+"Coordinate with language programs, schools, or testing organizations to recruit learner participants or access instructional materials.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 Assess coding reliability by having independent raters code the same data and computing their agreement,Data Analysis,field,Arts & Humanities,Languages & Linguistics,
 Group learners by achievement level or instructional track to compare their language learning behaviors and outcomes.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 Design experimental or quasi-experimental intervention studies with treatment and comparison groups to test effects of instruction on language learning outcomes.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
-"Coordinate with language programs, schools, or testing organizations to recruit learner participants or access instructional materials.",Administration,subfield,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 Apply syntactic theories such as generative grammar or construction grammar to formulate hypotheses about sentence structure.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 Integrate semantic frameworks with syntactic analysis to investigate form-meaning correspondences.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 Evaluate whether syntactic patterns observed in one language or dialect generalize to typologically diverse languages.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
@@ -3858,9 +3858,9 @@ Parse and annotate sentence structures according to syntactic categories and phr
 "Code linguistic data for grammatical features such as word order, agreement, and argument structure.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 Control for lexical and semantic confounds when analyzing syntactic processing data.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 Account for individual differences in language background when interpreting grammaticality judgment results.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
+Collaborate with language communities to recruit speakers of understudied languages or dialects.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 "Establish the underlying system of units, categories, and boundaries in a domain through systematic analysis of its patterns",Data Analysis,field,Arts & Humanities,Languages & Linguistics,
 "Interpret phonetic and prosodic evidence, such as pitch contours or formant measurements, to diagnose phonological or grammatical categories.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
-Collaborate with language communities to recruit speakers of understudied languages or dialects.,Administration,subfield,Arts & Humanities,Languages & Linguistics,Syntax & Grammar
 Apply theories of language ideology and linguistic identity when framing research questions about language attitudes and practices.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 Draw on variationist sociolinguistic frameworks to investigate relationships between linguistic features and social variables.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 "Assess whether observed language patterns will generalize across speech communities, registers, or interactional contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
@@ -3882,8 +3882,8 @@ Transcribe audio recordings using conventions appropriate for capturing phonetic
 Categorize discourse and interactional features in conversational data for qualitative or quantitative analysis.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 Account for speaker-level clustering and stylistic variation when analyzing sociolinguistic interview data.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 "Control for social factors such as age, gender, ethnicity, and social class in analyses of linguistic variation.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
+Establish relationships with speech communities to facilitate ethical recruitment and data collection.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 "Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",Data Analysis,field,Arts & Humanities,Languages & Linguistics,
-Establish relationships with speech communities to facilitate ethical recruitment and data collection.,Administration,subfield,Arts & Humanities,Languages & Linguistics,Sociolinguistics
 "Apply theories of speech acts, implicature, or presupposition when framing research questions about meaning in context.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
 Ground research questions in formal semantic frameworks such as truth-conditional semantics or dynamic semantics.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
 "Evaluate whether semantic or pragmatic findings generalize across languages, dialects, or discourse communities.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
@@ -3898,7 +3898,7 @@ Assess the validity of elicitation techniques used to obtain pragmatic data by c
 "Annotate discourse data for speech acts, discourse markers, or pragmatic functions.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
 "Code textual data for semantic relations, reference chains, or coherence structures.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
 Control for contextual and prosodic confounds when analyzing pragmatic interpretation data.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
-Coordinate with language communities or speaker groups to recruit participants for linguistic elicitation studies.,Administration,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
+Coordinate with language communities or speaker groups to recruit participants for linguistic elicitation studies.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Semantics & Pragmatics
 "Apply translation theories such as equivalence, skopos, or polysystem theory to frame research questions about translation processes or products.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 Draw on sociological or cognitive models of translator behavior to conceptualize research problems.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 "Assess whether findings about translation practices or norms will transfer across language pairs, text types, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
@@ -3916,10 +3916,10 @@ Design controlled materials or data-collection protocols that systematically var
 "Annotate translated texts for translation shifts, strategies, or linguistic features.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 "Code translator interview data for themes related to decision-making, norms, or professional identity.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 Account for text selection bias when analyzing patterns in translated corpora.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
+"Negotiate access to translation agencies, publishing houses, or professional associations for participant recruitment.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 Compare source- and target-language expressions to assess the correspondence between them,Data Analysis,field,Arts & Humanities,Languages & Linguistics,
 Corroborate findings by triangulating independent analysts or complementary data sources,Data Analysis,field,Arts & Humanities,Languages & Linguistics,
 "Analyze medium-specific and multimodal constraints, such as image-text relations or synchrony, that shape translation choices.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
-"Negotiate access to translation agencies, publishing houses, or professional associations for participant recruitment.",Administration,subfield,Arts & Humanities,Languages & Linguistics,Translation Studies
 "Ground research questions in linguistic theories of syntax, semantics, or pragmatics to guide computational model design.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics
 "Evaluate whether language models and NLP systems generalize across languages, dialects, and text genres.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics
 Assess the transferability of computational linguistic findings across different corpora and annotation schemes.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Computational Linguistics
@@ -3949,9 +3949,9 @@ Transcribe and normalize historical or dialectal texts to enable systematic ling
 "Annotate linguistic data with phonetic, morphological, or syntactic tags for comparative analysis.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 Code semantic shifts and grammatical changes in diachronic text corpora to track patterns of language evolution.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 Control for borrowing and areal diffusion when establishing genetic relationships between languages.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
+"Coordinate with archives, libraries, or indigenous communities to access rare manuscripts or endangered language speakers.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 Develop computational search routines to extract instances of target constructions or recurrent word sequences from corpora.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 Reconstruct the sound system of a historical language by interpreting the graphemic conventions of the scripts that record it.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
-"Coordinate with archives, libraries, or indigenous communities to access rare manuscripts or endangered language speakers.",Administration,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 "Apply models of language processing, such as lexical access or sentence parsing theories, when formulating research hypotheses.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 Ground research questions in theories of bilingual or second language acquisition to explain observed processing differences.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 Evaluate whether language processing findings generalize across speakers of different languages or language families.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
@@ -3969,8 +3969,8 @@ Administer targeted knowledge tests at delayed intervals to measure gains or los
 Segment and annotate speech recordings to extract acoustic-phonetic measurements for analysis.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 "Control for lexical variables such as word frequency, length, and imageability when analyzing processing effects.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 Apply mixed-effects regression models to account for variability across participants and linguistic items simultaneously.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
+"Recruit participants with specific language profiles, such as monolinguals, bilinguals, or individuals with language disorders, through university or community networks.",Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 Compute quantitative measures of temporal or lexical coordination between conversational partners.,Data Analysis,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
-"Recruit participants with specific language profiles, such as monolinguals, bilinguals, or individuals with language disorders, through university or community networks.",Administration,subfield,Arts & Humanities,Languages & Linguistics,Psycholinguistics
 "Apply criminological theories such as strain, social learning, or routine activities when developing research hypotheses about criminal behavior.",Ideation & Hypothesis Generation,subfield,Social Sciences,Law,Criminal Law & Criminology
 Incorporate deterrence and punishment theories when examining the effects of criminal justice policies and interventions.,Ideation & Hypothesis Generation,subfield,Social Sciences,Law,Criminal Law & Criminology
 Assess whether findings from specific correctional settings or jurisdictions generalize to broader criminal justice populations.,Ideation & Hypothesis Generation,subfield,Social Sciences,Law,Criminal Law & Criminology
@@ -4249,8 +4249,8 @@ Conduct interviews with living postcolonial authors or cultural practitioners to
 "Access colonial archives, manuscripts, and historical documents held in libraries or national repositories to support textual analysis.",Data Gathering,subfield,Arts & Humanities,Literature,Postcolonial Literature
 Reassess claims about readers or prior findings by reasoning from existing textual evidence rather than new empirical data.,Data Gathering,subfield,Arts & Humanities,Literature,Postcolonial Literature
 "Analyze narrative structures, linguistic choices, and rhetorical strategies in postcolonial texts to identify patterns of subversion or complicity.",Data Analysis,subfield,Arts & Humanities,Literature,Postcolonial Literature
+Negotiate access to restricted archival collections or private literary estates relevant to postcolonial authors and texts.,Data Analysis,subfield,Arts & Humanities,Literature,Postcolonial Literature
 Compare written literary texts against oral narrative traditions to determine how oral genres and materials were transmitted into written form.,Data Analysis,subfield,Arts & Humanities,Literature,Postcolonial Literature
-Negotiate access to restricted archival collections or private literary estates relevant to postcolonial authors and texts.,Administration,subfield,Arts & Humanities,Literature,Postcolonial Literature
 "Apply literary theoretical frameworks such as postcolonialism, feminism, or deconstruction to frame interpretive research questions about texts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,Literary Theory & Criticism
 "Situate close reading practices within broader theoretical debates about meaning, authorship, or textuality.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,Literary Theory & Criticism
 "Assess whether interpretive claims about literary texts extend across different genres, historical periods, or cultural traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,Literary Theory & Criticism
@@ -4268,7 +4268,7 @@ Trace the afterlives of medieval or early modern literary and performance forms 
 Access rare book collections and special archives to examine material features of primary sources.,Data Gathering,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature
 "Transcribe and normalize spelling, punctuation, and abbreviations from early modern or medieval source texts.",Data Analysis,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature
 "Code thematic, rhetorical, or generic patterns across literary texts to support comparative analysis.",Data Analysis,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature
-"Coordinate with libraries, archives, and special collections to obtain access to rare manuscripts and early printed editions.",Administration,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature
+"Coordinate with libraries, archives, and special collections to obtain access to rare manuscripts and early printed editions.",Data Analysis,subfield,Arts & Humanities,Literature,Medieval & Early Modern Literature
 "Apply literary theoretical frameworks such as narratology, postcolonialism, or feminist criticism to frame interpretive research questions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,European Literature
 "Situate textual analysis within relevant historical, cultural, or intellectual movements of European literary traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,European Literature
 "Assess whether interpretive claims about literary texts extend across national literatures, historical periods, or linguistic traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,European Literature
@@ -4281,7 +4281,7 @@ Relate documented life events and personal records of an author to features of t
 Transcribe and collate variant manuscript or print editions of literary texts for scholarly analysis.,Data Analysis,subfield,Arts & Humanities,Literature,European Literature
 "Annotate literary texts for thematic, stylistic, or rhetorical features relevant to the research question.",Data Analysis,subfield,Arts & Humanities,Literature,European Literature
 Code textual passages according to theoretical categories or interpretive frameworks for systematic analysis.,Data Analysis,subfield,Arts & Humanities,Literature,European Literature
-Negotiate access to restricted archival materials and rare book collections held by European institutions.,Administration,subfield,Arts & Humanities,Literature,European Literature
+Negotiate access to restricted archival materials and rare book collections held by European institutions.,Data Analysis,subfield,Arts & Humanities,Literature,European Literature
 "Apply literary theoretical frameworks such as New Historicism, postcolonialism, or feminist criticism to frame interpretive research questions about American texts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,American Literature
 "Assess whether interpretive claims about American literary texts apply across different historical periods, regional traditions, or demographic readerships.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,American Literature
 Design interview protocols to gather oral histories or reader responses related to American literary works and their cultural reception.,Data Gathering,subfield,Arts & Humanities,Literature,American Literature
@@ -4309,15 +4309,15 @@ Document researcher positionality and apply reflexive procedures to manage its i
 "Code narrative texts for structural elements such as plot events, character functions, or narrative sequences.",Data Analysis,subfield,Arts & Humanities,Literature,Narrative Studies
 "Identify and categorize narrative techniques including point of view, unreliable narration, or embedded storytelling.",Data Analysis,subfield,Arts & Humanities,Literature,Narrative Studies
 Analyze thematic patterns and motifs across narrative texts to identify recurring cultural or ideological concerns.,Data Analysis,subfield,Arts & Humanities,Literature,Narrative Studies
+"Negotiate access to restricted literary archives, manuscript collections, or unpublished narrative materials.",Data Analysis,subfield,Arts & Humanities,Literature,Narrative Studies
 Examine authorial revision and editorial intervention to determine how published texts were shaped.,Data Analysis,subfield,Arts & Humanities,Literature,Narrative Studies
-"Negotiate access to restricted literary archives, manuscript collections, or unpublished narrative materials.",Administration,subfield,Arts & Humanities,Literature,Narrative Studies
 "Apply postcolonial, transnational, or comparative literary frameworks when formulating research questions about texts across national traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,World Literature
 Engage with theories of cultural translation and literary circulation to frame analyses of texts moving between linguistic and cultural contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,World Literature
 "Assess whether interpretive claims about literary movements or genres hold across different national literatures, historical periods, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,World Literature
 "Design interview protocols to collect oral histories or testimonies from authors, translators, or literary community members for qualitative research.",Data Gathering,subfield,Arts & Humanities,Literature,World Literature
 "Code thematic, stylistic, or narrative patterns in literary texts using systematic qualitative analysis methods.",Data Analysis,subfield,Arts & Humanities,Literature,World Literature
 "Annotate literary texts for rhetorical devices, intertextual references, or cultural motifs to support comparative analysis.",Data Analysis,subfield,Arts & Humanities,Literature,World Literature
-"Coordinate with international libraries, archives, or literary estates to access rare manuscripts, correspondence, or unpublished materials.",Administration,subfield,Arts & Humanities,Literature,World Literature
+"Coordinate with international libraries, archives, or literary estates to access rare manuscripts, correspondence, or unpublished materials.",Data Analysis,subfield,Arts & Humanities,Literature,World Literature
 "Apply literary theories such as postcolonialism, narratology, or reception theory to frame comparative analyses across national literatures.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,Comparative Literature
 "Assess whether interpretive claims about literary texts or movements apply across different linguistic, cultural, or historical contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Literature,Comparative Literature
 "Develop interview protocols to gather perspectives from translators, authors, or literary practitioners on cross-cultural textual production.",Data Gathering,subfield,Arts & Humanities,Literature,Comparative Literature
@@ -4662,6 +4662,7 @@ Derive probability distributions and their properties from foundational axioms a
 Establish convergence rates and asymptotic behavior of estimators using limit theorems.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 Formulate stochastic models to characterize random phenomena in applied contexts.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 "Derive closed-form expressions for moments, generating functions, and characteristic functions of distributions.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
+Design sampling schemes that ensure valid statistical inference for target populations.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 Extend established results to a broader or modified setting by adapting their proofs to the new hypotheses.,Ideation & Hypothesis Generation,field,Formal Sciences,Mathematics,
 Establish quantitative control on the behavior of a complex system by locating the regimes or reductions that govern it.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 "Derive potential-theoretic quantities for Markov processes, such as hitting probabilities and Green's functions.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
@@ -4673,7 +4674,6 @@ Enumerate and classify combinatorial terms in moment or trace expansions to dete
 Apply correlation and association inequalities to control dependence between events in interacting random systems.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 Derive non-asymptotic concentration and tail bounds for functionals of random variables and stochastic processes.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
 Derive minimax lower bounds and detection boundaries establishing fundamental limits of inference.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Probability Theory
-Design sampling schemes that ensure valid statistical inference for target populations.,Data Gathering,subfield,Formal Sciences,Mathematics,Probability Theory
 "Quantify statistical uncertainty through confidence intervals, credible intervals, and standard errors.",Data Analysis,subfield,Formal Sciences,Mathematics,Probability Theory
 Propagate uncertainty through probabilistic models using variance decomposition and sensitivity analysis.,Data Analysis,subfield,Formal Sciences,Mathematics,Probability Theory
 "Estimate model parameters using maximum likelihood, method of moments, or Bayesian inference.",Data Analysis,subfield,Formal Sciences,Mathematics,Probability Theory
@@ -4764,9 +4764,9 @@ Derive optimality conditions and bounds from mathematical programming formulatio
 Formulate real-world decision problems as mathematical optimization models with objective functions and constraints.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 Analyze convergence properties and complexity bounds for proposed optimization algorithms.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 Conduct sensitivity analysis to assess how parameter variations affect optimal solutions and objective values.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
+Design computational experiments with systematic parameter variations to evaluate algorithm robustness.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 "Characterize structural properties of optimization problem instances, such as separability or matrix definiteness, to classify their difficulty and solvability.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 "Construct geometric structures on solution spaces, such as metrics or retractions, to support optimization over them.",Ideation & Hypothesis Generation,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
-Design computational experiments with systematic parameter variations to evaluate algorithm robustness.,Data Gathering,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 Calibrate algorithm hyperparameters through systematic tuning experiments on representative problem instances.,Data Gathering,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 Fit surrogate models or response surfaces to approximate complex objective functions in optimization problems.,Data Analysis,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
 Simulate stochastic processes and scenarios to evaluate optimization solutions under uncertainty.,Data Analysis,subfield,Formal Sciences,Mathematics,Optimization & Operations Research
@@ -5373,20 +5373,20 @@ Select behavioral measures and neural outcome variables that align with cognitiv
 Develop informed consent procedures that explain neuroimaging risks and incidental findings protocols to participants.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Implement data security protocols for neuroimaging datasets containing identifiable brain scans.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 "Screen and recruit participants based on cognitive ability, neurological status, or demographic criteria.",Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
+Standardize cognitive task parameters and scoring procedures across multiple data collection sites.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
+Harmonize neuroimaging data acquired on different scanner platforms or with varying acquisition parameters.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Estimate source-level neural activity from sensor-level EEG or MEG recordings to localize neural generators,Data Gathering,field,Life Sciences,Neuroscience,
 "Administer acute interventions, such as brain stimulation or pharmacological challenge, to human participants during experimental sessions",Data Gathering,field,Life Sciences,Neuroscience,
+Calibrate stimulus or task parameters to each participant's individual threshold or performance level.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Pilot-test candidate stimuli or experimental manipulations with independent samples to validate their intended properties before the main study.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Implement real-time signal-processing systems that convert ongoing neural or physiological signals into contingent feedback or stimulus control during data collection.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 "Construct computational representations of experimental stimuli, such as semantic embeddings or extracted stimulus events, for use in neural analyses.",Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Elicit and code participants' open-ended verbal reports of task strategies or subjective experience.,Data Gathering,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
-Standardize cognitive task parameters and scoring procedures across multiple data collection sites.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
-Harmonize neuroimaging data acquired on different scanner platforms or with varying acquisition parameters.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Analyze longitudinal changes in cognitive performance or brain structure over repeated assessments.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Estimate effects of experimental manipulations on neural activity while controlling for individual differences in baseline cognition.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Apply statistical methods to isolate neural correlates of specific cognitive processes from confounding sensory or motor components.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Compute frequency-domain measures from continuous physiological recordings to quantify oscillatory activity,Data Analysis,field,Life Sciences,Neuroscience,
 Model individual-difference measures as predictors of behavioral performance to identify brain-behavior relationships,Data Analysis,field,Life Sciences,Neuroscience,
-Calibrate stimulus or task parameters to each participant's individual threshold or performance level.,Data Analysis,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Coordinate with clinical neuroimaging facilities to access scanner time and patient populations for research studies.,Administration,subfield,Life Sciences,Neuroscience,Cognitive Neuroscience
 Formulate hypotheses linking specific neurotransmitter systems to behavioral phenotypes or cognitive functions.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Develop testable predictions about neural circuit mechanisms underlying stress-induced behavioral changes.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
@@ -5397,14 +5397,16 @@ Plan within-subject or between-subject experimental designs to assess treatment 
 Obtain IACUC approval for animal research protocols involving behavioral testing and neural manipulations.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Prepare IRB protocols detailing risks and benefits of neuroimaging or pharmacological challenge studies in human participants.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Screen and recruit participants based on neurological health status and medication use criteria.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
+Harmonize behavioral scoring criteria and operational definitions across multiple experimental sites or raters.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
+Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Train animals through staged shaping and habituation to reach stable task performance before experimental testing,Data Gathering,field,Life Sciences,Neuroscience,
 "Verify the anatomical location or identity of implants, injection sites, lesions, and recorded neurons",Data Gathering,field,Life Sciences,Neuroscience,
 "Deliver targeted manipulations, such as optogenetic or pharmacological intervention, to defined neural populations to test their causal role",Data Gathering,field,Life Sciences,Neuroscience,
 "Generate and characterize custom reagents, such as antibodies or peptide ligands, for specific detection of molecular targets",Data Gathering,field,Life Sciences,Neuroscience,
 Segment continuous behavioral or physiological recordings into discrete states using defined classification criteria,Data Gathering,field,Life Sciences,Neuroscience,
+Manually score and annotate recorded behavioral or physiological data using defined coding schemes to extract quantitative behavioral measures.,Data Gathering,field,Life Sciences,Neuroscience,
 Select and group subjects by naturally occurring phenotypic or trait differences to study individual variation in behavior.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
-Harmonize behavioral scoring criteria and operational definitions across multiple experimental sites or raters.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
-Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
+Prepare and calibrate experimental stimuli and their delivery parameters using measurement instrumentation.,Data Gathering,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Control for circadian timing and sleep history when analyzing behavioral or neural outcome measures.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Account for baseline individual differences in neural activity when estimating intervention effects on behavior.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Analyze trial-level behavioral responses to derive indices of perceptual sensitivity and decision performance,Data Analysis,field,Life Sciences,Neuroscience,
@@ -5412,8 +5414,6 @@ Analyze trial-level behavioral responses to derive indices of perceptual sensiti
 "Select pharmacological agents and doses for in vivo studies based on prior selectivity, potency, and exposure data.",Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Quantify kinematic parameters from movement recordings to characterize motor performance.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 "Design environmental cycle manipulations, such as light or temperature schedules, to test entrainment or lasting programming effects.",Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
-Manually score and annotate recorded behavioral or physiological data using defined coding schemes to extract quantitative behavioral measures.,Data Analysis,field,Life Sciences,Neuroscience,
-Prepare and calibrate experimental stimuli and their delivery parameters using measurement instrumentation.,Data Analysis,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Coordinate with clinical neurology or psychiatry departments for patient recruitment and phenotyping.,Administration,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience
 Formulate hypotheses about molecular signaling pathways underlying neuronal dysfunction or degeneration.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 Develop hypotheses linking ion channel or receptor dysfunction to neurological disease phenotypes.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
@@ -5428,10 +5428,10 @@ Prepare and maintain primary neuronal or glial cell cultures for experimental ma
 Generate and validate transgenic or knockout animal models for studying gene function in the nervous system.,Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 Acquire confocal or fluorescence microscopy images of neural tissue to visualize cellular structures and protein localization.,Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 Collect electrophysiological recordings from neurons or brain slices to measure electrical activity patterns.,Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
+"Integrate gene expression, protein, and electrophysiological data from multiple experimental platforms.",Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 Prepare freshly obtained tissue preparations or first-hand participant reports for immediate experimental measurement,Data Gathering,field,Life Sciences,Neuroscience,
 Isolate defined cell populations or subcellular fractions from neural samples for downstream molecular analysis.,Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 "Generate cell lines heterologously expressing receptors, channels, or other proteins for functional characterization.",Data Gathering,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
-"Integrate gene expression, protein, and electrophysiological data from multiple experimental platforms.",Data Analysis,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 "Analyze time-course data of neuronal survival, axon regeneration, or disease progression in experimental models.",Data Analysis,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 "Quantify treatment effects on neuronal viability, synaptic function, or molecular markers while controlling for experimental variables.",Data Analysis,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
 Perform dose-response analyses for pharmacological agents targeting neural receptors or signaling pathways.,Data Analysis,subfield,Life Sciences,Neuroscience,Cellular & Molecular Neuroscience
@@ -5450,12 +5450,12 @@ Develop age-appropriate informed consent and assent protocols for children and a
 Recruit pediatric participants and their families for studies examining brain development or neurodevelopmental disorders.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Acquire pediatric neuroimaging data using child-friendly protocols that minimize motion artifacts and participant distress.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Obtain structural and functional brain imaging data to assess developmental changes in neural connectivity and morphology.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
+Harmonize developmental assessment scores across different versions of standardized instruments or age-normed scales.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Develop and calibrate analysis methods for extracting quantitative measurements from optical imaging data,Data Gathering,field,Life Sciences,Neuroscience,
 Breed and stage animal cohorts to obtain subjects at developmental time points corresponding to the human window of interest.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Establish where and how a gene acts in neural development using mutant-background and cell-type-restricted rescue experiments.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Assay the self-renewal and differentiation potential of neural stem or progenitor cells using clonal or in vivo potency assays.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Conduct parallel analyses in a second species to test whether developmental findings generalize across species.,Data Gathering,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
-Harmonize developmental assessment scores across different versions of standardized instruments or age-normed scales.,Data Analysis,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Analyze developmental trajectories of brain structure or function across multiple time points using growth curve modeling.,Data Analysis,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Estimate effects of early-life exposures on neurodevelopmental outcomes while controlling for socioeconomic and environmental confounders.,Data Analysis,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
 Characterize marker expression across neural cell populations and regions to define cell-type or tissue-selective identities.,Data Analysis,subfield,Life Sciences,Neuroscience,Developmental Neuroscience
@@ -5467,12 +5467,14 @@ Determine optimal sample sizes for neuroimaging studies using power analyses spe
 Develop and optimize MRI acquisition protocols including sequence parameters for structural and functional imaging.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
 Acquire functional MRI data during task performance or resting-state conditions to measure brain activity.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
 Collect diffusion-weighted imaging data to assess white matter microstructure and connectivity.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
+Harmonize neuroimaging data acquired across different scanner platforms or acquisition protocols.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
+"Preprocess neuroimaging data through standardized pipelines including motion correction, spatial normalization, and smoothing.",Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
+Segment brain images into tissue types or anatomical regions for volumetric analysis.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
 Administer standardized clinical and neuropsychological assessments to participants to characterize their phenotypes,Data Gathering,field,Life Sciences,Neuroscience,
 Develop and release open-source software implementing neuroimaging analysis methods for community use.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
 Select and administer radiotracers with specified dose and timing to acquire PET data of molecular targets.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
-Harmonize neuroimaging data acquired across different scanner platforms or acquisition protocols.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
-"Preprocess neuroimaging data through standardized pipelines including motion correction, spatial normalization, and smoothing.",Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
-Segment brain images into tissue types or anatomical regions for volumetric analysis.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
+"Produce and quality-control standardized resources, such as reference atlases or radiolabeled tracers, for brain imaging",Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
+Compute hemispheric laterality or asymmetry indices from paired regional brain measures.,Data Gathering,subfield,Life Sciences,Neuroscience,Neuroimaging
 Analyze longitudinal neuroimaging data to track disease progression or treatment response over time.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
 Model functional connectivity patterns between brain regions while controlling for physiological noise and head motion.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
 Perform statistical analyses on neuroimaging data while correcting for multiple comparisons across brain voxels or regions.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
@@ -5482,8 +5484,6 @@ Develop and benchmark quantitative analysis methods for extracting measures from
 Extract regional BOLD signal measures from defined brain regions to quantify activity amplitude or dynamics.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
 Re-run analyses under alternative parameter or pipeline choices to test the robustness of neuroimaging findings.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
 Apply kinetic modeling to dynamic PET data to quantify receptor binding or metabolic rate.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
-"Produce and quality-control standardized resources, such as reference atlases or radiolabeled tracers, for brain imaging",Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
-Compute hemispheric laterality or asymmetry indices from paired regional brain measures.,Data Analysis,subfield,Life Sciences,Neuroscience,Neuroimaging
 "Formulate hypotheses about neural circuit mechanisms underlying sensory processing, motor control, or homeostatic regulation.",Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Develop theoretical models linking neural activity patterns to behavioral or physiological outcomes.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 "Design experiments with appropriate sensory stimuli, behavioral paradigms, and neural recording protocols to test circuit-level hypotheses.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
@@ -5495,18 +5495,18 @@ Implement data security protocols for neuroimaging datasets containing identifia
 "Administer standardized assessments of sensory perception, vestibular function, or autonomic regulation.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 "Acquire functional or structural brain imaging data using MRI, fMRI, PET, or CT protocols optimized for neural systems of interest.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 "Record electrophysiological signals from human participants using EEG, MEG, or intracranial electrodes.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
+"Harmonize neural signal data across different recording systems, electrode configurations, or imaging protocols.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
+Standardize sensory stimulus parameters and behavioral task variables across experimental sessions or sites.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
+Map the spatial distribution of labeled projections or molecular markers across anatomically defined brain regions.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Obtain in vivo physiological measurements from animals to characterize neural or vascular function,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
+Detect discrete transient events in continuous neural signals using empirically defined criteria.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Acquire continuous behavioral tracking data such as video kinematics or locomotor activity during experiments.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Sort extracellular voltage recordings into single- and multi-unit spike trains.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Record peripheral physiological signals synchronized with neural or imaging measurements.,Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 "Map anatomical connectivity between neural populations using anterograde, retrograde, or transneuronal tracing.",Data Gathering,subfield,Life Sciences,Neuroscience,Systems Neuroscience
-"Harmonize neural signal data across different recording systems, electrode configurations, or imaging protocols.",Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
-Standardize sensory stimulus parameters and behavioral task variables across experimental sessions or sites.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Analyze longitudinal changes in neural function or sensory performance following intervention or disease progression.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Apply statistical methods to isolate treatment effects on neural activity from baseline physiological variability.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Characterize recorded units or delivered stimuli by their measured properties to define experimental categories,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
-Map the spatial distribution of labeled projections or molecular markers across anatomically defined brain regions.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
-Detect discrete transient events in continuous neural signals using empirically defined criteria.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Analyze temporal relationships between simultaneously recorded neural signals to infer functional coupling.,Data Analysis,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Coordinate with neurology or otolaryngology clinics for patient recruitment and access to clinical neurophysiology data.,Administration,subfield,Life Sciences,Neuroscience,Systems Neuroscience
 Formulate hypotheses about neural coding mechanisms underlying sensory processing or motor control.,Ideation & Hypothesis Generation,subfield,Life Sciences,Neuroscience,Computational Neuroscience
@@ -5518,8 +5518,8 @@ Ensure compliance with regulations governing implantable neural devices and inve
 Recruit participants with specific neurological conditions or healthy controls for brain recording studies.,Data Gathering,subfield,Life Sciences,Neuroscience,Computational Neuroscience
 "Acquire electrophysiological data from EEG, ECoG, or other neural recording modalities.",Data Gathering,subfield,Life Sciences,Neuroscience,Computational Neuroscience
 Collect functional neuroimaging data synchronized with behavioral or cognitive tasks.,Data Gathering,subfield,Life Sciences,Neuroscience,Computational Neuroscience
-"Harmonize neural signal features across different recording systems, electrode configurations, or acquisition sites.",Data Analysis,subfield,Life Sciences,Neuroscience,Computational Neuroscience
-Standardize preprocessing pipelines for neural data collected under varying experimental conditions.,Data Analysis,subfield,Life Sciences,Neuroscience,Computational Neuroscience
+"Harmonize neural signal features across different recording systems, electrode configurations, or acquisition sites.",Data Gathering,subfield,Life Sciences,Neuroscience,Computational Neuroscience
+Standardize preprocessing pipelines for neural data collected under varying experimental conditions.,Data Gathering,subfield,Life Sciences,Neuroscience,Computational Neuroscience
 Analyze temporal dynamics of neural responses to characterize information processing timescales.,Data Analysis,subfield,Life Sciences,Neuroscience,Computational Neuroscience
 Estimate neural biomarker associations with clinical outcomes while controlling for demographic and disease-related confounders.,Data Analysis,subfield,Life Sciences,Neuroscience,Computational Neuroscience
 Coordinate with neurology clinics or neurosurgery centers for access to patient populations and intracranial recordings.,Administration,subfield,Life Sciences,Neuroscience,Computational Neuroscience
@@ -5529,18 +5529,18 @@ Design clinical trials evaluating pharmacological or neuromodulation interventio
 Select validated neurological outcome measures and rating scales appropriate for the target condition and patient population.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 "Establish inclusion and exclusion criteria based on neurological diagnosis, disease stage, and comorbidities.",Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Develop consent procedures accommodating patients with cognitive impairment or communication deficits.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
+Harmonize neurological rating scale scores and diagnostic classifications across multi-site studies.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Characterize patients and their disease course through observational clinical assessment without intervention,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 "Process tissue specimens through fixation, embedding, sectioning, and staining to prepare sections for microscopic examination.",Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Perform gross pathological examination of postmortem brain and other organs to identify macroscopic lesions.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
+Grade and map the severity and distribution of disease-related pathology across tissue regions to establish diagnostic staging.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Perform and interpret clinical neurophysiological studies to detect and localize neurological abnormalities.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Develop or adapt clinical rating instruments and scoring metrics for conditions lacking suitable validated measures.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Quantify metabolite profiles in biological samples using mass spectrometry-based assays.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 "Acquire clinical imaging of extracranial structures, such as the retina or cervical arteries, to assess neurological disease markers.",Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Perform clinical neurological examinations and diagnostic laboratory workups to characterize individual patients' deficits.,Data Gathering,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
-Harmonize neurological rating scale scores and diagnostic classifications across multi-site studies.,Data Analysis,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Analyze time-to-event outcomes for neurological disease milestones such as disability progression or relapse.,Data Analysis,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Estimate treatment effects on neurological outcomes while adjusting for baseline disease severity and comorbidities.,Data Analysis,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
-Grade and map the severity and distribution of disease-related pathology across tissue regions to establish diagnostic staging.,Data Analysis,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 "Quantify evoked potential component features, such as latency and amplitude, from neurophysiological recordings.",Data Analysis,subfield,Life Sciences,Neuroscience,Clinical Neuroscience
 Formulate hypotheses about how specific micronutrients regulate metabolic pathways and chronic disease risk.,Ideation & Hypothesis Generation,subfield,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
 "Develop research questions on vitamin D status and its relationships to musculoskeletal, immune, and metabolic health.",Ideation & Hypothesis Generation,subfield,Health Sciences,Nutrition & Dietetics,Human Nutrition & Metabolism
@@ -5644,7 +5644,7 @@ Collect primary data on moral reasoning patterns through structured ethical dile
 Appraise whether the empirical evidence and methods invoked in a normative argument can bear the evidential weight placed on them,Data Gathering,subfield,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
 "Code qualitative data to identify recurring moral themes, ethical principles, or patterns of normative reasoning.",Data Analysis,subfield,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
 Account for researcher positionality and normative commitments when interpreting data on moral beliefs or practices.,Data Analysis,subfield,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
-"Coordinate with religious institutions, advocacy organizations, or professional bodies to access participants for ethics research.",Administration,subfield,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
+"Coordinate with religious institutions, advocacy organizations, or professional bodies to access participants for ethics research.",Data Analysis,subfield,Arts & Humanities,Philosophy,Ethics & Moral Philosophy
 Situate research questions within established interpretive traditions or schools of philosophical thought.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,History of Philosophy
 Frame historical philosophical problems in relation to contemporary scholarly debates about their meaning and significance.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,History of Philosophy
 "Assess whether interpretations of philosophical texts apply across different periods, cultural contexts, or linguistic traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,History of Philosophy
@@ -5671,7 +5671,7 @@ Collect survey data on philosophical intuitions to test hypotheses about folk ep
 Compile and analyze historical philosophical texts and commentaries as primary sources for interpretive scholarship.,Data Gathering,subfield,Arts & Humanities,Philosophy,Metaphysics & Epistemology
 "Code participant responses to philosophical vignettes for patterns in intuitive judgments about knowledge, causation, or moral responsibility.",Data Analysis,subfield,Arts & Humanities,Philosophy,Metaphysics & Epistemology
 Control for demographic and cultural variables when analyzing cross-cultural data on philosophical intuitions.,Data Analysis,subfield,Arts & Humanities,Philosophy,Metaphysics & Epistemology
-Coordinate with psychology or cognitive science departments to recruit participants for interdisciplinary studies on reasoning and belief formation.,Administration,subfield,Arts & Humanities,Philosophy,Metaphysics & Epistemology
+Coordinate with psychology or cognitive science departments to recruit participants for interdisciplinary studies on reasoning and belief formation.,Data Analysis,subfield,Arts & Humanities,Philosophy,Metaphysics & Epistemology
 "Engage with theories of meaning, reference, or speech acts when framing research questions about language use.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Logic & Philosophy of Language
 Draw on formal logic or argumentation theory to structure analyses of reasoning patterns in discourse.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Logic & Philosophy of Language
 "Assess whether linguistic or argumentative patterns identified in specific texts generalize across genres, languages, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Logic & Philosophy of Language
@@ -5702,7 +5702,7 @@ Compile archival materials from scientific institutions to reconstruct historica
 Prepare and standardize textual data from scientific publications for systematic philosophical analysis.,Data Analysis,subfield,Arts & Humanities,Philosophy,Philosophy of Science
 Code interview transcripts from scientists to identify patterns in epistemic reasoning and methodological justification.,Data Analysis,subfield,Arts & Humanities,Philosophy,Philosophy of Science
 Analyze scientific texts to categorize argumentative structures and inferential patterns used by researchers.,Data Analysis,subfield,Arts & Humanities,Philosophy,Philosophy of Science
-Negotiate access to laboratory settings or research groups for observational studies of scientific practice.,Administration,subfield,Arts & Humanities,Philosophy,Philosophy of Science
+Negotiate access to laboratory settings or research groups for observational studies of scientific practice.,Data Analysis,subfield,Arts & Humanities,Philosophy,Philosophy of Science
 "Situate research questions within phenomenological, hermeneutic, or critical theoretical frameworks to establish philosophical grounding.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Continental Philosophy
 "Engage with existentialist concepts of subjectivity, freedom, and authenticity when formulating philosophical inquiries.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Continental Philosophy
 Assess whether interpretations of philosophical texts remain valid across different historical and cultural contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Philosophy,Continental Philosophy
@@ -6695,10 +6695,10 @@ Recode open-ended responses about religious identity and spiritual experiences i
 "Analyze textual data from sermons, religious texts, or faith-based media for content and discourse patterns.",Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
 Address self-selection into religious communities when analyzing observational data on religion and social outcomes.,Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
 Control for confounding between religious participation and sociodemographic characteristics in statistical analyses.,Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
+"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
+Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
 "Apply qualitative trustworthiness procedures, such as member checking and triangulation, to validate interpretive findings on religious life.",Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
 "Interpret non-textual religious forms, such as ritual prohibitions or material culture, for their symbolic and social meanings.",Data Analysis,subfield,Arts & Humanities,Religion,Religion & Society
-"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",Administration,subfield,Arts & Humanities,Religion,Religion & Society
-Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,Administration,subfield,Arts & Humanities,Religion,Religion & Society
 Apply doctrinal frameworks from Buddhist philosophical traditions to frame research questions about religious practice and belief.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
 Situate research questions within historical lineages and sectarian developments of Eastern religious traditions.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
 Assess whether findings from studies of specific Buddhist communities or texts apply across different regional traditions and historical periods.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
@@ -6713,7 +6713,7 @@ Adapt doctrinal concepts into frameworks addressing contemporary secular issues 
 "Reconstruct the content and structure of lost or fragmentary texts from citations, paraphrases, and surviving translations preserved in other works.",Data Gathering,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
 Transcribe and prepare textual data from primary sources in classical Asian languages for analysis.,Data Analysis,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
 "Code ethnographic field notes and interview transcripts for themes related to religious identity, ritual practice, and doctrinal interpretation.",Data Analysis,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
-"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",Administration,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
+"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",Data Analysis,subfield,Arts & Humanities,Religion,Buddhist & Eastern Religions
 "Engage with theological doctrines, ethical frameworks, or religious traditions when framing research questions about moral reasoning or religious practice.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Theology & Ethics
 "Assess whether theological or ethical claims apply across different religious traditions, denominations, or cultural contexts.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Theology & Ethics
 Apply established doctrinal and interpretive methods to scriptural texts or cases to reach normative conclusions,Ideation & Hypothesis Generation,field,Arts & Humanities,Religion,
@@ -6725,7 +6725,7 @@ Apply established doctrinal and interpretive methods to scriptural texts or case
 Critically examine the epistemological assumptions and disciplinary structures underlying theological scholarship.,Data Gathering,subfield,Arts & Humanities,Religion,Theology & Ethics
 "Code qualitative data for theological themes, ethical concepts, or patterns of religious meaning-making.",Data Analysis,subfield,Arts & Humanities,Religion,Theology & Ethics
 Account for denominational or theological diversity when analyzing patterns in religious attitudes or ethical positions.,Data Analysis,subfield,Arts & Humanities,Religion,Theology & Ethics
-"Coordinate with religious institutions, congregations, or faith-based organizations to recruit participants or access community settings.",Administration,subfield,Arts & Humanities,Religion,Theology & Ethics
+"Coordinate with religious institutions, congregations, or faith-based organizations to recruit participants or access community settings.",Data Analysis,subfield,Arts & Humanities,Religion,Theology & Ethics
 "Engage with systematic theology, biblical hermeneutics, or ecclesiological frameworks when formulating research questions about Christian belief and practice.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Christian Theology
 Assess whether theological findings from specific denominational or cultural contexts apply to broader Christian traditions or global Christianity.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Christian Theology
 "Design survey instruments to measure religious beliefs, spiritual practices, or congregational experiences among Christian populations.",Data Gathering,subfield,Arts & Humanities,Religion,Christian Theology
@@ -6735,7 +6735,7 @@ Assess whether theological findings from specific denominational or cultural con
 "Access denominational archives, church records, or historical theological documents for secondary data analysis.",Data Gathering,subfield,Arts & Humanities,Religion,Christian Theology
 "Code qualitative data from interviews or testimonies for theological themes, doctrinal positions, or spiritual experiences.",Data Analysis,subfield,Arts & Humanities,Religion,Christian Theology
 "Account for denominational, regional, or socioeconomic confounders when analyzing patterns in Christian belief or practice.",Data Analysis,subfield,Arts & Humanities,Religion,Christian Theology
-"Coordinate with churches, denominational bodies, or parachurch organizations to access participants or archival materials for research.",Administration,subfield,Arts & Humanities,Religion,Christian Theology
+"Coordinate with churches, denominational bodies, or parachurch organizations to access participants or archival materials for research.",Data Analysis,subfield,Arts & Humanities,Religion,Christian Theology
 Apply classical and contemporary Islamic legal theories when framing research questions about Muslim communities and practices.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Islamic Studies
 Engage with theories of religious authority and transmission to contextualize institutional dynamics in Muslim societies.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Islamic Studies
 Assess whether findings about Muslim communities in one region or sect will generalize to other Islamic contexts and traditions.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Islamic Studies
@@ -6756,8 +6756,8 @@ Code qualitative data using thematic frameworks derived from Islamic theological
 "Analyze interview transcripts for themes related to religious identity, practice, and community belonging.",Data Analysis,subfield,Arts & Humanities,Religion,Islamic Studies
 Account for selection bias when studying Muslim populations who may be underrepresented or difficult to access.,Data Analysis,subfield,Arts & Humanities,Religion,Islamic Studies
 "Address confounding variables related to ethnicity, nationality, and sectarian affiliation in observational studies of Muslims.",Data Analysis,subfield,Arts & Humanities,Religion,Islamic Studies
-"Coordinate with mosques, Islamic centers, and Muslim organizations to recruit study participants.",Administration,subfield,Arts & Humanities,Religion,Islamic Studies
-Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,Administration,subfield,Arts & Humanities,Religion,Islamic Studies
+"Coordinate with mosques, Islamic centers, and Muslim organizations to recruit study participants.",Data Analysis,subfield,Arts & Humanities,Religion,Islamic Studies
+Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,Data Analysis,subfield,Arts & Humanities,Religion,Islamic Studies
 Apply theories of religious syncretism and hybridity when framing research questions about cross-cultural religious phenomena.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Comparative Religion
 "Engage with phenomenological and hermeneutical frameworks to interpret religious beliefs, practices, and experiences across traditions.",Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Comparative Religion
 Assess whether interpretations of religious concepts and practices translate meaningfully across different cultural and linguistic contexts.,Ideation & Hypothesis Generation,subfield,Arts & Humanities,Religion,Comparative Religion
@@ -6773,7 +6773,7 @@ Design focus group protocols to explore how communities interpret and negotiate 
 "Code qualitative data for recurring religious themes, symbols, and theological concepts across traditions.",Data Analysis,subfield,Arts & Humanities,Religion,Comparative Religion
 Develop coding schemes that capture emic religious categories while enabling cross-traditional comparison.,Data Analysis,subfield,Arts & Humanities,Religion,Comparative Religion
 Account for researcher positionality and confessional bias when analyzing data on religious communities.,Data Analysis,subfield,Arts & Humanities,Religion,Comparative Religion
-"Coordinate with religious institutions, leaders, and communities to gain access for fieldwork and participant recruitment.",Administration,subfield,Arts & Humanities,Religion,Comparative Religion
+"Coordinate with religious institutions, leaders, and communities to gain access for fieldwork and participant recruitment.",Data Analysis,subfield,Arts & Humanities,Religion,Comparative Religion
 "Apply theories of social reproduction, cumulative advantage, or intersectionality when framing research questions about inequality.",Ideation & Hypothesis Generation,subfield,Social Sciences,Sociology,Social Stratification & Inequality
 Situate research questions within debates about structural versus individual explanations for stratification outcomes.,Ideation & Hypothesis Generation,subfield,Social Sciences,Sociology,Social Stratification & Inequality
 Assess whether stratification patterns observed in one national context generalize to societies with different welfare regimes or labor market structures.,Ideation & Hypothesis Generation,subfield,Social Sciences,Sociology,Social Stratification & Inequality
@@ -7072,7 +7072,6 @@ Develop informed consent procedures appropriate for different survey modes and r
 Implement probability-based sampling designs to achieve representative coverage of target populations.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
 Administer surveys across multiple modes while monitoring data quality indicators during fieldwork.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
 Deploy contact and follow-up strategies to maximize response rates and minimize nonresponse bias.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
-Access and harmonize survey data from cross-national or longitudinal survey programs for secondary analysis.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
 Design randomized experiments embedded within ongoing studies to test the effects of procedural or design features on study outcomes.,Data Gathering,field,Formal Sciences,Statistics,
 Recruit and stratify participants from non-probability sources on key characteristics to approximate the composition of a target group.,Data Gathering,field,Formal Sciences,Statistics,
 "Estimate and compare the monetary and staff-time costs of alternative survey design, mode, or recruitment strategies to inform design decisions.",Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
@@ -7081,14 +7080,15 @@ Conduct small-scale pilot fieldings to estimate operational parameters such as c
 Develop interviewer training and standardization protocols to control interviewer-related measurement error.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
 Solicit expert and stakeholder review of draft questionnaires to assess content validity before fielding with respondents.,Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
 "Test the technical rendering, transmission, and functionality of electronic survey instruments across devices, browsers, and systems.",Data Gathering,subfield,Formal Sciences,Statistics,Survey Methodology
+Access and harmonize survey data from cross-national or longitudinal survey programs for secondary analysis.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Process paradata and response timing data to identify problematic response patterns and satisficing behavior.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Apply weighting adjustments to correct for unequal selection probabilities and differential nonresponse.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Estimate and adjust for nonresponse bias using auxiliary data and propensity score methods.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Calculate design-based variance estimates that account for complex sampling features including stratification and clustering.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Impute missing survey data using appropriate methods to reduce bias from item nonresponse.,Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
+"Negotiate access to sampling frames with organizations, government agencies, or commercial vendors.",Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
 Code information from documents or open-ended responses into structured variables using standardized coding instruments to create analyzable data.,Data Analysis,field,Formal Sciences,Statistics,
 "Calculate standardized response rate metrics, adjusting denominators for estimated ineligible or unreachable sampling units.",Data Analysis,subfield,Formal Sciences,Statistics,Survey Methodology
-"Negotiate access to sampling frames with organizations, government agencies, or commercial vendors.",Administration,subfield,Formal Sciences,Statistics,Survey Methodology
 Frame research questions around causal inference frameworks to estimate treatment effects in health outcomes.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Statistics,Biostatistics
 Assess generalizability of statistical findings across diverse patient populations and clinical settings.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Statistics,Biostatistics
 Evaluate transportability of effect estimates from study samples to external target populations.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Statistics,Biostatistics
@@ -7097,12 +7097,11 @@ Assess whether chosen outcome measures or performance metrics capture clinically
 Design case report forms to standardize collection of clinical and demographic variables across study sites.,Data Gathering,subfield,Formal Sciences,Statistics,Biostatistics
 "Prepare statistical analysis plans specifying primary endpoints, sample size justification, and analysis methods for IRB submission.",Data Gathering,subfield,Formal Sciences,Statistics,Biostatistics
 Develop data safety monitoring plans to guide interim analyses and stopping rules for clinical trials.,Data Gathering,subfield,Formal Sciences,Statistics,Biostatistics
-Extract and harmonize data from electronic health records for epidemiological analysis.,Data Gathering,subfield,Formal Sciences,Statistics,Biostatistics
-Acquire and integrate publicly available genomic or clinical datasets for secondary analysis.,Data Gathering,subfield,Formal Sciences,Statistics,Biostatistics
-Search bibliographic databases against predefined eligibility criteria to assemble a systematic sample of published studies for analysis.,Data Gathering,field,Formal Sciences,Statistics,
 Develop reporting guidelines or frameworks that specify standards for communicating and appraising studies in a research field.,Data Gathering,field,Formal Sciences,Statistics,
 Conduct multi-round expert rating processes with structured feedback and agreement criteria to reach consensus judgments.,Data Gathering,field,Formal Sciences,Statistics,
 "Construct and calibrate sequential monitoring procedures, such as control charts, to detect shifts in a process across successive samples.",Data Gathering,field,Formal Sciences,Statistics,
+Extract and harmonize data from electronic health records for epidemiological analysis.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
+Acquire and integrate publicly available genomic or clinical datasets for secondary analysis.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
 Implement propensity score methods to adjust for confounding in observational health studies.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
 Apply survival analysis techniques to model time-to-event outcomes with censored data.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
 Conduct meta-analyses using random-effects models to synthesize treatment effects across heterogeneous studies.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
@@ -7110,6 +7109,7 @@ Assess and quantify heterogeneity and publication bias in systematic reviews.,Da
 Develop and validate risk prediction models using regression and machine learning approaches.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
 Fit mixed-effects models to account for clustering in multi-site or longitudinal health data.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
 Handle missing data through multiple imputation or other principled statistical methods.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
+Search bibliographic databases against predefined eligibility criteria to assemble a systematic sample of published studies for analysis.,Data Analysis,field,Formal Sciences,Statistics,
 Rate published studies against methodological or reporting standards to characterize the quality of statistical practice.,Data Analysis,field,Formal Sciences,Statistics,
 "Convert effect or cost-effectiveness estimates into alternative, more interpretable metrics to support end-user decision-making.",Data Analysis,field,Formal Sciences,Statistics,
 Train and calibrate raters or coders to standardize application of rating and extraction instruments.,Data Analysis,subfield,Formal Sciences,Statistics,Biostatistics
@@ -7134,7 +7134,7 @@ Specify informative or weakly informative prior distributions based on domain kn
 Determine sample sizes or data collection conditions by optimizing prespecified design criteria for the intended inference.,Ideation & Hypothesis Generation,subfield,Formal Sciences,Statistics,Bayesian Statistics
 Design measurement protocols that capture uncertainty and variability needed for probabilistic modeling.,Data Gathering,subfield,Formal Sciences,Statistics,Bayesian Statistics
 Develop data collection instruments that elicit prior beliefs or subjective probability judgments from respondents.,Data Gathering,subfield,Formal Sciences,Statistics,Bayesian Statistics
-Acquire benchmark datasets with known ground truth for validating Bayesian inference procedures.,Data Gathering,subfield,Formal Sciences,Statistics,Bayesian Statistics
+Acquire benchmark datasets with known ground truth for validating Bayesian inference procedures.,Data Analysis,subfield,Formal Sciences,Statistics,Bayesian Statistics
 Structure observed data into likelihood functions appropriate for Bayesian model specification.,Data Analysis,subfield,Formal Sciences,Statistics,Bayesian Statistics
 Implement Markov chain Monte Carlo sampling algorithms to estimate posterior distributions.,Data Analysis,subfield,Formal Sciences,Statistics,Bayesian Statistics
 Conduct posterior predictive checks to assess model fit and identify systematic discrepancies.,Data Analysis,subfield,Formal Sciences,Statistics,Bayesian Statistics
