@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 6 domains, 34 fields, and 318 subfields, with 7,257 released task statements (27 universal, 134 domain, 321 field, and 6,775 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 6 domains, 34 fields, and 318 subfields, with 7,259 released task statements (27 universal, 134 domain, 321 field, and 6,777 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -101,6 +101,16 @@ If you use this dataset, please cite the SciNet project and this repository, for
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
 
 ## Changelog
+
+### 2026-08-05 — v1.3.1
+
+- **Expert-reviewed tasks are now flagged.** `tasks.csv` gains an
+  `expert_input` column naming the researcher whose review produced a task's
+  wording; the website marks the same tasks with a gold seal. The first four
+  are in Public Health & Epidemiology / Epidemiologic Methods & Study Design,
+  from Jade Benjamin-Chung's review — two rewordings and two added tasks, hence
+  6,775 -> 6,777 subfield tasks. A reworded task keeps its substeps and time:
+  those stay joined to it through its pre-edit wording.
 
 ### 2026-08-04 — v1.3
 
