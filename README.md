@@ -1,16 +1,16 @@
 # SciNet
 
-SciNet is a task-level database of scientific research. For every scientific discipline it lists the tasks that researchers perform, organised into 6 domains, 34 fields, and 318 subfields. The release contains 7,259 task statements: 27 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level. Every task also comes with a breakdown into substeps, an estimate of how long it takes, and ratings of how important it is, what share of researchers do it, and how often they do it. Those ratings and time estimates are given separately for each subfield in which a task appears.
+SciNet is a database documenting which tasks researchers perform across all scientific disciplines. It is modeled after O*NET, the US Department of Labor's database of the tasks performed in every occupation in the US economy. It is generated primarily through large language models, and validated against published papers, laboratory protocols, and data on scientific occupations in O*NET.
+
+SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, database contains  6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimen"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ is a task belonging to the subfield of Biological & Physical Anthropology. The release contains 7,259 task statements: 27 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
+
+For each task, the data contain a list of all substeps required to perform that task, as well as an estimate of:
+1. How long the task takes to perform
+2. How important the task is
+3. How frequently researchers perform a task
+4. What share of researchers perform that task
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
-
-## Overview
-
-Each task is filed at the level it belongs to. A universal task applies to research everywhere, a domain or field task applies to a whole domain or field, and a subfield task applies to one subfield. A subfield therefore inherits the broader tasks above it instead of repeating them.
-
-Task statements are written by large language models and then measured against published papers. A model reads each paper and decides, task by task, whether the paper performed that task. The share of papers that did is the task's prevalence, released in `task_prevalence.csv`. A newly proposed task enters the taxonomy once it is performed in at least 5% of a subfield's papers.
-
-The files in [`data/`](data/) are released for replication and downstream research.
 
 ## Data files
 
@@ -58,7 +58,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `substep_id` | `S1`, `S2`, and so on, in workflow order |
 | `substep` | What the researcher does at this step |
 
-**`task_time.csv`** has one row per task per subfield it appears in, because the same task is a different job in different subfields. Across the 140 tasks that reach five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` between its cheapest and its most expensive subfield, and by a factor of 4.1 in `elapsed_hours`.
+**`task_time.csv`** has one row per task per subfield it appears in, because the same task can correspond to a different job in different subfields. Across the 140 tasks that reach five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` across all its corresponding subfields, and by a factor of 4.1 in `elapsed_hours`.
 
 | Column | Description |
 |--------|-------------|
@@ -70,9 +70,8 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `elapsed_hours` | Calendar time for one instance, including unattended waiting such as incubations, cluster jobs, and review boards. Never less than `researcher_hours` |
 | `confidence` | Most common per-substep confidence: `high`, `medium`, or `low` |
 
-Both time columns are model estimates rather than measurements. They assume a competent researcher with the standard tools of the subfield and no generative AI assistant, so they describe the work as it was done before LLM assistance.
 
-**`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task, so SciNet ratings can be compared against occupational data directly. O\*NET publishes Relevance as the share of workers for whom the task is part of the job. It is released here as `pct_researchers`, since in a research setting the population is researchers.
+**`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task.
 
 | Column | Description |
 |--------|-------------|
@@ -84,7 +83,7 @@ Both time columns are model estimates rather than measurements. They assume a co
 | `frequency` | 1 = Yearly or less, 2 = More than yearly, 3 = More than monthly, 4 = More than weekly, 5 = Daily, 6 = More than daily, 7 = Hourly or more |
 | `classification` | `Core` if `importance` is at least 3 and `pct_researchers` is at least 67, otherwise `Supplemental`. This is O\*NET's rule |
 
-**`task_prevalence.csv`** records what papers actually show researchers doing, and is the measure the ratings are compared against. Papers from each subfield were read and scored for whether each task was performed. The run covered 34 fields and 31,526 papers. It covers subfield-level tasks in 316 subfields. Field, domain, and universal tasks have no per-paper measurement.
+**`task_prevalence.csv`** We selected a sample of papers from each subfield and asked an LLM to verify whether each task was likely performed by the researchers when conducting their research. 
 
 | Column | Description |
 |--------|-------------|
@@ -94,30 +93,11 @@ Both time columns are model estimates rather than measurements. They assume a co
 | `n_involved` | Number of papers where the task was stated explicitly or clearly implied |
 | `prevalence` | `n_involved` divided by `n_papers` |
 
-## Validation
-
-The ratings are checked against two sources outside SciNet.
-
-**Against human experts.** O\*NET publishes the same three scales rated by people who hold each occupation. On 425 researcher-relevant task-occupation pairs across 40 scientific occupations, the SciNet ratings correlate with those human ratings at r = 0.66 for importance, 0.63 for share of researchers, and 0.75 for frequency. Mean bias is under 1 point on every scale, so the ratings sit at roughly the right level and not only in the right order.
-
-**Against what papers show.** Comparing the ratings to `task_prevalence.csv` across 4,936 task-subfield cells and 31,526 papers gives rank correlations of 0.56 for importance, 0.61 for share of researchers, and 0.53 for frequency. These hold within subfields, so they are not driven by some fields being busier than others. The two measures are not the same quantity, since a task that every researcher does occasionally still appears in few papers, so rank agreement is the meaningful test rather than agreement in levels.
-
-The `Core` and `Supplemental` split behaves as intended. Tasks marked `Core` appear in 20.6% of papers on average, against 4.4% for those marked `Supplemental`.
-
-Two further checks. Importance and `pct_researchers` correlate with each other at 0.83, so they are close to a single measure and the two conditions in the `Core` rule are not independent screens. The ratings correlate negatively with the time estimates, at -0.32 between frequency and elapsed hours, which says that tasks many researchers do often are the short routine ones. Nothing in the rating prompt mentions duration, so that relationship is not built in.
-
-**The time estimates are checked against published protocols.** protocols.io publishes laboratory protocols whose individual steps carry durations entered by the authors. Each SciNet substep was matched to protocol steps by embedding similarity and then verified by a model. On the 769 exact matches covering 383 substeps in wet-lab fields, the elapsed-time estimate correlates with the observed duration at r = 0.53 in logs.
-
-That figure is best read against how well protocols.io agrees with itself. Taking the protocol steps matched to one substep and splitting them into one step and the rest, a single real protocol step predicts the rest at r = 0.44, while the SciNet estimate predicts them at r = 0.55. The estimate therefore forecasts how long a step takes at least as well as another real protocol does. Correcting for how noisy the benchmark is implies a correlation with the true duration of about 0.70.
-
-Coverage is the main limitation. Protocol durations are timers on waiting rather than on hands-on work, only 14% of steps carry one, and the corpus is concentrated in wet-lab fields. The comparison therefore validates `elapsed_hours` in experimental settings and says little about theoretical or computational work.
-
 ## Methodology
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
 
-This README describes what is in the release and how to read it. [METHODOLOGY.md](METHODOLOGY.md) describes how it was built, covering the taxonomy, the task-generation prompts and coverage thresholds, the paper-validation pipeline, the protocols.io matching, and the O\*NET calibration behind the ratings.
-
+ [METHODOLOGY.md](METHODOLOGY.md) describes how SciNet was built and validated
 For the research paper when available and for project updates, see the [Stanford project page](https://www.lukasalthoff.com).
 
 ## Citation
