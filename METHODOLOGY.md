@@ -24,31 +24,44 @@ This document describes how SciNet was built.
 
 ## 1. Taxonomy
 
-### 2.1 Starting point
+### 1.1 An independent taxonomy
 
-SciNet's taxonomy builds on [OpenAlex](https://openalex.org/), a free and open catalog of hundreds of millions of scholarly works. [OpenAlex](https://openalex.org/) classifies publications into a four-level hierarchy:
+SciNet's taxonomy is **not** derived from any existing classification. It was
+constructed independently, to track disciplinary boundaries as researchers
+themselves describe them, and has three levels:
 
 | Level | Count | Example |
 |-------|-------|---------|
-| Domain | 5 | Physical Sciences |
-| Field | 26 | Physics and Astronomy |
-| Subfield | ~250 | Condensed Matter Physics |
-| Topic | ~4,500 | Superconductivity and Magnetic Properties |
+| Domain | 6 | Physical Sciences |
+| Field | 34 | Physics & Astronomy |
+| Subfield | 318 | Condensed Matter Physics |
 
-Each [OpenAlex](https://openalex.org/) topic comes with a short summary, keywords, and (where available) a Wikipedia link. These metadata are included in [`data/openalex_topics.csv`](data/openalex_topics.csv) and serve as context in the task-generation prompts.
+The six domains are Formal Sciences, Physical Sciences, Life Sciences, Health
+Sciences, Social Sciences, and Arts & Humanities. Fields were defined to match
+how research communities are actually organized — Economics, Sociology,
+Political Science and Psychology are separate fields rather than one lump — and
+the subfields within each field were then drafted by asking a language model how
+a researcher in that field would organize its major subfields, and curated from
+there.
 
-### 2.2 Redefining fields and subfields
+The field-to-domain grouping is kept in a single canonical file
+(`code/scinet/domains.json`) with a check script that fails the build if any
+copy drifts from it. Six copies of that mapping once diverged, which shipped
+Philosophy as a Social Science in the data while the website showed it under
+Arts & Humanities.
 
-While [OpenAlex](https://openalex.org/) provides a useful starting taxonomy, its field-level groupings do not always match how researchers think of their disciplines. For example, [OpenAlex](https://openalex.org/) groups Economics, Sociology, and Psychology under a single "Social Sciences" field, but these are quite different research communities.
+### 1.2 Routing papers into subfields
 
-We addressed this by creating 34 **display fields** that more closely track disciplinary boundaries. Some [OpenAlex](https://openalex.org/) fields were **split** (e.g., "Social Sciences" became Economics, Sociology, Political Science, Psychology, etc.) and some were **merged**. This is possible because [OpenAlex](https://openalex.org/) topics — the most granular level — can be freely rearranged across new field boundaries.
+Assigning a task hierarchy is separate from assigning *papers*. To count papers
+per subfield, SciNet uses [OpenAlex](https://openalex.org/) topics purely as a
+routing layer: each OpenAlex topic is mapped to the SciNet subfield it belongs
+to, and a paper inherits the subfield of its topic. That crosswalk ships as
+[`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv).
 
-The mapping uses a two-pass approach:
-
-1. **Rule-based assignment.** Most subfields can be deterministically mapped to a display field (e.g., "Cardiology" → Medicine & Clinical Sciences). Subfields that do not map unambiguously are flagged.
-2. **LLM-based classification.** For ambiguous cases, a language model classifies the topic into one of the 34 display fields given the topic's name, keywords, and summary. Batches of up to 15 topics are processed per API call for efficiency.
-
-We then asked the language model to define the major subfields within each display field — essentially asking, "If you were a researcher in Economics, how would you organize the major subfields?" These LLM-proposed subfields replaced the [OpenAlex](https://openalex.org/) subfield labels where they were unintuitive, and we then mapped each [OpenAlex](https://openalex.org/) topic into the newly defined subfields.
+Topics are **not** a level of the SciNet taxonomy and carry no tasks of their
+own. The mapping is two-pass: most topics map deterministically to a subfield,
+and a language model classifies the ambiguous remainder given the topic's name,
+keywords, and summary.
 
 ---
 
@@ -81,7 +94,7 @@ All SciNet tasks follow the [O\*NET](https://www.onetonline.org/) canonical task
 
 Tasks are written at the level of a *research team*, not a single individual. Statements describe what a typical researcher in the field *does*, not what they might occasionally do.
 
-### 3.1 Prompt design
+### 2.1 Prompt design
 
 Controlling specificity is the central design challenge. The prompt includes the [O\*NET](https://www.onetonline.org/) analyst instructions nearly verbatim, together with explicit constraints against over-specificity: "AVOID HYPERSPECIFIC TASKS," "AVOID EXAMPLES THAT ARE TOO SPECIFIC, such as hyperspecific methodologies or datasets," and "CONSOLIDATE AGGRESSIVELY — if multiple tasks require the same skills or are part of the same workflow, combine them into ONE task." Coverage thresholds (see [Section 3.4](#34-coverage-thresholds) below) push the model toward tasks that a *majority* of researchers in the area perform regularly, reinforcing the same principle.
 
@@ -91,7 +104,7 @@ Controlling specificity is the central design challenge. The prompt includes the
 
 SciNet uses a **top-down hierarchical generation** approach. Starting at the most general level (universal tasks common to all researchers), the pipeline works downward through progressively more specific levels. At each step, the language model receives all tasks already defined at parent levels and generates refinements — tasks that are genuine specializations of their parents, not repetitions of what has already been captured above. Every subfield task must map to a specific domain parent, and every topic task must map to a specific subfield parent, ensuring the full hierarchy is traceable from any topic-level task up to a universal task.
 
-### 4.1 Level structure
+### 3.1 Level structure
 
 | Level | Scope | Source | Coverage threshold |
 |-------|-------|--------|--------------------|
@@ -105,7 +118,7 @@ The topic level was generated but is **not part of the public release**: topics 
 route papers to a subfield. The released taxonomy has four levels — universal, domain, field, and
 subfield — carrying 27, 134, 321, and 6,777 tasks respectively.
 
-### 4.2 Supervised levels (Universal and Domain)
+### 3.2 Supervised levels (Universal and Domain)
 
 The universal and domain levels anchor the entire hierarchy and needed to be correct. Rather than writing these tasks from scratch, we developed them through an iterative process with Claude Opus: the model drafted candidate tasks, a researcher reviewed them, flagged issues, and the model revised — repeating until the tasks reflected the right level of granularity and mutual exclusivity. The result is LLM-generated content that has been carefully vetted.
 
@@ -117,9 +130,9 @@ The universal level ensures that tasks like grant writing, peer review, and ment
 
 **Domain tasks**
 
-Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. The public taxonomy is organized into five display domains: Social Sciences, Life Sciences, Physical Sciences, Health Sciences, and Arts & Humanities. The manually curated domain-task layer currently covers the four core methodological families used during task generation: Social Sciences, Life Sciences, Physical Sciences, and Health Sciences. These domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences.
+Domain tasks are domain-specific refinements of universal tasks, each explicitly linked to the universal task it refines. The public taxonomy is organized into six domains: Formal Sciences, Physical Sciences, Life Sciences, Health Sciences, Social Sciences, and Arts & Humanities. All six carry a curated domain-task layer, from 13 tasks in Formal Sciences to 28 in Arts & Humanities. These domain tasks capture practices characteristic of an entire research domain that would not apply across all domains — for example, IRB approval workflows in the Social Sciences and Health Sciences, instrument calibration procedures in the Physical Sciences, or biosafety protocols in the Life Sciences.
 
-### 4.3 Unsupervised levels (Subfield and Topic)
+### 3.3 Unsupervised levels (Subfield and Topic)
 
 From the subfield level downward, task generation is fully automated. The language model receives the parent-level tasks as numbered input and must produce refinements that each map to a specific parent:
 
@@ -145,13 +158,13 @@ From the subfield level downward, task generation is fully automated. The langua
 
 Each generated task includes an explicit parent ID linking it to the domain task (for subfield tasks) or subfield task (for topic tasks) it refines, enabling full parent-chain tracing from any topic-level task up to the relevant universal task.
 
-### 4.4 Coverage thresholds
+### 3.4 Coverage thresholds
 
 The coverage thresholds (70% at the subfield level, 80% at the topic level) serve a dual purpose. They push the model toward tasks that represent common, substantial research activities — analogous to [O\*NET](https://www.onetonline.org/)'s concept of "relevance" — and they push against overly specific tasks (e.g., a particular niche dataset or one-off technique) that would inflate the task count without adding representational value. The tighter threshold at the topic level reflects that topic tasks should be highly characteristic of the specific research area.
 
 **Execution:** Subfield tasks are generated in parallel using a thread pool. Topic tasks are generated via the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which processes hundreds of topics concurrently.
 
-### 4.5 Deduplication and quality control
+### 3.5 Deduplication and quality control
 
 - **Prompt-level:** The model is instructed to ensure mutual exclusivity across tasks and to avoid vague catch-all statements ("analyze data," "collect data"). Parent tasks are provided in the prompt explicitly so the model can avoid paraphrasing them.
 - **Code-level:** After parsing model responses, a normalization function deduplicates tasks by exact string match after whitespace normalization.
@@ -161,11 +174,11 @@ The coverage thresholds (70% at the subfield level, 80% at the topic level) serv
 
 ## 4. Ground Truth Data
 
-A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We collect several types of external ground-truth data — research protocols, papers, patents, and direct input from researchers — that document real research activity independently of any LLM. Each source serves both to validate existing tasks and to surface activities that may be missing.
+A central question is whether the LLM-generated tasks actually reflect what researchers do in practice. We use two sources of external ground truth that document real research activity independently of any LLM — published **research protocols** and published **papers**. Each serves both to validate existing tasks and to surface activities that are missing.
 
-### 5.1 Research Protocols
+### 4.1 Research Protocols
 
-Detailed step-by-step research protocols are our most granular ground-truth source: they describe exactly what a researcher does, in what order, at the level of individual actions. We draw on two complementary protocol corpora.
+Detailed step-by-step research protocols are our most granular ground-truth source: they describe exactly what a researcher does, in what order, at the level of individual actions.
 
 **[Protocols.io](https://www.protocols.io/)** is a platform where researchers publish laboratory and research protocols, covering a wide range of disciplines. We assembled a corpus of approximately 20,600 protocols from three sources: public protocols via the protocols.io API, unlisted protocols with DOIs indexed in [OpenAlex](https://openalex.org/), and additional protocols identified through CrossRef under the protocols.io DOI prefix (10.17504). Because protocols.io protocols carry DOIs, the vast majority can be merged with [OpenAlex](https://openalex.org/), giving us the field and — in principle — the topic each protocol belongs to. We found, however, that [OpenAlex](https://openalex.org/)'s topic-level classification for protocols was often inaccurate, so we built an LLM-based assignment pipeline to route each protocol to the correct SciNet field, subfield, and topic.
 
@@ -178,23 +191,66 @@ Each protocol is routed to the SciNet topic it best represents and then checked 
 
 With correct field routing, step coverage exceeds 85% for most protocols. Uncovered steps are not discarded: they are grouped by topic, a language model proposes new [O\*NET](https://www.onetonline.org/)-style task statements to cover them, and proposed tasks are deduplicated against existing SciNet tasks (sequence similarity threshold: 90%) before being added to the database.
 
-**[Bio-Protocol](https://bio-protocol.org/)** is a peer-reviewed journal publishing detailed experimental protocols primarily in the life sciences. A corpus of approximately 85,000 protocols was collected, each including procedure steps with durations, materials lists, and author affiliations. This corpus provides complementary coverage in molecular biology and related domains that are well-represented in Bio-Protocol but less so in protocols.io. We also collect video protocol transcripts, where researchers narrate their procedures in spoken walkthroughs, and process them through the same coverage pipeline.
+**Timing.** Protocol steps also carry author-marked durations, which is how the time estimates in `task_time.csv` are checked. Across the full corpus (26,404 protocols, 47,009 steps carrying a duration), every SciNet substep is embedded against every timed step, the closest candidates are retrieved, and a model judges each as an exact, partial, or non-match. On the 769 exact matches covering 383 substeps in wet-lab fields, our elapsed-time estimate correlates with the observed duration at r = 0.53. Because a protocol duration is a timer on waiting rather than on hands-on work, and because the same action genuinely varies between labs, the right yardstick is how well protocols.io agrees with itself: a single real protocol step predicts the other matched steps at r = 0.44, while our estimate predicts them at r = 0.55.
 
-### 5.2 Research Papers
+### 4.2 Research Papers
 
-Full-text research papers are a rich source of information about what researchers do, particularly in computational, theoretical, and social science fields that are underrepresented in laboratory protocol databases. Methods sections describe in the authors' own words the procedures, tools, and approaches used in a study. We access full-text papers through [OpenAlex](https://openalex.org/) (~474 million works), [arXiv](https://arxiv.org/) & [bioRxiv](https://www.biorxiv.org/) (~3.5 million preprints), and apply the same topic-assignment and coverage pipeline used for protocols to extract research activities and identify gaps in SciNet's task coverage.
+Protocols narrate their steps; papers do not. A paper that plainly ran a
+difference-in-differences will rarely write "we constructed a panel dataset."
+That asymmetry drives the design below, which both **tests** the listed tasks
+against papers and **finds what the list is missing**.
 
-### 5.3 Patents
+The production run covered all 34 fields and 318 subfields over 31,576 papers
+(2026-07-31 to 2026-08-03).
 
-Patent filings describe research and development processes in precise, structured language. We draw on USPTO (~9 million US patents) and PATSTAT (~150 million patent documents worldwide), and apply the same LLM-based pipeline to route patents to SciNet topics and check whether the activities described are covered by existing tasks. Patents are particularly informative for applied research and engineering topics where protocol databases have limited coverage.
+**1. Draw.** A paper's subfield is the SciNet subfield of its OpenAlex primary
+topic, through the crosswalk in §1.2 — the project's own classification, not a
+keyword match. (A keyword prototype scattered badly: an economic-history pool
+that was 4% economic history and mostly development economics.) We draw English
+journal articles from **2000–2020** — pre-ChatGPT, so no method described was
+itself AI-assisted — carrying a DOI and at least one citation, weighted by
+citations, targeting 100 usable papers per subfield.
 
-### 5.4 Human Researchers: Surveys and Expert Evaluations
+**2. Judge.** For each paper and each task in its subfield, a model returns one
+of three verdicts: *stated explicitly* (with a verbatim quote), *clearly
+implied* (the work required the task, though the paper does not narrate it), or
+*not involved*. The average over the sample is that task's **prevalence**,
+released as `task_prevalence.csv`. Quotes are the audit trail: 179 were checked
+against the papers' own text and none was invented; the residual mismatch is our
+own PDF extraction splicing footnote text into sentences.
 
-Ultimately, the most direct ground truth comes from researchers themselves. We collect two types of human input:
+**3. Elicit.** For 50 papers per subfield a model is shown the paper **but not
+the taxonomy**, and asked what research work the paper performed, with a quote
+required for each claim. Withholding the taxonomy is deliberate — showing it
+would invite matching against tasks that already exist, which step 2 already
+does properly. The point is to hear what the paper did in its own terms, so a
+genuine gap can surface.
 
-**Researcher surveys.** We are developing a survey instrument that asks researchers to evaluate SciNet tasks for their own field and topic — rating coverage (are important tasks missing?), importance, and time allocation. Responses provide direct human validation complementing the LLM-based ratings and a signal for which parts of the task database need the most attention.
+**4. Referee.** Each proposal is refereed against the tasks that already exist —
+in the subfield, in sibling subfields, and at field and domain level. The prompt
+errs towards rejection: a proposal wrongly kept can reach the taxonomy, while
+one wrongly rejected only means a task the next run can still find.
 
-**Expert evaluations.** In addition to broad surveys, we conduct structured evaluations with domain experts who review the task lists for specific subfields or topics, flagging errors, omissions, and tasks that are phrased at the wrong level of granularity. These evaluations inform iterative prompt improvements and targeted task additions.
+**5. Consolidate.** Survivors are clustered into candidate tasks, and a
+candidate is kept only if **independent papers** proposed it, with a floor of
+max(2, 3% of papers elicited). One paper describing its own method is not
+evidence of a gap; two papers arriving at the same activity independently is the
+weakest evidence worth measuring.
+
+**6. Score.** Surviving candidates are measured on a fresh sample, exactly as the
+listed tasks were, and must clear a **5% adoption bar**. Scoring runs in
+sequential waves of 25, 60 and 100 papers: after each wave a Beta–Binomial
+posterior gives the probability that the final share lands above the bar, and
+scoring stops once that probability is outside 2–98% and the standard error is
+small enough. Most candidates settle at 25 papers.
+
+**7. Raise.** A task proposed across many subfields of a field, or many fields of
+a domain, is filed once at that higher level instead of repeatedly below it.
+
+That run measured 5,405 candidate tasks, of which 4,642 cleared the 5% bar and
+359 were withheld as already covered by an existing field- or domain-level task.
+It added 2,297 tasks: 1,905 at subfield level, 327 at field level, 65 at domain
+level, each counted once at the highest level it qualifies for.
 
 ---
 
@@ -202,7 +258,7 @@ Ultimately, the most direct ground truth comes from researchers themselves. We c
 
 Beyond the task statements themselves, SciNet enriches each field and subfield with additional data that characterize research communities and the scientific landscape more broadly. This enrichment falls into three categories: task-level ratings following [O\*NET](https://www.onetonline.org/) methodology, bibliometric characteristics drawn from [OpenAlex](https://openalex.org/), and measures of AI adoption across fields.
 
-### 6.1 Task ratings (Importance, Relevance, Frequency)
+### 5.1 Task ratings (Importance, Relevance, Frequency)
 
 Following [O\*NET](https://www.onetonline.org/) methodology, each task is rated on three scales to indicate how central it is to a research area:
 
@@ -216,7 +272,7 @@ The prompt includes explicit distribution anchors calibrated against [O\*NET](ht
 
 Based on these ratings, tasks are classified as **Core** (Relevance ≥ 67% and Importance ≥ 3.0) or **Supplemental**, following [O\*NET](https://www.onetonline.org/)'s conventional rule. Earlier releases lowered the Relevance threshold to 50% to offset the downward bias in the Opus 4.5 ratings; that bias is gone, so the compensation was removed.
 
-### 6.2 Bibliometric characteristics from OpenAlex
+### 5.2 Bibliometric characteristics from OpenAlex
 
 For each SciNet field and subfield, we compute a set of bibliometric indicators from [OpenAlex](https://openalex.org/) that describe the research community's publication activity and output quality:
 
@@ -226,7 +282,7 @@ For each SciNet field and subfield, we compute a set of bibliometric indicators 
 
 These indicators are computed at the subfield level by aggregating topic-level [OpenAlex](https://openalex.org/) data and are used to contextualize task profiles — for instance, a subfield with rapidly rising AI-mention rates may have a different distribution of AI-augmentable tasks than one where AI adoption is slow.
 
-### 6.3 Verifiability and research quality indicators
+### 5.3 Verifiability and research quality indicators
 
 We construct a verifiability index for each subfield, capturing the degree to which research outputs are presented in ways that facilitate independent replication and scrutiny. The index aggregates three component measures at the topic level, weighted by paper count:
 
@@ -242,10 +298,10 @@ Each subfield receives a percentile rank on the composite index and on each comp
 
 | Component | Model | Notes |
 |-----------|-------|-------|
-| Task generation (subfield + topic) | Claude Opus 4.5 | Unsupervised hierarchical refinement |
-| Universal/domain task development | Claude Opus 4.5 | Iterative, researcher-supervised |
-| Protocols.io validation | Claude Sonnet 4.5 | Multi-phase routing and coverage |
-| Rating calibration | Claude Opus 4.5 | [O\*NET](https://www.onetonline.org/) gold-standard comparison |
+| Task generation | Claude Opus 4.5 | Hierarchical refinement, universal/domain researcher-supervised |
+| Paper validation (judge, elicit, referee, score) | Claude Sonnet 5 | The 34-field production run |
+| Task ratings | Claude Opus 5 | Importance / relevance / frequency, via the Batch API |
+| Protocols.io routing and matching | Claude Sonnet 4.5 | Multi-phase routing and step-level coverage |
 | Field/subfield classification | Claude Sonnet 4.5 | Taxonomy mapping |
 
 All models are accessed via the Anthropic API. Topic-level task generation uses the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches), which provides a 50% cost reduction and higher throughput. Prompt caching (ephemeral) is used for system prompts and shared context blocks. All long-running pipeline steps checkpoint results incrementally so that interrupted runs can resume without reprocessing completed items.
@@ -256,7 +312,5 @@ All models are accessed via the Anthropic API. Topic-level task generation uses 
 
 The ground truth collection described in [Section 4](#4-ground-truth-data) is ongoing. Several components are in active development:
 
-- **Expanded protocols.io coverage.** The pilot used 1,000 protocols; the remaining ~19,600 in the corpus are being processed to identify further gaps and generate additional tasks.
+- **Expanded protocols.io coverage.** Step-level coverage and timing now run over the full corpus; further gap-driven task generation from the uncovered steps is ongoing.
 - **Broader paper coverage.** Full-text processing is being extended to a larger sample of [OpenAlex](https://openalex.org/) and arXiv papers, with particular attention to computational, theoretical, and social science fields.
-- **Patent pipeline.** The routing and coverage pipeline is being adapted for patent filings, which follow a different document structure.
-- **Survey deployment.** The researcher survey instrument is being piloted with early respondents and will be expanded to a broader panel of scientists.

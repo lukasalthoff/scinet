@@ -345,21 +345,21 @@ Statistics,Bayesian Statistics,Propagate measurement uncertainty through hierarc
 Statistics,Bayesian Statistics,Quantify and communicate posterior uncertainty in risk estimates for decision-making applications.,98,53,0.540816
 Statistics,Bayesian Statistics,Specify informative or weakly informative prior distributions based on domain knowledge and previous studies.,98,72,0.734694
 Statistics,Bayesian Statistics,Structure observed data into likelihood functions appropriate for Bayesian model specification.,98,87,0.887755
-Economics,Behavioral & Experimental Economics,"Administer economic games such as dictator, ultimatum, public goods, or trust games to measure social preferences.",379,92,0.242744
-Economics,Behavioral & Experimental Economics,Analyze treatment effects from randomized experiments using appropriate statistical tests for between-subject and within-subject designs.,379,233,0.614776
-Economics,Behavioral & Experimental Economics,"Apply prospect theory, bounded rationality, or social preference models to formulate testable hypotheses about economic decision-making.",379,164,0.432718
-Economics,Behavioral & Experimental Economics,Assess external validity of laboratory findings by considering differences between student samples and general populations.,379,44,0.116095
-Economics,Behavioral & Experimental Economics,Conduct laboratory experiments using computerized interfaces to collect incentivized choice data from participants.,379,135,0.356201
-Economics,Behavioral & Experimental Economics,Construct belief elicitation tasks using proper scoring rules to measure subjective probabilities.,379,22,0.058047
-Economics,Behavioral & Experimental Economics,"Design incentive-compatible elicitation mechanisms to measure risk preferences, time preferences, or social preferences.",379,98,0.258575
-Economics,Behavioral & Experimental Economics,Develop deception-free experimental protocols that maintain credibility with participants while testing behavioral hypotheses.,379,61,0.16095
-Economics,Behavioral & Experimental Economics,Estimate structural parameters of utility functions or decision models from experimental choice data.,379,61,0.16095
-Economics,Behavioral & Experimental Economics,"Evaluate whether experimental results replicate across different incentive structures, stake sizes, or cultural contexts.",379,69,0.182058
-Economics,Behavioral & Experimental Economics,Implement online experiments through platforms to collect behavioral data from geographically dispersed participants.,379,56,0.147757
-Economics,Behavioral & Experimental Economics,"Incorporate insights from behavioral anomalies such as loss aversion, present bias, or framing effects into research design.",379,83,0.218997
-Economics,Behavioral & Experimental Economics,Prepare informed consent procedures that explain incentive payments and experimental tasks without revealing hypotheses.,379,88,0.23219
-Economics,Behavioral & Experimental Economics,Run field experiments by randomizing treatments in natural economic environments to measure behavioral responses.,379,34,0.08971
-Economics,Behavioral & Experimental Economics,"Test for order effects, learning, and fatigue in within-subject experimental designs.",379,83,0.218997
+Economics,Behavioral & Experimental Economics,"Administer economic games such as dictator, ultimatum, public goods, or trust games to measure social preferences.",100,33,0.33
+Economics,Behavioral & Experimental Economics,Analyze treatment effects from randomized experiments using appropriate statistical tests for between-subject and within-subject designs.,100,79,0.79
+Economics,Behavioral & Experimental Economics,"Apply prospect theory, bounded rationality, or social preference models to formulate testable hypotheses about economic decision-making.",100,52,0.52
+Economics,Behavioral & Experimental Economics,Assess external validity of laboratory findings by considering differences between student samples and general populations.,100,15,0.15
+Economics,Behavioral & Experimental Economics,Conduct laboratory experiments using computerized interfaces to collect incentivized choice data from participants.,100,56,0.56
+Economics,Behavioral & Experimental Economics,Construct belief elicitation tasks using proper scoring rules to measure subjective probabilities.,100,8,0.08
+Economics,Behavioral & Experimental Economics,"Design incentive-compatible elicitation mechanisms to measure risk preferences, time preferences, or social preferences.",100,36,0.36
+Economics,Behavioral & Experimental Economics,Develop deception-free experimental protocols that maintain credibility with participants while testing behavioral hypotheses.,100,19,0.19
+Economics,Behavioral & Experimental Economics,Estimate structural parameters of utility functions or decision models from experimental choice data.,100,12,0.12
+Economics,Behavioral & Experimental Economics,"Evaluate whether experimental results replicate across different incentive structures, stake sizes, or cultural contexts.",100,19,0.19
+Economics,Behavioral & Experimental Economics,Implement online experiments through platforms to collect behavioral data from geographically dispersed participants.,100,14,0.14
+Economics,Behavioral & Experimental Economics,"Incorporate insights from behavioral anomalies such as loss aversion, present bias, or framing effects into research design.",100,19,0.19
+Economics,Behavioral & Experimental Economics,Prepare informed consent procedures that explain incentive payments and experimental tasks without revealing hypotheses.,100,33,0.33
+Economics,Behavioral & Experimental Economics,Run field experiments by randomizing treatments in natural economic environments to measure behavioral responses.,100,10,0.1
+Economics,Behavioral & Experimental Economics,"Test for order effects, learning, and fatigue in within-subject experimental designs.",100,23,0.23
 Neuroscience,Behavioral Neuroscience,Account for baseline individual differences in neural activity when estimating intervention effects on behavior.,100,4,0.04
 Neuroscience,Behavioral Neuroscience,Control for circadian timing and sleep history when analyzing behavioral or neural outcome measures.,100,30,0.3
 Neuroscience,Behavioral Neuroscience,Coordinate with clinical neurology or psychiatry departments for patient recruitment and phenotyping.,100,1,0.01
@@ -374,13 +374,13 @@ Neuroscience,Behavioral Neuroscience,Prepare IRB protocols detailing risks and b
 Neuroscience,Behavioral Neuroscience,Screen and recruit participants based on neurological health status and medication use criteria.,100,12,0.12
 Neuroscience,Behavioral Neuroscience,Select validated behavioral assays and outcome measures appropriate for the neural systems under investigation.,100,91,0.91
 Neuroscience,Behavioral Neuroscience,Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,100,0,0.0
-Religion,Biblical Studies,Analyze intertextual relationships between biblical passages and other ancient Near Eastern or Greco-Roman literature.,199,128,0.643216
-Religion,Biblical Studies,"Apply historical-critical, literary, or theological frameworks when formulating research questions about biblical texts.",200,196,0.98
-Religion,Biblical Studies,"Assess whether interpretive findings from specific biblical passages apply across different canonical traditions, historical periods, or faith communities.",200,63,0.315
-Religion,Biblical Studies,"Code thematic patterns, rhetorical structures, or theological motifs within biblical and related ancient texts.",200,176,0.88
-Religion,Biblical Studies,Design interview protocols to gather perspectives from religious communities on biblical interpretation and practice.,199,3,0.015075
-Religion,Biblical Studies,Normalize orthographic and linguistic variations in ancient language texts for systematic comparison.,199,7,0.035176
-Religion,Biblical Studies,Transcribe and collate ancient manuscript witnesses to establish textual evidence for analysis.,199,6,0.030151
+Religion,Biblical Studies,Analyze intertextual relationships between biblical passages and other ancient Near Eastern or Greco-Roman literature.,99,68,0.686869
+Religion,Biblical Studies,"Apply historical-critical, literary, or theological frameworks when formulating research questions about biblical texts.",100,99,0.99
+Religion,Biblical Studies,"Assess whether interpretive findings from specific biblical passages apply across different canonical traditions, historical periods, or faith communities.",100,37,0.37
+Religion,Biblical Studies,"Code thematic patterns, rhetorical structures, or theological motifs within biblical and related ancient texts.",100,87,0.87
+Religion,Biblical Studies,Design interview protocols to gather perspectives from religious communities on biblical interpretation and practice.,99,0,0.0
+Religion,Biblical Studies,Normalize orthographic and linguistic variations in ancient language texts for systematic comparison.,99,2,0.020202
+Religion,Biblical Studies,Transcribe and collate ancient manuscript witnesses to establish textual evidence for analysis.,99,1,0.010101
 Library & Information Science,"Bibliometrics, Scientometrics & Scholarly Communication",Advise institutions on the responsible use of metrics within research assessment and evaluation frameworks.,100,7,0.07
 Library & Information Science,"Bibliometrics, Scientometrics & Scholarly Communication","Assemble datasets linking authors, institutions, funders, and grants through record linkage and identifier matching.",100,17,0.17
 Library & Information Science,"Bibliometrics, Scientometrics & Scholarly Communication",Assess whether bibliometric indicators are comparable across disciplines with differing citation and authorship cultures.,100,34,0.34
@@ -540,17 +540,17 @@ Biology,Botany & Plant Biology,Develop hypotheses regarding phylogenetic relatio
 Biology,Botany & Plant Biology,Establish field plot experiments with appropriate spatial arrangements to account for environmental heterogeneity.,100,22,0.22
 Biology,Botany & Plant Biology,"Formulate hypotheses about plant physiological responses to environmental stressors such as drought, temperature, or nutrient availability.",100,25,0.25
 Biology,Botany & Plant Biology,Propose mechanisms underlying plant-microbe or plant-fungal symbiotic interactions.,100,5,0.05
-Religion,Buddhist & Eastern Religions,Apply doctrinal frameworks from Buddhist philosophical traditions to frame research questions about religious practice and belief.,199,119,0.59799
-Religion,Buddhist & Eastern Religions,Assess whether findings from studies of specific Buddhist communities or texts apply across different regional traditions and historical periods.,199,37,0.18593
-Religion,Buddhist & Eastern Religions,"Code ethnographic field notes and interview transcripts for themes related to religious identity, ritual practice, and doctrinal interpretation.",199,10,0.050251
-Religion,Buddhist & Eastern Religions,"Conduct ethnographic fieldwork at temples, monasteries, or pilgrimage sites to observe religious practices and community dynamics.",199,8,0.040201
-Religion,Buddhist & Eastern Religions,"Design interview protocols sensitive to monastic hierarchies, ritual contexts, and religious observances in Buddhist communities.",199,2,0.01005
-Religion,Buddhist & Eastern Religions,"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",199,6,0.030151
-Religion,Buddhist & Eastern Religions,"Interview monastics, lay practitioners, and religious teachers about beliefs, practices, and lived religious experience.",199,12,0.060302
-Religion,Buddhist & Eastern Religions,"Locate and access manuscript collections, inscriptions, and archival materials from Buddhist institutions and repositories.",199,94,0.472362
-Religion,Buddhist & Eastern Religions,Navigate ethical considerations when conducting research in religious communities with distinct norms around privacy and sacred knowledge.,199,6,0.030151
-Religion,Buddhist & Eastern Religions,Situate research questions within historical lineages and sectarian developments of Eastern religious traditions.,199,176,0.884422
-Religion,Buddhist & Eastern Religions,Transcribe and prepare textual data from primary sources in classical Asian languages for analysis.,199,128,0.643216
+Religion,Buddhist & Eastern Religions,Apply doctrinal frameworks from Buddhist philosophical traditions to frame research questions about religious practice and belief.,100,67,0.67
+Religion,Buddhist & Eastern Religions,Assess whether findings from studies of specific Buddhist communities or texts apply across different regional traditions and historical periods.,100,23,0.23
+Religion,Buddhist & Eastern Religions,"Code ethnographic field notes and interview transcripts for themes related to religious identity, ritual practice, and doctrinal interpretation.",100,6,0.06
+Religion,Buddhist & Eastern Religions,"Conduct ethnographic fieldwork at temples, monasteries, or pilgrimage sites to observe religious practices and community dynamics.",100,3,0.03
+Religion,Buddhist & Eastern Religions,"Design interview protocols sensitive to monastic hierarchies, ritual contexts, and religious observances in Buddhist communities.",100,0,0.0
+Religion,Buddhist & Eastern Religions,"Establish collaborative relationships with monasteries, temples, or religious organizations to facilitate research access and participant recruitment.",100,2,0.02
+Religion,Buddhist & Eastern Religions,"Interview monastics, lay practitioners, and religious teachers about beliefs, practices, and lived religious experience.",100,5,0.05
+Religion,Buddhist & Eastern Religions,"Locate and access manuscript collections, inscriptions, and archival materials from Buddhist institutions and repositories.",100,42,0.42
+Religion,Buddhist & Eastern Religions,Navigate ethical considerations when conducting research in religious communities with distinct norms around privacy and sacred knowledge.,100,3,0.03
+Religion,Buddhist & Eastern Religions,Situate research questions within historical lineages and sectarian developments of Eastern religious traditions.,100,86,0.86
+Religion,Buddhist & Eastern Religions,Transcribe and prepare textual data from primary sources in classical Asian languages for analysis.,100,61,0.61
 Biomedical Sciences,Cancer Biology,Acquire immunohistochemistry or immunofluorescence images to assess protein expression and localization in tumor sections.,100,46,0.46
 Biomedical Sciences,Cancer Biology,Analyze dose-response relationships to determine drug efficacy in cancer cell viability assays.,100,26,0.26
 Biomedical Sciences,Cancer Biology,Analyze proteomic or phosphoproteomic data to characterize signaling pathway activation in tumors.,100,7,0.07
@@ -653,16 +653,16 @@ Engineering,Chemical & Process Engineering,Simulate multiphase flow behavior in 
 Engineering,Chemical & Process Engineering,Simulate reactor performance using computational fluid dynamics or process simulation software.,100,13,0.13
 Engineering,Chemical & Process Engineering,Synthesize and characterize heterogeneous catalysts for reaction studies.,100,6,0.06
 Engineering,Chemical & Process Engineering,Validate transport models against experimental heat and mass transfer data.,100,8,0.08
-Religion,Christian Theology,"Access denominational archives, church records, or historical theological documents for secondary data analysis.",200,54,0.27
-Religion,Christian Theology,"Account for denominational, regional, or socioeconomic confounders when analyzing patterns in Christian belief or practice.",200,3,0.015
-Religion,Christian Theology,Assess whether theological findings from specific denominational or cultural contexts apply to broader Christian traditions or global Christianity.,200,5,0.025
-Religion,Christian Theology,"Code qualitative data from interviews or testimonies for theological themes, doctrinal positions, or spiritual experiences.",200,28,0.14
-Religion,Christian Theology,"Conduct interviews or ethnographic observations within churches, seminaries, or Christian organizations to gather primary data on religious life.",200,13,0.065
-Religion,Christian Theology,"Coordinate with churches, denominational bodies, or parachurch organizations to access participants or archival materials for research.",200,15,0.075
-Religion,Christian Theology,"Design survey instruments to measure religious beliefs, spiritual practices, or congregational experiences among Christian populations.",200,8,0.04
-Religion,Christian Theology,"Develop interview protocols to explore lived religious experience, faith narratives, or ministerial perspectives within Christian communities.",200,12,0.06
-Religion,Christian Theology,"Engage with systematic theology, biblical hermeneutics, or ecclesiological frameworks when formulating research questions about Christian belief and practice.",200,198,0.99
-Religion,Christian Theology,"Obtain ethical approval and informed consent for research involving clergy, congregants, or religious institutions.",200,9,0.045
+Religion,Christian Theology,"Access denominational archives, church records, or historical theological documents for secondary data analysis.",100,25,0.25
+Religion,Christian Theology,"Account for denominational, regional, or socioeconomic confounders when analyzing patterns in Christian belief or practice.",100,2,0.02
+Religion,Christian Theology,Assess whether theological findings from specific denominational or cultural contexts apply to broader Christian traditions or global Christianity.,100,1,0.01
+Religion,Christian Theology,"Code qualitative data from interviews or testimonies for theological themes, doctrinal positions, or spiritual experiences.",100,16,0.16
+Religion,Christian Theology,"Conduct interviews or ethnographic observations within churches, seminaries, or Christian organizations to gather primary data on religious life.",100,9,0.09
+Religion,Christian Theology,"Coordinate with churches, denominational bodies, or parachurch organizations to access participants or archival materials for research.",100,9,0.09
+Religion,Christian Theology,"Design survey instruments to measure religious beliefs, spiritual practices, or congregational experiences among Christian populations.",100,5,0.05
+Religion,Christian Theology,"Develop interview protocols to explore lived religious experience, faith narratives, or ministerial perspectives within Christian communities.",100,9,0.09
+Religion,Christian Theology,"Engage with systematic theology, biblical hermeneutics, or ecclesiological frameworks when formulating research questions about Christian belief and practice.",100,100,1.0
+Religion,Christian Theology,"Obtain ethical approval and informed consent for research involving clergy, congregants, or religious institutions.",100,6,0.06
 Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology","Apply survival analysis to model time to chronic disease onset, recurrence, or death with censored follow-up.",100,9,0.09
 Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology",Assemble cohorts that link baseline risk-factor measurements to incident disease through registries and record linkage.,100,9,0.09
 Public Health & Epidemiology,"Chronic Disease, Cancer & Injury Epidemiology","Assess the generalizability of risk-factor associations across age groups, sexes, and diverse populations.",100,34,0.34
@@ -837,21 +837,21 @@ Political Science,Comparative Politics,Harmonize variable definitions and coding
 Political Science,Comparative Politics,Navigate ethical review requirements when conducting research in authoritarian or politically sensitive contexts.,100,4,0.04
 Political Science,Comparative Politics,Negotiate access to government archives or restricted political data in multiple country contexts.,100,2,0.02
 Political Science,Comparative Politics,"Observe political events such as elections, protests, or legislative sessions to document political behavior firsthand.",100,4,0.04
-Religion,Comparative Religion,Account for researcher positionality and confessional bias when analyzing data on religious communities.,199,15,0.075377
-Religion,Comparative Religion,"Address ethical considerations specific to studying sacred practices, including community sensitivities and insider-outsider dynamics.",199,0,0.0
-Religion,Comparative Religion,Apply theories of religious syncretism and hybridity when framing research questions about cross-cultural religious phenomena.,199,39,0.19598
-Religion,Comparative Religion,Assess whether interpretations of religious concepts and practices translate meaningfully across different cultural and linguistic contexts.,199,86,0.432161
-Religion,Comparative Religion,"Code qualitative data for recurring religious themes, symbols, and theological concepts across traditions.",199,33,0.165829
-Religion,Comparative Religion,"Conduct ethnographic observations of religious rituals, ceremonies, and community gatherings across multiple traditions.",199,14,0.070352
-Religion,Comparative Religion,"Coordinate with religious institutions, leaders, and communities to gain access for fieldwork and participant recruitment.",199,13,0.065327
-Religion,Comparative Religion,Design focus group protocols to explore how communities interpret and negotiate religious boundaries and shared practices.,199,0,0.0
-Religion,Comparative Religion,"Design survey instruments that capture religious identity, practice, and belief while respecting theological nuances across traditions.",199,0,0.0
-Religion,Comparative Religion,Develop coding schemes that capture emic religious categories while enabling cross-traditional comparison.,199,10,0.050251
-Religion,Comparative Religion,"Develop interview protocols that elicit narratives about religious experience, conversion, or interfaith encounters.",199,8,0.040201
-Religion,Comparative Religion,"Engage with phenomenological and hermeneutical frameworks to interpret religious beliefs, practices, and experiences across traditions.",199,155,0.778894
-Religion,Comparative Religion,Evaluate the historical and geographical boundaries within which comparative religious findings remain valid.,199,63,0.316583
-Religion,Comparative Religion,"Interview religious practitioners, clergy, and lay members about beliefs, practices, and lived religious experience.",199,16,0.080402
-Religion,Comparative Religion,"Transcribe and translate religious texts, oral histories, and interview data from source languages.",199,41,0.20603
+Religion,Comparative Religion,Account for researcher positionality and confessional bias when analyzing data on religious communities.,100,8,0.08
+Religion,Comparative Religion,"Address ethical considerations specific to studying sacred practices, including community sensitivities and insider-outsider dynamics.",100,0,0.0
+Religion,Comparative Religion,Apply theories of religious syncretism and hybridity when framing research questions about cross-cultural religious phenomena.,100,21,0.21
+Religion,Comparative Religion,Assess whether interpretations of religious concepts and practices translate meaningfully across different cultural and linguistic contexts.,100,36,0.36
+Religion,Comparative Religion,"Code qualitative data for recurring religious themes, symbols, and theological concepts across traditions.",100,12,0.12
+Religion,Comparative Religion,"Conduct ethnographic observations of religious rituals, ceremonies, and community gatherings across multiple traditions.",100,9,0.09
+Religion,Comparative Religion,"Coordinate with religious institutions, leaders, and communities to gain access for fieldwork and participant recruitment.",100,6,0.06
+Religion,Comparative Religion,Design focus group protocols to explore how communities interpret and negotiate religious boundaries and shared practices.,100,0,0.0
+Religion,Comparative Religion,"Design survey instruments that capture religious identity, practice, and belief while respecting theological nuances across traditions.",100,0,0.0
+Religion,Comparative Religion,Develop coding schemes that capture emic religious categories while enabling cross-traditional comparison.,100,2,0.02
+Religion,Comparative Religion,"Develop interview protocols that elicit narratives about religious experience, conversion, or interfaith encounters.",100,3,0.03
+Religion,Comparative Religion,"Engage with phenomenological and hermeneutical frameworks to interpret religious beliefs, practices, and experiences across traditions.",100,76,0.76
+Religion,Comparative Religion,Evaluate the historical and geographical boundaries within which comparative religious findings remain valid.,100,31,0.31
+Religion,Comparative Religion,"Interview religious practitioners, clergy, and lay members about beliefs, practices, and lived religious experience.",100,9,0.09
+Religion,Comparative Religion,"Transcribe and translate religious texts, oral histories, and interview data from source languages.",100,15,0.15
 Materials Science,Composite Materials,Acquire thermal analysis data using differential scanning calorimetry and thermogravimetric analysis for cure characterization.,100,15,0.15
 Materials Science,Composite Materials,Apply statistical distributions to characterize fiber strength and composite failure behavior.,100,3,0.03
 Materials Science,Composite Materials,Calculate effective thermal and electrical conductivity of composites based on filler content and dispersion characteristics.,100,9,0.09
@@ -1229,28 +1229,28 @@ Medicine & Clinical Sciences,Dermatology,Evaluate time to treatment response or 
 Medicine & Clinical Sciences,Dermatology,"Formulate hypotheses about genetic, immunologic, or environmental factors contributing to inflammatory skin diseases.",100,29,0.29
 Medicine & Clinical Sciences,Dermatology,Harmonize dermatologic disease severity scores across different validated assessment instruments.,100,0,0.0
 Medicine & Clinical Sciences,Dermatology,Recruit patients with specific skin conditions from dermatology clinics for prospective studies.,100,51,0.51
-Economics,Development Economics,Access satellite imagery or geospatial data to construct measures of agricultural productivity or infrastructure development.,399,13,0.032581
-Economics,Development Economics,Account for spillover effects and general equilibrium impacts when estimating treatment effects in clustered interventions.,399,23,0.057644
-Economics,Development Economics,Acquire and harmonize household survey data from national statistical offices or international development databases.,399,127,0.318296
-Economics,Development Economics,Address attrition bias in longitudinal studies tracking mobile or migrating populations in developing regions.,399,11,0.027569
-Economics,Development Economics,Apply instrumental variable or regression discontinuity methods to identify causal effects of development policies.,399,34,0.085213
-Economics,Development Economics,Apply poverty trap models or structural transformation theories to frame hypotheses about economic mobility in low-income settings.,399,46,0.115288
-Economics,Development Economics,Assess external validity of experimental findings across different developing country contexts and income levels.,399,14,0.035088
-Economics,Development Economics,Conduct baseline and endline data collection for randomized controlled trials evaluating development interventions.,399,16,0.0401
-Economics,Development Economics,Construct questionnaires to measure access to and usage of financial services among underserved populations.,399,32,0.080201
-Economics,Development Economics,Coordinate with local research institutions and field offices to facilitate data collection in remote areas.,399,41,0.102757
-Economics,Development Economics,"Design household survey modules to measure consumption, income, assets, and economic well-being in low-income populations.",399,38,0.095238
-Economics,Development Economics,"Design qualitative protocols to understand household decision-making processes around savings, investment, and risk management.",399,6,0.015038
-Economics,Development Economics,Develop culturally appropriate informed consent procedures for low-literacy populations in field experiments.,399,12,0.030075
-Economics,Development Economics,"Develop survey instruments to capture agricultural production, labor allocation, and enterprise activities in rural economies.",399,33,0.082707
-Economics,Development Economics,Evaluate whether program effects measured in pilot studies will scale to larger populations or different institutional environments.,399,5,0.012531
-Economics,Development Economics,Implement difference-in-differences designs to evaluate the impact of policy reforms or program rollouts.,399,18,0.045113
-Economics,Development Economics,Implement household panel surveys to track economic outcomes and behavioral changes over time in developing regions.,399,22,0.055138
-Economics,Development Economics,"Incorporate market failure frameworks when analyzing interventions targeting credit, insurance, or information constraints.",399,61,0.152882
-Economics,Development Economics,Navigate ethical review processes across multiple countries when conducting cross-border development research.,399,4,0.010025
-Economics,Development Economics,"Obtain administrative records from government agencies, NGOs, or microfinance institutions for program evaluation.",399,69,0.172932
-Economics,Development Economics,"Partner with government ministries, NGOs, or international organizations to implement and evaluate development programs.",399,31,0.077694
-Economics,Development Economics,Train and supervise local enumerator teams to collect high-quality field data in resource-constrained settings.,399,39,0.097744
+Economics,Development Economics,Access satellite imagery or geospatial data to construct measures of agricultural productivity or infrastructure development.,100,1,0.01
+Economics,Development Economics,Account for spillover effects and general equilibrium impacts when estimating treatment effects in clustered interventions.,100,5,0.05
+Economics,Development Economics,Acquire and harmonize household survey data from national statistical offices or international development databases.,100,47,0.47
+Economics,Development Economics,Address attrition bias in longitudinal studies tracking mobile or migrating populations in developing regions.,100,2,0.02
+Economics,Development Economics,Apply instrumental variable or regression discontinuity methods to identify causal effects of development policies.,100,12,0.12
+Economics,Development Economics,Apply poverty trap models or structural transformation theories to frame hypotheses about economic mobility in low-income settings.,100,19,0.19
+Economics,Development Economics,Assess external validity of experimental findings across different developing country contexts and income levels.,100,5,0.05
+Economics,Development Economics,Conduct baseline and endline data collection for randomized controlled trials evaluating development interventions.,100,4,0.04
+Economics,Development Economics,Construct questionnaires to measure access to and usage of financial services among underserved populations.,100,7,0.07
+Economics,Development Economics,Coordinate with local research institutions and field offices to facilitate data collection in remote areas.,100,8,0.08
+Economics,Development Economics,"Design household survey modules to measure consumption, income, assets, and economic well-being in low-income populations.",100,10,0.1
+Economics,Development Economics,"Design qualitative protocols to understand household decision-making processes around savings, investment, and risk management.",100,1,0.01
+Economics,Development Economics,Develop culturally appropriate informed consent procedures for low-literacy populations in field experiments.,100,5,0.05
+Economics,Development Economics,"Develop survey instruments to capture agricultural production, labor allocation, and enterprise activities in rural economies.",100,6,0.06
+Economics,Development Economics,Evaluate whether program effects measured in pilot studies will scale to larger populations or different institutional environments.,100,2,0.02
+Economics,Development Economics,Implement difference-in-differences designs to evaluate the impact of policy reforms or program rollouts.,100,5,0.05
+Economics,Development Economics,Implement household panel surveys to track economic outcomes and behavioral changes over time in developing regions.,100,4,0.04
+Economics,Development Economics,"Incorporate market failure frameworks when analyzing interventions targeting credit, insurance, or information constraints.",100,16,0.16
+Economics,Development Economics,Navigate ethical review processes across multiple countries when conducting cross-border development research.,100,2,0.02
+Economics,Development Economics,"Obtain administrative records from government agencies, NGOs, or microfinance institutions for program evaluation.",100,22,0.22
+Economics,Development Economics,"Partner with government ministries, NGOs, or international organizations to implement and evaluate development programs.",100,7,0.07
+Economics,Development Economics,Train and supervise local enumerator teams to collect high-quality field data in resource-constrained settings.,100,7,0.07
 Neuroscience,Developmental Neuroscience,Acquire pediatric neuroimaging data using child-friendly protocols that minimize motion artifacts and participant distress.,100,11,0.11
 Neuroscience,Developmental Neuroscience,Analyze developmental trajectories of brain structure or function across multiple time points using growth curve modeling.,100,4,0.04
 Neuroscience,Developmental Neuroscience,Coordinate with pediatric clinics and developmental centers for participant recruitment and clinical data access.,100,8,0.08
@@ -1407,17 +1407,17 @@ Environmental Science,Ecology & Ecosystem Science,Simulate population or communi
 Environmental Science,Ecology & Ecosystem Science,Standardize sampling effort across sites or time periods to enable valid ecological comparisons.,100,44,0.44
 Environmental Science,Ecology & Ecosystem Science,"Use remote sensing imagery to assess vegetation cover, land use change, or habitat characteristics.",100,15,0.15
 Environmental Science,Ecology & Ecosystem Science,Validate species identification methods and quantify observer error in biological surveys.,100,6,0.06
-Economics,Econometrics,Apply instrumental variables or two-stage least squares estimation to address endogeneity in causal inference.,373,47,0.126005
-Economics,Econometrics,"Assess external validity of econometric estimates across different markets, policy regimes, or institutional settings.",373,13,0.034853
-Economics,Econometrics,Conduct cointegration analysis to identify long-run equilibrium relationships in nonstationary time series.,372,17,0.045699
-Economics,Econometrics,Diagnose and correct for serial correlation and heteroskedasticity in regression residuals.,373,61,0.163539
-Economics,Econometrics,Estimate panel data models with fixed or random effects to control for unobserved heterogeneity.,373,53,0.142091
-Economics,Econometrics,Estimate vector autoregression models to analyze dynamic relationships among multiple economic variables.,373,37,0.099196
-Economics,Econometrics,Formulate research questions grounded in economic theory to guide model specification and variable selection.,373,117,0.313673
-Economics,Econometrics,Handle missing observations and attrition in longitudinal economic data through appropriate imputation or weighting methods.,373,15,0.040214
-Economics,Econometrics,Implement difference-in-differences or regression discontinuity designs to identify causal effects from quasi-experimental variation.,373,16,0.042895
-Economics,Econometrics,Model spatial dependence and spillover effects using spatial econometric techniques.,373,41,0.10992
-Economics,Econometrics,Test for and address unit roots and nonstationarity in time series data before model estimation.,372,40,0.107527
+Economics,Econometrics,Apply instrumental variables or two-stage least squares estimation to address endogeneity in causal inference.,98,12,0.122449
+Economics,Econometrics,"Assess external validity of econometric estimates across different markets, policy regimes, or institutional settings.",98,2,0.020408
+Economics,Econometrics,Conduct cointegration analysis to identify long-run equilibrium relationships in nonstationary time series.,98,4,0.040816
+Economics,Econometrics,Diagnose and correct for serial correlation and heteroskedasticity in regression residuals.,98,20,0.204082
+Economics,Econometrics,Estimate panel data models with fixed or random effects to control for unobserved heterogeneity.,98,18,0.183673
+Economics,Econometrics,Estimate vector autoregression models to analyze dynamic relationships among multiple economic variables.,98,10,0.102041
+Economics,Econometrics,Formulate research questions grounded in economic theory to guide model specification and variable selection.,98,37,0.377551
+Economics,Econometrics,Handle missing observations and attrition in longitudinal economic data through appropriate imputation or weighting methods.,98,5,0.05102
+Economics,Econometrics,Implement difference-in-differences or regression discontinuity designs to identify causal effects from quasi-experimental variation.,98,4,0.040816
+Economics,Econometrics,Model spatial dependence and spillover effects using spatial econometric techniques.,98,12,0.122449
+Economics,Econometrics,Test for and address unit roots and nonstationarity in time series data before model estimation.,98,9,0.091837
 Geography,Economic Geography,"Acquire georeferenced economic data from census products, business registries, or land use records for spatial analysis.",100,33,0.33
 Geography,Economic Geography,Address spatial autocorrelation and the modifiable areal unit problem when analyzing regional economic data.,100,8,0.08
 Geography,Economic Geography,Apply theories of agglomeration economies and industrial clustering when framing research questions about firm location and regional growth.,100,39,0.39
@@ -1435,14 +1435,14 @@ Geography,Economic Geography,Evaluate the temporal stability of spatial economic
 Geography,Economic Geography,Harmonize regional economic indicators across different administrative boundary systems or classification schemes.,100,17,0.17
 Geography,Economic Geography,"Incorporate institutional perspectives on governance, regulation, and path dependence when analyzing regional economic trajectories.",100,40,0.4
 Geography,Economic Geography,"Perform site visits and direct observations of industrial districts, commercial zones, or urban neighborhoods to document spatial economic patterns.",100,10,0.1
-Economics,Economic History,Address measurement error and missing data inherent in historical sources through appropriate statistical adjustments.,589,278,0.471986
-Economics,Economic History,Apply econometric methods to identify causal relationships in historical data while accounting for endogeneity and omitted variables.,589,177,0.300509
-Economics,Economic History,"Apply institutional economics frameworks to analyze the role of property rights, legal systems, or governance structures in historical economic development.",589,194,0.329372
-Economics,Economic History,Assess whether historical economic patterns observed in one region or time period can inform understanding of other contexts with similar institutional conditions.,589,192,0.325976
-Economics,Economic History,"Construct and validate historical price indices, GDP estimates, or living standards measures from fragmentary source data.",589,109,0.185059
-Economics,Economic History,Evaluate the comparability of economic indicators across different historical periods accounting for structural economic transformations.,589,106,0.179966
-Economics,Economic History,"Frame research questions around long-run economic change using theories of technological diffusion, factor endowments, or path dependence.",589,138,0.234295
-Economics,Economic History,"Harmonize monetary values, prices, and wages across different historical currencies, units, and time periods.",589,143,0.242784
+Economics,Economic History,Address measurement error and missing data inherent in historical sources through appropriate statistical adjustments.,100,51,0.51
+Economics,Economic History,Apply econometric methods to identify causal relationships in historical data while accounting for endogeneity and omitted variables.,100,25,0.25
+Economics,Economic History,"Apply institutional economics frameworks to analyze the role of property rights, legal systems, or governance structures in historical economic development.",100,32,0.32
+Economics,Economic History,Assess whether historical economic patterns observed in one region or time period can inform understanding of other contexts with similar institutional conditions.,100,39,0.39
+Economics,Economic History,"Construct and validate historical price indices, GDP estimates, or living standards measures from fragmentary source data.",100,30,0.3
+Economics,Economic History,Evaluate the comparability of economic indicators across different historical periods accounting for structural economic transformations.,100,19,0.19
+Economics,Economic History,"Frame research questions around long-run economic change using theories of technological diffusion, factor endowments, or path dependence.",100,32,0.32
+Economics,Economic History,"Harmonize monetary values, prices, and wages across different historical currencies, units, and time periods.",100,33,0.33
 Sociology,Economic Sociology,"Access labor market data, employment statistics, or occupational surveys from government and international agencies.",99,16,0.161616
 Sociology,Economic Sociology,Account for organizational selection effects when comparing workplace practices or employment arrangements.,99,2,0.020202
 Sociology,Economic Sociology,"Acquire organizational records, industry reports, or corporate disclosures for analysis of firm behavior and market dynamics.",99,40,0.40404
@@ -1716,18 +1716,18 @@ Business & Management,Entrepreneurship & Innovation,Frame research questions usi
 Business & Management,Entrepreneurship & Innovation,Navigate confidentiality requirements when collecting sensitive financial or strategic data from entrepreneurs and startups.,100,5,0.05
 Business & Management,Entrepreneurship & Innovation,Partner with industry associations or government agencies to obtain innovation survey data or entrepreneurship statistics.,100,9,0.09
 Business & Management,Entrepreneurship & Innovation,"Recode open-ended survey responses about business models, innovation types, or entrepreneurial motivations into analytical categories.",100,3,0.03
-Economics,Environmental & Energy Economics,Account for selection into energy efficiency programs or environmental regulations when estimating treatment effects.,395,16,0.040506
-Economics,Environmental & Energy Economics,"Address endogeneity in energy and environmental policy evaluation using instrumental variables, regression discontinuity, or difference-in-differences designs.",395,50,0.126582
-Economics,Environmental & Energy Economics,Apply environmental economics frameworks such as externality theory or common-pool resource models to structure research questions about market failures.,396,123,0.310606
-Economics,Environmental & Energy Economics,"Assess whether estimated policy effects will transfer across regions with different energy mixes, climate conditions, or regulatory environments.",395,32,0.081013
-Economics,Environmental & Energy Economics,"Construct panel datasets linking energy prices, consumption, and policy variables across jurisdictions and time periods.",395,73,0.18481
-Economics,Environmental & Energy Economics,"Construct survey instruments to measure household energy consumption behaviors, conservation attitudes, or technology adoption intentions.",395,5,0.012658
-Economics,Environmental & Energy Economics,Control for spatial spillovers and geographic confounders when estimating localized environmental or energy policy effects.,395,45,0.113924
-Economics,Environmental & Energy Economics,Design stated preference surveys using contingent valuation or choice experiments to elicit willingness to pay for environmental goods.,395,39,0.098734
-Economics,Environmental & Energy Economics,Evaluate the temporal stability of environmental valuations and energy demand elasticities under changing technological and policy conditions.,395,19,0.048101
-Economics,Environmental & Energy Economics,Incorporate energy market structures and regulatory institutions when framing hypotheses about policy impacts.,395,110,0.278481
-Economics,Environmental & Energy Economics,Merge environmental monitoring data with socioeconomic datasets to analyze distributional impacts of pollution or climate policies.,395,18,0.04557
-Economics,Environmental & Energy Economics,"Negotiate data sharing agreements with utilities, energy companies, or environmental agencies to access proprietary consumption or emissions records.",395,20,0.050633
+Economics,Environmental & Energy Economics,Account for selection into energy efficiency programs or environmental regulations when estimating treatment effects.,99,4,0.040404
+Economics,Environmental & Energy Economics,"Address endogeneity in energy and environmental policy evaluation using instrumental variables, regression discontinuity, or difference-in-differences designs.",99,12,0.121212
+Economics,Environmental & Energy Economics,Apply environmental economics frameworks such as externality theory or common-pool resource models to structure research questions about market failures.,100,34,0.34
+Economics,Environmental & Energy Economics,"Assess whether estimated policy effects will transfer across regions with different energy mixes, climate conditions, or regulatory environments.",99,9,0.090909
+Economics,Environmental & Energy Economics,"Construct panel datasets linking energy prices, consumption, and policy variables across jurisdictions and time periods.",99,25,0.252525
+Economics,Environmental & Energy Economics,"Construct survey instruments to measure household energy consumption behaviors, conservation attitudes, or technology adoption intentions.",99,0,0.0
+Economics,Environmental & Energy Economics,Control for spatial spillovers and geographic confounders when estimating localized environmental or energy policy effects.,99,10,0.10101
+Economics,Environmental & Energy Economics,Design stated preference surveys using contingent valuation or choice experiments to elicit willingness to pay for environmental goods.,99,5,0.050505
+Economics,Environmental & Energy Economics,Evaluate the temporal stability of environmental valuations and energy demand elasticities under changing technological and policy conditions.,99,4,0.040404
+Economics,Environmental & Energy Economics,Incorporate energy market structures and regulatory institutions when framing hypotheses about policy impacts.,99,30,0.30303
+Economics,Environmental & Energy Economics,Merge environmental monitoring data with socioeconomic datasets to analyze distributional impacts of pollution or climate policies.,99,4,0.040404
+Economics,Environmental & Energy Economics,"Negotiate data sharing agreements with utilities, energy companies, or environmental agencies to access proprietary consumption or emissions records.",99,1,0.010101
 Public Health & Epidemiology,Environmental & Occupational Health,Apply spatial and geostatistical methods to estimate exposure levels and relate them to health outcomes.,100,8,0.08
 Public Health & Epidemiology,Environmental & Occupational Health,Collect environmental samples and personal exposure measurements to characterize contaminant levels in the field.,100,10,0.1
 Public Health & Epidemiology,Environmental & Occupational Health,Design community-based studies to evaluate environmental exposures and health disparities in affected populations.,100,16,0.16
@@ -1932,17 +1932,17 @@ Business & Management,Finance & Accounting,"Negotiate data access agreements wit
 Business & Management,Finance & Accounting,"Obtain IRB approval for studies involving surveys or experiments with investors, managers, or financial professionals.",100,2,0.02
 Business & Management,Finance & Accounting,"Parse and code textual disclosures from annual reports, earnings calls, or regulatory filings for quantitative analysis.",100,21,0.21
 Business & Management,Finance & Accounting,Reconcile and merge datasets from multiple financial databases using firm and security identifiers.,100,31,0.31
-Economics,Finance & Financial Economics,Address endogeneity in corporate finance research using instrumental variables or natural experiments.,395,41,0.103797
-Economics,Finance & Financial Economics,Apply asset pricing theories and market efficiency hypotheses when formulating research questions about security returns.,396,109,0.275253
-Economics,Finance & Financial Economics,Apply difference-in-differences designs to evaluate the impact of regulatory changes on financial outcomes.,395,13,0.032911
-Economics,Finance & Financial Economics,"Assess whether empirical findings generalize across different market structures, regulatory environments, or economic cycles.",396,101,0.255051
-Economics,Finance & Financial Economics,Control for firm fixed effects and time fixed effects to isolate causal relationships in panel data.,395,38,0.096203
-Economics,Finance & Financial Economics,Correct for survivorship bias when analyzing mutual fund performance or firm-level outcomes.,396,22,0.055556
-Economics,Finance & Financial Economics,Draw on behavioral finance concepts such as investor sentiment and cognitive biases when explaining market anomalies.,395,51,0.129114
-Economics,Finance & Financial Economics,Evaluate the external validity of results across developed and emerging financial markets.,396,15,0.037879
-Economics,Finance & Financial Economics,Implement event study methodology to measure abnormal returns around corporate announcements or policy changes.,396,19,0.04798
-Economics,Finance & Financial Economics,Incorporate agency theory and corporate governance frameworks when examining firm financial decisions.,395,46,0.116456
-Economics,Finance & Financial Economics,Model time-varying volatility and risk using econometric specifications appropriate for financial time series.,396,64,0.161616
+Economics,Finance & Financial Economics,Address endogeneity in corporate finance research using instrumental variables or natural experiments.,98,4,0.040816
+Economics,Finance & Financial Economics,Apply asset pricing theories and market efficiency hypotheses when formulating research questions about security returns.,99,39,0.393939
+Economics,Finance & Financial Economics,Apply difference-in-differences designs to evaluate the impact of regulatory changes on financial outcomes.,98,0,0.0
+Economics,Finance & Financial Economics,"Assess whether empirical findings generalize across different market structures, regulatory environments, or economic cycles.",99,34,0.343434
+Economics,Finance & Financial Economics,Control for firm fixed effects and time fixed effects to isolate causal relationships in panel data.,98,3,0.030612
+Economics,Finance & Financial Economics,Correct for survivorship bias when analyzing mutual fund performance or firm-level outcomes.,99,5,0.050505
+Economics,Finance & Financial Economics,Draw on behavioral finance concepts such as investor sentiment and cognitive biases when explaining market anomalies.,98,19,0.193878
+Economics,Finance & Financial Economics,Evaluate the external validity of results across developed and emerging financial markets.,99,7,0.070707
+Economics,Finance & Financial Economics,Implement event study methodology to measure abnormal returns around corporate announcements or policy changes.,99,5,0.050505
+Economics,Finance & Financial Economics,Incorporate agency theory and corporate governance frameworks when examining firm financial decisions.,98,4,0.040816
+Economics,Finance & Financial Economics,Model time-varying volatility and risk using econometric specifications appropriate for financial time series.,99,32,0.323232
 Physics & Astronomy,Fluid Dynamics,Acquire velocity field data using particle image velocimetry or laser Doppler velocimetry systems.,100,8,0.08
 Physics & Astronomy,Fluid Dynamics,Apply dimensional analysis and scaling arguments to identify dominant physical mechanisms in flow problems.,100,73,0.73
 Physics & Astronomy,Fluid Dynamics,Apply filtering techniques to remove noise from turbulent velocity time series.,100,2,0.02
@@ -2168,22 +2168,22 @@ Communication & Media Studies,Health Communication,"Integrate media effects theo
 Communication & Media Studies,Health Communication,Navigate IRB requirements for research involving vulnerable health populations or sensitive health topics.,100,35,0.35
 Communication & Media Studies,Health Communication,Partner with health departments or healthcare organizations to access patient populations for communication research.,100,9,0.09
 Communication & Media Studies,Health Communication,"Recruit participants through health care settings, patient advocacy groups, or community health organizations.",100,9,0.09
-Economics,Health Economics,Acquire pharmaceutical pricing data and drug utilization records from commercial or government sources.,396,41,0.103535
-Economics,Health Economics,Address selection bias in observational studies of treatment effects using propensity score methods or instrumental variables.,396,47,0.118687
-Economics,Health Economics,Adjust healthcare cost data for inflation and convert charges to actual costs using cost-to-charge ratios.,396,53,0.133838
-Economics,Health Economics,Apply difference-in-differences or regression discontinuity designs to evaluate the impact of health policy changes.,396,56,0.141414
-Economics,Health Economics,"Apply economic theories of demand, supply, and market failure to frame research questions about healthcare utilization and access.",396,86,0.217172
-Economics,Health Economics,Assess whether cost-effectiveness findings will transfer across healthcare systems with different payment structures and resource constraints.,396,17,0.042929
-Economics,Health Economics,"Clean and standardize medical billing codes, diagnosis codes, and procedure codes across different classification systems.",396,54,0.136364
-Economics,Health Economics,"Collect primary data on healthcare costs, resource use, and health outcomes alongside clinical trials or observational studies.",396,49,0.123737
-Economics,Health Economics,Design interview protocols to elicit patient preferences and willingness-to-pay for health interventions.,396,25,0.063131
-Economics,Health Economics,"Design survey instruments to measure healthcare utilization, out-of-pocket expenditures, and insurance coverage status.",396,38,0.09596
-Economics,Health Economics,Develop questionnaires to assess health-related quality of life and patient-reported outcomes for economic evaluations.,396,14,0.035354
-Economics,Health Economics,Evaluate the external validity of treatment effect estimates across patient populations with varying disease severity and comorbidities.,396,16,0.040404
-Economics,Health Economics,"Extract and link data from medical claims, electronic health records, and hospital discharge databases for economic analysis.",396,86,0.217172
-Economics,Health Economics,Incorporate models of insurance behavior and moral hazard when designing studies of health coverage effects.,396,35,0.088384
-Economics,Health Economics,Navigate data use agreements and privacy protections when accessing protected health information for research.,396,116,0.292929
-Economics,Health Economics,"Partner with healthcare providers, insurers, or health systems to access administrative data and recruit patient populations.",396,104,0.262626
+Economics,Health Economics,Acquire pharmaceutical pricing data and drug utilization records from commercial or government sources.,100,16,0.16
+Economics,Health Economics,Address selection bias in observational studies of treatment effects using propensity score methods or instrumental variables.,100,6,0.06
+Economics,Health Economics,Adjust healthcare cost data for inflation and convert charges to actual costs using cost-to-charge ratios.,100,14,0.14
+Economics,Health Economics,Apply difference-in-differences or regression discontinuity designs to evaluate the impact of health policy changes.,100,7,0.07
+Economics,Health Economics,"Apply economic theories of demand, supply, and market failure to frame research questions about healthcare utilization and access.",100,16,0.16
+Economics,Health Economics,Assess whether cost-effectiveness findings will transfer across healthcare systems with different payment structures and resource constraints.,100,5,0.05
+Economics,Health Economics,"Clean and standardize medical billing codes, diagnosis codes, and procedure codes across different classification systems.",100,9,0.09
+Economics,Health Economics,"Collect primary data on healthcare costs, resource use, and health outcomes alongside clinical trials or observational studies.",100,17,0.17
+Economics,Health Economics,Design interview protocols to elicit patient preferences and willingness-to-pay for health interventions.,100,12,0.12
+Economics,Health Economics,"Design survey instruments to measure healthcare utilization, out-of-pocket expenditures, and insurance coverage status.",100,13,0.13
+Economics,Health Economics,Develop questionnaires to assess health-related quality of life and patient-reported outcomes for economic evaluations.,100,5,0.05
+Economics,Health Economics,Evaluate the external validity of treatment effect estimates across patient populations with varying disease severity and comorbidities.,100,6,0.06
+Economics,Health Economics,"Extract and link data from medical claims, electronic health records, and hospital discharge databases for economic analysis.",100,19,0.19
+Economics,Health Economics,Incorporate models of insurance behavior and moral hazard when designing studies of health coverage effects.,100,8,0.08
+Economics,Health Economics,Navigate data use agreements and privacy protections when accessing protected health information for research.,100,19,0.19
+Economics,Health Economics,"Partner with healthcare providers, insurers, or health systems to access administrative data and recruit patient populations.",100,22,0.22
 Law,Health Law & Bioethics,Account for jurisdictional variation and regulatory heterogeneity when analyzing health law outcomes across states or countries.,100,41,0.41
 Law,Health Law & Bioethics,"Apply bioethical frameworks such as autonomy, beneficence, and justice when formulating research questions about health policy or clinical practice.",100,28,0.28
 Law,Health Law & Bioethics,"Apply thematic analysis to qualitative data from ethics consultations, institutional review processes, or stakeholder interviews.",100,13,0.13
@@ -2411,17 +2411,17 @@ Engineering,Industrial & Manufacturing Engineering,Quantify geometric dimensioni
 Engineering,Industrial & Manufacturing Engineering,"Run finite element simulations of metal forming, welding, or machining processes to predict deformation and residual stresses.",100,4,0.04
 Engineering,Industrial & Manufacturing Engineering,Simulate thermal and mechanical behavior during additive manufacturing build processes.,100,5,0.05
 Engineering,Industrial & Manufacturing Engineering,"Validate predictive models for tool wear, surface finish, or defect formation against experimental results.",100,24,0.24
-Economics,Industrial Organization,"Acquire firm-level data on prices, quantities, costs, and market shares from industry databases or regulatory filings.",393,93,0.236641
-Economics,Industrial Organization,Address endogeneity of prices and market structure using instrumental variables or structural estimation methods.,393,49,0.124682
-Economics,Industrial Organization,Apply theories of strategic firm behavior and market structure when formulating hypotheses about competitive outcomes.,393,160,0.407125
-Economics,Industrial Organization,Assess whether market structure findings generalize across industries with different regulatory environments or entry barriers.,393,9,0.022901
-Economics,Industrial Organization,Compile merger and acquisition records from antitrust agencies or financial databases for competition analysis.,393,11,0.02799
-Economics,Industrial Organization,Control for unobserved firm heterogeneity and selection into markets when estimating competitive effects.,393,54,0.137405
-Economics,Industrial Organization,Coordinate with antitrust agencies or industry associations to access confidential firm-level data.,393,4,0.010178
-Economics,Industrial Organization,Estimate demand elasticities and substitution patterns to assess market power and merger effects.,393,13,0.033079
-Economics,Industrial Organization,Evaluate the external validity of firm conduct estimates across geographic markets or time periods.,393,15,0.038168
-Economics,Industrial Organization,Incorporate models of imperfect competition and market power into research design and theoretical frameworks.,393,160,0.407125
-Economics,Industrial Organization,Obtain product-level scanner data or transaction records to estimate demand systems and market boundaries.,393,13,0.033079
+Economics,Industrial Organization,"Acquire firm-level data on prices, quantities, costs, and market shares from industry databases or regulatory filings.",100,35,0.35
+Economics,Industrial Organization,Address endogeneity of prices and market structure using instrumental variables or structural estimation methods.,100,15,0.15
+Economics,Industrial Organization,Apply theories of strategic firm behavior and market structure when formulating hypotheses about competitive outcomes.,100,47,0.47
+Economics,Industrial Organization,Assess whether market structure findings generalize across industries with different regulatory environments or entry barriers.,100,3,0.03
+Economics,Industrial Organization,Compile merger and acquisition records from antitrust agencies or financial databases for competition analysis.,100,2,0.02
+Economics,Industrial Organization,Control for unobserved firm heterogeneity and selection into markets when estimating competitive effects.,100,16,0.16
+Economics,Industrial Organization,Coordinate with antitrust agencies or industry associations to access confidential firm-level data.,100,1,0.01
+Economics,Industrial Organization,Estimate demand elasticities and substitution patterns to assess market power and merger effects.,100,4,0.04
+Economics,Industrial Organization,Evaluate the external validity of firm conduct estimates across geographic markets or time periods.,100,7,0.07
+Economics,Industrial Organization,Incorporate models of imperfect competition and market power into research design and theoretical frameworks.,100,45,0.45
+Economics,Industrial Organization,Obtain product-level scanner data or transaction records to estimate demand systems and market boundaries.,100,0,0.0
 Medicine & Clinical Sciences,Infectious Disease,"Acquire diagnostic imaging data to assess infection site, disease severity, or treatment response in infected patients.",100,33,0.33
 Medicine & Clinical Sciences,Infectious Disease,"Analyze time-to-infection, time-to-clearance, or time-to-clinical-cure outcomes in treatment or prevention studies.",100,17,0.17
 Medicine & Clinical Sciences,Infectious Disease,Assess vaccine effectiveness using observational data while adjusting for confounding by indication and exposure risk.,100,0,0.0
@@ -2600,56 +2600,56 @@ Political Science,International Relations,Evaluate the temporal scope of finding
 Political Science,International Relations,"Extract and systematize information from diplomatic archives, treaty repositories, or declassified government documents.",100,43,0.43
 Political Science,International Relations,"Incorporate constructivist, liberal, or realist theoretical frameworks to explain patterns in international politics.",100,51,0.51
 Political Science,International Relations,Navigate cross-national ethical review requirements when conducting research involving participants in multiple countries.,100,1,0.01
-Economics,International Trade,Access customs transaction records or firm-level trade data from national statistical agencies.,393,52,0.132316
-Economics,International Trade,Address endogeneity in trade policy analysis using instrumental variables or quasi-experimental designs.,393,44,0.111959
-Economics,International Trade,"Apply trade theories such as comparative advantage, gravity models, or new trade theory when formulating research hypotheses about trade flows and patterns.",393,158,0.402036
-Economics,International Trade,"Assess whether trade relationships and policy effects generalize across different country income levels, trading blocs, or historical trade regimes.",393,106,0.26972
-Economics,International Trade,"Collect primary data from firms on trade costs, supply chain relationships, or compliance with trade regulations.",393,3,0.007634
-Economics,International Trade,Control for multilateral resistance and other confounding factors when estimating gravity model specifications.,393,30,0.076336
-Economics,International Trade,"Coordinate with customs authorities, trade ministries, or international organizations to obtain restricted trade microdata.",393,30,0.076336
-Economics,International Trade,"Design firm-level surveys to measure export behavior, import sourcing decisions, or responses to trade policy changes.",393,2,0.005089
-Economics,International Trade,"Develop interview protocols for trade policymakers, customs officials, or firm managers to understand trade decision-making processes.",393,4,0.010178
-Economics,International Trade,"Evaluate the external validity of findings across different product categories, industries, or stages of global value chains.",393,62,0.157761
-Economics,International Trade,"Incorporate institutional frameworks such as WTO rules, regional trade agreements, or trade policy regimes when designing research questions.",393,126,0.320611
-Religion,Islamic Studies,Account for selection bias when studying Muslim populations who may be underrepresented or difficult to access.,200,0,0.0
-Religion,Islamic Studies,"Acquire and analyze classical Islamic manuscripts, legal opinions, and religious texts as primary sources.",200,148,0.74
-Religion,Islamic Studies,"Address confounding variables related to ethnicity, nationality, and sectarian affiliation in observational studies of Muslims.",200,1,0.005
-Religion,Islamic Studies,"Address ethical considerations specific to researching religious communities, including respect for sacred texts and practices.",200,1,0.005
-Religion,Islamic Studies,"Analyze interview transcripts for themes related to religious identity, practice, and community belonging.",200,28,0.14
-Religion,Islamic Studies,Apply classical and contemporary Islamic legal theories when framing research questions about Muslim communities and practices.,200,80,0.4
-Religion,Islamic Studies,Assess whether findings about Muslim communities in one region or sect will generalize to other Islamic contexts and traditions.,200,6,0.03
-Religion,Islamic Studies,Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,200,24,0.12
-Religion,Islamic Studies,Code qualitative data using thematic frameworks derived from Islamic theological and jurisprudential categories.,200,84,0.42
-Religion,Islamic Studies,"Conduct interviews with Islamic scholars, religious leaders, and community members to gather primary qualitative data.",200,31,0.155
-Religion,Islamic Studies,"Coordinate with mosques, Islamic centers, and Muslim organizations to recruit study participants.",200,15,0.075
-Religion,Islamic Studies,"Design interview protocols that address sensitive topics related to religious practice, identity, and community dynamics.",200,27,0.135
-Religion,Islamic Studies,"Design survey instruments that accurately capture religious observance, belief, and identity among Muslim respondents.",200,1,0.005
-Religion,Islamic Studies,Develop culturally appropriate questionnaire items that reflect diverse Islamic theological and sectarian perspectives.,200,0,0.0
-Religion,Islamic Studies,"Develop focus group guides that facilitate discussion of Islamic values, ethics, and social issues among diverse Muslim participants.",200,2,0.01
-Religion,Islamic Studies,Engage with theories of religious authority and transmission to contextualize institutional dynamics in Muslim societies.,200,76,0.38
-Religion,Islamic Studies,Evaluate how historical and contemporary political conditions shape the applicability of findings across Muslim-majority and minority settings.,200,9,0.045
-Religion,Islamic Studies,Navigate informed consent processes with Muslim participants across varying literacy levels and cultural expectations.,200,1,0.005
-Religion,Islamic Studies,"Observe religious practices, rituals, and community gatherings in mosques and Islamic institutions for ethnographic research.",200,22,0.11
-Religion,Islamic Studies,"Transcribe and translate Arabic, Persian, or other Islamic-language source materials for textual analysis.",200,85,0.425
-Economics,Labor Economics,Acquire administrative employment records from state unemployment insurance systems or social security agencies.,697,86,0.123386
-Economics,Labor Economics,Apply difference-in-differences methods to evaluate the effects of labor market policy changes.,697,48,0.068867
-Economics,Labor Economics,"Apply human capital theory to frame research questions about education, training, and wage returns.",697,159,0.228121
-Economics,Labor Economics,Assess external validity of labor market findings across different regional economies and labor market institutions.,697,87,0.124821
-Economics,Labor Economics,Clean and standardize education and credential variables to enable cross-dataset comparisons.,697,122,0.175036
-Economics,Labor Economics,"Conduct employer surveys to collect data on hiring practices, wages, and workforce composition.",697,13,0.018651
-Economics,Labor Economics,"Construct consistent wage measures by adjusting for inflation, hours worked, and non-wage compensation.",697,132,0.189383
-Economics,Labor Economics,Correct for sample selection bias in wage equations using appropriate econometric techniques.,697,42,0.060258
-Economics,Labor Economics,Decompose wage gaps between demographic groups into explained and unexplained components.,697,30,0.043042
-Economics,Labor Economics,"Design survey instruments to measure job search behavior, reservation wages, and employment history.",697,13,0.018651
-Economics,Labor Economics,"Develop questionnaire modules to capture workplace conditions, benefits, and non-wage compensation.",697,13,0.018651
-Economics,Labor Economics,Draw on institutional frameworks to examine how labor market regulations affect employment outcomes.,697,185,0.265423
-Economics,Labor Economics,"Evaluate whether estimated wage effects generalize across demographic groups, industries, or time periods.",697,110,0.157819
-Economics,Labor Economics,Harmonize occupational and industry classification codes across different data sources and time periods.,697,110,0.157819
-Economics,Labor Economics,Implement regression discontinuity designs to identify causal effects of age-based or threshold-based labor policies.,697,16,0.022956
-Economics,Labor Economics,Incorporate search and matching models when analyzing unemployment duration and job transitions.,697,43,0.061693
-Economics,Labor Economics,Negotiate data use agreements with government agencies to access restricted labor market microdata.,697,149,0.213773
-Economics,Labor Economics,Obtain linked employer-employee datasets to analyze firm-level wage structures and worker mobility.,697,33,0.047346
-Economics,Labor Economics,Use instrumental variables to address endogeneity in estimating returns to education or training.,697,27,0.038737
+Economics,International Trade,Access customs transaction records or firm-level trade data from national statistical agencies.,99,17,0.171717
+Economics,International Trade,Address endogeneity in trade policy analysis using instrumental variables or quasi-experimental designs.,99,15,0.151515
+Economics,International Trade,"Apply trade theories such as comparative advantage, gravity models, or new trade theory when formulating research hypotheses about trade flows and patterns.",99,44,0.444444
+Economics,International Trade,"Assess whether trade relationships and policy effects generalize across different country income levels, trading blocs, or historical trade regimes.",99,42,0.424242
+Economics,International Trade,"Collect primary data from firms on trade costs, supply chain relationships, or compliance with trade regulations.",99,0,0.0
+Economics,International Trade,Control for multilateral resistance and other confounding factors when estimating gravity model specifications.,99,14,0.141414
+Economics,International Trade,"Coordinate with customs authorities, trade ministries, or international organizations to obtain restricted trade microdata.",99,5,0.050505
+Economics,International Trade,"Design firm-level surveys to measure export behavior, import sourcing decisions, or responses to trade policy changes.",99,0,0.0
+Economics,International Trade,"Develop interview protocols for trade policymakers, customs officials, or firm managers to understand trade decision-making processes.",99,0,0.0
+Economics,International Trade,"Evaluate the external validity of findings across different product categories, industries, or stages of global value chains.",99,19,0.191919
+Economics,International Trade,"Incorporate institutional frameworks such as WTO rules, regional trade agreements, or trade policy regimes when designing research questions.",99,34,0.343434
+Religion,Islamic Studies,Account for selection bias when studying Muslim populations who may be underrepresented or difficult to access.,100,0,0.0
+Religion,Islamic Studies,"Acquire and analyze classical Islamic manuscripts, legal opinions, and religious texts as primary sources.",100,73,0.73
+Religion,Islamic Studies,"Address confounding variables related to ethnicity, nationality, and sectarian affiliation in observational studies of Muslims.",100,1,0.01
+Religion,Islamic Studies,"Address ethical considerations specific to researching religious communities, including respect for sacred texts and practices.",100,0,0.0
+Religion,Islamic Studies,"Analyze interview transcripts for themes related to religious identity, practice, and community belonging.",100,18,0.18
+Religion,Islamic Studies,Apply classical and contemporary Islamic legal theories when framing research questions about Muslim communities and practices.,100,36,0.36
+Religion,Islamic Studies,Assess whether findings about Muslim communities in one region or sect will generalize to other Islamic contexts and traditions.,100,2,0.02
+Religion,Islamic Studies,Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,100,14,0.14
+Religion,Islamic Studies,Code qualitative data using thematic frameworks derived from Islamic theological and jurisprudential categories.,100,35,0.35
+Religion,Islamic Studies,"Conduct interviews with Islamic scholars, religious leaders, and community members to gather primary qualitative data.",100,20,0.2
+Religion,Islamic Studies,"Coordinate with mosques, Islamic centers, and Muslim organizations to recruit study participants.",100,8,0.08
+Religion,Islamic Studies,"Design interview protocols that address sensitive topics related to religious practice, identity, and community dynamics.",100,16,0.16
+Religion,Islamic Studies,"Design survey instruments that accurately capture religious observance, belief, and identity among Muslim respondents.",100,1,0.01
+Religion,Islamic Studies,Develop culturally appropriate questionnaire items that reflect diverse Islamic theological and sectarian perspectives.,100,0,0.0
+Religion,Islamic Studies,"Develop focus group guides that facilitate discussion of Islamic values, ethics, and social issues among diverse Muslim participants.",100,2,0.02
+Religion,Islamic Studies,Engage with theories of religious authority and transmission to contextualize institutional dynamics in Muslim societies.,100,32,0.32
+Religion,Islamic Studies,Evaluate how historical and contemporary political conditions shape the applicability of findings across Muslim-majority and minority settings.,100,2,0.02
+Religion,Islamic Studies,Navigate informed consent processes with Muslim participants across varying literacy levels and cultural expectations.,100,0,0.0
+Religion,Islamic Studies,"Observe religious practices, rituals, and community gatherings in mosques and Islamic institutions for ethnographic research.",100,12,0.12
+Religion,Islamic Studies,"Transcribe and translate Arabic, Persian, or other Islamic-language source materials for textual analysis.",100,36,0.36
+Economics,Labor Economics,Acquire administrative employment records from state unemployment insurance systems or social security agencies.,99,27,0.272727
+Economics,Labor Economics,Apply difference-in-differences methods to evaluate the effects of labor market policy changes.,99,12,0.121212
+Economics,Labor Economics,"Apply human capital theory to frame research questions about education, training, and wage returns.",99,22,0.222222
+Economics,Labor Economics,Assess external validity of labor market findings across different regional economies and labor market institutions.,99,26,0.262626
+Economics,Labor Economics,Clean and standardize education and credential variables to enable cross-dataset comparisons.,99,16,0.161616
+Economics,Labor Economics,"Conduct employer surveys to collect data on hiring practices, wages, and workforce composition.",99,2,0.020202
+Economics,Labor Economics,"Construct consistent wage measures by adjusting for inflation, hours worked, and non-wage compensation.",99,33,0.333333
+Economics,Labor Economics,Correct for sample selection bias in wage equations using appropriate econometric techniques.,99,7,0.070707
+Economics,Labor Economics,Decompose wage gaps between demographic groups into explained and unexplained components.,99,6,0.060606
+Economics,Labor Economics,"Design survey instruments to measure job search behavior, reservation wages, and employment history.",99,3,0.030303
+Economics,Labor Economics,"Develop questionnaire modules to capture workplace conditions, benefits, and non-wage compensation.",99,2,0.020202
+Economics,Labor Economics,Draw on institutional frameworks to examine how labor market regulations affect employment outcomes.,99,35,0.353535
+Economics,Labor Economics,"Evaluate whether estimated wage effects generalize across demographic groups, industries, or time periods.",99,30,0.30303
+Economics,Labor Economics,Harmonize occupational and industry classification codes across different data sources and time periods.,99,19,0.191919
+Economics,Labor Economics,Implement regression discontinuity designs to identify causal effects of age-based or threshold-based labor policies.,99,4,0.040404
+Economics,Labor Economics,Incorporate search and matching models when analyzing unemployment duration and job transitions.,99,9,0.090909
+Economics,Labor Economics,Negotiate data use agreements with government agencies to access restricted labor market microdata.,99,28,0.282828
+Economics,Labor Economics,Obtain linked employer-employee datasets to analyze firm-level wage structures and worker mobility.,99,10,0.10101
+Economics,Labor Economics,Use instrumental variables to address endogeneity in estimating returns to education or training.,99,4,0.040404
 Education,Language & Literacy Education,Account for nested data structures when analyzing student literacy outcomes within classrooms or schools.,100,2,0.02
 Education,Language & Literacy Education,Acquire standardized assessment data from schools or districts to analyze literacy outcomes.,100,6,0.06
 Education,Language & Literacy Education,Administer reading or writing assessments to measure learner proficiency or growth.,100,32,0.32
@@ -2730,15 +2730,15 @@ Philosophy,Logic & Philosophy of Language,Draw on formal logic or argumentation 
 Philosophy,Logic & Philosophy of Language,"Engage with theories of meaning, reference, or speech acts when framing research questions about language use.",100,79,0.79
 Philosophy,Logic & Philosophy of Language,"Identify and categorize logical fallacies, presuppositions, or implicatures in textual or spoken data.",100,26,0.26
 Philosophy,Logic & Philosophy of Language,Transcribe and annotate spoken discourse data to preserve relevant pragmatic and prosodic features.,100,0,0.0
-Economics,Macroeconomics,Account for non-stationarity and cointegration when estimating relationships among macroeconomic time series.,390,86,0.220513
-Economics,Macroeconomics,"Address endogeneity in macroeconomic regressions using instrumental variables, structural identification, or natural experiments.",390,102,0.261538
-Economics,Macroeconomics,"Assess whether macroeconomic relationships hold across different monetary regimes, policy environments, or stages of economic development.",390,142,0.364103
-Economics,Macroeconomics,"Construct consistent time series by harmonizing macroeconomic data across different vintages, definitions, or reporting standards.",390,126,0.323077
-Economics,Macroeconomics,Control for omitted variable bias and reverse causality when analyzing the effects of policy interventions on aggregate outcomes.,390,85,0.217949
-Economics,Macroeconomics,Coordinate with central banks or finance ministries to obtain proprietary data on policy decisions or economic forecasts.,390,15,0.038462
-Economics,Macroeconomics,Evaluate the external validity of findings across countries with varying institutional structures or levels of financial development.,390,53,0.135897
-Economics,Macroeconomics,"Ground research questions in established theories of monetary transmission mechanisms, fiscal multipliers, or business cycle dynamics.",390,178,0.45641
-Economics,Macroeconomics,Incorporate macroeconomic theoretical frameworks such as New Keynesian or Real Business Cycle models when formulating research hypotheses.,390,77,0.197436
+Economics,Macroeconomics,Account for non-stationarity and cointegration when estimating relationships among macroeconomic time series.,99,27,0.272727
+Economics,Macroeconomics,"Address endogeneity in macroeconomic regressions using instrumental variables, structural identification, or natural experiments.",99,31,0.313131
+Economics,Macroeconomics,"Assess whether macroeconomic relationships hold across different monetary regimes, policy environments, or stages of economic development.",99,45,0.454545
+Economics,Macroeconomics,"Construct consistent time series by harmonizing macroeconomic data across different vintages, definitions, or reporting standards.",99,48,0.484848
+Economics,Macroeconomics,Control for omitted variable bias and reverse causality when analyzing the effects of policy interventions on aggregate outcomes.,99,35,0.353535
+Economics,Macroeconomics,Coordinate with central banks or finance ministries to obtain proprietary data on policy decisions or economic forecasts.,99,3,0.030303
+Economics,Macroeconomics,Evaluate the external validity of findings across countries with varying institutional structures or levels of financial development.,99,23,0.232323
+Economics,Macroeconomics,"Ground research questions in established theories of monetary transmission mechanisms, fiscal multipliers, or business cycle dynamics.",99,50,0.505051
+Economics,Macroeconomics,Incorporate macroeconomic theoretical frameworks such as New Keynesian or Real Business Cycle models when formulating research hypotheses.,99,20,0.20202
 Materials Science,Magnetic Materials,Acquire ferromagnetic resonance spectra to determine magnetic anisotropy and damping parameters.,99,4,0.040404
 Materials Science,Magnetic Materials,Calculate magnetic anisotropy energies and exchange interactions from electronic structure theory.,99,9,0.090909
 Materials Science,Magnetic Materials,Characterize demagnetization factors and sample holder contributions to magnetic measurements.,99,6,0.060606
@@ -3046,15 +3046,15 @@ Biology,Microbiology,"Plan microbial challenge studies with defined inoculum con
 Biology,Microbiology,"Prepare and maintain pure cultures of bacteria, fungi, or other microorganisms for experimental use.",100,58,0.58
 Biology,Microbiology,"Prepare and quality-control culture media, buffers, and reagents for microbiological assays.",100,71,0.71
 Biology,Microbiology,Process marker gene sequencing data to generate operational taxonomic units or amplicon sequence variants for community analysis.,100,26,0.26
-Economics,Microeconomic Theory,Address identification challenges when estimating structural parameters from observational economic data.,394,21,0.053299
-Economics,Microeconomic Theory,Apply mechanism design principles to frame questions about optimal institutional arrangements and incentive structures.,394,76,0.192893
-Economics,Microeconomic Theory,Assess the robustness of theoretical predictions across different preference specifications and information structures.,394,161,0.408629
-Economics,Microeconomic Theory,Conduct laboratory experiments to test theoretical predictions about individual choice or strategic behavior.,394,7,0.017766
-Economics,Microeconomic Theory,Construct incentive-compatible elicitation mechanisms to measure economic preferences or beliefs.,394,4,0.010152
-Economics,Microeconomic Theory,"Design experimental protocols to elicit preferences, risk attitudes, or strategic behavior in controlled settings.",394,6,0.015228
-Economics,Microeconomic Theory,Distinguish between multiple equilibria when interpreting observed market or strategic outcomes.,394,49,0.124365
-Economics,Microeconomic Theory,Evaluate whether equilibrium results hold under alternative solution concepts or behavioral assumptions.,394,117,0.296954
-Economics,Microeconomic Theory,Formulate research questions using game-theoretic frameworks to analyze strategic interactions among economic agents.,394,196,0.497462
+Economics,Microeconomic Theory,Address identification challenges when estimating structural parameters from observational economic data.,100,8,0.08
+Economics,Microeconomic Theory,Apply mechanism design principles to frame questions about optimal institutional arrangements and incentive structures.,100,21,0.21
+Economics,Microeconomic Theory,Assess the robustness of theoretical predictions across different preference specifications and information structures.,100,46,0.46
+Economics,Microeconomic Theory,Conduct laboratory experiments to test theoretical predictions about individual choice or strategic behavior.,100,3,0.03
+Economics,Microeconomic Theory,Construct incentive-compatible elicitation mechanisms to measure economic preferences or beliefs.,100,0,0.0
+Economics,Microeconomic Theory,"Design experimental protocols to elicit preferences, risk attitudes, or strategic behavior in controlled settings.",100,3,0.03
+Economics,Microeconomic Theory,Distinguish between multiple equilibria when interpreting observed market or strategic outcomes.,100,16,0.16
+Economics,Microeconomic Theory,Evaluate whether equilibrium results hold under alternative solution concepts or behavioral assumptions.,100,29,0.29
+Economics,Microeconomic Theory,Formulate research questions using game-theoretic frameworks to analyze strategic interactions among economic agents.,100,51,0.51
 Sociology,Migration & Immigration,Access census or population register data to analyze immigrant demographic characteristics and spatial distribution.,100,12,0.12
 Sociology,Migration & Immigration,"Acquire administrative data on visa issuances, asylum applications, or border crossings from government agencies.",100,5,0.05
 Sociology,Migration & Immigration,"Address ethical considerations for research with undocumented migrants or asylum seekers, including confidentiality protections.",100,11,0.11
@@ -3814,36 +3814,36 @@ Communication & Media Studies,Political Communication,Evaluate whether effects o
 Communication & Media Studies,Political Communication,Negotiate access to proprietary platform data or collaborate with media organizations to obtain political content archives.,99,4,0.040404
 Economics,Political Economy,Acquire cross-national economic and political datasets from international organizations for comparative analysis.,100,32,0.32
 Economics,Political Economy,Address endogeneity between political institutions and economic outcomes when estimating causal relationships.,100,21,0.21
-Economics,Political Economy,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of policy changes or institutional reforms.,353,18,0.050992
-Economics,Political Economy,"Apply theories of rent-seeking, collective action, or public choice to frame research questions about policy outcomes.",353,120,0.339943
+Economics,Political Economy,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of policy changes or institutional reforms.,100,1,0.01
+Economics,Political Economy,"Apply theories of rent-seeking, collective action, or public choice to frame research questions about policy outcomes.",100,26,0.26
 Economics,Political Economy,Apply theories of state-market relations to frame research questions about economic policy outcomes.,100,44,0.44
 Economics,Political Economy,Assess whether findings from single-country political economy studies generalize across different regime types or economic systems.,100,12,0.12
-Economics,Political Economy,"Assess whether political-economic relationships hold across different regime types, electoral systems, or levels of economic development.",353,78,0.220963
+Economics,Political Economy,"Assess whether political-economic relationships hold across different regime types, electoral systems, or levels of economic development.",100,24,0.24
 Economics,Political Economy,"Code and standardize policy documents, party manifestos, or legislative texts for quantitative analysis.",100,4,0.04
-Economics,Political Economy,"Code and standardize political institution variables such as regime type, electoral rules, or veto players.",353,48,0.135977
-Economics,Political Economy,"Code policy documents, legislative debates, or party manifestos to identify ideological positions or policy priorities.",353,11,0.031161
+Economics,Political Economy,"Code and standardize political institution variables such as regime type, electoral rules, or veto players.",100,7,0.07
+Economics,Political Economy,"Code policy documents, legislative debates, or party manifestos to identify ideological positions or policy priorities.",100,1,0.01
 Economics,Political Economy,Code qualitative data from policy documents and political speeches to identify economic policy positions and priorities.,100,15,0.15
 Economics,Political Economy,"Compile historical data on trade flows, tariffs, and economic agreements from government archives and statistical agencies.",100,6,0.06
 Economics,Political Economy,"Conduct elite interviews with policymakers, business leaders, or union officials to understand political-economic decision-making.",100,11,0.11
-Economics,Political Economy,"Conduct elite interviews with policymakers, legislators, or interest group representatives to gather primary data on decision-making processes.",353,9,0.025496
-Economics,Political Economy,"Construct questionnaire items to capture perceptions of corruption, institutional trust, or political efficacy.",353,2,0.005666
+Economics,Political Economy,"Conduct elite interviews with policymakers, legislators, or interest group representatives to gather primary data on decision-making processes.",100,1,0.01
+Economics,Political Economy,"Construct questionnaire items to capture perceptions of corruption, institutional trust, or political efficacy.",100,1,0.01
 Economics,Political Economy,"Control for confounding factors such as colonial history, geography, or resource endowments in cross-national economic analyses.",100,7,0.07
-Economics,Political Economy,"Control for confounding factors such as economic conditions, demographic composition, or historical legacies in observational analyses.",353,142,0.402266
+Economics,Political Economy,"Control for confounding factors such as economic conditions, demographic composition, or historical legacies in observational analyses.",100,37,0.37
 Economics,Political Economy,Design focus group protocols to explore how citizens perceive economic inequality and government economic performance.,100,0,0.0
-Economics,Political Economy,"Design survey instruments to measure preferences for redistribution, taxation, or government intervention.",353,2,0.005666
+Economics,Political Economy,"Design survey instruments to measure preferences for redistribution, taxation, or government intervention.",100,0,0.0
 Economics,Political Economy,"Design survey instruments to measure public attitudes toward economic redistribution, trade policy, or market regulation.",100,2,0.02
 Economics,Political Economy,Develop interview protocols to capture elite perspectives on policy formation and economic governance decisions.,100,8,0.08
-Economics,Political Economy,Develop interview protocols to elicit stakeholder perspectives on regulatory processes or policy implementation.,353,9,0.025496
-Economics,Political Economy,Employ instrumental variable strategies to address endogeneity between political and economic variables.,353,36,0.101983
+Economics,Political Economy,Develop interview protocols to elicit stakeholder perspectives on regulatory processes or policy implementation.,100,1,0.01
+Economics,Political Economy,Employ instrumental variable strategies to address endogeneity between political and economic variables.,100,4,0.04
 Economics,Political Economy,Evaluate the temporal scope of political-economic relationships given changing global trade and governance structures.,100,17,0.17
-Economics,Political Economy,Evaluate the temporal stability of findings given changes in political institutions or economic conditions.,353,65,0.184136
-Economics,Political Economy,"Extract historical data on trade policies, taxation, or property rights from archival sources.",353,24,0.067989
+Economics,Political Economy,Evaluate the temporal stability of findings given changes in political institutions or economic conditions.,100,19,0.19
+Economics,Political Economy,"Extract historical data on trade policies, taxation, or property rights from archival sources.",100,8,0.08
 Economics,Political Economy,Extract legislative voting records and policy outputs from parliamentary databases to analyze political determinants of economic policy.,100,1,0.01
 Economics,Political Economy,Harmonize economic indicators and political variables across countries with different measurement standards and reporting practices.,100,20,0.2
-Economics,Political Economy,Harmonize fiscal and budgetary variables across countries or time periods to enable comparative analysis.,353,61,0.172805
-Economics,Political Economy,Incorporate institutional frameworks such as property rights regimes or constitutional constraints when developing hypotheses about economic behavior.,353,130,0.368272
+Economics,Political Economy,Harmonize fiscal and budgetary variables across countries or time periods to enable comparative analysis.,100,18,0.18
+Economics,Political Economy,Incorporate institutional frameworks such as property rights regimes or constitutional constraints when developing hypotheses about economic behavior.,100,31,0.31
 Economics,Political Economy,Integrate institutional economics frameworks when analyzing how political structures shape economic development.,100,27,0.27
-Economics,Political Economy,Negotiate access to restricted government administrative data or proprietary datasets held by international organizations.,353,26,0.073654
+Economics,Political Economy,Negotiate access to restricted government administrative data or proprietary datasets held by international organizations.,100,3,0.03
 Economics,Political Economy,"Negotiate data access agreements with government ministries, central banks, or international economic organizations.",100,4,0.04
 Philosophy,Political Philosophy,"Access and analyze primary philosophical texts, treatises, and historical political documents.",100,93,0.93
 Philosophy,Political Philosophy,"Assess whether normative arguments apply across different political systems, cultural contexts, or historical periods.",100,56,0.56
@@ -3988,21 +3988,21 @@ Political Science,Public Administration & Policy,Evaluate the external validity 
 Political Science,Public Administration & Policy,Interview policymakers and administrators to document policy formulation and implementation processes.,100,24,0.24
 Political Science,Public Administration & Policy,Negotiate data-sharing agreements with government agencies to access restricted administrative records.,100,3,0.03
 Political Science,Public Administration & Policy,Recode open-ended survey responses about policy preferences or public service experiences into analyzable categories.,100,3,0.03
-Economics,Public Economics,Access linked employer-employee or tax-benefit administrative datasets to study labor market and fiscal policy interactions.,699,9,0.012876
-Economics,Public Economics,Acquire administrative tax records from government agencies to analyze taxpayer behavior and policy effects.,699,103,0.147353
-Economics,Public Economics,Address endogeneity in fiscal policy analysis using instrumental variables based on policy rules or institutional features.,699,31,0.044349
-Economics,Public Economics,Analyze bunching patterns at tax kinks or notches to identify behavioral responses to fiscal incentives.,699,12,0.017167
-Economics,Public Economics,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of tax and spending policy changes.,699,54,0.077253
-Economics,Public Economics,Apply public finance theory to analyze the efficiency and equity implications of tax and transfer policies.,699,186,0.266094
-Economics,Public Economics,Assess whether estimated behavioral responses to fiscal policies generalize across different tax systems and institutional contexts.,699,25,0.035765
-Economics,Public Economics,Clean and harmonize tax and fiscal data across jurisdictions with different reporting standards and definitions.,699,92,0.131617
-Economics,Public Economics,Construct effective tax rates and fiscal variables from raw administrative or survey data.,699,214,0.306152
-Economics,Public Economics,Decompose incidence of taxes and transfers across income groups using microsimulation or structural models.,698,52,0.074499
-Economics,Public Economics,"Design survey instruments to measure taxpayer compliance behavior, perceptions of tax fairness, or preferences for public goods.",699,58,0.082976
-Economics,Public Economics,"Estimate behavioral elasticities of taxable income, labor supply, or consumption in response to tax rate changes.",699,26,0.037196
-Economics,Public Economics,Evaluate the external validity of policy estimates derived from specific jurisdictions or time periods with distinct fiscal regimes.,699,38,0.054363
-Economics,Public Economics,Frame research questions using optimal taxation theory to evaluate trade-offs between redistribution and economic efficiency.,699,46,0.065808
-Economics,Public Economics,Negotiate data access agreements with tax authorities or statistical agencies to obtain confidential fiscal microdata.,698,57,0.081662
+Economics,Public Economics,Access linked employer-employee or tax-benefit administrative datasets to study labor market and fiscal policy interactions.,100,3,0.03
+Economics,Public Economics,Acquire administrative tax records from government agencies to analyze taxpayer behavior and policy effects.,100,25,0.25
+Economics,Public Economics,Address endogeneity in fiscal policy analysis using instrumental variables based on policy rules or institutional features.,100,4,0.04
+Economics,Public Economics,Analyze bunching patterns at tax kinks or notches to identify behavioral responses to fiscal incentives.,100,1,0.01
+Economics,Public Economics,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of tax and spending policy changes.,100,3,0.03
+Economics,Public Economics,Apply public finance theory to analyze the efficiency and equity implications of tax and transfer policies.,100,27,0.27
+Economics,Public Economics,Assess whether estimated behavioral responses to fiscal policies generalize across different tax systems and institutional contexts.,100,9,0.09
+Economics,Public Economics,Clean and harmonize tax and fiscal data across jurisdictions with different reporting standards and definitions.,100,15,0.15
+Economics,Public Economics,Construct effective tax rates and fiscal variables from raw administrative or survey data.,100,41,0.41
+Economics,Public Economics,Decompose incidence of taxes and transfers across income groups using microsimulation or structural models.,100,9,0.09
+Economics,Public Economics,"Design survey instruments to measure taxpayer compliance behavior, perceptions of tax fairness, or preferences for public goods.",100,12,0.12
+Economics,Public Economics,"Estimate behavioral elasticities of taxable income, labor supply, or consumption in response to tax rate changes.",100,0,0.0
+Economics,Public Economics,Evaluate the external validity of policy estimates derived from specific jurisdictions or time periods with distinct fiscal regimes.,100,10,0.1
+Economics,Public Economics,Frame research questions using optimal taxation theory to evaluate trade-offs between redistribution and economic efficiency.,100,3,0.03
+Economics,Public Economics,Negotiate data access agreements with tax authorities or statistical agencies to obtain confidential fiscal microdata.,100,14,0.14
 Nutrition & Dietetics,Public Health & Community Nutrition,Administer dietary and behavioral surveys to representative community samples.,100,56,0.56
 Nutrition & Dietetics,Public Health & Community Nutrition,Analyze nationally representative dietary survey data to estimate intake and nutritional status trends.,100,23,0.23
 Nutrition & Dietetics,Public Health & Community Nutrition,Apply multilevel models to account for community and household clustering in nutrition data.,100,11,0.11
@@ -4113,28 +4113,28 @@ History,Regional & Area Studies,Navigate ethical review processes across multipl
 History,Regional & Area Studies,"Situate research questions within postcolonial, transnational, or area-specific theoretical frameworks to account for regional power dynamics.",100,47,0.47
 History,Regional & Area Studies,Transcribe and translate primary source materials from regional languages or historical scripts into working languages.,100,32,0.32
 History,Regional & Area Studies,"Triangulate findings across archival sources, oral accounts, and secondary literature to address gaps and biases in regional documentation.",100,61,0.61
-Religion,Religion & Society,"Access national survey datasets containing religious affiliation, attendance, and belief measures.",200,18,0.09
-Religion,Religion & Society,"Acquire secondary data from religious denomination records, congregational surveys, or faith-based organization archives.",200,41,0.205
-Religion,Religion & Society,Address confidentiality concerns when studying religious beliefs or practices that may be stigmatized or politically sensitive.,200,15,0.075
-Religion,Religion & Society,Address self-selection into religious communities when analyzing observational data on religion and social outcomes.,200,4,0.02
-Religion,Religion & Society,"Analyze textual data from sermons, religious texts, or faith-based media for content and discourse patterns.",200,45,0.225
-Religion,Religion & Society,"Apply secularization, religious economy, or lived religion theories when framing research questions about religious change and practice.",200,58,0.29
-Religion,Religion & Society,"Assess whether findings about religious practices or beliefs generalize across denominational, cultural, or national contexts.",200,36,0.18
-Religion,Religion & Society,Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,200,51,0.255
-Religion,Religion & Society,Clean and standardize religious affiliation categories across different classification schemes and survey instruments.,200,18,0.09
-Religion,Religion & Society,"Code qualitative data for theological themes, religious meaning-making, and spiritual narratives.",200,73,0.365
-Religion,Religion & Society,"Conduct participant observation in religious services, rituals, and congregational activities.",200,34,0.17
-Religion,Religion & Society,Control for confounding between religious participation and sociodemographic characteristics in statistical analyses.,200,13,0.065
-Religion,Religion & Society,"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",200,53,0.265
-Religion,Religion & Society,"Design interview protocols to explore personal religious narratives, conversion experiences, and faith development.",200,23,0.115
-Religion,Religion & Society,"Design survey items to measure religiosity, spiritual practices, and religious identity across diverse faith traditions.",200,7,0.035
-Religion,Religion & Society,Develop focus group guides to examine collective religious practices and community meaning-making processes.,200,5,0.025
-Religion,Religion & Society,"Develop questionnaire scales that capture religious participation, belief salience, and congregational involvement.",200,4,0.02
-Religion,Religion & Society,Engage with theories of religious pluralism and interreligious relations when examining multi-faith contexts.,200,38,0.19
-Religion,Religion & Society,Evaluate how historical religious transformations may limit the applicability of findings to contemporary settings.,200,12,0.06
-Religion,Religion & Society,"Interview religious leaders, clergy, and lay members about institutional practices and community dynamics.",200,57,0.285
-Religion,Religion & Society,Navigate ethical considerations specific to researching vulnerable religious communities or minority faith groups.,200,8,0.04
-Religion,Religion & Society,Recode open-ended responses about religious identity and spiritual experiences into analytical categories.,200,8,0.04
+Religion,Religion & Society,"Access national survey datasets containing religious affiliation, attendance, and belief measures.",100,10,0.1
+Religion,Religion & Society,"Acquire secondary data from religious denomination records, congregational surveys, or faith-based organization archives.",100,19,0.19
+Religion,Religion & Society,Address confidentiality concerns when studying religious beliefs or practices that may be stigmatized or politically sensitive.,100,5,0.05
+Religion,Religion & Society,Address self-selection into religious communities when analyzing observational data on religion and social outcomes.,100,1,0.01
+Religion,Religion & Society,"Analyze textual data from sermons, religious texts, or faith-based media for content and discourse patterns.",100,19,0.19
+Religion,Religion & Society,"Apply secularization, religious economy, or lived religion theories when framing research questions about religious change and practice.",100,29,0.29
+Religion,Religion & Society,"Assess whether findings about religious practices or beliefs generalize across denominational, cultural, or national contexts.",100,16,0.16
+Religion,Religion & Society,Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,100,28,0.28
+Religion,Religion & Society,Clean and standardize religious affiliation categories across different classification schemes and survey instruments.,100,8,0.08
+Religion,Religion & Society,"Code qualitative data for theological themes, religious meaning-making, and spiritual narratives.",100,40,0.4
+Religion,Religion & Society,"Conduct participant observation in religious services, rituals, and congregational activities.",100,18,0.18
+Religion,Religion & Society,Control for confounding between religious participation and sociodemographic characteristics in statistical analyses.,100,5,0.05
+Religion,Religion & Society,"Coordinate with religious congregations, denominations, or faith-based organizations to recruit study participants.",100,31,0.31
+Religion,Religion & Society,"Design interview protocols to explore personal religious narratives, conversion experiences, and faith development.",100,15,0.15
+Religion,Religion & Society,"Design survey items to measure religiosity, spiritual practices, and religious identity across diverse faith traditions.",100,5,0.05
+Religion,Religion & Society,Develop focus group guides to examine collective religious practices and community meaning-making processes.,100,5,0.05
+Religion,Religion & Society,"Develop questionnaire scales that capture religious participation, belief salience, and congregational involvement.",100,3,0.03
+Religion,Religion & Society,Engage with theories of religious pluralism and interreligious relations when examining multi-faith contexts.,100,19,0.19
+Religion,Religion & Society,Evaluate how historical religious transformations may limit the applicability of findings to contemporary settings.,100,5,0.05
+Religion,Religion & Society,"Interview religious leaders, clergy, and lay members about institutional practices and community dynamics.",100,34,0.34
+Religion,Religion & Society,Navigate ethical considerations specific to researching vulnerable religious communities or minority faith groups.,100,2,0.02
+Religion,Religion & Society,Recode open-ended responses about religious identity and spiritual experiences into analytical categories.,100,6,0.06
 History,Religious History,"Access inquisition records, trial transcripts, or ecclesiastical court documents from historical archives.",100,5,0.05
 History,Religious History,"Account for biases in sources produced by religious authorities, polemicists, or persecuting institutions.",100,45,0.45
 History,Religious History,"Acquire archival materials from ecclesiastical repositories, diocesan archives, or religious order collections.",100,30,0.3
@@ -4626,16 +4626,16 @@ Arts,Theater & Performance Studies,"Gather oral histories from theater artists, 
 Arts,Theater & Performance Studies,"Negotiate access to theater companies, festivals, or educational drama programs for fieldwork and participant recruitment.",100,16,0.16
 Arts,Theater & Performance Studies,"Record and document live performances using video, audio, or notation systems for subsequent analysis.",100,5,0.05
 Arts,Theater & Performance Studies,"Situate research questions within historiographical debates about theater movements, genres, or cultural contexts.",100,85,0.85
-Religion,Theology & Ethics,"Access and analyze historical religious texts, denominational records, or ecclesiastical archives as secondary sources.",200,91,0.455
-Religion,Theology & Ethics,Account for denominational or theological diversity when analyzing patterns in religious attitudes or ethical positions.,200,36,0.18
-Religion,Theology & Ethics,"Assess whether theological or ethical claims apply across different religious traditions, denominations, or cultural contexts.",200,54,0.27
-Religion,Theology & Ethics,"Code qualitative data for theological themes, ethical concepts, or patterns of religious meaning-making.",200,18,0.09
-Religion,Theology & Ethics,"Conduct interviews or focus groups with clergy, religious practitioners, or members of faith communities to gather primary data on religious life.",200,11,0.055
-Religion,Theology & Ethics,"Coordinate with religious institutions, congregations, or faith-based organizations to recruit participants or access community settings.",200,8,0.04
-Religion,Theology & Ethics,"Design survey instruments to measure religious beliefs, spiritual practices, or moral attitudes within faith communities.",200,4,0.02
-Religion,Theology & Ethics,"Develop interview protocols to explore lived religious experiences, moral decision-making processes, or theological understanding among participants.",200,9,0.045
-Religion,Theology & Ethics,"Engage with theological doctrines, ethical frameworks, or religious traditions when framing research questions about moral reasoning or religious practice.",200,200,1.0
-Religion,Theology & Ethics,"Navigate ethical considerations specific to researching religious communities, including respect for sacred practices and doctrinal sensitivities.",200,2,0.01
+Religion,Theology & Ethics,"Access and analyze historical religious texts, denominational records, or ecclesiastical archives as secondary sources.",100,39,0.39
+Religion,Theology & Ethics,Account for denominational or theological diversity when analyzing patterns in religious attitudes or ethical positions.,100,17,0.17
+Religion,Theology & Ethics,"Assess whether theological or ethical claims apply across different religious traditions, denominations, or cultural contexts.",100,30,0.3
+Religion,Theology & Ethics,"Code qualitative data for theological themes, ethical concepts, or patterns of religious meaning-making.",100,10,0.1
+Religion,Theology & Ethics,"Conduct interviews or focus groups with clergy, religious practitioners, or members of faith communities to gather primary data on religious life.",100,7,0.07
+Religion,Theology & Ethics,"Coordinate with religious institutions, congregations, or faith-based organizations to recruit participants or access community settings.",100,5,0.05
+Religion,Theology & Ethics,"Design survey instruments to measure religious beliefs, spiritual practices, or moral attitudes within faith communities.",100,2,0.02
+Religion,Theology & Ethics,"Develop interview protocols to explore lived religious experiences, moral decision-making processes, or theological understanding among participants.",100,5,0.05
+Religion,Theology & Ethics,"Engage with theological doctrines, ethical frameworks, or religious traditions when framing research questions about moral reasoning or religious practice.",100,100,1.0
+Religion,Theology & Ethics,"Navigate ethical considerations specific to researching religious communities, including respect for sacred practices and doctrinal sensitivities.",100,1,0.01
 Materials Science,Thin Films & Coatings,Analyze coating composition and chemical bonding states using X-ray photoelectron spectroscopy or energy-dispersive spectroscopy.,100,50,0.5
 Materials Science,Thin Films & Coatings,"Assess film adhesion strength through pull-off, scratch, or tape peel testing methods.",100,6,0.06
 Materials Science,Thin Films & Coatings,"Calculate expected film thickness, refractive index, or bandgap from deposition parameters using thin film growth models.",100,2,0.02
@@ -4728,19 +4728,19 @@ Engineering,Transportation Engineering,Propagate measurement errors through leve
 Engineering,Transportation Engineering,Quantify uncertainty in traffic forecasts due to variability in demand and network conditions.,100,6,0.06
 Engineering,Transportation Engineering,Run traffic microsimulation models to evaluate intersection designs and signal timing plans.,100,6,0.06
 Engineering,Transportation Engineering,Simulate vehicle dynamics and control system responses under various driving scenarios.,100,13,0.13
-Economics,Urban & Real Estate Economics,Address spatial autocorrelation and spatial heterogeneity when analyzing housing prices or regional economic outcomes across geographic units.,397,88,0.221662
-Economics,Urban & Real Estate Economics,Apply hedonic regression methods to estimate implicit prices of housing and neighborhood attributes from property transaction data.,397,53,0.133501
-Economics,Urban & Real Estate Economics,"Apply urban economic theories of agglomeration, land use, and spatial equilibrium when formulating research hypotheses about housing markets and regional development.",397,146,0.367758
-Economics,Urban & Real Estate Economics,"Assess whether housing market findings generalize across metropolitan areas with different regulatory environments, demographic compositions, or economic bases.",397,33,0.083123
-Economics,Urban & Real Estate Economics,"Clean and harmonize property transaction data by addressing inconsistent property identifiers, missing values, and outlier sale prices.",397,81,0.20403
-Economics,Urban & Real Estate Economics,"Collect primary data on property characteristics, transaction details, or neighborhood conditions through field observations and site visits.",397,8,0.020151
-Economics,Urban & Real Estate Economics,Control for neighborhood selection and sorting when estimating the effects of local amenities or disamenities on housing market outcomes.,397,22,0.055416
-Economics,Urban & Real Estate Economics,"Coordinate with real estate industry associations, housing authorities, or municipal agencies to obtain proprietary data on property listings, rents, or development activity.",397,72,0.18136
-Economics,Urban & Real Estate Economics,"Design surveys to measure household housing preferences, residential mobility intentions, and neighborhood satisfaction.",397,4,0.010076
-Economics,Urban & Real Estate Economics,"Develop interview protocols to explore stakeholder perspectives on urban development projects, housing policies, or neighborhood change.",397,16,0.040302
-Economics,Urban & Real Estate Economics,"Employ quasi-experimental methods to identify causal effects of place-based policies, infrastructure investments, or regulatory changes on property values.",397,36,0.09068
-Economics,Urban & Real Estate Economics,Evaluate the external validity of real estate research across different housing market cycles and macroeconomic conditions.,397,12,0.030227
-Economics,Urban & Real Estate Economics,"Incorporate institutional factors such as zoning regulations, property rights, and housing finance structures into theoretical frameworks for real estate research.",397,111,0.279597
+Economics,Urban & Real Estate Economics,Address spatial autocorrelation and spatial heterogeneity when analyzing housing prices or regional economic outcomes across geographic units.,100,22,0.22
+Economics,Urban & Real Estate Economics,Apply hedonic regression methods to estimate implicit prices of housing and neighborhood attributes from property transaction data.,100,16,0.16
+Economics,Urban & Real Estate Economics,"Apply urban economic theories of agglomeration, land use, and spatial equilibrium when formulating research hypotheses about housing markets and regional development.",100,41,0.41
+Economics,Urban & Real Estate Economics,"Assess whether housing market findings generalize across metropolitan areas with different regulatory environments, demographic compositions, or economic bases.",100,15,0.15
+Economics,Urban & Real Estate Economics,"Clean and harmonize property transaction data by addressing inconsistent property identifiers, missing values, and outlier sale prices.",100,26,0.26
+Economics,Urban & Real Estate Economics,"Collect primary data on property characteristics, transaction details, or neighborhood conditions through field observations and site visits.",100,3,0.03
+Economics,Urban & Real Estate Economics,Control for neighborhood selection and sorting when estimating the effects of local amenities or disamenities on housing market outcomes.,100,7,0.07
+Economics,Urban & Real Estate Economics,"Coordinate with real estate industry associations, housing authorities, or municipal agencies to obtain proprietary data on property listings, rents, or development activity.",100,24,0.24
+Economics,Urban & Real Estate Economics,"Design surveys to measure household housing preferences, residential mobility intentions, and neighborhood satisfaction.",100,1,0.01
+Economics,Urban & Real Estate Economics,"Develop interview protocols to explore stakeholder perspectives on urban development projects, housing policies, or neighborhood change.",100,3,0.03
+Economics,Urban & Real Estate Economics,"Employ quasi-experimental methods to identify causal effects of place-based policies, infrastructure investments, or regulatory changes on property values.",100,13,0.13
+Economics,Urban & Real Estate Economics,Evaluate the external validity of real estate research across different housing market cycles and macroeconomic conditions.,100,6,0.06
+Economics,Urban & Real Estate Economics,"Incorporate institutional factors such as zoning regulations, property rights, and housing finance structures into theoretical frameworks for real estate research.",100,32,0.32
 Sociology,Urban Sociology,"Access geospatial data on urban infrastructure, transportation networks, or environmental conditions for spatial analysis.",100,13,0.13
 Sociology,Urban Sociology,Account for residential selection bias when estimating neighborhood effects on individual outcomes.,100,4,0.04
 Sociology,Urban Sociology,"Address ethical considerations for research in vulnerable urban communities, including issues of anonymity in identifiable neighborhoods.",100,8,0.08
