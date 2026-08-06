@@ -1,6 +1,6 @@
 # SciNet
 
-A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 6 domains, 34 fields, and 318 subfields, with 7,259 released task statements (27 universal, 134 domain, 321 field, and 6,777 subfield-level). Each task also ships with a substep decomposition and an estimate of how long it takes, per subfield.
+A task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. SciNet enables rigorous, task-level analysis of scientific work by mapping the granular activity structure of science across 6 domains, 34 fields, and 318 subfields, with 7,259 released task statements (27 universal, 134 domain, 321 field, and 6,777 subfield-level). Each task also ships with a substep decomposition, an estimate of how long it takes, and ratings of its importance, reach, and frequency — all per subfield.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -21,6 +21,8 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 | [`data/tasks.csv`](data/tasks.csv) | Every task in the hierarchy (universal, domain, field, and subfield levels) with category labels |
 | [`data/substeps.csv.gz`](data/substeps.csv.gz) | How each task decomposes into the steps a researcher performs |
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately for every subfield it appears in |
+| [`data/task_ratings.csv`](data/task_ratings.csv) | How important each task is, what share of researchers do it, and how often — rated separately for every subfield it appears in |
+| [`data/task_prevalence.csv`](data/task_prevalence.csv) | Observed share of a subfield's papers that actually perform each task, read from full text |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields — how a paper is assigned to a subfield. Topics are not a level of the SciNet taxonomy and carry no tasks of their own |
 
 ### Data dictionary
@@ -70,6 +72,42 @@ All files are UTF-8. CSVs use comma separators. See [`data/README.md`](data/READ
 
 Both are model estimates, not measurements. Times assume a competent researcher with the standard tools of the subfield but no generative-AI assistant, so they describe the work as it was done before LLM assistance.
 
+**`task_ratings.csv`** — one row per task *per subfield it appears in*. The three scales are O\*NET's — *Importance*, *Relevance of Task*, and *Frequency of Task* — so SciNet ratings can be compared against occupational data directly. O\*NET publishes Relevance as the share of workers for whom the task is part of the job; it is released here as `pct_researchers`, since in a research setting the population is researchers.
+
+| Column | Description |
+|--------|-------------|
+| `task` | Task statement text |
+| `level` | Tier the task is filed at |
+| `domain`, `field`, `subfield` | Subfield this rating was made for |
+| `importance` | 1 = Not Important, 2 = Somewhat, 3 = Important, 4 = Very, 5 = Extremely |
+| `pct_researchers` | Out of 100 researchers in the subfield, how many perform this task at least occasionally (0–100) |
+| `frequency` | 1 = Yearly or less, 2 = More than yearly, 3 = More than monthly, 4 = More than weekly, 5 = Daily, 6 = More than daily, 7 = Hourly or more |
+| `classification` | `Core` if `importance` ≥ 3 and `pct_researchers` ≥ 67, else `Supplemental` (O\*NET's rule) |
+
+**`task_prevalence.csv`** — the empirical counterpart to the ratings, and the yardstick they are validated against. Papers from each subfield were read in full and scored for whether the task was performed. Covers subfield-level tasks in 316 subfields; field, domain, and universal tasks have no per-paper measurement.
+
+| Column | Description |
+|--------|-------------|
+| `field`, `subfield` | Subfield the papers were sampled from |
+| `task` | Task statement text |
+| `n_papers` | Papers scored for this task |
+| `n_involved` | Papers where the task was stated explicitly or clearly implied |
+| `prevalence` | `n_involved / n_papers` |
+
+## Validation
+
+The ratings are checked against two sources outside SciNet.
+
+**Against human experts.** O\*NET publishes the same three scales rated by occupational experts. On 425 researcher-relevant task–occupation pairs across 40 scientific occupations, SciNet's ratings correlate with the expert ratings at **r = 0.66 (importance), 0.63 (% researchers), and 0.75 (frequency)**, with mean bias under 1 point on every scale.
+
+**Against observed behaviour.** Comparing the ratings to `task_prevalence.csv` — what papers actually show researchers doing — across 4,936 task–subfield cells and 35,169 papers gives rank correlations of **ρ = 0.56 (importance), 0.61 (% researchers), and 0.53 (frequency)**. These hold within subfields, so they are not an artefact of some fields being busier than others. The ratings and prevalence measure different things (a task everyone does occasionally still appears in few papers), so rank agreement is the meaningful test rather than levels.
+
+The classification carries the split: tasks marked `Core` appear in **20.5%** of papers on average against **4.3%** for `Supplemental`, a near five-fold gap.
+
+Two consistency checks. Importance and `pct_researchers` correlate at ρ = 0.83 with each other — they are close to one measure, so the two conditions in the `Core` rule are not independent screens. And the ratings correlate *negatively* with the time estimates (frequency vs elapsed hours, ρ = −0.32): tasks many researchers do often are the short routine ones. Nothing in the rating prompt mentions duration, so that sign is unforced.
+
+**The time estimates are not externally validated.** The natural benchmark is protocols.io, where published protocols carry author-entered step durations. On the 124 substeps with a verified match to a real protocol step, the rank correlation with our estimates is **+0.04 (p = 0.65)** — indistinguishable from zero. This is a limitation of the benchmark as much as of the estimates: protocols.io durations are timer tags, dominated by unattended waiting (6% of steps carry 94% of all recorded minutes), only 14% of steps carry any duration at all, and coverage is concentrated in wet-lab biomedical work. At n = 124 it cannot discriminate a good time estimate from a bad one in either direction. Treat `researcher_hours` and `elapsed_hours` as unvalidated model estimates.
+
 ## Methodology
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
@@ -101,6 +139,25 @@ If you use this dataset, please cite the SciNet project and this repository, for
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
 
 ## Changelog
+
+### 2026-08-06 — v1.4
+
+- **Task ratings released.** `task_ratings.csv` adds importance, share of
+  researchers, and frequency for all 25,849 task-subfield pairs, on O\*NET's
+  scales, plus the Core/Supplemental classification.
+- **Observed prevalence released.** `task_prevalence.csv` gives the share of
+  each subfield's papers that actually perform a task, from 35,169 papers read
+  in full. This is the yardstick the ratings are validated against.
+- **Validation section added** to this README: ratings vs O\*NET expert ratings
+  (r = 0.66 / 0.63 / 0.75) and vs observed prevalence
+  (rho = 0.56 / 0.61 / 0.53).
+- **The `Core` threshold returns to O\*NET's conventional 67%.** It had been
+  lowered to 50% to offset a systematic downward bias in the reach ratings; the
+  current model no longer shows that bias (+0.9pp against O\*NET, against
+  -5.9pp previously), so the compensation is no longer warranted.
+- **Documented that the time estimates are not externally validated.** The
+  protocols.io benchmark returns a correlation indistinguishable from zero, for
+  reasons that are as much about the benchmark as the estimates. See Validation.
 
 ### 2026-08-05 — v1.3.1
 
