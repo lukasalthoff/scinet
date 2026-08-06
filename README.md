@@ -116,14 +116,14 @@ Coverage is the limit: protocol durations are timers on waiting rather than hand
 
 <p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
 
-1. **Hierarchy:** OpenAlex domains, fields, and subfields define the taxonomy. OpenAlex topics are used only to route papers to a subfield.
-2. **Task generation:** Large language models produce O\*NET-style task statements at the universal, domain, field, and subfield levels using a top-down hierarchical approach.
+This README describes **what is in the release and how to read it**.
+**[METHODOLOGY.md](METHODOLOGY.md)** describes **how it was built** — the
+taxonomy, the task-generation prompts and coverage thresholds, the
+paper-validation pipeline, the protocols.io matching, and the O\*NET
+calibration behind the ratings.
 
-For a complete description of every pipeline step — including prompt design, coverage thresholds, O\*NET calibration results, and protocols.io validation — see **[METHODOLOGY.md](METHODOLOGY.md)**.
-
-For visual summaries of the data — task distributions, verifiability rankings, AI adoption — see **[DATA_OVERVIEW.md](DATA_OVERVIEW.md)**.
-
-For the research paper when available and project updates, see the [Stanford project page](https://www.lukasalthoff.com).
+For the research paper when available and project updates, see the
+[Stanford project page](https://www.lukasalthoff.com).
 
 ## Citation
 
@@ -141,90 +141,3 @@ If you use this dataset, please cite the SciNet project and this repository, for
 ## License
 
 Data and documentation in this repository are licensed under **CC BY 4.0** — see [LICENSE](LICENSE).
-
-## Changelog
-
-### 2026-08-06 — v1.4
-
-- **Task ratings released.** `task_ratings.csv` adds importance, share of
-  researchers, and frequency for all 25,849 task-subfield pairs, on O\*NET's
-  scales, plus the Core/Supplemental classification.
-- **Observed prevalence released.** `task_prevalence.csv` gives the share of
-  each subfield's papers that actually perform a task, from 31,526 papers read
-  in full. This is the yardstick the ratings are validated against.
-- **Validation section added** to this README: ratings vs O\*NET expert ratings
-  (r = 0.66 / 0.63 / 0.75) and vs observed prevalence
-  (rho = 0.56 / 0.61 / 0.53).
-- **The `Core` threshold returns to O\*NET's conventional 67%.** It had been
-  lowered to 50% to offset a systematic downward bias in the reach ratings; the
-  current model no longer shows that bias (+0.9pp against O\*NET, against
-  -5.9pp previously), so the compensation is no longer warranted.
-- **Time estimates validated against protocols.io.** On 383 wet-lab substeps
-  matched to real published protocol steps, `elapsed_hours` correlates with
-  observed duration at r = 0.53 — and predicts a held-out protocol step better
-  than another real protocol step does (0.55 vs 0.44). See Validation.
-
-### 2026-08-05 — v1.3.1
-
-- **Expert-reviewed tasks are now flagged.** `tasks.csv` gains an
-  `expert_input` column naming the researcher whose review produced a task's
-  wording; the website marks the same tasks with a gold seal. The first four
-  are in Public Health & Epidemiology / Epidemiologic Methods & Study Design,
-  from Jade Benjamin-Chung's review — two rewordings and two added tasks, hence
-  6,775 -> 6,777 subfield tasks. A reworded task keeps its substeps and time:
-  those stay joined to it through its pre-edit wording.
-
-### 2026-08-04 — v1.3
-
-- **Task categories in `tasks.csv` were wrong and are now fixed.** The previous
-  release labelled 4,435 of 4,972 subfield tasks (89%) *Ideation & Hypothesis
-  Generation*, including tasks that are plainly analysis — e.g. "Address
-  endogeneity in macroeconomic regressions using instrumental variables" was
-  filed under Ideation. The categories now come from the website's own grouping:
-  Data Gathering 2,721, Data Analysis 2,228, Ideation 1,512, Administration 301.
-  **If you built anything on the `category` column, rebuild it.**
-- **1,803 new subfield tasks and a new `field` level (321 tasks)**, from a
-  validation run that read 31,576 papers and kept only tasks appearing in at
-  least 5% of a subfield's papers. Subfield tasks 4,972 -> 6,775.
-- **Domain tasks 45 -> 134, now covering all six domains.** The previous release
-  noted Arts & Humanities and Formal Sciences had none; both are covered.
-- **New: `substeps.csv.gz` and `task_time.csv`** — the substep decompositions and
-  per-subfield time estimates, closing the "Substeps: TODO" gap below. Time is
-  reported as attended effort and elapsed time separately, rather than one
-  number that conflates them.
-- **318 subfields, down from 320.** Chemistry / Environmental Chemistry and
-  Statistics / Causal Inference were retired: neither could be populated with
-  papers that were actually about it.
-
-### 2026-07-13
-
-- Refreshed `tasks.csv` to match the live site: **5,044 task statements** across
-  **34 fields** and **320 subfields** (previously 4,981 / 30 / 315).
-- Adds four fields that were introduced after the March release: **Public Health &
-  Epidemiology**, **Nutrition & Dietetics**, **Veterinary Medicine**, and
-  **Library & Information Science**.
-- Corrected the headline counts in `README.md` and `DATA_OVERVIEW.md`, which still
-  described the March hierarchy (and quoted a task count that included
-  topic-level statements not present in `tasks.csv`).
-- **Realigned the `domain` column with the site's five display domains.** Previously
-  the released file used an older four-domain grouping in which Arts, History,
-  Languages & Linguistics, Literature, Philosophy and Religion were labelled
-  *Social Sciences*, and Neuroscience was labelled *Health Sciences* — neither
-  matching what the website shows. All 34 fields now carry the same domain as
-  [anatomyofscience.com](https://www.anatomyofscience.com/).
-
-**Known gaps (not yet released):**
-
-- **Task ratings.** Importance, relevance, and frequency are collected from
-  researchers through the site's contributor flow; they are not yet part of this
-  release and are not yet survey-validated at scale.
-- **Substeps for the four new fields.** The substep decomposition predates them, so
-  Public Health & Epidemiology, Nutrition & Dietetics, Veterinary Medicine and
-  Library & Information Science currently have no substeps. TODO: generate.
-
-### 2026-03-20
-
-- Replaced `generated_tasks.csv`, `openalex_topics.csv`, and `catalog.json` with two simpler files:
-  - `tasks.csv`: flat task file with category, level, domain, field, and subfield columns.
-  - `openalex_topic_subfield_mapping.csv`: maps OpenAlex topics to SciNet display domains, fields, and subfields.
-- Added [`METHODOLOGY.md`](METHODOLOGY.md): full pipeline documentation covering taxonomy construction, hierarchical task generation, O\*NET-style rating and filtering, AI exposure scoring, O\*NET calibration, and protocols.io validation.
