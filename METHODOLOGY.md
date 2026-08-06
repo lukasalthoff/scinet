@@ -6,8 +6,6 @@ SciNet uses AI and information from thousands of laboratory protocols, published
 
 This document describes how SciNet was built.
 
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
-
 ---
 
 ## Table of Contents
