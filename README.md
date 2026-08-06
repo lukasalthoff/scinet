@@ -1,8 +1,8 @@
 # SciNet
 
-SciNet is a database documenting which tasks researchers perform across all scientific disciplines. It is modeled after O*NET, the US Department of Labor's database of the tasks performed in every occupation in the US economy. It is generated primarily through large language models, and validated against published papers, laboratory protocols, and data on scientific occupations in O*NET.
+SciNet is a database documenting which tasks researchers perform across all scientific disciplines. It is modeled after O\*NET, the US Department of Labor's database of the tasks performed in every occupation in the US economy. It is generated primarily through large language models, and validated against published papers, laboratory protocols, and data on scientific occupations in O\*NET.
 
-SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, database contains  6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimen"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ is a task belonging to the subfield of Biological & Physical Anthropology. The release contains 7,259 task statements: 27 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
+SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, the database contains 6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimens"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ is a task belonging to the subfield of Biological & Physical Anthropology. The release contains 7,259 task statements: 27 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
 
 For each task, the data contain a list of all substeps required to perform that task, as well as an estimate of:
 1. How long the task takes to perform
@@ -70,7 +70,6 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `elapsed_hours` | Calendar time for one instance, including unattended waiting such as incubations, cluster jobs, and review boards. Never less than `researcher_hours` |
 | `confidence` | Most common per-substep confidence: `high`, `medium`, or `low` |
 
-
 **`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task.
 
 | Column | Description |
@@ -83,7 +82,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `frequency` | 1 = Yearly or less, 2 = More than yearly, 3 = More than monthly, 4 = More than weekly, 5 = Daily, 6 = More than daily, 7 = Hourly or more |
 | `classification` | `Core` if `importance` is at least 3 and `pct_researchers` is at least 67, otherwise `Supplemental`. This is O\*NET's rule |
 
-**`task_prevalence.csv`** We selected a sample of papers from each subfield and asked an LLM to verify whether each task was likely performed by the researchers when conducting their research. 
+**`task_prevalence.csv`** records how often each task actually appears in the literature. We selected a sample of papers from each subfield and asked an LLM to verify whether each task was likely performed by the researchers when conducting their research.
 
 | Column | Description |
 |--------|-------------|
@@ -95,9 +94,8 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 
 ## Methodology
 
-<p align="center"><img src="https://raw.githubusercontent.com/lukasalthoff/scinet/main/pipeline.svg" alt="SciNet pipeline diagram" width="680"/></p>
+[METHODOLOGY.md](METHODOLOGY.md) describes how SciNet was built and validated.
 
- [METHODOLOGY.md](METHODOLOGY.md) describes how SciNet was built and validated
 For the research paper when available and for project updates, see the [Stanford project page](https://www.lukasalthoff.com).
 
 ## Citation
