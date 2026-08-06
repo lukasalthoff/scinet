@@ -1,6 +1,6 @@
 # SciNet Methodology
 
-SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. The public release covers 7,259 task statements spanning 6 domains, 34 fields, and 318 subfields, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology. OpenAlex topics are used to route papers to a subfield; they are not a level of the taxonomy and carry no tasks of their own.
+SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. The public release covers 7,259 task statements spanning 6 domains, 34 fields, and 318 subfields, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology. Papers are routed to a subfield through a crosswalk from OpenAlex topics, described in Section 1.2.
 
 SciNet uses AI and information from thousands of laboratory protocols, published paper texts, and scientific expert input to map the anatomy of scientific work. These sources together capture both the tacit, hands-on dimensions of research and its more codified methodological conventions.
 
@@ -24,11 +24,10 @@ This document describes how SciNet was built.
 
 ## 1. Taxonomy
 
-### 1.1 An independent taxonomy
+### 1.1 The taxonomy
 
-SciNet's taxonomy is **not** derived from any existing classification. It was
-constructed independently, to track disciplinary boundaries as researchers
-themselves describe them, and has three levels:
+SciNet's taxonomy has three levels, built to track how research communities are
+actually organized:
 
 | Level | Count | Example |
 |-------|-------|---------|
@@ -37,31 +36,31 @@ themselves describe them, and has three levels:
 | Subfield | 318 | Condensed Matter Physics |
 
 The six domains are Formal Sciences, Physical Sciences, Life Sciences, Health
-Sciences, Social Sciences, and Arts & Humanities. Fields were defined to match
-how research communities are actually organized — Economics, Sociology,
-Political Science and Psychology are separate fields rather than one lump — and
-the subfields within each field were then drafted by asking a language model how
-a researcher in that field would organize its major subfields, and curated from
-there.
+Sciences, Social Sciences, and Arts & Humanities. Fields are drawn at the
+boundaries researchers themselves recognize, so Economics, Sociology, Political
+Science and Psychology each stand as their own field. The subfields within each
+field were drafted by asking a language model how a researcher in that field
+would organize its major subfields, then curated.
 
-The field-to-domain grouping is kept in a single canonical file
-(`code/scinet/domains.json`) with a check script that fails the build if any
+The field-to-domain grouping lives in a single canonical file
+(`code/scinet/domains.json`), with a check script that fails the build if any
 copy drifts from it. Six copies of that mapping once diverged, which shipped
 Philosophy as a Social Science in the data while the website showed it under
 Arts & Humanities.
 
 ### 1.2 Routing papers into subfields
 
-Assigning a task hierarchy is separate from assigning *papers*. To count papers
-per subfield, SciNet uses [OpenAlex](https://openalex.org/) topics purely as a
-routing layer: each OpenAlex topic is mapped to the SciNet subfield it belongs
-to, and a paper inherits the subfield of its topic. That crosswalk ships as
-[`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv).
+Counting papers per subfield needs a way to place each paper. SciNet maps every
+[OpenAlex](https://openalex.org/) topic to the subfield it belongs to, and a
+paper inherits the subfield of its primary topic. That crosswalk ships as
+[`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv)
+and is used for paper counts and for drawing the validation samples in
+[Section 4](#4-ground-truth-data).
 
-Topics are **not** a level of the SciNet taxonomy and carry no tasks of their
-own. The mapping is two-pass: most topics map deterministically to a subfield,
-and a language model classifies the ambiguous remainder given the topic's name,
-keywords, and summary.
+The mapping is two-pass: most topics map deterministically to a subfield, and a
+language model classifies the ambiguous remainder given the topic's name,
+keywords, and summary. Topics serve only as this routing layer and carry no
+tasks of their own.
 
 ---
 
