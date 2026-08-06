@@ -1435,14 +1435,14 @@ Geography,Economic Geography,Evaluate the temporal stability of spatial economic
 Geography,Economic Geography,Harmonize regional economic indicators across different administrative boundary systems or classification schemes.,100,17,0.17
 Geography,Economic Geography,"Incorporate institutional perspectives on governance, regulation, and path dependence when analyzing regional economic trajectories.",100,40,0.4
 Geography,Economic Geography,"Perform site visits and direct observations of industrial districts, commercial zones, or urban neighborhoods to document spatial economic patterns.",100,10,0.1
-Economics,Economic History,Address measurement error and missing data inherent in historical sources through appropriate statistical adjustments.,688,312,0.453488
-Economics,Economic History,Apply econometric methods to identify causal relationships in historical data while accounting for endogeneity and omitted variables.,688,201,0.292151
-Economics,Economic History,"Apply institutional economics frameworks to analyze the role of property rights, legal systems, or governance structures in historical economic development.",688,221,0.321221
-Economics,Economic History,Assess whether historical economic patterns observed in one region or time period can inform understanding of other contexts with similar institutional conditions.,688,228,0.331395
-Economics,Economic History,"Construct and validate historical price indices, GDP estimates, or living standards measures from fragmentary source data.",688,124,0.180233
-Economics,Economic History,Evaluate the comparability of economic indicators across different historical periods accounting for structural economic transformations.,688,124,0.180233
-Economics,Economic History,"Frame research questions around long-run economic change using theories of technological diffusion, factor endowments, or path dependence.",688,149,0.21657
-Economics,Economic History,"Harmonize monetary values, prices, and wages across different historical currencies, units, and time periods.",688,159,0.231105
+Economics,Economic History,Address measurement error and missing data inherent in historical sources through appropriate statistical adjustments.,589,278,0.471986
+Economics,Economic History,Apply econometric methods to identify causal relationships in historical data while accounting for endogeneity and omitted variables.,589,177,0.300509
+Economics,Economic History,"Apply institutional economics frameworks to analyze the role of property rights, legal systems, or governance structures in historical economic development.",589,194,0.329372
+Economics,Economic History,Assess whether historical economic patterns observed in one region or time period can inform understanding of other contexts with similar institutional conditions.,589,192,0.325976
+Economics,Economic History,"Construct and validate historical price indices, GDP estimates, or living standards measures from fragmentary source data.",589,109,0.185059
+Economics,Economic History,Evaluate the comparability of economic indicators across different historical periods accounting for structural economic transformations.,589,106,0.179966
+Economics,Economic History,"Frame research questions around long-run economic change using theories of technological diffusion, factor endowments, or path dependence.",589,138,0.234295
+Economics,Economic History,"Harmonize monetary values, prices, and wages across different historical currencies, units, and time periods.",589,143,0.242784
 Sociology,Economic Sociology,"Access labor market data, employment statistics, or occupational surveys from government and international agencies.",99,16,0.161616
 Sociology,Economic Sociology,Account for organizational selection effects when comparing workplace practices or employment arrangements.,99,2,0.020202
 Sociology,Economic Sociology,"Acquire organizational records, industry reports, or corporate disclosures for analysis of firm behavior and market dynamics.",99,40,0.40404
@@ -2631,25 +2631,25 @@ Religion,Islamic Studies,Evaluate how historical and contemporary political cond
 Religion,Islamic Studies,Navigate informed consent processes with Muslim participants across varying literacy levels and cultural expectations.,200,1,0.005
 Religion,Islamic Studies,"Observe religious practices, rituals, and community gatherings in mosques and Islamic institutions for ethnographic research.",200,22,0.11
 Religion,Islamic Studies,"Transcribe and translate Arabic, Persian, or other Islamic-language source materials for textual analysis.",200,85,0.425
-Economics,Labor Economics,Acquire administrative employment records from state unemployment insurance systems or social security agencies.,797,90,0.112923
-Economics,Labor Economics,Apply difference-in-differences methods to evaluate the effects of labor market policy changes.,797,55,0.069009
-Economics,Labor Economics,"Apply human capital theory to frame research questions about education, training, and wage returns.",797,187,0.23463
-Economics,Labor Economics,Assess external validity of labor market findings across different regional economies and labor market institutions.,797,94,0.117942
-Economics,Labor Economics,Clean and standardize education and credential variables to enable cross-dataset comparisons.,797,133,0.166876
-Economics,Labor Economics,"Conduct employer surveys to collect data on hiring practices, wages, and workforce composition.",797,15,0.018821
-Economics,Labor Economics,"Construct consistent wage measures by adjusting for inflation, hours worked, and non-wage compensation.",797,139,0.174404
-Economics,Labor Economics,Correct for sample selection bias in wage equations using appropriate econometric techniques.,797,49,0.061481
-Economics,Labor Economics,Decompose wage gaps between demographic groups into explained and unexplained components.,797,33,0.041405
-Economics,Labor Economics,"Design survey instruments to measure job search behavior, reservation wages, and employment history.",797,15,0.018821
-Economics,Labor Economics,"Develop questionnaire modules to capture workplace conditions, benefits, and non-wage compensation.",797,16,0.020075
-Economics,Labor Economics,Draw on institutional frameworks to examine how labor market regulations affect employment outcomes.,797,210,0.263488
-Economics,Labor Economics,"Evaluate whether estimated wage effects generalize across demographic groups, industries, or time periods.",797,120,0.150565
-Economics,Labor Economics,Harmonize occupational and industry classification codes across different data sources and time periods.,797,117,0.146801
-Economics,Labor Economics,Implement regression discontinuity designs to identify causal effects of age-based or threshold-based labor policies.,797,16,0.020075
-Economics,Labor Economics,Incorporate search and matching models when analyzing unemployment duration and job transitions.,797,48,0.060226
-Economics,Labor Economics,Negotiate data use agreements with government agencies to access restricted labor market microdata.,797,160,0.200753
-Economics,Labor Economics,Obtain linked employer-employee datasets to analyze firm-level wage structures and worker mobility.,797,34,0.04266
-Economics,Labor Economics,Use instrumental variables to address endogeneity in estimating returns to education or training.,797,29,0.036386
+Economics,Labor Economics,Acquire administrative employment records from state unemployment insurance systems or social security agencies.,697,86,0.123386
+Economics,Labor Economics,Apply difference-in-differences methods to evaluate the effects of labor market policy changes.,697,48,0.068867
+Economics,Labor Economics,"Apply human capital theory to frame research questions about education, training, and wage returns.",697,159,0.228121
+Economics,Labor Economics,Assess external validity of labor market findings across different regional economies and labor market institutions.,697,87,0.124821
+Economics,Labor Economics,Clean and standardize education and credential variables to enable cross-dataset comparisons.,697,122,0.175036
+Economics,Labor Economics,"Conduct employer surveys to collect data on hiring practices, wages, and workforce composition.",697,13,0.018651
+Economics,Labor Economics,"Construct consistent wage measures by adjusting for inflation, hours worked, and non-wage compensation.",697,132,0.189383
+Economics,Labor Economics,Correct for sample selection bias in wage equations using appropriate econometric techniques.,697,42,0.060258
+Economics,Labor Economics,Decompose wage gaps between demographic groups into explained and unexplained components.,697,30,0.043042
+Economics,Labor Economics,"Design survey instruments to measure job search behavior, reservation wages, and employment history.",697,13,0.018651
+Economics,Labor Economics,"Develop questionnaire modules to capture workplace conditions, benefits, and non-wage compensation.",697,13,0.018651
+Economics,Labor Economics,Draw on institutional frameworks to examine how labor market regulations affect employment outcomes.,697,185,0.265423
+Economics,Labor Economics,"Evaluate whether estimated wage effects generalize across demographic groups, industries, or time periods.",697,110,0.157819
+Economics,Labor Economics,Harmonize occupational and industry classification codes across different data sources and time periods.,697,110,0.157819
+Economics,Labor Economics,Implement regression discontinuity designs to identify causal effects of age-based or threshold-based labor policies.,697,16,0.022956
+Economics,Labor Economics,Incorporate search and matching models when analyzing unemployment duration and job transitions.,697,43,0.061693
+Economics,Labor Economics,Negotiate data use agreements with government agencies to access restricted labor market microdata.,697,149,0.213773
+Economics,Labor Economics,Obtain linked employer-employee datasets to analyze firm-level wage structures and worker mobility.,697,33,0.047346
+Economics,Labor Economics,Use instrumental variables to address endogeneity in estimating returns to education or training.,697,27,0.038737
 Education,Language & Literacy Education,Account for nested data structures when analyzing student literacy outcomes within classrooms or schools.,100,2,0.02
 Education,Language & Literacy Education,Acquire standardized assessment data from schools or districts to analyze literacy outcomes.,100,6,0.06
 Education,Language & Literacy Education,Administer reading or writing assessments to measure learner proficiency or growth.,100,32,0.32
@@ -3988,21 +3988,21 @@ Political Science,Public Administration & Policy,Evaluate the external validity 
 Political Science,Public Administration & Policy,Interview policymakers and administrators to document policy formulation and implementation processes.,100,24,0.24
 Political Science,Public Administration & Policy,Negotiate data-sharing agreements with government agencies to access restricted administrative records.,100,3,0.03
 Political Science,Public Administration & Policy,Recode open-ended survey responses about policy preferences or public service experiences into analyzable categories.,100,3,0.03
-Economics,Public Economics,Access linked employer-employee or tax-benefit administrative datasets to study labor market and fiscal policy interactions.,798,9,0.011278
-Economics,Public Economics,Acquire administrative tax records from government agencies to analyze taxpayer behavior and policy effects.,798,104,0.130326
-Economics,Public Economics,Address endogeneity in fiscal policy analysis using instrumental variables based on policy rules or institutional features.,798,32,0.0401
-Economics,Public Economics,Analyze bunching patterns at tax kinks or notches to identify behavioral responses to fiscal incentives.,798,12,0.015038
-Economics,Public Economics,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of tax and spending policy changes.,798,56,0.070175
-Economics,Public Economics,Apply public finance theory to analyze the efficiency and equity implications of tax and transfer policies.,798,202,0.253133
-Economics,Public Economics,Assess whether estimated behavioral responses to fiscal policies generalize across different tax systems and institutional contexts.,798,25,0.031328
-Economics,Public Economics,Clean and harmonize tax and fiscal data across jurisdictions with different reporting standards and definitions.,798,96,0.120301
-Economics,Public Economics,Construct effective tax rates and fiscal variables from raw administrative or survey data.,798,240,0.300752
-Economics,Public Economics,Decompose incidence of taxes and transfers across income groups using microsimulation or structural models.,797,55,0.069009
-Economics,Public Economics,"Design survey instruments to measure taxpayer compliance behavior, perceptions of tax fairness, or preferences for public goods.",798,69,0.086466
-Economics,Public Economics,"Estimate behavioral elasticities of taxable income, labor supply, or consumption in response to tax rate changes.",798,27,0.033835
-Economics,Public Economics,Evaluate the external validity of policy estimates derived from specific jurisdictions or time periods with distinct fiscal regimes.,798,38,0.047619
-Economics,Public Economics,Frame research questions using optimal taxation theory to evaluate trade-offs between redistribution and economic efficiency.,798,49,0.061404
-Economics,Public Economics,Negotiate data access agreements with tax authorities or statistical agencies to obtain confidential fiscal microdata.,797,57,0.071518
+Economics,Public Economics,Access linked employer-employee or tax-benefit administrative datasets to study labor market and fiscal policy interactions.,699,9,0.012876
+Economics,Public Economics,Acquire administrative tax records from government agencies to analyze taxpayer behavior and policy effects.,699,103,0.147353
+Economics,Public Economics,Address endogeneity in fiscal policy analysis using instrumental variables based on policy rules or institutional features.,699,31,0.044349
+Economics,Public Economics,Analyze bunching patterns at tax kinks or notches to identify behavioral responses to fiscal incentives.,699,12,0.017167
+Economics,Public Economics,Apply difference-in-differences or regression discontinuity designs to estimate causal effects of tax and spending policy changes.,699,54,0.077253
+Economics,Public Economics,Apply public finance theory to analyze the efficiency and equity implications of tax and transfer policies.,699,186,0.266094
+Economics,Public Economics,Assess whether estimated behavioral responses to fiscal policies generalize across different tax systems and institutional contexts.,699,25,0.035765
+Economics,Public Economics,Clean and harmonize tax and fiscal data across jurisdictions with different reporting standards and definitions.,699,92,0.131617
+Economics,Public Economics,Construct effective tax rates and fiscal variables from raw administrative or survey data.,699,214,0.306152
+Economics,Public Economics,Decompose incidence of taxes and transfers across income groups using microsimulation or structural models.,698,52,0.074499
+Economics,Public Economics,"Design survey instruments to measure taxpayer compliance behavior, perceptions of tax fairness, or preferences for public goods.",699,58,0.082976
+Economics,Public Economics,"Estimate behavioral elasticities of taxable income, labor supply, or consumption in response to tax rate changes.",699,26,0.037196
+Economics,Public Economics,Evaluate the external validity of policy estimates derived from specific jurisdictions or time periods with distinct fiscal regimes.,699,38,0.054363
+Economics,Public Economics,Frame research questions using optimal taxation theory to evaluate trade-offs between redistribution and economic efficiency.,699,46,0.065808
+Economics,Public Economics,Negotiate data access agreements with tax authorities or statistical agencies to obtain confidential fiscal microdata.,698,57,0.081662
 Nutrition & Dietetics,Public Health & Community Nutrition,Administer dietary and behavioral surveys to representative community samples.,100,56,0.56
 Nutrition & Dietetics,Public Health & Community Nutrition,Analyze nationally representative dietary survey data to estimate intake and nutritional status trends.,100,23,0.23
 Nutrition & Dietetics,Public Health & Community Nutrition,Apply multilevel models to account for community and household clustering in nutrition data.,100,11,0.11

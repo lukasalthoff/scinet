@@ -1,6 +1,6 @@
 # SciNet Methodology
 
-SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by field, subfield, and topic. The public release covers 26,371 research tasks spanning 30 fields, 302 subfields, and 4,516 topics, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology.
+SciNet is a task-level database of scientific research — a comprehensive map of what researchers actually do, broken down by domain, field, and subfield. The public release covers 7,259 task statements spanning 6 domains, 34 fields, and 318 subfields, from Microfinance and Financial Inclusion to Quantum Computing to Clinical Oncology. OpenAlex topics are used to route papers to a subfield; they are not a level of the taxonomy and carry no tasks of their own.
 
 SciNet uses AI and information from thousands of laboratory protocols, published paper texts, and scientific expert input to map the anatomy of scientific work. These sources together capture both the tacit, hands-on dimensions of research and its more codified methodological conventions.
 
@@ -41,12 +41,12 @@ Each [OpenAlex](https://openalex.org/) topic comes with a short summary, keyword
 
 While [OpenAlex](https://openalex.org/) provides a useful starting taxonomy, its field-level groupings do not always match how researchers think of their disciplines. For example, [OpenAlex](https://openalex.org/) groups Economics, Sociology, and Psychology under a single "Social Sciences" field, but these are quite different research communities.
 
-We addressed this by creating approximately 30 **display fields** that more closely track disciplinary boundaries. Some [OpenAlex](https://openalex.org/) fields were **split** (e.g., "Social Sciences" became Economics, Sociology, Political Science, Psychology, etc.) and some were **merged**. This is possible because [OpenAlex](https://openalex.org/) topics — the most granular level — can be freely rearranged across new field boundaries.
+We addressed this by creating 34 **display fields** that more closely track disciplinary boundaries. Some [OpenAlex](https://openalex.org/) fields were **split** (e.g., "Social Sciences" became Economics, Sociology, Political Science, Psychology, etc.) and some were **merged**. This is possible because [OpenAlex](https://openalex.org/) topics — the most granular level — can be freely rearranged across new field boundaries.
 
 The mapping uses a two-pass approach:
 
 1. **Rule-based assignment.** Most subfields can be deterministically mapped to a display field (e.g., "Cardiology" → Medicine & Clinical Sciences). Subfields that do not map unambiguously are flagged.
-2. **LLM-based classification.** For ambiguous cases, a language model classifies the topic into one of the 30 display fields given the topic's name, keywords, and summary. Batches of up to 15 topics are processed per API call for efficiency.
+2. **LLM-based classification.** For ambiguous cases, a language model classifies the topic into one of the 34 display fields given the topic's name, keywords, and summary. Batches of up to 15 topics are processed per API call for efficiency.
 
 We then asked the language model to define the major subfields within each display field — essentially asking, "If you were a researcher in Economics, how would you organize the major subfields?" These LLM-proposed subfields replaced the [OpenAlex](https://openalex.org/) subfield labels where they were unintuitive, and we then mapped each [OpenAlex](https://openalex.org/) topic into the newly defined subfields.
 
@@ -100,6 +100,10 @@ SciNet uses a **top-down hierarchical generation** approach. Starting at the mos
 | Field | e.g., Economics | — | — |
 | Subfield | e.g., Labor Economics | LLM-generated (unsupervised) | ≥ 70% of subfield researchers |
 | Topic | e.g., Labor Market and Education | LLM-generated (unsupervised) | ≥ 80% of topic researchers |
+
+The topic level was generated but is **not part of the public release**: topics are used only to
+route papers to a subfield. The released taxonomy has four levels — universal, domain, field, and
+subfield — carrying 27, 134, 321, and 6,777 tasks respectively.
 
 ### 4.2 Supervised levels (Universal and Domain)
 
