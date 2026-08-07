@@ -4,7 +4,7 @@ This page outlines how SciNet was created and validated.
 
 ## Steps
 
-1. **[Generating the taxonomy](#1-generating-the-taxonomy).** Prompting a language model to divide science into domains, fields, and subfields, then correcting the result on expert feedback.
+1. **[Generating the taxonomy](#1-generating-the-taxonomy).** Prompting a language model to divide science into domains, fields, and subfields, then correcting the result based on expert feedback.
 2. **[Initial task generation](#2-initial-task-generation).** Writing task statements in O\*NET's format, working down the hierarchy from tasks that apply to all researchers to tasks specific to one subfield.
 3. **[Expanding the tasks with papers](#3-expanding-the-tasks-with-papers).** Reading published papers to find research activities the initial list had missed, and measuring how often each task appears in the literature.
 4. **[Rating each task](#4-rating-each-task).** Estimating the importance, relevance, and frequency of every task in every subfield it appears in.
@@ -29,7 +29,7 @@ The six domains are Formal Sciences, Physical Sciences, Life Sciences, Health Sc
 
 We generated the taxonomy by prompting Claude. For each field, the model was asked how a researcher working in that field would divide it into its major subfields, and to return divisions that researchers in the field would themselves recognize, that are roughly comparable in scope, and that cover the field without overlapping one another. Fields were then grouped into the six domains.
 
-The prompt aims at a map of how research communities are actually organized, rather than how journals, funders, or bibliographic databases classify published work. That is why fields are drawn where researchers recognize a boundary, so that Economics, Sociology, Political Science, and Psychology each stand as their own field rather than being folded together, and why a subfield is meant to correspond to a group of researchers who read each other's work and share a set of methods.
+The prompt aims to build a map of how research communities are actually organized, so that a researcher in a given field would recognize the boundaries.
 
 We then made manual corrections to the taxonomy, many of them in response to researchers who reviewed the parts of it covering their own areas. Those researchers are listed on the [contributors page](https://www.anatomyofscience.com/#/contributors).
 
@@ -45,7 +45,9 @@ All SciNet tasks follow the [O\*NET](https://www.onetonline.org/) canonical task
 [Action Verb] + [Object] + [Modifiers] + [Purpose]
 ```
 
-The writing rules are drawn from the instructions O\*NET gives its human analysts. A statement begins with a present-tense action verb such as *Analyze*, *Design*, or *Estimate*, names the object being acted on, adds optional modifiers specifying how or under what conditions, and ends with an optional purpose introduced by "to". Each statement carries one core action rather than a chain of steps, runs to roughly 8 to 18 words, and uses plain language. Three reference statements from O\*NET:
+The writing rules are drawn from the instructions O\*NET gives its human analysts. A statement begins with a present-tense action verb such as *Analyze*, *Design*, or *Estimate*, names the object being acted on, adds optional modifiers, and ends with an optional purpose introduced by "to". Each carries one core action rather than a chain of steps, runs to roughly 8 to 18 words, and uses plain language.
+
+Three reference statements from O\*NET:
 
 > "Analyze data from research conducted to detect and measure physical phenomena."
 
@@ -57,9 +59,7 @@ Tasks describe the work of a research team rather than of a single individual, a
 
 ### 2.2 Working down the hierarchy
 
-Task generation runs top down, starting with the universal tasks that apply to every researcher. At each step the model is shown the tasks one level up, each annotated with the task above it that it refines, and writes tasks for the narrower area.
-
-Two rules govern what it may write. Every new task must name the parent task it refines, which keeps the chain traceable from any subfield task up to a universal task. And every new task must add something the levels above do not already carry, so the prompt directs the model to skip activities covered by the universal and domain tasks, and to watch for overlap with what it has already written. The threshold on how many researchers perform a task works in the same direction, since an activity that is really the parent task restated tends to be either too general to be specific to the subfield or too narrow to clear the threshold.
+Task generation starts with the universal tasks that apply to every researcher, then works down. At each step the model is shown the tasks one level up and writes tasks for the narrower area. Every new task names the parent task it refines, and must add something the levels above do not already carry.
 
 | Level | Scope | How it was written | Coverage threshold |
 |-------|-------|--------------------|--------------------|
@@ -68,19 +68,11 @@ Two rules govern what it may write. Every new task must name the parent task it 
 | Subfield | e.g. Labor Economics | Model-generated | 70% of subfield researchers |
 | Topic | e.g. Labor Market and Education | Model-generated | 80% of topic researchers |
 
-The universal and domain levels anchor the whole hierarchy, so they were developed iteratively with a researcher in the loop: the model drafted candidate tasks, a researcher reviewed them and flagged problems, and the model revised, repeating until the granularity and the boundaries between tasks were right.
+The universal and domain levels anchor the whole hierarchy, so they were developed iteratively with a researcher in the loop.
 
-The 27 universal tasks are organized into eight categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration. This level is what keeps grant writing, refereeing, and mentoring in every researcher's profile, since none of them is ever mentioned in a paper or a protocol.
+The 27 universal tasks are organized into eight categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
 
-Domain tasks capture practices characteristic of a whole domain that do not carry across domains, such as review board approval in the Social and Health Sciences, instrument calibration in the Physical Sciences, and biosafety procedure in the Life Sciences. All six domains carry a curated layer of them, ranging from 13 tasks in Formal Sciences to 28 in Arts & Humanities.
-
-The topic level was generated but is not part of the public release, since topics are used only to route papers to a subfield.
-
-Field-level tasks are not written at this stage, and they are not refinements of domain tasks. A task arrives at the field level from below: when the same activity turns up across many of a field's subfields, those versions are grouped, the shared core is written once in wording general enough to cover all of them, and the result is filed at the field level instead of repeated underneath. Two activities count as the same task when performing them involves substantially the same steps, inputs, tools, and skills, so that a technology automating one would automate the other. Differences in subject matter, such as which literature or which population is studied, do not make two activities distinct, while differences in the work performed do. Section 3 describes where this happens.
-
-The released taxonomy therefore has four levels, carrying 27 universal, 134 domain, 321 field, and 6,777 subfield tasks.
-
-### 2.3 The prompt
+The released taxonomy has four levels, carrying 27 universal, 134 domain, 321 field, and 6,777 subfield tasks. Field-level tasks are not written here. They arrive from below, in [Section 3](#3-expanding-the-tasks-with-papers), when the same activity recurs across many of a field's subfields and is filed once at the field level instead.
 
 <details>
 <summary>Subfield task generation prompt</summary>
@@ -93,7 +85,7 @@ INPUT: DOMAIN TASKS ({domain_name})
 These are the domain-level tasks. Your job is to generate subfield-specific
 refinements of these.
 
-  {numbered domain tasks, each showing the universal task it refines}
+  {numbered domain-level tasks, each showing the universal task it refines}
 
 CONTEXT: TOPICS IN {SUBFIELD_NAME}
   {up to 12 topics in the subfield}
@@ -135,17 +127,15 @@ Return valid JSON. For each task, specify which domain task number it refines:
 
 </details>
 
-We iterated on this prompt to remove the mistakes the model made repeatedly. Controlling specificity is the central problem: left alone, the model writes tasks pinned to one method or one dataset, and writes several near-identical tasks where researchers would recognize a single activity. The rules against hyperspecific tasks and for aggressive consolidation address the first problem, and the coverage threshold addresses both, since a task that only a minority of the subfield performs is usually a task written too narrowly. The threshold also plays the role O\*NET's relevance rating plays, keeping the list to activities that are common and substantial.
-
 ---
 
 ## 3. Expanding the tasks with papers
 
-The tasks in Section 2 were written from what a language model knows about a field. The obvious question is whether they match what researchers publish, and the obvious source for an answer is the papers themselves. This step both tests the existing list against published work and finds the activities it is missing, and in practice it is where a large share of the released tasks came from. The production run covered all 34 fields and 318 subfields over 31,576 papers.
+The tasks in Section 2 were written from what a language model knows about a field. This step checks them against what researchers publish and finds the activities they miss, and it is where a large share of the released tasks came from. The production run covered all 34 fields and 318 subfields over 31,576 papers.
 
-Papers do not narrate their own procedures. A paper that plainly ran a difference-in-differences will rarely write "we constructed a panel dataset," because its readers already know what the method requires. Everything below is designed around that asymmetry, since a task can be missing from a paper's text and still be part of the work the paper reports.
+Papers do not narrate their own procedures. A paper that plainly ran a difference-in-differences will rarely write "we constructed a panel dataset," because its readers already know what the method requires. The seven stages below are built around that asymmetry.
 
-**1. Draw.** A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). Routing on the project's own classification rather than on keywords matters: a keyword prototype scattered badly, producing an economic history pool that was 4% economic history and mostly development economics. We draw English journal articles from 2000 to 2020, which is before ChatGPT, so no method described was itself AI-assisted, carrying a DOI and at least one citation, weighted by citations, targeting 100 usable papers per subfield.
+**1. Draw.** We draw English journal articles from 2000 to 2020, before ChatGPT, so no method described was itself AI-assisted. Papers need a DOI and at least one citation, are drawn weighted by citations, and are targeted at 100 usable papers per subfield. A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). Routing on our own classification rather than on keywords matters: a keyword prototype produced an economic history pool that was 4% economic history and mostly development economics.
 
 **2. Judge.** For each paper and each task in its subfield, a model returns one of three verdicts: *stated explicitly*, with a verbatim quote, *clearly implied*, meaning the work required the task though the paper does not narrate it, or *not involved*. The average over the sample is that task's **prevalence**, released as [`data/task_prevalence.csv`](data/task_prevalence.csv).
 
@@ -214,19 +204,21 @@ Return ONLY the JSON array, no other text.
 
 </details>
 
-The prompt was calibrated against O\*NET's own distributions for scientific occupations, because an uncalibrated model understates how many researchers perform a common task and overstates how important tasks are. The calibrated version carries explicit distribution anchors, for instance that 100 should be the most common relevance answer and should be used for around 30% of tasks, and that most tasks belong at importance 3 or 4 with only a small minority at 5. Section 6.1 reports how the calibrated prompt performs against O\*NET.
+The prompt carries distribution anchors calibrated against O\*NET's own values for scientific occupations, for instance that 100 should be the most common relevance answer and should be used for around 30% of tasks. Without them a model understates how many researchers perform a common task and overstates how important tasks are. [Section 6.1](#61-onet-expert-ratings) reports how the calibrated prompt performs.
 
 ---
 
 ## 5. Substeps and time estimates
 
-Each task is decomposed into the substeps a researcher actually performs, and each substep is timed. The two jobs run as separate model calls, because asking one call to produce structure and timing together lets the timing instructions distort the structure. An earlier version capped any substep at 90 minutes and told the model to split anything longer, which turned a timing rule into a decomposition rule: only 13 distinct minute values appeared across 30,618 substeps, and 82% of them were one of the seven numbers the prompt itself had named.
+Each task is decomposed into the substeps a researcher performs, and each substep is timed. The two run as separate model calls. The first decomposes the task in workflow order, with no reference to time.
 
-The first pass decomposes the task into substeps in workflow order, with no reference to time. The second pass takes the task and its fixed substeps and returns three primitives for each substep: how many times it is performed in one instance of the task, the attended human effort for a single pass, and the elapsed time for a single pass including unattended waiting. Every total in [`data/task_time.csv`](data/task_time.csv) is computed in code from those primitives, which is what produces the two columns `researcher_hours` and `elapsed_hours`.
+The second takes those fixed substeps and returns three primitives for each: how many times it is performed in one instance of the task, the attended effort for a single pass, and the elapsed time for a single pass including unattended waiting. The `researcher_hours` and `elapsed_hours` columns of [`data/task_time.csv`](data/task_time.csv) are computed in code from those primitives.
 
-Separating attended effort from elapsed time is also what makes the estimates checkable. A protocol duration is a timer on waiting rather than on hands-on work, so it can be compared against the elapsed limb and says nothing about the effort limb. Section 6.2 reports that comparison.
+Splitting the calls matters. When one call produced structure and timing together, a rule capping any substep at 90 minutes turned into a decomposition rule: only 13 distinct minute values appeared across 30,618 substeps, and 82% of them were one of the seven numbers the prompt itself had named.
 
-Because the same task means different work in different subfields, timing is estimated separately for each subfield a task appears in. Across the 140 tasks that reach five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` and 4.1 in `elapsed_hours` across the subfields it appears in.
+Separating attended effort from elapsed time also makes the estimates checkable, since a protocol duration is a timer on waiting rather than on hands-on work and so speaks only to the elapsed figure. [Section 6.2](#62-research-protocols) reports that comparison.
+
+Timing is estimated separately for each subfield a task appears in, because the same task means different work in different places. Across the 140 tasks reaching five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` and 4.1 in `elapsed_hours`.
 
 ---
 
@@ -236,27 +228,27 @@ SciNet is validated against three external sources that document research activi
 
 ### 6.1 O\*NET expert ratings
 
-The rating prompt in Section 4 was benchmarked against 425 researcher-relevant O\*NET tasks drawn from 40 scientific occupations, by rating the O\*NET tasks with the SciNet prompt and comparing the result to the ratings O\*NET collected from workers in those occupations.
+The rating prompt was benchmarked on 425 researcher-relevant O\*NET tasks from 40 scientific occupations, by rating them with the SciNet prompt and comparing the result to what O\*NET collected from workers in those occupations.
 
-Claude Opus 5, which produced the released ratings, correlates with the O\*NET values at r = 0.66 on importance, r = 0.63 on relevance, and r = 0.75 on frequency. The earlier Claude Opus 4.5 pass scored 0.60, 0.63, and 0.76. The correlations are close to identical, but the level moved: Opus 4.5 under-reported relevance by 5.9 percentage points against O\*NET, while Opus 5 is within 0.9 points. Earlier releases lowered the Core threshold from 67 to 50 to offset that downward bias, and since the bias is gone the compensation has been removed.
+Claude Opus 5, which produced the released ratings, correlates with the O\*NET values at r = 0.66 on importance, r = 0.63 on relevance, and r = 0.75 on frequency. The earlier Claude Opus 4.5 pass scored 0.60, 0.63, and 0.76. The correlations are near-identical, but the level moved: Opus 4.5 under-reported relevance by 5.9 percentage points, while Opus 5 is within 0.9. Earlier releases lowered the Core threshold from 67 to 50 to offset that downward bias; the bias is gone, so the compensation has been removed.
 
 ### 6.2 Research protocols
 
-Step-by-step research protocols are the most granular external source available, since they record exactly what a researcher does, in what order, at the level of individual actions. [Protocols.io](https://www.protocols.io/) is a platform where researchers publish laboratory and research protocols across a wide range of disciplines. We assembled a corpus of roughly 20,600 protocols from public protocols via the protocols.io API, unlisted protocols with DOIs indexed in OpenAlex, and further protocols found through CrossRef under the protocols.io DOI prefix.
+Protocols are the most granular external source available, recording what a researcher does, in what order, action by action. From [protocols.io](https://www.protocols.io/) we assembled roughly 20,600 protocols, drawn through the site's API, through DOIs indexed in OpenAlex, and through CrossRef under the protocols.io DOI prefix.
 
-Protocols carry DOIs, so most can be merged with OpenAlex, but we found OpenAlex's topic-level classification of protocols to be frequently wrong, so each protocol is routed to a SciNet field, subfield, and topic by a model instead. The model first checks the assigned field against the protocol's title, abstract, and first three steps and corrects it, which in pilot runs corrected roughly 70% of protocols, then selects a subfield, then selects a topic with a confidence score, and only protocols rated 4 or 5 out of 5 are used.
+OpenAlex classifies these protocols poorly, so a model routes each one instead: it checks the field against the title, abstract, and first three steps and corrects it, then picks a subfield, then a topic with a confidence score. Only protocols scoring 4 or 5 out of 5 are used.
 
-**Coverage.** Each procedure step is then checked against the existing SciNet tasks at topic, subfield, and field level. Steps are classified as *placeholder*, meaning an instruction to follow a prior protocol, which is excluded, *prep*, meaning a routine preparatory action, or *substantive*. Coverage is the share of non-placeholder steps matched to a SciNet task, and with correct field routing it exceeds 85% for most protocols. Uncovered steps are grouped by topic, a model proposes O\*NET-style statements to cover them, and the proposals are deduplicated against the existing tasks before being added.
+**Coverage.** Each step is matched against the existing SciNet tasks. Steps are first classified as *placeholder*, meaning a pointer to a prior protocol, which is excluded, *prep*, or *substantive*. Coverage, the share of non-placeholder steps matched to a task, exceeds 85% for most protocols. Uncovered steps are grouped by topic, a model proposes O\*NET-style statements for them, and the proposals are deduplicated against existing tasks before being added.
 
-**Timing.** Protocol steps carry author-marked durations, which is how the estimates in `task_time.csv` are checked. Across 26,404 protocols carrying 47,009 timed steps, every SciNet substep is embedded against every timed step, the closest candidates are retrieved, and a model judges each pair as an exact, partial, or non-match. On the 769 exact matches covering 383 substeps in wet-lab fields, our elapsed-time estimate correlates with the observed duration at r = 0.53.
+**Timing.** Across 26,404 protocols carrying 47,009 author-timed steps, every SciNet substep is embedded against every timed step, the closest candidates retrieved, and a model judges each pair an exact, partial, or non-match. On the 769 exact matches covering 383 substeps in wet-lab fields, our elapsed-time estimate correlates with the observed duration at r = 0.53.
 
-That number is best read against how well protocols.io agrees with itself, because the same action genuinely takes different amounts of time in different laboratories, which puts a ceiling on how high any correlation with it can go. A single real protocol step predicts the other steps matched to the same substep at r = 0.44, while our estimate predicts those same steps at r = 0.55. Two real protocols therefore agree with each other less than our estimate agrees with either of them.
+Read that against how well protocols.io agrees with itself, since the same action genuinely takes different amounts of time in different laboratories. One real protocol step predicts the others matched to the same substep at r = 0.44, while our estimate predicts those same steps at r = 0.55. Two real protocols agree with each other less than our estimate agrees with either.
 
 ### 6.3 Published papers
 
-The prevalence measurement in Section 3 is itself a validation of the task list: it reports, for every task and every subfield, the share of that subfield's papers whose text shows the task being performed. It is released as [`data/task_prevalence.csv`](data/task_prevalence.csv) and is the empirical counterpart to the relevance rating in Section 4, with one measuring what a model believes about a subfield and the other measuring what that subfield's papers actually contain.
+The prevalence measurement in [Section 3](#3-expanding-the-tasks-with-papers) is itself a validation of the task list, reporting for every task and subfield the share of that subfield's papers whose text shows the task being performed. Released as [`data/task_prevalence.csv`](data/task_prevalence.csv), it is the empirical counterpart to the relevance rating: one measures what a model believes about a subfield, the other what its papers contain.
 
-The quotes required at the judge stage are the audit trail. Of those quotes, 179 were checked against the papers' own text and none was found to be invented, with the residual mismatches traced to our own PDF extraction splicing footnote text into sentences.
+The quotes required at the judge stage are the audit trail. Of those, 179 were checked against the papers' own text and none was invented, with the residual mismatches traced to our own PDF extraction splicing footnote text into sentences.
 
 ---
 
