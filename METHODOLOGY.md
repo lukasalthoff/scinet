@@ -130,10 +130,8 @@ Return valid JSON. For each task, specify which domain task number it refines:
 ---
 
 ## 3. Expanding the tasks with papers
+To validate existing tasks and fill in missing tasks, we randomly sampled 100 papers from each subfield and had an LLM determine whether (i) the existing tasks were performed by that paper and (2) there were any tasks performed by the paper that are missing from the existing tasks. We then consolidated suggestions for new tasks and removed tasks that did not appear in a sufficient number of papers. The process is described in detail below.
 
-The tasks in Section 2 were written from what a language model knows about a field. This step checks them against what researchers publish and finds the activities they miss, and it is where a large share of the released tasks came from. The production run covered all 34 fields and 318 subfields over 31,576 papers.
-
-Papers do not narrate their own procedures. A paper that plainly ran a difference-in-differences will rarely write "we constructed a panel dataset," because its readers already know what the method requires. The seven stages below are built around that asymmetry.
 
 **1. Draw.** We draw English journal articles from 2000 to 2020, before ChatGPT, so no method described was itself AI-assisted. Papers need a DOI and at least one citation, are drawn weighted by citations, and are targeted at 100 usable papers per subfield. A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). Routing on our own classification rather than on keywords matters: a keyword prototype produced an economic history pool that was 4% economic history and mostly development economics.
 
@@ -260,23 +258,3 @@ Alongside the tasks, the website reports indicators that characterize each field
 
 **Verifiability.** An index capturing the degree to which research outputs are presented in ways that support independent replication and scrutiny. It combines three topic-level components weighted by paper count: the share of papers retracted, the frequency of hedging words per 100 words of abstract text, such as "may", "suggest", and "appear", and the frequency of booster words, such as "clearly", "demonstrate", and "establish". Each subfield receives a percentile rank on the composite and on each component.
 
----
-
-## 8. Models and infrastructure
-
-| Component | Model |
-|-----------|-------|
-| Taxonomy drafting | Claude |
-| Task generation | Claude Opus 4.5 |
-| Paper expansion and prevalence | Claude Sonnet 5 |
-| Task ratings | Claude Opus 5 |
-| Substep decomposition and timing | Claude Opus 4.8 |
-| Protocol routing and step matching | Claude Sonnet 4.5 |
-
-All models are accessed through the Anthropic API. The large batch jobs, including topic-level task generation and the task ratings, run through the [Anthropic Batch API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches). Prompt caching is used for system prompts and shared context blocks, and every long-running step checkpoints its results so that an interrupted run resumes without reprocessing what it has already done.
-
----
-
-## 9. Ongoing work
-
-Data collection continues on two fronts. Step-level coverage and timing now run over the full protocols.io corpus, and task generation from the steps that remain uncovered is ongoing. Full-text processing of papers is being extended to a larger sample of OpenAlex and arXiv, with particular attention to computational, theoretical, and social science fields.
