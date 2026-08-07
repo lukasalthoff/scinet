@@ -57,7 +57,9 @@ Tasks describe the work of a research team rather than of a single individual, a
 
 ### 2.2 Working down the hierarchy
 
-Task generation runs top down. It starts with the universal tasks that apply to every researcher, then proceeds through progressively more specific levels. At each step the model receives every task already defined at the levels above and generates refinements of them, so a subfield task is a specialization of a domain task rather than a restatement of it. Each generated task records the parent task it refines, which makes the full chain traceable from any subfield task up to a universal task.
+Task generation runs top down, starting with the universal tasks that apply to every researcher. At each step the model is shown the tasks one level up, each annotated with the task above it that it refines, and writes tasks for the narrower area.
+
+Two rules govern what it may write. Every new task must name the parent task it refines, which keeps the chain traceable from any subfield task up to a universal task. And every new task must add something the levels above do not already carry, so the prompt directs the model to skip activities covered by the universal and domain tasks, and to watch for overlap with what it has already written. The threshold on how many researchers perform a task works in the same direction, since an activity that is really the parent task restated tends to be either too general to be specific to the subfield or too narrow to clear the threshold.
 
 | Level | Scope | How it was written | Coverage threshold |
 |-------|-------|--------------------|--------------------|
@@ -72,7 +74,11 @@ The 27 universal tasks are organized into eight categories, which every task in 
 
 Domain tasks capture practices characteristic of a whole domain that do not carry across domains, such as review board approval in the Social and Health Sciences, instrument calibration in the Physical Sciences, and biosafety procedure in the Life Sciences. All six domains carry a curated layer of them, ranging from 13 tasks in Formal Sciences to 28 in Arts & Humanities.
 
-The topic level was generated but is not part of the public release, since topics are used only to route papers to a subfield. There is no field level in this stage either, because a task is only filed at the field level once it turns out to recur across the field's subfields, which happens in Section 3. The released taxonomy therefore has four levels, carrying 27 universal, 134 domain, 321 field, and 6,777 subfield tasks.
+The topic level was generated but is not part of the public release, since topics are used only to route papers to a subfield.
+
+Field-level tasks are not written at this stage, and they are not refinements of domain tasks. A task arrives at the field level from below: when the same activity turns up across many of a field's subfields, those versions are grouped, the shared core is written once in wording general enough to cover all of them, and the result is filed at the field level instead of repeated underneath. Two activities count as the same task when performing them involves substantially the same steps, inputs, tools, and skills, so that a technology automating one would automate the other. Differences in subject matter, such as which literature or which population is studied, do not make two activities distinct, while differences in the work performed do. Section 3 describes where this happens.
+
+The released taxonomy therefore has four levels, carrying 27 universal, 134 domain, 321 field, and 6,777 subfield tasks.
 
 ### 2.3 The prompt
 
