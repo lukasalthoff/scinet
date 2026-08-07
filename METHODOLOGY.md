@@ -133,21 +133,21 @@ Return valid JSON. For each task, specify which domain task number it refines:
 To validate existing tasks and fill in missing tasks, we randomly sampled 100 papers from each subfield and had an LLM determine whether (i) the existing tasks were performed by that paper and (ii) there were any tasks performed by the paper that are missing from the existing tasks. We then consolidated suggestions for new tasks and removed tasks that did not appear in a sufficient number of papers. The process is described in detail below.
 
 
-**1. Draw.** We draw English journal articles from 2000 to 2020, before ChatGPT, so no method described was itself AI-assisted. Papers need a DOI and at least one citation, are drawn weighted by citations, and are targeted at 100 usable papers per subfield. A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). Routing on our own classification rather than on keywords matters: a keyword prototype produced an economic history pool that was 4% economic history and mostly development economics.
+**1. Draw.** We draw journal articles from 2000 to 2020. Papers need a DOI, are drawn weighted by citations, and are targeted at 100 usable papers per subfield. A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). 
 
 **2. Judge.** For each paper and each task in its subfield, a model returns one of three verdicts: *stated explicitly*, with a verbatim quote, *clearly implied*, meaning the work required the task though the paper does not narrate it, or *not involved*. The average over the sample is that task's **prevalence**, released as [`data/task_prevalence.csv`](data/task_prevalence.csv).
 
-**3. Elicit.** For 50 papers per subfield a model is shown the paper but not the taxonomy, and asked what research work the paper performed, with a quote required for each claim. Withholding the taxonomy is deliberate, since showing it would invite matching against tasks that already exist, which stage 2 does properly. The point is to hear what the paper did in its own terms, so that a genuine gap can surface.
+**3. Elicit.** For 50 papers per subfield a model is shown the paper but not the taxonomy, and asked what research work the paper performed, with a quote required for each claim. 
 
-**4. Referee.** Each proposal is refereed against the tasks that already exist, in the subfield, in sibling subfields, and at the field and domain levels. The prompt errs towards rejection, because a proposal wrongly kept can reach the taxonomy, while one wrongly rejected only means a task the next run can still find.
+**4. Referee.** Each proposal is refereed against the tasks that already exist, in the subfield, in sibling subfields, and at the field and domain levels. 
 
-**5. Consolidate.** Survivors are clustered into candidate tasks, and a candidate is kept only if independent papers proposed it, with a floor of max(2, 3% of papers elicited). One paper describing its own method is not evidence of a gap, while two papers arriving at the same activity independently is the weakest evidence worth measuring.
+**5. Consolidate.** Survivors are clustered into candidate tasks, and a candidate is kept only if independent papers proposed it, with a floor of max(2, 3% of papers elicited). 
 
 **6. Score.** Surviving candidates are measured on a fresh sample, exactly as the listed tasks were, and must clear a 5% adoption bar. Scoring runs in sequential waves of 25, 60, and 100 papers. After each wave a Beta-Binomial posterior gives the probability that the final share lands above the bar, and scoring stops once that probability is outside 2 to 98% and the standard error is small enough. Most candidates settle at 25 papers.
 
 **7. Raise.** A task proposed across many subfields of a field, or many fields of a domain, is filed once at that higher level instead of repeatedly below it.
 
-The run measured 5,405 candidate tasks, of which 4,642 cleared the 5% bar and 359 were withheld as already covered by an existing field or domain task. It added 2,297 tasks, counted once each at the highest level they qualify for: 1,905 at subfield level, 327 at field level, and 65 at domain level.
+The run added 2,297 taks: 1,905 at subfield level, 327 at field level, and 65 at domain level.
 
 ---
 
@@ -212,23 +212,19 @@ Each task is decomposed into the substeps a researcher performs, and each subste
 
 The second takes those fixed substeps and returns three primitives for each: how many times it is performed in one instance of the task, the attended effort for a single pass, and the elapsed time for a single pass including unattended waiting. The `researcher_hours` and `elapsed_hours` columns of [`data/task_time.csv`](data/task_time.csv) are computed in code from those primitives.
 
-Splitting the calls matters. When one call produced structure and timing together, a rule capping any substep at 90 minutes turned into a decomposition rule: only 13 distinct minute values appeared across 30,618 substeps, and 82% of them were one of the seven numbers the prompt itself had named.
-
-Separating attended effort from elapsed time also makes the estimates checkable, since a protocol duration is a timer on waiting rather than on hands-on work and so speaks only to the elapsed figure. [Section 6.2](#62-research-protocols) reports that comparison.
-
 Timing is estimated separately for each subfield a task appears in, because the same task means different work in different places. Across the 140 tasks reaching five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` and 4.1 in `elapsed_hours`.
 
 ---
 
 ## 6. Validation
 
-SciNet is validated against three external sources that document research activity independently of any language model: O\*NET's expert ratings of scientific occupations, laboratory protocols published by researchers, and the text of published papers.
+SciNet is validated against three external sources: O\*NET's expert ratings of scientific occupations, laboratory protocols published by researchers, and the text of published papers.
 
 ### 6.1 O\*NET expert ratings
 
 The rating prompt was benchmarked on 425 researcher-relevant O\*NET tasks from 40 scientific occupations, by rating them with the SciNet prompt and comparing the result to what O\*NET collected from workers in those occupations.
 
-Claude Opus 5, which produced the released ratings, correlates with the O\*NET values at r = 0.66 on importance, r = 0.63 on relevance, and r = 0.75 on frequency. The earlier Claude Opus 4.5 pass scored 0.60, 0.63, and 0.76. The correlations are near-identical, but the level moved: Opus 4.5 under-reported relevance by 5.9 percentage points, while Opus 5 is within 0.9. Earlier releases lowered the Core threshold from 67 to 50 to offset that downward bias; the bias is gone, so the compensation has been removed.
+Claude Opus 5, which produced the released ratings, correlates with the O\*NET values at r = 0.66 on importance, r = 0.63 on relevance, and r = 0.75 on frequency.
 
 ### 6.2 Research protocols
 
@@ -247,14 +243,3 @@ Read that against how well protocols.io agrees with itself, since the same actio
 The prevalence measurement in [Section 3](#3-expanding-the-tasks-with-papers) is itself a validation of the task list, reporting for every task and subfield the share of that subfield's papers whose text shows the task being performed. Released as [`data/task_prevalence.csv`](data/task_prevalence.csv), it is the empirical counterpart to the relevance rating: one measures what a model believes about a subfield, the other what its papers contain.
 
 The quotes required at the judge stage are the audit trail. Of those, 179 were checked against the papers' own text and none was invented, with the residual mismatches traced to our own PDF extraction splicing footnote text into sentences.
-
----
-
-## 7. Field and subfield indicators
-
-Alongside the tasks, the website reports indicators that characterize each field and subfield, computed from [OpenAlex](https://openalex.org/) and aggregated from topic-level data.
-
-**Publication activity.** Total paper and citation counts per field and subfield, yearly counts of papers mentioning AI-related terms as a share of all papers in the field, and average days from submission to publication where available.
-
-**Verifiability.** An index capturing the degree to which research outputs are presented in ways that support independent replication and scrutiny. It combines three topic-level components weighted by paper count: the share of papers retracted, the frequency of hedging words per 100 words of abstract text, such as "may", "suggest", and "appear", and the frequency of booster words, such as "clearly", "demonstrate", and "establish". Each subfield receives a percentile rank on the composite and on each component.
-
