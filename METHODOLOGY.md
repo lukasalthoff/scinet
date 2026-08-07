@@ -130,7 +130,7 @@ Return valid JSON. For each task, specify which domain task number it refines:
 ---
 
 ## 3. Expanding the tasks with papers
-To validate existing tasks and fill in missing tasks, we randomly sampled 100 papers from each subfield and had an LLM determine whether (i) the existing tasks were performed by that paper and (2) there were any tasks performed by the paper that are missing from the existing tasks. We then consolidated suggestions for new tasks and removed tasks that did not appear in a sufficient number of papers. The process is described in detail below.
+To validate existing tasks and fill in missing tasks, we randomly sampled 100 papers from each subfield and had an LLM determine whether (i) the existing tasks were performed by that paper and (ii) there were any tasks performed by the paper that are missing from the existing tasks. We then consolidated suggestions for new tasks and removed tasks that did not appear in a sufficient number of papers. The process is described in detail below.
 
 
 **1. Draw.** We draw English journal articles from 2000 to 2020, before ChatGPT, so no method described was itself AI-assisted. Papers need a DOI and at least one citation, are drawn weighted by citations, and are targeted at 100 usable papers per subfield. A paper's subfield is the SciNet subfield of its OpenAlex primary topic, through a crosswalk released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). Routing on our own classification rather than on keywords matters: a keyword prototype produced an economic history pool that was 4% economic history and mostly development economics.
