@@ -2,25 +2,14 @@
 
 This page describes SciNet's two-level aggregation of the task database: 30
 **universal tasks** at the top, and 139 **task clusters** underneath them.
-Every domain-, field-, and subfield-level task in the database belongs to
+Every domain-, field-, and subfield-level task in the main database is mapped to
 exactly one cluster, and every cluster belongs to exactly one universal task.
 
-## Why this exists
+## Purpose of this aggregated taxonomy
 
 SciNet contains 7,262 tasks. That level of detail is right for describing what
-researchers in a specific subfield do, but it is too fine for many uses: if
-you classify some outside dataset against the tasks (say, matching each
-conversation with an AI assistant to the research task it involves), most
-tasks will match few or no observations. The database's own levels cannot
-serve as the aggregation, because they are deliberately not nested: a
-subfield task is not a subdivision of some field task, so keeping only the
-higher-level tasks would drop activities instead of grouping them.
+researchers in a specific subfield do, but it is too fine for many uses.
 
-The task clusters solve this. They are an overlay on top of the database: no
-task was changed or removed, every task simply also got a home in a cluster,
-and every cluster a home under a universal task. You can work at whichever of
-the three grains fits your data: 30 universal tasks, 139 clusters, or the
-full 7,262 tasks.
 
 ## The files
 
@@ -83,17 +72,3 @@ as fitting no cluster; those flags were reviewed, a few hundred tasks were
 re-filed (mostly interpretive work that had been sitting in statistical
 buckets), one missing cluster was added, and the rest of the flags were
 resolved by hand.
-
-## Things to know before using it
-
-* The clusters were drafted and assigned by language models. The pipeline
-  had review steps and consistency checks, but no task-by-task expert review
-  has happened yet.
-* A few near-twin clusters exist under different universal tasks (for
-  example, sample preparation appears under both data acquisition and data
-  cleaning) because the underlying task statements were written from
-  different stages of the research pipeline. If you need strictly
-  non-overlapping groups, merge the twins listed in the documentation of the
-  build pipeline.
-* [`task_ratings.csv`](data/task_ratings.csv) does not yet contain ratings
-  for the three universal tasks added in August 2026.
