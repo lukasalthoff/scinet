@@ -69,8 +69,7 @@ batch label.
 You are classifying task statements from a taxonomy of scientific research
 tasks into 27 broad "universal" research tasks that apply to every
 researcher. Work ONLY from the information in this prompt and the single
-input file named below. Do not explore the repository, read any other
-files, or use any other context.
+input file named below.
 
 THE 27 UNIVERSAL TASKS (grouped by functional category):
 == Data Gathering ==
@@ -163,8 +162,7 @@ rules that Claude Fable drafted for that universal task.
 ```
 You are filing task statements from a taxonomy of scientific research
 tasks into SUB-FAMILIES of the broad universal research task {BUCKET}.
-Work ONLY from the two files named below. Do not explore the repository
-or use any other context.
+Work ONLY from the two files named below.
 
 STEP 1: read the sub-family definition file at:
 {cluster definitions file}
@@ -216,8 +214,7 @@ cluster.
 You are filing task statements from a taxonomy of scientific research
 tasks into SUB-FAMILIES of the universal research task {BUCKET}. These
 tasks were just re-routed into bucket {BUCKET} from other buckets. Work
-ONLY from the two files named below. Do not explore the repository or
-use any other context.
+ONLY from the two files named below.
 
 STEP 1: read the sub-family definition file at:
 {cluster definitions file}
