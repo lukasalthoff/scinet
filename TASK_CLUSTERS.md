@@ -28,20 +28,11 @@ appear in the taxonomy but have no clusters.
 
 ## How the clusters were built
 
-**1. Every task was mapped to its closest universal task.** We ran blind
-classifiers (Claude Sonnet): each saw only the list of universal tasks and a
-batch of one hundred task statements, nothing else, and picked for each task
-the universal task a researcher would say they are performing when doing it.
-The one instruction that matters: judge by the activity itself — its steps,
-inputs, tools, and skills — never by the discipline. "Acquire medical imaging
-data" and "collect sediment cores from the seafloor" are different sciences
-but the same kind of activity: acquiring primary data.
+**1. Every task was mapped to its closest universal task.** We used Sonnet 5 to map every task at the domain, field, and subfield level to the universal task it is closest to
 
-**2. The tasks that fit nowhere told us the universal list was incomplete.**
-About 500 tasks (7%) could not honestly be filed under any of the original 27
-universal tasks. They were not noise: they clustered into three activities
-that entire disciplines are built on, and that the original list simply did
-not cover. So three universal tasks were added, bringing the list to 30:
+**2. We created 3 new universal tasks**
+About 500 tasks (7%) could not be filed under any of the original 27
+universal tasks. So three universal tasks were added, bringing the list to 30:
 
 * *Interpret texts, documents, artifacts, and other qualitative sources to
   construct evidence-based arguments* — the core method of the humanities,
@@ -53,22 +44,13 @@ not cover. So three universal tasks were added, bringing the list to 30:
   core method of engineering and design, filed under a new ninth activity
   category, Design & Development.
 
-Re-running the unmatched tasks against the expanded list left only 23 tasks
-(0.3%) without a good home.
-
 **3. Claude Fable grouped each universal task's tasks into clusters.** The
-model read every task filed under a universal task — for the largest, more
-than 1,500 statements — and grouped them by one criterion: two tasks belong
+model read every task filed under a universal task and grouped them by one criterion: two tasks belong
 in the same cluster when doing them involves substantially the same steps,
 tools, and skills, so that a technology able to automate one could automate
 the other. Differences in subject matter alone do not separate tasks. Each
 cluster got a name, a plain description, and boundary rules for the
 ambiguous cases.
 
-**4. Every task was then filed into a cluster.** A second round of
-classifiers assigned each task to one of its universal task's clusters. They
-could also flag a task as sitting in the wrong universal task altogether or
-as fitting no cluster; those flags were reviewed, a few hundred tasks were
-re-filed (mostly interpretive work that had been sitting in statistical
-buckets), one missing cluster was added, and the rest of the flags were
-resolved by hand.
+**4. Every task was then filed into a cluster.** A second round of Sonnet 5
+classifiers assigned each task to one of its universal task's clusters.
