@@ -70,9 +70,9 @@ Task generation starts with the universal tasks that apply to every researcher, 
 
 The universal and domain levels anchor the whole hierarchy, so they were developed iteratively with a researcher in the loop.
 
-The 27 universal tasks are organized into eight categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
+The 30 universal tasks are organized into nine categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Design & Development, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration. Three universal tasks and the Design & Development category were added in August 2026, after a systematic audit of the task database showed the original universal list under-covered three activities entire disciplines run on: interpretive analysis of qualitative sources, formal theoretical work, and designing and building artifacts.
 
-The released taxonomy has four levels, carrying 27 universal, 134 domain, 321 field, and 6,777 subfield tasks. Field-level tasks are not written here. They arrive from below, in [Section 3](#3-expanding-the-tasks-with-papers), when the same activity recurs across many of a field's subfields and is filed once at the field level instead.
+The released taxonomy has four levels, carrying 30 universal, 134 domain, 321 field, and 6,777 subfield tasks. Field-level tasks are not written here. They arrive from below, in [Section 3](#3-expanding-the-tasks-with-papers), when the same activity recurs across many of a field's subfields and is filed once at the field level instead.
 
 <details>
 <summary>Subfield task generation prompt</summary>

@@ -2,7 +2,7 @@
 
 SciNet is a database documenting which tasks researchers perform across all scientific disciplines. It is modeled after O\*NET, the US Department of Labor's database of the tasks performed in every occupation in the US economy. It is generated primarily through large language models, and validated against published papers, laboratory protocols, and data on scientific occupations in O\*NET.
 
-SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, the database contains 6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimens"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ corresponds to the subfield of Biological & Physical Anthropology. This release contains 7,259 task statements: 27 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
+SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, the database contains 6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimens"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ corresponds to the subfield of Biological & Physical Anthropology. This release contains 7,262 task statements: 30 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
 
 For each task, the data contain a list of all substeps required to perform that task, as well as an estimate of:
 1. How long the task takes to perform
@@ -23,6 +23,8 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately for every subfield it appears in |
 | [`data/task_ratings.csv`](data/task_ratings.csv) | How important each task is, what share of researchers do it, and how often, rated separately for every subfield it appears in |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of a subfield's papers that perform each task, read from the papers themselves |
+| [`data/task_clusters.csv`](data/task_clusters.csv) | The two-level aggregation of the database: 139 task clusters grouped under the 30 universal tasks, with names and descriptions. See [TASK_CLUSTERS.md](TASK_CLUSTERS.md) |
+| [`data/task_cluster_assignments.csv`](data/task_cluster_assignments.csv) | Which cluster every domain-, field-, and subfield-level task belongs to |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields, used to assign a paper to a subfield. Topics are not a level of the taxonomy and carry no tasks of their own |
 
 ### Data dictionary
