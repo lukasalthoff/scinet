@@ -55,12 +55,7 @@ ambiguous cases.
 **4. Every task was then filed into a cluster.** A second round of Sonnet 5
 classifiers assigned each task to one of its universal task's clusters.
 
-## The prompts
-
-The three classifier prompts, verbatim. Placeholders in curly braces varied
-per run: `{chunk file path}` and `{output file path}` pointed each classifier
-at its own batch of 100 tasks, `{N}` was the batch size, and `{chunk id}` a
-batch label.
+## The prompts used to generate task clusters
 
 <details>
 <summary><b>Prompt 1 — mapping every task to its closest universal task</b></summary>
