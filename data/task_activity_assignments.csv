@@ -1,4 +1,4 @@
-task,level,cluster_id,universal_task_id
+task,level,activity_id,universal_task_id
 "Acquire medical imaging data (MRI, CT, X-ray, etc.).",domain,U01.10,U01
 Acquire microscopy or imaging data of biological samples.,domain,U01.19,U01
 "Acquire secondary data from administrative records, censuses, or public datasets.",domain,U01.01,U01
@@ -58,10 +58,10 @@ Design interview or focus group protocols to collect qualitative data.,domain,U0
 Design population-based health surveys with probability sampling to obtain representative population estimates,domain,U07.06,U07
 Design sampling and eligibility criteria to select participants or study units for data collection,domain,U07.06,U07
 "Design surveys or questionnaires to measure attitudes, behaviors, or experiences.",domain,U07.03,U07
-"Develop conceptual frameworks, typologies, or definitions by synthesizing existing theory to organize and explain a focal phenomenon",domain,U12.03,U12
+"Develop conceptual frameworks, typologies, or definitions by synthesizing existing theory to organize and explain a focal phenomenon",domain,U29.05,U29
 Develop custom instrumentation or computational tools tailored to specific research measurement needs,domain,U16.06,U16
 "Develop definitions, protocols, and practice recommendations through structured expert consensus",domain,U07.15,U07
-"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,U12.03,U12
+"Develop new concepts, categories, or typologies to organize and explain phenomena that existing frameworks leave unaccounted for",domain,U29.05,U29
 Draw on the researcher's own experience and background as primary evidence for analysis,domain,U28.06,U28
 Engage with behavioral or institutional theories when framing research questions.,domain,U12.01,U12
 Engineer genetic constructs and vectors for targeted expression or silencing of genes in cells,domain,U01.20,U01
@@ -194,7 +194,7 @@ Calibrate structural or simulation models to observed data and simulate counterf
 Characterize individual organisms by measuring or scoring standardized morphological traits.,field,U01.12,U01
 Characterize microbial isolates with laboratory assays to determine their functional traits,field,U01.19,U01
 Characterize mineral assemblages and textures in thin sections using optical microscopy,field,U01.17,U01
-"Characterize or specify the geometry and motion of objects, beams, or boundaries to relate spatial configuration to system behavior",field,U09.02,U09
+"Characterize or specify the geometry and motion of objects, beams, or boundaries to relate spatial configuration to system behavior",field,U29.06,U29
 Characterize physicochemical properties of precursor formulations and feedstocks to assess processability prior to fabrication,field,U01.17,U01
 Check newly derived results against known special cases and previously established results to confirm their correctness.,field,U29.04,U29
 Check that theoretical models and protocols satisfy required consistency and performance conditions,field,U29.04,U29
@@ -252,7 +252,7 @@ Construct decision rules or bounds from sample data together with quantitative a
 Construct example sentences and apply the analyst's own introspective judgments as evidence for an analysis,field,U28.06,U28
 Construct explicit examples or exact values realizing prescribed properties within a given class of structures.,field,U29.02,U29
 Construct formal theoretical models and derive their equilibrium implications as testable predictions.,field,U12.04,U12
-Construct generalized model formulations or decompose fields into constituent modes to expose the structure of a physical system,field,U09.02,U09
+Construct generalized model formulations or decompose fields into constituent modes to expose the structure of a physical system,field,U29.06,U29
 Construct network measures from relational data to characterize actors' positions and connections,field,U04.05,U04
 Construct normative and doctrinal arguments to resolve an unsettled or contested legal question,field,U28.02,U28
 Construct relational networks from media or platform data and compute structural metrics to map associations among actors and content.,field,U04.05,U04
@@ -296,14 +296,14 @@ Develop and benchmark quantitative analysis methods for extracting measures from
 Develop and calibrate analysis methods for extracting quantitative measurements from optical imaging data,field,U09.08,U09
 "Develop and evaluate sequence-derived molecular markers for genotyping individuals, cultivars, or strains.",field,U07.13,U07
 Develop and justify an interpretive method by comparing alternative approaches and their theoretical assumptions,field,U28.07,U28
-Develop conceptual frameworks and typologies that sort system elements into standardized categories,field,U12.03,U12
+Develop conceptual frameworks and typologies that sort system elements into standardized categories,field,U29.05,U29
 "Develop digital tools, applications, or simulations to serve as the technology intervention under study.",field,U30.02,U30
 "Develop numerical and heuristic optimization algorithms to solve engineering design, planning, and scheduling problems",field,U09.11,U09
 "Develop programs, curricula, or interventions jointly with community and organizational partners",field,U30.05,U30
 "Develop rating scales for judges to score properties of language, performance, or context",field,U07.07,U07
 Develop reporting guidelines or frameworks that specify standards for communicating and appraising studies in a research field.,field,U30.05,U30
 "Develop the components, materials, and tools of health interventions and support programs to enable implementation",field,U30.05,U30
-Develop typologies that sort observed units into defined categories for analysis,field,U12.03,U12
+Develop typologies that sort observed units into defined categories for analysis,field,U29.05,U29
 Devise or scrutinize measures targeting specific linguistic categories to ensure they capture the intended construct,field,U07.14,U07
 Document researcher positionality and reflexivity to account for their influence on data collection and interpretation.,field,U28.06,U28
 "Document the clinical course, management, and outcomes of individual patients or case series to characterize rare presentations",field,U01.10,U01
@@ -316,7 +316,7 @@ Establish and revise formal classifications by assigning taxa to ranks and names
 Establish the basic properties of newly introduced invariants or structures for a class of objects.,field,U29.01,U29
 Establish the chronology of events and sources by collating and converting dating evidence from documents.,field,U04.05,U04
 Establish the credibility of qualitative findings by returning materials to participants or obtaining external review.,field,U28.06,U28
-"Establish the underlying system of units, categories, and boundaries in a domain through systematic analysis of its patterns",field,U12.03,U12
+"Establish the underlying system of units, categories, and boundaries in a domain through systematic analysis of its patterns",field,U29.05,U29
 "Estimate discrete-choice or limited-dependent-variable models for categorical, ordinal, or censored outcomes.",field,U02.02,U02
 "Estimate emissions or material flows by applying conversion factors to activity, population, and statistical data",field,U02.11,U02
 Estimate historical quantities from incomplete or conflicting figures to establish comparable baselines.,field,U02.11,U02
@@ -1386,7 +1386,7 @@ Appraise the methodology and reported results of published studies to enable com
 Appraise the provenance and bias of historical and archival sources used as evidence.,subfield,U28.04,U28
 Appraise whether the empirical evidence and methods invoked in a normative argument can bear the evidential weight placed on them,subfield,U28.03,U28
 "Argue for the methodological value of a research approach, including its capacity to reach phenomena that conventional methods miss.",subfield,U10.01,U10
-Articulate a program theory or logic model specifying how a health intervention is expected to produce its outcomes.,subfield,U12.03,U12
+Articulate a program theory or logic model specifying how a health intervention is expected to produce its outcomes.,subfield,U29.05,U29
 "Ascertain and classify clinical health events, such as birth outcomes or illness episodes, in participants as study outcomes.",subfield,U01.10,U01
 Ascertain chronic disease status from self-reported diagnoses or symptom-based questionnaires when registry data are unavailable.,subfield,U01.06,U01
 Assay enzyme or receptor activity in cell and tissue lysates to measure compound effects on target function,subfield,U01.19,U01
@@ -1661,7 +1661,7 @@ Build relationships with community partners to facilitate participatory or colla
 "Build relationships with healthcare providers, traditional healers, or community health organizations to facilitate research access and participant recruitment.",subfield,U01.04,U01
 Build relationships with religious authorities and community gatekeepers to facilitate research access and trust.,subfield,U01.04,U01
 Build software prototypes to demonstrate the feasibility of proposed system designs.,subfield,U09.08,U09
-"Build theoretical models linking system attributes, user perceptions, and adoption or experience outcomes.",subfield,U12.03,U12
+"Build theoretical models linking system attributes, user perceptions, and adoption or experience outcomes.",subfield,U29.05,U29
 Build trust with religious community gatekeepers to facilitate access for ethnographic or interview-based research.,subfield,U01.04,U01
 Calculate IC50 and EC50 values with confidence intervals from dose-response data.,subfield,U02.10,U02
 Calculate Lyapunov exponents to quantify sensitive dependence on initial conditions.,subfield,U02.06,U02
@@ -2239,7 +2239,7 @@ Collect water column profiles using CTD rosette systems to measure physical and 
 "Collect water, soil, or tissue samples for chemical and biological analysis of ecosystem properties.",subfield,U01.12,U01
 "Collect water, soil, sediment, and biota samples from contaminated field sites following standardized protocols.",subfield,U01.12,U01
 Collect wireless channel measurements from field deployments to characterize real-world propagation conditions.,subfield,U01.13,U01
-Combine concepts or methods from two or more theoretical or disciplinary traditions into an integrated framework tailored to a research question.,subfield,U12.03,U12
+Combine concepts or methods from two or more theoretical or disciplinary traditions into an integrated framework tailored to a research question.,subfield,U29.05,U29
 Combine field observations with existing records to evaluate species interactions and outcomes in natural habitats.,subfield,U02.02,U02
 Combine independently published measurements and theoretical relations to derive recommended parameter values or constraints.,subfield,U24.03,U24
 Combine multiple indicator layers and ancillary environmental data into a fused score or rule set to refine feature classification.,subfield,U04.05,U04
@@ -2618,7 +2618,7 @@ Construct composite indices by combining multiple measured variables into summar
 "Construct composite scales or indices from survey items to measure farmers' attitudes, competencies, or motivations.",subfield,U07.07,U07
 "Construct composition indicators such as diversity or homophily measures from author, topic, and affiliation attributes.",subfield,U04.05,U04
 "Construct computational representations of experimental stimuli, such as semantic embeddings or extracted stimulus events, for use in neural analyses.",subfield,U04.05,U04
-Construct conceptual typologies and models that define and organize the core constructs of a phenomenon.,subfield,U12.03,U12
+Construct conceptual typologies and models that define and organize the core constructs of a phenomenon.,subfield,U29.05,U29
 "Construct conjugacies, semi-conjugacies, or factor maps to normal-form models to classify systems up to equivalence.",subfield,U29.02,U29
 Construct consistent measures of union status and living arrangements from varying survey definitions.,subfield,U04.02,U04
 "Construct consistent time series by harmonizing macroeconomic data across different vintages, definitions, or reporting standards.",subfield,U04.02,U04
@@ -2630,7 +2630,7 @@ Construct directed acyclic graphs to encode causal assumptions and identify mini
 Construct discrete counterparts of continuous structures to serve as tools for analyzing them.,subfield,U29.03,U29
 Construct distance-based proximity or accessibility measures for use as explanatory variables.,subfield,U04.05,U04
 Construct effective tax rates and fiscal variables from raw administrative or survey data.,subfield,U04.05,U04
-"Construct empirically grounded typologies that classify practices, artifacts, or organizational forms.",subfield,U12.03,U12
+"Construct empirically grounded typologies that classify practices, artifacts, or organizational forms.",subfield,U29.05,U29
 "Construct examples or counterexamples demonstrating the necessity, tightness, or independence of a theoretical result's assumptions.",subfield,U29.02,U29
 Construct explicit bijections between combinatorial structures to prove enumerative identities and structural equivalences.,subfield,U29.02,U29
 Construct explicit examples and counterexamples to test algebraic conjectures.,subfield,U29.02,U29
@@ -2652,7 +2652,7 @@ Construct hypothetical cases and analogies to test the implications of legal or 
 Construct hypothetical intercultural scenarios or vignettes to serve as experimental stimuli or illustrative cases.,subfield,U07.04,U07
 Construct incentive-compatible elicitation mechanisms to measure economic preferences or beliefs.,subfield,U07.04,U07
 Construct instruments to measure principal leadership behaviors and their relationship to school outcomes.,subfield,U07.03,U07
-Construct integrative conceptual frameworks by adapting and synthesizing theory across disciplines to explain sustainability problems.,subfield,U12.03,U12
+Construct integrative conceptual frameworks by adapting and synthesizing theory across disciplines to explain sustainability problems.,subfield,U29.05,U29
 "Construct invented example sentences or minimal pairs and apply the researcher's own acceptability, felicity, or truth-value judgments to test semantic and pragmatic hypotheses.",subfield,U07.04,U07
 Construct items to capture individual differences in behavioral tendencies such as sensation seeking or perfectionism.,subfield,U07.07,U07
 "Construct language history questionnaires to measure bilingual experience, language dominance, and usage patterns.",subfield,U07.03,U07
@@ -2661,7 +2661,7 @@ Construct measurable witnesses whose observed values certify entanglement or coh
 Construct measures of electoral competition and partisan behavior from precinct- and district-level election returns.,subfield,U04.05,U04
 Construct measures of foreign investment presence or spillover exposure from industry-level data.,subfield,U04.05,U04
 Construct model inputs with prescribed parameters or statistics to set up coarse-grained simulations,subfield,U09.02,U09
-"Construct new conceptual frameworks or typologies to organize determinants, actors, and stages of health-system change.",subfield,U12.03,U12
+"Construct new conceptual frameworks or typologies to organize determinants, actors, and stages of health-system change.",subfield,U29.05,U29
 Construct new hypothesis test statistics and testing procedures to detect misspecification or parameter instability.,subfield,U02.16,U02
 "Construct non-wage outcome measures, such as job match quality or absence, from survey and administrative data.",subfield,U04.05,U04
 Construct nonverbal perceptual or magnitude-estimation tasks to measure social judgments.,subfield,U07.04,U07
@@ -2671,8 +2671,8 @@ Construct or adapt population anatomical atlases and templates for defining regi
 Construct original arguments to establish or challenge a philosophical thesis,subfield,U28.03,U28
 Construct p-adic analytic objects by interpolating classical modular forms or L-values across families.,subfield,U29.02,U29
 "Construct panel datasets linking energy prices, consumption, and policy variables across jurisdictions and time periods.",subfield,U04.04,U04
-Construct periodization schemes that divide design or institutional developments into distinct historical phases.,subfield,U12.03,U12
-Construct periodizations of regional historical processes by synthesizing evidence across sites and sources.,subfield,U12.03,U12
+Construct periodization schemes that divide design or institutional developments into distinct historical phases.,subfield,U29.05,U29
+Construct periodizations of regional historical processes by synthesizing evidence across sites and sources.,subfield,U29.05,U29
 Construct predictors and portfolio formation rules from contemporaneously available information to avoid look-ahead bias.,subfield,U02.11,U02
 "Construct price indices, productivity measures, or risk indicators from raw agricultural data.",subfield,U04.05,U04
 Construct proxy measures from indirect or secondary data when direct measures are unavailable,subfield,U04.05,U04
@@ -3053,7 +3053,7 @@ Derive long exact sequences and spectral sequences to compute algebraic invarian
 Derive macroscopic response or bulk equilibrium properties of a many-body system from a microscopic model Hamiltonian using theoretical many-body methods.,subfield,U09.01,U09
 Derive magnetization curves and hysteresis behavior from micromagnetic energy considerations.,subfield,U09.01,U09
 Derive material properties from density functional theory calculations to predict electronic structure and bonding characteristics.,subfield,U09.04,U09
-"Derive mathematical formulations for image transformations, projections, and geometric relationships in visual data.",subfield,U09.02,U09
+"Derive mathematical formulations for image transformations, projections, and geometric relationships in visual data.",subfield,U29.06,U29
 Derive mathematical proofs or analytical demonstrations of the properties of spatial methods and data structures.,subfield,U29.01,U29
 Derive mathematical properties of statistical procedures and metrics used in genomic data analysis.,subfield,U02.16,U02
 Derive minimax lower bounds and detection boundaries establishing fundamental limits of inference.,subfield,U02.16,U02
@@ -3086,10 +3086,10 @@ Derive projections of resource availability and environmental carrying capacity 
 Derive quantitative behavioral indices from sensor-based or continuous recordings such as eye tracking or motion capture.,subfield,U04.11,U04
 Derive quantitative summary measures from high-dimensional or multi-source data using computational modeling methods,subfield,U04.05,U04
 Derive quantum state evolution using Schrödinger or master equations for open and closed systems.,subfield,U09.01,U09
-"Derive reduced hydrodynamic representations of suspended bodies, such as mobility tensors or multipole expansions, to model their interactions.",subfield,U09.02,U09
+"Derive reduced hydrodynamic representations of suspended bodies, such as mobility tensors or multipole expansions, to model their interactions.",subfield,U29.06,U29
 Derive reduced models and design relationships from numerical simulation results to approximate input–output behavior,subfield,U09.06,U09
 Derive relevance rankings from probabilistic retrieval models or learning-to-rank frameworks.,subfield,U09.06,U09
-Derive rendering equations and shading models from physical principles of light transport and material interaction.,subfield,U09.02,U09
+Derive rendering equations and shading models from physical principles of light transport and material interaction.,subfield,U29.06,U29
 Derive scaling relationships and dimensionless numbers from catchment and climate data to characterize hydrologic behavior.,subfield,U04.05,U04
 Derive security bounds and attack complexity estimates from cryptographic assumptions and mathematical hardness problems.,subfield,U29.01,U29
 Derive seismic response predictions for structures using dynamic analysis methods.,subfield,U09.01,U09
@@ -3112,7 +3112,7 @@ Derive thermochemical quantities such as bond dissociation enthalpies from exper
 Derive thermodynamic equations of state from partition functions using ensemble theory.,subfield,U09.01,U09
 Derive thermodynamic properties from statistical mechanical partition functions.,subfield,U09.01,U09
 Derive traffic flow predictions from fundamental diagrams and kinematic wave theory.,subfield,U09.01,U09
-Derive transfer functions and state-space representations from physical system dynamics.,subfield,U09.02,U09
+Derive transfer functions and state-space representations from physical system dynamics.,subfield,U29.06,U29
 Derive transport coefficients from Boltzmann equations or Kubo formalism to interpret conductivity measurements.,subfield,U09.01,U09
 "Derive usability predictions from cognitive models of human perception, attention, and motor control.",subfield,U09.01,U09
 "Design One Health studies that jointly sample animals, humans, and the environment to trace cross-species transmission.",subfield,U07.12,U07
@@ -3717,11 +3717,11 @@ Develop computational algorithms that reconstruct or synthesize images from acqu
 Develop computational algorithms to derive quantitative cardiovascular biomarkers from raw signal or imaging data.,subfield,U09.07,U09
 Develop computational algorithms to simulate dynamical systems over time.,subfield,U09.08,U09
 Develop computational methods and tools for analyzing genomic or imaging data,subfield,U09.08,U09
-Develop computational models to predict neural circuit dynamics and test mechanistic hypotheses.,subfield,U09.02,U09
+Develop computational models to predict neural circuit dynamics and test mechanistic hypotheses.,subfield,U29.06,U29
 Develop computational search routines to extract instances of target constructions or recurrent word sequences from corpora.,subfield,U04.06,U04
-Develop conceptual definitions and typologies that delimit and classify economic phenomena outside formal modeling.,subfield,U12.03,U12
-"Develop conceptual frameworks linking social, ethical, or behavioral dimensions to food and agricultural decisions",subfield,U12.03,U12
-"Develop conceptual models, theoretical frameworks, or typologies of health care phenomena from theoretical and qualitative analysis.",subfield,U12.03,U12
+Develop conceptual definitions and typologies that delimit and classify economic phenomena outside formal modeling.,subfield,U29.05,U29
+"Develop conceptual frameworks linking social, ethical, or behavioral dimensions to food and agricultural decisions",subfield,U29.05,U29
+"Develop conceptual models, theoretical frameworks, or typologies of health care phenomena from theoretical and qualitative analysis.",subfield,U29.05,U29
 Develop consent procedures accommodating patients with cognitive impairment or communication deficits.,subfield,U19.02,U19
 Develop consent procedures for patients with cognitive impairment or diminished decision-making capacity.,subfield,U19.02,U19
 Develop consent procedures that address power dynamics between researchers and student or faculty participants.,subfield,U19.02,U19
@@ -3739,7 +3739,7 @@ Develop deception-free experimental protocols that maintain credibility with par
 Develop decision-support tools and interfaces that make research knowledge usable by stakeholders and practitioners.,subfield,U30.02,U30
 Develop demographically stratified normative reference values for neuropsychological instruments.,subfield,U02.07,U02
 Develop descriptive classification and grading systems to categorize anatomical features or disease severity,subfield,U07.14,U07
-Develop design strategies and theoretical frameworks for predicting molecular structure and interactions,subfield,U09.02,U09
+Develop design strategies and theoretical frameworks for predicting molecular structure and interactions,subfield,U29.06,U29
 Develop developmental-origins hypotheses linking prenatal exposures to later-life health outcomes.,subfield,U12.02,U12
 Develop diagnostic algorithms that infer physical quantities or defect locations from raw sensor signals.,subfield,U09.05,U09
 Develop elicitation protocols to collect naturalistic speech data for discourse or pragmatic analysis.,subfield,U07.04,U07
@@ -4026,8 +4026,8 @@ Develop test protocols for evaluating mechanical properties of manufactured comp
 Develop testable predictions about neural circuit mechanisms underlying stress-induced behavioral changes.,subfield,U12.02,U12
 Develop testable predictions about phylogenetic relationships among taxa based on morphological or molecular evidence.,subfield,U12.02,U12
 "Develop theoretical frameworks linking market structures, trade policies, or subsidies to agricultural sector performance.",subfield,U12.02,U12
-Develop theoretical models linking brain activity patterns to behavioral performance on cognitive tasks.,subfield,U09.02,U09
-Develop theoretical models linking neural activity patterns to behavioral or physiological outcomes.,subfield,U09.02,U09
+Develop theoretical models linking brain activity patterns to behavioral performance on cognitive tasks.,subfield,U29.06,U29
+Develop theoretical models linking neural activity patterns to behavioral or physiological outcomes.,subfield,U29.06,U29
 Develop think-aloud or retrospective verbal protocol procedures to capture translation processes.,subfield,U07.04,U07
 Develop validated assessment tools for evaluating learner performance in simulated or clinical settings.,subfield,U07.07,U07
 "Develop validated scales to assess risk factors, protective factors, or attitudes toward deviant behavior.",subfield,U07.07,U07
@@ -4076,7 +4076,7 @@ Draw on critical theory and cultural studies frameworks to analyze relationships
 Draw on established domain-specific theoretical frameworks of learning or professional knowledge to formulate and frame research questions.,subfield,U12.01,U12
 Draw on established theoretical frameworks to motivate and frame research questions or hypotheses.,subfield,U12.01,U12
 Draw on established theory or expert judgement to define the constructs and hypotheses guiding analysis.,subfield,U12.01,U12
-Draw on first-person or hypothetical accounts of media use to theorize embodied everyday experience.,subfield,U12.03,U12
+Draw on first-person or hypothetical accounts of media use to theorize embodied everyday experience.,subfield,U29.05,U29
 Draw on first-person or professional experience to compose case narratives that ground abstract philosophical claims in concrete particulars,subfield,U28.03,U28
 Draw on formal logic or argumentation theory to structure analyses of reasoning patterns in discourse.,subfield,U12.01,U12
 Draw on gatekeeping or news values frameworks to examine journalistic decision-making processes.,subfield,U12.01,U12
@@ -4761,19 +4761,19 @@ Formulate a robot's spatial and resource constraints mathematically to configure
 Formulate and characterize liquid reaction media such as ionic liquids or deep eutectic solvents for reaction and separation studies.,subfield,U01.15,U01
 Formulate and evaluate methodological criteria for extending comparative reconstruction to domains where its validity is not established.,subfield,U13.01,U13
 Formulate and implement numerical discretization and solution algorithms for governing equations in simulation codes to improve predictive accuracy and robustness,subfield,U09.08,U09
-Formulate and symmetry-classify order parameters to characterize complex ordered phases.,subfield,U09.02,U09
+Formulate and symmetry-classify order parameters to characterize complex ordered phases.,subfield,U29.06,U29
 Formulate aquafeed recipes specifying ingredient composition and inclusion levels for target aquaculture species.,subfield,U30.03,U30
 Formulate boundary layer approximations to predict velocity and pressure distributions near surfaces.,subfield,U09.01,U09
-Formulate computational models that incorporate uncertainty quantification to address research questions about system reliability.,subfield,U09.02,U09
+Formulate computational models that incorporate uncertainty quantification to address research questions about system reliability.,subfield,U29.06,U29
 Formulate conjectures about graph properties based on structural analysis and known theorems.,subfield,U12.04,U12
 Formulate conjectures about prime distribution patterns based on heuristic arguments and computational evidence.,subfield,U12.04,U12
-Formulate constitutive and continuum field equations that couple additional physical fields to fluid flow in complex or active fluids.,subfield,U09.02,U09
+Formulate constitutive and continuum field equations that couple additional physical fields to fluid flow in complex or active fluids.,subfield,U29.06,U29
 Formulate discretization schemes for partial differential equations based on conservation laws and boundary conditions.,subfield,U09.08,U09
 Formulate dose-response hypotheses linking cumulative exposure to adverse health outcomes.,subfield,U12.02,U12
 Formulate explicit evaluative criteria and apply them to adjudicate a contested classificatory or theoretical question.,subfield,U28.03,U28
 "Formulate fishery management and conservation recommendations, such as size limits or harvest restrictions, based on assessment findings.",subfield,U30.05,U30
-Formulate game-theoretic models of strategic interaction among supply chain actors to characterize equilibrium decisions.,subfield,U09.02,U09
-Formulate geometric transformations and projection matrices for 3D scene representation.,subfield,U09.02,U09
+Formulate game-theoretic models of strategic interaction among supply chain actors to characterize equilibrium decisions.,subfield,U29.06,U29
+Formulate geometric transformations and projection matrices for 3D scene representation.,subfield,U29.06,U29
 Formulate hypotheses about airway inflammation pathways and their role in asthma or COPD exacerbations.,subfield,U12.02,U12
 Formulate hypotheses about animal behavioral adaptations to environmental conditions.,subfield,U12.02,U12
 "Formulate hypotheses about behavioral, metabolic, and environmental risk factors for chronic diseases such as cardiovascular disease, cancer, and diabetes.",subfield,U12.02,U12
@@ -4856,30 +4856,30 @@ Formulate hypotheses linking specific neurotransmitter systems to behavioral phe
 Formulate hypotheses on the relationship between metabolic disorders and kidney stone formation.,subfield,U12.02,U12
 Formulate loss functions and optimization objectives for training visual recognition models.,subfield,U09.02,U09
 Formulate management recommendations for fisheries or aquaculture water bodies based on analysis of environmental and operational constraints.,subfield,U30.05,U30
-Formulate mathematical models from governing equations to predict system behavior.,subfield,U09.02,U09
-Formulate mathematical models of operational decision problems to examine their solution behavior,subfield,U09.02,U09
-Formulate mathematical models of system behavior to predict software or hardware performance under varying conditions.,subfield,U09.02,U09
+Formulate mathematical models from governing equations to predict system behavior.,subfield,U29.06,U29
+Formulate mathematical models of operational decision problems to examine their solution behavior,subfield,U29.06,U29
+Formulate mathematical models of system behavior to predict software or hardware performance under varying conditions.,subfield,U29.06,U29
 Formulate mathematical objectives and loss functions that encode desired model behavior.,subfield,U09.02,U09
-"Formulate models of scientific careers, productivity, and the aging and obsolescence of knowledge over time.",subfield,U09.02,U09
+"Formulate models of scientific careers, productivity, and the aging and obsolescence of knowledge over time.",subfield,U29.06,U29
 "Formulate motion planning constraints based on robot geometry, joint limits, and workspace boundaries.",subfield,U09.02,U09
 Formulate multi-component monomer or resin mixtures with fillers and additives to prepare homogeneous precursor formulations.,subfield,U30.03,U30
-Formulate objectives quantifying expected information gain or search cost to guide robot exploration under uncertainty.,subfield,U09.02,U09
-"Formulate procedural or statistical generative models that synthesize geometry, texture, or trajectory data matching measured statistics.",subfield,U09.02,U09
-Formulate quantitative descriptors and order parameters from computed structural and energetic data to characterize and compare materials.,subfield,U09.02,U09
-Formulate quantitative indices from measurable response quantities to represent system health or damage state,subfield,U09.02,U09
+Formulate objectives quantifying expected information gain or search cost to guide robot exploration under uncertainty.,subfield,U29.06,U29
+"Formulate procedural or statistical generative models that synthesize geometry, texture, or trajectory data matching measured statistics.",subfield,U29.06,U29
+Formulate quantitative descriptors and order parameters from computed structural and energetic data to characterize and compare materials.,subfield,U29.06,U29
+Formulate quantitative indices from measurable response quantities to represent system health or damage state,subfield,U29.06,U29
 Formulate query optimization strategies based on cost models and database statistics.,subfield,U30.01,U30
 Formulate questions about open access and alternative publishing models and their effects on citation impact and readership.,subfield,U13.01,U13
 "Formulate questions about the effectiveness of preventive interventions such as vaccination programs, parasite control, and biosecurity in reducing disease burden.",subfield,U12.02,U12
 "Formulate questions about the pharmacokinetics, efficacy, and safety of anesthetic and analgesic agents across animal species.",subfield,U12.02,U12
 "Formulate questions about virulence factors, immune evasion, and host immune responses to animal pathogens.",subfield,U12.02,U12
-Formulate real-world decision problems as mathematical optimization models with objective functions and constraints.,subfield,U09.02,U09
+Formulate real-world decision problems as mathematical optimization models with objective functions and constraints.,subfield,U29.06,U29
 "Formulate research questions about variation in quality and utilization of care across providers, regions, and systems.",subfield,U12.02,U12
 Formulate research questions grounded in economic theory to guide model specification and variable selection.,subfield,U12.01,U12
 "Formulate research questions on reproductive health, family planning, and access to maternal care services.",subfield,U12.02,U12
 "Formulate research questions on the health effects of migration, conflict, and global-security threats on populations.",subfield,U12.02,U12
 Formulate research questions using Bayesian decision-theoretic frameworks to quantify risks and expected utilities.,subfield,U12.01,U12
 Formulate research questions using game-theoretic frameworks to analyze strategic interactions among economic agents.,subfield,U12.01,U12
-Formulate stochastic models to characterize random phenomena in applied contexts.,subfield,U09.02,U09
+Formulate stochastic models to characterize random phenomena in applied contexts.,subfield,U29.06,U29
 "Formulate threat models specifying adversary capabilities, attack surfaces, and security objectives.",subfield,U09.02,U09
 Fractionate soil by sieving and dispersion to separate aggregate size classes and organic matter pools.,subfield,U04.12,U04
 Frame historical philosophical problems in relation to contemporary scholarly debates about their meaning and significance.,subfield,U13.01,U13
@@ -5301,7 +5301,7 @@ Map and enumerate the locations where hidden or hard-to-reach populations gather
 Map correspondences between philosophical frameworks and empirical scientific theories or findings to identify points of convergence.,subfield,U28.03,U28
 Map diagnostic codes across ICD versions and coding systems to ensure consistent case definitions.,subfield,U04.02,U04
 Map disaggregated product codes into analytical categories or external identifier systems for trade analysis.,subfield,U04.02,U04
-Map interactions among system components to represent feedbacks and cascading effects,subfield,U09.02,U09
+Map interactions among system components to represent feedbacks and cascading effects,subfield,U29.06,U29
 Map local piezoresponse and surface potential of materials using functional scanning probe microscopy,subfield,U01.17,U01
 Map nursing diagnoses and interventions to standardized terminologies for cross-institutional comparisons.,subfield,U04.02,U04
 "Map the composition, mandate, and allocation of authority of public bodies from constitutional and statutory texts",subfield,U04.06,U04
@@ -6719,13 +6719,13 @@ Spatially co-register images acquired with different modalities to establish vox
 Specify and deliver exercise training protocols with defined muscle activation targets and progression criteria.,subfield,U07.04,U07
 Specify and estimate multivariate models that incorporate spatial or temporal dependence structures in the data.,subfield,U02.05,U02
 Specify and estimate structural equation models to test hypothesized relationships among latent and observed variables.,subfield,U02.07,U02
-"Specify continuous-time stochastic processes for asset prices, defaults, or interest rates to build valuation models.",subfield,U09.02,U09
+"Specify continuous-time stochastic processes for asset prices, defaults, or interest rates to build valuation models.",subfield,U29.06,U29
 Specify controlled atmospheres and temperatures for processing experiments to prevent oxidation or contamination.,subfield,U07.11,U07
 Specify cross-level interaction models to test how country-level conditions moderate firm-level relationships.,subfield,U02.05,U02
 Specify formal rules and models for representing geographic features at a chosen level of detail,subfield,U09.02,U09
 Specify informative or weakly informative prior distributions based on domain knowledge and previous studies.,subfield,U02.15,U02
 Specify magnetic field configurations and coil arrangements for plasma experiments.,subfield,U07.10,U07
-"Specify preference, welfare, or learning structures such as equity weights or recursive utility within dynamic policy models.",subfield,U09.02,U09
+"Specify preference, welfare, or learning structures such as equity weights or recursive utility within dynamic policy models.",subfield,U29.06,U29
 Specify rules that transform artifacts or data from one representation or notation into another.,subfield,U30.01,U30
 Specify shielding requirements and detector geometries for radiation measurements.,subfield,U07.10,U07
 "Specify the architecture, functional modules, and processing logic of a proposed information system.",subfield,U09.02,U09

@@ -23,8 +23,8 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately for every subfield it appears in |
 | [`data/task_ratings.csv`](data/task_ratings.csv) | How important each task is, what share of researchers do it, and how often, rated separately for every subfield it appears in |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of a subfield's papers that perform each task, read from the papers themselves |
-| [`data/task_clusters.csv`](data/task_clusters.csv) | The two-level aggregation of the database: 139 task clusters grouped under the 30 universal tasks, with names and descriptions. See [TASK_CLUSTERS.md](TASK_CLUSTERS.md) |
-| [`data/task_cluster_assignments.csv`](data/task_cluster_assignments.csv) | Which cluster every domain-, field-, and subfield-level task belongs to |
+| [`data/work_activities.csv`](data/work_activities.csv) | The two-level aggregation of the database: 140 work activities grouped under the 30 universal tasks, with names and descriptions. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
+| [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | Which work activity every domain-, field-, and subfield-level task belongs to |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields, used to assign a paper to a subfield. Topics are not a level of the taxonomy and carry no tasks of their own |
 
 ### Data dictionary

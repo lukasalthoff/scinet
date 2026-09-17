@@ -1,38 +1,49 @@
-# Task clusters
+# Work activities
 
 This page describes SciNet's two-level aggregation of the task database: 30
-**universal tasks** at the top, and 139 **task clusters** underneath them.
+**universal tasks** at the top, and 140 **work activities** underneath them.
 Every domain-, field-, and subfield-level task in the main database is mapped to
-exactly one cluster, and every cluster belongs to exactly one universal task.
+exactly one work activity, and every work activity belongs to exactly one
+universal task. The name follows O*NET, whose *detailed work activities* play
+the same role between occupation-specific tasks and broad activities.
 
 ## Purpose of this aggregated taxonomy
 
 SciNet contains 7,262 tasks. That level of detail is right for describing what
 researchers in a specific subfield do, but it is too fine for many uses.
-
+Work activities group tasks that involve substantially the same steps, tools,
+and skills, so that a technology able to automate one could plausibly automate
+the others, regardless of subject matter.
 
 ## The files
 
 | File | What it contains |
 |---|---|
-| [`data/task_clusters.csv`](data/task_clusters.csv) | One row per cluster: its id, name, a one-paragraph description, the universal task and category it sits under, and how many tasks it contains |
-| [`data/task_cluster_assignments.csv`](data/task_cluster_assignments.csv) | One row per task: the task text, its level, and the cluster it belongs to |
+| [`data/work_activities.csv`](data/work_activities.csv) | One row per work activity: its id, name, a one-paragraph description, the universal task and category it sits under, and how many tasks it contains |
+| [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | One row per task: the task text, its level, and the work activity it belongs to |
 
-Cluster ids look like `U01.04`: the part before the dot names the universal
-task (U01 through U30, in [`tasks.csv`](data/tasks.csv) these are the
-`universal`-level rows), the part after the dot numbers the cluster.
-`.99` clusters collect the handful of tasks (28 in total) that fit their
-universal task but none of its clusters. A few universal tasks, such as
-writing grant proposals, have no specialized tasks below them at all; they
-appear in the taxonomy but have no clusters.
+Activity ids look like `U01.04`: the part before the dot names the universal
+task (U01 through U30; in [`tasks.csv`](data/tasks.csv) these are the
+`universal`-level rows), the part after the dot numbers the activity within it.
+`.99` activities collect the handful of tasks (28 in total) that fit their
+universal task but none of its activities. Ten universal tasks have so few
+specialized tasks below them that those tasks form a single work activity,
+named after the universal task. Seven universal tasks, such as writing grant
+proposals, have no specialized tasks below them at all; they appear in the
+taxonomy but have no work activities.
 
-## How the clusters were built
+Every task's `category` in `tasks.csv` is the category of the universal task it
+rolls up to here, so the two files always agree.
 
-**1. Every task was mapped to its closest universal task.** We used Sonnet 5 to map every task at the domain, field, and subfield level to the universal task it is closest to
+## How the work activities were built
 
-**2. We created 3 new universal tasks**
-About 500 tasks (7%) could not be filed under any of the original 27
-universal tasks. So three universal tasks were added, bringing the list to 30:
+**1. Every task was mapped to its closest universal task.** We used Sonnet 5 to
+map every task at the domain, field, and subfield level to the universal task
+it is closest to.
+
+**2. We created 3 new universal tasks.** About 500 tasks (7%) could not be
+filed under any of the original 27 universal tasks. So three universal tasks
+were added, bringing the list to 30:
 
 * *Interpret texts, documents, artifacts, and other qualitative sources to
   construct evidence-based arguments* — the core method of the humanities,
@@ -41,21 +52,42 @@ universal tasks. So three universal tasks were added, bringing the list to 30:
   results* — the core method of mathematics and theory.
 * *Design, build, and iteratively refine artifacts such as devices, software,
   materials, systems, or creative works to meet specified requirements* — the
-  core method of engineering and design, filed under a new ninth activity
-  category, Design & Development.
+  core method of engineering and design, filed under a new category,
+  Design & Development.
 
-**3. Claude Fable grouped each universal task's tasks into clusters.** The
-model read every task filed under a universal task and grouped them by one criterion: two tasks belong
-in the same cluster when doing them involves substantially the same steps,
-tools, and skills, so that a technology able to automate one could automate
-the other. Differences in subject matter alone do not separate tasks. Each
-cluster got a name, a plain description, and boundary rules for the
-ambiguous cases.
+**3. Claude Fable grouped each universal task's tasks into work activities.**
+The model read every task filed under a universal task and grouped them by one
+criterion: two tasks belong in the same activity when doing them involves
+substantially the same steps, tools, and skills, so that a technology able to
+automate one could automate the other. Differences in subject matter alone do
+not separate tasks. Each activity got a name, a plain description, and boundary
+rules for the ambiguous cases.
 
-**4. Every task was then filed into a cluster.** A second round of Sonnet 5
-classifiers assigned each task to one of its universal task's clusters.
+**4. Every task was then filed into a work activity.** A second round of
+Sonnet 5 classifiers assigned each task to one of its universal task's
+activities.
 
-## The prompts used to generate task clusters
+**5. A Theoretical Analysis category was added (September 2026).** The formal
+theory universal task had been filed under Data Analysis, which read oddly for
+mathematics, theoretical physics, economic theory, and philosophy. It now
+anchors its own category. At the same time two work activities were moved
+under it by hand, after reviewing every task in them:
+
+* *Develop conceptual frameworks and typologies* (18 tasks), previously under
+  the hypothesis-generation universal task, is now `U29.05`.
+* *Formulate mathematical and computational models* (42 tasks), previously
+  under the computational-modelling universal task, was split. The 28 tasks
+  that state a model — game-theoretic, stochastic, continuum, mechanistic —
+  are now `U29.06`. The 14 that specify inputs for a simulation, estimator, or
+  software system stay under computational modelling as `U09.02`, renamed
+  *Specify system, sensor, and workflow models for engineering pipelines*.
+
+The ten single-activity universal tasks were also given real names in this
+release; earlier versions labelled them "All tasks".
+
+## The prompts used to generate the work activities
+
+The prompts are reproduced verbatim. They say "clusters" and "sub-families" because that was the working name during construction; "work activity" is the published name.
 
 <details>
 <summary><b>Prompt 1 — mapping every task to its closest universal task</b></summary>
