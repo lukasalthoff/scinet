@@ -87,7 +87,7 @@ release; earlier versions labelled them "All tasks".
 
 ## The prompts used to generate the work activities
 
-The prompts are reproduced verbatim. They say "clusters" and "sub-families" because that was the working name during construction; "work activity" is the published name.
+The prompts are reproduced as run, except that the working names used during construction ("work activity", "work activity") have been replaced by the published name, "work activity".
 
 <details>
 <summary><b>Prompt 1 — mapping every task to its closest universal task</b></summary>
@@ -180,10 +180,10 @@ works) and evaluating designs against requirements.
 </details>
 
 <details>
-<summary><b>Prompt 2 — filing each task into a cluster</b></summary>
+<summary><b>Prompt 2 — filing each task into a work activity</b></summary>
 
-Here `{BUCKET}` is the universal task id (e.g. `U01`) and `{cluster
-definitions file}` is the file of cluster names, descriptions, and boundary
+Here `{BUCKET}` is the universal task id (e.g. `U01`) and `{work activity
+definitions file}` is the file of work activity names, descriptions, and boundary
 rules that Claude Fable drafted for that universal task.
 
 ```
@@ -191,10 +191,10 @@ You are filing task statements from a taxonomy of scientific research
 tasks into SUB-FAMILIES of the broad universal research task {BUCKET}.
 Work ONLY from the two files named below.
 
-STEP 1: read the sub-family definition file at:
-{cluster definitions file}
+STEP 1: read the work activity definition file at:
+{work activity definitions file}
 Use ONLY the section for bucket {BUCKET} (headings "## {BUCKET}.NN — ...").
-Study each sub-family's statement, scope, exclusions, and the bucket's
+Study each work activity's statement, scope, exclusions, and the bucket's
 boundary rules and reassignment notes if present.
 
 STEP 2: read the CSV file at:
@@ -204,17 +204,17 @@ currently assigned to bucket {BUCKET}.
 
 FOR EACH of the {N} tasks, decide by the activity performed (steps,
 inputs, tools, skills -- not discipline or subject matter):
-- Normal case: assign "sf" to the ONE best sub-family code
+- Normal case: assign "sf" to the ONE best work activity code
   ("{BUCKET}.01" etc.).
 - Escape 1 -- wrong bucket: if the task's activity actually belongs under
   a DIFFERENT universal task entirely (the cards file's reassignment
   notes flag common cases, especially interpretive/qualitative work
   belonging in U28, formal theory in U29, design/building in U30,
   coding-scheme application in U04.06), set "sf" to "MOVE" and "to" to
-  the target: a bucket id ("U28") or a specific sub-family ("U04.06")
+  the target: a bucket id ("U28") or a specific work activity ("U04.06")
   when the notes name one. Add a short "note".
 - Escape 2 -- no fit: if the task belongs in bucket {BUCKET} but none of
-  its sub-families fits, set "sf" to "NONE" with a short "note"
+  its work activities fits, set "sf" to "NONE" with a short "note"
   describing the activity.
 Use MOVE and NONE sparingly and only with genuine reason.
 
@@ -229,8 +229,8 @@ Then report via structured output: chunk ("{chunk id}"), n_assigned (must
 equal {N}), n_move, n_none, output_path.
 ```
 
-Note: "sub-family" was the working name for what this release calls a task
-cluster.
+Note: "work activity" was the working name for what this release calls a task
+work activity.
 
 </details>
 
@@ -243,16 +243,16 @@ tasks into SUB-FAMILIES of the universal research task {BUCKET}. These
 tasks were just re-routed into bucket {BUCKET} from other buckets. Work
 ONLY from the two files named below.
 
-STEP 1: read the sub-family definition file at:
-{cluster definitions file}
+STEP 1: read the work activity definition file at:
+{work activity definitions file}
 Use ONLY the section for bucket {BUCKET} (headings "## {BUCKET}.NN — ...").
-Study each sub-family's statement, scope, and exclusions.
+Study each work activity's statement, scope, and exclusions.
 
 STEP 2: read the CSV file at:
 {chunk file path}
 It has a header row (uid,task) and exactly {N} task statements.
 
-FOR EACH task, assign "sf" to the ONE best sub-family code
+FOR EACH task, assign "sf" to the ONE best work activity code
 ("{BUCKET}.01" etc.), judging by the activity performed (steps, inputs,
 tools, skills), not discipline. If none fits, set "sf" to "NONE" with a
 short "note".
