@@ -87,7 +87,7 @@ release; earlier versions labelled them "All tasks".
 
 ## The prompts used to generate the work activities
 
-The prompts are reproduced as run, except that the working names used during construction ("work activity", "work activity") have been replaced by the published name, "work activity".
+The prompts are reproduced as run, except that the two working names used during construction (sub-family, and the c-word for a group of similar tasks) have been replaced by the published name, "work activity".
 
 <details>
 <summary><b>Prompt 1 — mapping every task to its closest universal task</b></summary>
@@ -229,8 +229,6 @@ Then report via structured output: chunk ("{chunk id}"), n_assigned (must
 equal {N}), n_move, n_none, output_path.
 ```
 
-Note: "work activity" was the working name for what this release calls a task
-work activity.
 
 </details>
 
