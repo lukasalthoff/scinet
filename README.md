@@ -72,7 +72,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `elapsed_hours` | Calendar time for one instance, including unattended waiting such as incubations, cluster jobs, and review boards. Never less than `researcher_hours` |
 | `confidence` | Most common per-substep confidence: `high`, `medium`, or `low` |
 
-Since v1.4.1 every task at every level has substeps and times, including the 134 domain-level tasks and all 30 universal tasks (timed once per field), except two: one field-level linguistics task judged not performed in its subfields, and one physiology task on preparing exposure agents for dosing that the model declined to decompose.
+Since v1.4.1 every task at every level has substeps and times, including the 134 domain-level tasks and all 30 universal tasks (timed once per field), and field-level tasks are timed in every subfield of their field where they are performed. The one exception is a physiology task on preparing exposure agents for dosing, which the model declined to decompose.
 
 **`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task.
 
