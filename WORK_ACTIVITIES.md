@@ -20,7 +20,7 @@ the others, regardless of subject matter.
 | File | What it contains |
 |---|---|
 | [`data/work_activities.csv`](data/work_activities.csv) | One row per work activity: its id, name, a one-paragraph description, the universal task and category it sits under, and how many tasks it contains |
-| [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | One row per task: the task text, its level, and the work activity it belongs to |
+| [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | One row per task statement and level (6,956 rows): the text, its level, and the work activity it belongs to. A statement that appears in several subfields is assigned once |
 
 Activity ids look like `U01.04`: the part before the dot names the universal
 task (U01 through U30; in [`tasks.csv`](data/tasks.csv) these are the
@@ -35,9 +35,13 @@ taxonomy but have no work activities.
 Every task's `category` in `tasks.csv` is the category of the universal task it
 rolls up to here, so the two files always agree.
 
+Activities were built separately under each universal task, so a few
+near-identical activities exist under two universal tasks; instrument
+calibration, for example, is both `U07.09` and `U16.01`.
+
 ## How the work activities were built
 
-**1. Every task was mapped to its closest universal task.** We used Sonnet 5 to
+**1. Every task was mapped to its closest universal task.** We used Claude Sonnet 5 to
 map every task at the domain, field, and subfield level to the universal task
 it is closest to.
 
@@ -64,7 +68,7 @@ not separate tasks. Each activity got a name, a plain description, and boundary
 rules for the ambiguous cases.
 
 **4. Every task was then filed into a work activity.** A second round of
-Sonnet 5 classifiers assigned each task to one of its universal task's
+Claude Sonnet 5 classifiers assigned each task to one of its universal task's
 activities.
 
 **5. A Theoretical Analysis category was added (September 2026).** The formal
@@ -82,8 +86,6 @@ under it by hand, after reviewing every task in them:
   software system stay under computational modelling as `U09.02`, renamed
   *Specify system, sensor, and workflow models for engineering pipelines*.
 
-The ten single-activity universal tasks were also given real names in this
-release; earlier versions labelled them "All tasks".
 
 ## The prompts used to generate the work activities
 
@@ -188,7 +190,7 @@ rules that Claude Fable drafted for that universal task.
 
 ```
 You are filing task statements from a taxonomy of scientific research
-tasks into SUB-FAMILIES of the broad universal research task {BUCKET}.
+tasks into WORK ACTIVITIES of the broad universal research task {BUCKET}.
 Work ONLY from the two files named below.
 
 STEP 1: read the work activity definition file at:
@@ -207,7 +209,7 @@ inputs, tools, skills -- not discipline or subject matter):
 - Normal case: assign "sf" to the ONE best work activity code
   ("{BUCKET}.01" etc.).
 - Escape 1 -- wrong bucket: if the task's activity actually belongs under
-  a DIFFERENT universal task entirely (the cards file's reassignment
+  a DIFFERENT universal task entirely (the recorded reassignment
   notes flag common cases, especially interpretive/qualitative work
   belonging in U28, formal theory in U29, design/building in U30,
   coding-scheme application in U04.06), set "sf" to "MOVE" and "to" to
@@ -237,7 +239,7 @@ equal {N}), n_move, n_none, output_path.
 
 ```
 You are filing task statements from a taxonomy of scientific research
-tasks into SUB-FAMILIES of the universal research task {BUCKET}. These
+tasks into WORK ACTIVITIES of the universal research task {BUCKET}. These
 tasks were just re-routed into bucket {BUCKET} from other buckets. Work
 ONLY from the two files named below.
 

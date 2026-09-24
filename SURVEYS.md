@@ -1,7 +1,6 @@
 # Survey Questions
 
-This document reflects the live survey definitions in the contribution form at [anatomyofscience.com](https://www.anatomyofscience.com).
-It lists the current answerable questions in each module and excludes explanatory `info` blocks.
+The questions of the researcher survey on [anatomyofscience.com](https://www.anatomyofscience.com), by module. Explanatory text shown between questions is left out.
 
 ---
 
@@ -26,7 +25,7 @@ It lists the current answerable questions in each module and excludes explanator
 17. For each activity category, roughly what percentage of time has AI saved you?
 18. How has AI changed the skill level needed to perform tasks in each category?
 
-Note: the activity-category questions now use 8 categories: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
+Note: the survey groups activities into 8 categories (the dataset now uses 10, adding Theoretical Analysis and Design & Development): Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
 
 ## AI in Your Research (9)
 

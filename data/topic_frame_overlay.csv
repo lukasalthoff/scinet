@@ -13,16 +13,6 @@ Arts,film_studies,12868,Photography and Visual Culture,medium,"Visual culture, p
 Arts,film_studies,12390,Comics and Graphic Narratives,medium,"Graphic narratives, adaptation, media studies overlap",2798
 Arts,theater_and_performance_studies,12912,"Shakespeare, Adaptation, and Literary Criticism",high,"Shakespeare drama, staging, adaptation studies",4747
 Biology,bioinformatics_and_computational_biology,10887,Bioinformatics and Genomic Networks,high,Core bioinformatics and genomic network analysis,14490
-Chemistry,environmental_chemistry,10139,Heavy metals in environment,high,Heavy metals in environment: core environmental chemistry,33941
-Chemistry,environmental_chemistry,10016,Adsorption and biosorption for pollutant removal,high,Adsorption for pollutant removal,37667
-Chemistry,environmental_chemistry,10122,Toxic Organic Pollutants Impact,high,Toxic organic pollutants,31066
-Chemistry,environmental_chemistry,10419,Pharmaceutical and Antibiotic Environmental Impacts,high,Pharmaceutical environmental contaminants,21935
-Chemistry,environmental_chemistry,10819,Mercury impact and mitigation studies,high,Mercury contamination chemistry,19280
-Chemistry,environmental_chemistry,10710,Arsenic contamination and mitigation,high,Arsenic contamination chemistry,18073
-Chemistry,environmental_chemistry,10447,Environmental Toxicology and Ecotoxicology,high,Environmental toxicology and ecotoxicology,22376
-Chemistry,environmental_chemistry,10210,Advanced oxidation water treatment,medium,Advanced oxidation water treatment chemistry,18207
-Chemistry,environmental_chemistry,10686,Effects and risks of endocrine disrupting chemicals,medium,Endocrine disrupting chemicals,16102
-Chemistry,environmental_chemistry,10075,Atmospheric chemistry and aerosols,medium,Atmospheric chemistry and aerosols,39385
 Communication & Media Studies,health_communication,12593,Communication in Education and Healthcare,high,Communication in healthcare settings directly relevant,5530
 Communication & Media Studies,health_communication,11488,Climate Change Communication and Perception,medium,Risk communication and public perception research,8724
 Communication & Media Studies,intercultural_communication,11454,Cultural Differences and Values,high,Cross-cultural values research; core intercultural communica,10516
@@ -122,8 +112,6 @@ Religion,theology_and_ethics,13144,Theology and Philosophy of Evil,high,Theodicy
 Sociology,social_movements_and_collective_action,11421,Labor Movements and Unions,high,Labor movements are core collective action,14350
 Sociology,urban_sociology,11645,"Urban, Neighborhood, and Segregation Studies",high,Neighborhood segregation is core urban sociology,9215
 Statistics,biostatistics,10804,"Health Systems, Economic Evaluations, Quality of Life",high,"Health outcomes, QoL measurement, evaluation methods",26791
-Statistics,causal_inference,11911,Spatial and Panel Data Analysis,high,"Panel/spatial econometrics, DiD-style causal estimation",5575
-Statistics,causal_inference,10206,Meta-analysis and systematic reviews,medium,"Evidence synthesis, treatment effect estimation",8472
 Statistics,multivariate_analysis,10467,Psychometric Methodologies and Testing,high,"Factor analysis, SEM, psychometric multivariate methods",4960
 Statistics,nonparametric_methods,10206,Meta-analysis and systematic reviews,medium,Meta-analysis uses rank/distribution-free statistical method,8472
 Statistics,nonparametric_methods,10467,Psychometric Methodologies and Testing,medium,"Psychometrics adjoins reliability/agreement, nonparametric I",4960

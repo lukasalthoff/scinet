@@ -1,111 +1,76 @@
 # Task dimensions
 
-Every SciNet task is scored on five families of dimensions that describe what
-kind of work it is, independently of its subject matter: how it relates to
-knowledge, what it acts on, what mode of inquiry it uses, how cognitively
-complex, physical and regulated it is, what motivates the research it serves,
-how feasible it would be to train an AI system on it by reinforcement
-learning, and how much education it requires.
+Every SciNet task is scored on a set of dimensions that describe what kind of work it is, whatever its subject: how it relates to knowledge, what it works with, how it investigates, how complex, physical, and regulated it is, what motivates the research it serves, how practical it would be to train an AI system on it, and how much education it requires.
 
-## The files
+## Files
 
-| File | What it contains |
-|---|---|
-| [`data/task_dimensions.csv`](data/task_dimensions.csv) | One row per task (same rows and order as `tasks.csv`), all dimensions |
-| [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | One row per work activity: the simple mean over its tasks |
+| File | Contents |
+|------|----------|
+| [`data/task_dimensions.csv`](data/task_dimensions.csv) | One row per task, in the same order as `tasks.csv` |
+| [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | One row per substep, in the same order as `substeps.csv.gz`, for the dimensions scored step by step |
+| [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | One row per work activity: the average over its tasks |
 
 ## The dimensions
 
-**Relation to knowledge, primary medium, mode of inquiry.** For each of the
-three axes the model splits 100 points across the options according to the
-share of the task's effort each accounts for.
+### Relation to knowledge, medium, and mode of inquiry
 
-- Relation to knowledge: *aggregate* (reading, reviewing the literature,
-  learning methods), *evaluate* (peer review, refereeing, assessing),
-  *produce* (hypotheses, data, experiments, analysis, derivations, artifacts),
-  *communicate* (writing, presenting, visualizing), *support*
-  (administration, funding, infrastructure, teaching, mentoring, service).
-- Primary medium: *information* (text, data, code, models, ideas),
-  *materials* (physical materials, instruments, organisms, specimens, sites),
-  *people* (participants, patients, students, colleagues, stakeholders).
-- Mode of inquiry: *theoretical* (formal models, proofs, derivations,
-  frameworks), *quantitative* (numerical data, measurement, statistics,
-  simulation), *qualitative* (texts, interviews, observation, artifacts,
-  cases), *design* (building devices, software, materials, systems,
-  protocols), *none* (administration, teaching, most communication).
+For each of the three, the model splits 100 points across the options by the share of the task's effort each accounts for.
 
-**CDR taxonomy** (Parshall and Lopez-Luzuriaga, 2026, GWU CER WP 2026-005,
-https://www2.gwu.edu/~forcpgm/2026-005.pdf). One level per axis.
+- **Relation to knowledge** (`relation_*`): *aggregate* (reading, reviewing the literature, learning methods), *evaluate* (peer review, refereeing, assessing), *produce* (hypotheses, data, experiments, analysis, derivations, artifacts), *communicate* (writing, presenting, visualizing), *support* (administration, funding, infrastructure, teaching, mentoring, service).
+- **Medium** (`medium_*`): *information* (text, data, code, models, ideas), *materials* (physical materials, instruments, organisms, specimens, sites), *people* (participants, patients, students, colleagues).
+- **Mode of inquiry** (`mode_*`): *theoretical* (models, proofs, derivations, frameworks), *quantitative* (numerical data, measurement, statistics, simulation), *qualitative* (texts, interviews, observation, cases), *design* (building devices, software, materials, systems, protocols), *none* (administration, teaching, most communication).
 
-- Cognitive complexity: C0 self-evident (no manual needed); C1 procedural (a
-  complete manual could be written); C2 contextual judgment (a manual gives
-  guidelines, the worker exercises judgment); C3 expert synthesis (only a
-  specialist can proceed); C4 discovery (the worker is writing the manual).
-- Physical deployment: D0 purely digital; D1 sensing or locomotion without
-  manipulation; D2 structured manipulation in an engineered workspace; D3
-  unstructured manipulation in variable environments; D4 dynamic multi-modal
-  coordination under time pressure.
-- Regulatory restriction (barriers to AI assisting the person, not replacing
-  them): R0 none; R1 social or market norm; R2 professional standard or
-  liability; R3 statute; R4 moral agency required.
+### Complexity, physical work, and regulation
 
-**Pasteur's Quadrant** (Stokes, 1997). Whether the task is part of doing
-research (*applies*), and if so how far the research it serves is driven by a
-quest for fundamental *understanding* (1–5) and by considerations of practical
-*use* (1–5). The quadrant is Bohr (understanding ≥ 4, use < 4), Edison (use
-≥ 4, understanding < 4), Pasteur (both ≥ 4), or neither.
+From the CDR taxonomy of Parshall and Lopez-Luzuriaga (2026, [GWU CER WP 2026-005](https://www2.gwu.edu/~forcpgm/2026-005.pdf)). Each substep gets one level on each scale. A task's value is the average over its substeps, weighted by each substep's share of the task's time, so task values can fall between levels.
 
-**RL Feasibility Index** (Moreira Tomei and Klein Teeselink, 2026,
-https://arxiv.org/abs/2605.02598), three of its eight dimensions, each 1–10,
-plus its physical gate (pass if the task can be done primarily by digital
-means; unlike the original index, failing tasks are still scored).
+- **Cognitive complexity** (`cognitive_complexity`, 0–4): C0 self-evident; C1 procedural, a complete manual could be written; C2 contextual judgment, a manual gives guidelines and the worker decides; C3 expert synthesis, only a specialist can proceed; C4 discovery, the worker is writing the manual.
+- **Physical deployment** (`physical_deployment`, 0–4): D0 purely digital; D1 sensing or moving about without handling things; D2 handling things in a structured, engineered workspace; D3 handling things in variable, unstructured settings; D4 fast, coordinated physical work under time pressure.
+- **Regulatory restriction** (`regulatory_restriction`, 0–4), the barriers to an AI assisting the person: R0 none; R1 social or market norm; R2 professional standard or liability; R3 statute; R4 moral agency required.
 
-- Verification method: 1 contested expert judgment with no inspectable
-  artifact, 10 fully deterministic programmatic check.
-- Environment simulability: 1 requires live markets or real humans with
-  genuine stakes, 10 natively digital and trivially cheap to replicate.
-- Feedback density: 1 rare, delayed, holistic signals, 10 continuous,
-  immediate, per-step signals.
+### Pasteur's quadrant
 
-**Years of education** (0–20). The minimum formal education a research group
-would require if hiring someone specifically to perform the task, with
-reasonable on-the-job training, ignoring who typically performs it today
-(high school 12, bachelor's 16, master's 18, doctorate 20). Adapted from the
-Anthropic Economic Index education item.
+After Stokes (1997). `pasteur_applies` says whether the task is part of doing research. Where it is, `pasteur_understanding` and `pasteur_use` (1–5) rate how far the research it serves seeks fundamental understanding and practical use. `pasteur_quadrant` is Bohr (understanding 4 or 5, use below 4), Edison (the reverse), Pasteur (both 4 or 5), neither (both below 4), or n.a. when the task is not research.
+
+### Feasibility of training an AI by reinforcement learning
+
+From the RL Feasibility Index of Moreira Tomei and Klein Teeselink (2026, [arXiv 2605.02598](https://arxiv.org/abs/2605.02598)). Reinforcement learning trains a system by trial and feedback, so it works best where success can be checked automatically and practice is cheap. Three of the index's eight dimensions are scored, each 1–10, plus its physical gate.
+
+- `rl_physical_gate_pass`: whether the work can be done mainly by digital means (1 pass, 0 fail per substep; for a task, the share of its time in steps that pass). Unlike the original index, tasks that fail are still scored.
+- `rl_verification`: 1 contested expert judgment with nothing inspectable, 10 a fully automatic check.
+- `rl_simulability`: 1 needs live markets or real people with real stakes, 10 natively digital and cheap to replicate.
+- `rl_feedback_density`: 1 rare, delayed, holistic signals, 10 continuous, immediate, per-step signals.
+
+### Years of education
+
+`years_education`: the minimum formal education a research group would require to hire someone for the task, with reasonable on-the-job training, regardless of who performs it today. 12 high school, 14 associate degree, 16 bachelor's, 18 master's, 20 doctorate. Adapted from the Anthropic Economic Index.
+
+### Other columns
+
+`cdr_rl_source` is `substep_mean` wherever the complexity and AI-training values are averages over substeps, and empty for the 2 tasks without a breakdown. In `work_activity_dimensions.csv`, `pasteur_applies_share` is the share of the activity's tasks that count as research and `n_tasks_scored` the number of its tasks with complexity scores.
 
 ## How the scores were produced
 
-Each task was scored by Claude Sonnet 5 with one prompt per family, given the
-task text and its field and subfield. The CDR and RL families were scored on
-every substep in `data/substeps.csv.gz` (90,490 substeps at all four
-levels; the per-substep scores are in `data/substep_dimensions.csv.gz`) and
-averaged to the task with the substeps' shares of researcher time as weights,
-the physical gate as the time-weighted share of substeps that pass. Universal
-tasks are decomposed once per field and averaged across fields. The 2
-tasks that have no decomposition in `substeps.csv.gz` have no CDR or RL
-values (`cdr_rl_source` is empty); substeps with no score
-(92 of 90,490 for CDR, of which 89 are refusals and 3 are answers whose
-JSON could not be read, and 75 refusals for RL, mostly in pathogen-handling,
-biosafety and dosing work) are left empty and the task mean is taken over the scored substeps. The
-other families were scored once per task. The prompts for the CDR and RL families
-use the published rubrics verbatim; the prompts for the other families are
-ours. Until v1.4.2 the CDR and RL values were substep means for the 4,936
-subfield tasks that had a decomposition at the time and direct task ratings
-otherwise; v1.5.0 rescored every substep of the current decomposition.
+All scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy.
 
-The same prompts were run directly on O\*NET task statements to check them
-against O\*NET's own occupation measures. This validates the scoring prompts,
-not the substep aggregation the release now ships, and the first four
-correlations are across 709 occupations rather than tasks: physical deployment correlates 0.73 with O\*NET's "time
-spent using your hands", cognitive complexity 0.75 with O\*NET Job Zone,
-years of education 0.81 with O\*NET's required education, regulatory
-restriction 0.60 with the importance of professional certification, and the
-three RL dimensions 0.79–0.88, task by task, with the scores published by the
-index's authors for the same O\*NET tasks.
+The complexity and AI-training groups were scored on every substep (90,520 in all) and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The other groups were scored once for the whole task.
 
-Work-activity values are simple means over the tasks assigned to each
-activity in `task_activity_assignments.csv`. A task text that appears in
-several subfields is first averaged over its placements, so each assigned
-task counts once. `pasteur_applies_share` is the share of assigned tasks
-where Pasteur's quadrant applies, and `n_tasks_scored` is the number
-carrying CDR scores.
+The prompts for the complexity and AI-training groups use the level definitions of the published papers. The education prompt is adapted from the Anthropic Economic Index; the other prompts were written for SciNet.
+
+Missing values. The 2 subfield tasks without a breakdown have no complexity or AI-training scores. The model declined to score a few substeps, mostly steps involving pathogens or dosing: 89 for complexity and 75 for AI training, plus 3 whose answers could not be read. Those cells are empty and the task's average uses its scored substeps. A handful of tasks lack whole-task scores for the same reason.
+
+## Check against O\*NET
+
+The same prompts were run on O\*NET's own task statements and compared with O\*NET's measures. This checks the prompts, not the averaging over substeps.
+
+| SciNet score | O\*NET measure | Correlation | Compared across |
+|---|---|---|---|
+| Physical deployment | Time spent using hands | 0.73 | 709 occupations |
+| Cognitive complexity | Job Zone | 0.75 | 709 occupations |
+| Years of education | Required education | 0.81 | 709 occupations |
+| Regulatory restriction | Importance of professional certification | 0.60 | 430 occupations |
+| The three AI-training scores | The index authors' own scores | 0.79 to 0.88 | about 2,560 tasks |
+
+## Work activities
+
+Work-activity values are simple averages over the tasks assigned to each activity in `task_activity_assignments.csv`. A task statement that appears in several subfields is averaged over those first, so each assigned task counts once.

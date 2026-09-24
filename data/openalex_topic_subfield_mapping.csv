@@ -531,7 +531,6 @@ topic_id,topic_name,domain,field,subfield
 10530,Magnesium Alloys: Properties and Applications,Physical Sciences,Materials Science,Biomaterials
 10531,Advanced Vision and Imaging,Formal Sciences,Computer Science,Computer Vision
 10532,Molecular Sensors and Ion Detection,Physical Sciences,Chemistry,Organic Chemistry
-10533,Teaching and Learning Programming,Formal Sciences,Computer Science,
 10534,Structural Health Monitoring Techniques,Physical Sciences,Engineering,Civil & Structural Engineering
 10535,Landslides and related hazards,Physical Sciences,Environmental Science,Natural Hazards & Disaster Science
 10536,Endodontics and Root Canal Treatments,Health Sciences,Medicine & Clinical Sciences,Dentistry & Oral Health
@@ -1347,7 +1346,6 @@ topic_id,topic_name,domain,field,subfield
 11346,Mast cells and histamine,Life Sciences,Biomedical Sciences,Immunology
 11347,Neural Networks Stability and Synchronization,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 11348,Celiac Disease Research and Management,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
-11349,Music Technology and Sound Studies,Formal Sciences,Computer Science,
 11350,Sex work and related issues,Social Sciences,Sociology,Gender & Sexuality Studies
 11351,Catalysis and Hydrodesulfurization Studies,Physical Sciences,Engineering,Chemical & Process Engineering
 11352,Masonry and Concrete Structural Analysis,Physical Sciences,Engineering,Civil & Structural Engineering
@@ -1368,7 +1366,6 @@ topic_id,topic_name,domain,field,subfield
 11367,Particle accelerators and beam dynamics,Physical Sciences,Engineering,Electrical & Electronics Engineering
 11368,Long-Term Effects of COVID-19,Health Sciences,Medicine & Clinical Sciences,Infectious Disease
 11369,Genetic factors in colorectal cancer,Health Sciences,Medicine & Clinical Sciences,Oncology
-11370,Mobile Learning in Education,Formal Sciences,Computer Science,
 11371,Wind and Air Flow Studies,Physical Sciences,Environmental Science,Remote Sensing & GIS
 11372,Hydraulic and Pneumatic Systems,Physical Sciences,Engineering,Mechanical Engineering
 11373,Sleep and Work-Related Fatigue,Social Sciences,Psychology,Health Psychology
@@ -2126,7 +2123,6 @@ topic_id,topic_name,domain,field,subfield
 12125,Aerospace and Aviation Technology,Physical Sciences,Engineering,Aerospace Engineering
 12126,Maritime Transport Emissions and Efficiency,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 12127,Software System Performance and Reliability,Formal Sciences,Computer Science,Software Engineering
-12128,AI in Service Interactions,Formal Sciences,Computer Science,
 12129,Global Energy Security and Policy,Physical Sciences,Engineering,Energy Systems & Power Engineering
 12130,Contemporary Literature and Criticism,Arts & Humanities,Literature,American Literature
 12131,Wireless Signal Modulation Classification,Formal Sciences,Computer Science,Systems & Networking
@@ -2169,7 +2165,6 @@ topic_id,topic_name,domain,field,subfield
 12168,Health and Medical Research Impacts,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 12169,Non-Destructive Testing Techniques,Physical Sciences,Engineering,Materials Science & Engineering
 12170,History and Theory of Mathematics,Formal Sciences,Mathematics,Mathematical Logic & Foundations
-12171,Open Education and E-Learning,Formal Sciences,Computer Science,
 12172,Neutropenia and Cancer Infections,Health Sciences,Medicine & Clinical Sciences,Oncology
 12173,Body Contouring and Surgery,Health Sciences,Medicine & Clinical Sciences,Surgery & Surgical Specialties
 12174,Hospital Admissions and Outcomes,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
@@ -2258,7 +2253,6 @@ topic_id,topic_name,domain,field,subfield
 12257,Bioactive natural compounds,Life Sciences,Biomedical Sciences,Pharmacology & Toxicology
 12258,"Perfectionism, Procrastination, Anxiety Studies",Social Sciences,Psychology,Personality Psychology
 12259,Environmental Justice and Health Disparities,Health Sciences,Public Health & Epidemiology,Environmental & Occupational Health
-12260,Educational Technology and Pedagogy,Formal Sciences,Computer Science,
 12261,Statistical Mechanics and Entropy,Physical Sciences,Physics & Astronomy,Statistical Mechanics & Thermodynamics
 12262,Hate Speech and Cyberbullying Detection,Formal Sciences,Computer Science,Natural Language Processing
 12263,Peacebuilding and International Security,Social Sciences,Political Science,Security & Conflict Studies
@@ -2336,7 +2330,6 @@ topic_id,topic_name,domain,field,subfield
 12335,"Sexuality, Behavior, and Technology",Social Sciences,Psychology,Health Psychology
 12336,Insect Utilization and Effects,Life Sciences,Agricultural Sciences,Food Science & Technology
 12337,Italian Fascism and Post-war Society,Arts & Humanities,History,Modern & Contemporary History
-12338,Digital literacy in education,Formal Sciences,Computer Science,
 12339,Medical Malpractice and Liability Issues,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 12340,Anodic Oxide Films and Nanostructures,Physical Sciences,Materials Science,Thin Films & Coatings
 12341,Spanish Linguistics and Language Studies,Arts & Humanities,Languages & Linguistics,Sociolinguistics
@@ -2393,7 +2386,6 @@ topic_id,topic_name,domain,field,subfield
 12392,Sharing Economy and Platforms,Social Sciences,Business & Management,Information Systems & Digital Business
 12393,Workplace Spirituality and Leadership,Social Sciences,Sociology,Economic Sociology
 12394,Insurance and Financial Risk Management,Social Sciences,Economics,Finance & Financial Economics
-12395,Educational Innovations and Technology,Formal Sciences,Computer Science,
 12396,Advanced Differential Equations and Dynamical Systems,Formal Sciences,Mathematics,Dynamical Systems
 12397,Critical Theory and Philosophy,Arts & Humanities,Philosophy,Continental Philosophy
 12398,Poetry Analysis and Criticism,Arts & Humanities,Literature,Poetry & Poetics
@@ -2406,7 +2398,6 @@ topic_id,topic_name,domain,field,subfield
 12405,Characterization and Applications of Magnetic Nanoparticles,Physical Sciences,Engineering,Nanotechnology & Microsystems
 12406,IoT and GPS-based Vehicle Safety Systems,Physical Sciences,Engineering,Transportation Engineering
 12407,Plant Growth Enhancement Techniques,Life Sciences,Agricultural Sciences,Crop Science & Agronomy
-12408,Educational Innovations and Challenges,Formal Sciences,Computer Science,
 12409,Reformation and Early Modern Christianity,Arts & Humanities,History,Religious History
 12410,Structural and Chemical Analysis of Organic and Inorganic Compounds,Physical Sciences,Chemistry,Organic Chemistry
 12411,Shoulder and Clavicle Injuries,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
@@ -2514,7 +2505,6 @@ topic_id,topic_name,domain,field,subfield
 12513,Rocket and propulsion systems research,Physical Sciences,Engineering,Aerospace Engineering
 12514,Fashion and Cultural Textiles,Arts & Humanities,Arts,Visual Arts & Art History
 12515,Gender and Technology in Education,Social Sciences,Sociology,Gender & Sexuality Studies
-12516,Advanced Mathematical Theories and Applications,Physical Sciences,Physics & Astronomy,
 12517,Seventeenth-Century Political and Philosophical Thought,Arts & Humanities,Philosophy,History of Philosophy
 12518,Diverticular Disease and Complications,Health Sciences,Medicine & Clinical Sciences,Gastroenterology & Hepatology
 12519,Cybercrime and Law Enforcement Studies,Formal Sciences,Computer Science,Cybersecurity & Cryptography
@@ -3013,7 +3003,6 @@ topic_id,topic_name,domain,field,subfield
 13013,Free Radicals and Antioxidants,Physical Sciences,Chemistry,Organic Chemistry
 13014,Peace and Human Rights Education,Social Sciences,Education,Educational Policy & Leadership
 13015,"Botany, Ecology, and Taxonomy Studies",Life Sciences,Agricultural Sciences,Horticulture
-13016,Innovative Educational Technologies,Formal Sciences,Computer Science,
 13017,Zygmunt Bauman's Sociology,Social Sciences,Sociology,Cultural Sociology
 13018,Seismology and Earthquake Studies,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 13019,African Studies and Geopolitics,Social Sciences,Anthropology,Cultural & Social Anthropology
@@ -3048,7 +3037,6 @@ topic_id,topic_name,domain,field,subfield
 13048,Patient Dignity and Privacy,Health Sciences,Medicine & Clinical Sciences,Psychiatry & Mental Health
 13049,Surface Roughness and Optical Measurements,Physical Sciences,Engineering,Materials Science & Engineering
 13050,Oil and Gas Production Techniques,Physical Sciences,Engineering,Chemical & Process Engineering
-13051,Qualitative Comparative Analysis Research,Formal Sciences,Statistics,Causal Inference
 13052,Molecular Communication and Nanonetworks,Physical Sciences,Engineering,Nanotechnology & Microsystems
 13053,SMEs Development and Digital Marketing,Social Sciences,Sociology,Economic Sociology
 13054,Agricultural and Financial Auditing,Life Sciences,Biology,Ecology
@@ -3063,7 +3051,6 @@ topic_id,topic_name,domain,field,subfield
 13063,Education and experiences of immigrants and refugees,Social Sciences,Education,Special Education
 13064,Dutch Social and Cultural Studies,Social Sciences,Education,Educational Psychology
 13065,Mining Techniques and Economics,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
-13066,Information Society and Technology Trends,Formal Sciences,Computer Science,
 13067,Geological Modeling and Analysis,Physical Sciences,Earth & Planetary Sciences,Geology & Geochemistry
 13068,Ancient Mediterranean Archaeology and History,Arts & Humanities,History,Ancient History
 13069,Cocoa and Sweet Potato Agronomy,Life Sciences,Agricultural Sciences,Crop Science & Agronomy
@@ -3076,9 +3063,7 @@ topic_id,topic_name,domain,field,subfield
 13076,"Torture, Ethics, and Law",Social Sciences,Law,Human Rights Law
 13077,Cancer-related cognitive impairment studies,Health Sciences,Medicine & Clinical Sciences,Oncology
 13078,Political and Social Dynamics in Chile and Latin America,Arts & Humanities,History,Modern & Contemporary History
-13079,Heavy Metals in Plants,Physical Sciences,Chemistry,Environmental Chemistry
 13080,Advanced Differential Geometry Research,Physical Sciences,Physics & Astronomy,Astrophysics & Cosmology
-13081,Digital Education and Society,Formal Sciences,Computer Science,
 13082,Water and Land Management,Physical Sciences,Environmental Science,Water Resources & Hydrology
 13083,Advanced Text Analysis Techniques,Formal Sciences,Computer Science,Natural Language Processing
 13084,Education during COVID-19 pandemic,Social Sciences,Education,Educational Technology
@@ -3152,7 +3137,6 @@ topic_id,topic_name,domain,field,subfield
 13152,French Language Learning Methods,Arts & Humanities,Languages & Linguistics,Applied Linguistics & Language Teaching
 13153,Rousseau and Enlightenment Thought,Arts & Humanities,Philosophy,History of Philosophy
 13154,Legal and Regulatory Analysis,Social Sciences,Law,Corporate & Commercial Law
-13155,Digital Communication and Language,Formal Sciences,Computer Science,
 13156,Historical Linguistics and Language Studies,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics
 13157,Cancer-related gene regulation,Life Sciences,Biomedical Sciences,Cancer Biology
 13158,Political and Economic history of UK and US,Social Sciences,Political Science,American Politics
@@ -3191,7 +3175,6 @@ topic_id,topic_name,domain,field,subfield
 13191,Dispute Resolution and Class Actions,Social Sciences,Business & Management,Information Systems & Digital Business
 13192,Forensic Fingerprint Detection Methods,Social Sciences,Communication & Media Studies,Information Science & Library Science
 13193,Geological Studies and Exploration,Physical Sciences,Earth & Planetary Sciences,Geology & Geochemistry
-13194,ICT in Developing Communities,Formal Sciences,Computer Science,
 13195,Medieval Iberian Studies,Arts & Humanities,History,Medieval History
 13196,Political Theory and Influence,Social Sciences,Political Science,Political Theory
 13197,Spreadsheets and End-User Computing,Formal Sciences,Computer Science,Software Engineering
@@ -3357,7 +3340,6 @@ topic_id,topic_name,domain,field,subfield
 13358,Livestock Management and Performance Improvement,Life Sciences,Agricultural Sciences,Animal Science
 13359,Sports Science and Education,Arts & Humanities,History,History of Science & Technology
 13360,Economic and Social Issues,Social Sciences,Economics,Political Economy
-13361,Coconut Research and Applications,Physical Sciences,Chemistry,Environmental Chemistry
 13362,Slime Mold and Myxomycetes Research,Physical Sciences,Engineering,Computer & Software Engineering
 13363,Soft tissue tumors and treatment,Health Sciences,Medicine & Clinical Sciences,Oncology
 13364,"Digitalization, Law, and Regulation",Social Sciences,Law,Intellectual Property Law
@@ -3382,7 +3364,6 @@ topic_id,topic_name,domain,field,subfield
 13383,Tumors and Oncological Cases,Health Sciences,Medicine & Clinical Sciences,Oncology
 13384,Regional Economic Development and Innovation,Social Sciences,Business & Management,Strategic Management
 13385,Infectious Diseases and Mycology,Life Sciences,Agricultural Sciences,Animal Science
-13386,Educational Methods and Teacher Development,Formal Sciences,Computer Science,
 13387,"Politics, Economics, and Education Policy",Social Sciences,Economics,Public Economics
 13388,Rangeland and Wildlife Management,Physical Sciences,Environmental Science,Conservation & Biodiversity
 13389,German Economic Analysis & Policies,Social Sciences,Economics,Macroeconomics
@@ -3478,7 +3459,6 @@ topic_id,topic_name,domain,field,subfield
 13479,Food Science and Nutritional Studies,Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
 13480,Innovations and Analysis in Business and Education,Social Sciences,Business & Management,Strategic Management
 13481,Neurological diseases and metabolism,Life Sciences,Neuroscience,Clinical Neuroscience
-13482,Engineering Education and Technology,Formal Sciences,Computer Science,
 13483,Herbal Medicine Research Studies,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 13484,German History and Society,Arts & Humanities,History,Modern & Contemporary History
 13485,Marine and Coastal Ecosystems,Physical Sciences,Environmental Science,Ecology & Ecosystem Science
@@ -3561,7 +3541,6 @@ topic_id,topic_name,domain,field,subfield
 13562,Tourism Development and Management,Social Sciences,Business & Management,Tourism & Hospitality Management
 13563,Chemical Analysis and Environmental Impact,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
 13564,Education and Public Policy,Social Sciences,Political Science,Public Administration & Policy
-13565,Education and Learning Interventions,Formal Sciences,Computer Science,
 13566,Global Educational Reforms and Inequalities,Social Sciences,Sociology,Social Stratification & Inequality
 13567,AI and Multimedia in Education,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
 13568,Wood and Agarwood Research,Physical Sciences,Chemistry,Organic Chemistry
@@ -3598,7 +3577,6 @@ topic_id,topic_name,domain,field,subfield
 13599,Architecture and Cultural Influences,Arts & Humanities,Arts,Architecture & Design
 13600,Science Education and Perceptions,Social Sciences,Psychology,Educational Psychology
 13601,Urban Transport Systems Analysis,Physical Sciences,Engineering,Transportation Engineering
-13602,Educational Methods and Media Use,Formal Sciences,Computer Science,
 13603,Corporate Social Responsibility and Sustainability,Social Sciences,Business & Management,Strategic Management
 13604,"Adsorption, diffusion, and thermodynamic properties of materials",Physical Sciences,Chemistry,Physical & Theoretical Chemistry
 13605,"Homicide, Infanticide, and Child Abuse",Social Sciences,Law,Criminal Law & Criminology
@@ -3739,7 +3717,6 @@ topic_id,topic_name,domain,field,subfield
 13742,Metallurgy and Cultural Artifacts,Arts & Humanities,History,History of Science & Technology
 13743,Italian Literature and Culture,Arts & Humanities,Literature,European Literature
 13744,Financial Literacy and Behavior,Social Sciences,Business & Management,Finance & Accounting
-13745,Media and Digital Communication,Formal Sciences,Computer Science,
 13746,Mechanical Systems and Engineering,Physical Sciences,Engineering,Mechanical Engineering
 13747,Sociopolitical Dynamics in Russia,Social Sciences,Political Science,Comparative Politics
 13748,Advanced Statistical Modeling Techniques,Formal Sciences,Computer Science,Artificial Intelligence & Machine Learning
@@ -4108,7 +4085,6 @@ topic_id,topic_name,domain,field,subfield
 14111,Diverse Research Studies Overview,Social Sciences,Sociology,Criminology & Deviance
 14112,"Economic, financial, and policy analysis",Social Sciences,Economics,Macroeconomics
 14113,Global Socioeconomic and Political Dynamics,Social Sciences,Economics,Development Economics
-14114,Digital Media and Philosophy,Formal Sciences,Computer Science,
 14115,Legal processes and jurisprudence,Social Sciences,Law,Legal Theory & Jurisprudence
 14116,Aviation History and Innovations,Arts & Humanities,History,History of Science & Technology
 14117,Integrated Circuits and Semiconductor Failure Analysis,Physical Sciences,Engineering,Electrical & Electronics Engineering
@@ -4210,7 +4186,6 @@ topic_id,topic_name,domain,field,subfield
 14213,Global Politics and Economy,Social Sciences,Economics,International Trade
 14214,Space Exploration and Technology,Physical Sciences,Engineering,Aerospace Engineering
 14215,Chemical and Environmental Engineering Research,Formal Sciences,Computer Science,Systems & Networking
-14216,Information Systems and Applications,Formal Sciences,Computer Science,
 14217,American Literature and Humor Studies,Arts & Humanities,Literature,American Literature
 14218,Engineering Education and Global Impact,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
 14219,Local Economic Development and Planning,Social Sciences,Political Science,Public Administration & Policy
@@ -4240,7 +4215,6 @@ topic_id,topic_name,domain,field,subfield
 14243,Creative Drama in Education,Arts & Humanities,Arts,Theater & Performance Studies
 14244,Consumer Behavior and Marketing Influence,Social Sciences,Business & Management,Marketing
 14245,Biomarkers in Disease Mechanisms,Life Sciences,Biomedical Sciences,Immunology
-14246,Educational Technologies and Methods,Formal Sciences,Computer Science,
 14247,"Borges, Kipling, and Jewish Identity",Arts & Humanities,Literature,World Literature
 14248,Social impacts of COVID-19,Social Sciences,Psychology,Social Psychology
 14249,Environmental Water Quality Research,Physical Sciences,Environmental Science,Environmental Chemistry & Pollution
@@ -4248,7 +4222,6 @@ topic_id,topic_name,domain,field,subfield
 14251,Multicultural Education and Local Wisdom,Social Sciences,Sociology,Cultural Sociology
 14252,Water and Wastewater Treatment,Physical Sciences,Engineering,Environmental Engineering
 14253,Latin American social science,Social Sciences,Sociology,Social Movements & Collective Action
-14254,Digital Media and Visual Art,Formal Sciences,Computer Science,
 14255,European Law and Migration,Social Sciences,Law,Immigration Law
 14256,Agricultural and Food Sciences,Life Sciences,Agricultural Sciences,Forestry & Agroforestry
 14257,Advanced Measurement and Detection Methods,Physical Sciences,Engineering,Electrical & Electronics Engineering
@@ -4301,7 +4274,6 @@ topic_id,topic_name,domain,field,subfield
 14304,Transport Systems and Technology,Physical Sciences,Engineering,Transportation Engineering
 14305,Modern American Literature Studies,Arts & Humanities,Literature,American Literature
 14306,Technology Assessment and Management,Physical Sciences,Engineering,Industrial & Manufacturing Engineering
-14307,Bioethics and Human Rights Issues,Formal Sciences,Computer Science,
 14308,Psychological and Educational Research Studies,Social Sciences,Psychology,Cognitive Psychology
 14309,Employee Performance and Management,Social Sciences,Business & Management,Organizational Behavior & Human Resources
 14310,Botany and Geology in Latin America and Caribbean,Life Sciences,Biology,Botany & Plant Biology
@@ -4396,13 +4368,11 @@ topic_id,topic_name,domain,field,subfield
 14400,Medical Coding and Health Information,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 14401,"Technology, Environment, Urban Planning",Arts & Humanities,Philosophy,Ethics & Moral Philosophy
 14402,Political and Social Issues,Social Sciences,Political Science,Comparative Politics
-14403,Educational Challenges and Innovations,Formal Sciences,Computer Science,
 14404,European Socioeconomic and Political Studies,Social Sciences,Economics,Public Economics
 14405,Fisheries and Aquaculture Studies,Life Sciences,Biology,Marine Biology
 14406,Multidisciplinary Science and Engineering Research,Formal Sciences,Statistics,Biostatistics
 14407,Athletic Training and Education,Health Sciences,Medicine & Clinical Sciences,Orthopedics & Rehabilitation
 14408,Coastal Management and Development,Physical Sciences,Environmental Science,Water Resources & Hydrology
-14409,Educational Systems and Policies,Formal Sciences,Computer Science,
 14410,Safety and Risk Management,Social Sciences,Business & Management,Operations & Supply Chain Management
 14411,Undergraduate Neuroscience Education and Research,Life Sciences,Neuroscience,Cognitive Neuroscience
 14412,Marine and Coastal Research,Physical Sciences,Engineering,Environmental Engineering
@@ -4423,7 +4393,6 @@ topic_id,topic_name,domain,field,subfield
 14427,Environmental Monitoring and Data Management,Physical Sciences,Earth & Planetary Sciences,Oceanography
 14428,Coal and Coke Industries Research,Physical Sciences,Engineering,Chemical & Process Engineering
 14429,Global Political and Social Dynamics,Social Sciences,Political Science,International Relations
-14430,Higher Education and Teaching Methods,Formal Sciences,Computer Science,
 14431,Diverse Research and Applications,Formal Sciences,Computer Science,Systems & Networking
 14432,Freedom of Expression and Defamation,Social Sciences,Law,Human Rights Law
 14433,Post-Communist Economic and Political Transition,Social Sciences,Political Science,Political Economy
@@ -4489,9 +4458,7 @@ topic_id,topic_name,domain,field,subfield
 14493,Criminal Law and Evidence,Social Sciences,Law,Criminal Law & Criminology
 14494,American Literature and Culture,Arts & Humanities,History,Social & Cultural History
 14495,Public Health and Nutrition,Health Sciences,Nutrition & Dietetics,Public Health & Community Nutrition
-14496,Educational Technology and E-Learning,Formal Sciences,Computer Science,
 14497,Social Issues and Policies in Latin America,Social Sciences,Law,Human Rights Law
-14498,Educational Technology in Learning,Formal Sciences,Computer Science,
 14499,Livestock Farming and Management,Life Sciences,Agricultural Sciences,Animal Science
 14500,Advanced Mathematical Theories,Formal Sciences,Mathematics,Number Theory
 14501,Global Economic and Social Development,Social Sciences,Economics,Development Economics
@@ -4509,9 +4476,7 @@ topic_id,topic_name,domain,field,subfield
 14513,"Leadership, Courage, and Heroism Studies",Social Sciences,Psychology,Personality Psychology
 14514,Medical Research and Practices,Health Sciences,Medicine & Clinical Sciences,Internal Medicine & General Practice
 14515,International Law and Aviation,Social Sciences,Political Science,International Relations
-14516,English Language Learning and Teaching,Formal Sciences,Computer Science,
 14517,Diverse Historical and Scientific Studies,Arts & Humanities,History,History of Science & Technology
 14518,American Sports and Literature,Arts & Humanities,History,Social & Cultural History
-14519,Innovations in Education and Learning Technologies,Formal Sciences,Computer Science,
 14520,Sustainable Urban and Rural Development,Social Sciences,Geography,Urban Studies & Planning
 14521,Medicinal Plant Research,Life Sciences,Agricultural Sciences,Plant Pathology
