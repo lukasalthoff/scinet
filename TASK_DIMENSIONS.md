@@ -77,12 +77,20 @@ Anthropic Economic Index education item.
 
 Each task was scored by Claude Sonnet 5 with one prompt per family, given the
 task text and its field and subfield. The CDR and RL families were scored on
-each substep of the task where a substep decomposition was available (4,936
-subfield tasks, about six steps each) and averaged to the task with the
-substeps' time shares as weights; for the remaining 2,326 tasks they were
-scored on the task itself. The other families were scored once per task. The
-prompts for the CDR and RL families use the published rubrics verbatim; the
-prompts for the other families are ours.
+every substep in `data/substeps.csv.gz` (90,490 substeps at all four
+levels; the per-substep scores are in `data/substep_dimensions.csv.gz`) and
+averaged to the task with the substeps' shares of researcher time as weights,
+the physical gate as the time-weighted share of substeps that pass. Universal
+tasks are decomposed once per field and averaged across fields. The 2
+tasks that have no decomposition in `substeps.csv.gz` have no CDR or RL
+values (`cdr_rl_source` is empty); substeps the model declined to score
+(92 of 90,490 for CDR, 75 for RL, in pathogen-handling and dosing tasks)
+are left empty and the task mean is taken over the scored substeps. The
+other families were scored once per task. The prompts for the CDR and RL families
+use the published rubrics verbatim; the prompts for the other families are
+ours. Until v1.4.2 the CDR and RL values were substep means for the 4,936
+subfield tasks that had a decomposition at the time and direct task ratings
+otherwise; v1.5.0 rescored every substep of the current decomposition.
 
 The same prompts were run on O\*NET tasks to check them against O\*NET's own
 occupation measures: physical deployment correlates 0.73 with O\*NET's "time

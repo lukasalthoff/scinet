@@ -23,6 +23,8 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately for every subfield it appears in |
 | [`data/task_ratings.csv`](data/task_ratings.csv) | How important each task is, what share of researchers do it, and how often, rated separately for every subfield it appears in |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of a subfield's papers that perform each task, read from the papers themselves |
+| [`data/task_dimensions.csv`](data/task_dimensions.csv) | Every task scored on five families of dimensions: relation to knowledge, medium, mode, cognitive complexity / physical deployment / regulatory restriction, RL feasibility, Pasteur's quadrant, and years of education. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
+| [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The CDR and RL-feasibility scores of every substep, from which the task-level values are the time-weighted means |
 | [`data/work_activities.csv`](data/work_activities.csv) | The two-level aggregation of the database: 140 work activities grouped under the 30 universal tasks, with names and descriptions. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | Which work activity every domain-, field-, and subfield-level task belongs to |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields, used to assign a paper to a subfield. Topics are not a level of the taxonomy and carry no tasks of their own |
@@ -72,7 +74,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `elapsed_hours` | Calendar time for one instance, including unattended waiting such as incubations, cluster jobs, and review boards. Never less than `researcher_hours` |
 | `confidence` | Most common per-substep confidence: `high`, `medium`, or `low` |
 
-Since v1.4.1 every task at every level has substeps and times, including the 134 domain-level tasks and all 30 universal tasks (timed once per field), and field-level tasks are timed in every subfield of their field where they are performed. The one exception is a physiology task on preparing exposure agents for dosing, which the model declined to decompose.
+Since v1.4.1 every task at every level has substeps and times, including the 134 domain-level tasks and all 30 universal tasks (timed once per field), and field-level tasks are timed in every subfield of their field where they are performed. The two exceptions are a physiology task and a plant-pathology task, both on preparing materials for experiments, which have no decomposition.
 
 **`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task.
 
