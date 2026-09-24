@@ -11,7 +11,7 @@ For each task the data give:
 - how important it is, how often it is done, and what share of researchers do it;
 - descriptive scores such as how complex it is and how much of it is physical work.
 
-Current release: **v1.6.0** ([changes](#changes)).
+Current release: **v1.6.1** ([changes](#changes)).
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -90,7 +90,7 @@ One row per task per subfield it appears in, on O\*NET's three scales. Each row 
 
 ### `task_prevalence.csv`
 
-The share of a subfield's sampled papers whose text shows the task being performed, judged by a language model reading each paper. It covers subfield-level tasks that existed before the paper-based expansion described in the methodology, about 73% of subfield tasks, in all 318 subfields.
+The share of a subfield's sampled papers whose text shows the task being performed, judged by a language model reading each paper. The `source` column says how the row was measured. `judged` rows (tasks that existed before the paper-based expansion described in the methodology) come from a fixed sample of about 100 papers. `expansion` rows are the tasks that the expansion added: their share was measured on the same papers that suggested them, in batches of 25 to 100 with early stopping, so it runs a few points high. Tasks the expansion added but whose wording changed too much to be traced to a scored candidate have no row; nor do universal, domain, or field tasks.
 
 | Column | Description |
 |--------|-------------|
@@ -99,6 +99,7 @@ The share of a subfield's sampled papers whose text shows the task being perform
 | `n_papers` | Papers judged for this task |
 | `n_involved` | Papers in which the task was stated or clearly implied |
 | `prevalence` | `n_involved` divided by `n_papers` |
+| `source` | `judged` or `expansion`, see above |
 
 ### `openalex_topic_subfield_mapping.csv`
 
@@ -136,6 +137,7 @@ If you use this dataset, please cite the SciNet project and this repository, for
 
 | Version | Change |
 |---------|--------|
+| v1.6.1 | Prevalence rows added for 1,188 tasks from the paper-based expansion, marked `expansion` in a new `source` column. The 69 original domain-level tasks now appear on the website's subfield pages wherever they are performed, like every other task. |
 | v1.6.0 | Ratings added for the three universal tasks that lacked them. Prevalence rebuilt so the two subfield names that exist in two fields are kept apart. Times re-estimated for the few rows that had been timed on a different breakdown. Universal tasks timed in the field-task pairs that were missing. Medium shares rescored where they did not sum to 100. Substep numbering made plain S1, S2, … throughout. Crosswalk restricted to topics that map to a live subfield. Figures regenerated. Documentation rewritten for plain reading. |
 | v1.5.2 | Documentation corrected against the code and data; internal identifiers removed from the work-activity descriptions; crosswalk domains updated to the six-domain taxonomy |
 | v1.5.1 | Work-activity averages count each task once |
