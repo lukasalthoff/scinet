@@ -1,6 +1,6 @@
 # Survey Questions
 
-This document reflects the live survey definitions in [`docs/contribute.js`](../docs/contribute.js).
+This document reflects the live survey definitions in the contribution form at [anatomyofscience.com](https://www.anatomyofscience.com).
 It lists the current answerable questions in each module and excludes explanatory `info` blocks.
 
 ---

@@ -4,11 +4,15 @@ SciNet is a database documenting which tasks researchers perform across all scie
 
 SciNet organizes all scientific disciplines hierarchically, with subfields (e.g. Labor Economics, Macroeconomics) grouped into fields (e.g. Economics) grouped into domains (e.g. Social Sciences). Currently, the database contains 6 domains, 34 fields, and 318 subfields. Tasks can correspond to any level of this hierarchy. For example, _"collecting biological specimens"_ is a domain-level task for the Life Sciences, while _"conducting field excavations to recover human skeletal remains"_ corresponds to the subfield of Biological & Physical Anthropology. This release contains 7,262 task statements: 30 that apply to research everywhere, 134 at the domain level, 321 at the field level, and 6,777 at the subfield level.
 
+Current release: **v1.5.2**. See [Changes](#changes) for what each version added.
+
 For each task, the data contain a list of all substeps required to perform that task, as well as an estimate of:
 1. How long the task takes to perform
 2. How important the task is
 3. How frequently researchers perform a task
 4. What share of researchers perform that task
+
+Items 2 to 4 cover every task except the three universal tasks added in August 2026, which were added after the rating run.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -25,9 +29,11 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of a subfield's papers that perform each task, read from the papers themselves |
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | Every task scored on five families of dimensions: relation to knowledge, medium, mode, cognitive complexity / physical deployment / regulatory restriction, RL feasibility, Pasteur's quadrant, and years of education. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The CDR and RL-feasibility scores of every substep, from which the task-level values are the time-weighted means |
-| [`data/work_activities.csv`](data/work_activities.csv) | The two-level aggregation of the database: 140 work activities grouped under the 30 universal tasks, with names and descriptions. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
+| [`data/work_activities.csv`](data/work_activities.csv) | The two-level aggregation of the database: 140 work activities grouped under 23 of the 30 universal tasks, with names and descriptions. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | Which work activity every domain-, field-, and subfield-level task belongs to |
-| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields, used to assign a paper to a subfield. Topics are not a level of the taxonomy and carry no tasks of their own |
+| [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | The same dimensions for each of the 140 work activities, as the mean over the tasks assigned to it |
+| [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv) | Extra OpenAlex topics added to a subfield's paper sampling frame where the crosswalk alone gave too few eligible papers |
+| [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Crosswalk from OpenAlex topics to SciNet subfields, used to define which papers are eligible to be drawn for a subfield. The subfield itself is assigned by a model reading the paper. Topics are not a level of the taxonomy and carry no tasks of their own |
 
 ### Data dictionary
 
@@ -41,6 +47,9 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `domain` | Domain name, for example "Social Sciences". Empty for universal tasks |
 | `field` | Field name, for example "Economics". Empty for universal and domain tasks |
 | `subfield` | Subfield name, for example "Labor Economics". Empty for universal, domain, and field tasks |
+| `expert_input` | Name of the researcher whose review produced or revised this task, where one did. Empty otherwise |
+
+Subfield names are not unique: Political Economy and Educational Psychology each appear under two different fields. Join on `field` and `subfield` together, never on `subfield` alone.
 
 **`openalex_topic_subfield_mapping.csv`**
 
@@ -52,7 +61,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `field` | SciNet field |
 | `subfield` | SciNet subfield |
 
-**`substeps.csv.gz`** is gzipped, 32 MB plain and 7 MB compressed. `pandas.read_csv` opens it directly.
+**`substeps.csv.gz`** is gzipped, 34.5 MB plain and 7.8 MB compressed. `pandas.read_csv` opens it directly.
 
 | Column | Description |
 |--------|-------------|
@@ -62,7 +71,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 | `substep_id` | `S1`, `S2`, and so on, in workflow order |
 | `substep` | What the researcher does at this step |
 
-**`task_time.csv`** has one row per task per subfield it appears in, because the same task can correspond to a different job in different subfields. Across the 140 tasks that reach five or more subfields, the median task varies by a factor of 2.5 in `researcher_hours` across all its corresponding subfields, and by a factor of 4.1 in `elapsed_hours`.
+**`task_time.csv`** has one row per task per scope it is timed in, because the same task can correspond to a different job in different subfields. Subfield tasks are timed in their own subfield. Field and domain tasks are timed only in the subfields where the model judges the task to be performed, which is 2,662 of 3,099 field placements and 4,100 of 7,387 domain placements. Universal tasks are timed once per field, not per subfield, so their `subfield` is empty. Across the 409 domain-, field- and subfield-level tasks timed in five or more subfields, the median task varies by a factor of 2.2 in `researcher_hours` and 3.2 in `elapsed_hours`, measured as the largest estimate divided by the smallest.
 
 | Column | Description |
 |--------|-------------|
@@ -76,7 +85,7 @@ All files are UTF-8 and CSVs use comma separators. See [`data/README.md`](data/R
 
 Since v1.4.1 every task at every level has substeps and times, including the 134 domain-level tasks and all 30 universal tasks (timed once per field), and field-level tasks are timed in every subfield of their field where they are performed. The two exceptions are a physiology task and a plant-pathology task, both on preparing materials for experiments, which have no decomposition.
 
-**`task_ratings.csv`** has one row per task per subfield it appears in. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task.
+**`task_ratings.csv`** has one row per task per subfield it appears in, for 27 of the 30 universal tasks and for every domain-, field- and subfield-level task. The three scales are taken from O\*NET, where they are called Importance, Relevance of Task, and Frequency of Task. Each row is a single model rating, produced with a prompt carrying calibrated distribution anchors; see [METHODOLOGY](METHODOLOGY.md#4-rating-each-task).
 
 | Column | Description |
 |--------|-------------|
@@ -89,6 +98,8 @@ Since v1.4.1 every task at every level has substeps and times, including the 134
 | `classification` | `Core` if `importance` is at least 3 and `pct_researchers` is at least 67, otherwise `Supplemental`. This is O\*NET's rule |
 
 **`task_prevalence.csv`** records how often each task actually appears in the literature. We selected a sample of papers from each subfield and asked an LLM to verify whether each task was likely performed by the researchers when conducting their research.
+
+Coverage is partial and has a known defect. Only subfield-level tasks have prevalence, and only those that existed before the paper-based expansion, so 1,877 of the 6,777 subfield tasks have no row. The build keyed rows by subfield name alone, so the two subfield names that exist under two fields were merged: every Political Economy row is labelled Economics and every Educational Psychology row is labelled Education, 35 of those rows belong to the other field, and one task's counts pool both samples. Political Science / Political Economy and Psychology / Educational Psychology are therefore absent, which is why 316 rather than 318 subfields appear. This will be corrected in a later release.
 
 | Column | Description |
 |--------|-------------|
@@ -116,6 +127,16 @@ If you use this dataset, please cite the SciNet project and this repository, for
   howpublished = {\url{https://github.com/lukasalthoff/scinet}},
 }
 ```
+
+## Changes
+
+| Version | Change |
+|---------|--------|
+| v1.5.2 | Documentation corrected against the code and data throughout; internal task identifiers removed from the work-activity descriptions; the crosswalk's `domain` column rebuilt from `tasks.csv` |
+| v1.5.1 | Work-activity means count each assigned task once, averaging a task text over its placements first |
+| v1.5.0 | Cognitive complexity, physical deployment, regulatory restriction and RL feasibility rescored on every substep and averaged to tasks with time weights; `substep_dimensions.csv.gz` added |
+| v1.4.2 | Field-level tasks timed in every subfield where they are performed |
+| v1.4.1 | Substeps and times added for all 134 domain-level tasks and all 30 universal tasks |
 
 ## License
 

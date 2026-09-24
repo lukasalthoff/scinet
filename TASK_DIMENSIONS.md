@@ -83,17 +83,20 @@ averaged to the task with the substeps' shares of researcher time as weights,
 the physical gate as the time-weighted share of substeps that pass. Universal
 tasks are decomposed once per field and averaged across fields. The 2
 tasks that have no decomposition in `substeps.csv.gz` have no CDR or RL
-values (`cdr_rl_source` is empty); substeps the model declined to score
-(92 of 90,490 for CDR, 75 for RL, in pathogen-handling and dosing tasks)
-are left empty and the task mean is taken over the scored substeps. The
+values (`cdr_rl_source` is empty); substeps with no score
+(92 of 90,490 for CDR, of which 89 are refusals and 3 are answers whose
+JSON could not be read, and 75 refusals for RL, mostly in pathogen-handling,
+biosafety and dosing work) are left empty and the task mean is taken over the scored substeps. The
 other families were scored once per task. The prompts for the CDR and RL families
 use the published rubrics verbatim; the prompts for the other families are
 ours. Until v1.4.2 the CDR and RL values were substep means for the 4,936
 subfield tasks that had a decomposition at the time and direct task ratings
 otherwise; v1.5.0 rescored every substep of the current decomposition.
 
-The same prompts were run on O\*NET tasks to check them against O\*NET's own
-occupation measures: physical deployment correlates 0.73 with O\*NET's "time
+The same prompts were run directly on O\*NET task statements to check them
+against O\*NET's own occupation measures. This validates the scoring prompts,
+not the substep aggregation the release now ships, and the first four
+correlations are across 709 occupations rather than tasks: physical deployment correlates 0.73 with O\*NET's "time
 spent using your hands", cognitive complexity 0.75 with O\*NET Job Zone,
 years of education 0.81 with O\*NET's required education, regulatory
 restriction 0.60 with the importance of professional certification, and the
@@ -101,4 +104,8 @@ three RL dimensions 0.79–0.88, task by task, with the scores published by the
 index's authors for the same O\*NET tasks.
 
 Work-activity values are simple means over the tasks assigned to each
-activity in `task_activity_assignments.csv`.
+activity in `task_activity_assignments.csv`. A task text that appears in
+several subfields is first averaged over its placements, so each assigned
+task counts once. `pasteur_applies_share` is the share of assigned tasks
+where Pasteur's quadrant applies, and `n_tasks_scored` is the number
+carrying CDR scores.
