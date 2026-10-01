@@ -11,7 +11,7 @@ For each task the data give:
 - how important it is, how often it is done, and what share of researchers do it;
 - descriptive scores such as how complex it is and how much of it is physical work.
 
-Current release: **v1.6.2** ([changes](#changes)).
+Current release: **v1.7.0** ([changes](#changes)).
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -26,6 +26,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately in each subfield where it is performed |
 | [`data/task_ratings.csv`](data/task_ratings.csv) | Importance, share of researchers, and frequency of each task, rated separately in each subfield |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of a subfield's published papers that show the task being performed |
+| [`data/upper_task_prevalence.csv`](data/upper_task_prevalence.csv) | The same for universal, domain, and field tasks, by field and combined |
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
@@ -90,7 +91,7 @@ One row per task per subfield it appears in, on O\*NET's three scales. Each row 
 
 ### `task_prevalence.csv`
 
-The share of a subfield's sampled papers whose text shows the task being performed, judged by a language model reading each paper. The `source` column says how the row was measured. `judged` rows (tasks that existed before the paper-based expansion described in the methodology) come from a fixed sample of about 100 papers. `expansion` rows are the tasks that the expansion added: their share comes from the expansion's own scoring of the subfield's papers, in batches of 25 to 100 with early stopping, leaving out the papers that proposed the task so that a task is not credited to the paper it was found in. Tasks the expansion added but whose wording changed too much to be traced to a scored candidate have no row; nor do universal, domain, or field tasks.
+The share of a subfield's sampled papers whose text shows the task being performed, judged by a language model reading each paper. The `source` column says how the row was measured. `judged` rows (tasks that existed before the paper-based expansion described in the methodology) come from a fixed sample of about 100 papers. `expansion` rows are the tasks that the expansion added: their share comes from the expansion's own scoring of the subfield's papers, in batches of 25 to 100 with early stopping, leaving out the papers that proposed the task so that a task is not credited to the paper it was found in. Tasks the expansion added but whose wording changed too much to be traced to a scored candidate have no row. Universal, domain, and field tasks are in `upper_task_prevalence.csv`.
 
 | Column | Description |
 |--------|-------------|
@@ -100,6 +101,23 @@ The share of a subfield's sampled papers whose text shows the task being perform
 | `n_involved` | Papers in which the task was stated or clearly implied |
 | `prevalence` | `n_involved` divided by `n_papers` |
 | `source` | `judged` or `expansion`, see above |
+
+### `upper_task_prevalence.csv`
+
+The share of published papers that show each universal, domain, and field task being performed. Papers were sampled per field from the subfield samples above, each subfield counting in proportion to its share of the field's citations: 200 papers per field for field tasks, 100 per field for domain and universal tasks. Each paper was judged against all of its field's, domain's, and universal tasks at once. A field's row covers that field's papers; a domain or all-of-science row combines fields in proportion to their citations.
+
+Field tasks were judged on the first 20,000 characters of each paper, as subfield tasks were (`run1`). Domain and universal tasks were judged on the full text and the journal, with an instruction to infer what producing and publishing the paper must have involved (`run2`), because several of them, such as drafting the manuscript or responding to reviewers, are rarely narrated in a paper. Some universal tasks describe work that papers rarely reveal, such as teaching or serving on editorial boards; their shares are near zero and say little about how often researchers do them. Grant writing is understated: it is marked for 39% of the papers in which a keyword search finds a funding statement.
+
+| Column | Description |
+|--------|-------------|
+| `task`, `level` | The task and its level: `field`, `domain`, or `universal` |
+| `scope` | What the row covers: `field` (one field's papers), `domain` (the domain's fields combined), or `all` (all 34 fields combined) |
+| `domain`, `field` | The domain and field of the row's scope, empty where the scope is wider |
+| `n_papers` | Papers judged for this task within the scope |
+| `n_involved` | Of those, papers in which the task was stated or clearly implied |
+| `prevalence` | The weighted share of papers performing the task. Because of the weights it can differ from `n_involved` divided by `n_papers` |
+| `se` | Standard error of `prevalence`; 0 when all or none of the papers perform the task |
+| `run` | `run1` or `run2`, see above |
 
 ### `openalex_topic_subfield_mapping.csv`
 
@@ -137,6 +155,7 @@ If you use this dataset, please cite the SciNet project and this repository, for
 
 | Version | Change |
 |---------|--------|
+| v1.7.0 | `upper_task_prevalence.csv` added: the share of papers that perform each universal, domain, and field task, by field, by domain, and for all of science. No other file changed |
 | v1.6.2 | The `expansion` prevalence rows recomputed leaving out the papers that proposed each task (mean share 17.6% to 15.1%) |
 | v1.6.1 | Prevalence rows added for 1,188 tasks from the paper-based expansion, marked `expansion` in a new `source` column. The 69 original domain-level tasks now appear on the website's subfield pages wherever they are performed, like every other task. |
 | v1.6.0 | Ratings added for the three universal tasks that lacked them. Prevalence rebuilt so the two subfield names that exist in two fields are kept apart. Times re-estimated for the few rows that had been timed on a different breakdown. Universal tasks timed in the field-task pairs that were missing. Medium shares rescored where they did not sum to 100. Substep numbering made plain S1, S2, … throughout. Crosswalk restricted to topics that map to a live subfield. Figures regenerated. Documentation rewritten for plain reading. |

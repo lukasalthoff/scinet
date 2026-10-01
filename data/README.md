@@ -9,6 +9,7 @@ The files of the SciNet release. The [main README](../README.md) describes every
 | `task_time.csv` | Hours per task, per subfield where it is performed | `task`, `level`, `domain`, `field`, `subfield`, `n_substeps`, `researcher_hours`, `elapsed_hours`, `confidence` |
 | `task_ratings.csv` | Importance (1–5), share of researchers (0–100), frequency (1–7), per subfield | `task`, `level`, `domain`, `field`, `subfield`, `importance`, `pct_researchers`, `frequency`, `classification` |
 | `task_prevalence.csv` | Share of a subfield's papers that perform the task | `field`, `subfield`, `task`, `n_papers`, `n_involved`, `prevalence`, `source` (`judged`: fixed 100-paper sample; `expansion`: from the expansion's scoring, leaving out the papers that proposed the task) |
+| `upper_task_prevalence.csv` | Share of papers that perform each universal, domain, and field task, by field and combined (2,482 rows) | `task`, `level`, `scope`, `domain`, `field`, `n_papers`, `n_involved`, `prevalence`, `se`, `run` (`run1`: field tasks, first 20,000 characters; `run2`: domain and universal tasks, full text) |
 | `task_dimensions.csv` | Descriptive scores for every task, same rows and order as `tasks.csv` | See TASK_DIMENSIONS.md |
 | `substep_dimensions.csv.gz` | The step-by-step scores, same rows and order as `substeps.csv.gz` | Keys as in `substeps.csv.gz`, plus the score columns |
 | `work_activities.csv` | The 140 work activities | `activity_id`, `universal_task_id`, `universal_task`, `category`, `activity_name`, `activity_description`, `n_tasks` |
@@ -23,5 +24,6 @@ Things to know when joining the files:
 - 235 task statements appear in more than one subfield, with their own rows in every file. Match rows on `task`, `level`, `domain`, `field` and `subfield` together, or, for `task_dimensions.csv`, by row position.
 - In `substeps.csv.gz` and `substep_dimensions.csv.gz`, `domain` is filled only for domain-level tasks, and `subfield` is empty for field-level and universal tasks, because those breakdowns apply to the whole field or domain.
 - Universal tasks are timed once per field, so their rows in `task_time.csv` have an empty `subfield`.
+- In `upper_task_prevalence.csv` a row is identified by `task`, `level`, `scope`, `domain` and `field`. `prevalence` is weighted by citations, so it can differ from `n_involved` divided by `n_papers`.
 - `topic_frame_overlay.csv` names subfields by a slug: lowercase, `&` written as `and`, other punctuation as `_`.
 - Empty cells: 2 subfield tasks have no steps, times, or step-by-step scores; a few scores are missing where the model declined to answer.
