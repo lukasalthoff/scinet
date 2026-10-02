@@ -1514,7 +1514,7 @@ Generate hypotheses about evolutionary relationships among species or gene famil
 "Formulate hypotheses about biological mechanisms, pathways, or evolutionary processes.",domain,Life Sciences,Biology,Bioinformatics & Computational Biology,9,22.17,24.17,medium
 Analyze gut or stomach contents of animals to characterize diet composition.,field,Life Sciences,Biology,Bioinformatics & Computational Biology,8,55.75,91.75,medium
 Design computational experiments with appropriate parameter sweeps and baseline comparisons for algorithm benchmarking.,subfield,Life Sciences,Biology,Bioinformatics & Computational Biology,11,28.75,44.58,medium
-Quantify target nucleic acid levels with targeted PCR assays to compare or verify expression results,domain,Life Sciences,Biology,Bioinformatics & Computational Biology,10,18.03,26.18,medium
+Quantify target nucleic acid levels with targeted PCR assays to compare or verify expression results,domain,Life Sciences,Biology,Bioinformatics & Computational Biology,10,26.18,39.82,medium
 Build and maintain web-accessible databases or browsers to disseminate biological data.,subfield,Life Sciences,Biology,Bioinformatics & Computational Biology,12,144.0,298.83,medium
 Obtain and examine reference material or purified samples to characterize their properties for comparative study.,field,Life Sciences,Biology,Bioinformatics & Computational Biology,8,8.37,13.45,medium
 Design and validate oligonucleotide sets (primers or probes) from reference sequences to target specific genomic regions.,field,Life Sciences,Biology,Bioinformatics & Computational Biology,11,7.87,109.08,low
@@ -8369,7 +8369,7 @@ Control for borrowing and areal diffusion when establishing genetic relationship
 Retrieve and count occurrences of targeted features across a textual corpus to identify distributional patterns,domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,9,45.42,45.42,medium
 "Analyze linguistic forms in data to make explicit their sources, meanings, or relations to other forms",field,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,51.42,51.42,medium
 Develop computational search routines to extract instances of target constructions or recurrent word sequences from corpora.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,12,35.25,36.92,medium
-"Reconstruct the historical development and circumstances of a figure, community, or movement from documentary sources to explain its later character",domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,376.33,2031.33,medium
+"Reconstruct the historical development and circumstances of a figure, community, or movement from documentary sources to explain its later character",domain,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,233.83,580.83,medium
 Reconstruct the sound system of a historical language by interpreting the graphemic conventions of the scripts that record it.,subfield,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,12,451.0,549.0,medium
 Assess coding reliability by having independent raters code the same data and computing their agreement,field,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,7,11.83,13.58,medium
 Compare source- and target-language expressions to assess the correspondence between them,field,Arts & Humanities,Languages & Linguistics,Historical & Comparative Linguistics,8,46.33,158.33,medium
@@ -11691,7 +11691,7 @@ Coordinate with clinical neurology or psychiatry departments for patient recruit
 Quantify chemical constituents of biological or environmental samples using standard laboratory assays to characterize their composition,domain,Life Sciences,Neuroscience,Behavioral Neuroscience,8,5.72,6.22,medium
 Harmonize behavioral scoring criteria and operational definitions across multiple experimental sites or raters.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,12,77.83,1215.25,medium
 Standardize neuroimaging preprocessing pipelines to enable cross-study comparisons.,subfield,Life Sciences,Neuroscience,Behavioral Neuroscience,10,67.25,280.25,medium
-"Verify the anatomical location or identity of implants, injection sites, lesions, and recorded neurons",field,Life Sciences,Neuroscience,Behavioral Neuroscience,10,93.47,602.53,medium
+"Verify the anatomical location or identity of implants, injection sites, lesions, and recorded neurons",field,Life Sciences,Neuroscience,Behavioral Neuroscience,10,84.43,717.35,medium
 Segment continuous behavioral or physiological recordings into discrete states using defined classification criteria,field,Life Sciences,Neuroscience,Behavioral Neuroscience,9,16.3,20.68,medium
 Manually score and annotate recorded behavioral or physiological data using defined coding schemes to extract quantitative behavioral measures.,field,Life Sciences,Neuroscience,Behavioral Neuroscience,8,39.78,43.78,medium
 Estimate source-level neural activity from sensor-level EEG or MEG recordings to localize neural generators,field,Life Sciences,Neuroscience,Behavioral Neuroscience,11,20.17,34.53,medium

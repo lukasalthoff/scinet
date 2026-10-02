@@ -25,7 +25,7 @@ The questions of the researcher survey on [anatomyofscience.com](https://www.ana
 17. For each activity category, roughly what percentage of time has AI saved you?
 18. How has AI changed the skill level needed to perform tasks in each category?
 
-Note: the survey groups activities into 8 categories (the dataset now uses 10, adding Theoretical Analysis and Design & Development): Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
+Note: the survey groups activities into 8 categories; the dataset's ten categories also include Theoretical Analysis and Design & Development. The survey's eight are: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration.
 
 ## AI in Your Research (9)
 

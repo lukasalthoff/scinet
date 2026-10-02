@@ -13,7 +13,7 @@ This page outlines how SciNet was created and validated.
 
 Beyond the task database itself, [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) documents the dimensions every task is scored on and [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) the two-level aggregation.
 
-**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8. The task dimensions used Claude Sonnet 5.
+**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8. The task dimensions used Claude Sonnet 5. The prevalence of universal, domain, and field tasks used Claude Sonnet 5.5 (field tasks) and Claude Opus 5.5 (domain and universal tasks).
 
 ---
 
@@ -72,7 +72,7 @@ Task generation starts with the universal tasks that apply to every researcher, 
 
 The universal and domain levels anchor the whole hierarchy, so they were developed iteratively with a researcher in the loop.
 
-The 30 universal tasks are organized into ten categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Theoretical Analysis, Design & Development, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration. Three universal tasks and the Design & Development category were added in August 2026, after an audit showed the original list under-covered interpretive analysis of qualitative sources, formal theoretical work, and designing and building artifacts. Theoretical Analysis was split out of Data Analysis in September 2026 so that formal theory is not filed as data work.
+The 30 universal tasks are organized into ten categories, which every task in the database inherits: Reading & Knowledge Acquisition, Ideation & Hypothesis Generation, Data Gathering, Data Analysis, Theoretical Analysis, Design & Development, Writing & Communication, Peer Review & Service, Mentorship & Teaching, and Administration. The universal tasks cover interpretive analysis of qualitative sources, formal theoretical work, and designing and building artifacts alongside empirical work, and Theoretical Analysis is a category of its own so that formal theory is not filed as data work.
 
 The released taxonomy has four levels, carrying 30 universal, 134 domain, 321 field, and 6,777 subfield tasks. Field-level tasks are not written here. They arrive from below, in [Section 3](#3-expanding-the-tasks-with-papers), when the same activity recurs across many of a field's subfields and is filed once at the field level instead.
 
@@ -137,7 +137,7 @@ To check the existing tasks and find missing ones, we sampled about 100 papers p
 
 **1. Draw.** We draw English-language journal articles from 2000 to 2020 that have a DOI, open-access full text, and at least one citation, weighting by citations and aiming for 100 usable papers per subfield. The topic mapping released as [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv), widened by [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv), decides which papers are eligible for a subfield. A model then reads each paper, confirms its subfield, and drops papers that are not research or belong elsewhere. 
 
-**2. Judge.** For each paper and each task in its subfield, a model returns one of three verdicts: *stated explicitly*, with a verbatim quote, *clearly implied*, meaning the work required the task though the paper does not narrate it, or *not involved*. The average over the sample is that task's **prevalence**, released as [`data/task_prevalence.csv`](data/task_prevalence.csv). Universal, domain, and field tasks were measured later on samples drawn per field; see [Section 6.3](#63-published-papers).
+**2. Judge.** For each paper and each task in its subfield, a model returns one of three verdicts: *stated explicitly*, with a verbatim quote, *clearly implied*, meaning the work required the task though the paper does not narrate it, or *not involved*. The average over the sample is that task's **prevalence**, released as [`data/task_prevalence.csv`](data/task_prevalence.csv). Universal, domain, and field tasks are measured on samples drawn per field; see [Section 6.3](#63-published-papers).
 
 **3. Elicit.** For 50 papers per subfield, a model lists the research work the paper performed, quoting the paper for each item. It is shown the existing tasks of the subfield, of its sibling subfields, and of the levels above, and marks each item as covered or not. Only uncovered items can become new tasks, so this step searches for gaps in the existing list rather than describing papers from scratch. 
 
@@ -149,7 +149,7 @@ To check the existing tasks and find missing ones, we sampled about 100 papers p
 
 **7. Raise.** A task proposed across many subfields of a field, or many fields of a domain, is filed once at that higher level instead of repeatedly below it.
 
-The expansion added 2,297 tasks: 1,905 at the subfield level, 327 at the field level, and 65 at the domain level. Later clean-up left 321 field-level tasks in the release.
+The expansion added 2,223 tasks to the release: 1,837 at the subfield level, 321 at the field level, and 65 at the domain level.
 
 ---
 
@@ -161,7 +161,7 @@ Following [O\*NET](https://www.onetonline.org/), each task is rated on three sca
 - **Relevance (0 to 100).** Out of 100 researchers in this area, how many perform this task at least occasionally?
 - **Frequency (1 to 7).** How often is this task performed, from yearly or less to hourly or more?
 
-O\*NET collects these by surveying workers in each occupation. We instead prompt a language model, Claude Opus 5, to answer as a researcher with ten or more years of experience in the subfield. Tasks are rated in groups, one call per subfield and level, so the ratings within a group share a scale. The release holds 26,803 ratings. The three universal tasks added in August 2026 were rated in a later run of the same prompt, with all 30 universal tasks in the group.
+O\*NET collects these by surveying workers in each occupation. We instead prompt a language model, Claude Opus 5, to answer as a researcher with ten or more years of experience in the subfield. Tasks are rated in groups, one call per subfield and level, so the ratings within a group share a scale. The release holds 26,803 ratings. Three of the universal tasks were rated in a separate run of the same prompt, with all 30 universal tasks in the group.
 
 Tasks are then classified as **Core** when relevance is at least 67 and importance is at least 3, and **Supplemental** otherwise, which is O\*NET's own rule.
 
@@ -197,10 +197,7 @@ Return your ratings as a JSON array with one object per task:
 Return ONLY the JSON array, no other text.
 ```
 
-`{occupation}` is filled with "researcher in <subfield>". This is the calibrated
-prompt that produced the released ratings. An earlier uncalibrated version,
-which instead told the model to be conservative about how many researchers
-perform a task, was used for a January 2026 run that is not released.
+`{occupation}` is filled with "researcher in <subfield>".
 
 </details>
 
@@ -236,14 +233,19 @@ Claude Opus 5, which produced the released ratings, correlates with the O\*NET v
 
 Protocols are the most granular external source available, recording what a researcher does, in what order, action by action. From [protocols.io](https://www.protocols.io/) we assembled 26,404 protocols: roughly 20,600 through the site's public API, about 5,800 more through DOIs indexed in OpenAlex, and 15 through CrossRef under the protocols.io DOI prefix.
 
-**Timing.** 4,790 of these protocols give durations for 47,009 steps. Each SciNet step in a wet-lab subfield was matched to the most similar protocol steps, and a model judged whether each pair describes the same action. On the 769 exact matches, covering 383 SciNet steps, our elapsed-time estimate correlates with the protocol's duration at r = 0.53.
+**Timing.** 4,790 of these protocols give durations for 47,185 steps; the 47,009 of them with at least 15 characters of text are matched against SciNet steps. Each SciNet step in a wet-lab subfield was matched to the most similar protocol steps, and a model judged whether each pair describes the same action. On the 769 exact matches, covering 383 SciNet steps, our elapsed-time estimate correlates with the protocol's duration at r = 0.53.
 
 Protocols also disagree with each other, because the same action takes different times in different laboratories. For steps matched to at least two protocols, one protocol's duration predicts the others at r = 0.44, and our estimate predicts them at r = 0.55. The difference is not statistically significant: our estimates agree with protocols about as well as protocols agree with each other.
 
 ### 6.3 Published papers
 
-The prevalence measurement in [Section 3](#3-expanding-the-tasks-with-papers) also checks the task list against the literature: it reports the share of a subfield's papers that show the task being performed. For the tasks that existed before the expansion this is the judged share on a fixed sample; for the tasks the expansion added it is the share from the scoring step with the papers that proposed the task left out, marked `expansion` in the file. Released as [`data/task_prevalence.csv`](data/task_prevalence.csv), it is the counterpart to the relevance rating: one records what a model believes about a subfield, the other what its papers contain.
+The prevalence measurement in [Section 3](#3-expanding-the-tasks-with-papers) also checks the task list against the literature: it reports the share of a subfield's papers that show the task being performed. For the tasks of the generated taxonomy this is the judged share on a fixed sample; for the tasks the expansion added it is the share from the scoring step with the papers that proposed the task left out, marked `expansion` in the file. 649 expansion tasks whose final wording cannot be traced to a scored candidate, and 2 tasks of Epidemiologic Methods & Study Design that were not in the judged task list, have no measurement. Released as [`data/task_prevalence.csv`](data/task_prevalence.csv), it is the counterpart to the relevance rating: one records what a model believes about a subfield, the other what its papers contain.
 
-Universal, domain, and field tasks are measured the same way on samples drawn per field from the subfield samples, each subfield counting in proportion to its share of the field's citations: 200 papers per field for field tasks and 100 per field for domain and universal tasks. Each paper is judged against all of its field's, domain's, and universal tasks at once, in a random order for each paper, because a first test found tasks near the top of a long list marked about 4 percentage points more often. Field tasks were judged on the first 20,000 characters, like subfield tasks. For domain and universal tasks that missed work papers do not narrate: the first pass found drafting the manuscript in 95% of papers and grant writing in almost none, though a keyword search finds a funding statement in over 40%. These tasks were therefore judged again by a stronger model on the full text and the journal, with an added instruction to infer what producing and publishing the paper must have involved, but not activities that belong to a researcher's career rather than to the paper. With it, drafting is found in essentially every paper and responding to reviewers in 86%, while keeping up with the literature stays at 3%. Grant writing remains understated, marked for 39% of the papers with a funding statement. Released as [`data/upper_task_prevalence.csv`](data/upper_task_prevalence.csv).
+Universal, domain, and field tasks are measured the same way on samples drawn per field from the subfield samples, each subfield counting in proportion to its share of the field's citations. Each paper sees its tasks in its own random order, so a task's position in a long list is independent of the task.
+
+- **Field tasks.** 200 papers per field, each judged against all of its field's, domain's, and universal tasks at once by Claude Sonnet 5.5 on the first 20,000 characters, like subfield tasks; the field tasks' shares are released.
+- **Domain and universal tasks.** About 100 papers per field (the first half of each subfield's sample), judged against the domain's and the universal tasks by Claude Opus 5.5 on up to 50,000 characters of the text with the journal and year, and with an added instruction to infer what producing and publishing the paper must have involved, but not activities that belong to a researcher's career rather than to the paper. Many of these tasks, such as drafting the manuscript or responding to reviewers, are rarely narrated in a paper. 45 papers that Opus declined to judge, mostly in the biomedical sciences, were judged by Claude Sonnet 5 with the same instructions.
+
+Drafting the manuscript is found in essentially every paper and responding to reviewers in 86%, while keeping up with the literature is found in 3%. Grant writing is understated: it is marked for 37% of the papers whose text acknowledges funding. Released as [`data/upper_task_prevalence.csv`](data/upper_task_prevalence.csv).
 
 The quotes required at the judging step allow the judgments to be audited. In a check of 179 quotes from 52 papers, none was invented; the few mismatches came from our own text extraction merging footnotes into sentences.

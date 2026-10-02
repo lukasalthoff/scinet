@@ -45,9 +45,9 @@ calibration, for example, is both `U07.09` and `U16.01`.
 map every task at the domain, field, and subfield level to the universal task
 it is closest to.
 
-**2. We created 3 new universal tasks.** About 500 tasks (7%) could not be
-filed under any of the original 27 universal tasks. So three universal tasks
-were added, bringing the list to 30:
+**2. Three universal tasks were written for the tasks that fit none.** About
+500 tasks (7%) fit none of the 27 universal tasks used in step 1. Three
+universal tasks cover them, making the 30 of the release:
 
 * *Interpret texts, documents, artifacts, and other qualitative sources to
   construct evidence-based arguments* — the core method of the humanities,
@@ -71,25 +71,22 @@ rules for the ambiguous cases.
 Claude Sonnet 5 classifiers assigned each task to one of its universal task's
 activities.
 
-**5. A Theoretical Analysis category was added (September 2026).** The formal
-theory universal task had been filed under Data Analysis, which read oddly for
-mathematics, theoretical physics, economic theory, and philosophy. It now
-anchors its own category. At the same time two work activities were moved
-under it by hand, after reviewing every task in them:
+**5. Theoretical Analysis.** The formal-theory universal task anchors its own
+category, Theoretical Analysis, so that mathematics, theoretical physics,
+economic theory, and philosophy are not filed under Data Analysis. Two work
+activities were assigned to it by hand, after reviewing every task in them:
 
-* *Develop conceptual frameworks and typologies* (18 tasks), previously under
-  the hypothesis-generation universal task, is now `U29.05`.
-* *Formulate mathematical and computational models* (42 tasks), previously
-  under the computational-modelling universal task, was split. The 28 tasks
-  that state a model — game-theoretic, stochastic, continuum, mechanistic —
-  are now `U29.06`. The 14 that specify inputs for a simulation, estimator, or
-  software system stay under computational modelling as `U09.02`, renamed
-  *Specify system, sensor, and workflow models for engineering pipelines*.
+* *Develop conceptual frameworks and typologies* (`U29.05`, 18 tasks).
+* *Formulate mathematical and computational models* (`U29.06`, 28 tasks): the
+  tasks that state a model, such as game-theoretic, stochastic, continuum, or
+  mechanistic ones. The 14 tasks that specify inputs for a simulation,
+  estimator, or software system form `U09.02`, *Specify system, sensor, and
+  workflow models for engineering pipelines*, under computational modelling.
 
 
 ## The prompts used to generate the work activities
 
-The prompts are reproduced as run, except that the working names used during construction have been replaced by the published name, "work activity".
+The prompts are reproduced as run, with the term "work activity" used throughout.
 
 <details>
 <summary><b>Prompt 1 — mapping every task to its closest universal task</b></summary>
