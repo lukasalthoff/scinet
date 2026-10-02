@@ -11,7 +11,9 @@ For each task the data give:
 - how important it is, how often it is done, and what share of researchers do it;
 - descriptive scores such as how complex it is and how much of it is physical work.
 
-Current release: **v1.8.1**.
+The release also counts the researchers active in each country, domain, field and subfield.
+
+Current release: **v1.9.0**.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -33,6 +35,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | The descriptive scores averaged for each work activity |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps the research topics of OpenAlex, an open catalogue of scholarly papers, to SciNet subfields. Used to decide which papers are sampled for a subfield |
 | [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv) | Extra topics used to find enough papers for some subfields |
+| [`data/researchers.csv`](data/researchers.csv) | Researchers active in 2020, worldwide and by country, for every domain, field and subfield |
 
 ## Data dictionary
 
@@ -120,6 +123,29 @@ A `field` row covers that field's papers; a `domain` or `all` row combines field
 | `domain`, `field`, `subfield` | The SciNet subfield the topic maps to |
 
 The 4,481 topics are those that map to a SciNet subfield; OpenAlex topics that do not are left out.
+
+### `researchers.csv`
+
+The number of researchers active in 2020, worldwide and in each of 226 countries, for all of research and for every SciNet domain, field and subfield. Counted from OpenAlex (January 2026 snapshot), an open catalogue of scholarly papers and their authors.
+
+- **Active in 2020**: the researcher published at least one paper in or before 2020 and at least one in or after 2020.
+- **Domain, field and subfield**: each paper is placed in the SciNet subfield of its OpenAlex primary topic, through [`openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). A researcher counts in the field where most of their papers fall, and in the most common subfield within that field; ties go to the field of their most recent paper. Researchers none of whose papers has a mapped topic are `Unclassified` (832,530 worldwide).
+- **Country**: the most common country of the researcher's institutions on their 2016–2024 papers (on all their papers if none falls in those years). 3.27 million of the 17.64 million active researchers have no institution country; they count in `World` and in `Unknown`.
+- **Fractional counts** split each researcher across fields (subfields) in proportion to their papers, so a researcher with three economics papers and one statistics paper adds 0.75 to Economics and 0.25 to Statistics. They are less sensitive to the main-field rule; domain rows sum the field rows.
+
+| Column | Description |
+|--------|-------------|
+| `country_code` | ISO 3166-1 alpha-2 code; empty for `World` and `Unknown` |
+| `country` | Country name, `World` (all researchers), or `Unknown` (researchers with no institution country) |
+| `level` | `all` (every researcher of the country), `domain`, `field`, or `subfield` |
+| `domain`, `field`, `subfield` | The row's place in the taxonomy; empty above the row's level |
+| `researchers` | Active researchers whose main field (subfield) this is |
+| `researchers_2plus_papers`, `researchers_5plus_papers`, `researchers_10plus_papers` | The same, counting only researchers with at least 2, 5 or 10 papers in their career |
+| `researchers_fractional`, `researchers_5plus_papers_fractional` | Fractional counts, all researchers and researchers with at least 5 papers |
+
+Within a country, the rows of each level sum to the `all` row; fractional counts agree up to rounding. Rows where every count is zero are left out.
+
+OpenAlex counts everyone who publishes, so the totals are larger than employment-based statistics: country totals correlate with UNESCO's researcher headcounts at 0.94 (logs, 153 countries) and are 1.4 times as large at the median. Clinical medicine weighs heavily (Medicine & Clinical Sciences holds 30% of researchers but 16% of papers), because medical papers have many authors. Small cells are noisy: 18,550 of the 43,672 country-subfield rows with researchers count fewer than 10, and for a fifth of those the main-field and fractional counts differ by more than a factor of two. The 78 countries with at least 10,000 active researchers hold 98% of the researchers with a known country. OpenAlex sometimes merges different people into one author profile. The counts are built from the full OpenAlex snapshot and cannot be rebuilt from this repository.
 
 ## Documentation
 

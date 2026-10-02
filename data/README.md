@@ -15,6 +15,7 @@ The files of the SciNet release. The [main README](../README.md) describes every
 | `task_activity_assignments.csv` | The work activity of each task, one row per task statement and level (6,956 rows) | `task`, `level`, `activity_id`, `universal_task_id` |
 | `work_activity_dimensions.csv` | The scores averaged per work activity | `activity_id`, `universal_task_id`, `universal_task`, `category`, `activity_name`, `n_tasks`, the numeric score columns of `task_dimensions.csv` (all but `pasteur_applies`, `pasteur_quadrant` and `cdr_rl_source`), `pasteur_applies_share`, `n_tasks_scored` |
 | `openalex_topic_subfield_mapping.csv` | OpenAlex topics mapped to SciNet subfields (4,481 topics) | `topic_id`, `topic_name`, `domain`, `field`, `subfield` |
+| `researchers.csv` | Researchers active in 2020, worldwide and by country, for all research and every domain, field and subfield (69,116 rows) | `country_code`, `country`, `level` (`all`, `domain`, `field`, `subfield`), `domain`, `field`, `subfield`, `researchers`, `researchers_2plus_papers`, `researchers_5plus_papers`, `researchers_10plus_papers`, `researchers_fractional`, `researchers_5plus_papers_fractional` |
 | `topic_frame_overlay.csv` | Extra topics used to find enough papers for some subfields | `field`, `subfield_slug`, `topic_id`, `topic_name`, `confidence`, `reason`, `n_papers` |
 
 Things to know when joining the files:
@@ -24,5 +25,6 @@ Things to know when joining the files:
 - In `substeps.csv.gz` and `substep_dimensions.csv.gz`, `domain` is filled only for domain-level tasks, and `subfield` is empty for field-level and universal tasks, because those breakdowns apply to the whole field or domain.
 - Universal tasks are timed once per field, so their rows in `task_time.csv` have an empty `subfield`.
 - In `task_prevalence.csv` a row is identified by `task`, `level`, `scope`, `domain`, `field` and `subfield`. Rows other than subfield rows are weighted by citations, so their `prevalence` can differ from `n_involved` divided by `n_papers`.
+- In `researchers.csv` a row is identified by `country`, `level`, `domain`, `field` and `subfield`; read it with `keep_default_na=False` in pandas so that Namibia's code `NA` is not read as missing.
 - `topic_frame_overlay.csv` names subfields by a slug: lowercase, `&` written as `and`, other punctuation as `_`.
 - Empty cells: 2 subfield tasks have no steps, times, or step-by-step scores; a few scores are missing where the model declined to answer.
