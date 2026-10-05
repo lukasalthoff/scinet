@@ -47,17 +47,17 @@ From the RL Feasibility Index of Moreira Tomei and Klein Teeselink (2026, [arXiv
 
 ### Other columns
 
-`cdr_rl_source` is `substep_mean` wherever the complexity and AI-training values are averages over substeps, and empty for the 2 tasks without a breakdown. In `work_activity_dimensions.csv`, `pasteur_applies_share` is the share of the activity's tasks that count as research and `n_tasks_scored` the number of its tasks with complexity scores.
+`cdr_rl_source` is `substep_mean`: the complexity and AI-training values of every task are averages over its substeps. In `work_activity_dimensions.csv`, `pasteur_applies_share` is the share of the activity's tasks that count as research and `n_tasks_scored` the number of its tasks with complexity scores.
 
 ## How the scores were produced
 
-All scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy.
+The scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy. Sonnet 5 declines some items about pathogens and dosing; those are scored with the same prompt by Claude Opus 5, or by Claude Haiku 4.5 where Opus 5 declines them too. This affects 105 of the 90,540 substeps (97 for the complexity group, 84 for the AI-training group) and 16 of the 7,262 tasks (8 for relation, medium, and mode; 9 for Pasteur's quadrant; 14 for education).
 
-The complexity and AI-training groups were scored on every substep (90,520 in all) and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The other groups were scored once for the whole task.
+The complexity and AI-training groups were scored on every substep (90,540 in all) and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The other groups were scored once for the whole task.
 
 The prompts for the complexity and AI-training groups use the level definitions of the published papers. The education prompt is adapted from the Anthropic Economic Index; the other prompts were written for SciNet.
 
-Missing values. The 2 subfield tasks without a breakdown have no complexity or AI-training scores. The model declined to score a few substeps, mostly steps involving pathogens or dosing: 89 for complexity and 75 for AI training, plus 3 whose answers could not be read. Those cells are empty and the task's average uses its scored substeps. A handful of tasks lack whole-task scores for the same reason.
+Missing values. Every task and every substep carries every score. `pasteur_understanding` and `pasteur_use` are empty for the 313 tasks that are not research work (`pasteur_applies` is `no`), and `work_activity_dimensions.csv` leaves them empty for one activity, whose single task is of that kind.
 
 ## Check against O\*NET
 

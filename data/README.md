@@ -5,7 +5,7 @@ The files of the SciNet release. The [main README](../README.md) describes every
 | File | Contents | Columns |
 |------|----------|---------|
 | `tasks.csv` | Every task (7,262 rows) | `task`, `category`, `level`, `domain`, `field`, `subfield`, `expert_input` |
-| `substeps.csv.gz` | The steps of each task (90,520 rows, compressed) | `level`, `domain`, `field`, `subfield`, `task`, `substep_id`, `substep` |
+| `substeps.csv.gz` | The steps of each task (90,540 rows, compressed) | `level`, `domain`, `field`, `subfield`, `task`, `substep_id`, `substep` |
 | `task_time.csv` | Hours per task, per subfield where it is performed | `task`, `level`, `domain`, `field`, `subfield`, `n_substeps`, `researcher_hours`, `elapsed_hours`, `confidence` |
 | `task_ratings.csv` | Importance (1–5), share of researchers (0–100), frequency (1–7), per subfield | `task`, `level`, `domain`, `field`, `subfield`, `importance`, `pct_researchers`, `frequency`, `classification` |
 | `task_prevalence.csv` | Share of papers that perform each task: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science (9,259 rows) | `task`, `level`, `scope` (`subfield`, `field`, `domain`, `all`), `domain`, `field`, `subfield`, `n_papers`, `n_involved`, `prevalence`, `se`, `source` (`judged`: fixed sample of about 100 papers; `expansion`: from the expansion's scoring, leaving out the papers that proposed the task), `judge` (the model), `text` (what the model read of each paper) |
@@ -27,4 +27,4 @@ Things to know when joining the files:
 - In `task_prevalence.csv` a row is identified by `task`, `level`, `scope`, `domain`, `field` and `subfield`. Rows other than subfield rows are weighted by citations, so their `prevalence` can differ from `n_involved` divided by `n_papers`.
 - In `researchers.csv` a row is identified by `country`, `level`, `domain`, `field` and `subfield`; read it with `keep_default_na=False` in pandas so that Namibia's code `NA` is not read as missing.
 - `topic_frame_overlay.csv` names subfields by a slug: lowercase, `&` written as `and`, other punctuation as `_`.
-- Empty cells: 2 subfield tasks have no steps, times, or step-by-step scores; a few scores are missing where the model declined to answer.
+- Empty cells: apart from the columns above, which are empty where they do not apply, the only empty scores are `pasteur_understanding` and `pasteur_use` for tasks that are not research work (`pasteur_applies` is `no`).

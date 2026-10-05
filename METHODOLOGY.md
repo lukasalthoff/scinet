@@ -13,7 +13,7 @@ This page outlines how SciNet was created and validated.
 
 Beyond the task database itself, [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) documents the dimensions every task is scored on and [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) the two-level aggregation.
 
-**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8. The task dimensions used Claude Sonnet 5. The prevalence of universal, domain, and field tasks used Claude Sonnet 5.5 (field tasks) and Claude Opus 5.5 (domain and universal tasks).
+**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8. The task dimensions used Claude Sonnet 5. Items on pathogens and dosing that a model declines to answer were measured with the same prompt by Claude Opus 5 or Claude Haiku 4.5. The prevalence of universal, domain, and field tasks used Claude Sonnet 5.5 (field tasks) and Claude Opus 5.5 (domain and universal tasks).
 
 ---
 
@@ -215,7 +215,7 @@ The same task can mean different work in different places, so time is estimated 
 
 For a typical task timed in five or more subfields, the longest estimate is about 2.4 times the shortest for hands-on time and 3.6 times for elapsed time.
 
-2 subfield tasks, in Physiology and Plant Pathology, have no steps or times.
+Two subfield tasks, in Physiology and in Plant Pathology, are broken down and timed by Claude Haiku 4.5 with the same two prompts: both are about preparing biological material for experiments, which Claude Opus 4.8 declines to estimate. Every task has a breakdown and a time estimate wherever it is performed.
 
 ---
 

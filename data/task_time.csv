@@ -112,6 +112,7 @@ Document disease symptom progression through systematic photography of infected 
 "Record disease incidence, severity ratings, and environmental conditions throughout experimental trials.",subfield,Life Sciences,Agricultural Sciences,Plant Pathology,10,61.38,61.38,medium
 Quantify chemical constituents of biological or environmental samples using standard laboratory assays to characterize their composition,domain,Life Sciences,Agricultural Sciences,Plant Pathology,8,9.53,14.0,medium
 Validate new measurements or assays against established reference methods to assess reliability,subfield,Life Sciences,Agricultural Sciences,Plant Pathology,13,75.75,208.35,medium
+Prepare and formulate microbial preparations for experimental application or processing use,subfield,Life Sciences,Agricultural Sciences,Plant Pathology,12,6.98,303.25,high
 Isolate and enumerate microbial populations from soil and plant samples to quantify their densities,subfield,Life Sciences,Agricultural Sciences,Plant Pathology,11,17.75,113.92,medium
 Characterize pathogen isolates in the laboratory to determine their responses and genetic variation,subfield,Life Sciences,Agricultural Sciences,Plant Pathology,12,201.5,1134.97,medium
 Isolate microorganisms from environmental samples and screen them for antagonistic activity against target pathogens.,subfield,Life Sciences,Agricultural Sciences,Plant Pathology,11,52.73,1442.87,medium
@@ -2225,6 +2226,7 @@ Breed and maintain genetically modified animal colonies to generate experimental
 Label or record dynamic biological processes for later quantification of their extent and rate,subfield,Life Sciences,Biomedical Sciences,Physiology,11,12.52,17.38,medium
 Acquire echocardiographic imaging data to assess cardiac structure and function in living animals.,subfield,Life Sciences,Biomedical Sciences,Physiology,12,6.45,7.17,high
 Establish cell culture models with differentiated or disease-like phenotypes for functional physiological study.,subfield,Life Sciences,Biomedical Sciences,Physiology,9,40.37,423.28,medium
+Prepare standardized exposure agents from complex natural or environmental source materials for dosing cells or animals.,subfield,Life Sciences,Biomedical Sciences,Physiology,8,10.83,234.25,high
 Perform clinical examination and laboratory testing of study subjects to characterize physiological and disease status,field,Life Sciences,Biomedical Sciences,Physiology,11,115.0,194.03,medium
 Administer selective inhibitors or blocking antibodies to test whether a specific pathway mediates an observed phenotype,field,Life Sciences,Biomedical Sciences,Physiology,9,53.9,221.82,medium
 "Construct cell lines or strains carrying targeted gene deletions, insertions, or tagged alleles to test gene function",field,Life Sciences,Biomedical Sciences,Physiology,11,59.88,1029.83,medium

@@ -77,7 +77,7 @@ The same task can mean different work in different subfields, so time is estimat
 | `elapsed_hours` | Calendar time for one instance, including waiting such as incubations, computing runs, or ethics review. Never less than `researcher_hours` |
 | `confidence` | The model's confidence in the estimate: `high`, `medium`, or `low` |
 
-Every task has steps and times except 2 subfield tasks, in Physiology and in Plant Pathology, which have no breakdown.
+Every task has a step breakdown and a time estimate, in each place it is performed.
 
 ### `task_ratings.csv`
 
