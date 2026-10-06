@@ -1,6 +1,6 @@
 # SciNet data
 
-The files of the SciNet release. The [main README](../README.md) describes every column; [TASK_DIMENSIONS.md](../TASK_DIMENSIONS.md) and [WORK_ACTIVITIES.md](../WORK_ACTIVITIES.md) cover the scores and the work activities.
+The files of the SciNet release. The [main README](../README.md) describes every column; [TIME_USE.md](../TIME_USE.md), [TASK_DIMENSIONS.md](../TASK_DIMENSIONS.md) and [WORK_ACTIVITIES.md](../WORK_ACTIVITIES.md) cover the hours a year, the scores and the work activities.
 
 | File | Contents | Columns |
 |------|----------|---------|
@@ -9,6 +9,7 @@ The files of the SciNet release. The [main README](../README.md) describes every
 | `task_time.csv` | Hours per task, per subfield where it is performed | `task`, `level`, `domain`, `field`, `subfield`, `n_substeps`, `researcher_hours`, `elapsed_hours`, `confidence` |
 | `task_ratings.csv` | Importance (1–5), share of researchers (0–100), frequency (1–7), per subfield | `task`, `level`, `domain`, `field`, `subfield`, `importance`, `pct_researchers`, `frequency`, `classification` |
 | `task_prevalence.csv` | Share of papers that perform each task: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science (9,259 rows) | `task`, `level`, `scope` (`subfield`, `field`, `domain`, `all`), `domain`, `field`, `subfield`, `n_papers`, `n_involved`, `prevalence`, `se`, `source` (`judged`: fixed sample of about 100 papers; `expansion`: from the expansion's scoring, leaving out the papers that proposed the task), `judge` (the model), `text` (what the model read of each paper) |
+| `task_hours_per_year.csv` | Hours a year a researcher spends on each task, per subfield where it is performed (25,271 rows) | `domain`, `field`, `subfield`, `level`, `task`, `task_type`, `hours_per_year`, the components of the formula and their parts, `retimed`, `capped`; see TIME_USE.md |
 | `task_dimensions.csv` | Descriptive scores for every task, same rows and order as `tasks.csv` | See TASK_DIMENSIONS.md |
 | `substep_dimensions.csv.gz` | The step-by-step scores, same rows and order as `substeps.csv.gz` | Keys as in `substeps.csv.gz`, plus the score columns |
 | `work_activities.csv` | The 140 work activities | `activity_id`, `universal_task_id`, `universal_task`, `category`, `activity_name`, `activity_description`, `n_tasks` |
@@ -24,6 +25,7 @@ Things to know when joining the files:
 - 235 task statements appear in more than one subfield, with their own rows in every file. Match rows on `task`, `level`, `domain`, `field` and `subfield` together, or, for `task_dimensions.csv`, by row position.
 - In `substeps.csv.gz` and `substep_dimensions.csv.gz`, `domain` is filled only for domain-level tasks, and `subfield` is empty for field-level and universal tasks, because those breakdowns apply to the whole field or domain.
 - Universal tasks are timed once per field, so their rows in `task_time.csv` have an empty `subfield`.
+- In `task_hours_per_year.csv` every row has its `domain`, `field` and `subfield` filled: universal tasks have a row in every subfield of a field, and the components that do not apply to a row's `task_type` are empty.
 - In `task_prevalence.csv` a row is identified by `task`, `level`, `scope`, `domain`, `field` and `subfield`. Rows other than subfield rows are weighted by citations, so their `prevalence` can differ from `n_involved` divided by `n_papers`.
 - In `researchers.csv` a row is identified by `country`, `level`, `domain`, `field` and `subfield`; read it with `keep_default_na=False` in pandas so that Namibia's code `NA` is not read as missing.
 - `topic_frame_overlay.csv` names subfields by a slug: lowercase, `&` written as `and`, other punctuation as `_`.

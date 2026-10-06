@@ -1,0 +1,237 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{CambridgeUS}
+\useinnertheme{circles}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+% the project's slide palette
+\definecolor{gray00}{rgb}{1,1,1}
+\definecolor{lablue}{RGB}{17,53,99}
+\definecolor{lalightblue}{rgb}{0.26953125,0.5859375,0.953125}
+\definecolor{laorange}{RGB}{230,145,56}
+\definecolor{lagreen}{rgb}{0.17578125,0.41015625,0.234375}
+\definecolor{lared}{RGB}{212,72,76}
+
+\setbeamercolor{background canvas}{bg=gray00}
+\setbeamercolor{normal text}{fg=lablue,bg=gray00}
+\setbeamercolor{structure}{fg=lablue}
+\setbeamercolor{frametitle}{fg=lablue,bg=gray00}
+\setbeamercolor{date in head/foot}{fg=lablue,bg=gray00}
+\setbeamercolor{itemize item}{fg=lablue}
+\setbeamercolor{itemize subitem}{fg=lablue}
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{\begin{beamercolorbox}[wd=1\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+  \insertframenumber{} / \inserttotalframenumber\hspace*{3.6ex}\end{beamercolorbox}}\vskip0pt}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip\strut\textbf{\insertframetitle}\strut\\[-7pt]
+  \setbox0=\hbox{\strut\textbf{\insertframetitle}\strut}{\color{lablue!30}\rule{\wd0}{3pt}}}
+
+% one color per component
+\newcommand{\HI}[1]{{\color{lagreen}#1}}        % hours per instance
+\newcommand{\IN}[1]{{\color{laorange}#1}}       % instances per paper
+\newcommand{\PY}[1]{{\color{lalightblue}#1}}    % papers per year
+\newcommand{\IY}[1]{{\color{lared}#1}}          % instances per year
+\newcommand{\tx}[1]{\text{#1}}
+\newcommand{\divider}{\par\vspace{0.3em}{\color{lablue!30}\rule{\linewidth}{1pt}}\par\vspace{0.2em}}
+\newcommand{\desc}[1]{{\color{lablue!70}#1}}
+
+\begin{document}
+
+% ---------------------------------------------------------------------------
+{\setbeamertemplate{footline}{}
+\begin{frame}
+\vfill
+\begin{center}
+{\LARGE\bfseries How many hours a year does a researcher\\[0.3em] spend on each research task?}
+\end{center}
+\vfill
+\end{frame}}
+\addtocounter{framenumber}{-1}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{Two types of tasks}
+\vfill
+\begin{itemize}\setlength\itemsep{1.2em}
+  \item \textbf{Paper tasks} are done to produce particular papers.
+  \begin{itemize}
+    \item collecting a dataset, running the estimation, drafting the manuscript
+  \end{itemize}
+  \item \textbf{General tasks} are ongoing and not tied to particular papers.
+  \begin{itemize}
+    \item teaching a course, supervising students, reviewing for journals
+  \end{itemize}
+\end{itemize}
+\vfill
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{Paper tasks}
+\vfill
+{\large
+\[
+\tx{hours per year} = \HI{\tx{hours per instance}} \times \IN{\tx{instances per paper}} \times \PY{\tx{papers per year}}
+\]}
+\vfill
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{Paper tasks: the components}
+\vfill
+\begin{center}
+$\tx{hours per year} = \HI{\tx{hours per instance}} \times \IN{\tx{instances per paper}} \times \PY{\tx{papers per year}}$
+\end{center}
+\vspace{0.6em}
+\small
+\begin{align*}
+\HI{\tx{hours per instance}} &= \tx{team hours one instance takes} \times \tx{share not counted under another task}\\[0.4em]
+\IN{\tx{instances per paper}} &= \tx{share of papers that involve the task} \times
+  \frac{\tx{instances per paper that involves it}}{\tx{papers per instance}}\\[0.4em]
+\PY{\tx{papers per year}} &= \frac{\tx{papers a researcher publishes per year}}{\tx{authors per paper}}
+\end{align*}
+\vfill
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{\HI{Hours per instance}}
+\begingroup\small
+\[
+\HI{\tx{hours per instance}} = \tx{team hours one instance takes} \times \tx{share not counted under another task}
+\]
+\endgroup
+\vspace{-0.8em}
+\divider
+\small
+\textbf{Team hours one instance takes}
+\begin{itemize}
+  \item Estimated by Claude Opus 4.8 from each task's substeps.
+  \item Validated against lab protocols from protocols.io.
+\end{itemize}
+\vspace{0.1em}
+\textbf{Share not counted under another task}
+\begin{itemize}
+  \item Determined by Claude Opus 5.5: it flags pairs of tasks whose steps contain the same work and counts that work
+  under one of them, the keeper. The other task loses the share of its hours that is the shared work.
+  \item \desc{41\% of paper tasks lose some work this way; the median one keeps 60\% of its hours.}
+  \item \desc{Example: \emph{Decompose wage gaps between groups} and \emph{Decompose aggregate outcomes into components}
+  both run Oaxaca--Blinder decompositions; the second keeps 30\%.}
+\end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{\IN{Instances per paper}}
+\begingroup\small
+\[
+\IN{\tx{instances per paper}} = \tx{share of papers that involve the task} \times
+  \frac{\tx{instances per paper that involves it}}{\tx{papers per instance}}
+\]
+\endgroup
+\vspace{-0.8em}
+\divider
+\small
+\textbf{Share of papers that involve the task}
+\begin{itemize}
+  \item About 100 papers sampled per subfield; Claude Sonnet 5 reads each and judges whether it involves the task.
+  \item \desc{Median 18\% of papers (IQR 7--41\%).}
+\end{itemize}
+\vspace{0.1em}
+\textbf{Instances per paper that involves it} and \textbf{papers per instance}
+\begin{itemize}
+  \item Determined by Claude Opus 5.5 from each task's description and substeps.
+  \item \desc{Instances per paper: usually 1 (67\% of tasks). \emph{Respond to peer reviewers}: 2, two rounds per
+  paper.}
+  \item \desc{Papers per instance: above 1 when one instance feeds several papers. \emph{Harmonize occupation and
+  industry codes across data sources}: 1.5, since a harmonized crosswalk is reused in later papers. Below 1 when some
+  instances never become a paper.}
+\end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{\PY{Papers per year}}
+\begingroup\small
+\[
+\PY{\tx{papers per year}} = \frac{\tx{papers a researcher publishes per year}}{\tx{authors per paper}}
+\]
+\endgroup
+\vspace{-0.8em}
+\divider
+\small
+\begin{itemize}\setlength\itemsep{0.6em}
+  \item From OpenAlex, journal articles published 2015--2019 in each subfield.
+  \item \desc{Medians across subfields: 2.0 papers per year and 3.1 authors per paper. Authors per paper range from 1.1
+  (Literature) to 5.9 (Biomedical Sciences).}
+\end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{General tasks}
+\vfill
+\begin{center}
+$\tx{hours per year} = \HI{\tx{hours per instance}} \times \IY{\tx{instances per year}}$
+\end{center}
+\vspace{0.6em}
+\small
+\begin{align*}
+\HI{\tx{hours per instance}} &= \tx{hours the researcher spends per instance}\\
+&\quad\times \tx{share not counted under another task}\\[0.4em]
+\IY{\tx{instances per year}} &= \tx{share of researchers who do it} \times \tx{instances per year for each of them}
+\end{align*}
+\vfill
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{\IY{Instances per year}}
+\begingroup\small
+\[
+\IY{\tx{instances per year}} = \tx{share of researchers who do it} \times \tx{instances per year for each of them}
+\]
+\endgroup
+\vspace{-0.8em}
+\divider
+\small
+\textbf{Share of researchers who do it}
+\begin{itemize}
+  \item Estimated by Claude Opus 5.
+  \item \desc{Median 92\% for general tasks, 90\% for subfield-level tasks.}
+\end{itemize}
+\vspace{0.1em}
+\textbf{Instances per year for each of them}
+\begin{itemize}
+  \item Determined by Claude Sonnet 5.5, with the task's substeps shown.
+  \item \desc{Median 2 a year. \emph{Evaluate manuscripts for journals} in Labor Economics: 95\% review, 6 manuscripts
+  each, so $95\% \times 6 = 5.7$ reviews per researcher per year.}
+\end{itemize}
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{Worked example: a paper task in Labor Economics}
+\textbf{Respond to peer reviewer comments and revise manuscripts for publication}\\[0.6em]
+\small
+One round of responses and revisions takes the team 121 hours, none of it counted under another task. 72\% of labor
+economics papers go through revision, with two rounds each. A labor economist publishes 2.0 papers a year with 2.04
+authors per paper.
+\begin{align*}
+\HI{\tx{hours per instance}} &= 121 \times 100\% = \HI{121}\\
+\IN{\tx{instances per paper}} &= 72\% \times 2 \div 1 = \IN{1.44}\\
+\PY{\tx{papers per year}} &= 2.0 \div 2.04 = \PY{0.98}\\[0.4em]
+\tx{hours per year} &= \HI{121} \times \IN{1.44} \times \PY{0.98} \approx \textbf{171}
+\end{align*}
+\end{frame}
+
+% ---------------------------------------------------------------------------
+\begin{frame}{Worked example: a general task in Labor Economics}
+\textbf{Supervise graduate students and postdoctoral researchers on research projects}\\[0.6em]
+\small
+Supervising one student for a year takes 60 hours, none of it counted under another task. 89\% of labor economists
+supervise, three students each.
+\begin{align*}
+\HI{\tx{hours per instance}} &= 60 \times 100\% = \HI{60}\\
+\IY{\tx{instances per year}} &= 89\% \times 3 = \IY{2.7}\\[0.4em]
+\tx{hours per year} &= \HI{60} \times \IY{2.7} \approx \textbf{160}
+\end{align*}
+\end{frame}
+
+\end{document}

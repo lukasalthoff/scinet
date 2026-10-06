@@ -7,7 +7,7 @@ Disciplines are organized in three levels: 6 domains (for example Social Science
 For each task the data give:
 
 - the steps a researcher goes through to perform it;
-- how long it takes;
+- how long it takes, and how many hours a year a researcher spends on it;
 - how important it is, how often it is done, and what share of researchers do it;
 - descriptive scores such as how complex it is and how much of it is physical work.
 
@@ -28,6 +28,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_time.csv`](data/task_time.csv) | How long each task takes, estimated separately in each subfield where it is performed |
 | [`data/task_ratings.csv`](data/task_ratings.csv) | Importance, share of researchers, and frequency of each task, rated separately in each subfield |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of published papers that show each task being performed: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science |
+| [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) | Hours a year a researcher spends on each task, in each subfield where it is performed. See [TIME_USE.md](TIME_USE.md) |
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
@@ -150,6 +151,7 @@ OpenAlex counts everyone who publishes, so the totals are larger than employment
 ## Documentation
 
 - [METHODOLOGY.md](METHODOLOGY.md): how SciNet was built and validated.
+- [TIME_USE.md](TIME_USE.md): hours a year per task; slides in [slides/time_use.pdf](slides/time_use.pdf).
 - [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md): the descriptive scores.
 - [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md): the work activities.
 - [SURVEYS.md](SURVEYS.md): the questions of the researcher survey on the website.
