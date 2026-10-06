@@ -21,50 +21,59 @@ An instance is one unit of the task's work, such as one round of revisions or on
 |---|---|---|
 | hours per instance (paper tasks) | team hours one instance takes x share not counted under another task | team hours: [`task_time.csv`](data/task_time.csv), estimated by Claude Opus 4.8 from each task's substeps and validated against laboratory protocols from protocols.io (see [METHODOLOGY.md](METHODOLOGY.md)); share: Claude Opus 5.5 |
 | instances per paper | share of papers that involve the task x instances per paper that involves it / papers per instance | share: [`task_prevalence.csv`](data/task_prevalence.csv), about 100 sampled papers per subfield judged by Claude Sonnet 5 (Sonnet 5.5 and Opus 5.5 for field, domain and universal tasks); the two counts: Claude Opus 5.5 |
-| papers per year | papers a researcher publishes per year / authors per paper | OpenAlex journal articles published 2015–2019 in the subfield: the median number of papers per author-year and the mean number of authors per paper |
-| hours per instance (general tasks) | hours the researcher spends per instance x share not counted under another task | hours: Claude Sonnet 5.5; share: Claude Opus 5.5 |
+| papers per year | papers a researcher publishes per year / authors per paper | OpenAlex journal articles published 2015–2019 in the subfield: the median number of papers per author-year, and the mean number of authors over papers up to the subfield's 90th percentile of authors |
+| hours per instance (general tasks) | hours the researcher spends per instance x share not counted under another task | hours: Claude Sonnet 5.5, or the median across fields for seven ongoing tasks (below); share: Claude Opus 5.5 |
 | instances per year | share of researchers who do the task x instances per year for each of them | share: [`task_ratings.csv`](data/task_ratings.csv) (Claude Opus 5); instances: Claude Sonnet 5.5 |
 
-Claude Opus 5.5 assigns each task its type, reading the task with its steps and the other tasks of its subfield. Six
-ongoing universal tasks (brainstorming, coordinating with collaborators, learning methods, managing budgets, observing
-phenomena, presenting findings) are general in every field.
+Claude Opus 5.5 assigns each task its type, reading the task with its steps and the other tasks of its subfield. Among
+the universal tasks, learning methods and managing budgets are general in every field, and presenting findings,
+coordinating with collaborators, observing phenomena and brainstorming are paper tasks in every field.
+
+**Hours per instance that do not depend on the field.** For seven ongoing universal tasks every field takes the same
+hours per instance, the median of the fields' answers: supervising one student for a year (88.5 hours), teaching one
+course (150), a year of keeping up with the field (100), a year of learning methods and tools (150), reviewing one
+manuscript (7.6), commenting on one thesis or proposal (10), and holding one editorial or committee role for a year
+(50). How many instances a researcher does, and the share of researchers who do the task, still differ by field.
 
 **Shared work.** Claude Opus 5.5 compares the tasks of each field and of each subfield and flags pairs whose steps
 contain the same work. The shared work is counted once, under one task of the pair: that task keeps all its hours, and
-the other loses the share of its hours that is the shared work. 41% of paper tasks lose some work this way; the median
+the other loses the share of its hours that is the shared work. 39% of paper tasks lose some work this way; the median
 one keeps 60% of its hours.
 
-**Universal tasks** are answered once per field and apply in every subfield of the field. Their general numbers are
-asked several times and the median answer is kept, with the unit stated for the nine that have one (one student
+**Universal tasks** are answered once per field and apply in every subfield of the field. Their instances per year are
+asked several times and the median answer is kept, with the unit stated for those that have one (one student
 supervised for a year, one course, one manuscript reviewed).
 
-**Caps.** A universal general task's hours per researcher who does it are capped at 2.5 times its median across
-fields, and any other general task at 189 hours a year, the 99th percentile of those tasks. About 90 rows are capped
-and flagged.
+**Many instances per paper.** A paper task that needs more than 10 instances per paper, such as obtaining consent from
+each participant, is reported with one paper's worth as the instance, so that instances per paper stays small and
+hours per instance gives the work for one paper.
+
+**Caps.** General tasks other than the universal ones are capped at 189 hours a year, the 99th percentile of those
+tasks; 4 rows are capped and flagged.
 
 ## Example: Labor Economics
 
 *Respond to peer reviewer comments and revise manuscripts* (paper task): one round takes the team 121 hours, none of it
 counted under another task; 72% of papers go through revision, with two rounds each; a labor economist publishes 2.0
-papers a year with 2.04 authors per paper.
+papers a year, with 1.76 authors per paper.
 
 ```
-hours per instance  = 121 x 100%       = 121
-instances per paper = 72% x 2 / 1      = 1.44
-papers per year     = 2.0 / 2.04       = 0.98
-hours per year      = 121 x 1.44 x 0.98 = 171
+hours per instance  = 121 x 100%        = 121
+instances per paper = 72% x 2 / 1       = 1.44
+papers per year     = 2.0 / 1.76        = 1.14
+hours per year      = 121 x 1.44 x 1.14 = 198
 ```
 
-*Supervise graduate students and postdoctoral researchers* (general task): one student-year takes 60 hours; 89% of
+*Supervise graduate students and postdoctoral researchers* (general task): one student-year takes 88.5 hours; 89% of
 labor economists supervise, three students each.
 
 ```
-hours per instance = 60 x 100% = 60
-instances per year = 89% x 3   = 2.7
-hours per year     = 60 x 2.7  = 160
+hours per instance = 88.5 x 100% = 88.5
+instances per year = 89% x 3     = 2.7
+hours per year     = 88.5 x 2.7  = 236
 ```
 
-Summed over its tasks, Labor Economics comes to 2,121 hours a year. Across all subfields the median is 1,977 hours.
+Summed over its tasks, Labor Economics comes to 2,046 hours a year. Across all subfields the median is 1,726 hours.
 
 ## Columns
 
@@ -80,7 +89,7 @@ Summed over its tasks, Labor Economics comes to 2,121 hours a year. Across all s
 | `own_hours_per_instance` | Part of hours per instance, general tasks |
 | `share_not_counted_elsewhere` | Part of hours per instance, both types |
 | `share_of_papers_involving_task`, `instances_per_involving_paper`, `papers_per_instance` | Parts of instances per paper |
-| `papers_per_author_year`, `authors_per_paper` | Parts of papers per year |
+| `papers_per_author_year`, `authors_per_paper` | Parts of papers per year (`authors_per_paper`: the mean over papers up to the subfield's 90th percentile of authors) |
 | `share_of_researchers_doing_task`, `instances_per_year_each` | Parts of instances per year |
 | `retimed` | The task's time in this subfield was estimated with an explicit definition of one instance |
 | `capped` | Hours capped as described above |
@@ -94,4 +103,6 @@ and a subfield's hours a year are the sum of its rows.
   papers involving a task is judged on real papers, the rest on the task's description and steps.
 - Papers per year describes the average publishing author, students included, while the general tasks describe
   researchers who also teach and supervise.
+- Team hours include project staff such as research assistants and technicians; papers per year divides them among
+  the authors.
 - Differences between fields partly reflect how the models answer for each field.

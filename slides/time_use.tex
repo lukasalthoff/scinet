@@ -115,7 +115,7 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IN{\tx{instances per
 \begin{itemize}
   \item Determined by Claude Opus 5.5: it flags pairs of tasks whose steps contain the same work and counts that work
   under one of them, the keeper. The other task loses the share of its hours that is the shared work.
-  \item \desc{41\% of paper tasks lose some work this way; the median one keeps 60\% of its hours.}
+  \item \desc{39\% of paper tasks lose some work this way; the median one keeps 60\% of its hours.}
   \item \desc{Example: \emph{Decompose wage gaps between groups} and \emph{Decompose aggregate outcomes into components}
   both run Oaxaca--Blinder decompositions; the second keeps 30\%.}
 \end{itemize}
@@ -135,13 +135,13 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IN{\tx{instances per
 \textbf{Share of papers that involve the task}
 \begin{itemize}
   \item About 100 papers sampled per subfield; Claude Sonnet 5 reads each and judges whether it involves the task.
-  \item \desc{Median 18\% of papers (IQR 7--41\%).}
+  \item \desc{Median 17\% of papers (IQR 7--41\%).}
 \end{itemize}
 \vspace{0.1em}
 \textbf{Instances per paper that involves it} and \textbf{papers per instance}
 \begin{itemize}
   \item Determined by Claude Opus 5.5 from each task's description and substeps.
-  \item \desc{Instances per paper: usually 1 (67\% of tasks). \emph{Respond to peer reviewers}: 2, two rounds per
+  \item \desc{Instances per paper: usually 1 (69\% of tasks). \emph{Respond to peer reviewers}: 2, two rounds per
   paper.}
   \item \desc{Papers per instance: above 1 when one instance feeds several papers. \emph{Harmonize occupation and
   industry codes across data sources}: 1.5, since a harmonized crosswalk is reused in later papers. Below 1 when some
@@ -161,8 +161,9 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IN{\tx{instances per
 \small
 \begin{itemize}\setlength\itemsep{0.6em}
   \item From OpenAlex, journal articles published 2015--2019 in each subfield.
-  \item \desc{Medians across subfields: 2.0 papers per year and 3.1 authors per paper. Authors per paper range from 1.1
-  (Literature) to 5.9 (Biomedical Sciences).}
+  \item Authors per paper: the mean over papers up to the subfield's 90th percentile of authors.
+  \item \desc{Medians across subfields: 2.0 papers per year and 2.6 authors per paper. Authors per paper range from 1.0
+  (Religious History) to 5.8 (Cancer Biology).}
 \end{itemize}
 \end{frame}
 
@@ -179,6 +180,12 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IY{\tx{instances per
 &\quad\times \tx{share not counted under another task}\\[0.4em]
 \IY{\tx{instances per year}} &= \tx{share of researchers who do it} \times \tx{instances per year for each of them}
 \end{align*}
+\vspace{0.4em}
+\begin{itemize}
+  \item Hours per instance for seven ongoing tasks shared by all fields (supervising, teaching a course, keeping up,
+  learning methods, reviewing manuscripts, commenting on theses, editorial and committee roles) are the median across
+  fields.
+\end{itemize}
 \vfill
 \end{frame}
 
@@ -195,13 +202,13 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IY{\tx{instances per
 \textbf{Share of researchers who do it}
 \begin{itemize}
   \item Estimated by Claude Opus 5.
-  \item \desc{Median 92\% for general tasks, 90\% for subfield-level tasks.}
+  \item \desc{Median 90\% for general tasks, as for subfield-level tasks.}
 \end{itemize}
 \vspace{0.1em}
 \textbf{Instances per year for each of them}
 \begin{itemize}
   \item Determined by Claude Sonnet 5.5, with the task's substeps shown.
-  \item \desc{Median 2 a year. \emph{Evaluate manuscripts for journals} in Labor Economics: 95\% review, 6 manuscripts
+  \item \desc{Median 1.5 a year. \emph{Evaluate manuscripts for journals} in Labor Economics: 95\% review, 6 manuscripts
   each, so $95\% \times 6 = 5.7$ reviews per researcher per year.}
 \end{itemize}
 \end{frame}
@@ -211,13 +218,13 @@ $\tx{hours per year} = \HI{\tx{hours per instance}} \times \IY{\tx{instances per
 \textbf{Respond to peer reviewer comments and revise manuscripts for publication}\\[0.6em]
 \small
 One round of responses and revisions takes the team 121 hours, none of it counted under another task. 72\% of labor
-economics papers go through revision, with two rounds each. A labor economist publishes 2.0 papers a year with 2.04
+economics papers go through revision, with two rounds each. A labor economist publishes 2.0 papers a year with 1.76
 authors per paper.
 \begin{align*}
 \HI{\tx{hours per instance}} &= 121 \times 100\% = \HI{121}\\
 \IN{\tx{instances per paper}} &= 72\% \times 2 \div 1 = \IN{1.44}\\
-\PY{\tx{papers per year}} &= 2.0 \div 2.04 = \PY{0.98}\\[0.4em]
-\tx{hours per year} &= \HI{121} \times \IN{1.44} \times \PY{0.98} \approx \textbf{171}
+\PY{\tx{papers per year}} &= 2.0 \div 1.76 = \PY{1.14}\\[0.4em]
+\tx{hours per year} &= \HI{121} \times \IN{1.44} \times \PY{1.14} \approx \textbf{198}
 \end{align*}
 \end{frame}
 
@@ -225,12 +232,12 @@ authors per paper.
 \begin{frame}{Worked example: a general task in Labor Economics}
 \textbf{Supervise graduate students and postdoctoral researchers on research projects}\\[0.6em]
 \small
-Supervising one student for a year takes 60 hours, none of it counted under another task. 89\% of labor economists
+Supervising one student for a year takes 88.5 hours, the median across fields, none of it counted under another task. 89\% of labor economists
 supervise, three students each.
 \begin{align*}
-\HI{\tx{hours per instance}} &= 60 \times 100\% = \HI{60}\\
+\HI{\tx{hours per instance}} &= 88.5 \times 100\% = \HI{88.5}\\
 \IY{\tx{instances per year}} &= 89\% \times 3 = \IY{2.7}\\[0.4em]
-\tx{hours per year} &= \HI{60} \times \IY{2.7} \approx \textbf{160}
+\tx{hours per year} &= \HI{88.5} \times \IY{2.7} \approx \textbf{236}
 \end{align*}
 \end{frame}
 
