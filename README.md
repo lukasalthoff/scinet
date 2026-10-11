@@ -37,6 +37,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps the research topics of OpenAlex, an open catalogue of scholarly papers, to SciNet subfields. Used to decide which papers are sampled for a subfield |
 | [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv) | Extra topics used to find enough papers for some subfields |
 | [`data/researchers.csv`](data/researchers.csv) | Researchers active in 2020, worldwide and by country, for every domain, field and subfield |
+| [`data/researchers_sampled.csv`](data/researchers_sampled.csv) | Researchers active in 2020 with at least 5 papers, by country, domain, field and subfield, estimated from a sample whose papers a language model read, with standard errors |
 
 ## Data dictionary
 
@@ -130,7 +131,7 @@ The 4,481 topics are those that map to a SciNet subfield; OpenAlex topics that d
 The number of researchers active in 2020, worldwide and in each of 226 countries, for all of research and for every SciNet domain, field and subfield. Counted from OpenAlex (January 2026 snapshot), an open catalogue of scholarly papers and their authors.
 
 - **Active in 2020**: the researcher published at least one paper in or before 2020 and at least one in or after 2020.
-- **Domain, field and subfield**: each paper is placed in the SciNet subfield of its OpenAlex primary topic, through [`openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv). A researcher counts in the field where most of their papers fall, and in the most common subfield within that field; ties go to the field of their most recent paper. Researchers none of whose papers has a mapped topic are `Unclassified` (832,530 worldwide).
+- **Domain, field and subfield**: each paper is placed in one of SciNet's 318 subfields by the SciNet paper classifier, a logistic regression on a text embedding of the paper's title, journal and, where available, abstract, trained on 209,979 papers labelled by Claude models. OpenAlex topics are not used. On 6,472 held-out papers it gives the subfield chosen by a majority of three Claude models for 53% of papers and their field for 69%. Each subfield's share of classified papers matches its share among the labelled papers. A researcher counts in the field where most of their papers fall, and in the most common subfield within that field; ties go to the field of their most recent paper. Every active researcher has a classified paper.
 - **Country**: the most common country of the researcher's institutions on their 2016–2024 papers (on all their papers if none falls in those years). 3.27 million of the 17.64 million active researchers have no institution country; they count in `World` and in `Unknown`.
 - **Fractional counts** split each researcher across fields (subfields) in proportion to their papers, so a researcher with three economics papers and one statistics paper adds 0.75 to Economics and 0.25 to Statistics. They are less sensitive to the main-field rule; domain rows sum the field rows.
 
@@ -146,7 +147,28 @@ The number of researchers active in 2020, worldwide and in each of 226 countries
 
 Within a country, the rows of each level sum to the `all` row; fractional counts agree up to rounding. Rows where every count is zero are left out.
 
-OpenAlex counts everyone who publishes, so the totals are larger than employment-based statistics: country totals correlate with UNESCO's researcher headcounts at 0.94 (logs, 153 countries) and are 1.4 times as large at the median. Clinical medicine weighs heavily (Medicine & Clinical Sciences holds 30% of researchers but 16% of papers), because medical papers have many authors. Small cells are noisy: 18,550 of the 43,672 country-subfield rows with researchers count fewer than 10, and for a fifth of those the main-field and fractional counts differ by more than a factor of two. The 78 countries with at least 10,000 active researchers hold 98% of the researchers with a known country. OpenAlex sometimes merges different people into one author profile. The counts are built from the full OpenAlex snapshot and cannot be rebuilt from this repository.
+OpenAlex counts everyone who publishes, so the totals are larger than employment-based statistics: country totals correlate with UNESCO's researcher headcounts at 0.94 (logs, 153 countries) and are 1.4 times as large at the median. Clinical medicine weighs heavily (Medicine & Clinical Sciences holds 22% of researchers but 10% of 2016–2024 papers), because medical papers have many authors. Small cells are noisy: 18,890 of the 45,788 country-subfield rows with researchers count fewer than 10, and for nearly a quarter of those the main-field and fractional counts differ by more than a factor of two. The 78 countries with at least 10,000 active researchers hold 98% of the researchers with a known country. OpenAlex sometimes merges different people into one author profile. The counts are built from the full OpenAlex snapshot and cannot be rebuilt from this repository.
+
+### `researchers_sampled.csv`
+
+The researchers active in 2020 with at least 5 papers, by country and by SciNet domain, field and subfield, with each researcher's subfield named by a language model that read their papers. The model reads a random sample of 746,517 of the 10.84 million researchers, drawn separately in each country, and the counts are estimated from it with standard errors. The researchers and the OpenAlex snapshot are those of `researchers.csv`.
+
+- **Subfield**: Claude Haiku 5.5 reads up to 40 of the researcher's papers, those nearest to 2020, with the year, journal and title of each, and names the one SciNet subfield that best describes the researcher's work. It was checked on 1,500 researchers whom Claude Sonnet 5.5 also labelled with up to 100 papers each, including abstracts. Haiku names Sonnet's subfield for 74% of them and Sonnet's field for 85%. Sonnet itself gives the same subfield on a second run for 85%. Counting a researcher in the most common classifier subfield of their papers matches Sonnet's subfield for 62% and its field for 77%. Researchers whose papers the model judged to include no scholarly work (0.17%) are `Unclassified` at every level.
+- **Country**: the country of the researcher's institutions on their papers nearest to 2020, the most common one if those papers name several. This rule differs from the one in `researchers.csv`, so country totals differ slightly from its `researchers_5plus_papers`. 571,466 researchers have no institution country on any paper; they are `Unknown`.
+- **Sample**: each country, and `Unknown`, is sampled at random on its own, with a larger share of researchers in smaller countries. The `labelled_researchers` column of a country's `all` row gives its sample size.
+- **Estimates**: a country's count for a subfield is its number of researchers times the share of its sampled researchers in that subfield. The standard error is that of simple random sampling without replacement within the country. `World` rows add up the countries, and their standard errors combine the countries' as independent. The standard errors cover sampling only, not errors of the model. Of the country-field rows with at least 1,000 researchers, 91% have a standard error below 10% of the estimate and over 99% below 20%. Of the country-subfield rows with at least 1,000 researchers, 54% are below 10% and 99% below 20%.
+- **Left out**: Niue and Tuvalu (8 researchers), none of whose researchers has been labelled. A subfield in which none of a country's sampled researchers falls has no row for that country.
+
+| Column | Description |
+|--------|-------------|
+| `country_code`, `country` | As in `researchers.csv` |
+| `level` | `all` (every researcher of the country), `domain`, `field`, or `subfield` |
+| `domain`, `field`, `subfield` | The row's place in the taxonomy; empty above the row's level |
+| `researchers_5plus_papers` | Estimated number of researchers whose domain, field or subfield this is. In `all` rows, the exact number of the country's researchers |
+| `researchers_5plus_papers_se` | Standard error of the estimate; 0 in `all` rows |
+| `labelled_researchers` | Sampled researchers labelled in this row |
+
+Within a country, the rows of each level sum to the `all` row up to rounding.
 
 ## Documentation
 
