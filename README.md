@@ -68,7 +68,7 @@ Compressed (34.5 MB uncompressed, 7.8 MB compressed); `pandas.read_csv` opens it
 
 ### `task_time.csv`
 
-The same task can mean different work in different subfields, so time is estimated separately for each subfield where the task is performed. Field and domain tasks are timed only where the model judges them to be performed, not in every subfield of their field or domain (2,662 of 3,099 field placements, 6,335 of 7,387 domain placements). Universal tasks are timed once per field, in 1,016 of the 1,020 task-field pairs (the rest the model judged not to apply in that field), so their `subfield` is empty. For a typical task timed in five or more subfields, the longest estimate is about 2.4 times the shortest for researcher hours and 3.6 times for elapsed hours.
+The same task can mean different work in different subfields, so time is estimated separately for each subfield where the task is performed. Field and domain tasks are timed in every subfield of their field or domain (3,099 field and 7,387 domain placements); 1,489 of these are timed by Claude Opus 5.5 and scaled to the other times (see [METHODOLOGY.md](METHODOLOGY.md#5-substeps-and-time-estimates)). Universal tasks are timed once per field, in 1,016 of the 1,020 task-field pairs (the rest the model judged not to apply in that field), so their `subfield` is empty. For a typical task timed in five or more subfields, the longest estimate is about 2.5 times the shortest for researcher hours and 4.0 times for elapsed hours.
 
 | Column | Description |
 |--------|-------------|

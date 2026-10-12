@@ -13,7 +13,7 @@ This page outlines how SciNet was created and validated.
 
 Beyond the task database itself, [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) documents the dimensions every task is scored on and [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) the two-level aggregation.
 
-**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8. The task dimensions used Claude Sonnet 5. Items on pathogens and dosing that a model declines to answer were measured with the same prompt by Claude Opus 5 or Claude Haiku 4.5. The prevalence of universal, domain, and field tasks used Claude Sonnet 5.5 (field tasks) and Claude Opus 5.5 (domain and universal tasks).
+**Models.** Subfield task generation used Claude Opus 4.5. The paper expansion used Claude Sonnet 5 to draw, judge, elicit and score, and Claude Opus 5 to consolidate and raise. The ratings used Claude Opus 5. Substep decomposition and timing used Claude Opus 4.8 (Claude Opus 5.5 for 1,489 field and domain placements, scaled to the Opus 4.8 times; see section 5). The task dimensions used Claude Sonnet 5. Items on pathogens and dosing that a model declines to answer were measured with the same prompt by Claude Opus 5 or Claude Haiku 4.5. The prevalence of universal, domain, and field tasks used Claude Sonnet 5.5 (field tasks) and Claude Opus 5.5 (domain and universal tasks).
 
 ---
 
@@ -211,9 +211,11 @@ Each task is broken into steps, and each step is timed, in two separate calls to
 
 The second estimates, for each step, how many times it is done in one instance of the task, the hands-on time of each repetition, and the elapsed time including waiting. The model is asked for a typical instance, a researcher of average skill, and no help from generative AI. The task totals in [`data/task_time.csv`](data/task_time.csv) add up the steps, so elapsed time assumes the steps happen one after another.
 
-The same task can mean different work in different places, so time is estimated separately wherever the task is performed: subfield tasks in their subfield, field and domain tasks in each subfield where the model judges them to be performed (2,662 of 3,099 field placements and 6,335 of 7,387 domain placements), and universal tasks once per field, in 1,016 of the 1,020 task-field pairs (the rest the model judged not to apply in that field).
+The same task can mean different work in different places, so time is estimated separately wherever the task is performed: subfield tasks in their subfield, field and domain tasks in every subfield of their field or domain (3,099 field and 7,387 domain placements, the placements the ratings cover), and universal tasks once per field, in 1,016 of the 1,020 task-field pairs (the rest the model judged not to apply in that field).
 
-For a typical task timed in five or more subfields, the longest estimate is about 2.4 times the shortest for hands-on time and 3.6 times for elapsed time.
+Claude Opus 4.8 timed field and domain tasks with the option to answer that the task is not performed in the subfield. It gave that answer for 1,418 placements the ratings cover, 624 of them rated core to the subfield, and 71 more rated placements were never sent to it. These 1,489 placements are timed on the task's published steps by Claude Opus 5.5, without that option. On 60 placements timed by both models, Opus 5.5 ranks the times like Opus 4.8 (rank correlation 0.95) but gives about 1.66 times as many minutes, so its minutes are divided by 1.66. The 79 of these placements whose time looked like a different unit of work (more than three times or under a third of the task's median time elsewhere, or a similar gap in elapsed time) are timed again with an explicit definition of one instance, one typical paper's worth of the task, and scaled by the same comparison for that prompt (1.13, on 30 placements).
+
+For a typical task timed in five or more subfields, the longest estimate is about 2.5 times the shortest for hands-on time and 4.0 times for elapsed time.
 
 Two subfield tasks, in Physiology and in Plant Pathology, are broken down and timed by Claude Haiku 4.5 with the same two prompts: both are about preparing biological material for experiments, which Claude Opus 4.8 declines to estimate. Every task has a breakdown and a time estimate wherever it is performed.
 

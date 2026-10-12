@@ -1,7 +1,7 @@
 # Time use
 
 [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) gives, for every task in every subfield where it is
-performed, the hours a year a researcher spends on it: 25,271 rows, one per task and subfield. The slides
+performed, the hours a year a researcher spends on it: 26,760 rows, one per task and subfield. The slides
 [`slides/time_use.pdf`](slides/time_use.pdf) walk through the measure with an example from Labor Economics.
 
 ## The measure
@@ -19,7 +19,7 @@ An instance is one unit of the task's work, such as one round of revisions or on
 
 | Component | Formula | Source |
 |---|---|---|
-| hours per instance (paper tasks) | team hours one instance takes x share not counted under another task | team hours: [`task_time.csv`](data/task_time.csv), estimated by Claude Opus 4.8 from each task's substeps and validated against laboratory protocols from protocols.io (see [METHODOLOGY.md](METHODOLOGY.md)); share: Claude Opus 5.5 |
+| hours per instance (paper tasks) | team hours one instance takes x share not counted under another task | team hours: [`task_time.csv`](data/task_time.csv), estimated by Claude Opus 4.8 from each task's substeps (by Claude Opus 5.5, scaled to Opus 4.8, for 1,489 field and domain placements) and validated against laboratory protocols from protocols.io (see [METHODOLOGY.md](METHODOLOGY.md)); share: Claude Opus 5.5 |
 | instances per paper | share of papers that involve the task x instances per paper that involves it / papers per instance | share: [`task_prevalence.csv`](data/task_prevalence.csv), about 100 sampled papers per subfield judged by Claude Sonnet 5 (Sonnet 5.5 and Opus 5.5 for field, domain and universal tasks); the two counts: Claude Opus 5.5 |
 | papers per year | papers a researcher publishes per year / authors per paper | OpenAlex journal articles published 2015–2019 in the subfield: the median number of papers per author-year, and the mean number of authors over papers up to the subfield's 90th percentile of authors |
 | hours per instance (general tasks) | hours the researcher spends per instance x share not counted under another task | hours: Claude Sonnet 5.5, or the median across fields for seven ongoing tasks (below); share: Claude Opus 5.5 |
@@ -37,7 +37,7 @@ manuscript (7.6), commenting on one thesis or proposal (10), and holding one edi
 
 **Shared work.** Claude Opus 5.5 compares the tasks of each field and of each subfield and flags pairs whose steps
 contain the same work. The shared work is counted once, under one task of the pair: that task keeps all its hours, and
-the other loses the share of its hours that is the shared work. 39% of paper tasks lose some work this way; the median
+the other loses the share of its hours that is the shared work. 38% of paper tasks lose some work this way; the median
 one keeps 60% of its hours.
 
 **Universal tasks** are answered once per field and apply in every subfield of the field. Their instances per year are
@@ -48,7 +48,7 @@ supervised for a year, one course, one manuscript reviewed).
 each participant, is reported with one paper's worth as the instance, so that instances per paper stays small and
 hours per instance gives the work for one paper.
 
-**Caps.** General tasks other than the universal ones are capped at 189 hours a year, the 99th percentile of those
+**Caps.** General tasks other than the universal ones are capped at 185 hours a year, the 99th percentile of those
 tasks; 4 rows are capped and flagged.
 
 ## Example: Labor Economics
@@ -73,7 +73,7 @@ instances per year = 89% x 3     = 2.7
 hours per year     = 88.5 x 2.7  = 236
 ```
 
-Summed over its tasks, Labor Economics comes to 2,046 hours a year. Across all subfields the median is 1,726 hours.
+Summed over its tasks, Labor Economics comes to 2,066 hours a year. Across all subfields the median is 1,740 hours.
 
 ## Columns
 
