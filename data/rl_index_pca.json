@@ -49,43 +49,43 @@
     "definition": "Task rows whose every placement in task_hours_per_year.csv has task_type 'paper'",
     "pca_observations": 7132,
     "component_means": {
-      "rl_verification": 5.981020751542334,
-      "rl_simulability": 7.061926528323055,
-      "rl_feedback_density": 5.746096466629258
+      "rl_verification": 5.981020751542343,
+      "rl_simulability": 7.061926528323041,
+      "rl_feedback_density": 5.746096466629273
     },
     "component_population_sds": {
-      "rl_verification": 1.5787653745296983,
-      "rl_simulability": 2.132034163900219,
-      "rl_feedback_density": 1.586076905548021
+      "rl_verification": 1.5787653745296952,
+      "rl_simulability": 2.132034163900217,
+      "rl_feedback_density": 1.5860769055480197
     },
     "correlation_matrix": [
       [
-        1.0000000000000029,
-        0.4454177659733981,
-        0.8445038092083497
+        1.0000000000000064,
+        0.4454177659733994,
+        0.844503809208352
       ],
       [
-        0.4454177659733981,
-        0.9999999999999974,
-        0.7697854508131744
+        0.4454177659733994,
+        0.9999999999999998,
+        0.7697854508131756
       ],
       [
-        0.8445038092083497,
-        0.7697854508131744,
-        1.00000000000001
+        0.844503809208352,
+        0.7697854508131756,
+        1.0000000000000113
       ]
     ],
     "pc1_eigenvector": {
-      "rl_verification": 0.5585123093367284,
-      "rl_simulability": 0.5325713572499257,
-      "rl_feedback_density": 0.6359494867961818
+      "rl_verification": 0.5585123093367288,
+      "rl_simulability": 0.5325713572499253,
+      "rl_feedback_density": 0.6359494867961815
     },
-    "pc1_normalizing_sd": 1.5447728266540104,
+    "pc1_normalizing_sd": 1.5447728266540122,
     "pc1_explained_variance_share": 0.7954410286562041,
     "eigenvalues_ascending": [
-      0.05636982369282868,
-      0.5573070903385614,
-      2.3863230859686215
+      0.05636982369282875,
+      0.5573070903385626,
+      2.386323085968627
     ]
   }
 }
