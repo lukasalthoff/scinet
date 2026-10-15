@@ -34,7 +34,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | The work activity each task belongs to |
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | The descriptive scores averaged for each work activity |
-| [`data/rl_index.csv`](data/rl_index.csv) | The RL feasibility index of every task, one number combining the three RL scores. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md#rl-feasibility-index) |
+| [`data/rl_index.csv`](data/rl_index.csv) | The RL feasibility index of every task, one number combining the three RL scores, plus a version fitted on core research (paper) tasks only. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md#rl-feasibility-index) |
 | [`data/rl_index_subfields.csv`](data/rl_index_subfields.csv) | The RL feasibility index per subfield, averaged over the hours a researcher spends on each task, for all tasks and for paper tasks |
 | [`data/rl_index_pca.json`](data/rl_index_pca.json) | The constants of the RL feasibility index |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps the research topics of OpenAlex, an open catalogue of scholarly papers, to SciNet subfields. Used to decide which papers are sampled for a subfield |

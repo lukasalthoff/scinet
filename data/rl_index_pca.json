@@ -44,5 +44,48 @@
     0.568181477627471,
     2.3756951597066607
   ],
-  "formula": "rl_index = sum_k pc1_eigenvector[k] * (score_k - component_means[k]) / component_population_sds[k] / pc1_normalizing_sd; rl_index_equal = mean_k (score_k - component_means[k]) / component_population_sds[k]"
+  "formula": "rl_index = sum_k pc1_eigenvector[k] * (score_k - component_means[k]) / component_population_sds[k] / pc1_normalizing_sd; rl_index_equal = mean_k (score_k - component_means[k]) / component_population_sds[k]; rl_index_core uses the same formula with the constants under 'core'",
+  "core": {
+    "definition": "Task rows whose every placement in task_hours_per_year.csv has task_type 'paper'",
+    "pca_observations": 7132,
+    "component_means": {
+      "rl_verification": 5.981020751542334,
+      "rl_simulability": 7.061926528323055,
+      "rl_feedback_density": 5.746096466629258
+    },
+    "component_population_sds": {
+      "rl_verification": 1.5787653745296983,
+      "rl_simulability": 2.132034163900219,
+      "rl_feedback_density": 1.586076905548021
+    },
+    "correlation_matrix": [
+      [
+        1.0000000000000029,
+        0.4454177659733981,
+        0.8445038092083497
+      ],
+      [
+        0.4454177659733981,
+        0.9999999999999974,
+        0.7697854508131744
+      ],
+      [
+        0.8445038092083497,
+        0.7697854508131744,
+        1.00000000000001
+      ]
+    ],
+    "pc1_eigenvector": {
+      "rl_verification": 0.5585123093367284,
+      "rl_simulability": 0.5325713572499257,
+      "rl_feedback_density": 0.6359494867961818
+    },
+    "pc1_normalizing_sd": 1.5447728266540104,
+    "pc1_explained_variance_share": 0.7954410286562041,
+    "eigenvalues_ascending": [
+      0.05636982369282868,
+      0.5573070903385614,
+      2.3863230859686215
+    ]
+  }
 }

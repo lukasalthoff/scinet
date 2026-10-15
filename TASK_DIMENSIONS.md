@@ -68,7 +68,17 @@ The first component explains 79.2% of the variance of the three standardized sco
 
 where each `z` is a standardized score. `rl_index_pca.json` gives every constant at full precision, and `rl_index.csv` rounds the index to three decimals. `rl_index_equal` is the plain mean of the three standardized scores, without rescaling; it correlates 0.9999 with `rl_index` across tasks, so the weights hardly matter.
 
-Per subfield, `rl_index_subfields.csv` averages the task values over every task performed in the subfield, weighting each by `hours_per_year` from `task_hours_per_year.csv`. Universal, domain and field tasks count in each subfield where they are performed, and tasks with zero hours stay in with zero weight. The columns without a suffix use all of a researcher's hours, so they include teaching, administration and other general tasks; the `_paper` columns use only paper tasks (`task_type` is `paper`). Because general tasks take most of the hours and score low, every subfield's all-hours `rl_index` is below 0: the mean of 0 is over tasks, not over hours. The two versions correlate 0.76 across the 318 subfields. The file also gives the hour-weighted mean of each of the three scores, on their 1–10 scale, and of `rl_physical_gate_pass`, the share of hours in steps that can be done digitally.
+`rl_index_core` is the same index with the PCA fitted on core research tasks only: the 7,132 tasks whose every placement in `task_hours_per_year.csv` is a paper task (`task_type` is `paper`). The 123 general tasks and the 7 tasks that are paper tasks in some subfields and general in others are left out of the fit, but every task still gets a score from the core constants. `core_task` in `rl_index.csv` marks the tasks in the fit, and `rl_index_core` has mean 0 and standard deviation 1 over them. Because core tasks are 98% of all tasks, the constants barely change:
+
+| Core fit | Verification | Simulability | Feedback density |
+|---|---|---|---|
+| Mean (1–10) | 5.981 | 7.062 | 5.746 |
+| Standard deviation | 1.579 | 2.132 | 1.586 |
+| Weight in the first component | 0.559 | 0.533 | 0.636 |
+
+The first component explains 79.5% of the variance (eigenvalues 2.386, 0.557 and 0.056), and its standard deviation before rescaling is 1.545. `rl_index_core` correlates above 0.9999 with `rl_index` and differs from it by at most 0.017 for any task. The constants are under `core` in `rl_index_pca.json`.
+
+Per subfield, `rl_index_subfields.csv` averages the task values over every task performed in the subfield, weighting each by `hours_per_year` from `task_hours_per_year.csv`. Universal, domain and field tasks count in each subfield where they are performed, and tasks with zero hours stay in with zero weight. The columns without a suffix use all of a researcher's hours, so they include teaching, administration and other general tasks; the `_paper` columns use only paper tasks (`task_type` is `paper`). Because general tasks take most of the hours and score low, every subfield's all-hours `rl_index` is below 0: the mean of 0 is over tasks, not over hours. The two versions correlate 0.76 across the 318 subfields. `rl_index_core` and `rl_index_core_paper` average the core index in the same two ways; the paper-task version differs from `rl_index_paper` by at most 0.009 in any subfield. The file also gives the hour-weighted mean of each of the three scores, on their 1–10 scale, and of `rl_physical_gate_pass`, the share of hours in steps that can be done digitally.
 
 The index measures how practical it would be to train an AI system on a task by reinforcement learning, as the three scores judge it. It is not a measure of AI use or of productivity.
 
