@@ -164,25 +164,24 @@ For the research paper when available, and for project updates, see the [project
 
 If you use this dataset, please cite:
 
+Lukas Althoff (2026): "Artificial Intelligence and Knowledge Production," Working Paper.
+
 Cristian Alamos and Lukas Althoff (2026): "SciNet: The Anatomy of Science" [dataset], https://www.anatomyofscience.com.
 
-Lukas Althoff (2026): "Artificial Intelligence and Knowledge Production," Working Paper, Stanford University.
-
 ```bibtex
+@unpublished{althoff_ai_knowledge,
+  title        = {Artificial Intelligence and Knowledge Production},
+  author       = {Althoff, Lukas},
+  year         = {2026},
+  note         = {Working Paper},
+}
+
 @misc{scinet_data,
   title        = {SciNet: The Anatomy of Science},
   author       = {Alamos, Cristian and Althoff, Lukas},
   year         = {2026},
   howpublished = {\url{https://www.anatomyofscience.com}},
   note         = {Dataset},
-}
-
-@techreport{althoff_ai_knowledge,
-  title        = {Artificial Intelligence and Knowledge Production},
-  author       = {Althoff, Lukas},
-  year         = {2026},
-  type         = {Working Paper},
-  institution  = {Stanford University},
 }
 ```
 
