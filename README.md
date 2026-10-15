@@ -185,6 +185,10 @@ Cristian Alamos and Lukas Althoff (2026): "SciNet: The Anatomy of Science" [data
 }
 ```
 
+## Funding
+
+We thank Stanford Impact Labs and Anthropic for financial support that helped construct SciNet and make it publicly available.
+
 ## License
 
 Data and documentation in this repository are licensed under CC BY 4.0. See [LICENSE](LICENSE).
