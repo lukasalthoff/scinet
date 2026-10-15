@@ -5,13 +5,13 @@ The files of the SciNet release. The [main README](../README.md) describes every
 | File | Contents | Columns |
 |------|----------|---------|
 | `tasks.csv` | Every task (7,262 rows) | `task`, `category`, `level`, `domain`, `field`, `subfield`, `expert_input` |
-| `substeps.csv.gz` | The steps of each task (90,540 rows, compressed) | `level`, `domain`, `field`, `subfield`, `task`, `substep_id`, `substep` |
+| `substeps.csv.gz` | The steps of each task (90,583 rows, compressed) | `level`, `domain`, `field`, `subfield`, `task`, `substep_id`, `substep` |
 | `task_time.csv` | Hours per task, per subfield where it is performed | `task`, `level`, `domain`, `field`, `subfield`, `n_substeps`, `researcher_hours`, `elapsed_hours`, `confidence` |
 | `task_ratings.csv` | Importance (1–5), share of researchers (0–100), frequency (1–7), per subfield | `task`, `level`, `domain`, `field`, `subfield`, `importance`, `pct_researchers`, `frequency`, `classification` |
 | `task_prevalence.csv` | Share of papers that perform each task: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science (9,259 rows) | `task`, `level`, `scope` (`subfield`, `field`, `domain`, `all`), `domain`, `field`, `subfield`, `n_papers`, `n_involved`, `prevalence`, `se`, `source` (`judged`: fixed sample of about 100 papers; `expansion`: from the expansion's scoring, leaving out the papers that proposed the task), `judge` (the model), `text` (what the model read of each paper) |
-| `task_hours_per_year.csv` | Hours a year a researcher spends on each task, per subfield where it is performed (26,760 rows) | `domain`, `field`, `subfield`, `level`, `task`, `task_type`, `hours_per_year`, the components of the formula and their parts, `retimed`, `capped`; see TIME_USE.md |
+| `task_hours_per_year.csv` | Hours a year a researcher spends on each task, per subfield where it is performed (26,803 rows) | `domain`, `field`, `subfield`, `level`, `task`, `task_type`, `hours_per_year`, the components of the formula and their parts, `retimed`, `capped`; see TIME_USE.md |
 | `task_dimensions.csv` | Descriptive scores for every task, same rows and order as `tasks.csv` | See TASK_DIMENSIONS.md |
-| `substep_dimensions.csv.gz` | The step-by-step scores, same rows and order as `substeps.csv.gz` | Keys as in `substeps.csv.gz`, plus the score columns |
+| `substep_dimensions.csv.gz` | The step-by-step scores, same rows and order as `substeps.csv.gz` (scores empty for the 43 steps of four universal task-field pairs; see TASK_DIMENSIONS.md) | Keys as in `substeps.csv.gz`, plus the score columns |
 | `work_activities.csv` | The 140 work activities | `activity_id`, `universal_task_id`, `universal_task`, `category`, `activity_name`, `activity_description`, `n_tasks` |
 | `task_activity_assignments.csv` | The work activity of each task, one row per task statement and level (6,956 rows) | `task`, `level`, `activity_id`, `universal_task_id` |
 | `work_activity_dimensions.csv` | The scores averaged per work activity | `activity_id`, `universal_task_id`, `universal_task`, `category`, `activity_name`, `n_tasks`, the numeric score columns of `task_dimensions.csv` (all but `pasteur_applies`, `pasteur_quadrant` and `cdr_rl_source`), `pasteur_applies_share`, `n_tasks_scored` |

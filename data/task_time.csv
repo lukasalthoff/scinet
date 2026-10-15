@@ -17441,6 +17441,7 @@ Evaluate manuscripts submitted to journals for scientific rigor and contribution
 "Construct formal models, proofs, and derivations to establish theoretical results.",universal,Physical Sciences,Physics & Astronomy,,13,119.42,147.42,medium
 "Design, build, and iteratively refine artifacts such as devices, software, materials, systems, or creative works to meet specified requirements.",universal,Physical Sciences,Physics & Astronomy,,12,332.78,590.55,medium
 "Present research findings at conferences, seminars, and symposia.",universal,Physical Sciences,Physics & Astronomy,,12,33.85,398.27,medium
+Obtain ethical approvals and informed consent for studies involving human subjects.,universal,Physical Sciences,Physics & Astronomy,,13,26.8,1507.83,medium
 "Keep up with new findings, methods, and debates relevant to the research area.",universal,Arts & Humanities,History,,11,99.97,140.97,medium
 "Provide feedback on student theses, dissertations, and research proposals.",universal,Arts & Humanities,History,,10,9.17,80.13,medium
 "Maintain laboratory equipment, software systems, or research infrastructure.",universal,Arts & Humanities,History,,9,44.12,56.68,medium
@@ -17619,6 +17620,8 @@ Evaluate manuscripts submitted to journals for scientific rigor and contribution
 "Interpret texts, documents, artifacts, and other qualitative sources to construct evidence-based arguments.",universal,Formal Sciences,Mathematics,,9,67.27,73.67,medium
 "Construct formal models, proofs, and derivations to establish theoretical results.",universal,Formal Sciences,Mathematics,,11,183.92,561.92,medium
 "Design, build, and iteratively refine artifacts such as devices, software, materials, systems, or creative works to meet specified requirements.",universal,Formal Sciences,Mathematics,,9,125.17,264.42,medium
+Obtain ethical approvals and informed consent for studies involving human subjects.,universal,Formal Sciences,Mathematics,,11,23.38,1466.5,medium
+Apply statistical methods to test hypotheses and estimate effect sizes.,universal,Formal Sciences,Mathematics,,8,22.07,65.57,medium
 Clean and preprocess raw data to prepare for statistical or computational analysis.,universal,Life Sciences,Biology,,11,10.07,23.85,medium
 Supervise graduate students and postdoctoral researchers on research projects.,universal,Life Sciences,Biology,,11,191.53,2364.95,medium
 "Curate and manage datasets, ensuring proper documentation and version control.",universal,Life Sciences,Biology,,11,23.53,72.33,medium
@@ -18278,3 +18281,4 @@ Obtain ethical approvals and informed consent for studies involving human subjec
 "Interpret texts, documents, artifacts, and other qualitative sources to construct evidence-based arguments.",universal,Arts & Humanities,Philosophy,,10,91.33,96.5,medium
 "Construct formal models, proofs, and derivations to establish theoretical results.",universal,Arts & Humanities,Philosophy,,13,171.17,172.5,medium
 "Design, build, and iteratively refine artifacts such as devices, software, materials, systems, or creative works to meet specified requirements.",universal,Arts & Humanities,Philosophy,,10,135.5,1544.67,medium
+Apply statistical methods to test hypotheses and estimate effect sizes.,universal,Arts & Humanities,Philosophy,,11,21.2,21.2,medium

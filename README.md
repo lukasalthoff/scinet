@@ -30,7 +30,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of published papers that show each task being performed: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science |
 | [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) | Hours a year a researcher spends on each task, in each subfield where it is performed. See [TIME_USE.md](TIME_USE.md) |
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
-| [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep |
+| [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep (empty for the 43 steps of four universal task-field pairs, see [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md)) |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | The work activity each task belongs to |
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | The descriptive scores averaged for each work activity |
@@ -68,7 +68,7 @@ Compressed (34.5 MB uncompressed, 7.8 MB compressed); `pandas.read_csv` opens it
 
 ### `task_time.csv`
 
-The same task can mean different work in different subfields, so time is estimated separately for each subfield where the task is performed. Field and domain tasks are timed in every subfield of their field or domain (3,099 field and 7,387 domain placements); 1,489 of these are timed by Claude Opus 5.5 and scaled to the other times (see [METHODOLOGY.md](METHODOLOGY.md#5-substeps-and-time-estimates)). Universal tasks are timed once per field, in 1,016 of the 1,020 task-field pairs (the rest the model judged not to apply in that field), so their `subfield` is empty. For a typical task timed in five or more subfields, the longest estimate is about 2.5 times the shortest for researcher hours and 4.0 times for elapsed hours.
+The same task can mean different work in different subfields, so time is estimated separately for each subfield where the task is performed. Field and domain tasks are timed in every subfield of their field or domain (3,099 field and 7,387 domain placements); 1,489 of these are timed by Claude Opus 5.5 and scaled to the other times (see [METHODOLOGY.md](METHODOLOGY.md#5-substeps-and-time-estimates)). Universal tasks are timed once per field, in all 1,020 task-field pairs, so their `subfield` is empty; four of these pairs are broken down and timed by Claude Opus 5.5 and scaled the same way. For a typical task timed in five or more subfields, the longest estimate is about 2.5 times the shortest for researcher hours and 4.0 times for elapsed hours.
 
 | Column | Description |
 |--------|-------------|

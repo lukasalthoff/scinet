@@ -51,9 +51,9 @@ From the RL Feasibility Index of Moreira Tomei and Klein Teeselink (2026, [arXiv
 
 ## How the scores were produced
 
-The scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy. Sonnet 5 declines some items about pathogens and dosing; those are scored with the same prompt by Claude Opus 5, or by Claude Haiku 4.5 where Opus 5 declines them too. This affects 105 of the 90,540 substeps (97 for the complexity group, 84 for the AI-training group) and 16 of the 7,262 tasks (8 for relation, medium, and mode; 9 for Pasteur's quadrant; 14 for education).
+The scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy. Sonnet 5 declines some items about pathogens and dosing; those are scored with the same prompt by Claude Opus 5, or by Claude Haiku 4.5 where Opus 5 declines them too. This affects 105 of the 90,540 scored substeps (97 for the complexity group, 84 for the AI-training group) and 16 of the 7,262 tasks (8 for relation, medium, and mode; 9 for Pasteur's quadrant; 14 for education).
 
-The complexity and AI-training groups were scored on every substep (90,540 in all) and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The other groups were scored once for the whole task.
+The complexity and AI-training groups were scored on 90,540 of the 90,583 substeps and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The 43 steps of four universal task-field pairs (applying statistical methods in Mathematics and Philosophy, obtaining ethical approvals in Mathematics and in Physics & Astronomy) are not scored yet: their scores in `substep_dimensions.csv.gz` are empty, and the two tasks' values average the other 32 fields. The other groups were scored once for the whole task.
 
 The prompts for the complexity and AI-training groups use the level definitions of the published papers. The education prompt is adapted from the Anthropic Economic Index; the other prompts were written for SciNet.
 

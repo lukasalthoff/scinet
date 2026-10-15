@@ -1,7 +1,7 @@
 # Time use
 
 [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) gives, for every task in every subfield where it is
-performed, the hours a year a researcher spends on it: 26,760 rows, one per task and subfield. The slides
+performed, the hours a year a researcher spends on it: 26,803 rows, one per task and subfield. The slides
 [`slides/time_use.pdf`](slides/time_use.pdf) walk through the measure with an example from Labor Economics.
 
 ## The measure
@@ -19,7 +19,7 @@ An instance is one unit of the task's work, such as one round of revisions or on
 
 | Component | Formula | Source |
 |---|---|---|
-| hours per instance (paper tasks) | team hours one instance takes x share not counted under another task | team hours: [`task_time.csv`](data/task_time.csv), estimated by Claude Opus 4.8 from each task's substeps (by Claude Opus 5.5, scaled to Opus 4.8, for 1,489 field and domain placements) and validated against laboratory protocols from protocols.io (see [METHODOLOGY.md](METHODOLOGY.md)); share: Claude Opus 5.5 |
+| hours per instance (paper tasks) | team hours one instance takes x share not counted under another task | team hours: [`task_time.csv`](data/task_time.csv), estimated by Claude Opus 4.8 from each task's substeps (by Claude Opus 5.5, scaled to Opus 4.8, for 1,489 field and domain placements and four universal task-field pairs) and validated against laboratory protocols from protocols.io (see [METHODOLOGY.md](METHODOLOGY.md)); share: Claude Opus 5.5 |
 | instances per paper | share of papers that involve the task x instances per paper that involves it / papers per instance | share: [`task_prevalence.csv`](data/task_prevalence.csv), about 100 sampled papers per subfield judged by Claude Sonnet 5 (Sonnet 5.5 and Opus 5.5 for field, domain and universal tasks); the two counts: Claude Opus 5.5 |
 | papers per year | papers a researcher publishes per year / authors per paper | OpenAlex journal articles published 2015–2019 in the subfield: the median number of papers per author-year, and the mean number of authors over papers up to the subfield's 90th percentile of authors |
 | hours per instance (general tasks) | hours the researcher spends per instance x share not counted under another task | hours: Claude Sonnet 5.5, or the median across fields for seven ongoing tasks (below); share: Claude Opus 5.5 |
