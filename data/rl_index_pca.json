@@ -1,0 +1,91 @@
+{
+  "pca_observations": 7262,
+  "components": [
+    "rl_verification",
+    "rl_simulability",
+    "rl_feedback_density"
+  ],
+  "component_means": {
+    "rl_verification": 5.9848499036078096,
+    "rl_simulability": 7.026232442853201,
+    "rl_feedback_density": 5.736645552189488
+  },
+  "component_population_sds": {
+    "rl_verification": 1.5753833291501214,
+    "rl_simulability": 2.153148454622843,
+    "rl_feedback_density": 1.5847796047749727
+  },
+  "correlation_matrix": [
+    [
+      0.9999999999999942,
+      0.4342968474924499,
+      0.8405468476483626
+    ],
+    [
+      0.4342968474924499,
+      1.0000000000000115,
+      0.7679980486767316
+    ],
+    [
+      0.8405468476483626,
+      0.7679980486767316,
+      1.0000000000000044
+    ]
+  ],
+  "pc1_eigenvector": {
+    "rl_verification": 0.557416981700801,
+    "rl_simulability": 0.5318644521147955,
+    "rl_feedback_density": 0.6375002063436512
+  },
+  "pc1_normalizing_sd": 1.5413290238319204,
+  "pc1_explained_variance_share": 0.791898386568884,
+  "eigenvalues_ascending": [
+    0.05612336266587948,
+    0.568181477627471,
+    2.3756951597066607
+  ],
+  "formula": "rl_index = sum_k pc1_eigenvector[k] * (score_k - component_means[k]) / component_population_sds[k] / pc1_normalizing_sd; rl_index_equal = mean_k (score_k - component_means[k]) / component_population_sds[k]; rl_index_core uses the same formula with the constants under 'core'",
+  "core": {
+    "definition": "Task rows whose every placement in task_hours_per_year.csv has task_type 'paper'",
+    "pca_observations": 7132,
+    "component_means": {
+      "rl_verification": 5.981020751542343,
+      "rl_simulability": 7.061926528323041,
+      "rl_feedback_density": 5.746096466629273
+    },
+    "component_population_sds": {
+      "rl_verification": 1.5787653745296952,
+      "rl_simulability": 2.132034163900217,
+      "rl_feedback_density": 1.5860769055480197
+    },
+    "correlation_matrix": [
+      [
+        1.0000000000000064,
+        0.4454177659733994,
+        0.844503809208352
+      ],
+      [
+        0.4454177659733994,
+        0.9999999999999998,
+        0.7697854508131756
+      ],
+      [
+        0.844503809208352,
+        0.7697854508131756,
+        1.0000000000000113
+      ]
+    ],
+    "pc1_eigenvector": {
+      "rl_verification": 0.5585123093367288,
+      "rl_simulability": 0.5325713572499253,
+      "rl_feedback_density": 0.6359494867961815
+    },
+    "pc1_normalizing_sd": 1.5447728266540122,
+    "pc1_explained_variance_share": 0.7954410286562041,
+    "eigenvalues_ascending": [
+      0.05636982369282875,
+      0.5573070903385626,
+      2.386323085968627
+    ]
+  }
+}

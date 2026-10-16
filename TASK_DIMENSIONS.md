@@ -9,6 +9,8 @@ Every SciNet task is scored on a set of dimensions that describe what kind of wo
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | One row per task, in the same order as `tasks.csv` |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | One row per substep, in the same order as `substeps.csv.gz`, for the dimensions scored step by step |
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | One row per work activity: the average over its tasks |
+| [`data/rl_index_subfields.csv`](data/rl_index_subfields.csv) | The RL feasibility index and its three scores per subfield, averaged over the hours a researcher spends on each task |
+| [`data/rl_index_pca.json`](data/rl_index_pca.json) | The constants of the index, so it can be recomputed from `task_dimensions.csv` |
 
 ## The dimensions
 
@@ -40,6 +42,44 @@ From the RL Feasibility Index of Moreira Tomei and Klein Teeselink (2026, [arXiv
 - `rl_verification`: 1 contested expert judgment with nothing inspectable, 10 a fully automatic check.
 - `rl_simulability`: 1 needs live markets or real people with real stakes, 10 natively digital and cheap to replicate.
 - `rl_feedback_density`: 1 rare, delayed, holistic signals, 10 continuous, immediate, per-step signals.
+
+### RL feasibility index
+
+`rl_index` combines the three RL scores into one number per task. Its columns sit in `task_dimensions.csv` right after the three scores, and `work_activity_dimensions.csv` averages them per work activity like every other score. It is the first principal component of `rl_verification`, `rl_simulability` and `rl_feedback_density`. The physical gate is not part of it: a task that fails the gate keeps its index, and `rl_physical_gate_pass` stays a separate measure. The original index of Moreira Tomei and Klein Teeselink instead sets a failing task to 0 and combines eight dimensions; this one uses only the three scored here.
+
+How it is built:
+
+1. Each of the three scores is standardized over the 7,262 rows of `task_dimensions.csv`: subtract its mean and divide by its standard deviation. Every row counts once, unweighted by hours.
+2. A principal component analysis of the correlation matrix of the three standardized scores gives the weights of the first component. Its sign is set so that all three weights are positive.
+3. The weighted sum is divided by its own standard deviation, so `rl_index` has mean 0 and standard deviation 1 over the tasks. A task at 1 is one standard deviation more feasible for RL training than the average task.
+
+| | Verification | Simulability | Feedback density |
+|---|---|---|---|
+| Mean (1–10) | 5.985 | 7.026 | 5.737 |
+| Standard deviation | 1.575 | 2.153 | 1.585 |
+| Weight in the first component | 0.557 | 0.532 | 0.638 |
+| Correlation with verification | 1 | 0.43 | 0.84 |
+| Correlation with simulability | 0.43 | 1 | 0.77 |
+
+The first component explains 79.2% of the variance of the three standardized scores (eigenvalues 2.376, 0.568 and 0.056), and its standard deviation before rescaling is 1.541. So
+
+`rl_index = (0.557 z_verification + 0.532 z_simulability + 0.638 z_feedback_density) / 1.541`
+
+where each `z` is a standardized score. `rl_index_pca.json` gives every constant at full precision, and the data files round the index to three decimals. `rl_index_equal` is the plain mean of the three standardized scores, without rescaling; it correlates 0.9999 with `rl_index` across tasks, so the weights hardly matter.
+
+`rl_index_core` is the same index with the PCA fitted on core research tasks only: the 7,132 tasks whose every placement in `task_hours_per_year.csv` is a paper task (`task_type` is `paper`). The 123 general tasks and the 7 tasks that are paper tasks in some subfields and general in others are left out of the fit, but every task still gets a score from the core constants. `rl_index_core` has mean 0 and standard deviation 1 over the tasks in the fit. Because core tasks are 98% of all tasks, the constants barely change:
+
+| Core fit | Verification | Simulability | Feedback density |
+|---|---|---|---|
+| Mean (1–10) | 5.981 | 7.062 | 5.746 |
+| Standard deviation | 1.579 | 2.132 | 1.586 |
+| Weight in the first component | 0.559 | 0.533 | 0.636 |
+
+The first component explains 79.5% of the variance (eigenvalues 2.386, 0.557 and 0.056), and its standard deviation before rescaling is 1.545. `rl_index_core` correlates above 0.9999 with `rl_index` and differs from it by at most 0.017 for any task. The constants are under `core` in `rl_index_pca.json`.
+
+Per subfield, `rl_index_subfields.csv` averages the task values over every task performed in the subfield, weighting each by `hours_per_year` from `task_hours_per_year.csv`. Universal, domain and field tasks count in each subfield where they are performed, and tasks with zero hours stay in with zero weight. The columns without a suffix use all of a researcher's hours, so they include teaching, administration and other general tasks; the `_paper` columns use only paper tasks (`task_type` is `paper`). Because general tasks take most of the hours and score low, every subfield's all-hours `rl_index` is below 0: the mean of 0 is over tasks, not over hours. The two versions correlate 0.76 across the 318 subfields. `rl_index_core` and `rl_index_core_paper` average the core index in the same two ways; the paper-task version differs from `rl_index_paper` by at most 0.009 in any subfield. The file also gives the hour-weighted mean of each of the three scores, on their 1–10 scale, and of `rl_physical_gate_pass`, the share of hours in steps that can be done digitally.
+
+The index measures how practical it would be to train an AI system on a task by reinforcement learning, as the three scores judge it. It is not a measure of AI use or of productivity.
 
 ### Years of education
 
