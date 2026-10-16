@@ -9,7 +9,6 @@ Every SciNet task is scored on a set of dimensions that describe what kind of wo
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | One row per task, in the same order as `tasks.csv` |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | One row per substep, in the same order as `substeps.csv.gz`, for the dimensions scored step by step |
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | One row per work activity: the average over its tasks |
-| [`data/rl_index.csv`](data/rl_index.csv) | The RL feasibility index of every task, same rows and order as `tasks.csv` |
 | [`data/rl_index_subfields.csv`](data/rl_index_subfields.csv) | The RL feasibility index and its three scores per subfield, averaged over the hours a researcher spends on each task |
 | [`data/rl_index_pca.json`](data/rl_index_pca.json) | The constants of the index, so it can be recomputed from `task_dimensions.csv` |
 
@@ -46,7 +45,7 @@ From the RL Feasibility Index of Moreira Tomei and Klein Teeselink (2026, [arXiv
 
 ### RL feasibility index
 
-`rl_index` combines the three RL scores into one number per task. It is the first principal component of `rl_verification`, `rl_simulability` and `rl_feedback_density`. The physical gate is not part of it: a task that fails the gate keeps its index, and `rl_physical_gate_pass` stays a separate measure. The original index of Moreira Tomei and Klein Teeselink instead sets a failing task to 0 and combines eight dimensions; this one uses only the three scored here.
+`rl_index` combines the three RL scores into one number per task. Its columns sit in `task_dimensions.csv` right after the three scores, and `work_activity_dimensions.csv` averages them per work activity like every other score. It is the first principal component of `rl_verification`, `rl_simulability` and `rl_feedback_density`. The physical gate is not part of it: a task that fails the gate keeps its index, and `rl_physical_gate_pass` stays a separate measure. The original index of Moreira Tomei and Klein Teeselink instead sets a failing task to 0 and combines eight dimensions; this one uses only the three scored here.
 
 How it is built:
 
@@ -66,9 +65,9 @@ The first component explains 79.2% of the variance of the three standardized sco
 
 `rl_index = (0.557 z_verification + 0.532 z_simulability + 0.638 z_feedback_density) / 1.541`
 
-where each `z` is a standardized score. `rl_index_pca.json` gives every constant at full precision, and `rl_index.csv` rounds the index to three decimals. `rl_index_equal` is the plain mean of the three standardized scores, without rescaling; it correlates 0.9999 with `rl_index` across tasks, so the weights hardly matter.
+where each `z` is a standardized score. `rl_index_pca.json` gives every constant at full precision, and the data files round the index to three decimals. `rl_index_equal` is the plain mean of the three standardized scores, without rescaling; it correlates 0.9999 with `rl_index` across tasks, so the weights hardly matter.
 
-`rl_index_core` is the same index with the PCA fitted on core research tasks only: the 7,132 tasks whose every placement in `task_hours_per_year.csv` is a paper task (`task_type` is `paper`). The 123 general tasks and the 7 tasks that are paper tasks in some subfields and general in others are left out of the fit, but every task still gets a score from the core constants. `core_task` in `rl_index.csv` marks the tasks in the fit, and `rl_index_core` has mean 0 and standard deviation 1 over them. Because core tasks are 98% of all tasks, the constants barely change:
+`rl_index_core` is the same index with the PCA fitted on core research tasks only: the 7,132 tasks whose every placement in `task_hours_per_year.csv` is a paper task (`task_type` is `paper`). The 123 general tasks and the 7 tasks that are paper tasks in some subfields and general in others are left out of the fit, but every task still gets a score from the core constants. `rl_index_core` has mean 0 and standard deviation 1 over the tasks in the fit. Because core tasks are 98% of all tasks, the constants barely change:
 
 | Core fit | Verification | Simulability | Feedback density |
 |---|---|---|---|

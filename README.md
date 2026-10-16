@@ -29,13 +29,12 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_ratings.csv`](data/task_ratings.csv) | Importance, share of researchers, and frequency of each task, rated separately in each subfield |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of published papers that show each task being performed: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science |
 | [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) | Hours a year a researcher spends on each task, in each subfield where it is performed. See [TIME_USE.md](TIME_USE.md) |
-| [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
+| [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task, including the RL feasibility index that combines the three RL scores. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep (empty for the 43 steps of four universal task-field pairs, see [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md)) |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | The work activity each task belongs to |
 | [`data/work_activity_dimensions.csv`](data/work_activity_dimensions.csv) | The descriptive scores averaged for each work activity |
-| [`data/rl_index.csv`](data/rl_index.csv) | The RL feasibility index of every task, one number combining the three RL scores, plus a version fitted on core research (paper) tasks only. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md#rl-feasibility-index) |
-| [`data/rl_index_subfields.csv`](data/rl_index_subfields.csv) | The RL feasibility index per subfield, averaged over the hours a researcher spends on each task, for all tasks and for paper tasks |
+| [`data/rl_index_subfields.csv`](data/rl_index_subfields.csv) | The RL feasibility index per subfield, averaged over the hours a researcher spends on each task, for all tasks and for paper tasks. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md#rl-feasibility-index) |
 | [`data/rl_index_pca.json`](data/rl_index_pca.json) | The constants of the RL feasibility index |
 | [`data/openalex_topic_subfield_mapping.csv`](data/openalex_topic_subfield_mapping.csv) | Maps the research topics of OpenAlex, an open catalogue of scholarly papers, to SciNet subfields. Used to decide which papers are sampled for a subfield |
 | [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv) | Extra topics used to find enough papers for some subfields |
