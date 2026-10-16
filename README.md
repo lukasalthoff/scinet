@@ -13,7 +13,7 @@ For each task the data give:
 
 The release also counts the researchers active in each country, domain, field and subfield.
 
-Current release: **v1.9.0**.
+Current release: **v1.9.1**.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
