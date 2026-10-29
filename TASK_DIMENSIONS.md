@@ -1,6 +1,6 @@
 # Task dimensions
 
-Every SciNet task is scored on a set of dimensions that describe what kind of work it is, whatever its subject: how it relates to knowledge, what it works with, how it investigates, how complex, physical, and regulated it is, what motivates the research it serves, how practical it would be to train an AI system on it, and how much education it requires.
+Every SciNet task is scored on a set of dimensions that describe what kind of work it is, whatever its subject: how it relates to knowledge, what it works with, how it investigates, how complex, physical, and regulated it is, what motivates the research it serves, how practical it would be to train an AI system on it, and how much education it requires. A last column rates how likely one AI system, Claude Opus 5, is to complete the task.
 
 ## Files
 
@@ -85,19 +85,23 @@ The index measures how practical it would be to train an AI system on a task by 
 
 `years_education`: the minimum formal education a research group would require to hire someone for the task, with reasonable on-the-job training, regardless of who performs it today. 12 high school, 14 associate degree, 16 bachelor's, 18 master's, 20 doctorate. Adapted from the Anthropic Economic Index.
 
+### Likelihood that an AI system completes the task
+
+`elo_opus5`: how likely Claude Opus 5 is to complete the task, as an Elo rating against the other tasks; the higher the rating, the more likely. `elo_opus5_se`: its standard error. The ratings rank tasks and are not success rates. How they were made is described [below](#elo-ratings-for-claude-opus-5).
+
 ### Other columns
 
 `cdr_rl_source` is `substep_mean`: the complexity and AI-training values of every task are averages over its substeps. In `work_activity_dimensions.csv`, `pasteur_applies_share` is the share of the activity's tasks that count as research and `n_tasks_scored` the number of its tasks with complexity scores.
 
 ## How the scores were produced
 
-The scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy. Sonnet 5 declines some items about pathogens and dosing; those are scored with the same prompt by Claude Opus 5, or by Claude Haiku 4.5 where Opus 5 declines them too. This affects 105 of the 90,540 scored substeps (97 for the complexity group, 84 for the AI-training group) and 16 of the 7,262 tasks (8 for relation, medium, and mode; 9 for Pasteur's quadrant; 14 for education).
+Except for the Elo rating, which is [described separately](#elo-ratings-for-claude-opus-5), the scores come from Claude Sonnet 5, one prompt per group of dimensions, given the task and where it sits in the taxonomy. Sonnet 5 declines some items about pathogens and dosing; those are scored with the same prompt by Claude Opus 5, or by Claude Haiku 4.5 where Opus 5 declines them too. This affects 105 of the 90,540 scored substeps (97 for the complexity group, 84 for the AI-training group) and 16 of the 7,262 tasks (8 for relation, medium, and mode; 9 for Pasteur's quadrant; 14 for education).
 
 The complexity and AI-training groups were scored on 90,540 of the 90,583 substeps and averaged to the task, weighting each substep by its share of the task's researcher time. Universal tasks are broken down separately in each field, so their values are averaged across fields. The 43 steps of four universal task-field pairs (applying statistical methods in Mathematics and Philosophy, obtaining ethical approvals in Mathematics and in Physics & Astronomy) are not scored yet: their scores in `substep_dimensions.csv.gz` are empty, and the two tasks' values average the other 32 fields. The other groups were scored once for the whole task.
 
 The prompts for the complexity and AI-training groups use the level definitions of the published papers. The education prompt is adapted from the Anthropic Economic Index; the other prompts were written for SciNet.
 
-Missing values. Every task and every substep carries every score. `pasteur_understanding` and `pasteur_use` are empty for the 313 tasks that are not research work (`pasteur_applies` is `no`), and `work_activity_dimensions.csv` leaves them empty for one activity, whose single task is of that kind.
+Missing values. Every task and every substep carries every score, except that `elo_opus5` and `elo_opus5_se` are empty for one task (see [Limits](#limits)). `pasteur_understanding` and `pasteur_use` are empty for the 313 tasks that are not research work (`pasteur_applies` is `no`), and `work_activity_dimensions.csv` leaves them empty for one activity, whose single task is of that kind.
 
 ## Check against O\*NET
 
@@ -111,6 +115,34 @@ The same prompts were run on O\*NET's own task statements and compared with O\*N
 | Regulatory restriction | Importance of professional certification | 0.60 | 430 occupations |
 | The three AI-training scores | The index authors' own scores | 0.79 to 0.88 | about 2,560 tasks |
 
+## Elo ratings for Claude Opus 5
+
+How likely is an AI system to complete each SciNet task? `elo_opus5` ranks every task by that likelihood for one system, Claude Opus 5. A language model compared tasks two at a time, and a rating model turned its answers into one Elo rating per task: the higher the rating, the more likely Opus 5 is to succeed.
+
+The ratings rank tasks. They are not success rates: no one ran Opus 5 on the tasks, and nothing here converts a rating into a probability of success.
+
+### How the ratings were made
+
+- **Units.** Tasks were rated where their steps are defined, the units of `substeps.csv.gz`: every subfield, field and domain task, and every universal task once in each of the 34 fields, 8,252 units in all. A universal task's `elo_opus5` is the mean of its 34 field ratings, and `elo_opus5_se` the standard error of that mean, which makes it much smaller (about 20 points) than for other tasks. The ratings are centred so that the 8,252 units average 1500.
+- **Task cards.** Each unit is shown with its scope (subfield, field or domain), its statement, the hands-on hours a typical instance takes (from `task_time.csv`), and its steps (from `substeps.csv.gz`).
+- **Judge.** Claude Haiku 5.5 sees two cards, each paired with Claude Opus 5, and says on which of the two tasks Opus 5 is more likely to succeed, with its confidence. Success means delivering the task's result to the standard a competent researcher in the field would accept, without a person fixing it. It covers the digital part of the task: a researcher supplies the data, samples or access the system asks for and carries out any physical work exactly as it specifies, and the system does the planning, analysis, coding, writing and judgment. It writes and runs code, reads and writes files, and searches the web. The judge considers a typical instance of each task.
+- **Comparisons.** A first round pairs units at random; a second pairs units with close ratings, where the ranking is least certain. Ten percent of pairs are asked again with the two cards swapped. Thirty cards written in the same format for benchmark problems were rated in the same comparisons; they are not in the release. In all there are 95,040 comparisons, those of the benchmark cards included, and a median of 20 per unit.
+- **Ratings.** A Bradley–Terry model with an advantage for the card shown first gives each card a rating. Ratings are on the Elo scale (400/ln 10, about 174 points per logit), so a gap of 400 points means the judge picks the higher-rated task ten times as often as the other. Standard errors come from 200 bootstrap resamples of the comparisons, keeping a swapped pair together.
+
+### How consistent the ratings are
+
+- Split in two random halves of the comparisons, the ratings correlate 0.87; for all comparisons together that implies a reliability of 0.93.
+- On 8,646 pairs asked in both orders, the same task won both times in 72% of cases. The card shown first wins 59.5% of comparisons; the model accounts for this.
+- Claude Opus 5.5, as a stronger judge, re-judged 2,000 pairs. On the 1,958 where both answered, it agreed with Haiku 5.5 on 70%: 76% of random pairs and 63% of close pairs. Where Haiku 5.5's confidence was 85 or more, the two agreed 82% of the time.
+- Across the 8,252 units the ratings spread with a standard deviation of 459 points. The median standard error is 106 points, so neighbouring tasks are not reliably ordered, but tasks a few hundred points apart are.
+
+### Limits
+
+- The ratings are one model's judgment of another model's chances. They have not been checked against Opus 5 attempting the tasks.
+- They describe Claude Opus 5 at one point in time. Another system may order tasks differently.
+- The judge declined 52 comparisons, 51 of them involving one of three tasks that handle viruses, microbes or exposure agents. Preparing and formulating microbial preparations in Plant Pathology has no answered comparison and so no rating (the same task in Food Science & Technology is rated). Virus isolation in Virology & Medical Microbiology rests on 4 comparisons and preparing exposure agents in Physiology on 8, so both have large standard errors.
+- A rating is relative: it says which tasks are harder for Opus 5 than others, not how likely Opus 5 is to complete any one of them.
+
 ## Work activities
 
-Work-activity values are simple averages over the tasks assigned to each activity in `task_activity_assignments.csv`. A task statement that appears in several subfields is averaged over those first, so each assigned task counts once.
+Work-activity values are simple averages over the tasks assigned to each activity in `task_activity_assignments.csv`. A task statement that appears in several subfields is averaged over those first, so each assigned task counts once. `elo_opus5` is averaged the same way; its standard error is not carried over.
