@@ -9,11 +9,12 @@ For each task the data give:
 - the steps a researcher goes through to perform it;
 - how long it takes, and how many hours a year a researcher spends on it;
 - how important it is, how often it is done, and what share of researchers do it;
-- descriptive scores such as how complex it is and how much of it is physical work.
+- descriptive scores such as how complex it is and how much of it is physical work;
+- how likely an AI system, Claude Opus 5, is to complete it, as an Elo rating against the other tasks.
 
 The release also counts the researchers active in each country, domain, field and subfield.
 
-Current release: **v1.9.1**.
+Current release: **v1.10.0**.
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -29,7 +30,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_ratings.csv`](data/task_ratings.csv) | Importance, share of researchers, and frequency of each task, rated separately in each subfield |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of published papers that show each task being performed: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science |
 | [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) | Hours a year a researcher spends on each task, in each subfield where it is performed. See [TIME_USE.md](TIME_USE.md) |
-| [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task, including the RL feasibility index that combines the three RL scores. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
+| [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task, including the RL feasibility index that combines the three RL scores and an Elo rating of how likely Claude Opus 5 is to complete the task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep (empty for the 43 steps of four universal task-field pairs, see [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md)) |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
 | [`data/task_activity_assignments.csv`](data/task_activity_assignments.csv) | The work activity each task belongs to |
@@ -156,7 +157,7 @@ OpenAlex counts everyone who publishes, so the totals are larger than employment
 
 - [METHODOLOGY.md](METHODOLOGY.md): how SciNet was built and validated.
 - [TIME_USE.md](TIME_USE.md): hours a year per task; slides in [slides/time_use.pdf](slides/time_use.pdf).
-- [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md): the descriptive scores.
+- [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md): the descriptive scores and the Elo ratings for Claude Opus 5.
 - [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md): the work activities.
 - [SURVEYS.md](SURVEYS.md): the questions of the researcher survey on the website.
 
