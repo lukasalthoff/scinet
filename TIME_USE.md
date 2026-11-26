@@ -79,6 +79,7 @@ Summed over its tasks, Labor Economics comes to 2,066 hours a year. Across all s
 
 | Column | Description |
 |---|---|
+| `task_id` | The task's stable identifier (see the [README](README.md#task-ids)) |
 | `domain`, `field`, `subfield`, `level`, `task` | The task and the subfield it is performed in (`level`: `subfield`, `field`, `domain` or `universal`) |
 | `task_type` | `paper` or `general` |
 | `hours_per_year` | Hours a year a researcher spends on the task |
