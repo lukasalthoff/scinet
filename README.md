@@ -14,7 +14,7 @@ For each task the data give:
 
 The release also counts the researchers active in each country, domain, field and subfield.
 
-Current release: **v1.10.1**.
+Current release: **v1.11.0**. It gives every task a stable identifier, `task_id` (see [Task IDs](#task-ids)).
 
 **Website:** [anatomyofscience.com](https://www.anatomyofscience.com/) · **Repository:** [github.com/lukasalthoff/scinet](https://github.com/lukasalthoff/scinet)
 
@@ -30,6 +30,7 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/task_ratings.csv`](data/task_ratings.csv) | Importance, share of researchers, and frequency of each task, rated separately in each subfield |
 | [`data/task_prevalence.csv`](data/task_prevalence.csv) | The share of published papers that show each task being performed: subfield tasks in their subfield; universal, domain, and field tasks by field, by domain, and for all of science |
 | [`data/task_hours_per_year.csv`](data/task_hours_per_year.csv) | Hours a year a researcher spends on each task, in each subfield where it is performed. See [TIME_USE.md](TIME_USE.md) |
+| [`data/task_id_changes.csv`](data/task_id_changes.csv) | Every task that a release adds, rewords, moves, retires or restores, by `task_id`. Empty until a release after v1.11.0 changes a task |
 | [`data/task_dimensions.csv`](data/task_dimensions.csv) | Descriptive scores for every task, including the RL feasibility index that combines the three RL scores and an Elo rating of how likely Claude Opus 5 is to complete the task. See [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md) |
 | [`data/substep_dimensions.csv.gz`](data/substep_dimensions.csv.gz) | The scores that are made step by step, for every substep (empty for the 43 steps of four universal task-field pairs, see [TASK_DIMENSIONS.md](TASK_DIMENSIONS.md)) |
 | [`data/work_activities.csv`](data/work_activities.csv) | 140 work activities that group similar tasks. See [WORK_ACTIVITIES.md](WORK_ACTIVITIES.md) |
@@ -41,12 +42,27 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | [`data/topic_frame_overlay.csv`](data/topic_frame_overlay.csv) | Extra topics used to find enough papers for some subfields |
 | [`data/researchers.csv`](data/researchers.csv) | Researchers active in 2020 with at least 5 papers, worldwide and by country, for every domain, field and subfield, estimated from a sample whose papers a language model read |
 
+## Task IDs
+
+Every task has an identifier, `task_id`, such as `SNT00015`. It is the first column of every file that has one row per task or per task placement: `tasks.csv`, `substeps.csv.gz`, `task_time.csv`, `task_ratings.csv`, `task_prevalence.csv`, `task_hours_per_year.csv`, `task_dimensions.csv` and `substep_dimensions.csv.gz`. `task_activity_assignments.csv` has one row per statement and level, so it lists the IDs of every task with that statement in `task_ids`, separated by semicolons.
+
+The ID belongs to the task, not to its wording or its row:
+
+- A task keeps its ID in every later release, also when its statement is reworded or it moves to another place in the hierarchy.
+- An ID is never reused. A task that is dropped is retired with its ID, and new tasks get new numbers.
+- If a dropped task comes back with the same statement and place, it gets its old ID back.
+
+[`data/task_id_changes.csv`](data/task_id_changes.csv) records each such change with the release, the ID, the kind of change, and the task's level, place and statement before and after. IDs were first issued in v1.11.0. Before that, files were matched on the statement and its place in the hierarchy; those keys still work and map one to one onto the IDs.
+
+In `tasks.csv` and `task_dimensions.csv`, `task_id` identifies the row. The other files repeat a task wherever it is performed or measured, so a row there is identified by `task_id` together with the columns that say where: `field` and `subfield` in `task_time.csv`, `task_ratings.csv` and `task_hours_per_year.csv`, `scope`, `domain`, `field` and `subfield` in `task_prevalence.csv`, and `field` and `substep_id` in the two substep files.
+
 ## Data dictionary
 
 ### `tasks.csv`
 
 | Column | Description |
 |--------|-------------|
+| `task_id` | The task's stable identifier (see [Task IDs](#task-ids)) |
 | `task` | The task statement |
 | `category` | One of ten categories, for example "Data Gathering" or "Writing & Communication" |
 | `level` | `universal`, `domain`, `field`, or `subfield` |
@@ -55,14 +71,15 @@ All files are UTF-8, comma-separated CSV. [`data/README.md`](data/README.md) rep
 | `subfield` | Subfield name. Empty for universal, domain, and field tasks |
 | `expert_input` | The researcher whose review shaped this task, where one did. Empty otherwise |
 
-Two subfield names, Political Economy and Educational Psychology, exist in two fields each, so always identify a subfield by its field and subfield together. 235 task statements appear in more than one subfield, with their own times and scores in each.
+Two subfield names, Political Economy and Educational Psychology, exist in two fields each, so always identify a subfield by its field and subfield together. 235 task statements appear in more than one subfield, with their own times and scores in each; each of those is a separate task with its own `task_id`.
 
 ### `substeps.csv.gz`
 
-Compressed (34.5 MB uncompressed, 7.8 MB compressed); `pandas.read_csv` opens it directly.
+Compressed (35.3 MB uncompressed, 7.9 MB compressed); `pandas.read_csv` opens it directly.
 
 | Column | Description |
 |--------|-------------|
+| `task_id` | The task's stable identifier |
 | `level` | Level of the task |
 | `domain`, `field`, `subfield` | Where the breakdown applies. A subfield task is broken down in its subfield, a field or domain task once for the field or domain, a universal task once per field. Columns that do not apply are empty |
 | `task` | The task statement |
@@ -75,6 +92,7 @@ The same task can mean different work in different subfields, so time is estimat
 
 | Column | Description |
 |--------|-------------|
+| `task_id` | The task's stable identifier |
 | `task`, `level`, `domain`, `field`, `subfield` | The task and the subfield (or field, for universal tasks) the estimate is for |
 | `n_substeps` | Number of steps in the breakdown |
 | `researcher_hours` | Hands-on work by the research team for one instance of the task |
@@ -89,6 +107,7 @@ One row per task per subfield it appears in, on O\*NET's three scales. Each row 
 
 | Column | Description |
 |--------|-------------|
+| `task_id` | The task's stable identifier |
 | `task`, `level`, `domain`, `field`, `subfield` | The task and the subfield the rating is for |
 | `importance` | 1 = Not Important, 2 = Somewhat Important, 3 = Important, 4 = Very Important, 5 = Extremely Important |
 | `pct_researchers` | Out of 100 researchers in the subfield, how many perform this task at least occasionally |
@@ -107,6 +126,7 @@ A `field` row covers that field's papers; a `domain` or `all` row combines field
 
 | Column | Description |
 |--------|-------------|
+| `task_id` | The task's stable identifier |
 | `task`, `level` | The task and its level: `subfield`, `field`, `domain`, or `universal` |
 | `scope` | What the row covers: `subfield` (one subfield's papers), `field` (one field's papers), `domain` (the domain's fields combined), or `all` (all 34 fields combined) |
 | `domain`, `field`, `subfield` | Where the row's papers come from; empty where the scope is wider |
